@@ -1,0 +1,316 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataRepairTimeProductivityModel
+
+@{
+    ViewBag.Title = "ViewRepairTimeProductivity";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Scripts/mainjs.js"></script>
+<script src="~/Areas/ManageMasterData/Script/RepairTimeProductivity.js"></script>
+<link href="~/Areas/ManageWorkOrder/Style/WorkOrder.css" rel="stylesheet" />
+
+<div>
+        <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_repairtimeproductivity_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+     <br />
+        <div>
+           <h2>Repair Time Productivity Screen</h2>
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+
+@using (Html.BeginForm())
+{
+    <div>
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+        
+      
+            <tr>
+                <td style="text-align: left; vertical-align: top;width:300px">
+                    @Html.LabelFor(model => model.DateFrom)
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.DateFrom, new { id = "txtDateFrom", style = "width:300px", @class = "CLSDTFROM", @readonly = "true" })
+                </td>
+                <td style="text-align: left; vertical-align: top;width:400px">
+                    @Html.Label("(YYYY-MM-DD)")
+                </td>
+                
+            </tr>
+         <tr>
+                <td style="text-align: left; vertical-align: top;width:300px">
+                    @Html.LabelFor(model => model.DateTo)
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.DateTo, new { id = "txtDateTo", style = "width:300px", @class = "CLSDTFROM", @readonly = "true" })</td>
+             <td style="width:400px"> @Html.Label("(YYYY-MM-DD)")
+                </td>
+             <td style="text-align: left; vertical-align: top;">
+                   
+                </td>
+                
+            </tr>
+       
+        <tr>
+                
+            <td></td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+        </div>
+   
+   
+
+
+
+
+   
+
+     if (Model.isEMRApproverCountry|| Model.isEMRSpecialistCountry )
+    {
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+      
+            <tr>
+                <td style="text-align: left; vertical-align: top;width:160px">@Html.Label("Select:")</td>
+                <td>
+                 <table><tr>
+                <td>@Html.RadioButton("radList", "Country", true, new { id = "radCountry", onclick = "View('C')" })</td><td>@Html.Label("Country")</td>
+                @*<td>@Html.RadioButton("radList", "Location", false, new { id = "radLocation", onclick = "View('L')" })</td><td>@Html.Label("Location")*@
+                <td>@Html.RadioButton("radList", "Shop", false, new { id = "radShop", onclick = "View('S')" })</td><td>@Html.Label("Shop")</td>
+                </tr></table></td>
+                </tr></table>
+        <div id="divCountry",style="width:300px">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Country", new { style = "width:150px" })</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.txtCountry, Model.drpCountry, "Select Country", new { id = "drpCountry" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+            <div>
+    <table>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Query" id="query" onclick="return ClientValidationCountry()" formaction="/ManageMasterData/ManageMasterData/GetRepairTimeList" />
+                </td>
+
+            </tr>
+        </table>
+
+        </div>
+    </div>
+     <div id="divLocation" style="display: none;">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Location", new { style = "width:150px" })</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.txtLocation, Model.drpLocation, "Select Location", new { id = "drpCOCL" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+         <div>
+    <table>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Query" id="query" onclick="return ClientValidationLocation()" formaction="/ManageMasterData/ManageMasterData/GetRepairTimeList" />
+                </td>
+
+            </tr>
+        </table>
+        </div>
+    </div>
+            
+    <div id="divShop" style="display: none;">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Shop", new { style = "width:150px" })</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.txtShop, Model.drpShop, "Select Shop", new { id = "drpShop" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+        <div>
+    <table>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Query" id="query" onclick="return ClientValidationShop()" formaction="/ManageMasterData/ManageMasterData/GetRepairTimeList" />
+                </td>
+
+            </tr>
+        </table>
+        </div>
+    </div>
+    <br/>
+    <br />
+    
+    }
+    else if (Model.isEMRApproverShop ==true || Model.isEMRSpecialistShop ==true|| Model.isShop==true)
+    {
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+      
+            <tr>
+                <td style="text-align: left; vertical-align: top;width:160px">@Html.Label("Select:")</td>
+                <td>
+                 <table><tr>
+                <td></td>
+                @*<td>@Html.RadioButton("radList", "Location", false, new { id = "radLocation", onclick = "View('L')" })</td><td>@Html.Label("Location")*@
+                <td>@Html.RadioButton("radList", "Shop", true, new { id = "radShop", onclick = "View('S')" })</td><td>@Html.Label("Shop")</td>
+                </tr></table></td>
+                </tr></table>
+    
+     <div id="divShop" style="width:300px">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Shop", new { style = "width:150px" })</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.txtShop, Model.drpShop, "Select Shop", new { id = "drpShop" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+        </div>
+   
+   <div>
+           <table>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Query" id="query" onclick="return ClientValidationShop()" formaction="/ManageMasterData/ManageMasterData/GetRepairTimeList" />
+                </td>
+
+            </tr>
+        </table>
+        
+   </div>
+
+ 
+    <br/>
+    <br />
+    
+    }
+
+
+    else  
+    {
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+      
+            <tr>
+                <td style="text-align: left; vertical-align: top;width:160px">@Html.Label("Select:")</td>
+                <td>
+                 <table><tr>
+                <td>@Html.RadioButton("radList", "Country", true, new { id = "radCountry", onclick = "View('C')" })</td><td>@Html.Label("Country")</td>
+                @*<td>@Html.RadioButton("radList", "Location", false, new { id = "radLocation", onclick = "View('L')" })</td><td>@Html.Label("Location")*@
+                <td>@Html.RadioButton("radList", "Shop", false, new { id = "radShop", onclick = "View('S')" })</td><td>@Html.Label("Shop")</td>
+                </tr></table></td>
+                </tr></table>
+        <div id="divCountry",style="width:300px">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Country", new { style = "width:150px" })</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.txtCountry, Model.drpCountry, "Select Country", new { id = "drpCountry" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+            <div>
+    <table>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Query" id="query" onclick="return ClientValidationCountry()" formaction="/ManageMasterData/ManageMasterData/GetRepairTimeList" />
+                </td>
+
+            </tr>
+        </table>
+
+        </div>
+    </div>
+     <div id="divLocation" style="display: none;">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Location", new { style = "width:150px" })</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.txtLocation, Model.drpLocation, "Select Location", new { id = "drpCOCL" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+         <div>
+    <table>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Query" id="query" onclick="return ClientValidationLocation()" formaction="/ManageMasterData/ManageMasterData/GetRepairTimeList" />
+                </td>
+
+            </tr>
+        </table>
+        </div>
+    </div>
+            
+    <div id="divShop" style="display: none;">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Shop", new { style = "width:150px" })</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.txtShop, Model.drpShop, "Select Shop", new { id = "drpShop" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+        <div>
+    <table>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Query" id="query" onclick="return ClientValidationShop()" formaction="/ManageMasterData/ManageMasterData/GetRepairTimeList" />
+                </td>
+
+            </tr>
+        </table>
+        </div>
+    </div>
+    <br/>
+    <br />
+    
+    }
+
+    if (Model.Flag)
+    {
+    <div id="gridContent">
+       @if (Model.SearchResult != null)
+       {
+
+
+           var grid1 = new WebGrid(Model.SearchResult, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+           //grid1.Pager(WebGridPagerModes.NextPrevious)
+
+
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+
+                             grid1.Column("Location", header: "Location"),
+                             grid1.Column("Shop", header: "Shop"),
+                             grid1.Column("AvgEstimateTime", header: "Avg Time to Estimate"),
+                             grid1.Column("AvgAuthoriseTime", header: "Avg Time to Authorise"),
+                             grid1.Column("AvgRepairTime", header: "Avg Time to Repair")
+
+                                         )) 
+       }
+        
+       
+
+</div>
+    }
+
+}
+    
+        
+
+
+
+
+

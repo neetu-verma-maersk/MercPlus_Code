@@ -1,0 +1,130 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterShopVndorModel
+  
+   
+    <link href="@Url.Content("~/Content/MercStyle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Css/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.js"></script>
+    <script src="~/Scripts/mainjs.js"></script>
+    
+
+<style type="text/css">
+body {
+    background-color:#e9eff5;
+    margin-top:0px; 
+    margin-left:0px; 
+    margin-top:0px;
+
+}
+
+</style> 
+
+@using (Html.BeginForm())
+{
+<div id="divMain">
+    
+                
+            
+       
+          
+<table style="border:1px solid black; width:400px; border-color:#FFFFFF; font-size:10px; " border="1">
+    <tr>
+         <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px; font-size:large;" colspan="2">@Request.QueryString["PageName"]</td>
+                       
+    </tr>
+    <tr>
+         <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Shop Code</td>
+         <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.ShopCode)</td>
+               
+    </tr>
+    <tr>
+         <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Vendor Code</td>
+         <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.VendorCode)</td>
+      
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Shop Description</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.ShopDesc) </td>
+        
+    </tr>
+    <tr>
+       
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Location</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.GEOLocation) </td>
+       
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Currency Code</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.CUCDN) </td>
+       
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Preptime</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.PreparationTime) </td>
+       
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Active</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.ShopActiveSW) </td>
+       
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Percent Material Factor</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.PCTMaterialFactor)</td>
+        
+    </tr>
+   
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Overtime Suspension Switch</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.OTSuspended)</td>
+             
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Shop Type Code</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.ShopType)</td>
+       
+    </tr>
+    <tr>
+         <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Import Tax (%)</td>
+         <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.ImportTax)</td>
+       
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Sales Tax Parts Containers (%)</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.Parts1)</td>
+        
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Sales Tax Parts Gensets (%)</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.Parts2)</td>
+       
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Sales Tax Labor Containers (%)</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.Labor1)</td>
+     
+    </tr>
+    <tr>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:170px;">Sales Tax Labor Gensets (%)</td>
+        <td nowrap="nowrap" style="vertical-align:bottom; text-align:left; width:220px;">@Html.DisplayFor(x=>x.Labor2)</td>
+        
+    </tr>
+   
+  </table> 
+
+
+    <table style="width:100%;">
+        <tr>
+
+            <td style="vertical-align:top; text-align:left; margin-right:0px; font-size:12px; width:150px;" >
+                    <a href="#" onclick = "window.close();">Close this window</a>
+                </td>
+            <td style="vertical-align:top; text-align:left; margin-right:0px; font-size:12px;" >
+                    <a href="#" onclick = "window.print()">Print</a>
+                </td>
+ 
+            </tr>
+        </table>
+    </div>
+
+}

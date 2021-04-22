@@ -1,0 +1,284 @@
+﻿@model MercPlusClient.Areas.ManageUser.Models.ManageUserModel
+@{
+    ViewBag.Title = "SecUserEdit";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageUser/Script/SecUserEdit.js"></script>
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/sec_useredit_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+<br />
+<div>
+    <div style="margin-top: 10px; text-align: right; width: 750px;">
+        &nbsp;
+    </div>
+    <div style="margin-top: 20px; border-bottom: 2px solid #7A7989; width: 750px;">
+        <table style="width: 750px; vertical-align: text-top; table-layout: fixed;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+                {
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Add New User", "SecNewUser", "ManageUser")</td>
+                }
+                @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop == true )
+                {
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Review User", "SecUserEdit", "ManageUser") </td>
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Review Permission", "SecSetUserPermissions", "ManageUser") </td>
+                    <td style="text-align: center; vertical-align: top; width: 225px;">&nbsp; </td>
+                }
+                else{
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Edit User", "SecUserEdit", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Set Permission", "SecSetUserPermissions", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 225px;">&nbsp; </td>
+                 }
+                
+                </tr>
+        </table>
+    </div>
+</div>
+@using (Html.BeginForm("SecUserEdit", "ManageUser", FormMethod.Post, new { id = "submitForm" }))
+{
+    @Html.HiddenFor(model => model.UserId)
+    @Html.ValidationSummary(true)
+<div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;">
+        @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    @if (Model.isCountrySelection)
+    {
+        @Html.Partial("~/Areas/ManageUser/Views/Shared/UserSelectionBasedOnCountry.cshtml")
+        <br />
+    }
+
+    <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblEditDeleteOperationButton">
+        <tr>
+            <td style="text-align: right; vertical-align: top; width: 200px;">&nbsp;</td>
+            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+            {
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    <input type="button" id="btnEdit" name="Command" value="Edit" style="width: 100px" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+                    <input type="submit" id="btnDelete" name="Command" value="Delete" style="width: 100px" />
+                </td>
+            }
+            else
+            {
+                <td style="text-align: left; vertical-align: top; width: 360px;">
+                    <input type="button" id="btnView" name="Command" value="View" style="width: 100px" />
+                </td>
+            }
+            <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+        </tr>
+    </table>
+
+
+    <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblEditView">
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Login) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Login, new { maxlength = 32 })</td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.FirstName) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.FirstName, new { maxlength = 15 }) </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.LastName) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.LastName, new { maxlength = 36 })  </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Company) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Company, new { maxlength = 36 }) </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Loccd) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Loccd, new { maxlength = 8 }) </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ApproveAmount) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.ApproveAmount, new { id = "ApproveAmount", maxlength = 10, style = "width:150px;", onkeydown = "return ValidateNumber(event);" })  </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">@Html.Label(" USD")</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ActiveStatus) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">
+                @Html.DropDownListFor(model => model.ActiveStatus, new List<SelectListItem>{
+                new SelectListItem() {Text = "N", Value="N"},
+                new SelectListItem() {Text = "Y", Value="Y"}}, new { id = "ActiveStatus" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.EmailId) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.EmailId, new { id = "EmailId", maxlength = 50 })  </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Expired) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">
+                @Html.DropDownListFor(model => model.Expired, new List<SelectListItem>{
+                new SelectListItem() {Text = "N", Value="N"},
+                new SelectListItem() {Text = "Y", Value="Y"}}, new { id = "Expired" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: right; vertical-align: top; width: 200px;" colspan="3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: right; vertical-align: top; width: 200px;">&nbsp;</td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">
+                <input type="submit" id="btnUpdate" name="Command" value="Update" style="width: 100px" onclick="return ClientValidation();" />&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="btnBack" type="button" value="Back" style="width: 100px" />
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;"><input type="button" value="Audit Trail" onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'User', 'User', document.getElementById('UserId').value, '', '', 800, 450, scroll);" />                    </td>
+        </tr>
+    </table>
+
+    <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblView">
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">test</td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Login, new { id = "txtLoginView", maxlength = 32, style = "background-color:#DCDCDC!important;", @readonly = true })</td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.FirstName) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.FirstName, new { id = "txtFirstNameView", maxlength = 15, style = "background-color:#DCDCDC!important;", @readonly = true }) </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.LastName) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.LastName, new { id = "txtLastNameView", maxlength = 36, style = "background-color:#DCDCDC!important;", @readonly = true })  </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Company) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Company, new { id = "txtCompanyView", maxlength = 36, style = "background-color:#DCDCDC!important;", @readonly = true }) </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Loccd) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Loccd, new { id = "txtLoccdView", maxlength = 8, style = "background-color:#DCDCDC!important;", @readonly = true }) </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ApproveAmount) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.ApproveAmount, new { id = "ApproveAmountView", maxlength = 10, style = "width:150px;background-color:#DCDCDC!important;", @readonly = true })  </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">@Html.Label(" USD")</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ActiveStatus) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">
+                @Html.DropDownListFor(model => model.ActiveStatus, new List<SelectListItem>{
+                new SelectListItem() {Text = "N", Value="N"},
+                new SelectListItem() {Text = "Y", Value="Y"}}, new { id = "ActiveStatusView", style = "background-color:#DCDCDC!important;", disabled = "disabled" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.EmailId) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.EmailId, new { id = "EmailIdView", maxlength = 50, style = "background-color:#DCDCDC!important;", @readonly = true })  </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Expired) <font color="red">*</font></td>
+            <td style="text-align: left; vertical-align: top; width: 250px;">
+                @Html.DropDownListFor(model => model.Expired, new List<SelectListItem>{
+                new SelectListItem() {Text = "N", Value="N"},
+                new SelectListItem() {Text = "Y", Value="Y"}}, new { id = "ExpiredView", style = "background-color:#DCDCDC!important;", disabled = "disabled" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: right; vertical-align: top; width: 200px;" colspan="3">&nbsp;</td>
+        </tr>       
+    </table>
+
+    @if (Model.isDeleteMode)
+    {
+        <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0" id="tblDeleteView">
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Login) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.Login)</td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.FirstName)</td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.FirstName) </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.LastName) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.LastName)  </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Company) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.Company) </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Loccd) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.Loccd) </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ApproveAmount) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.ApproveAmount) @Html.Label(" USD") </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ActiveStatus) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.ActiveStatus) </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.EmailId) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.EmailId)</td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Expired) </td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">:</td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DisplayFor(model => model.Expired) </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: right; vertical-align: top; width: 200px;" colspan="4">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: right; vertical-align: top; width: 200px;">&nbsp;</td>
+                <td style="text-align: left; vertical-align: top; width: 10px;">&nbsp;</td>
+                <td style="text-align: left; vertical-align: top; width: 300px;">
+                    <input type="submit" id="btnConfrimDelete" name="Command" value="Confirm Delete" style="width: 120px" />&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 290px;">&nbsp;</td>
+            </tr>
+        </table>
+    }
+    @if (Model.isConfirmUpdate)
+    {
+        <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0" id="tblIsConfirmUpdateButton">
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 750px;">
+                    <input type="button" value="Back" style="width: 100px" onclick="location.href='@Url.Action("SecUserEdit", "ManageUser")    '" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+}

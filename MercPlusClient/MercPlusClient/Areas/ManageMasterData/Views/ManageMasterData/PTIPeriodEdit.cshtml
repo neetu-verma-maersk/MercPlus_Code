@@ -1,0 +1,254 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataPTIPeriodModel
+@{
+    ViewBag.Title = "PTI Period";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript">
+    function CheckValidation(isAdd)
+    {
+        $("#ErrorMsgContainer").html("");
+        $("#ErrorMsgContainer1").html("");
+        var errMsg = "";
+        var isError = false;
+        if (isAdd) {
+            HighlightInputsForError($("#txtEquipmentFrom"), false);
+            if ($("#txtEquipmentFrom").val().trim() == "") {
+                errMsg = "Please Enter an Equipment Number From";
+                isError = true;
+                HighlightInputsForError($("#txtEquipmentFrom"), isError);
+            }
+
+            HighlightInputsForError($("#txtEquipmentTo"), false);
+            if ($("#txtEquipmentTo").val().trim() == "") {
+                errMsg = "Please Enter an Equipment Number To";
+                isError = true;
+                HighlightInputsForError($("#txtEquipmentTo"), isError);
+            }
+        }
+
+        HighlightInputsForError($("#txtExceptionDay"), false);
+        if ($("#txtExceptionDay").val()=="") {
+            if (errMsg.trim() != "")
+                errMsg += ", number of Exception Days";
+            else
+                errMsg = "Please Enter the number of Exception Days";
+            isError = true;
+            HighlightInputsForError($("#txtExceptionDay"), isError);
+        }
+        else if (parseInt($("#txtExceptionDay").val()) < parseInt("1")) {
+            if (errMsg.trim() != "")
+                errMsg += ". Max Quantity cannot be less than 1";
+            else
+                errMsg = "Max Quantity cannot be less than 1";
+            isError = true;
+            HighlightInputsForError($("#txtExceptionDay"), isError);
+        }
+        else if (parseInt($("#txtExceptionDay").val()) > parseInt("32767")) {
+            if (errMsg.trim() != "")
+                errMsg += ". Max Quantity cannot be larger than 32,767";
+            else
+                errMsg = "Max Quantity cannot be larger than 32,767";
+            isError = true;
+            HighlightInputsForError($("#txtExceptionDay"), isError);
+        }
+        
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+</script>
+
+@using(Html.BeginForm())
+{
+    <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_pti_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+    if (Model.EditDefaultPTIPeriod)
+    {
+        <h2>Default Days Edit</h2>
+    }
+    else
+    {
+        if (Model.IsEditPTIPeriod)
+        {
+            <h2>PTI Period Exceptions Edit</h2>
+        }
+        else
+        {
+            <h2>PTI Period Exceptions Add</h2>
+        }
+    }
+    
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    if (!Model.EditDefaultPTIPeriod)
+    {
+        if (Model.IsEditPTIPeriod)
+        {
+            @*<h2>PTI Period Exceptions Edit</h2>*@
+            <table style="width:500px">
+                <tr>
+                    <td style="width:50%">
+                         @Html.Label("Equipment Number (from)")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model => model.PTIPeriodFrom, new { id = "txtEquipmentFrom", size = "4", @readonly = "true" })
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                         @Html.Label("Equipment Number (to)")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model => model.PTIPeriodTo, new { id = "txtEquipmentTo", size = "4", @readonly = "true" })
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                         @Html.Label("Exception (days)")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model => model.PTIPeriodNumber, new { id = "txtExceptionDay", size = "4", maxlength = "3", onkeypress = "return ValidateNumber(event);" })
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                            @Html.Label("Change User Name")
+                    </td>
+                    <td>
+                            @Html.Label("Changed Time")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(model => model.PTIChangedUser, new { id = "txtUserName", size = "4", @readonly = "true" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.PTIUpdateDate, new { id = "txtDate", size = "4", @readonly = "true" })
+                    </td>
+                </tr>
+                        
+                <tr>
+                    <td>
+                       @*@Html.DisplayFor(model => model.PTIMessage)*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" id="btnModify" formaction="/ManageMasterData/ManageMasterData/ModifyPTIPeriod" onclick="return CheckValidation(false);"  />
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            @*<h2>PTI Period Exceptions Add</h2>*@
+            <table>
+                <tr>
+                    <td>
+                         @Html.Label("Equipment Number (from)")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model => model.PTIPeriodFrom, new { id = "txtEquipmentFrom", size = "4", maxlength = "11" })
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                         @Html.Label("Equipment Number (to)")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model => model.PTIPeriodTo, new { id = "txtEquipmentTo", size = "4", maxlength = "11" })
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                         @Html.Label("Exception (days)")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model => model.PTIPeriodNumber, new { id = "txtExceptionDay", size = "4", maxlength = "3", onkeypress = "return ValidateNumber(event);"})
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    
+                        @*@Html.DisplayFor(model => model.PTIMessage)*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" id="btnAdd" formaction="/ManageMasterData/ManageMasterData/CreatePTIPeriod" onclick="return CheckValidation(true);" />
+                    </td>
+                </tr>
+            </table>
+        }
+    }
+    else
+    {
+        
+        <table style="width:400px">
+            <tr>
+                <td colspan="2">
+                     @Html.Label("Default(days)")
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                        @Html.TextBoxFor(model => model.MaxPTIPeriod, new { id = "txtExceptionDay", size = "4", maxlength = "3", onkeypress = "return ValidateNumber(event);" })
+                </td>
+            </tr>
+            
+                        <tr>
+                            <td>
+                                 @Html.Label("Change User Name")
+                            </td>
+                            <td>
+                                 @Html.Label("Changed Time")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(model => model.PTIChangedUser, new { id = "txtDefUserName", size = "4", @readonly = "true", })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(model => model.PTIUpdateDate, new { id = "txtDefDate", size = "4", @readonly = "true", style = "width:170px" })
+                            </td>
+                        </tr>
+                   
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(model => model.PTIMessage)*@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit" id="btnDefaultModify" formaction="/ManageMasterData/ManageMasterData/ModifiyDefaultPTIPeriod" onclick="return CheckValidation(false)"  />
+                </td>
+            </tr>
+        </table>
+    }
+}

@@ -1,0 +1,161 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataPayAgentModel
+
+
+@{
+    if (Model.IsUpdate)
+    {
+        ViewBag.Title = "ViewPayAgentDetails";
+    }
+    else
+    {
+        ViewBag.Title = "CreatePayAgent";
+    }
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageMasterData/Script/PayAgent.js"></script>
+<div>
+        <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_payagent_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a></div>
+    <br />
+        <div style="margin-top:20px;width:750px; ">
+            
+                    <h2>Add, Update or Delete Pay Agent</h2>
+               
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div> 
+    </div>
+<br />
+
+@using (Html.BeginForm())
+{
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+    
+        @if (Model.IsUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.RRISCode)
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.RRISCode, Model.drpRRISCodesList,"Select RRIS Code ", new { id = "drpRRISCodesList",style="width;500px" })
+                </td>
+               @*<td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.TextBoxFor(model => model.RRISCode, new { style="display:none"})</td>*@
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.RRISCode)</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.RRISCode, new {id="txtRRISCode",style="text-transform:uppercase;",maxlength="3"})</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+        }
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.RRISFormat)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.RRISFormat, Model.drpRRISFormat," Select RRIS Format",new { id = "drpRRISFormatList" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;width: 300px">
+                @Html.LabelFor(model => model.CorporateProfitCenter)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.CorporateProfitCenter, new { id = "txtCorporateProfitCenter",style="text-transform:uppercase;" ,onkeydown="return ValidateNumber(event);",maxlength="2"})
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.CorporatePayAgentCenter)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.CorporatePayAgentCenter, new { id = "txtCorporatePayAgentCode",style="text-transform:uppercase;",maxlength="3" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.PayAgentProfitCenter)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.PayAgentProfitCenter, new { id = "txtPayAgentProfitCenter" ,style="text-transform:uppercase;",maxlength="2"})
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        @if(Model.IsUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUserName)
+                </td>
+                 <td style="padding:0 0 0 0;">
+                     @Html.TextBoxFor(model => model.ChangeFUser, new { id = "txtChangeUserName",@readonly="readonly" })
+                </td>
+                 <td style="padding:0 0 0 0;">
+                    @Html.TextBoxFor(model => model.ChangeLUser, new { id = "txtChangeUserName1",@readonly="readonly" })
+                  
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            @*<tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeTime)
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeTime, new { id = "txtChangeTime" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>*@
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model=>model.ChangeTime)
+                </td>
+                 <td class="style3" style="text-align: left; vertical-align: top;">
+                     @Html.TextBoxFor(model => model.ChangeTime, new { id="txtChangeTime",@readonly="readonly"})
+                </td>
+                 <td class="style3" style="text-align: left; vertical-align: top;">
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Update" onclick="return ClientValidation()" formaction="/ManageMasterData/ManageMasterData/UpdatePayAgent"/>
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    <input type="submit" value="Delete" onclick="return DeleteConfirmMsg()" formaction="/ManageMasterData/ManageMasterData/DeletePayAgent" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+                   @* <input type="button" value="Add New" 
+                        onclick="location.href = ''@Url.Action("CreatePayAgent", "ManageMasterData")   ''"/>*@
+
+                     <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/PayAgentCreate"/>
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;"></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/CreatePayAgent"/></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                   @* <input type = "button" value = "Return to Update" onclick="location.href = ''@Url.Action("EditPayAgent", "ManageMasterData", new { area = "ManageMasterData" }, null)    ''" />*@
+
+                     <input type = "submit" value = "Return to Update-Delete" formaction="/ManageMasterData/ManageMasterData/ReturnPayAgentDetails"/>
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }
+ </table>
+    }

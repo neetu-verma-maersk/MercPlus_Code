@@ -1,0 +1,111 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterShopVndorModel
+
+
+<script src="~/Areas/ManageMasterData/Script/ShopContract_View.js"></script>
+
+<div id="gridposition" style="width: 100%;"> 
+     
+    
+     
+      @if (Model!= null)
+      {
+
+          var grid1 = new WebGrid(Model.SearchResults, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+          if ((((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin) )//|| (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry) || (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop) || (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry) || (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop))
+                   {
+                        @grid1.GetHtml(
+                                tableStyle: "webGrid",
+                                
+                                headerStyle: "header",
+                                alternatingRowStyle: "alt",
+                                htmlAttributes: new { id = "grdShopContract" },
+                                selectedRowStyle: "select",
+                                columns: grid1.Columns(   
+                                grid1.Column(header: "",format: (item) => ( Convert.ToDateTime(item.ExpDate) >= System.DateTime.Now ? ( item.intedit==1  ? Html.Raw(string.Format("<input id='chkBox1' name='cdShopContID' type='checkbox' value='{0}' />", @item.ShopContID)) : Html.Raw("")) : Html.Raw(""))),
+                                grid1.Column("ShopCode", "Shop"), 
+                                grid1.Column("RepairCode", "Repair Code"),
+                                grid1.Column("ContractAmount", "Amount (Currency  " +Model.CurCode+")"),
+                                grid1.Column("ManualCode", "Manual"),
+                                grid1.Column("Mode", "Mode"),
+                                grid1.Column("EffDate", "Effective Date"),
+                                grid1.Column(format: (item) => Convert.ToDateTime(item.ExpDate).ToShortDateString()=="1/1/1753" ? Html.Raw("") : item.ExpDate, header:"Expiry Date")
+                                //grid1.Column(format: (item) => Html.ActionLink("Edit", "FillShopContractEdit", new { ContID = item.ShopContID, style="font-size:8px; color:blue;" }))
+                              //  grid1.Column(format: (item) => (Convert.ToDateTime(item.ExpDate)>= System.DateTime.Now ? ( item.intedit==1  ? Html.ActionLink("Edit", "FillShopContractEdit", new { ContID = item.ShopContID, style="font-size:8px; color:blue;" }) : Html.Raw("")) : Html.Raw(""))),
+                              //  grid1.Column(format: (item) => (Convert.ToDateTime(item.ExpDate)>= System.DateTime.Now ? ( item.intedit==1  ? new HtmlString("<a src='#' id='test' onclick='doSubmit(" + Json.Encode(item.ShopContID) + ");'>Delete</a>") : new HtmlString ("")) : new HtmlString ("")))
+                                ))
+                   }
+                   else
+                   {
+                        @grid1.GetHtml(
+                                tableStyle: "webGrid",
+                                headerStyle: "header",
+                                alternatingRowStyle: "alt",
+                                htmlAttributes: new { id = "grdShopContract" },
+                                selectedRowStyle: "select",
+                                columns: grid1.Columns(   
+                                grid1.Column(header: "",format: (item) => Convert.ToDateTime(item.ExpDate).ToShortDateString()=="1/1/1753" ? Html.Raw(string.Format("<input id='chkBox1' name='cdShopContID' type='checkbox' visibility='false' value='{0}' />", @item.ShopContID)) : Html.Raw("")),
+                                grid1.Column("ShopCode", "Shop"), 
+                                grid1.Column("RepairCode", "Repair Code"),
+                                grid1.Column("ContractAmount", "Amount (Currency  " +Model.CurCode+")"),
+                                grid1.Column("ManualCode", "Manual"),
+                                grid1.Column("Mode", "Mode"),
+                                grid1.Column("EffDate", "Effective Date"),
+                                grid1.Column(format: (item) => Convert.ToDateTime(item.ExpDate).ToShortDateString()=="1/1/1753" ? Html.Raw("") : item.ExpDate, header:"Expiry Date"),
+                                //grid1.Column(format: (item) => Html.ActionLink("Edit", "FillShopContractEdit", new { ContID = item.ShopContID, style="font-size:8px; color:blue;" }))
+                                grid1.Column(format: (item) => Convert.ToDateTime(item.ExpDate).ToShortDateString()=="1/1/1753" ? Html.Raw("") : Html.Raw("")),
+                                grid1.Column(format: (item) => Convert.ToDateTime(item.ExpDate).ToShortDateString()=="1/1/1753" ? new HtmlString("") : new HtmlString (""), header: "")
+                                ))
+                   }
+                   
+                  
+                          
+           }
+          else
+          {
+          <p style="text-align:center;"><h3>**** NO RECORDS FOUND MATCHING SEARCH CRITERIA **** </h3></p>
+         }
+    <table>
+        <tr>
+            <td colspan="4"></td>
+        </tr> 
+     @if(Model.intflag ==1)
+         {
+             if ((((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin) ) //|| (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry) || (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop) || (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry) || (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop))
+            {
+                <tr>
+             
+               <td colspan="3" style="text-align:right;">
+                Expiry Date(YYYY-MM-DD)
+               </td>
+               <td style="text-align:right;">
+                 @if (Model.ExpireDate_ShopContract.ToShortDateString() != "1/1/0001")
+                    {
+                     
+                         @Html.TextBox("txtExpDateSubmit",Model.ExpireDate_ShopContract.ToShortDateString(),new {style="width:120px;", @class="CLSDTTO", id="txtExpDateSubmit"}) 
+                         
+                    }
+                    else
+                    {
+                         @Html.TextBox("txtExpDateSubmit","",new {style="width:120px;", @class="CLSDTTO"})
+                     
+                    }
+             </td>
+             </tr>
+
+            <tr>
+             <td colspan="4" style="text-align:right; text-wrap:none;">
+                 <p>
+                     NB:Field can be left blank for contracts with no expiry date
+                 </p>
+             </td>
+            
+        </tr>
+        
+            <tr id="trButtonCollection">
+               
+            </tr>
+            } 
+          } 
+     </table>
+    </div>

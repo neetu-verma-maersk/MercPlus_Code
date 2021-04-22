@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E60E3EB2-07BD-415D-862B-C9E314885210}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MercWorkOrderWebService</RootNamespace>
+    <AssemblyName>MercWorkOrderWebService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MercPlusLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MercPlusLibrary\bin\Debug\MercPlusLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MercWorkingCode\Dll\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MercWorkOrderWebService.svc" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.Customer.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.Damage.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.EqsType.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.EqType.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.Equipment.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.ErrMessage.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.RemarkEntry.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.RepairCode.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.RepairLoc.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.RepairsView.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.Shop.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.Tpi.datasource" />
+    <Content Include="Properties\DataSources\MercPlusLibrary.WorkOrderDetail.datasource" />
+    <None Include="Properties\PublishProfiles\PublishedWebService.pubxml" />
+    <None Include="Service References\ManageWorkOrderServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ManageWorkOrderServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrder1.wsdl" />
+    <Content Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService1.disco" />
+    <Content Include="Service References\ManageWorkOrderServiceReference\MercWorkOrderWebService.ManageWorkOrderServiceReference.CallSaveMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ManageWorkOrderServiceReference\MercWorkOrderWebService.ManageWorkOrderServiceReference.CallValidateMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ManageWorkOrderServiceReference\MercWorkOrderWebService.ManageWorkOrderServiceReference.GetHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ManageWorkOrderServiceReference\MercWorkOrderWebService.ManageWorkOrderServiceReference.ReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ManageWorkOrderServiceReference\MercWorkOrderWebService.ManageWorkOrderServiceReference.SaveAsDraftResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ManageWorkOrderServiceReference\MercWorkOrderWebService.ManageWorkOrderServiceReference.SubmitWorkOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MercWorkOrderWebService.svc.cs">
+      <DependentUpon>MercWorkOrderWebService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IMercWorkOrderWebService.cs" />
+    <Compile Include="MercWorkOrderWS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWorkOrderWS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercWorkOrderWS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWorkOrderWS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercWorkOrderWS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWorkOrderWS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_XML_LOG.cs">
+      <DependentUpon>MercWorkOrderWS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ManageWorkOrderServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="MercWorkOrderWS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MercWorkOrderWS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MercWorkOrderWS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercWorkOrderWS.edmx</DependentUpon>
+      <LastGenOutput>MercWorkOrderWS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MercWorkOrderWS.edmx.diagram">
+      <DependentUpon>MercWorkOrderWS.edmx</DependentUpon>
+    </Content>
+    <Content Include="MercWorkOrderWS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercWorkOrderWS.edmx</DependentUpon>
+      <LastGenOutput>MercWorkOrderWS.cs</LastGenOutput>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ManageWorkOrderServiceReference\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63984</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52275/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

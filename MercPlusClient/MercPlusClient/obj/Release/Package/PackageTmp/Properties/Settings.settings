@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MercPlusClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="xlExtension" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">xlsx</Value>
+    </Setting>
+    <Setting Name="ApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Merc+</Value>
+    </Setting>
+    <Setting Name="AdditionalRows" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="MaxRepairRows" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="ServerEnvironment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TEST/DEMO</Value>
+    </Setting>
+    <Setting Name="DISPLAY_STATUS_CODE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">true</Value>
+    </Setting>
+    <Setting Name="CheckDUPEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Y</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

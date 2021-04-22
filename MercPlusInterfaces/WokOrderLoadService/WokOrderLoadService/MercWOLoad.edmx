@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MESC2DSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MESC2DSModelStoreContainer">
+          <EntitySet Name="MESC1TS_EDI_ERROR" EntityType="MESC2DSModel.Store.MESC1TS_EDI_ERROR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MESC1TS_EDI_LINEITEM" EntityType="MESC2DSModel.Store.MESC1TS_EDI_LINEITEM" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MESC1TS_EDI_TRANSMISSION" EntityType="MESC2DSModel.Store.MESC1TS_EDI_TRANSMISSION" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="MESC1TS_EDI_ERROR">
+          <Key>
+            <PropertyRef Name="EDI_ID" />
+            <PropertyRef Name="LINE_NO" />
+          </Key>
+          <Property Name="EDI_ID" Type="int" Nullable="false" />
+          <Property Name="LINE_NO" Type="int" Nullable="false" />
+          <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="MESC1TS_EDI_LINEITEM">
+          <Key>
+            <PropertyRef Name="EDI_ID" />
+            <PropertyRef Name="LINE_NO" />
+          </Key>
+          <Property Name="EDI_ID" Type="int" Nullable="false" />
+          <Property Name="LINE_NO" Type="int" Nullable="false" />
+          <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="MESC1TS_EDI_TRANSMISSION">
+          <Key>
+            <PropertyRef Name="EDI_ID" />
+          </Key>
+          <Property Name="EDI_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CRTS" Type="datetime" />
+          <Property Name="WO_QTY" Type="int" />
+          <Property Name="WO_PASS_QTY" Type="int" />
+          <Property Name="WO_FAIL_QTY" Type="int" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MESC2DSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MESC2DSEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="MESC1TS_EDI_ERROR" EntityType="MESC2DSModel.MESC1TS_EDI_ERROR" />
+          <EntitySet Name="MESC1TS_EDI_LINEITEM" EntityType="MESC2DSModel.MESC1TS_EDI_LINEITEM" />
+          <EntitySet Name="MESC1TS_EDI_TRANSMISSION" EntityType="MESC2DSModel.MESC1TS_EDI_TRANSMISSION" />
+        </EntityContainer>
+        <EntityType Name="MESC1TS_EDI_ERROR">
+          <Key>
+            <PropertyRef Name="EDI_ID" />
+            <PropertyRef Name="LINE_NO" />
+          </Key>
+          <Property Name="EDI_ID" Type="Int32" Nullable="false" />
+          <Property Name="LINE_NO" Type="Int32" Nullable="false" />
+          <Property Name="LINE_DETAIL" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MESC1TS_EDI_LINEITEM">
+          <Key>
+            <PropertyRef Name="EDI_ID" />
+            <PropertyRef Name="LINE_NO" />
+          </Key>
+          <Property Name="EDI_ID" Type="Int32" Nullable="false" />
+          <Property Name="LINE_NO" Type="Int32" Nullable="false" />
+          <Property Name="LINE_DETAIL" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MESC1TS_EDI_TRANSMISSION">
+          <Key>
+            <PropertyRef Name="EDI_ID" />
+          </Key>
+          <Property Name="EDI_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CRTS" Type="DateTime" Precision="3" />
+          <Property Name="WO_QTY" Type="Int32" />
+          <Property Name="WO_PASS_QTY" Type="Int32" />
+          <Property Name="WO_FAIL_QTY" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="MESC2DSEntities">
+          <EntitySetMapping Name="MESC1TS_EDI_ERROR">
+            <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_ERROR">
+              <MappingFragment StoreEntitySet="MESC1TS_EDI_ERROR">
+                <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+                <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+                <ScalarProperty Name="LINE_DETAIL" ColumnName="LINE_DETAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESC1TS_EDI_LINEITEM">
+            <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_LINEITEM">
+              <MappingFragment StoreEntitySet="MESC1TS_EDI_LINEITEM">
+                <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+                <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+                <ScalarProperty Name="LINE_DETAIL" ColumnName="LINE_DETAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESC1TS_EDI_TRANSMISSION">
+            <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_TRANSMISSION">
+              <MappingFragment StoreEntitySet="MESC1TS_EDI_TRANSMISSION">
+                <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+                <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+                <ScalarProperty Name="WO_QTY" ColumnName="WO_QTY" />
+                <ScalarProperty Name="WO_PASS_QTY" ColumnName="WO_PASS_QTY" />
+                <ScalarProperty Name="WO_FAIL_QTY" ColumnName="WO_FAIL_QTY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

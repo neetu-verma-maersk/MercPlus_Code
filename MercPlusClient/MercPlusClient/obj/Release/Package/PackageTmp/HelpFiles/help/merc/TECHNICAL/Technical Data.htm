@@ -1,0 +1,152 @@
+<html>
+
+<head>
+<meta http-equiv="KEYWORDS" content="dictionary, field, fields, field name, table, dependencies, technical">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MERC</title>
+</head>
+
+<body topmargin="5" leftmargin="5">
+
+<p><b><font face="Verdana" size="2">MERC+ TECHNICAL DATA</font></b></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><b><font face="Verdana" size="2">
+<a target="_blank" href="PhysicalTableCols.htm">Physical Table Columns</a></font></b></p>
+
+<p><b><font face="Verdana" size="2">
+<a target="_blank" href="Table_Column_Comment.htm">Tables Column Comments</a></font></b></p>
+<p><b><font face="Verdana" size="2">
+<a target="_blank" href="data_dictionary.htm">Data 
+Dictionary</a>&nbsp;&nbsp; -&nbsp; may not be up to date</font></b></p>
+<p><b><font face="Verdana" size="2"><a href="field%20names.htm">Field Names/entities</a>&nbsp;&nbsp; </font></b></p>
+<p align="left"><b><font face="Verdana"><a href="#Dependencies"><big><big>
+<font size="2">Database Tables and Their Dependencies</font></big></big><font size="2">
+</font></a></font></b></p>
+<p align="left"><b><font face="Verdana" size="2">
+<a href="ARCHITECTURE_COMMON/diagrams/diagrams.htm">Diagrams</a></font></b></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center"><big><big>Database Tables and Their <a name="Dependencies">
+Dependencies</a></big></big><a name="Dependencies"> </a></p>
+<p><b>COMPANY</b> - The business responsible for receipt, tracking, approval and 
+payment of workorders. <br>
+Dependent entries: None </p>
+<p><b>CUSTOMER</b> - The company currently responsible for equipment being 
+repaired. <br>
+Dependent entries: None </p>
+<p><b>CUSTOMER SHOP</b> - An association of a customer to a repair shop. <br>
+Dependent entries: CUSTOMER, SHOP </p>
+<p><b>CUSTOMER SHOP MODE</b> - An association between CUSTOMER, SHOP and MODE. 
+It is used for Non STS Modes to identify non standard time billing that will 
+need approvals from a different security profile set up specifically for Non STS 
+Approvers. It is also used to define a PAYAGENT associated with each combination 
+for proper payment of a workorder in RRIS system. <br>
+Dependent entries: CUSTOMER, SHOP, MODE </p>
+<p><b>EQUIPMENT LIMIT</b> - A pricing limit for repairs on refurbished and 
+non-refurbished equipment. <br>
+Dependent entries: None </p>
+<p><b>EQUIPMENT TYPE</b> - A classification of equipment such as container, 
+chassis, reefer, genset. <br>
+Dependent entries: None </p>
+<p><b>INDEX</b> - Area of Equipment being repaired. The Index helps to group 
+Repair Codes associated to the same section of equipment. <br>
+Dependent entries: MANUAL MODE </p>
+<p><b>LABOR RATE</b> - The hourly amount charged to a Customer, by a Shop for 
+repair work done on equipment. The Rate is determined by the type of equipment 
+being repaired and the type of hours the mechanic worked. <br>
+Dependent entries: CUSTOMER SHOP </p>
+<p><b>LOCATION</b> - A geographical area in the world. <br>
+Dependent entries: REGION </p>
+<p><b>MANUAL</b> - A guideline to equipment repairs. <br>
+Dependent entries: NONE </p>
+<p><b>MANUAL MODE</b> - The types of equipment allowed to be repaired under a 
+given Manual. <br>
+Dependent entries: MANUAL, MODE </p>
+<p><b>MANUFACTURER</b> - The producer of the equipment. <br>
+Dependent entries: EQUIPMENT TYPE </p>
+<p><b>MODE</b> - A grouping of similar repair requirements, either pertaining to 
+a particular type of equipment or pertaining to a particular type of repair 
+work. <br>
+Dependent entries: NONE </p>
+<p><b>NON STS CODE</b> - Work that was done and is being invoiced that does not 
+include repair work to a piece of equipment. <br>
+Dependent entries: MODE </p>
+<p><b>PAYAGENT</b> - The Pay Agents defined in RRIS accounting system which 
+determine the characteristics of a payment, such as how the payment is made and 
+the organization responsible for making the payment. Dependent entries: NONE </p>
+<p><b>PAYAGENT VENDOR</b> - An association of Payagent and Vendor. <br>
+Dependent entries: PAYAGENT, VENDOR </p>
+<p><b>PREP TIME</b> - Maximum time that can be allocated for a given type of 
+preparation work being done on an equipment. <br>
+Dependent entries: MODE </p>
+<p><b>REGION</b> - A defined geographical area encompassing many locations. <br>
+Dependent entries: COMPANY </p>
+<p><b>REPAIR CODE</b> - An identification of work performed, including 
+description, maximum quantities and amounts. <br>
+Dependent entries: MANUAL MODE, INDEX, alternately SUB INDEX </p>
+<p><b>REPAIR CODE EXCLUSIVE</b> - A designated relationship between one repair 
+codes and another, which indicates the codes that are excluded from being added 
+to a workorder when a specific repair code is already used. <br>
+Dependent entries: MANUAL MODE, REPAIR CODE </p>
+<p><b>RRIS MONTH END</b> - Indication of current designated end of the month day 
+for RRIS processing. <br>
+Dependent entries: NONE </p>
+<p><b>SHOP</b> - A facility doing repair work on equipment. <br>
+Dependent entries: LOCATION, VENDOR </p>
+<p><b>SHOP LIMITS</b> - The limited amount a Shop can charge for repairs on a 
+Mode. Any workorder exceeding amount will be marked for suspension for review by 
+management. <br>
+Dependent entries: SHOP, MODE </p>
+<p><b>SUB INDEX</b> - A smaller grouping of similar repair codes. The Sub-index 
+helps to search for a particular Repair Code. <br>
+Dependent entries: MANUAL MODE, INDEX </p>
+<p><b>SUSPEND</b> - This entity will allow managers to flag individual repair 
+codes they would like the system to suspend when appearing on a WO. This will 
+allow the managers to review these particular workorders more closely. <br>
+Dependent entries: SHOP, REPAIR CODE, MODE </p>
+<p><b>SUSPEND CATEGORY</b> - These generic categories will be set up by managers 
+to identify the reasons a WO will be suspended, such as third party involvement.
+<br>
+Dependent entries: SUSPEND </p>
+<p><b>TRANSMIT</b> - The WO data may or may not have to be sent to RKRP for 
+reporting purposes, or RRIS for payment purposes. Based on the Customer the work 
+is being done for, and the type of work being done ( the Mode) the WO 
+information will or will not be transmitted. <br>
+Dependent entries: CUSTOMER, MODE </p>
+<p><b>VENDOR</b> - A Vendor may be responsible for many Shops in multiple 
+locations. To be paid from RRIS, the Vendor must be set up in RRIS system, and 
+the appropriate supplier codes generated by RRIS must be updated on the Payagent 
+Vendor table. <br>
+Dependent entries: NONE </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+    <p align="right"><font face="Verdana" size="1"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%m/%d/%Y" startspan -->11/11/2004<!--webbot bot="Timestamp" i-checksum="12511" endspan --></span></font></body></html>

@@ -1,0 +1,604 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.viewAdditionalDetailsModel
+  
+   
+    <link href="@Url.Content("~/Content/MercStyle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Css/jquery-ui.css")" rel="stylesheet" type="text/css" />    
+
+<style type="text/css">
+body {
+    background-color:#e9eff5;
+    margin-top:0px; 
+    margin-left:0px; 
+    margin-top:0px;
+
+}
+
+</style> 
+@using (Html.BeginForm())
+{
+    int intMaxCols = 2;
+    int intMaxCol1Colspan = 1;
+    bool blnShowCPHCost=false;
+    bool blnShowLocalCostUSD=false;
+    bool blnShowLocalCost=false;
+    double dblAgentPartsTaxCPH;
+    double dblAgentPartsTax;
+    //int iShopType=Model.SHOP_CD;
+    int iShopType = Convert.ToInt32(Model.SHOP_TYPE_CODE);
+    if(((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyCPH || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin)
+    {
+        blnShowCPHCost=true;
+    }
+    if(((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin)
+    {
+        blnShowLocalCostUSD=true;
+    }
+    if(((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin)
+    {
+        blnShowLocalCost=true;
+    }
+	
+	if (blnShowCPHCost)
+    {
+		intMaxCols = intMaxCols + 2;
+		intMaxCol1Colspan = intMaxCol1Colspan + 1;
+    }
+	
+	if (blnShowLocalCostUSD) 
+    {
+		intMaxCols = intMaxCols + 1;
+	}
+    
+	if (blnShowLocalCost) 
+    {
+		intMaxCols = intMaxCols + 2;
+	}
+
+    if (blnShowLocalCostUSD || blnShowLocalCost)
+    {
+        intMaxCol1Colspan = intMaxCol1Colspan + 1;
+    }
+    <div id="divMain">
+    
+                <b>Review Estimate Additional Details</b><br /><br />
+            @if(Model.Vender_Ref_No!="0" || Model.Vender_Ref_No!=null)
+            {
+                <div style="font-size:12px;">Vendor Reference Number : @Html.DisplayFor(x => x.Vender_Ref_No)</div>
+            }
+            @if(Model.WOID!="0" || Model.WOID!=null)
+            {
+                <div style="font-size:12px;">Estimate Number: @Html.DisplayFor(x => x.WOID)</div>
+            }   
+       
+          
+<table style="border:1px solid black; width:725px; border-color:#FFFFFF; font-size:10px; " border="1">
+    <tr >
+       
+        <td colspan="@intMaxCol1Colspan">
+            Exchange Rate :  @Html.DisplayFor(x=>x.EXCHANGE_RATE)
+            
+        </td>
+        <td></td>
+       @if (blnShowCPHCost) 
+       {
+		<td></td>
+       }
+       @if (blnShowLocalCostUSD) 
+       {
+		<td></td>
+       }
+	  @if (blnShowLocalCost) 
+       {
+		<td></td>
+       }
+	
+        
+    </tr>
+    <tr>
+       
+        <td colspan="@intMaxCol1Colspan">
+            Preparation time :  @Html.DisplayFor(x=>x.TOT_PREP_HRS) &nbsp;&nbsp;Hours
+            
+        </td>
+       <td></td>
+       @if (blnShowCPHCost) 
+       {
+		<td></td>
+       }
+       @if (blnShowLocalCostUSD) 
+       {
+		<td></td>
+       }
+	  @if (blnShowLocalCost) 
+       {
+		<td></td>
+       }
+    </tr>
+    <tr>
+        <td style="width:150px;"></td>
+        @if (blnShowCPHCost) 
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:center;">Rate EMR mng<br />(USD)</td>
+        }
+        @if (blnShowLocalCost || blnShowLocalCostUSD) {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:center;">Rate Local<br />@Html.DisplayFor(x=>x.Currency) </td>
+        }
+        
+        <td style="width:100px; vertical-align:bottom; text-align:center;" nowrap="nowrap">Hours</td>
+        @if (blnShowCPHCost) 
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:center;">EMR mng Cost<br />(USD)</td>
+        }
+        @if (blnShowLocalCostUSD)
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:center;">Shop Cost<br />(USD)</td>
+        }
+        @if (blnShowLocalCost) 
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:center;">Shop Cost<br />@Html.DisplayFor(x=>x.Currency) </td>
+        }
+        
+    </tr>
+    <tr>
+        <td style="width:150px;">Labour Cost, Ordinary Hours</td>
+        @if (blnShowCPHCost)
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.MANH_RATE_CPH)</td>
+        }
+        @if (blnShowLocalCost || blnShowLocalCostUSD) 
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.MANH_RATE) </td>
+        }
+        <td style="width:100px; vertical-align:bottom; text-align:right;" nowrap="nowrap">@Html.DisplayFor(x=>x.TOT_MANH_REG)</td>
+        @if (blnShowCPHCost) 
+        {
+		    //DIA:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_EMRCost_USD)</td>
+        }
+        @if (blnShowLocalCostUSD) 
+        {
+		    //D1B:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_USD)</td>
+        }
+	    @if (blnShowLocalCost) 
+        {
+		    //D1C:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_Currency) </td>
+        }
+        
+        
+        
+    </tr>
+    <tr>
+        <td style="width:150px;">Labour Cost, Overtime 1</td>
+        @if (blnShowCPHCost)
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.OT_RATE_CPH)</td>
+        }
+	    @if (blnShowLocalCost || blnShowLocalCostUSD) 
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.OT_RATE) </td>
+        }          
+        <td style="width:100px; vertical-align:bottom; text-align:right;" nowrap="nowrap">@Html.DisplayFor(x=>x.TOT_MANH_OT)</td>
+        @if (blnShowCPHCost) 
+        {
+		    //D1D:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_EMRCost_USD_OT)</td>
+        }
+
+	    @if (blnShowLocalCostUSD) 
+        {
+		    //D1E:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_USD_OT)</td>
+        }
+	    @if (blnShowLocalCost) 
+        {
+		    //D1F:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_Currency_OT) </td>
+        }
+        
+        
+        
+    </tr>
+     <tr>
+        <td style="width:150px;">Labour Cost, Overtime 2</td>
+         @if (blnShowCPHCost)
+         {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.DT_RATE_CPH)</td>
+	     }
+	    @if (blnShowLocalCost || blnShowLocalCostUSD) 
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.DT_RATE) </td>
+        }
+	    <td style="width:100px; vertical-align:bottom; text-align:right;" nowrap="nowrap">@Html.DisplayFor(x=>x.TOT_MANH_DT)</td>
+	    @if (blnShowCPHCost) 
+        {
+		    //D1G:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_EMRCost_USD_DT)</td>
+        }
+
+	    @if (blnShowLocalCostUSD) 
+        {
+		    //D1H:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_USD_DT)</td>
+        }
+	    @if (blnShowLocalCost)
+        {
+		    //D1I:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_Currency_DT) </td>
+        }
+      
+    </tr>
+     <tr>
+        <td style="width:150px;">Labour Cost, Overtime 3</td>
+         @if (blnShowCPHCost) 
+         {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.MISC_RATE_CPH)</td>
+         }
+	     @if (blnShowLocalCost || blnShowLocalCostUSD) 
+        {
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.MISC_RATE) </td>
+        }
+	    <td style="width:100px; vertical-align:bottom; text-align:right;" nowrap="nowrap">@Html.DisplayFor(x=>x.TOT_MANH_MISC)</td>
+	    @if (blnShowCPHCost) 
+        { 
+		    //D1J:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_EMRCost_USD_MISC)</td>
+	    }
+
+	    @if (blnShowLocalCostUSD) 
+        {
+		    //D1K:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_USD_MISC)</td>
+        }
+	    @if (blnShowLocalCost) 
+        {
+		     //'D1L:
+		     <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_ShopCost_Currency_MISC) </td>
+        }   
+        
+    </tr>
+     <tr>
+        <td style="width:150px;" colspan="@intMaxCol1Colspan">Total Labour Cost, excluding Tax</td>
+
+        <td style="width:100px; vertical-align:bottom; text-align:right;" nowrap="nowrap">@Html.DisplayFor(x=>x.TOT_REPAIR_MANH)</td>
+         @if (blnShowCPHCost) 
+         {
+		    //D1M:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.TOT_LABOR_COST_CPH)</td>
+	     }
+        @if (blnShowLocalCostUSD) 
+        {
+		    //D1N:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.Cal_TOT_LABOR_COST_Currency)</td>
+	    }
+	    @if (blnShowLocalCost) 
+        {
+		    //D1O:
+		    <td nowrap="nowrap" style="vertical-align:bottom; text-align:right;">@Html.DisplayFor(x=>x.TOT_LABOR_COST) </td>
+        }
+        
+    </tr>
+    <tr>
+        <td colspan="@intMaxCols" style="height:15px;"></td>
+    </tr>
+    <tr>
+        <td colspan="@(intMaxCol1Colspan + 1)">Cost of numbered parts</td>
+        @if (Model.AGENT_PARTS_TAX_CPH > 0)
+        {
+            dblAgentPartsTaxCPH = Convert.ToDouble(Model.AGENT_PARTS_TAX_CPH);
+        }
+        else
+        {
+            dblAgentPartsTaxCPH = 0;
+        }
+         @if (Model.AGENT_PARTS_TAX > 0)
+        {
+            dblAgentPartsTax = Convert.ToDouble(Model.AGENT_PARTS_TAX);
+        }
+        else
+        {
+            dblAgentPartsTax = 0;
+        }
+        @if (blnShowCPHCost)
+        {
+		    //D2A:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.TOT_MAN_PARTS_CPH)</td>
+        }
+        @if (blnShowLocalCostUSD) 
+        {
+		    //D2B:
+		    decimal D2B;
+		    if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop) 
+            {
+			    //if iShopType = 2 or iShopType = 4 then  ( Commented for RQ7431)
+			    if (iShopType == 2)
+                {
+						
+				    <td>&nbsp;</td>
+                }
+			    else
+                {
+				
+				    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_TOT_MAN_PARTS_USD)</td>
+                }
+            }
+         }
+        @if (blnShowLocalCost) 
+		{
+		
+		    //D2C:
+		        
+		    if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop) 
+            {
+			    //if iShopType = 2 or iShopType = 4 then ( Commented for RQ7431)	
+			    if (iShopType == 2) 
+                {
+				    <td>&nbsp;</td>
+                }
+			    else
+                {
+				<td style="text-align:right;">@Html.DisplayFor(x=>x.TOT_MAN_PARTS)</td>
+			    }
+            }
+         }        
+          
+    </tr>
+    <tr>
+        <td colspan="@(intMaxCol1Colspan + 1)">Cost of other materials supplied by shop</td>
+        @if (blnShowCPHCost)
+        {
+		     //D2D:
+		     <td style="text-align:right;">@Html.DisplayFor(x=>x.TOT_SHOP_AMT_CPH)</td>
+        }
+	    @if (blnShowLocalCostUSD) 
+        {
+		    //D2E:
+		
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_SHOP_AMT_USD)</td>
+        }
+	    @if (blnShowLocalCost) 
+        {
+		    //D2F:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.TOT_SHOP_AMT)</td>
+        }  
+       
+    </tr>
+    <tr>
+        <td colspan="@(intMaxCol1Colspan + 1)">Total shop supplied material cost excluding tax</td>
+        @if (blnShowCPHCost) 
+        {
+		    //D2G:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_SHOP_AMT_CPH_AND_MAN_PARTS_CPH)</td>
+	    }
+	
+	    @if (blnShowLocalCostUSD) 
+        {
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_SHOP_AMT_AND_MAN_PARTS_USD)</td>
+        }
+		@if (blnShowLocalCost) 
+        {
+		    //D2I:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_SHOP_AMT_AND_MAN_PARTS)</td>	
+        }
+      
+    </tr>
+    <tr>
+        @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop==false) 
+        {
+		    //9999
+		    <td colspan="@(intMaxCol1Colspan + 1)">Total owner supplied parts excluding tax</td>
+        }
+		@if (blnShowCPHCost) 
+        {
+			//'D2J:
+			<td style="text-align:right; color:#707070">@Html.DisplayFor(x=>x.TOT_MAERSK_PARTS_CPH)</td>
+        }
+
+		@if (blnShowLocalCostUSD) 
+        {
+			//D2K:
+			
+			<td style="text-align:right;">&nbsp;</td>
+        }
+
+		@if (blnShowLocalCost)
+        {	
+			<td style="text-align:right;">&nbsp;</td>
+		}
+       
+    </tr>
+    <tr>
+        <td colspan="@intMaxCol1Colspan"></td>
+        <td style="text-align:center;">Tax Rates</td>
+        @if (blnShowCPHCost)
+        {
+		    <td></td>
+        }
+	
+	    @if (blnShowLocalCostUSD) 
+        {
+		    <td></td>
+        }
+	
+	    @if (blnShowLocalCost) 
+        {
+		    <td></td>
+        }
+	
+    </tr>
+    <tr>
+        <td colspan="@intMaxCol1Colspan">Import tax numbered shop supplied parts</td>
+        <td nowrap="nowrap">Import:  @Html.DisplayFor(x=>x.IMPORT_TAX_PCT)%</td>
+        @if (blnShowCPHCost) 
+        {
+		    //D3A1:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.IMPORT_TAX_CPH)</td>
+        }
+	
+        @if (blnShowLocalCostUSD)
+        {
+            //D3A2:
+		
+		    if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop)
+            {
+			    //'if iShopType = 2 or iShopType = 4 then ( Commented for RQ7431)
+			    if (iShopType == 2) 
+                {
+				    <td>&nbsp;</td>
+                }
+			    else
+                {
+				    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_IMPORT_TAX)</td>
+			    }	
+            }
+		
+        }
+       
+        @if (blnShowLocalCost)
+		{
+		    if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop)
+            {
+			    //'if iShopType = 2 or iShopType = 4 then ( Commented for RQ7431)
+			    if (iShopType == 2)
+                {
+				    <td>&nbsp;</td>
+                }
+			    else
+                {
+				    <td style="text-align:right;">@Html.DisplayFor(x=>x.IMPORT_TAX)</td>
+			    }
+             }
+        }
+	
+       
+    </tr>
+    <tr>
+        <td colspan="@intMaxCol1Colspan">Sales tax/VAT; shop supplied parts</td>
+        <td nowrap="nowrap">Sales tax parts:  @Html.DisplayFor(x=>x.SALES_TAX_PARTS_PCT)%</td>
+        @if (blnShowCPHCost)
+        {
+		    //'D3B:
+		    <td style="text-align:right">@Html.DisplayFor(x=>x.SALES_TAX_PARTS_CPH)</td>
+        }
+		@if (blnShowLocalCostUSD)
+        {
+		    //'D3C:
+		    <td style="text-align:right">@Html.DisplayFor(x=>x.CAL_SALES_TAX_PARTS)</td>
+        }
+	    @if (blnShowLocalCost)
+        {
+		    //'D3D:
+		    <td style="text-align:right">@Html.DisplayFor(x=>x.SALES_TAX_PARTS)</td>
+         }
+        
+    </tr>
+    @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH) 
+    {
+    <tr>
+        <td colspan="@intMaxCol1Colspan">Sales tax/VAT; agent supplied parts</td>
+        <td nowrap="nowrap"></td>
+        @if (blnShowCPHCost) 
+        {
+			//'D4B:
+            <td style="text-align:right">@dblAgentPartsTaxCPH</td>
+			
+		}
+
+		@if (blnShowLocalCostUSD)
+        {
+			//'D4C:
+			//'strDetails = strDetails & "<td align=""right"">" & formatNumber(cdbl(oWorkOrder.GetWOField("EXCHANGE_RATE")/100) * dblAgentPartsTax,2,true,false) & "</td>"
+			<td style="text-align:right">&nbsp;</td>
+        }
+		@if (blnShowLocalCost) 
+        {
+			
+			<td style="text-align:right">&nbsp;</td>
+        }
+       
+    </tr>
+    }
+    <tr>
+        <td colspan="@intMaxCol1Colspan">Sales tax/VAT; labour</td>
+        <td nowrap="nowrap">Sales tax labour :  @Html.DisplayFor(x=>x.SALES_TAX_LABOR_PCT)%</td>
+        @if (blnShowCPHCost) 
+        {
+		    //'D3E:
+		    <td style="text-align:right">@Html.DisplayFor(x=>x.SALES_TAX_LABOR_CPH)</td>
+        }
+	
+	    @if (blnShowLocalCostUSD) 
+        {
+		    //'D3F:
+		    <td style="text-align:right">@Html.DisplayFor(x=>x.CAL_SALES_TAX_LABOR)</td>
+        }
+	    @if (blnShowLocalCost)
+        {
+		    //'D3G:
+		    <td style="text-align:right">@Html.DisplayFor(x=>x.SALES_TAX_LABOR)</td>
+        }
+     
+    </tr>
+    <tr>
+        <td colspan="@(intMaxCol1Colspan + 1)">Total import tax</td>
+        @if (blnShowCPHCost) 
+        {
+		    //D3H1:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.IMPORT_TAX_CPH)</td>
+	    }
+	    @if (blnShowLocalCostUSD) 
+        {
+		    //D3H2:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_IMPORT_TAX)</td>
+        }
+	    @if (blnShowLocalCost) 
+        {
+		    //D3H3:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.IMPORT_TAX)</td>
+        }
+       
+        
+    </tr>
+    <tr>
+        <td colspan="@(intMaxCol1Colspan + 1)">Total sales tax/VAT</td>
+        @if (blnShowCPHCost) 
+        {
+		    //'D3I:
+		     <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_SALES_AGENT_CPH)</td>
+	    }
+
+	   
+	    @if (blnShowLocalCostUSD) 
+        {
+		    //'D3J:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_SALES_AGENT)</td>
+        }
+	
+	    @if (blnShowLocalCost) 
+        {
+            //D3K:
+		    <td style="text-align:right;">@Html.DisplayFor(x=>x.CAL_SALES_AGENT_PARTS)</td>
+        }
+	
+        
+    </tr>
+</table>
+   
+
+
+    <table style="width:100%;">
+        <tr>
+
+            <td style="vertical-align:top; text-align:left; margin-right:0px; font-size:12px; width:150px;" >
+                    <a href="#" onclick = "window.close();">Close this window</a>
+                </td>
+            <td style="vertical-align:top; text-align:left; margin-right:0px; font-size:12px;" >
+                    <a href="#" onclick = "window.print()">Print</a>
+                </td>
+ 
+            </tr>
+        </table>
+    </div>
+
+}

@@ -1,0 +1,128 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataVendorModel
+
+@{
+    if (Model.IsUpdate)
+    {
+        ViewBag.Title = "ViewVendorDetails";
+    }
+    else
+    {
+        ViewBag.Title = "CreateVendor";
+    }
+
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+
+<script src="~/Areas/ManageMasterData/Script/Vendor.js"></script>
+
+<div>
+        <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_vendor_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+     
+        <div width:"750px">
+            
+                    <h2>Update or Add New Vendor</h2>
+              
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+<br />
+@using (Html.BeginForm())
+{
+    <table>
+    
+        @if (Model.IsUpdate)
+        {
+            if (!Model.IsFlag)
+            {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.VendorCode)
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.VendorCode, Model.drpVendorList, "Select Vendor", new { id = "drpVendorList"})
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>}
+        }
+
+        
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.VendorDesc)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.VendorDesc, Model.VendorDesc, new { id = "VendorDesc" , @Value="N/A", @disabled=true, style= "width:170px;background-color:#DCDCDC!important;", @readonly = true })
+
+            </td>
+           
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.VenCountryCode)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.VenCountryCode, Model.drpVenCountryList, "Select Country", new { id = "drpVenCountryList", style= "width:70px;background-color:#DCDCDC!important;", disabled = "disabled"  })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.VendorActiveSw)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.VendorActiveSw, Model.drpVendorSwitchList, new { id = "drpVendorSwitchList", style = "width:200px;background-color:#DCDCDC!important;", disabled = "disabled" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        @if (Model.IsUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUserVendor)
+                </td>
+                 <td style="padding:0 0 0 0;">
+                     @Html.TextBoxFor(model => model.ChangeFUserVendor, new { id = "ChangeUserVendor", @Value="N/A", @disabled=true, style= "width:170px;background-color:#DCDCDC!important;", @readonly = true  })
+                </td>
+                 <td style="padding:0 0 0 0;">
+                    @Html.TextBoxFor(model => model.ChangeLUserVendor, new { id = "ChangeUserVendor1", @Value="N/A", @disabled=true, style= "width:170px;background-color:#DCDCDC!important;", @readonly = true })
+                  
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeTimeVendor)
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeTimeVendor, new { id = "ChangeTimeVendor", @Value="N/A", @disabled=true, style= "width:170px;background-color:#DCDCDC!important;", @readonly = true  })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <br />
+            <br />
+        } 
+          
+        @*else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/CreateVendor" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    <input type="submit" value="Return to Update" formaction="/ManageMasterData/ManageMasterData/ViewVendorDetails" />
+                   
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }*@
+    </table>
+}

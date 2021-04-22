@@ -1,0 +1,91 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManagerApprovalModel
+@using MercPlusClient.UtilityClass
+
+<table style="width: 100%; overflow: scroll; vertical-align: text-top;" border="1" cellpadding="5" cellspacing="0" id="tblRPAdditionalRows">
+    @{
+        foreach (var item in Model.dbWOD.RemarksList)
+        {
+            string usrDetail = "[" + item.CRTSDate + "]  " + item.ChangeUser + " - ";
+            MercPlusClient.UtilityClass.Validation.REMARKSTYPE RT;
+
+            if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP || Model.ISANYCPH || Model.ADMIN || Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP)
+            {
+                RT = (MercPlusClient.UtilityClass.Validation.REMARKSTYPE)Enum.Parse(typeof(MercPlusClient.UtilityClass.Validation.REMARKSTYPE), item.RemarkType);
+                switch (RT)
+                {
+                    case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.E:
+        <tr>
+            <td>External Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                        break;
+                    case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.I: 
+        <tr>
+            <td>Internal Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                        break;
+                    case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.V: 
+        <tr>
+            <td>Shop Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                        break;
+                    case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.S: 
+        <tr>
+            <td>System Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                        break;
+                    default: break;
+                }
+            }
+            else
+            {
+                if (Model.ISANYSHOP && (item.RemarkType.Equals(MercPlusClient.UtilityClass.Validation.REMARKSTYPE.V.ToString()) || item.RemarkType.Equals(MercPlusClient.UtilityClass.Validation.REMARKSTYPE.E.ToString())))
+                {
+                    RT = (MercPlusClient.UtilityClass.Validation.REMARKSTYPE)Enum.Parse(typeof(MercPlusClient.UtilityClass.Validation.REMARKSTYPE), item.RemarkType);
+                    switch (RT)
+                    {
+                        case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.E:
+        <tr>
+            <td>External Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                            break;
+                        case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.V: 
+        <tr>
+            <td>Shop Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                            break;
+                        default: break;
+                    }
+                }
+               //pinaki 
+                 if( (Model.MPRO_CLUSTER||Model.MPRO_SHOP|| Model.READONLY) && (item.RemarkType.Equals(MercPlusClient.UtilityClass.Validation.REMARKSTYPE.V.ToString()) || item.RemarkType.Equals(MercPlusClient.UtilityClass.Validation.REMARKSTYPE.E.ToString())))
+                {
+                    RT = (MercPlusClient.UtilityClass.Validation.REMARKSTYPE)Enum.Parse(typeof(MercPlusClient.UtilityClass.Validation.REMARKSTYPE), item.RemarkType);
+                    switch (RT)
+                    {
+                        case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.E:
+        <tr>
+            <td>External Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                            break;
+                        case MercPlusClient.UtilityClass.Validation.REMARKSTYPE.V: 
+        <tr>
+            <td>Shop Remarks</td>
+            <td colspan="5">@Html.LabelForModel(usrDetail + " " + item.Remark) </td>
+        </tr>
+                            break;
+                        default: break;
+                    }
+                } // add
+                
+                
+            }
+        }
+    }
+</table>

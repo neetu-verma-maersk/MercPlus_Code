@@ -1,0 +1,701 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel
+@using MercPlusClient.UtilityClass
+<script src="~/Areas/ManageWorkOrder/Script/workOrder.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        LoadShopDetails();
+    });
+</script>
+
+@{
+    ViewBag.Title = "Manage Work Order";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+    
+}
+
+
+<div id="divViewRoot">
+    <div id="ErrorMsgContainer" style="margin: 10px; width: 98%;" PrevShop=@TempData["SHOP"]>
+        @if (TempData["INFO"] != null)
+        {
+            <span class="alert-successitem" style="width: 100%;">
+                @Html.Raw(TempData["INFO"].ToString())
+            </span>
+        }
+
+    </div>
+    <table style="width: 100%; vertical-align: top; text-align: left;">
+        <tr>
+            <td colspan="7"></td>
+        </tr>
+        @if (Model.IsCreateNew)
+        {
+            <tr>
+                <td colspan="2" style="width: 25%;">
+                    <label>Sh<u>o</u>p Code</label></td>
+                <td style="width: 15%;">@Html.LabelFor(model => model.CustomerCode)</td>
+
+                @if (Model.IsSingle)
+                {
+                    <td style="width: 15%;">@Html.LabelFor(model => model.Cause)</td>
+                    <td style="width: 15%;">@Html.LabelFor(model => model.ThirdPartyPort)</td>
+                    <td style="width: 15%;">@Html.LabelFor(model => model.Currency)</td>
+                }
+                else
+                {
+                    <td style="width: 15%;">@Html.LabelFor(model => model.Currency)</td>
+                    <td style="width: 15%;">@Html.LabelFor(model => model.Cause)</td>
+                    <td style="width: 15%;"></td>                    
+                }
+
+                <td style="width: 150px;"><a style="font-size: 12px;" href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/woentry1_help.htm" target="_blank">Estimate Help File</a></td>
+            </tr>
+       
+            <tr>
+                <td colspan="2" style="width: 25%;">@Html.DropDownListFor(model => model.ShopCode, Model.DDLShop, new { id = "ddlShop", style = "width: 100%;", accesskey = "o" })</td>
+                <td style="width: 15%;">@Html.DropDownListFor(model => model.CustomerCode, Model.DDLCustomer, new { id = "ddlCustomer", style = "width: 100%;" })</td>
+                @if (Model.IsSingle)
+                {
+                    <td style="width: 15%;">@Html.DropDownListFor(model => model.CauseCode, Model.DDLCause, new { id = "UICause", style = "width: 100%;", @CauseCode = Model.CauseCode })</td>
+                    <td style="width: 15%;">@Html.TextBoxFor(model => model.ThirdPartyPort, new { style = "width: 70%;", @readonly = "readonly", @maxlength = "8" })</td>
+                    <td style="width: 15%;">@Html.LabelForModel(Model.Currency, new { id = "Currency", style = "width: 100%;", @CurrCode = Model.CurrCode })</td>
+                }
+                else
+                {
+                    <td style="width: 15%;">@Html.LabelForModel(Model.Currency, new { id = "Currency", style = "width: 100%;", @CurrCode = Model.CurrCode })</td>
+                    <td style="width: 15%;">@Html.LabelForModel(Model.Cause, new { id = "UICause", style = "width: 100%;", @CauseCode = Model.CauseCode })</td>
+                    <td style="width: 15%;"></td>
+                }
+                <td style="width: 15%;">&nbsp;</td>
+            </tr>
+        }
+        else
+        {
+            if (Model.IsSingle)
+            {
+            <tr>
+                <td><span style="width: 20%;">@Html.LabelFor(model => model.ShopCode, new { style = "width: 100%;" })</span></td>
+                <td><span style="width: 15%;">@Html.LabelFor(model => model.CustomerCode, new { style = "width: 100%;" })</span></td>
+                <td style="width: 10%;">@Html.LabelFor(model => model.Cause, new { style = "width: 100%;" })</td>
+                <td style="width: 15%;"><span style="width: 100%;">@Html.LabelFor(model => model.ThirdPartyPort, new { style = "width: 70%;" })</span></td>
+                <td style="width: 10%;">@Html.LabelFor(model => model.CompletionDate)</td>
+                <td style="width: 15%;">@Html.LabelFor(model => model.Currency)</td>
+                <td style="width: 15%;"><a style="font-size: 12px;" href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/woentry1_help.htm">Estimate Help File</a></td>
+            </tr>
+            <tr>
+                <td><span style="width: 30%;">@Html.LabelForModel(Model.dbWOD.Shop.ShopCode, new { style = "width: 100%;", id = "ddlShop", @shopCode = Model.dbWOD.Shop.ShopCode })
+                </span></td>
+                @if (Model.dbWOD.Shop.Customer != null && Model.dbWOD.Shop.Customer.Count > 0)
+                {
+                    <td><span style="width: 15%;">@Html.LabelForModel(Model.dbWOD.Shop.Customer[0].CustomerCode, new { style = "width: 100%;", id = "ddlCustomer", @custCode = Model.dbWOD.Shop.Customer[0].CustomerCode })</span></td>
+                }
+                else
+                {
+                    <td style="width: 15%;" id="ddlCustomer" custcode=""></td>
+                }
+                <td>@Html.DropDownListFor(model => model.CauseCode, Model.DDLCause, new { id = "UICause", style = "width: 100%;", @CauseCode = Model.CauseCode })</td>
+                <td>@if (Model.CauseCode != "" && Int32.Parse(Model.CauseCode) > 2)
+                    {
+                    @Html.TextBoxFor(model => model.ThirdPartyPort, new { style = "width: 70%;", @maxlength = "8" })
+                    }
+                    else
+                    {
+                    @Html.TextBoxFor(model => model.ThirdPartyPort, new { style = "width:70%;", @readonly = "readonly", @maxlength = "8" })
+                    }
+                </td>
+                <td>
+                    @if (Model.CompletionDate != null)
+                    {
+                        @Html.TextBoxFor(model => model.CompletionDate, new { style = "width: 80%;", @class = "CLSDATE" })
+                    }
+                    else
+                    {
+                        if (Model.dbWOD.WorkOrderStatus <= 390)
+                        {
+                        @Html.TextBoxFor(model => model.CompletionDate, new { style = "width: 80%;", @class = "CLSDATE" })
+                        }
+                        else
+                        {
+                        @Html.TextBoxFor(model => model.dbWOD.RepairDate, new { style = "width:80%;", @class = "CLSDATE" })
+                        }
+                    }
+                </td>
+                <td style="width: 15%;">@Html.LabelForModel(Model.Currency, new { id = "Currency", style = "width: 100%;", @CurrCode = Model.CurrCode })</td>
+                <td style="width: 15%;">&nbsp;</td>
+            </tr>
+            }
+            else
+            {
+            <tr>
+                <td colspan="4" style="width: 40%;">@Html.LabelFor(model => model.ShopCode)<span style="width: 10px;"></span>@Html.LabelFor(model => model.CustomerCode)<span style="width: 10px;"></span>@Html.LabelFor(model => model.Currency)</td>
+                <td style="width: 30%;">@Html.LabelFor(model => model.Cause)<span style="width: 30px;"></span>@Html.LabelFor(model => model.CompletionDate)</td>
+                <td style="width: 15%;"></td>
+                <td style="width: 15%;"><a style="font-size: 12px;" href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/woentry1_help.htm">Estimate Help File</a></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: 40%;">@Html.Label(Model.dbWOD.Shop.ShopCode)<span style="width: 10px;"></span>@Html.Label(Model.dbWOD.Shop.Customer[0].CustomerCode)<span style="width: 10px;"></span>@Html.LabelForModel(Model.Currency, new { id = "Currency", style = "width: 20%;", @CurrCode = Model.CurrCode })</td>
+                <td style="width: 30%;">@Html.LabelForModel(Model.Cause, new { id = "UICause", style = "width: 20%;", @CauseCode = Model.CauseCode })<span style="width: 30px;"></span>@Html.TextBoxFor(model => model.CompletionDate, new { style = "width: 20%;" })</td>
+                <td style="width: 15%;"></td>
+                <td style="width: 15%;">&nbsp;</td>
+            </tr>
+            }
+        }
+        <tr style="vertical-align: top;">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td rowspan="7">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="button" value="Submit" name="btnSubmit" class="woBtnWidth" onclick="DoSubmit();" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="Review" name="btnReview" class="woBtnWidth" onclick="DoReview();" />
+                        </td>
+                    </tr>
+                    @if (Model.IsCreateNew && Model.ISANYSHOP)
+                    {
+                        if (Model.IsSingle)
+                        {
+                        <tr>
+                            <td>
+                                <input type="button" value="Save As Draft" name="btnSaveAsDraft" class="woBtnWidth" onclick="DoSaveAsDraft();" />
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else if (Model.ISANYSHOP)
+                    {
+                        if (Model.dbWOD.WorkOrderStatus == 0)
+                        { 
+                        <tr>
+                            <td>
+                                <input type="button" value="Save As Draft" name="btnSaveAsDraft" class="woBtnWidth" onclick="DoSaveAsDraft();" />
+                            </td>
+                        </tr>
+                        }
+                        <tr>
+                            <td>
+                                <input type="button" value="Delete" name="btnDelete" class="woBtnWidth" onclick="DoDelete();" />
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>
+                            <input type="button" value="Get Hours" name="btnGetHours" class="woBtnWidth" onclick="GetHours();" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="Clear" name="btnClear" class="woBtnWidth" onclick="DoClear();" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="Print" name="btnPrint" class="woBtnWidth" onclick="DoPrint();" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" rowspan="2" style="padding: 0px;">
+                <table>
+                    <tr>
+                        <td style="text-align: left;">@Html.LabelFor(model => model.EquipmentNo)</td>
+                        <td style="text-align: left;">@Html.LabelFor(model => model.VendorRefNo)</td>
+                        <td>&nbsp;</td>
+                        <td colspan="2">@Html.LabelFor(model => model.Mode)</td>
+                        <td>@Html.LabelFor(model => model.UnitIdentifierDigit)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="vertical-align: central; padding: 0px;">
+                            <table id="tblEquipment">
+                                @if (Model.IsSingle)
+                                {
+                                    <tr>
+                                        @if (Model.EquipmentList == null || Model.EquipmentList.Count == 0)
+                                        {
+                                            <td>@Html.TextBoxFor(model => Model.EquipmentNo, new { @class = "clsEqp clsENo", style = "text-transform:uppercase;", @EqpValidated = false })</td>
+                                            <td>@Html.TextBoxFor(model => Model.VendorRefNo, new { @class = "clsVenR", style = "text-transform:uppercase;", @maxlength = "10" })</td>
+                                        }
+                                        else
+                                        {
+                                            if (Model.IsCreateNew)
+                                            {
+                                            <td>@Html.TextBoxFor(model => Model.EquipmentList[0].EquipmentNo, new { @class = "clsEqp clsENO", style = "text-transform:uppercase;", @EqpValidated = false })</td>
+                                            }
+                                            else
+                                            {
+                                            <td>
+                                                @* @Html.DisplayTextFor(model => Model.dbWOD.EquipmentList[0].EquipmentNo)*@
+                                                @Html.LabelForModel(Model.dbWOD.EquipmentList[0].EquipmentNo, new { id = "EquipmentNo" })
+                                            </td>
+                                            }
+                                            
+                                            <td style="width: 160px; float: right;">@Html.TextBoxFor(model => Model.EquipmentList[0].VendorRefNo, new { @class = "clsVenR", style = "text-transform:uppercase;width:120px;float:right;", @maxlength = "10" })</td>                                            
+                                        }
+                                    </tr>
+                                }
+                                else
+                                {
+                                    if (Model.EquipmentList != null && Model.EquipmentList.Count > 0)
+                                    {
+                                        int cnt = 0;
+                                        foreach (var eqip in Model.EquipmentList)
+                                        {
+                                            if (cnt == 0)
+                                            {
+                                    <tr>
+                                        <td>@Html.TextBoxFor(model => eqip.EquipmentNo, new { @class = "clsEqp clsENO", style = "text-transform:uppercase;" })</td>
+                                        <td>@Html.TextBoxFor(model => eqip.VendorRefNo, new { @class = "clsVenR", style = "text-transform:uppercase;", @maxlength = "10" })</td>
+                                    </tr>    
+                                            }
+                                            else
+                                            {
+                                    <tr>
+                                        @*<td>@Html.TextBoxFor(model => eqip.EquipmentNo, new { style = "text-transform:uppercase;" })</td>*@
+                                        @Html.DisplayTextFor(model => eqip.EquipmentNo)
+                                        <td>@Html.TextBoxFor(model => eqip.VendorRefNo, new { @class = "clsVenR", style = "text-transform:uppercase;", @maxlength = "10" })</td>
+                                    </tr> 
+                                            }
+                                            cnt++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < 20; i++)
+                                        {
+                                            if (i == 0)
+                                            {
+                                    <tr>
+                                        <td>@Html.TextBoxFor(model => Model.EquipmentNo, new { @class = "clsEqp clsENO", style = "text-transform:uppercase;" })</td>
+                                        <td>@Html.TextBoxFor(model => Model.VendorRefNo, new { @class = "clsVenR", style = "text-transform:uppercase;", @maxlength = "10" })</td>
+                                    </tr> 
+                                            }
+                                            else
+                                            {
+                                    <tr>
+                                        <td>@Html.TextBoxFor(model => Model.EquipmentNo, new { @class = "clsENO", style = "text-transform:uppercase;" })</td>
+                                        <td>@Html.TextBoxFor(model => Model.VendorRefNo, new { @class = "clsVenR", style = "text-transform:uppercase;", @maxlength = "10" })</td>
+                                    </tr> 
+                                            }
+                                        }
+                                    }
+                                }
+                            </table>
+                        </td>
+                        <td></td>
+                        @if (Model.IsCreateNew)
+                        {
+                            if (Model.IsSingle)
+                            {
+                            <td colspan="2" style="vertical-align: central;">@Html.DropDownListFor(model => model.Mode, Model.DDLMode, new { id = "ddlMode", style = "width: 150px;" })</td> 
+                            }
+                            else
+                            {
+                            <td colspan="2" style="vertical-align: top;">@Html.DropDownListFor(model => model.Mode, Model.DDLMode, new { id = "ddlMode", style = "width: 150px;" })</td>
+                            }
+                        }
+                        else
+                        {
+                            <td colspan="2" style="vertical-align: central;">@Html.LabelForModel(Model.ModeDescp, new { id = "ddlMode", @modeCode = Model.Mode })</td>
+                        }
+                        <td style="vertical-align: top;" id="lblIndicator">@Model.IndicatorCode</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="font-size: 12px;">Please indicate General condition of box, Main damage consists of, Wear and tear share of repair, Repair in other mode required.</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width: 35%;">@Html.LabelFor(model => model.Remarks, new { style = "width: 100%;" })</td>
+            <td colspan="4" style="width: 50%;">@Html.LabelFor(model => model.EquipmentInformation, new { style = "width: 100%;" })</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top; width: 35%; height: 30%;">@Html.TextAreaFor(model => model.Remarks, new { style = "width:100%;height:100%;", rows = "7", cols = "20", @maxlength = "255" })</td>
+            <td colspan="4" rowspan="2" style="width: 50%; height: 40%; vertical-align: top;">
+                <div style="overflow-x: auto; width: 100%; height: 100%; border: 2px solid grey;">
+                    <table>
+                        <tr>
+                            <td style="width: 15%;">@Html.LabelFor(model => model.Type)</td>
+                            <td style="width: 15%;" id="RKType">@Html.DisplayTextFor(model => Model.Type)</td>
+                            <td style="width: 15%;">@Html.LabelFor(model => model.InService)</td>
+                            <td style="width: 15%;" id="RKInService">@Html.DisplayTextFor(model => Model.InService)</td>
+                            <td style="width: 15%;">@Html.LabelFor(model => model.Profile)</td>
+                            <td style="width: 15%;" id="RKProfile">@Html.DisplayTextFor(model => Model.Profile)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 15%;">@Html.LabelFor(model => model.ReeferMakeModel)</td>
+                            <td style="width: 15%;" id="RKReeferMakeModel">@Html.DisplayTextFor(model => Model.ReeferMakeModel)</td>
+                            <td>@Html.LabelFor(model => model.Size)</td>
+                            <td style="width: 15%;" id="RKSize">@Html.DisplayTextFor(model => Model.Size)</td>
+                            <td>@Html.LabelFor(model => model.Deldatsh)</td>
+                            <td style="width: 15%;" id="RKPTIDate">@Html.DisplayTextFor(model => Model.Deldatsh)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Material)</td>
+                            <td style="width: 15%;" id="RKMaterial">@Html.DisplayTextFor(model => Model.Material)</td>
+                            <td>@Html.LabelFor(model => model.GenSetMakeModel)</td>
+                            <td style="width: 15%;" id="RKGenSetMakeModel">@Html.DisplayTextFor(model => Model.GenSetMakeModel)</td>
+                            <td>@Html.LabelFor(model => model.BoxMfg)</td>
+                            <td style="width: 15%;" id="RKBoxMfg">@Html.DisplayTextFor(model => Model.BoxMfg)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Damage)</td>
+                            <td style="width: 15%;" id="RKDamage">@Html.DisplayTextFor(model => Model.Damage)</td>
+                            <td>@Html.LabelFor(model => model.LeasingCompany)</td>
+                            <td style="width: 15%;" id="RKLeasingCompany">@Html.DisplayTextFor(model => Model.LeasingCompany)</td>
+                            <td>@Html.LabelFor(model => model.LeasingContract)</td>
+                            <td style="width: 15%;" id="RKLeasingContract">@Html.DisplayTextFor(model => Model.LeasingContract)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.GradeCode)</td>
+                            <td style="width: 15%;" id="RKGradeCode">@Html.DisplayTextFor(model => Model.GradeCode)</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" id="RKEqpNotFound">@Html.DisplayTextFor(model => Model.EqpNotFound)</td>
+                        </tr>
+
+                    </table>
+                </div>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @if (Model.IsSingle)
+                {
+                    @Html.CheckBox("chkShowComments", Model.ShowComments, new { style = "float:left;" }) @Html.Label("Show comments to Maersk Line agent", new { style = "clear:right;" })
+                }
+            </td>
+        </tr>
+        @* @if (Model.ADMIN)
+        {
+            <tr style="padding: 3px;">
+                <td colspan="2">@Html.LabelFor(model => model.SalesTaxParts, new { style = "float:left;" })
+                    @Html.TextBoxFor(model => model.SalesTaxParts, new { style = "width: 130px;clear:right;", @class = "CLSDECIMAL", @maxlength = "6" })</td>
+                <td colspan="2">@Html.LabelFor(model => model.SalesTaxLabour, new { style = "float:left;" })
+                    @Html.TextBoxFor(model => model.SalesTaxLabour, new { style = "width: 130px;clear:right;", @class = "CLSDECIMAL", @maxlength = "6" })</td>
+                <td colspan="2">@Html.LabelFor(model => model.ImportTax, new { style = "float:left;" })
+                    @Html.TextBoxFor(model => model.ImportTax, new { style = "width: 130px;clear:right;", @class = "CLSDECIMAL", @maxlength = "6" })</td>
+                <td>&nbsp;</td>
+            </tr>
+        }*@
+
+        @* @if (Model.ShowTax)
+        {*@
+        <tr style="clear: right; margin-top: 10px; display: none;" class="clsImport">
+            <td colspan="2"></td>
+            <td colspan="2">@Html.LabelFor(model => model.ImportTax, new { style = "float:left;margin-top:5px;" })
+                @Html.TextBoxFor(model => model.ImportTax, new { style = "width: 80px;clear:right;", @class = "CLSDECIMAL", @maxlength = "6" })
+            </td>
+            <td colspan="2"></td>
+            <td>&nbsp;</td>
+        </tr>
+        @*}*@
+
+        <tr>
+            <td colspan="7" id="SummarySpace" style="padding: 5px;"></td>
+        </tr>
+        <tr style="text-align: center; vertical-align: top;">
+            <td colspan="4">
+                <table style="width: 100%; border: 1px solid grey;" id="tblRPAdditionalRows">
+                    <tr>
+                        <td colspan="7"><span style="float: left;" class="glyphicon glyphicon-plusIcon clsRPAddRows" title="Add more Repair details"></span>Repairs</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 17%;">
+                            @Html.LabelFor(model => model.DamageCode)</td>
+                        <td style="width: 17%;">@Html.LabelFor(model => model.RepairCode)</td>
+                        <td style="width: 18%;">@Html.LabelFor(model => model.RepairLocationCode)</td>
+                        <td style="width: 9%;">@Html.LabelFor(model => model.Pcs)</td>
+                        <td style="width: 13%;">@Html.LabelFor(model => model.MaterialCostPerPiece)</td>
+                        <td style="width: 11%;">@Html.LabelFor(model => model.ManHoursPerPiece, new { style = "height:45px;" })</td>
+                        <td style="width: 13%;">@Html.LabelFor(model => model.TPI)</td>
+                    </tr>
+                    @if (Model.dbWOD != null && Model.dbWOD.RepairsViewList != null && Model.dbWOD.RepairsViewList.Count() > 0)
+                    {
+                        foreach (var rView in Model.dbWOD.RepairsViewList)
+                        {
+                        <tr>
+                            <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Damage.DamageCedexCode, new { style = "width: 71%;float:left;text-transform:uppercase;", @class = "cDCode", @maxlength = "2" })&nbsp;<span class="glyphicon glyphicon-search clsDamageCode" style="clear: right;" title="Search Damage code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.RepairCode.RepairCod, new { style = "width: 71%;float:left;", @class = "CRep", @maxlength = "4", onblur = "RepBlur(this);" })&nbsp;<span class="glyphicon glyphicon-search clsRepairCode" style="clear: right;" title="Search Repair code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.RepairLocationCode.CedexCode, new { style = "width: 72%;float:left;text-transform:uppercase;", @class = "cRLocCode", @maxlength = "4", onblur = "LocBlur(this);" })&nbsp;<span class="glyphicon glyphicon-search clsRepairLocCode" style="clear: right;" title="Search Repair Location code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Pieces, new { style = "width: 90%;float:left;", @class = "cPieces CLSNUMERIC", @maxquantity = rView.RepairCode.MaxQuantity, @manualcode = rView.RepairCode.ManualCode, @maxlength = "2" })</td>
+                            <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.MaterialCost, String.Format("{0:0.00}", rView.MaterialCost), new { style = "width: 90%;float:left;", @class = "cMCost CLSDECIMAL" })</td>
+                            <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.ManHoursPerPiece, String.Format("{0:0.0}", rView.ManHoursPerPiece), new { style = "width: 90%;float:left;", @class = "cMHours CLSDECIMAL" })</td>
+                            <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Tpi.CedexCode, new { style = "width: 61%;float:left;text-transform:uppercase;", @class = "cTPI", @maxlength = "1", @onkeydown = "changeVal(this,'C');" })&nbsp;<span class="glyphicon glyphicon-search clsTPI" style="clear: right;" title="Search TPI code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                        </tr>                       
+                        }
+
+                        int rpCnt = Model.dbWOD.RepairsViewList.Count();
+                        if (rpCnt < 10)
+                        {
+                            rpCnt = 10 - rpCnt;
+                        }
+
+                        for (int i = 0; i < rpCnt; i++)
+                        {
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 71%; float: left; text-transform: uppercase;" class="cDCode" name="DamageCedexCode" maxlength="2" />&nbsp;                               
+                                <span class="glyphicon glyphicon-search clsDamageCode" style="clear: right;" title="Search Damage code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 71%; float: left;" class="CRep" name="RepairCod" maxlength="4" onblur="RepBlur(this);" />&nbsp;
+                                <span class="glyphicon glyphicon-search clsRepairCode" style="clear: right;" title="Search Repair code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 71%; float: left; text-transform: uppercase;" class="cRLocCode" name="CedexCode" maxlength="4" onblur="LocBlur(this);" />&nbsp;
+                                <span class="glyphicon glyphicon-search clsRepairLocCode" style="clear: right;" title="Search Repair Location code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="text-align: left; vertical-align: top;">
+                                <input type="text" style="width: 90%; float: left;" class="cPieces CLSNUMERIC" name="Pieces" maxquantity="0" manualcode="" maxlength="2" /></td>
+                            <td style="text-align: left; vertical-align: top;">
+                                <input type="text" style="width: 90%; float: left;" class="cMCost CLSDECIMAL" value="0.0" name="MaterialCost" /></td>
+                            <td style="text-align: left; vertical-align: top;">
+                                <input type="text" style="width: 90%; float: left;" class="cMHours CLSDECIMAL" value="0.0" name="ManHoursPerPiece" /></td>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 61%; float: left; text-transform: uppercase;" class="cTPI" name="Tpi" value="O" maxlength="1" onkeydown="changeVal(this,'C');" />&nbsp;
+                                 <span class="glyphicon glyphicon-search clsTPI" style="clear: right;" title="Search TPI code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                        </tr>  
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 71%; float: left; text-transform: uppercase;" class="cDCode" name="DamageCedexCode" maxlength="2" />&nbsp;                               
+                                <span class="glyphicon glyphicon-search clsDamageCode" style="clear: right;" title="Search Damage code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 71%; float: left;" class="CRep" name="RepairCod" maxlength="4" onblur="RepBlur(this);" />&nbsp;
+                                <span class="glyphicon glyphicon-search clsRepairCode" style="clear: right;" title="Search Repair code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 71%; float: left; text-transform: uppercase;" class="cRLocCode" name="CedexCode" maxlength="4" onblur="LocBlur(this);" />&nbsp;
+                                <span class="glyphicon glyphicon-search clsRepairLocCode" style="clear: right;" title="Search Repair Location code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                            <td style="text-align: left; vertical-align: top;">
+                                <input type="text" style="width: 90%; float: left;" class="cPieces CLSNUMERIC" name="Pieces" maxquantity="0" manualcode="" maxlength="2" /></td>
+                            <td style="text-align: left; vertical-align: top;">
+                                <input type="text" style="width: 90%; float: left;" class="cMCost CLSDECIMAL" value="0.0" name="MaterialCost" /></td>
+                            <td style="text-align: left; vertical-align: top;">
+                                <input type="text" style="width: 90%; float: left;" class="cMHours CLSDECIMAL" value="0.0" name="ManHoursPerPiece" /></td>
+                            <td style="vertical-align: top;">
+                                <input type="text" style="width: 61%; float: left; text-transform: uppercase;" class="cTPI" name="Tpi" value="O" maxlength="1" onkeydown="changeVal(this,'C');" />&nbsp;
+                                 <span class="glyphicon glyphicon-search clsTPI" style="clear: right;" title="Search TPI code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+                            </td>
+                        </tr>  
+                        }
+                    }
+                </table>
+            </td>
+            <td colspan="2" style="vertical-align: top;">
+                @if (Model.IsSingle)
+                {
+                    <table style="width: 100%; border: 1px solid grey;" id="tblSPAdditionalRows">
+                        <tr>
+                            <td colspan="3">
+                                <span style="float: left;" class="glyphicon glyphicon-plusIcon clsSPAddRows" title="Add more Spare Parts"></span>Spare Parts</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 33%;"><label>Re<u>p</u>air Code</label></td>
+                            <td style="width: 17%;">@Html.LabelFor(model => model.Pcs, new { style = "width: 100%;" })</td>
+                            <td style="width: 50%;">@Html.LabelFor(model => model.OwnerSuppliedPartsNumber, new { style = "width: 100%;height:45px;" })</td>
+                        </tr>
+                        @if (Model.dbWOD != null && Model.dbWOD.SparePartsViewList != null && Model.dbWOD.SparePartsViewList.Count() > 0)
+                        {
+                            int count = 0;
+                            foreach (var rView in Model.dbWOD.SparePartsViewList)
+                            {
+                                if (count == 0)
+                                {
+                            <tr>
+                                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.RepairCode.RepairCod, new { style = "width: 90%;", @class = "CRep", @maxlength = "4", accesskey = "p" })</td>
+                                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Pieces, String.Format("{0:0.0}", rView.Pieces), new { style = "width:  90%;", @class = "cPieces CLSDECIMAL", @maxlength = "4" })</td>
+                                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.OwnerSuppliedPartsNumber, new { style = "width:90%;text-transform:uppercase;", @class = "cPartCode", @SRNO = rView.SerialNumber })</td>
+                            </tr> 
+                                }
+                                else
+                                {
+                            <tr>
+                                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.RepairCode.RepairCod, new { style = "width: 90%;", @class = "CRep", @maxlength = "4" })</td>
+                                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Pieces, String.Format("{0:0.0}", rView.Pieces), new { style = "width: 90%;", @class = "cPieces CLSDECIMAL", @maxlength = "4"  })</td>
+                                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.OwnerSuppliedPartsNumber, new { style = "width: 90%;text-transform:uppercase;", @class = "cPartCode", @SRNO = rView.SerialNumber })</td>
+                            </tr> 
+                                
+                                }
+                                count++;
+                            }
+                            int spCnt = Model.dbWOD.SparePartsViewList.Count();
+                            if (spCnt < 10)
+                            {
+                                spCnt = 10 - spCnt;
+                            }
+
+                            for (int i = 0; i < spCnt; i++)
+                            {
+                            <tr>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%;" name="RepairCode" maxlength="4" class="CRep" />
+                                </td>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%;" name="Pieces" class="cPieces CLSDECIMAL" maxlength="4" value="0.0" /></td>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%; text-transform: uppercase;" name="OwnerSuppliedPartsNumber" class="cPartCode" /></td>
+                            </tr>  
+                            }
+
+                        }
+                        else
+                        {
+                            for (int i = 0; i < 10; i++)
+                            {
+                                if (i == 0)
+                                {
+                            <tr>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%;" name="RepairCode" maxlength="4" class="CRep" accesskey="p" />
+                                </td>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%;" name="Pieces" class="cPieces CLSDECIMAL" maxlength="4" value="0.0" /></td>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%; text-transform: uppercase;" name="OwnerSuppliedPartsNumber" class="cPartCode" /></td>
+                            </tr>  
+                                }
+                                else
+                                {
+                            <tr>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%;" name="RepairCode" maxlength="4" class="CRep" accesskey="p" />
+                                </td>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%;" name="Pieces" class="cPieces CLSDECIMAL" maxlength="4" /></td>
+                                <td style="text-align: left; vertical-align: top;">
+                                    <input type="text" style="width: 90%; text-transform: uppercase;" name="OwnerSuppliedPartsNumber" class="cPartCode" /></td>
+                            </tr>
+                                }
+                            }
+                        }
+                    </table>
+                }
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="auto-style3">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="auto-style4">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="auto-style5">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <table style="vertical-align: bottom;">
+                    <tr>
+                        <td>@Html.LabelFor(model => model.TotalManHourReg, new { style = "float:left;margin-top: 5px;" }) @Html.TextBoxFor(model => model.TotalManHourReg, new { @class = "CLSDECIMAL", style = "clear:right;width:100px;", @totManHr = 0.0, @readonly = "readonly" }) </td>
+                        <td>@Html.LabelFor(model => model.TotalManHourOverTime, new { style = "float:left;margin-top: 5px;" }) @Html.TextBoxFor(model => model.TotalManHourOverTime, new { @class = "CLSDECIMAL", style = "clear:right;width:100px;", onblur = "CalcHrs(this);" })</td>
+                        <td>@Html.LabelFor(model => model.TotalManHourDoubleTime, new { style = "float:left;margin-top: 5px;" }) @Html.TextBoxFor(model => model.TotalManHourDoubleTime, new { @class = "CLSDECIMAL", style = "clear:right;width:100px;", onblur = "CalcHrs(this);" })</td>
+                        <td>@Html.LabelFor(model => model.TotalManHourMisc, new { style = "float:left;margin-top: 5px;" }) @Html.TextBoxFor(model => model.TotalManHourMisc, new { @class = "CLSDECIMAL", style = "clear:right;width:100px;", onblur = "CalcHrs(this);" })</td>
+                    </tr>
+                </table>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan="5" style="text-align: center;">
+                <table class="table" style="width: 80%;">
+                    <tr>
+                        <td>
+                            <input type="button" value="Submit" name="btnSubmit" class="woBtnWidth" onclick="DoSubmit();" /></td>
+                        <td>
+                            <input type="button" value="Review" name="btnReview" class="woBtnWidth" onclick="DoReview();" /></td>
+                        @if (Model.IsCreateNew && Model.ISANYSHOP)
+                        {
+                            if (Model.IsSingle)
+                            {
+                            <td>
+                                <input type="button" value="Save As Draft" name="btnSaveAsDraft" class="woBtnWidth" onclick="DoSaveAsDraft();" />
+                            </td>
+                            }
+                        }
+                        else if (Model.ISANYSHOP)
+                        {
+                            if (Model.dbWOD.WorkOrderStatus == 0)
+                            { 
+                            <td>
+                                <input type="button" value="Save As Draft" name="btnSaveAsDraft" class="woBtnWidth" onclick="DoSaveAsDraft();" />
+                            </td>
+                            }
+                            <td>
+                                <input type="button" value="Delete" name="btnDelete" class="woBtnWidth" onclick="DoDelete();" />
+                            </td>
+                        }
+                        <td>
+                            <input type="button" value="Get Hours" name="btnGetHours" class="woBtnWidth" onclick="GetHours();" /></td>
+                        <td>
+                            <input type="button" value="Clear" name="btnClear" class="woBtnWidth" onclick="DoClear();" /></td>
+                        <td>
+                            <input type="button" value="Print" name="btnPrint" class="woBtnWidth" onclick="DoPrint();" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td></td>
+            @*<td id="ModelContainer">
+                <div class="modal fade" id="mercModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div id="dialog" title="Dialog Title"><span>Loading...</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" data-dismiss="modal" value="Ok" id="btnModelOk" />
+                                <input type="button" data-dismiss="modal" value="Close" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>*@
+            <td class="auto-style3">@Html.HiddenFor(model => model.IsCreateNew, new { @id = "IsNewWO", @IsSingle = Model.IsSingle, @WOID = (Model.dbWOD == null ? "0" : Model.dbWOD.WorkOrderID.ToString()) })</td>
+            <td>&nbsp;</td>
+            <td class="auto-style4">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="auto-style5">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</div>
+

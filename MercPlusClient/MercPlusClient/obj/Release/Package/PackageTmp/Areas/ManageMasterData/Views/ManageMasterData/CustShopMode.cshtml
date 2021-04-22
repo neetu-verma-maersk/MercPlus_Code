@@ -1,0 +1,252 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageCustomerShopMode
+
+@{
+    ViewBag.Title = "CustShopMode";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="~/Areas/ManageMasterData/Script/mainjs.js"></script>
+<script>
+
+  function ClientValidation() {
+     
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+              
+        HighlightInputsForError($("#CustomerList"), false)
+        if (document.getElementById('CustomerList').selectedIndex == 0) {
+            isError = true;
+            errMsg = "Please Select a Customer";
+        HighlightInputsForError($("#CustomerList"), isError)
+        }
+        HighlightInputsForError($("#ShopList"), false)
+        if (document.getElementById('ShopList').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select a Shop";
+            }
+            else {
+                errMsg += ",a Shop";
+            }
+            HighlightInputsForError($("#ShopList"), isError)
+        }
+
+        HighlightInputsForError($("#ModeList"), false)
+        if (document.getElementById('ModeList').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select a Mode";
+            }
+            else {
+                errMsg += ",a Mode";
+            }
+        HighlightInputsForError($("#ModeList"), isError)
+        }
+
+        HighlightInputsForError($("#ddlPayAgent"), false)
+        if (document.getElementById('ddlPayAgent').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select a PayAgent";
+            }
+            else {
+                errMsg += ",a PayAgent";
+            }
+       HighlightInputsForError($("#ddlPayAgent"), isError)
+        }
+        var AccCode = ($("#txtExpenseCode").val()).substring(0, 4);
+        if ((document.getElementById("txtExpenseCode").value).length == 7) {
+            if (AccCode != "2603" && AccCode != null) {
+                isError = true;
+                errMsg += "Seven Digit Expense Codes must start with 2603 ";
+                HighlightInputsForError($("#txtExpenseCode"), isError)
+            }
+        }
+
+        if (isError == true) {
+          
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+  function ValidateNumber(e) {
+      var evt = (e) ? e : window.event;
+      var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+      if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+          return false;
+      else
+          return true;
+  }
+
+</script>
+ <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_csm_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+<br />
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    if(Model.IsAdd == false || Model.IsView==true)
+    {
+         <br />
+        <div id="AddTitle">
+            <h3><B>Customer/Shop/Mode Association Add</B></h3>
+        </div>
+    }
+    else
+    {
+    
+     <br />
+         <div id="EditTitle">
+              <h3><B>Customer/Shop/Mode Association Edit </B></h3>
+              
+        </div>
+    }
+    <br />
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+
+                   @if (Session["Msg"] == "True")
+                    { 
+                       <table><tr><td>@Session["DisplayMsg"].ToString()</td></tr></table>
+                    }
+    </div>
+    <div id="HideCSMCode" style="display:none";>
+          @Html.TextBoxFor(model => model.txtCSMCode, new { id = "txtCSMCode"  })
+        @*  @Html.TextBoxFor(model => model.txtExpenseCode, new { id = "txtExpenseCode"  })*@
+    </div>
+    <table>
+
+    <tr>
+        <td><b>Customer</b></td>
+        <td><b>Shop</b></td>
+        <td><b>Mode</b></td>    
+    </tr>
+
+     <tr>
+        <td> 
+           
+               @Html.DropDownList("lstCustomerList", Model.CustomerList,"Select Customer" ,new  { id="CustomerList", style="width:150px;"  })               
+            
+
+        </td>
+        <td> 
+            
+               @Html.DropDownList("lstShopList", Model.ShopList, "Select Shop ",  new  { id="ShopList",  style="width:150px;"  })
+                  
+             
+
+        </td>
+        <td> 
+           
+                @Html.DropDownList("lstModeList", Model.ModeList,"Select Mode", new { id="ModeList", style = "width:300px;"  })
+            
+
+        </td>      
+    </tr>
+
+      <tr>
+        <td><b>Payagent</b></td>
+        <td><b>Corporate Profit Center</b></td>
+        <td></td>    
+      </tr>
+
+       <tr>
+        <td> @Html.DropDownList("txtPayAgent", Model.ddlPayAgent,"Select PayAgent Code", new  { id="ddlPayAgent" , style="width:150px;" })</td>
+        <td> @Html.TextBoxFor(model => model.txtCPC , new { id = "txtCorpProfitCenter",maxlength="2" }) </td>
+        <td>  </td>    
+      </tr>
+
+       <tr>
+        <td><b>Corp Payagent</b></td>
+        <td><b>Profit Center</b></td>
+        <td></td>    
+
+      </tr>
+
+       <tr>
+        <td> @Html.TextBoxFor(model => model.txtCorpPayagent , new { id = "txtCorpPayagent",maxlength="3" }) </td>
+        <td> @Html.TextBoxFor(model => model.txtProfitCenter , new { id = "txtProfitCenter",maxlength="2" }) </td>
+        <td>  </td>    
+      </tr>
+
+
+        <tr>
+        <td><b>Expense Code</b></td>
+        <td><b>RRIS Format</b></td>
+        <td></td>    
+        </tr> 
+
+       <tr>
+        <td> @Html.TextBoxFor(model => model.txtExpenseCode , new { id = "txtExpenseCode" , maxlength="7" , onkeypress="return ValidateNumber(event);"}) </td>
+        <td> @Html.DropDownList("txtRRIS", Model.ddlRRIS,"Select RRIS Code", new  { id="ddlRRIS" , style="width:150px;" }) </td>
+        <td>  </td>    
+      </tr>
+
+         <tr>
+        <td>
+             @if(Model.IsAdd == true || Model.IsView==true)
+             {
+                <span><b>Change User Name</b></span>
+             }
+
+        </td>
+        <td>
+             @if (Model.IsAdd == true || Model.IsView == true)
+             {
+               <span><b>Change Time</b></span>
+             }
+
+        </td>
+        <td></td>    
+        </tr> 
+
+       <tr>
+        <td>
+            @if (Model.IsAdd == true || Model.IsView == true)
+            {
+                @Html.TextBoxFor(model => model.txtChangedUserName , new { id = "txtChangedUserName" ,  @readonly="readonly" }) 
+            } 
+
+        </td>
+        <td>
+            @if (Model.IsAdd == true || Model.IsView == true)
+            {
+               @Html.TextBoxFor(model => model.txtChangeTime , new { id = "txtChangeTime" , @readonly="readonly"  })
+            }
+        </td>
+        <td>      
+
+        </td>    
+      </tr>
+
+            <tr>
+             <td>
+                  @if(Model.IsAdd == false)
+                  {
+                    <input name="SearchButton" type="submit" value="Submit" id="BtnEQ_Add" onclick="return ClientValidation();" formaction ="/ManageMasterData/ManageMasterData/InsertCustShopMode"  />
+                  }
+                  @if(Model.IsAdd == true)
+                  {
+                    <input name="SearchButton" type="submit" value="Submit" id="BtnEQ_Edit"  formaction ="/ManageMasterData/ManageMasterData/EditCustShopMode"  />
+                  }
+             </td>
+              <td>
+               <input name="SearchButton" type="submit" value="Return To Update"  formaction ="/ManageMasterData/ManageMasterData/ViewCustShopModeDetails"  />
+                  
+             </td>
+             <td>
+
+             </td>
+         </tr>
+
+    </table>
+    
+
+}

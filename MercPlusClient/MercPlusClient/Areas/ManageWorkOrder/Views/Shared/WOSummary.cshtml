@@ -1,0 +1,530 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel
+@using MercPlusClient.UtilityClass
+
+<table style="width: 100%; overflow: scroll; vertical-align: text-top;" border="1" cellpadding="5" cellspacing="0" id="tblRPAdditionalRows">
+    <tr>
+        <td colspan="12">Review Data</td>
+    </tr>
+    <tr>
+        <td colspan="12">
+            <table>
+                <tr>
+                    <td rowspan="2">@Html.LabelFor(model => model.Pcs)</td>
+                    <td rowspan="2">@Html.LabelFor(model => model.DamageCode)</td>
+                    <td rowspan="2">@Html.LabelFor(model => model.RepairCode)</td>
+                    <td rowspan="2">@Html.LabelFor(model => model.RepairLocationCode)</td>
+                    <td rowspan="2"><b>Man Hours Per Piece</b></td>
+                    <td rowspan="2">@Html.LabelFor(model => model.Description)</td>
+                    <td rowspan="2">@Html.LabelFor(model => model.TPI)</td>
+                    <td rowspan="2"><b>Part No.</b></td>
+                    <td rowspan="2">@Html.LabelFor(model => model.TagNo)</td>
+                    <td>@Html.LabelFor(model => model.MaterialCostPerPiece)</td>
+                    <td>@Html.LabelFor(model => model.PartCost)</td>
+                    <td>@Html.LabelFor(model => model.TotalPerCode)</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center;">@Html.LabelForModel(Model.CurrencyName)</td>
+                </tr>
+
+                @{                    
+                    double totManHr = 0.00, fSubTotal = 0.00, costLocal = 0.00, dMaterialAmt = 0.00;
+                    int rowS = 0;
+                    List<string> repCodList = new List<string>();
+                    //materialcost = shopmaterialamnt
+                    if (Model.dbWOD.RepairsViewList != null && Model.dbWOD.RepairsViewList.Count > 0)
+                    {
+                        Model.dbWOD.RepairsViewList = Model.dbWOD.RepairsViewList.OrderBy(x => Convert.ToInt32(x.RepairCode.RepairCod)).ToList();
+                    }
+                    
+                    foreach (var repI in Model.dbWOD.RepairsViewList)
+                    {
+                        fSubTotal = 0.00; costLocal = 0.00;
+                        if (!repI.IsRepairTaxCode)
+                        {
+                            
+                    <tr>
+                        <td>@repI.Pieces</td>
+                        <td>@repI.Damage.DamageCedexCode</td>
+                        <td>@repI.RepairCode.RepairCod</td>
+                        <td>@repI.RepairLocationCode.CedexCode</td>
+                        <td style="text-align: right;">@Convert.ToDouble(repI.ManHoursPerPiece).ToString("n2")</td>
+                        @{
+                            totManHr = totManHr + Convert.ToDouble(repI.ManHoursPerPiece * repI.Pieces);
+                        }
+                        <td>@repI.RepairCode.RepairDesc</td>
+                        @*//who sets description , create a property *@
+                        <td>@repI.Tpi.CedexCode</td>
+                        <td>
+                            @* @if(rowS!=0){
+                                 @Html.LabelForModel(repI.PartNo)
+
+                            }*@
+                        </td>
+                        @*//part no kahan se ayga*@
+                        <td>@*@Html.LabelForModel(repI.TagNo)*@</td>
+                        @*//tag no kahan se ayga , is this getting set here*@
+                        @* Material cost*@
+                        <td style="text-align: right;">
+
+                            @if (Model.ISANYCPH)
+                            {
+                                dMaterialAmt = 0.00;
+                                if (repI.MaterialCostCPH > 0)
+                                {
+                                    dMaterialAmt = Convert.ToDouble(repI.MaterialCostCPH);
+                                    fSubTotal = fSubTotal + (dMaterialAmt * repI.Pieces);
+                                }
+                            }
+                            else
+                            {
+                                dMaterialAmt = 0.00;
+                                if (repI.MaterialCost > 0)
+                                {
+                                    dMaterialAmt = Convert.ToDouble(repI.MaterialCost);
+                                    fSubTotal = fSubTotal + (dMaterialAmt * repI.Pieces);
+                                }
+                            }
+                            @Convert.ToDouble(dMaterialAmt).ToString("n2")
+                        </td>
+                        @*//is it materialcodeperpise*@
+                        <td>@*@Html.LabelForModel(repI.TotalPartCost)*@</td>
+                        @*//kahan se ayega*@
+
+                        @{
+                            List<MercPlusClient.ManageWorkOrderServiceReference.SparePartsView> newList = new List<MercPlusClient.ManageWorkOrderServiceReference.SparePartsView>();
+                            if (Model.dbWOD.SparePartsViewList == null || Model.dbWOD.SparePartsViewList.Count == 0)
+                            {
+                                newList = null;
+                            }
+                            else
+                            {
+                                newList = Model.dbWOD.SparePartsViewList.FindAll(parts => parts.RepairCode.RepairCod.Trim() == repI.RepairCode.RepairCod.Trim());
+                            }
+                            if ((newList == null || newList.Count == 0) || repCodList.FindIndex(item => item == repI.RepairCode.RepairCod.Trim()) >= 0)
+                            {
+                            <td style="text-align: right;">
+                                @Convert.ToDouble(fSubTotal).ToString("n2")
+                            </td>
+                                continue;
+                            }
+                            else
+                            {
+                            <td style="text-align: right;"></td>
+                                repCodList.Add(repI.RepairCode.RepairCod.Trim());
+                            }
+                        }
+
+                    </tr>
+                    
+                            if (Model.dbWOD.SparePartsViewList != null && Model.dbWOD.SparePartsViewList.Count > 0)
+                            {
+                                foreach (var sprI in newList)
+                                {
+                                    if (Model.ISANYSHOP)
+                                    {
+                                        if (sprI.MslPartSW.Equals("Y"))
+                                        {
+                                            costLocal = 0.00;
+                                        }
+                                        else
+                                        {
+                                            if (Model.dbWOD.Shop.ShopTypeCode.Equals("1") || Model.dbWOD.Shop.ShopTypeCode.Equals("3"))
+                                            {
+                                                costLocal = Convert.ToDouble(sprI.CostLocal);
+                                            }
+                                            else
+                                            {
+                                                costLocal = 0.00;
+                                            }
+                                        }
+                                        fSubTotal = fSubTotal + costLocal;
+                                    }
+                                    else
+                                    {
+                                        if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                                        {
+                                            if (sprI.MslPartSW.Equals("Y") || Model.dbWOD.Shop.ShopTypeCode.Equals("2"))
+                                            {
+                                                costLocal = Convert.ToDouble(sprI.CostLocal);
+                                            }
+                                            else
+                                            {
+                                                costLocal = Convert.ToDouble(sprI.CostLocal);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            costLocal = Convert.ToDouble(sprI.CostLocalCPH);
+                                        }
+                                        fSubTotal = fSubTotal + costLocal;
+                                    }                                
+                    <tr>
+                        @*Pcs*@
+                        <td>@sprI.Pieces</td>
+                        @* Repair Code, no repair code, intentionally left blank*@
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        @*' Description*@
+                        <td>@sprI.PartDescription</td>
+                        @*' Man Hrs per Piece, no repair code/no man hrs, intentionally left blank*@
+                        <td></td>
+                        @*' Part No.*@
+                        <td>@sprI.OwnerSuppliedPartsNumber</td>
+                        @*ctSerialNumberParts.Exists(partCD)*@
+
+                        @*' Core s/n or Tag No.*@
+                        @*wp.serial_number IS NULL or LTRIM(RTRIM(wp.serial_number)) = '') and p.CORE_PART_SW = 'Y'*@
+
+                       @if ((!string.IsNullOrEmpty(sprI.OwnerSuppliedPartsNumber) && sprI.CORE_PART_SW.Equals('Y')) || (string.IsNullOrEmpty(sprI.SerialNumber) && sprI.CORE_PART_SW.Equals('Y')) || (!string.IsNullOrEmpty(sprI.SerialNumber) && !sprI.SerialNumber.Equals("<enter serial number>")))
+                        {
+                            if(sprI.SerialNumber.Equals("<enter serial number>"))
+                            {
+                                sprI.SerialNumber = "";
+                            }
+                            if (Model.ISANYSHOP && Model.dbWOD.WorkOrderStatus < 400)
+                            {
+                            <td>
+                                @*set any id for this textbox *@
+                                <input type="text" maxlength="36" value="@Convert.ToString(sprI.SerialNumber)" id='SN||@repI.RepairCode.RepairCod||@sprI.OwnerSuppliedPartsNumber'/>
+                            </td>
+                            }
+                            else
+                            {
+                            <td>@Convert.ToString(sprI.SerialNumber)</td>
+                            }
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
+                        @*' Material Cost per Piece, no repair code/no material cost, intentionally left blank*@
+
+                        <td></td>
+
+                        @*' Part Cost
+						                              ' Show blank instead of 0 if costLocal = 0*@
+                        @if (Model.ISANYSHOP)
+                        {
+                            if (sprI.MslPartSW.Equals("Y"))
+                            {
+                            <td></td>
+                            }
+                            else
+                            {
+                                if (Model.dbWOD.Shop.ShopTypeCode.Equals("1") || Model.dbWOD.Shop.ShopTypeCode.Equals("3"))
+                                {
+                                    if (costLocal > 0)
+                                    {
+                            <td style="text-align: right">@costLocal.ToString("n2")</td>
+                                    }
+                                }
+                                else
+                                {
+                            <td></td>
+                                }
+                            }
+                        }
+                        else if ((Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP) && (sprI.MslPartSW.Equals("Y") || Model.dbWOD.Shop.ShopTypeCode.Equals("2")))
+                        { 
+                            <td style="text-align: right"><font color="#707070">@costLocal.ToString("n2")</font></td>
+                        }
+                        else
+                        {
+                            <td style="text-align: right">@costLocal.ToString("n2")</td>                        
+                        }
+
+                        @*' Total per Code*@
+                        @if ((newList.IndexOf(sprI)) + 1 == newList.Count)
+                        {
+                            <td style="text-align: right">@fSubTotal.ToString("n2")</td>   
+                        }
+                        else
+                        {
+                            <td></td>    
+                        }
+                    </tr>
+                                }
+                            }
+                        }
+                    }
+                    <tr>
+                        @*' To align Total man hrs with Man hrs per piece column*@
+                        <td colspan="4">Total Man Hrs</td>
+                        <td style="text-align: right;">@totManHr.ToString("n2")</td>
+                        <td colspan="7"></td>
+                    </tr>
+                }
+
+                @*  '=================================================================================================
+		' KEY:
+		'								cph cost USD	|	local cost USD	| local cost, local currency
+		' total excluding tax			A					B					C
+		' total including Tax			D					E					F
+		' total repair excluding tax	G					H					K
+		' total repa    ir including tax	I					J					L
+		'=================================================================================================*@
+
+                @{
+                    double dImportTax = 0.00, dImportTaxCPH = 0.00, dblAgentPartsTaxCPH = 0.00, dblAgentPartsTax = 0.00;
+                    dImportTax = Convert.ToDouble(Model.dbWOD.ImportTax);
+                    dImportTaxCPH = Convert.ToDouble(Model.dbWOD.ImportTaxCPH);
+                    if (Model.dbWOD.AgentPartsTaxCPH > 0)
+                    {
+                        dblAgentPartsTaxCPH = Convert.ToDouble(Model.dbWOD.AgentPartsTaxCPH);
+                    }
+                    if (Model.dbWOD.AgentPartsTax > 0)
+                    {
+                        dblAgentPartsTax = Convert.ToDouble(Model.dbWOD.AgentPartsTax);
+                    }
+
+                    //' CPH Costs USD
+                    //'A 
+                    double A_tot_cost_cph_noTax = 0.00;
+                    A_tot_cost_cph_noTax = Convert.ToDouble(Model.dbWOD.TotalCostCPH);
+                    A_tot_cost_cph_noTax = A_tot_cost_cph_noTax - Convert.ToDouble(Model.dbWOD.SalesTaxPartsCPH);
+                    A_tot_cost_cph_noTax = A_tot_cost_cph_noTax - Convert.ToDouble(Model.dbWOD.SalesTaxLabourCPH);
+                    A_tot_cost_cph_noTax = A_tot_cost_cph_noTax - dImportTaxCPH;
+                    A_tot_cost_cph_noTax = A_tot_cost_cph_noTax - dblAgentPartsTaxCPH;
+
+                    //'D
+                    double D_tot_cost_cph = 0.00;
+                    D_tot_cost_cph = Convert.ToDouble(Model.dbWOD.TotalCostCPH);
+
+                    //'G 
+                    double G_tot_cost_repair_cph_noTax = 0.00;
+                    G_tot_cost_repair_cph_noTax = Convert.ToDouble(Model.dbWOD.TotalCostOfRepairCPH) - dImportTaxCPH - Convert.ToDouble(Model.dbWOD.SalesTaxPartsCPH) - Convert.ToDouble(Model.dbWOD.SalesTaxLabourCPH);
+                    G_tot_cost_repair_cph_noTax = G_tot_cost_repair_cph_noTax - dblAgentPartsTaxCPH;
+
+                    //'I
+                    double I_tot_cost_repair_cph = 0.00;
+                    I_tot_cost_repair_cph = Convert.ToDouble(Model.dbWOD.TotalCostOfRepairCPH);
+
+                    //' Local Costs USD		
+                    //'B
+                    double B_tot_cost_local_usd_noTax = 0.00;
+                    B_tot_cost_local_usd_noTax = Convert.ToDouble(Model.dbWOD.TotalCostLocalUSD) - (dImportTax * Convert.ToDouble(Model.dbWOD.ExchangeRate) * 0.01) - (Convert.ToDouble(Model.dbWOD.SalesTaxParts) * Convert.ToDouble(Model.dbWOD.ExchangeRate) * 0.01) - (Convert.ToDouble(Model.dbWOD.SalesTaxLabour) * Convert.ToDouble(Model.dbWOD.ExchangeRate) * 0.01);
+
+                    //'E 
+                    double E_tot_cost_local_usd = 0.00, E_tot_W_cost_local_usd = 0.00, E_tot_T_cost_local_usd = 0.00;
+
+                    E_tot_cost_local_usd = Convert.ToDouble(Model.dbWOD.TotalCostLocalUSD);
+                    E_tot_W_cost_local_usd = Convert.ToDouble(Model.dbWOD.TotalWMaterialAmountUSD);
+                    E_tot_T_cost_local_usd = Convert.ToDouble(Model.dbWOD.TotalTMaterialAmountUSD);
+
+                    double TOT_W_CPH = 0.00, TOT_W_CPH_USD = 0.00, TOT_T_CPH = 0.00, TOT_T_CPH_USD = 0.00;
+                    TOT_W_CPH = Convert.ToDouble(Model.dbWOD.TotalWMaterialAmountCPH);
+                    TOT_W_CPH_USD = Convert.ToDouble(Model.dbWOD.TotalWMaterialAmountCPHUSD);
+                    TOT_T_CPH = Convert.ToDouble(Model.dbWOD.TotalTMaterialAmountCPH);
+                    TOT_T_CPH_USD = Convert.ToDouble(Model.dbWOD.TotalTMaterialAmountCPHUSD);
+
+                    //' Local Costs Local Currency, Excluding Tax	
+                    double C_tot_cost_local_noTax = 0.00;
+                    C_tot_cost_local_noTax = Convert.ToDouble(Model.dbWOD.TotalCostLocal) - dImportTax - Convert.ToDouble(Model.dbWOD.SalesTaxParts) - Convert.ToDouble(Model.dbWOD.SalesTaxLabour);
+
+                    //' Local Costs, Local Currency Including Tax
+                    //'F 
+                    double F_tot_cost_local = 0.00, F_tot_W_cost_local = 0.00, F_tot_T_cost_local = 0.00;
+                    F_tot_cost_local = Convert.ToDouble(Model.dbWOD.TotalCostLocal);
+                    F_tot_W_cost_local = Convert.ToDouble(Model.dbWOD.TotalWMaterialAmount);
+                    F_tot_T_cost_local = Convert.ToDouble(Model.dbWOD.TotalTMaterialAmount);
+
+                    string CPH_COSTS = "EMR mng COSTS";
+                    string MSL_COSTS = "MSL COSTS";
+                    string SHOP_COSTS = "SHOP COSTS";
+                    string sConfiguration = "";
+
+                    if (Model.ADMIN || Model.EMR_SPECIALIST_COUNTRY ||Model.EMR_SPECIALIST_SHOP || Model.CPH)
+                    {
+                        sConfiguration = CPH_COSTS;
+                    }
+                    else if (Model.REGION || Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                    {
+                        sConfiguration = MSL_COSTS;
+                    }
+                    else if (Model.ISANYSHOP || Model.READONLY )
+                    {
+                        sConfiguration = SHOP_COSTS;
+                    }
+
+                    //' To display Wear & tear Total & Third Party total                    
+
+
+                    if (Model.ADMIN || Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP || Model.CPH)
+                    {
+                    <tr>
+                        <td colspan="6">Responsibility Code Totals</td>
+                        <td style="text-align: right;" colspan="3">Shop Cost (USD)</td>
+                        <td style="text-align: right;" colspan="3">Shop Cost</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Total Wear & Tear </td>
+                        <td style="text-align: right;" colspan="3">@TOT_W_CPH_USD.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@TOT_W_CPH.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Total Third Party</td>
+                        <td style="text-align: right;" colspan="3">@TOT_T_CPH_USD.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@TOT_T_CPH.ToString("n2")</td>
+                    </tr>
+                    }
+                    else if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                    {
+                    <tr>
+                        <td colspan="6">Responsibility Code Totals</td>
+                        <td style="text-align: right;" colspan="3">Shop Cost (USD)</td>
+                        <td style="text-align: right;" colspan="3">Shop Cost</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Total Wear & Tear </td>
+                        <td style="text-align: right;" colspan="3">@E_tot_W_cost_local_usd.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@F_tot_W_cost_local.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Total Third Party</td>
+                        <td style="text-align: right;" colspan="3">@E_tot_T_cost_local_usd.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@F_tot_T_cost_local.ToString("n2")</td>
+                    </tr>
+                    }
+                    else if (Model.SHOP || Model.ISANYSHOP)
+                    {
+                    <tr>
+                        <td colspan="9">Responsibility Code Totals</td>
+                        <td style="text-align: right;" colspan="3">Shop Cost</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">Total Wear & Tear </td>
+                        <td style="text-align: right;" colspan="3">@F_tot_W_cost_local.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">Total Third Party</td>
+                        <td style="text-align: right;" colspan="3">@F_tot_T_cost_local.ToString("n2")</td>
+                    </tr>
+                    }                    
+                    
+                    <tr>
+
+                        @switch (sConfiguration)
+                        {
+                            case "EMR mng COSTS":
+                            <td colspan="9">Totals</td>
+                            <td style="text-align: right;" colspan="3">EMR mng Cost (USD)</td>
+                                break;
+                            case "MSL COSTS":
+                            <td colspan="3">Totals</td>
+                            <td style="text-align: right;" colspan="3">EMR mng Cost (USD)</td>
+                            <td style="text-align: right;" colspan="3">Shop Cost (USD)</td>		
+                            <td style="text-align: right;" colspan="3">Shop Cost</td>                        
+                                break;
+                            case "SHOP COSTS":
+                            <td colspan="9">Totals</td>
+                            <td style="text-align: right;" colspan="3">Shop Cost</td>
+                                break;
+                            default:
+                                break;
+                        }
+                    </tr>
+                    
+                    //'Description     
+@*<tr>
+                    <td nowrap>Total to be paid including tax/VAT:"</tr>               
+                    <td>Total to be paid excluding tax/VAT :
+                        @
+                    if (Model.ISANYSHOP)
+                        {
+                            
+                        <span>@Html.ActionLink("View Details", "ManageWorkOrder", "ShopDetails", new { shopcode = Model.ShopCode }, null) </span>
+                        }
+                    </td>
+                        <td>Total cost of repair excluding tax/VAT:</td>*@
+                    
+                    
+                    
+                    switch (sConfiguration)
+                    {
+
+                        case "EMR mng COSTS":
+                            //'Row 1 A
+                    <tr>
+                        <td colspan="9">Total to be paid excluding tax/VAT:</td>
+                        <td style="text-align: right;" colspan="3">@A_tot_cost_cph_noTax.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">Total to be paid including tax/VAT:
+                        @if (Model.ISANYSHOP)
+                        {                            
+                            <span><a href="javascript:showPopupWindow('/ManageMasterData/ManageMasterShopVendor/viewAdditionalDetails','View Details',@Model.dbWOD.WorkOrderID,435,350);", style="color:blue; font-size:small;">View Details</a></span>
+                        }
+                        </td>
+                        <td style="text-align: right;" colspan="3">@D_tot_cost_cph.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">Total cost of repair excluding tax/VAT:</td>
+                        <td style="text-align: right;" colspan="3">@G_tot_cost_repair_cph_noTax.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">Total cost of repair including tax/VAT:
+                           <span><a href="javascript:showPopupWindow('/ManageMasterData/ManageMasterShopVendor/viewAdditionalDetails','View Details',@Model.dbWOD.WorkOrderID,435,350);", style="color:blue; font-size:small;">View Details</a></span>
+                        </td>
+                        <td style="text-align: right;" colspan="3">@I_tot_cost_repair_cph.ToString("n2")</td>
+                    </tr>
+                        break;
+                        case "MSL COSTS":
+                    <tr>
+                        <td colspan="3">Total to be paid excluding tax/VAT:</td>
+                        <td style="text-align: right;" colspan="3">@A_tot_cost_cph_noTax.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@B_tot_cost_local_usd_noTax.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@C_tot_cost_local_noTax.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total to be paid including tax/VAT:
+                        @if (Model.ISANYSHOP)
+                        {                            
+                            <span><a href="javascript:showPopupWindow('/ManageMasterData/ManageMasterShopVendor/viewAdditionalDetails','View Details',@Model.dbWOD.WorkOrderID,435,350);", style="color:blue; font-size:small;">View Details</a></span>
+                        }
+                        </td>
+                        <td style="text-align: right;" colspan="3">@D_tot_cost_cph.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@E_tot_cost_local_usd.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3">@F_tot_cost_local.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total cost of repair excluding tax/VAT:</td>
+                        <td style="text-align: right;" colspan="3">@G_tot_cost_repair_cph_noTax.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3"></td>
+                        <td style="text-align: right;" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total cost of repair including tax/VAT:
+                            <span><a href="javascript:showPopupWindow('/ManageMasterData/ManageMasterShopVendor/viewAdditionalDetails','View Details',@Model.dbWOD.WorkOrderID,435,350);", style="color:blue; font-size:small;">View Details</a></span>
+                        </td>
+                        <td style="text-align: right;" colspan="3">@I_tot_cost_repair_cph.ToString("n2")</td>
+                        <td style="text-align: right;" colspan="3"></td>
+                        <td style="text-align: right;" colspan="3"></td>
+                    </tr>
+                        
+                        break;
+                        case "SHOP COSTS":
+                    <tr>
+                        <td colspan="9">Total to be paid excluding tax/VAT:</td>
+                        <td style="text-align: right;" colspan="3">@C_tot_cost_local_noTax.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">Total to be paid including tax/VAT:
+                        @if (Model.ISANYSHOP)
+                        {                            
+                            <span><a href="javascript:showPopupWindow('/ManageMasterData/ManageMasterShopVendor/viewAdditionalDetails','View Details',@Model.dbWOD.WorkOrderID,435,350);", style="color:blue; font-size:small;">View Details</a></span>
+                        }
+                        </td>
+                        <td style="text-align: right;" colspan="3">@F_tot_cost_local.ToString("n2")</td>
+                    </tr>
+                        break;
+                        default: break;
+                    }
+                    
+                }
+            </table>
+        </td>
+    </tr>
+</table>

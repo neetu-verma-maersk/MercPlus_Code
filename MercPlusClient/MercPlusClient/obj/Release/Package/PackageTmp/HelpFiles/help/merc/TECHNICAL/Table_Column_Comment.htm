@@ -1,0 +1,3219 @@
+<HTML>
+<HEAD>
+<TITLE>
+Column Reports : Column/Comment/Table &nbsp&nbsp;(Merc+ Data Model6.ER1, &nbsp;Thursday, January 15, 2004 15:07:08, 498 rows)
+</TITLE>
+</HEAD>
+<BODY>
+<FONT FACE="Arial" SIZE="4"><B>
+<H1  ALIGN="CENTER">Column/Comment/Table</H1>
+</B>
+</FONT>
+<FONT FACE="Arial" SIZE="3">
+
+<P>
+<P><TABLE BORDER>
+<TR>
+<FONT FACE="Arial" SIZE="3"><B>
+<TH>Column Table Name</TH>
+<TH>Column Name</TH>
+<TH>Column Datatype</TH>
+<TH>Column Comment</TH>
+</B>
+</FONT>
+</TR>
+<FONT FACE="Arial" SIZE="3">
+<TR>
+<TD>MESC1TS_AREA</TD>
+<TD>AREA_CD</TD>
+<TD>char(3)</TD>
+<TD>A geographical grouping of countries defined by the Starlight project</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>AREA_DESC</TD>
+<TD>varchar(20)</TD>
+<TD>Textual description of the Area Code</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>AREA_GEO_ID</TD>
+<TD>char(13)</TD>
+<TD>Corresponding GEO ID for the Country Code.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>MESC1TS_CHASSIS</TD>
+<TD>CHAS_EQPNO</TD>
+<TD>char(11)</TD>
+<TD>The equipment ID of a chassis</TD>
+</TR>
+<TR>
+<TD>MESC1TS_COUNTRY</TD>
+<TD>AREA_CD</TD>
+<TD>char(3)</TD>
+<TD>A geographical grouping of countries defined by the Starlight project</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_CD</TD>
+<TD>char(2)</TD>
+<TD>Identification of a country as defined in GEO</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_DESC</TD>
+<TD>varchar(36)</TD>
+<TD>Textual description of Country code</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_GEO_ID</TD>
+<TD>char(13)</TD>
+<TD>Corresponding GEO ID for the Country Code.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_LIMIT_ADJ_FACTOR</TD>
+<TD>float</TD>
+<TD>The percentage up or down of the adjustment to repair amount limit for a type of equipment repair as set by CPH Equipment Limits table.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_COUNTRY_CONT</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CONTRACT_AMOUNT</TD>
+<TD>numeric(16,4)</TD>
+<TD>Total contract Amount CPH will pay Local MSL for Shop supplied materials used on a repair</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_CD</TD>
+<TD>char(2)</TD>
+<TD>Identification of a country as defined in GEO</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_CONT_ID</TD>
+<TD>int</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUCDN</TD>
+<TD>char(3)</TD>
+<TD>MSL Internal currency code &nbsp;ie 100 for United States dollar</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EFF_DTE</TD>
+<TD>datetime</TD>
+<TD>Effective date of the contract</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXP_DTE</TD>
+<TD>&nbsp</TD>
+<TD>Expire date of the contract</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_COUNTRY_LABOR</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Date and Time the record was changed</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>User who modified this record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_CD</TD>
+<TD>char(2)</TD>
+<TD>Identification of a country as defined in GEO</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_LABOR_ID</TD>
+<TD>int</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUCDN</TD>
+<TD>char(3)</TD>
+<TD>MSL Internal currency code &nbsp;ie 100 for United States dollar</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DOUBLETIME_RT</TD>
+<TD>numeric(16,4)</TD>
+<TD>The labor rate for working during doubletime hours.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EFF_DTE</TD>
+<TD>datetime</TD>
+<TD>Date the rate becomes effective.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQTYPE</TD>
+<TD>char(4)</TD>
+<TD>A code identifier for a type of equipment , based on &nbsp;EQTYPE from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the refrigeration unit vs the container
+CONT, CHAS, GENS, REEF, REFU</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXP_DTE</TD>
+<TD>datetime</TD>
+<TD>Date the rate expires.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MISC_RT</TD>
+<TD>numeric(16,4)</TD>
+<TD>A miscellaneous rate type to be used for any other type of work hours not previously defined.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>OVERTIME_RT</TD>
+<TD>&nbsp</TD>
+<TD>The labor rate for working during overtime ours.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REGULAR_RT</TD>
+<TD>&nbsp</TD>
+<TD>The labor rate for working during regular hours.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_CPH_EQP_LIMIT</TD>
+<TD>AGE_FROM</TD>
+<TD>smallint</TD>
+<TD>The (minimum) age from where the age group range starts from</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>AGE_TO</TD>
+<TD>&nbsp</TD>
+<TD>The (maximum) age from where the age group range ends with</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQSIZE</TD>
+<TD>char(2)</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LIMIT_AMOUNT</TD>
+<TD>numeric(16,4)</TD>
+<TD>Maximum amount allowed for an equipment adjusted by percent factor from Country table. &nbsp;A repair exceeding this amount will be suspended for review.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_CURRENCY</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUCDN</TD>
+<TD>char(3)</TD>
+<TD>MSL Internal currency code &nbsp;ie 100 for United States dollar</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CURCD</TD>
+<TD>&nbsp</TD>
+<TD>Currency Code ISO 4217 &nbsp;ie &nbsp;USD</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CURRNAMC</TD>
+<TD>varchar(36)</TD>
+<TD>Currency Name &nbsp;ISO4217 &nbsp;in upper case</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXRATDKK</TD>
+<TD>numeric(14,6)</TD>
+<TD>Exchange Rate for converting to DKK</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXRATEUR</TD>
+<TD>&nbsp</TD>
+<TD>Exchange Rate for converting to Euro</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXRATUSD</TD>
+<TD>&nbsp</TD>
+<TD>Exchange Rate for converting to Us Dollars</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXRATYEN</TD>
+<TD>&nbsp</TD>
+<TD>Exchange Rate for converting to Yen</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>QUOTEDAT</TD>
+<TD>datetime</TD>
+<TD>Date of the quote</TD>
+</TR>
+<TR>
+<TD>MESC1TS_CUST_SHOP_MODE</TD>
+<TD>ACCOUNT_CD</TD>
+<TD>char(7)</TD>
+<TD>Defined account code set up in RRIS system to transmit the data under.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CORP_PAYAGENT_CD</TD>
+<TD>char(3)</TD>
+<TD>An identification of the corporate payagent code as defined in RRIS</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CSM_CD</TD>
+<TD>char(9)</TD>
+<TD>A unique identifier, created by concatenating Customer/Shop/Mode into one field. &nbsp;This represents the set of non STS WOs that can be approved by a given authorization group.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUSTOMER_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique identifier representing a the current owner or leaser of a piece of equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PAYAGENT_CD</TD>
+<TD>char(3)</TD>
+<TD>An identifier to a Payagent as defined in the RRIS system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PROFIT_CENTER</TD>
+<TD>char(2)</TD>
+<TD>Defined profit center code set up in RRIS system to transmit the data under.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RRIS_FORMAT</TD>
+<TD>&nbsp</TD>
+<TD>An indicator of the format type of transmission to RRIS accounting system. &nbsp;Based on the Payagent, different formats of transmission information must be sent.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CD</TD>
+<TD>char(3)</TD>
+<TD>A unique identifier to represent the business doing the actual repairs and submitting workorders.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SUB_PROFIT_CENTER</TD>
+<TD>char(2)</TD>
+<TD>Defined profit center code set up in RRIS system to transmit the data under, either the RRIS branch profit center, or the profit center attached to the branch payagent code.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_CUSTOMER</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUSTOMER_ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>A Yes/No indicator determining if the record is still valid for use in the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUSTOMER_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique identifier representing a the current owner or leaser of a piece of equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUSTOMER_DESC</TD>
+<TD>varchar(30)</TD>
+<TD>A description/name of the Customer.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MAERSK_SW</TD>
+<TD>char(1)</TD>
+<TD>An indication that the Customer is part of the Maersk family and any special system logic pertaining to "Maersk" would pertain to all Customers where this switch is &#146;Y&#146;</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>MESC1TS_EQMODE</TD>
+<TD>ALUMINIUM_SW</TD>
+<TD>char(1)</TD>
+<TD>Indicator of the equipment being made of aluminium or not. &nbsp;Aluminium equipment are repaired under diferent modes.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COTYPE</TD>
+<TD>char(4)</TD>
+<TD>RKEM Equipment Type - not the same as MERC EQSTYPE</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQMODE_ID</TD>
+<TD>int</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQSIZE</TD>
+<TD>char(2)</TD>
+<TD>Equipment size as defined in RKEM</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQSTYPE</TD>
+<TD>char(4)</TD>
+<TD>A sub classification of equipment types - &nbsp;EQSTYPE from RKEM.RKEMUVEQBC 
+ &nbsp;CONT = &nbsp;REEF / TWDK , COFL, FLAT,OSOT,/ OPEN</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_EQSTYPE</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COTYPE</TD>
+<TD>char(4)</TD>
+<TD>RKEM Equipment Type - not the same as MERC EQSTYPE</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQSTYPE</TD>
+<TD>&nbsp</TD>
+<TD>A sub classification of equipment types - &nbsp;EQSTYPE from RKEM.RKEMUVEQBC 
+ &nbsp;CONT = &nbsp;REEF / TWDK , COFL, FLAT,OSOT,/ OPEN</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TYPE_DESC</TD>
+<TD>varchar(20)</TD>
+<TD>A descriptive defintition of the equipment sub type.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_EQTYPE</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQTYPE</TD>
+<TD>char(4)</TD>
+<TD>A code identifier for a type of equipment , based on &nbsp;EQTYPE from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the refrigeration unit vs the container
+CONT, CHAS, GENS, REEF, REFU</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQTYPE_DESC</TD>
+<TD>varchar(30)</TD>
+<TD>A descriptive defintition of the equipment type.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_ERR_MESSAGE</TD>
+<TD>ERROR_MSG</TD>
+<TD>varchar(255)</TD>
+<TD>Textual error message representing the error number</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>ERROR_NO</TD>
+<TD>int</TD>
+<TD>Unique error number representing a system warning or failure</TD>
+</TR>
+<TR>
+<TD>MESC1TS_EVENT_LOG</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Date and Time the record was changed</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>User who modified this record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EVENT_DESC</TD>
+<TD>varchar(4000)</TD>
+<TD>A Complete "system generated" description of what happened with that event</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EVENT_ID</TD>
+<TD>int</TD>
+<TD>Unique ID</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EVENT_NAME</TD>
+<TD>varchar(35)</TD>
+<TD>Name of the event such as &#146;RRIS TRANSMISSION&#146; , &#146;RKRP TRANSMISSION&#146; etc...</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TABLE_NAME</TD>
+<TD>varchar(36)</TD>
+<TD>Name of the Table which the Unique ID corresponds to. The Event is generated because of action in this table</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>UNIQUE_ID</TD>
+<TD>varchar(50)</TD>
+<TD>Key value of the row that triggered the event</TD>
+</TR>
+<TR>
+<TD>MESC1TS_INDEX</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INDEX_DESC</TD>
+<TD>varchar(60)</TD>
+<TD>A descriptive text description of a defined index.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INDEX_ID</TD>
+<TD>int</TD>
+<TD>A unique identifier to an index record which groups repair codes for faster searching capabilities</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INDEX_PRIORITY</TD>
+<TD>smallint</TD>
+<TD>The sort order indexes should be displayed</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_INSPECTION</TD>
+<TD>CHAS_EQPNO</TD>
+<TD>char(11)</TD>
+<TD>The equipment ID of a chassis</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Date and Time the record was changed</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>User who modified this record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INSP_BY</TD>
+<TD>char(3)</TD>
+<TD>The mechanic or shop performing the inspection on the equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INSP_DTE</TD>
+<TD>datetime</TD>
+<TD>The date the inspection was done on the equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKEMLOC</TD>
+<TD>char(8)</TD>
+<TD>Location code where inspection was performed as defined in RKEM system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>XMIT_DTE</TD>
+<TD>datetime</TD>
+<TD>Transmission date of the FHWA inspection</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>XMIT_RC</TD>
+<TD>char(1)</TD>
+<TD>Indication of a successful transmission to RKEM.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_LABOR_RATE</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUSTOMER_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique identifier representing a the current owner or leaser of a piece of equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DOUBLETIME_RT</TD>
+<TD>numeric(16,4)</TD>
+<TD>The labor rate for working during doubletime hours.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EFF_DTE</TD>
+<TD>datetime</TD>
+<TD>Date the rate becomes effective.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQTYPE</TD>
+<TD>char(4)</TD>
+<TD>A code identifier for a type of equipment , based on &nbsp;EQTYPE from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the refrigeration unit vs the container
+CONT, CHAS, GENS, REEF, REFU</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXP_DTE</TD>
+<TD>datetime</TD>
+<TD>Date the rate expires.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LABOR_RATE_ID</TD>
+<TD>int</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MISC_RT</TD>
+<TD>numeric(16,4)</TD>
+<TD>A miscellaneous rate type to be used for any other type of work hours not previously defined.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>OVERTIME_RT</TD>
+<TD>&nbsp</TD>
+<TD>The labor rate for working during overtime ours.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REGULAR_RT</TD>
+<TD>&nbsp</TD>
+<TD>The labor rate for working during regular hours.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CD</TD>
+<TD>char(3)</TD>
+<TD>A unique identifier to represent the business doing the actual repairs and submitting workorders.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_LOCATION</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CONTACT_EQSAL_SW</TD>
+<TD>char(1)</TD>
+<TD>Indicates the local EMR attached to the location has the authorization to send estimates directly to CENEQUSAL bypassing CPH review. Only those estimates for shops residingin the approved location may be sent. Even though the local EMR may be overseeing multiple locations.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COUNTRY_CD</TD>
+<TD>char(2)</TD>
+<TD>Identification of a country as defined in GEO</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LOC_CD</TD>
+<TD>char(8)</TD>
+<TD>A unique identifier to represent the geographical place repair work is done.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LOC_DESC</TD>
+<TD>varchar(30)</TD>
+<TD>A description/name of the location.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LOC_GEO_ID</TD>
+<TD>char(13)</TD>
+<TD>13 character Geo Id , Corresponding to the LOC_CD</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REGION_CD</TD>
+<TD>char(2)</TD>
+<TD>A &nbsp;unique identifier to a Region.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKRPLOC</TD>
+<TD>char(5)</TD>
+<TD>The RKCC location as held in GEO associated to RKST Loc_cd. &nbsp;This is used a a default on Shop table which &nbsp;can then be modified before transmitting to RKRP.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_MANUAL</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>A Yes/No indicator determining if the record is still valid for use in the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_DESC</TD>
+<TD>varchar(60)</TD>
+<TD>A descriptive name for the manual.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_MANUAL_MODE</TD>
+<TD>ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>Indicator of Manual being active or not</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_MANUFACTUR</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DISCOUNT_PERCENT</TD>
+<TD>float</TD>
+<TD>The percentage amount allowed to be discounted off the price of a part for those shop authorized to take the discount.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUFACTUR_NAME</TD>
+<TD>varchar(35)</TD>
+<TD>NAME OF THE MANUFACTURER</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUFCTR</TD>
+<TD>char(3)</TD>
+<TD>Name of the company who built the equipment.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_MASTER_PART</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CORE_PART_SW</TD>
+<TD>char(1)</TD>
+<TD>Core Part Indicator, indicating whether the part is a "core" part 
+Note : Part can be a Core part or Maersk Part or Both</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CORE_VALUE</TD>
+<TD>numeric(16,4)</TD>
+<TD>Cost of the core piece of the part.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DEDUCT_CORE</TD>
+<TD>char(1)</TD>
+<TD>Indicator whether to deduct the core-value from the part-price or not when calculating the price.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUFCTR</TD>
+<TD>char(3)</TD>
+<TD>Name of the company who built the equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MSL_PART_SW</TD>
+<TD>char(1)</TD>
+<TD>Core Part Indicator, indicating whether the part is a "MSL" part 
+Note : Part can be a Core part or Maersk Part or Both</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_ACTIVE_SW</TD>
+<TD>&nbsp</TD>
+<TD>Indicator of the part being currently active in the system or not.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_CD</TD>
+<TD>varchar(20)</TD>
+<TD>An identification to a unique manufactured part</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_DESC</TD>
+<TD>varchar(36)</TD>
+<TD>Textual description of a manufactured part.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_DESIGNATION_1</TD>
+<TD>char(3)</TD>
+<TD>Business requested attribute - usage not identified</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_DESIGNATION_2</TD>
+<TD>&nbsp</TD>
+<TD>&nbsp</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_DESIGNATION_3</TD>
+<TD>&nbsp</TD>
+<TD>&nbsp</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_PRICE</TD>
+<TD>numeric(16,4)</TD>
+<TD>Cost of the part</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PARTS_GROUP_CD</TD>
+<TD>char(4)</TD>
+<TD>Indentification of a grouping of parts</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>QUANTITY</TD>
+<TD>int</TD>
+<TD>Number of pieces included in the part&#146;s price.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REMARKS</TD>
+<TD>varchar(255)</TD>
+<TD>User comments about the part</TD>
+</TR>
+<TR>
+<TD>MESC1TS_MODE</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE_ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>A Yes/No indicator determining if the record is still valid for use in the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE_DESC</TD>
+<TD>varchar(60)</TD>
+<TD>A description of the defined mode.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE_IND</TD>
+<TD>char(1)</TD>
+<TD>Standard Vs Offhire 
+&#146;1&#146; = Standard
+&#146;2&#146; = Offline
+
+This field need tpo be used to order the Modes</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>STANDARD_TIME_SW</TD>
+<TD>&nbsp</TD>
+<TD>An indicator determining if Mode is for standard time repairs or not. &nbsp;Standard time repairs will use codes from Repair Codes table, non standard modes will use the NON STS Codes.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VALIDATION_SW</TD>
+<TD>&nbsp</TD>
+<TD>An indicator to determine whether or not the system should validate the Mode specified on the WO against the equipment identified in the WO. &nbsp;By default, non-standard modes will not/can not &nbsp;be validated</TD>
+</TR>
+<TR>
+<TD>MESC1TS_MODEL</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INDICATOR_CD</TD>
+<TD>char(1)</TD>
+<TD>A one character code which represents the first digit of the repair code that must be used when repairing gensets whose equipment number falls within the given range.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUFCTR</TD>
+<TD>char(3)</TD>
+<TD>Name of the company who built the equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODEL_NO</TD>
+<TD>varchar(36)</TD>
+<TD>Manufacturer&#146;s Model Numer</TD>
+</TR>
+<TR>
+<TD>MESC1TS_NONSCODE</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>NONS_ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>A Yes/No indicator determining if the record is still valid for use in the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>NONS_CD</TD>
+<TD>char(8)</TD>
+<TD>A code that represents work done that does not include standard time and material costs.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>NONS_DESC</TD>
+<TD>varchar(100)</TD>
+<TD>A descriptive text definition to define a non standard time and material code.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_PARTS_GROUP</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PARTS_GROUP_ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>Indicator if record is currently active on database</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PARTS_GROUP_CD</TD>
+<TD>char(4)</TD>
+<TD>Indentification of a grouping of parts</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PARTS_GROUP_DESC</TD>
+<TD>varchar(30)</TD>
+<TD>Textual description of a Parts Group</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REMARKS</TD>
+<TD>varchar(255)</TD>
+<TD>User comments regarding Parts Group</TD>
+</TR>
+<TR>
+<TD>MESC1TS_PAYAGENT</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CORP_PAYAGENT_CD</TD>
+<TD>char(3)</TD>
+<TD>An identification of the corporate payagent code as defined in RRIS</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PAYAGENT_CD</TD>
+<TD>&nbsp</TD>
+<TD>An identifier to a Payagent as defined in the RRIS system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PROFIT_CENTER</TD>
+<TD>char(2)</TD>
+<TD>Defined profit center code set up in RRIS system to transmit the data under.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RRIS_FORMAT</TD>
+<TD>&nbsp</TD>
+<TD>An indicator of the format type of transmission to RRIS accounting system. &nbsp;Based on the Payagent, different formats of transmission information must be sent.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SUB_PROFIT_CENTER</TD>
+<TD>&nbsp</TD>
+<TD>Defined profit center code set up in RRIS system to transmit the data under, either the RRIS branch profit center, or the profit center attached to the branch payagent code.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_PAYAGENT_VENDOR</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LOCAL_ACCOUNT_CD</TD>
+<TD>char(6)</TD>
+<TD>Local Account Code as defined in RRIS</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PAYAGENT_CD</TD>
+<TD>char(3)</TD>
+<TD>An identifier to a Payagent as defined in the RRIS system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PAYMENT_METHOD</TD>
+<TD>char(1)</TD>
+<TD>The preferred payment method to the vendor.Curently not being used in system</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SUPPLIER_CD</TD>
+<TD>char(6)</TD>
+<TD>Supplier code as defined in RRIS</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VENDOR_CD</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier of a vendor.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_PREPTIME</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PREP_CD</TD>
+<TD>char(6)</TD>
+<TD>A unique identifier for preparation time within a particular mode</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PREP_HRS</TD>
+<TD>float</TD>
+<TD>The preptime hours which can be added to WO based on total manhours worked.
+Prep hours should be calculated as the same type of hours worked on the Workorder. &nbsp;For instance, all straight time hours would warrent straight time prep time. &nbsp;Mixed straight and non straight warrents straight time prep, all non straight warrents the hours calculated as the lowest of the not straight time type of hour.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PREP_TIME_MAX</TD>
+<TD>&nbsp</TD>
+<TD>The maximum amount of hours spent on repair. &nbsp;Total hours on workorder cannot exceed &nbsp;Prep_time_Max.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_PROCESS_IDENTIFIER</TD>
+<TD>PARAM_NAME</TD>
+<TD>varchar(50)</TD>
+<TD>Parameter name for process</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PARAM_VALUE</TD>
+<TD>varchar(255)</TD>
+<TD>Paramter value for process</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PROCESS_DESC</TD>
+<TD>varchar(35)</TD>
+<TD>Description of system process</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PROCESS_ID</TD>
+<TD>int</TD>
+<TD>Unique identifier for the Process</TD>
+</TR>
+<TR>
+<TD>MESC1TS_PTI</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>NO_OF_DAYS</TD>
+<TD>int</TD>
+<TD>Number of days between Pre-Trip Inspections allowed &nbsp;for that range of equipment </TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SERIAL_NO_FROM</TD>
+<TD>char(11)</TD>
+<TD>Start equipment serial number for the given PTI days.
+
+Note: If SERIAL_NO_FROM and SERIAL_NO_TO are &#146;0&#146;, then that forms the "default PTI days".</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SERIAL_NO_TO</TD>
+<TD>&nbsp</TD>
+<TD>End equipment serial number for the given PTI days.
+
+Note: If SERIAL_NO_FROM and SERIAL_NO_TO are &#146;0&#146;, then that forms the "default PTI days".</TD>
+</TR>
+<TR>
+<TD>MESC1TS_REFAUDIT</TD>
+<TD>AUDIT_ID</TD>
+<TD>int</TD>
+<TD>System&#146;s Unique identifer</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Date and Time the record was changed</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>User who modified this record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COL_NAME</TD>
+<TD>varchar(50)</TD>
+<TD>Name of thw column which was modified</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>NEW_VALUE</TD>
+<TD>varchar(255)</TD>
+<TD>New Value - after modification of the column&#146;s value.
+
+Note: This will be NULL in case of deletes</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>OLD_VALUE</TD>
+<TD>&nbsp</TD>
+<TD>Original value -before modification of the column</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TAB_NAME</TD>
+<TD>varchar(128)</TD>
+<TD>Table Name which was responsible for generating this audit information</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>UNIQUE_ID</TD>
+<TD>varchar(50)</TD>
+<TD>Unique Id that can define uniquely the row that was changed in the table</TD>
+</TR>
+<TR>
+<TD>MESC1TS_REGION</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REGION_CD</TD>
+<TD>char(2)</TD>
+<TD>A &nbsp;unique identifier to a Region.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REGION_DESC</TD>
+<TD>varchar(30)</TD>
+<TD>A description/name of the Region.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_REPAIR_CODE</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INDEX_ID</TD>
+<TD>int</TD>
+<TD>A unique identifier to an index record which groups repair codes for faster searching capabilities</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MAN_HOUR</TD>
+<TD>float</TD>
+<TD>The maximum number of hours assciated to perform given repair</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MAX_QUANTITY</TD>
+<TD>smallint</TD>
+<TD>The maximum quantity of units allowed for the repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MULTIPLE_UPDATE_SW</TD>
+<TD>char(1)</TD>
+<TD>Allows multiple update using multiple update screen,if the switch is set to yes</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_ACTIVE_SW</TD>
+<TD>&nbsp</TD>
+<TD>A Yes/No indicator determining if the record is still valid for use in the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_DESC</TD>
+<TD>varchar(100)</TD>
+<TD>A descriptive text definition of a repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_IND</TD>
+<TD>char(1)</TD>
+<TD>Identifies non typical repair codes which might include repairs that do not allow prep time or repairs that must have the man-hours lowered.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_PRIORITY</TD>
+<TD>smallint</TD>
+<TD>The order to sort list of repair codes.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKRP_REPAIR_CD</TD>
+<TD>char(6)</TD>
+<TD>The equivilent RKRP repair code, used when transmitting information to RKRP system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_MATERIAL_CEILING</TD>
+<TD>numeric(16,4)</TD>
+<TD>The amount per repair code that is the limited amount a shop can specify for material costs incurred while doing repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TAX_APPLIED_SW</TD>
+<TD>char(1)</TD>
+<TD>This YES/NO switch defines whether sales tax parts needs to be applied for this repair code.
+"-we need a code that is sales tax free.
+-import tax does not apply (since it is labor not materials) -tax on labor for the code does not apply since there are 0 labor hrs" &nbsp;
+Sales Tax Parts is not applied to this code - Import and Sales Labor &nbsp;treat this code the same as if tax applied since there will be no parts associated nor will there be labor hours.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WARRANTY_PERIOD</TD>
+<TD>float</TD>
+<TD>Warratnty period in number of days. &nbsp;For use in ad hoc reporting.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_RPRCODE_EXCLU</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXCLU_REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A repair code, that by business definition, should not be included on a workorder repair when it&#146;s corresponding &nbsp;repair code is on the workorder. &nbsp;This is because the time and dollar allotments already include this exclusionary repair code.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_RPRCODE_PART</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_CD</TD>
+<TD>varchar(20)</TD>
+<TD>An identification to a unique manufactured part</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_SHOP</TD>
+<TD>ACEP_SW</TD>
+<TD>char(1)</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>
+Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUCDN</TD>
+<TD>char(3)</TD>
+<TD>MSL Internal currency code &nbsp;ie 100 for United States dollar
+
+Maersk currency code as kept in global system table &nbsp;INLC1T01CURR. &nbsp;Value for US dollar is &#146;001&#146;.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EDI_PARTNER</TD>
+<TD>varchar(36)</TD>
+<TD>The partner id used to EDI data back to the shop.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EMAIL_ADR</TD>
+<TD>varchar(60)</TD>
+<TD>Email address used to send messages.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>IMPORT_TAX</TD>
+<TD>float</TD>
+<TD>Import Tax defined in % for the cost of parts.
+
+Type 1&3; (import tax rate * cost of numbered non MSL parts). Except where repair code tax applied sw = N
+
+Type 2; do not use non number parts</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LOC_CD</TD>
+<TD>char(8)</TD>
+<TD>A unique identifier to represent the geographical place repair work is done.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>OVERTIME_SUSP_SW</TD>
+<TD>char(1)</TD>
+<TD>A Y/N indicator to determine if any Estimate using non straight time should be suspended or not.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PCT_MATERIAL_FACTOR</TD>
+<TD>float</TD>
+<TD>The percentage, over or under, that a shop is allowed to charge for shop supplied material and parts for a given repair code.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PHONE</TD>
+<TD>char(15)</TD>
+<TD>Contact phone number at Shop.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PREPTIME_SW</TD>
+<TD>char(1)</TD>
+<TD>A Yes/No indication of whether or not a Shop receives preparation time calculated onto WO.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKRPLOC</TD>
+<TD>char(5)</TD>
+<TD>RKCC Location code associated to place of Repair Shop. &nbsp;This code is used when transmitting to RKRP. &nbsp;This may or may not be the RKCC equivilent of RKST Loc_Cd.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RRIS_XMIT_SW</TD>
+<TD>char(1)</TD>
+<TD>An indicator to determine if workorders for shop should be transmitted to RRIS system or not.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RRIS70_SUFFIX_CD</TD>
+<TD>char(2)</TD>
+<TD>The RRIS70 &nbsp;suffix code transmitted to RRIS system - it represents a location code to RRIS system and required by RRIS70..</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_LABOR_CON</TD>
+<TD>float</TD>
+<TD>Sales Tax (VAT) Percentage for Labor in container repairs.
+
+Local labor cost * appropriate s/tax rate on &nbsp;labor Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_LABOR_GEN</TD>
+<TD>&nbsp</TD>
+<TD>Sales Tax (VAT) Percentage for Labor &nbsp;in Non - container or Genset repairs.
+
+Local labor cost * appropriate s/tax rate on &nbsp;labor Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_PART_CONT</TD>
+<TD>&nbsp</TD>
+<TD>Sales Tax (VAT) Percentage for Parts in container repairs
+
+
+(Cost for shop supplied matl + numbered non MSL parts) * appropriate parts sales tax rate Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_PART_GEN</TD>
+<TD>&nbsp</TD>
+<TD>Sales Tax (VAT) Percentage for Parts in Non - container or Genset repairs.
+
+(Cost for shop supplied matl + numbered non MSL parts) * appropriate parts sales tax rate Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>A Yes/No indicator determining if the record is still valid for use in the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CD</TD>
+<TD>char(3)</TD>
+<TD>A unique identifier to represent the business doing the actual repairs and submitting workorders.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_DESC</TD>
+<TD>varchar(30)</TD>
+<TD>A description/name of the shop.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_TYPE_CD</TD>
+<TD>char(1)</TD>
+<TD>An indicator (&#146;1&#146; , &#146;2&#146;, &#146;3&#146; ) &nbsp&nbsp;determining how shop uses manufactured parts.
+How Type 1 shops use this table
+Parts numbers entered are paid at list price from the master parts table with following adjustments
+ less the mfg’s discount field from manufacturers input screen 
+Plus discount/markup field at the shop level.
+Plus tax and/or VAT if applicable at shop level
+Vendor is paid for parts per above
+Amount for same is reported to RKRP – no part numbers to be transferred
+How Type 2 shops use this table
+Part numbers entered are verified against master parts table with following adjustments
+less the mfg’s discount field from manufacturers input screen
+Plus discount/markup field at the shop level.
+Plus tax and/or VAT if applicable at shop level
+No amount is paid to vendor for parts reported by part number
+Part numbers are reported to RKRP for deduction from stock and price is sent to RKRP as well.
+This price sent to RKRP should be list less mfg’s discount but with no markup.
+How Type 3 shops use this table
+Type 3  shops – Supplying parts that they purchase (exception are mandatory Maersk parts – explained below)
+Part numbers entered are paid at list price from this table, adjusted by
+Discount/markup field at the shop level 
+Plus tax and/or VAT if applicable at shop level.
+Vendor is paid for parts per above
+Amount for same is reported to RKRP – no part numbers to be transferred.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VENDOR_CD</TD>
+<TD>char(6)</TD>
+<TD>A unique identifier of a vendor. &nbsp;Owner of one or more shops.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_SHOP_CONT</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CONTRACT_AMOUNT</TD>
+<TD>numeric(16,4)</TD>
+<TD>The agreed amount to be paid for shop supplied materials for given repair code.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EFF_DTE</TD>
+<TD>datetime</TD>
+<TD>Effective Date from which the contract starts</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXP_DTE</TD>
+<TD>&nbsp</TD>
+<TD>Expire Date of the contract. Contractis not valid after this date.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CD</TD>
+<TD>char(3)</TD>
+<TD>A unique identifier to represent the business doing the actual repairs and submitting workorders.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CONT_ID</TD>
+<TD>int</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>MESC1TS_SHOP_LIMITS</TD>
+<TD>AUTO_APPROVE_LIMIT</TD>
+<TD>numeric(16,4)</TD>
+<TD>Limit below which the work order is approved automatically.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_AMT_LIMIT</TD>
+<TD>numeric(16,4)</TD>
+<TD>The amount limit a shop can charge on a workorder before it is flagged for suspension.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CD</TD>
+<TD>char(3)</TD>
+<TD>A unique identifier to represent the business doing the actual repairs and submitting workorders.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_MATERIAL_LIMIT</TD>
+<TD>numeric(16,4)</TD>
+<TD>The sum of all shop supplied materials on an Estimate - this amount cannot be exceeded on any Estimate.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_SPECIAL_REMARKS</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DISPLAY_SW</TD>
+<TD>char(1)</TD>
+<TD>Display Switch - to determine whether the display the special remarks to user or not</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REMARKS</TD>
+<TD>varchar(255)</TD>
+<TD>Remarks that will be seen by the approver or the vendor</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REMARKS_ID</TD>
+<TD>int</TD>
+<TD>A unique identifier to the Special Remarks profile.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CEILING</TD>
+<TD>numeric(16,4)</TD>
+<TD>Total Estimate repair ceiling.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKEM_PROFILE</TD>
+<TD>varchar(11)</TD>
+<TD>Equipment profile as defined by RKEM</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SERIAL_NO_FROM</TD>
+<TD>char(11)</TD>
+<TD>The beginning of the range of equipment ID.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SERIAL_NO_TO</TD>
+<TD>&nbsp</TD>
+<TD>The end of the range of equipment ID.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_STATUS_CODE</TD>
+<TD>STATUS_CODE</TD>
+<TD>smallint</TD>
+<TD>State of the work order such as Estimate, Draft.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>STATUS_DSC</TD>
+<TD>varchar(35)</TD>
+<TD>Description of the Status Code sucha s &#146;Draft&#146;, Pending&#146;, &#146;Suspended&#146; etc...</TD>
+</TR>
+<TR>
+<TD>MESC1TS_SUSPEND</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CD</TD>
+<TD>char(3)</TD>
+<TD>A unique identifier to represent the business doing the actual repairs and submitting workorders.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SUSPCAT_ID</TD>
+<TD>int</TD>
+<TD>A unique table identifier to represent a suspension category.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_SUSPEND_CAT</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SUSPCAT_DESC</TD>
+<TD>varchar(255)</TD>
+<TD>A descriptive messsage identifying reason the workorder has been suspended.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SUSPCAT_ID</TD>
+<TD>int</TD>
+<TD>A unique table identifier to represent a suspension category.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_TRANSMIT</TD>
+<TD>ACCOUNT_CD</TD>
+<TD>char(7)</TD>
+<TD>Defined account code set up in RRIS system to transmit the data under.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUSTOMER_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique identifier representing a the current owner or leaser of a piece of equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKRP_XMIT_SW</TD>
+<TD>char(1)</TD>
+<TD>An indicator to determine if workorders for the given mode and customer should be transmitted to RKRP system or not.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RRIS_XMIT_SW</TD>
+<TD>&nbsp</TD>
+<TD>An indicator to determine if workorders for the given mode and customer should be transmitted to RRIS system or not.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_VENDOR</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DISCOUNT_DAYS</TD>
+<TD>smallint</TD>
+<TD>The number of days allowed between receipt of workorder and transmission of payment to RRIS. &nbsp;If transmission occurs with the number of DISCOUNT_DAYS, the the DISCOUNT_PCT amount can be taken. &nbsp;This DISCOUNT_DAYS does not represent the contractual agreement with the Vendor as additional time must be added in for the time it takes RRIS to do a check run.
+Currently not in use by the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DISCOUNT_PCT</TD>
+<TD>float</TD>
+<TD>The discount percentage taken off workorders prior to sentding to RRIS for payment. 
+Currently not in use in MERC+.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VENDOR_ACTIVE_SW</TD>
+<TD>char(1)</TD>
+<TD>A Yes/No indicator determining if the record is still valid for use in the system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VENDOR_CD</TD>
+<TD>char(6)</TD>
+<TD>A unique identifier of a vendor.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VENDOR_DESC</TD>
+<TD>varchar(30)</TD>
+<TD>Descriptive information identifying Vendor.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_WO</TD>
+<TD>AMOUNT_PAID</TD>
+<TD>numeric(16,4)</TD>
+<TD>The amount of the WO to be paid in RRIS system.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>APPROVAL_DTE</TD>
+<TD>datetime</TD>
+<TD>Approval Date - Date when the Estimate was approved</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>APPROVED_BY</TD>
+<TD>char(8)</TD>
+<TD>UserID of person approving the WO for payment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CAUSE</TD>
+<TD>char(1)</TD>
+<TD>A code value 1 - 4 representing the reason for the equipment damage, ie normal wear and tear, handling, third party confirmed, third party unconfirmed</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHECK_NO</TD>
+<TD>varchar(36)</TD>
+<TD>The Check number returned from RRIS.
+Not currently in use in system</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COTYPE</TD>
+<TD>char(4)</TD>
+<TD>RKEM Equipment Type - not the same as MERC EQSTYPE</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CRTS</TD>
+<TD>datetime</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUCDN</TD>
+<TD>char(3)</TD>
+<TD>MSL Internal currency code &nbsp;ie 100 for United States dollar</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CUSTOMER_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique identifier representing a the current owner or leaser of a piece of equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DELDATSH</TD>
+<TD>datetime</TD>
+<TD>PTI Date - Pre Trip Inspection Date</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DPP</TD>
+<TD>float</TD>
+<TD>Damage Protection Plan</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DT_RATE</TD>
+<TD>numeric(16,4)</TD>
+<TD>Double Time Rate - Local</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>DT_RATE_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Double Time Rate - CPH</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQINDAT</TD>
+<TD>datetime</TD>
+<TD>Production Date</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQIOFLT</TD>
+<TD>char(1)</TD>
+<TD>The (EQBC) field is 
+blank when equipment is active
+D = Disposed
+R = Redelivered
+V = VSA/SO inactive</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQMANCD</TD>
+<TD>char(3)</TD>
+<TD>RKEM Manufacturer code for Containers</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQMATR</TD>
+<TD>&nbsp</TD>
+<TD>Material . eg. steel</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQOUTHGU</TD>
+<TD>char(7)</TD>
+<TD>Height of the equipment</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQOWNTP</TD>
+<TD>char(3)</TD>
+<TD>Owner type (OWN, LT, ST VSA, SO, ONE)</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQPNO</TD>
+<TD>varchar(11)</TD>
+<TD>This Equipment Number exists in RKEM</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQPROFIL</TD>
+<TD>char(11)</TD>
+<TD>Equipment Profile ID as defined in RKEM</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQRUMAN</TD>
+<TD>varchar(15)</TD>
+<TD>Make information for the reefer / genset</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQRUTYP</TD>
+<TD>&nbsp</TD>
+<TD>Model infor for reefer units or Genset</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQSIZE</TD>
+<TD>char(2)</TD>
+<TD>Equipment Size - Length and Height</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQSTYPE</TD>
+<TD>char(4)</TD>
+<TD>Equipment Sub Type</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EQTYPE</TD>
+<TD>&nbsp</TD>
+<TD>A code identifier for a type of equipment , based on &nbsp;EQTYPE from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the refrigeration unit vs the container
+CONT, CHAS, GENS, REEF, REFU</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>EXCHANGE_RATE</TD>
+<TD>numeric(14,6)</TD>
+<TD>Rate of exchange at the time of estimate approval</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>FIXCOVER</TD>
+<TD>float</TD>
+<TD>Fixed Cover</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>IMPORT_TAX</TD>
+<TD>numeric(16,4)</TD>
+<TD>Type 1&3; (import tax rate * cost of numbered non MSL parts). Except where repair code tax applied sw = N
+
+Type 2; do not use non MSL parts</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>IMPORT_TAX_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Type 1&2& 3; (import tax rate * cost of all &nbsp;numbered parts). &nbsp;Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>IMPORT_TAX_PCT</TD>
+<TD>float</TD>
+<TD>Import Tax Pecent for the Shop at the time of work order aprroval</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>INVOICE_DTE</TD>
+<TD>datetime</TD>
+<TD>Date the workorder was transmitted to RRIS system for invoicing.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANH_RATE</TD>
+<TD>numeric(16,4)</TD>
+<TD>The man hour rate charged to perform this work.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANH_RATE_CPH</TD>
+<TD>&nbsp</TD>
+<TD>The man hour rate paid by CPH to local EMR &nbsp;in US$</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MISC_RATE</TD>
+<TD>numeric(16,4)</TD>
+<TD>Miscellaneous Rate - Local</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MISC_RATE_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Miscellaneous Rate - CPH</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>OFFHIR_LOCATION_SW</TD>
+<TD>char(1)</TD>
+<TD>Indicates whether the equipment is at an offhire location or not</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>OT_RATE</TD>
+<TD>numeric(16,4)</TD>
+<TD>Over Time Rate &nbsp;- Local</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>OT_RATE_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Over Time Rate - CPH</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PAID_DTE</TD>
+<TD>datetime</TD>
+<TD>Payment date for invoice received from RRIS.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REFRBDAT</TD>
+<TD>&nbsp</TD>
+<TD>Refurbishment Date</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_DTE</TD>
+<TD>&nbsp</TD>
+<TD>The date the repair work was performed.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REQ_REMARK_SW</TD>
+<TD>char(1)</TD>
+<TD>Identifies that the shop has specifically requested remarks from the Local MSL, causing Estimate to Suspend for MSL review and comments</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKRP_REPAIR_DTE</TD>
+<TD>datetime</TD>
+<TD>The Repair date that is transmitted to RKRP.
+When legitimate duplicate WO exists and the date must be changed, need to retain that date so that a new unique date can be transmitted</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKRP_XMIT_DTE</TD>
+<TD>&nbsp</TD>
+<TD>Date the WO was transmitted to RKRP.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>RKRP_XMIT_SW</TD>
+<TD>char(1)</TD>
+<TD>Value of the corresponding RKRP_XMIT_SW from MESC1TS_TRANSMIT.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_LABOR</TD>
+<TD>numeric(16,4)</TD>
+<TD>Local Shop Sales Tax for the Labor
+
+Local labor cost * appropriate s/tax rate on &nbsp;labor Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_LABOR_CPH</TD>
+<TD>&nbsp</TD>
+<TD>CPH Sales Tax for the Labor
+
+Country labor cost * appropriate s/tax rate on labor Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_LABOR_PCT</TD>
+<TD>float</TD>
+<TD>Labor Sales Tax Pecent for the Shop at the time of work order aprroval</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_PARTS</TD>
+<TD>numeric(16,4)</TD>
+<TD>Local Shop Sales Tax for the Parts
+
+(Cost for shop supplied matl + numbered non MSL parts) * appropriate parts sales tax rate Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_PARTS_CPH</TD>
+<TD>&nbsp</TD>
+<TD>CPH Sales Tax for the Labor
+
+(Cost for &nbsp;Tot_SHop_Amt_CPH &nbsp;+ Tot_MAn_Parts_CPH ) * appropriate parts sales tax rate Except where repair code tax applied sw = N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SALES_TAX_PARTS_PCT</TD>
+<TD>float</TD>
+<TD>Parts Sales Tax Pecent for the Shop at the time of work order aprroval</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_CD</TD>
+<TD>char(3)</TD>
+<TD>A unique identifier to represent the business doing the actual repairs and submitting workorders.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_WORKING_SW</TD>
+<TD>char(1)</TD>
+<TD>A switch to indicate whether the shop is currently working on the estmate. &nbsp;This is used by the Shop only.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>STATUS_CODE</TD>
+<TD>smallint</TD>
+<TD>State of the work order such as Estimate, Draft.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>STEMPTY</TD>
+<TD>char(1)</TD>
+<TD>Full / Empty Indicator</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>STREDEL</TD>
+<TD>&nbsp</TD>
+<TD>Global Hunt Y/N</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>STREFURB</TD>
+<TD>&nbsp</TD>
+<TD>Indicator whether the conatiner is for refurbushment</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>STSELSCR</TD>
+<TD>&nbsp</TD>
+<TD>Indicates whether the equipment is for sale</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>THIRD_PARTY</TD>
+<TD>char(8)</TD>
+<TD>The RKCC location code representing the place of 3rd party damage to equipment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_COST_CPH</TD>
+<TD>numeric(16,4)</TD>
+<TD>Total Cost paid by CPH to local EMR in US$
+
+Type 1 & 3 Shops ; 
+TOT_LABOR_COST_CPH +
+TOT_SHOP_AMT_CPH &nbsp&nbsp;+ 
+TOT_MAN_PARTS_CPH
+IMPORT_TAX_CPH &nbsp&nbsp&nbsp;+ &nbsp;
+SALES_TAX_LABOR_CPH &nbsp&nbsp&nbsp;+ 
+SALES_TAX_PARTS_CPH 
+
+Type 2;
+TOT_LABOR_COST_CPH +
+TOT_SHOP_AMT_CPH &nbsp&nbsp;+ 
+SALES_TAX_LABOR_CPH &nbsp&nbsp&nbsp;+ 
+SALES_TAX_PARTS_CPH 
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_COST_LOCAL</TD>
+<TD>&nbsp</TD>
+<TD>Type 1 & 3 Shops ; 
+TOT_LABOR_COST +
+TOT_SHOP_AMT &nbsp&nbsp;+ 
+TOT_MAN_PARTS
+IMPORT_TAX &nbsp&nbsp&nbsp;+ &nbsp;
+SALES_TAX_LABOR &nbsp&nbsp&nbsp;+ 
+SALES_TAX_PARTS 
+
+Type 2;
+TOT_LABOR_COST +
+TOT_SHOP_AMT &nbsp&nbsp;+ 
+SALES_TAX_LABOR &nbsp&nbsp&nbsp;+ 
+SALES_TAX_PARTS </TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_COST_REPAIR</TD>
+<TD>&nbsp</TD>
+<TD>Total Local Cost for Repair</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_COST_REPAIR_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Total CPH Cost for repair</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_LABOR_COST</TD>
+<TD>&nbsp</TD>
+<TD>Total cost of labor to do repair.
+9997
+
+ COMPUTE &nbsp;TOT-LABOR-COST ROUNDED = &nbsp&nbsp;
+ &nbsp&nbsp&nbsp&nbsp;(WO.TOT-MANH-REG * LABOR_RATE.REGULAR_RT) + 
+ &nbsp&nbsp&nbsp&nbsp;(WO.TOT-MANH-OT &nbsp;* LABOR_RATE.OVERTIME_RT) + &nbsp;
+ &nbsp&nbsp&nbsp&nbsp;(WO.TOT-MANH-DT &nbsp;* LABOR_RATE.DOUBLE_RT) &nbsp&nbsp&nbsp;+ 
+ (WO.TOT-MANH-MISC &nbsp;* LABOR_RATE.MISC_RT) &nbsp&nbsp&nbsp;+ &nbsp;
+ (WO.TOT-PREP_HRS * LABOR_RATE.??????) &nbsp&nbsp&nbsp&nbsp;
+
+* note Prep rate is based on type of hours on estimate.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_LABOR_COST_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Total cost of labor paid by CPH to local EMR in US$ based off Country Labor Rates
+9997
+
+Total cost of labor to do repair.
+
+ COMPUTE &nbsp;TOT-LABOR-COST ROUNDED = &nbsp&nbsp;
+ &nbsp&nbsp&nbsp&nbsp;(WO.TOT-MANH-REG * COUNTRY_LABOR_RATE.REGULAR_RT) + 
+ &nbsp&nbsp&nbsp&nbsp;(WO.TOT-MANH-OT &nbsp;* COUNTRY_LABOR_RATE.OVERTIME_RT) + &nbsp;
+ &nbsp&nbsp&nbsp&nbsp;(WO.TOT-MANH-DT &nbsp;* COUNTRY_LABOR_RATE.DOUBLE_RT) &nbsp&nbsp&nbsp;+ 
+ (WO.TOT-MANH-MISC &nbsp;* COUNTRY_LABOR_RATE.MISC_RT) &nbsp&nbsp&nbsp;+ &nbsp;
+ (WO.TOT-PREP_HRS * COUNTRY_LABOR_RATE.??????) &nbsp&nbsp&nbsp&nbsp;
+
+* note Prep rate is based on type of hours on estimate.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_LABOR_HRS</TD>
+<TD>float</TD>
+<TD>Total man hours worked as sum of 
+regular, overtime and doubletime hours &nbsp;+ tot-prep</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MAERSK_PARTS</TD>
+<TD>numeric(16,4)</TD>
+<TD>Total cost of the parts owned by Maersk in local dollars</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MAERSK_PARTS_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Total CPH cost of the parts owned by Maersk in USD</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MAN_PARTS</TD>
+<TD>&nbsp</TD>
+<TD>Total cost of Manufacturer parts used by shop in local currency</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MAN_PARTS_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Total CPH cost of Manufacturer parts in USD</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MANH_DT</TD>
+<TD>float</TD>
+<TD>The number of double time &nbsp;manhours worked on repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MANH_MISC</TD>
+<TD>&nbsp</TD>
+<TD>The number of miscellaneous &nbsp&nbsp;time &nbsp;manhours worked on repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MANH_OT</TD>
+<TD>&nbsp</TD>
+<TD>The number of overtime &nbsp;manhours worked on repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_MANH_REG</TD>
+<TD>&nbsp</TD>
+<TD>The number of regular manhours worked on repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_PREP_HRS</TD>
+<TD>&nbsp</TD>
+<TD>Total number of preparation hours calculated on the workorder.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_REPAIR_MANH</TD>
+<TD>&nbsp</TD>
+<TD>Sum of all detail man hours 
+ 
+
+
+Detail Manhours = WOREPAIR.QTY_REPAIRS * ACTUAL_MANH
+
+TOT REPAIR_MANH = sum of all Detail Manhours</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_SHOP_AMT</TD>
+<TD>numeric(16,4)</TD>
+<TD>Total of repairs shop supplied materials cost.
+
+TOT_SHOP_AMT = sum of all detail SHOP_MATERIAL_AMT</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOT_SHOP_AMT_CPH</TD>
+<TD>&nbsp</TD>
+<TD>Total of repairs shop supplied materials cost for CPH.
+
+TOT_SHOP_AMT_CPH = sum of all detail &nbsp;CPH_MATERIAL_AMT</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TOTAL_COST_LOCAL_USD</TD>
+<TD>&nbsp</TD>
+<TD>Total cost is computed as per total cost computatio formula and then converted into US Dollars.
+Type 1 & 3 Shops ; 
+TOT_LABOR_COST +
+TOT_SHOP_AMT &nbsp&nbsp;+ 
+TOT_MAN_PARTS
+IMPORT_TAX &nbsp&nbsp&nbsp;+ &nbsp;
+SALES_TAX_LABOR &nbsp&nbsp&nbsp;+ 
+SALES_TAX_PARTS 
+
+Type 2;
+TOT_LABOR_COST +
+TOT_SHOP_AMT &nbsp&nbsp;+ 
+SALES_TAX_LABOR &nbsp&nbsp&nbsp;+ 
+SALES_TAX_PARTS </TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VENDOR_CD</TD>
+<TD>char(6)</TD>
+<TD>A unique identifier of a vendor.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VENDOR_REF_NO</TD>
+<TD>varchar(10)</TD>
+<TD>Vendor&#146;s reference number to be used during invoicing process (Estimate number)</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>VOUCHER_NO</TD>
+<TD>char(8)</TD>
+<TD>Voucher number generated and sent to &nbsp;RRIS which indicates payment of invoice.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WO_ID</TD>
+<TD>int</TD>
+<TD>A unique identifier to the WO header table.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WO_RECV_DTE</TD>
+<TD>datetime</TD>
+<TD>Date the WO was received into system. &nbsp;This date will be passed to RRIS system as the date used to calculate the saving percentage when bills are paid within a given time frame in RRIS.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WOTYPE</TD>
+<TD>char(1)</TD>
+<TD>Used to identify standard time WO from non standard time WOs. &nbsp;May also be used in future to identify other categories of WOs.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_WOAUDIT</TD>
+<TD>AUDIT_TEXT</TD>
+<TD>varchar(4000)</TD>
+<TD>Audit Text is system generated text that explains the action that took place which triggered this audit</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Date time when the action was made</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>User who is responsible for this action</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WO_ID</TD>
+<TD>int</TD>
+<TD>A unique identifier to the WO header table.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_WOPART</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COST_CPH</TD>
+<TD>numeric(16,4)</TD>
+<TD>Copenhagen cost in USD
+
+See documentation TOTALS MATRIX for rules on calculation of the part price.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COST_LOCAL</TD>
+<TD>&nbsp</TD>
+<TD>Local shop cost in local currency.
+
+See documentation TOTALS MATRIX for rules on calculation of the part price.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PART_CD</TD>
+<TD>varchar(20)</TD>
+<TD>An identification to a unique manufactured part</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>QTY_PARTS</TD>
+<TD>float</TD>
+<TD>Number of Parts used for the Repair </TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SERIAL_NUMBER</TD>
+<TD>varchar(36)</TD>
+<TD>Serial Number of the part</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WO_ID</TD>
+<TD>int</TD>
+<TD>A unique identifier to the WO header table.</TD>
+</TR>
+<TR>
+<TD>MESC1TS_WOREMARK</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record
+</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CRTS</TD>
+<TD>datetime</TD>
+<TD>Date/Timestamp the Remark was inserted to system</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REMARK</TD>
+<TD>varchar(255)</TD>
+<TD>A textual remark or comment used to clairify information regarding the WO.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REMARK_TYPE</TD>
+<TD>char(1)</TD>
+<TD>An indicator to specify if Remark was &#146;S&#146;ystem generated, &#146;V&#146;endor comment, &#146;I&#146;nternal manager&#146;s comment or &#146;E&#146;xternal manager&#146;s comment.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SUSPCAT_ID</TD>
+<TD>int</TD>
+<TD>A unique table identifier to represent a suspension category.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WO_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier to the WO header table.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WOREMARK_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier to a Workorder Remark</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>XMIT_DTE</TD>
+<TD>smalldatetime</TD>
+<TD>Date Remark sent via email &nbsp;-
+No longer used in system</TD>
+</TR>
+<TR>
+<TD>MESC1TS_WOREPAIR</TD>
+<TD>ACTUAL_MANH</TD>
+<TD>float</TD>
+<TD>The number of manhours worked on a &nbsp;given repair. </TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHTS</TD>
+<TD>datetime</TD>
+<TD>Timestamp of last change to record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CHUSER</TD>
+<TD>varchar(32)</TD>
+<TD>Identification of last user to change record</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>CPH_MATERIAL_AMT</TD>
+<TD>numeric(16,4)</TD>
+<TD>Amount from country contract rates that copenhagen will pay the local EMR for shop supplied materials</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MANUAL_CD</TD>
+<TD>char(4)</TD>
+<TD>A unique 4 character code to identify a specific manual.
+&#146;MAER&#146; - Maersk manual</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>MODE</TD>
+<TD>char(2)</TD>
+<TD>A unique 2 character code used to identify mode. &nbsp;Mode refers to the style or kind of equipment is being repaired.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>NONS_CD</TD>
+<TD>char(8)</TD>
+<TD>A code that represents work done that does not include standard time and material costs.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>QTY_REPAIRS</TD>
+<TD>smallint</TD>
+<TD>The number of repairs of one kind done.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>REPAIR_CD</TD>
+<TD>char(8)</TD>
+<TD>A code used to define standard time and material repair work.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>SHOP_MATERIAL_AMT</TD>
+<TD>numeric(16,4)</TD>
+<TD>The amount charged for Shop supplied materials for the &nbsp;repair.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WO_ID</TD>
+<TD>int</TD>
+<TD>A unique identifier to the WO header table.</TD>
+</TR>
+<TR>
+<TD>SEC_ACTION</TD>
+<TD>ACTION_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining an Action</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>ACTION_NAME</TD>
+<TD>varchar(36)</TD>
+<TD>A textual definition of an Action on a WebPage</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WEBPAGE_ID</TD>
+<TD>int</TD>
+<TD>A unique identity key defining a Webpage</TD>
+</TR>
+<TR>
+<TD>SEC_AUTHGROUP</TD>
+<TD>AUTHGROUP_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier to the authorization group.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>AUTHGROUP_NAME</TD>
+<TD>varchar(36)</TD>
+<TD>A texual definition of the authorization group.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COLUMN_DESC</TD>
+<TD>&nbsp</TD>
+<TD>A description of the information the Column_Name defines. &nbsp;ie &nbsp;LOC_CD would be Location Code</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COLUMN_NAME</TD>
+<TD>varchar(128)</TD>
+<TD>The column name in the table specifying the authorization level, most likely the primary key column.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>PARENT_AUTHGROUP_ID</TD>
+<TD>int</TD>
+<TD>The ID of the parent Authorization Group for this Group.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>READONLY_SW</TD>
+<TD>char(1)</TD>
+<TD></TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>TABLE_NAME</TD>
+<TD>varchar(128)</TD>
+<TD>The table in the database representing the authorization level of data.</TD>
+</TR>
+<TR>
+<TD>SEC_AUTHGROUP_ACTION</TD>
+<TD>ACTION_ID</TD>
+<TD>int</TD>
+<TD>A unique identity key defining an Action</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>AUTHGROUP_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier to the authorization group.</TD>
+</TR>
+<TR>
+<TD>SEC_AUTHGROUP_FUNCTION</TD>
+<TD>&nbsp</TD>
+<TD>&nbsp</TD>
+<TD>&nbsp</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>FUNCTION_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining a &nbsp;Function </TD>
+</TR>
+<TR>
+<TD>SEC_AUTHGROUP_USER</TD>
+<TD>ACCESS_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining a combination of User to an Authority Group</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>AUTHGROUP_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier to the authorization group.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COLUMN_VALUE</TD>
+<TD>varchar(36)</TD>
+<TD>The actual data value a user has access to. &nbsp;The Column_Name and Table_Name where the data value exists is from the Authorization Group &nbsp;entity.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>USER_ID</TD>
+<TD>int</TD>
+<TD>A unique identity key defining a &nbsp;User</TD>
+</TR>
+<TR>
+<TD>SEC_AUTHGROUP_WEBPAGE</TD>
+<TD>AUTHGROUP_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier to the authorization group.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WEBPAGE_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining a Webpage</TD>
+</TR>
+<TR>
+<TD>SEC_AUTHGROUP_WEBSITE</TD>
+<TD>AUTHGROUP_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identifier to the authorization group.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WEBSITE_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining a WebSite </TD>
+</TR>
+<TR>
+<TD>SEC_FUNCTION</TD>
+<TD>ACTION_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining an Action</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>FUNCTION_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining a &nbsp;Function </TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>FUNCTION_NAME</TD>
+<TD>varchar(36)</TD>
+<TD>A textual definition of a Function within an Action</TD>
+</TR>
+<TR>
+<TD>SEC_USER</TD>
+<TD>ACTIVE_STATUS</TD>
+<TD>char(1)</TD>
+<TD>Identifies the status of the User as being in an Active state or Inactive state</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>APPROVAL_AMOUNT</TD>
+<TD>numeric(16,4)</TD>
+<TD>The maximum limit amount in USD, that the user is authorized to approve on Estimates</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>COMPANY</TD>
+<TD>varchar(36)</TD>
+<TD>Name of the Company user is associated with or employed by</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>FIRSTNAME</TD>
+<TD>varchar(15)</TD>
+<TD>User given name</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LASTNAME</TD>
+<TD>varchar(36)</TD>
+<TD>User surname</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LOC_CD</TD>
+<TD>char(8)</TD>
+<TD>A unique identifier to represent the geographical place repair work is done.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>LOGIN</TD>
+<TD>varchar(32)</TD>
+<TD>A given user handle to log onto the web application.</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>USER_ID</TD>
+<TD>int</TD>
+<TD>A unique identity key defining a &nbsp;User</TD>
+</TR>
+<TR>
+<TD>SEC_WEBPAGE</TD>
+<TD>WEBPAGE_ID</TD>
+<TD>&nbsp</TD>
+<TD>A unique identity key defining a Webpage</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WEBPAGE_NAME</TD>
+<TD>varchar(36)</TD>
+<TD>A textual definition of a WebPage on a WebSite</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WEBSITE_ID</TD>
+<TD>int</TD>
+<TD>A unique identity key defining a WebSite </TD>
+</TR>
+<TR>
+<TD>SEC_WEBSITE</TD>
+<TD>&nbsp</TD>
+<TD>&nbsp</TD>
+<TD>&nbsp</TD>
+</TR>
+<TR>
+<TD>&nbsp</TD>
+<TD>WEBSITE_NAME</TD>
+<TD>varchar(36)</TD>
+<TD>A textual definition of an WebSite</TD>
+</TR>
+</FONT>
+</TABLE>
+</FONT></BODY>
+</HTML>

@@ -1,0 +1,135 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-gb">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>USER MANAGEMENT</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" height="964">
+  <tr>
+    <td height="38" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <p align="center"><span class="sub_heading"><font size="6" face="Verdana">MERC+ User 
+    management</font></span></td>
+  </tr>
+  <tr>
+    <td height="30" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="44" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <font face="Verdana">
+    <font size="4">Add a new user<br>
+    </font>
+    <font size="2"><br>
+    A new user is updated in MERC+ in 2 steps</font><ol>
+      <li>Create the new user in &quot;Add new user&quot; screen.</li>
+      <li>Assign the user permissions in &quot;Set user permissions&quot; screen.</li>
+    </ol>
+    <p><u>NOTE</u><br>
+    Adding a new user to MERC+ without assigning user permissions will not allow 
+    user to log on to MERC+.</font></td>
+  </tr>
+  <tr>
+    <td height="25" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <b><font face="Verdana">Related links</font><span lang="EN-GB" style="font-size: 7.5pt; font-family: Verdana"><br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+    <span lang="EN-GB" style="font-family: Verdana"><font size="2">
+    <a href="sec_UserEdit_help.htm">Editing an existing user</a></font></span><span lang="EN-GB" style="font-size: 7.5pt; font-family: Verdana"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-GB" style="font-family: Verdana"><font size="2">
+    <a href="sec_UserPermissions_help.htm">Set User Permissions</a></font></span></b><font face="Verdana"><span lang="EN-GB"><br>
+    </span></font><span lang="EN-GB" style="font-size: 7.5pt; font-family: Verdana">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span lang="EN-GB" style="font-family: Verdana"><font size="2"><a style="color: blue; text-decoration: underline; text-underline: single" href="../USER_MGMT/securitymatrix.htm#SECURITY MATRIX">Security 
+    Matrix</a></font></span></b><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="581" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+
+<p><b><font size="2" face="Verdana">1) How to Add a New User</font></b></p>
+
+<p><font face="Verdana">On MERC+ main screen click on &quot;User Management&quot; in lower 
+right corner.<br>
+A new screen will appear. Click on &quot;Add new user&quot;.<br>
+Below screen will now appear. Fill out requested data.<br>
+All fields must be filled out </font></p>
+    <p><font face="Verdana">&nbsp;<img border="0" src="Images/User/AddUser.jpg" width="550" height="250"></font></p>
+<ul>
+  <li><font face="Verdana" size="2"><b>Certificate Key</b><br>
+  The Certificate Key is the number returned from CAF when a user applies for a 
+  certificate.<br>
+  In CAF this is known as MERC+ Internal or MERC+ External ID. You must bring 
+  this ID from CAF in order to create a new user in MERC.<br>
+&nbsp;</font></li>
+  <li><font face="Verdana"><b>First name<br>
+  </b>First name of the user.<br>
+&nbsp;</font></li>
+  <li><font face="Verdana"><b>Last name<br>
+  </b>Last name of the user.<br>
+  <u><b>NOTE;</b></u> In order to easily find Internal users in MERC+ user 
+  management, you MUST insert the internal users @maersk ID before the users 
+  last name with a space between @maersk ID and last name (see above).<br>
+  For External users you must write EXT before the users last name with a space 
+  between EXT and last name<br>
+  The above will greatly help find users if you later on are going to Edit them.<br>
+&nbsp;</font></li>
+  <li><font face="Verdana" size="2"><b>Company name</b></font><font face="Verdana"><br>
+  Company name of the user. Correct company name must always be updated for 
+  internal as well as external users. It is appreciated full company name is 
+  used also for internal users. Do not write e.g. Maersk or MSL but Maersk Inc 
+  or Maersk India Pvt Ltd<br>
+&nbsp;</font></li>
+  <li><font face="Verdana" size="2"><b>Location code</b><br>
+  The Location Code is the Geo code for the users 
+location (New Orleans USA = USNOL)<br>
+&nbsp;</font></li>
+  <li><font face="Verdana" size="2"><b>Approval amount. <br>
+  For users with MSL, REGION, COUNTRY, AREA and CPH access only<br>
+  Users with &quot;SHOP&quot; and&nbsp; &quot;VENDOR&quot; access are always set to 0.</b><br>
+  The approval amount is the amount for a single 
+estimate that the user can approve. The amount is decided by his manager or accounting.<br>
+  Setting this field to a value of USD 500 will thus allow the user to approve 
+  estimates up to USD 500. Estimates in excess of USD 500 will have to be 
+  approved by a user with higher approval limit.<br>
+  Since MERC is linked to RRIS, approval of an estimate will thus also approve 
+  payment and is therefore of UTMOST importance the approval amount is set 
+  according to input from the users manager or accounting. It is not up to the 
+  MERC+ Super user to determine this amount.<br>
+&nbsp;</font></li>
+  <li><font face="Verdana" size="2"><b>Active</b><br>
+  If the active switch is set to N - the user 
+will not be able to login to MERC.</font></li>
+</ul>
+    <p><font face="Verdana">When all details of new user has been entered click on 
+    &quot;Add&quot;. </font></p>
+    <hr>
+    <p><font face="Verdana"><b>2) Confirm new user</b><p>&nbsp;<img border="0" src="Images/User/Useradded.jpg" width="600" height="200"></font><p><font face="Verdana">
+A new screen will open asking you to confirm what you have just entered is 
+correct<br>
+Click &quot;Confirm&quot; if all details are correct.<br>
+Hit backspace on keyboard to go back and change details.</font><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="210" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2" height="1">
+  <tr>
+    <td height="1" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <p align="right"><font face="Verdana"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" s-type="EDITED" s-format="%d %B %Y" startspan -->10 March 2016<!--webbot bot="Timestamp" i-checksum="39096" endspan --></span></font><p align="right">&nbsp;<p align="right">&nbsp;<p align="right">&nbsp;<p align="right">&nbsp;<p align="right">&nbsp;<p align="right">&nbsp;<p align="right">&nbsp;<p align="right">&nbsp;</td>
+  </tr>
+</table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

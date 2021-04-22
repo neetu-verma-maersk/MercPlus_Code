@@ -1,0 +1,1043 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="ManageReportsServiceEntities">
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="MESC2DSModel.dtproperty">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_AREA">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_AREA">
+        <MappingFragment StoreEntitySet="MESC1TS_AREA">
+          <ScalarProperty Name="AREA_CD" ColumnName="AREA_CD" />
+          <ScalarProperty Name="AREA_DESC" ColumnName="AREA_DESC" />
+          <ScalarProperty Name="AREA_GEO_ID" ColumnName="AREA_GEO_ID" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_COUNTRY">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_COUNTRY">
+        <MappingFragment StoreEntitySet="MESC1TS_COUNTRY">
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+          <ScalarProperty Name="COUNTRY_DESC" ColumnName="COUNTRY_DESC" />
+          <ScalarProperty Name="AREA_CD" ColumnName="AREA_CD" />
+          <ScalarProperty Name="REPAIR_LIMIT_ADJ_FACTOR" ColumnName="REPAIR_LIMIT_ADJ_FACTOR" />
+          <ScalarProperty Name="COUNTRY_GEO_ID" ColumnName="COUNTRY_GEO_ID" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_COUNTRY_CONT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_COUNTRY_CONT">
+        <MappingFragment StoreEntitySet="MESC1TS_COUNTRY_CONT">
+          <ScalarProperty Name="COUNTRY_CONT_ID" ColumnName="COUNTRY_CONT_ID" />
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+          <ScalarProperty Name="EFF_DTE" ColumnName="EFF_DTE" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="EXP_DTE" ColumnName="EXP_DTE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CONTRACT_AMOUNT" ColumnName="CONTRACT_AMOUNT" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_COUNTRY_LABOR">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_COUNTRY_LABOR">
+        <MappingFragment StoreEntitySet="MESC1TS_COUNTRY_LABOR">
+          <ScalarProperty Name="COUNTRY_LABOR_ID" ColumnName="COUNTRY_LABOR_ID" />
+          <ScalarProperty Name="EQTYPE" ColumnName="EQTYPE" />
+          <ScalarProperty Name="EXP_DTE" ColumnName="EXP_DTE" />
+          <ScalarProperty Name="EFF_DTE" ColumnName="EFF_DTE" />
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+          <ScalarProperty Name="REGULAR_RT" ColumnName="REGULAR_RT" />
+          <ScalarProperty Name="OVERTIME_RT" ColumnName="OVERTIME_RT" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="DOUBLETIME_RT" ColumnName="DOUBLETIME_RT" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="MISC_RT" ColumnName="MISC_RT" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_CPH_EQP_LIMIT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_CPH_EQP_LIMIT">
+        <MappingFragment StoreEntitySet="MESC1TS_CPH_EQP_LIMIT">
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="AGE_FROM" ColumnName="AGE_FROM" />
+          <ScalarProperty Name="LIMIT_AMOUNT" ColumnName="LIMIT_AMOUNT" />
+          <ScalarProperty Name="EQSIZE" ColumnName="EQSIZE" />
+          <ScalarProperty Name="AGE_TO" ColumnName="AGE_TO" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_CURRENCY">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_CURRENCY">
+        <MappingFragment StoreEntitySet="MESC1TS_CURRENCY">
+          <ScalarProperty Name="CURCD" ColumnName="CURCD" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+          <ScalarProperty Name="CURRNAMC" ColumnName="CURRNAMC" />
+          <ScalarProperty Name="EXRATDKK" ColumnName="EXRATDKK" />
+          <ScalarProperty Name="EXRATUSD" ColumnName="EXRATUSD" />
+          <ScalarProperty Name="EXRATYEN" ColumnName="EXRATYEN" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="EXRATEUR" ColumnName="EXRATEUR" />
+          <ScalarProperty Name="QUOTEDAT" ColumnName="QUOTEDAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_CUST_SHOP_MODE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_CUST_SHOP_MODE">
+        <MappingFragment StoreEntitySet="MESC1TS_CUST_SHOP_MODE">
+          <ScalarProperty Name="CSM_CD" ColumnName="CSM_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="RRIS_FORMAT" ColumnName="RRIS_FORMAT" />
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="PROFIT_CENTER" ColumnName="PROFIT_CENTER" />
+          <ScalarProperty Name="PAYAGENT_CD" ColumnName="PAYAGENT_CD" />
+          <ScalarProperty Name="SUB_PROFIT_CENTER" ColumnName="SUB_PROFIT_CENTER" />
+          <ScalarProperty Name="ACCOUNT_CD" ColumnName="ACCOUNT_CD" />
+          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="CORP_PAYAGENT_CD" ColumnName="CORP_PAYAGENT_CD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_CUSTOMER">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_CUSTOMER">
+        <MappingFragment StoreEntitySet="MESC1TS_CUSTOMER">
+          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
+          <ScalarProperty Name="CUSTOMER_DESC" ColumnName="CUSTOMER_DESC" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="MAERSK_SW" ColumnName="MAERSK_SW" />
+          <ScalarProperty Name="CUSTOMER_ACTIVE_SW" ColumnName="CUSTOMER_ACTIVE_SW" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_DAMAGE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_DAMAGE">
+        <MappingFragment StoreEntitySet="MESC1TS_DAMAGE">
+          <ScalarProperty Name="cedex_code" ColumnName="cedex_code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="numerical_code" ColumnName="numerical_code" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_DISCOUNT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_DISCOUNT">
+        <MappingFragment StoreEntitySet="MESC1TS_DISCOUNT">
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="MANUFCTR" ColumnName="MANUFCTR" />
+          <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EDI_ERROR">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_ERROR">
+        <MappingFragment StoreEntitySet="MESC1TS_EDI_ERROR">
+          <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="LINE_DETAIL" ColumnName="LINE_DETAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EDI_LINEITEM">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_LINEITEM">
+        <MappingFragment StoreEntitySet="MESC1TS_EDI_LINEITEM">
+          <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="LINE_DETAIL" ColumnName="LINE_DETAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EDI_TRANSMISSION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_TRANSMISSION">
+        <MappingFragment StoreEntitySet="MESC1TS_EDI_TRANSMISSION">
+          <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+          <ScalarProperty Name="WO_QTY" ColumnName="WO_QTY" />
+          <ScalarProperty Name="WO_PASS_QTY" ColumnName="WO_PASS_QTY" />
+          <ScalarProperty Name="WO_FAIL_QTY" ColumnName="WO_FAIL_QTY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EQMODE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EQMODE">
+        <MappingFragment StoreEntitySet="MESC1TS_EQMODE">
+          <ScalarProperty Name="EQMODE_ID" ColumnName="EQMODE_ID" />
+          <ScalarProperty Name="EQSTYPE" ColumnName="EQSTYPE" />
+          <ScalarProperty Name="EQSIZE" ColumnName="EQSIZE" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="COTYPE" ColumnName="COTYPE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="ALUMINIUM_SW" ColumnName="ALUMINIUM_SW" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EQSTYPE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EQSTYPE">
+        <MappingFragment StoreEntitySet="MESC1TS_EQSTYPE">
+          <ScalarProperty Name="EQSTYPE" ColumnName="EQSTYPE" />
+          <ScalarProperty Name="COTYPE" ColumnName="COTYPE" />
+          <ScalarProperty Name="TYPE_DESC" ColumnName="TYPE_DESC" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EQTYPE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EQTYPE">
+        <MappingFragment StoreEntitySet="MESC1TS_EQTYPE">
+          <ScalarProperty Name="EQTYPE" ColumnName="EQTYPE" />
+          <ScalarProperty Name="EQTYPE_DESC" ColumnName="EQTYPE_DESC" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_ERR_MESSAGE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_ERR_MESSAGE">
+        <MappingFragment StoreEntitySet="MESC1TS_ERR_MESSAGE">
+          <ScalarProperty Name="ERROR_NO" ColumnName="ERROR_NO" />
+          <ScalarProperty Name="ERROR_MSG" ColumnName="ERROR_MSG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EVENT_LOG">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EVENT_LOG">
+        <MappingFragment StoreEntitySet="MESC1TS_EVENT_LOG">
+          <ScalarProperty Name="EVENT_ID" ColumnName="EVENT_ID" />
+          <ScalarProperty Name="EVENT_NAME" ColumnName="EVENT_NAME" />
+          <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+          <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+          <ScalarProperty Name="EVENT_DESC" ColumnName="EVENT_DESC" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_INDEX">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_INDEX">
+        <MappingFragment StoreEntitySet="MESC1TS_INDEX">
+          <ScalarProperty Name="INDEX_ID" ColumnName="INDEX_ID" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="INDEX_DESC" ColumnName="INDEX_DESC" />
+          <ScalarProperty Name="INDEX_PRIORITY" ColumnName="INDEX_PRIORITY" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_INSPECTION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_INSPECTION">
+        <MappingFragment StoreEntitySet="MESC1TS_INSPECTION">
+          <ScalarProperty Name="INSP_DTE" ColumnName="INSP_DTE" />
+          <ScalarProperty Name="CHAS_EQPNO" ColumnName="CHAS_EQPNO" />
+          <ScalarProperty Name="INSP_BY" ColumnName="INSP_BY" />
+          <ScalarProperty Name="RKEMLOC" ColumnName="RKEMLOC" />
+          <ScalarProperty Name="XMIT_RC" ColumnName="XMIT_RC" />
+          <ScalarProperty Name="XMIT_DTE" ColumnName="XMIT_DTE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_LABOR_RATE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_LABOR_RATE">
+        <MappingFragment StoreEntitySet="MESC1TS_LABOR_RATE">
+          <ScalarProperty Name="LABOR_RATE_ID" ColumnName="LABOR_RATE_ID" />
+          <ScalarProperty Name="EQTYPE" ColumnName="EQTYPE" />
+          <ScalarProperty Name="EFF_DTE" ColumnName="EFF_DTE" />
+          <ScalarProperty Name="EXP_DTE" ColumnName="EXP_DTE" />
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
+          <ScalarProperty Name="REGULAR_RT" ColumnName="REGULAR_RT" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="OVERTIME_RT" ColumnName="OVERTIME_RT" />
+          <ScalarProperty Name="DOUBLETIME_RT" ColumnName="DOUBLETIME_RT" />
+          <ScalarProperty Name="MISC_RT" ColumnName="MISC_RT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_LOCATION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_LOCATION">
+        <MappingFragment StoreEntitySet="MESC1TS_LOCATION">
+          <ScalarProperty Name="LOC_CD" ColumnName="LOC_CD" />
+          <ScalarProperty Name="REGION_CD" ColumnName="REGION_CD" />
+          <ScalarProperty Name="LOC_DESC" ColumnName="LOC_DESC" />
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+          <ScalarProperty Name="RKRPLOC" ColumnName="RKRPLOC" />
+          <ScalarProperty Name="LOC_GEO_ID" ColumnName="LOC_GEO_ID" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CONTACT_EQSAL_SW" ColumnName="CONTACT_EQSAL_SW" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_MANUAL">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_MANUAL">
+        <MappingFragment StoreEntitySet="MESC1TS_MANUAL">
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="MANUAL_DESC" ColumnName="MANUAL_DESC" />
+          <ScalarProperty Name="MANUAL_ACTIVE_SW" ColumnName="MANUAL_ACTIVE_SW" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_MANUAL_MODE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_MANUAL_MODE">
+        <MappingFragment StoreEntitySet="MESC1TS_MANUAL_MODE">
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="ACTIVE_SW" ColumnName="ACTIVE_SW" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_MANUFACTUR">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_MANUFACTUR">
+        <MappingFragment StoreEntitySet="MESC1TS_MANUFACTUR">
+          <ScalarProperty Name="MANUFCTR" ColumnName="MANUFCTR" />
+          <ScalarProperty Name="DISCOUNT_PERCENT" ColumnName="DISCOUNT_PERCENT" />
+          <ScalarProperty Name="MANUFACTUR_NAME" ColumnName="MANUFACTUR_NAME" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_MASTER_PART">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_MASTER_PART">
+        <MappingFragment StoreEntitySet="MESC1TS_MASTER_PART">
+          <ScalarProperty Name="PARTS_GROUP_CD" ColumnName="PARTS_GROUP_CD" />
+          <ScalarProperty Name="PART_CD" ColumnName="PART_CD" />
+          <ScalarProperty Name="PART_DESC" ColumnName="PART_DESC" />
+          <ScalarProperty Name="PART_PRICE" ColumnName="PART_PRICE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PART_DESIGNATION_1" ColumnName="PART_DESIGNATION_1" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="PART_DESIGNATION_2" ColumnName="PART_DESIGNATION_2" />
+          <ScalarProperty Name="PART_DESIGNATION_3" ColumnName="PART_DESIGNATION_3" />
+          <ScalarProperty Name="PART_ACTIVE_SW" ColumnName="PART_ACTIVE_SW" />
+          <ScalarProperty Name="CORE_VALUE" ColumnName="CORE_VALUE" />
+          <ScalarProperty Name="DEDUCT_CORE" ColumnName="DEDUCT_CORE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="MANUFCTR" ColumnName="MANUFCTR" />
+          <ScalarProperty Name="CORE_PART_SW" ColumnName="CORE_PART_SW" />
+          <ScalarProperty Name="MSL_PART_SW" ColumnName="MSL_PART_SW" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_MODE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_MODE">
+        <MappingFragment StoreEntitySet="MESC1TS_MODE">
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MODE_DESC" ColumnName="MODE_DESC" />
+          <ScalarProperty Name="STANDARD_TIME_SW" ColumnName="STANDARD_TIME_SW" />
+          <ScalarProperty Name="VALIDATION_SW" ColumnName="VALIDATION_SW" />
+          <ScalarProperty Name="MODE_ACTIVE_SW" ColumnName="MODE_ACTIVE_SW" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="MODE_IND" ColumnName="MODE_IND" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_MODEL">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_MODEL">
+        <MappingFragment StoreEntitySet="MESC1TS_MODEL">
+          <ScalarProperty Name="MODEL_NO" ColumnName="MODEL_NO" />
+          <ScalarProperty Name="INDICATOR_CD" ColumnName="INDICATOR_CD" />
+          <ScalarProperty Name="MANUFCTR" ColumnName="MANUFCTR" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_NONSCODE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_NONSCODE">
+        <MappingFragment StoreEntitySet="MESC1TS_NONSCODE">
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="NONS_CD" ColumnName="NONS_CD" />
+          <ScalarProperty Name="NONS_DESC" ColumnName="NONS_DESC" />
+          <ScalarProperty Name="NONS_ACTIVE_SW" ColumnName="NONS_ACTIVE_SW" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_PARTS_GROUP">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_PARTS_GROUP">
+        <MappingFragment StoreEntitySet="MESC1TS_PARTS_GROUP">
+          <ScalarProperty Name="PARTS_GROUP_CD" ColumnName="PARTS_GROUP_CD" />
+          <ScalarProperty Name="PARTS_GROUP_DESC" ColumnName="PARTS_GROUP_DESC" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="PARTS_GROUP_ACTIVE_SW" ColumnName="PARTS_GROUP_ACTIVE_SW" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_PAYAGENT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_PAYAGENT">
+        <MappingFragment StoreEntitySet="MESC1TS_PAYAGENT">
+          <ScalarProperty Name="PAYAGENT_CD" ColumnName="PAYAGENT_CD" />
+          <ScalarProperty Name="CORP_PAYAGENT_CD" ColumnName="CORP_PAYAGENT_CD" />
+          <ScalarProperty Name="RRIS_FORMAT" ColumnName="RRIS_FORMAT" />
+          <ScalarProperty Name="PROFIT_CENTER" ColumnName="PROFIT_CENTER" />
+          <ScalarProperty Name="SUB_PROFIT_CENTER" ColumnName="SUB_PROFIT_CENTER" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_PAYAGENT_VENDOR">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_PAYAGENT_VENDOR">
+        <MappingFragment StoreEntitySet="MESC1TS_PAYAGENT_VENDOR">
+          <ScalarProperty Name="PAYAGENT_CD" ColumnName="PAYAGENT_CD" />
+          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
+          <ScalarProperty Name="LOCAL_ACCOUNT_CD" ColumnName="LOCAL_ACCOUNT_CD" />
+          <ScalarProperty Name="SUPPLIER_CD" ColumnName="SUPPLIER_CD" />
+          <ScalarProperty Name="PAYMENT_METHOD" ColumnName="PAYMENT_METHOD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_PREPTIME">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_PREPTIME">
+        <MappingFragment StoreEntitySet="MESC1TS_PREPTIME">
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="PREP_CD" ColumnName="PREP_CD" />
+          <ScalarProperty Name="PREP_TIME_MAX" ColumnName="PREP_TIME_MAX" />
+          <ScalarProperty Name="PREP_HRS" ColumnName="PREP_HRS" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_PROCESS_IDENTIFIER">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_PROCESS_IDENTIFIER">
+        <MappingFragment StoreEntitySet="MESC1TS_PROCESS_IDENTIFIER">
+          <ScalarProperty Name="PROCESS_ID" ColumnName="PROCESS_ID" />
+          <ScalarProperty Name="PROCESS_DESC" ColumnName="PROCESS_DESC" />
+          <ScalarProperty Name="PARAM_NAME" ColumnName="PARAM_NAME" />
+          <ScalarProperty Name="PARAM_VALUE" ColumnName="PARAM_VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_PTI">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_PTI">
+        <MappingFragment StoreEntitySet="MESC1TS_PTI">
+          <ScalarProperty Name="SERIAL_NO_FROM" ColumnName="SERIAL_NO_FROM" />
+          <ScalarProperty Name="SERIAL_NO_TO" ColumnName="SERIAL_NO_TO" />
+          <ScalarProperty Name="NO_OF_DAYS" ColumnName="NO_OF_DAYS" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_REFAUDIT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_REFAUDIT">
+        <MappingFragment StoreEntitySet="MESC1TS_REFAUDIT">
+          <ScalarProperty Name="AUDIT_ID" ColumnName="AUDIT_ID" />
+          <ScalarProperty Name="TAB_NAME" ColumnName="TAB_NAME" />
+          <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+          <ScalarProperty Name="COL_NAME" ColumnName="COL_NAME" />
+          <ScalarProperty Name="OLD_VALUE" ColumnName="OLD_VALUE" />
+          <ScalarProperty Name="NEW_VALUE" ColumnName="NEW_VALUE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_REGION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_REGION">
+        <MappingFragment StoreEntitySet="MESC1TS_REGION">
+          <ScalarProperty Name="REGION_CD" ColumnName="REGION_CD" />
+          <ScalarProperty Name="REGION_DESC" ColumnName="REGION_DESC" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_REPAIR_CODE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_REPAIR_CODE">
+        <MappingFragment StoreEntitySet="MESC1TS_REPAIR_CODE">
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="REPAIR_DESC" ColumnName="REPAIR_DESC" />
+          <ScalarProperty Name="RKRP_REPAIR_CD" ColumnName="RKRP_REPAIR_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="MAX_QUANTITY" ColumnName="MAX_QUANTITY" />
+          <ScalarProperty Name="SHOP_MATERIAL_CEILING" ColumnName="SHOP_MATERIAL_CEILING" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="REPAIR_IND" ColumnName="REPAIR_IND" />
+          <ScalarProperty Name="MAN_HOUR" ColumnName="MAN_HOUR" />
+          <ScalarProperty Name="REPAIR_ACTIVE_SW" ColumnName="REPAIR_ACTIVE_SW" />
+          <ScalarProperty Name="MULTIPLE_UPDATE_SW" ColumnName="MULTIPLE_UPDATE_SW" />
+          <ScalarProperty Name="WARRANTY_PERIOD" ColumnName="WARRANTY_PERIOD" />
+          <ScalarProperty Name="TAX_APPLIED_SW" ColumnName="TAX_APPLIED_SW" />
+          <ScalarProperty Name="REPAIR_PRIORITY" ColumnName="REPAIR_PRIORITY" />
+          <ScalarProperty Name="INDEX_ID" ColumnName="INDEX_ID" />
+          <ScalarProperty Name="ALLOW_PARTS_SW" ColumnName="ALLOW_PARTS_SW" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_REPAIR_LOC">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_REPAIR_LOC">
+        <MappingFragment StoreEntitySet="MESC1TS_REPAIR_LOC">
+          <ScalarProperty Name="cedex_code" ColumnName="cedex_code" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_RPRCODE_EXCLU">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_RPRCODE_EXCLU">
+        <MappingFragment StoreEntitySet="MESC1TS_RPRCODE_EXCLU">
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="EXCLU_REPAIR_CD" ColumnName="EXCLU_REPAIR_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_RPRCODE_IMPORT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_RPRCODE_IMPORT">
+        <MappingFragment StoreEntitySet="MESC1TS_RPRCODE_IMPORT">
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="EXCLU_REPAIR_CD" ColumnName="EXCLU_REPAIR_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_RPRCODE_PART">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_RPRCODE_PART">
+        <MappingFragment StoreEntitySet="MESC1TS_RPRCODE_PART">
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="PART_CD" ColumnName="PART_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="MAX_PART_QTY" ColumnName="MAX_PART_QTY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_SHOP">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_SHOP">
+        <MappingFragment StoreEntitySet="MESC1TS_SHOP">
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
+          <ScalarProperty Name="SHOP_DESC" ColumnName="SHOP_DESC" />
+          <ScalarProperty Name="RKRPLOC" ColumnName="RKRPLOC" />
+          <ScalarProperty Name="LOC_CD" ColumnName="LOC_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="EMAIL_ADR" ColumnName="EMAIL_ADR" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="EDI_PARTNER" ColumnName="EDI_PARTNER" />
+          <ScalarProperty Name="RRIS70_SUFFIX_CD" ColumnName="RRIS70_SUFFIX_CD" />
+          <ScalarProperty Name="PREPTIME_SW" ColumnName="PREPTIME_SW" />
+          <ScalarProperty Name="SHOP_ACTIVE_SW" ColumnName="SHOP_ACTIVE_SW" />
+          <ScalarProperty Name="PCT_MATERIAL_FACTOR" ColumnName="PCT_MATERIAL_FACTOR" />
+          <ScalarProperty Name="RRIS_XMIT_SW" ColumnName="RRIS_XMIT_SW" />
+          <ScalarProperty Name="OVERTIME_SUSP_SW" ColumnName="OVERTIME_SUSP_SW" />
+          <ScalarProperty Name="IMPORT_TAX" ColumnName="IMPORT_TAX" />
+          <ScalarProperty Name="SHOP_TYPE_CD" ColumnName="SHOP_TYPE_CD" />
+          <ScalarProperty Name="SALES_TAX_PART_CONT" ColumnName="SALES_TAX_PART_CONT" />
+          <ScalarProperty Name="SALES_TAX_PART_GEN" ColumnName="SALES_TAX_PART_GEN" />
+          <ScalarProperty Name="SALES_TAX_LABOR_CON" ColumnName="SALES_TAX_LABOR_CON" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+          <ScalarProperty Name="SALES_TAX_LABOR_GEN" ColumnName="SALES_TAX_LABOR_GEN" />
+          <ScalarProperty Name="ACEP_SW" ColumnName="ACEP_SW" />
+          <ScalarProperty Name="DECENTRALIZED" ColumnName="DECENTRALIZED" />
+          <ScalarProperty Name="AUTO_COMPLETE_SW" ColumnName="AUTO_COMPLETE_SW" />
+          <ScalarProperty Name="BYPASS_LEASE_RULES" ColumnName="BYPASS_LEASE_RULES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_SHOP_CONT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_SHOP_CONT">
+        <MappingFragment StoreEntitySet="MESC1TS_SHOP_CONT">
+          <ScalarProperty Name="SHOP_CONT_ID" ColumnName="SHOP_CONT_ID" />
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="CONTRACT_AMOUNT" ColumnName="CONTRACT_AMOUNT" />
+          <ScalarProperty Name="EFF_DTE" ColumnName="EFF_DTE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="EXP_DTE" ColumnName="EXP_DTE" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_SHOP_LIMITS">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_SHOP_LIMITS">
+        <MappingFragment StoreEntitySet="MESC1TS_SHOP_LIMITS">
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="REPAIR_AMT_LIMIT" ColumnName="REPAIR_AMT_LIMIT" />
+          <ScalarProperty Name="AUTO_APPROVE_LIMIT" ColumnName="AUTO_APPROVE_LIMIT" />
+          <ScalarProperty Name="SHOP_MATERIAL_LIMIT" ColumnName="SHOP_MATERIAL_LIMIT" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_SPECIAL_REMARKS">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_SPECIAL_REMARKS">
+        <MappingFragment StoreEntitySet="MESC1TS_SPECIAL_REMARKS">
+          <ScalarProperty Name="REMARKS_ID" ColumnName="REMARKS_ID" />
+          <ScalarProperty Name="RKEM_PROFILE" ColumnName="RKEM_PROFILE" />
+          <ScalarProperty Name="SERIAL_NO_FROM" ColumnName="SERIAL_NO_FROM" />
+          <ScalarProperty Name="SERIAL_NO_TO" ColumnName="SERIAL_NO_TO" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="DISPLAY_SW" ColumnName="DISPLAY_SW" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="REPAIR_CEILING" ColumnName="REPAIR_CEILING" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_STATUS_CODE">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_STATUS_CODE">
+        <MappingFragment StoreEntitySet="MESC1TS_STATUS_CODE">
+          <ScalarProperty Name="STATUS_CODE" ColumnName="STATUS_CODE" />
+          <ScalarProperty Name="STATUS_DSC" ColumnName="STATUS_DSC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_SUSPEND">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_SUSPEND">
+        <MappingFragment StoreEntitySet="MESC1TS_SUSPEND">
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="SUSPCAT_ID" ColumnName="SUSPCAT_ID" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_SUSPEND_CAT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_SUSPEND_CAT">
+        <MappingFragment StoreEntitySet="MESC1TS_SUSPEND_CAT">
+          <ScalarProperty Name="SUSPCAT_ID" ColumnName="SUSPCAT_ID" />
+          <ScalarProperty Name="SUSPCAT_DESC" ColumnName="SUSPCAT_DESC" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_TPI">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_TPI">
+        <MappingFragment StoreEntitySet="MESC1TS_TPI">
+          <ScalarProperty Name="cedex_code" ColumnName="cedex_code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="numerical_code" ColumnName="numerical_code" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="category" ColumnName="category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_TRANSMIT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_TRANSMIT">
+        <MappingFragment StoreEntitySet="MESC1TS_TRANSMIT">
+          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="RRIS_XMIT_SW" ColumnName="RRIS_XMIT_SW" />
+          <ScalarProperty Name="RKRP_XMIT_SW" ColumnName="RKRP_XMIT_SW" />
+          <ScalarProperty Name="ACCOUNT_CD" ColumnName="ACCOUNT_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_VENDOR">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_VENDOR">
+        <MappingFragment StoreEntitySet="MESC1TS_VENDOR">
+          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
+          <ScalarProperty Name="VENDOR_DESC" ColumnName="VENDOR_DESC" />
+          <ScalarProperty Name="VENDOR_ACTIVE_SW" ColumnName="VENDOR_ACTIVE_SW" />
+          <ScalarProperty Name="DISCOUNT_PCT" ColumnName="DISCOUNT_PCT" />
+          <ScalarProperty Name="DISCOUNT_DAYS" ColumnName="DISCOUNT_DAYS" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_WO">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WO">
+        <MappingFragment StoreEntitySet="MESC1TS_WO">
+          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
+          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
+          <ScalarProperty Name="EQSIZE" ColumnName="EQSIZE" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="WOTYPE" ColumnName="WOTYPE" />
+          <ScalarProperty Name="EQOUTHGU" ColumnName="EQOUTHGU" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="REPAIR_DTE" ColumnName="REPAIR_DTE" />
+          <ScalarProperty Name="EQOWNTP" ColumnName="EQOWNTP" />
+          <ScalarProperty Name="EQSTYPE" ColumnName="EQSTYPE" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="STATUS_CODE" ColumnName="STATUS_CODE" />
+          <ScalarProperty Name="EQMATR" ColumnName="EQMATR" />
+          <ScalarProperty Name="EQTYPE" ColumnName="EQTYPE" />
+          <ScalarProperty Name="CAUSE" ColumnName="CAUSE" />
+          <ScalarProperty Name="DELDATSH" ColumnName="DELDATSH" />
+          <ScalarProperty Name="THIRD_PARTY" ColumnName="THIRD_PARTY" />
+          <ScalarProperty Name="STEMPTY" ColumnName="STEMPTY" />
+          <ScalarProperty Name="STREFURB" ColumnName="STREFURB" />
+          <ScalarProperty Name="MANH_RATE" ColumnName="MANH_RATE" />
+          <ScalarProperty Name="MANH_RATE_CPH" ColumnName="MANH_RATE_CPH" />
+          <ScalarProperty Name="REFRBDAT" ColumnName="REFRBDAT" />
+          <ScalarProperty Name="EXCHANGE_RATE" ColumnName="EXCHANGE_RATE" />
+          <ScalarProperty Name="STREDEL" ColumnName="STREDEL" />
+          <ScalarProperty Name="TOT_REPAIR_MANH" ColumnName="TOT_REPAIR_MANH" />
+          <ScalarProperty Name="FIXCOVER" ColumnName="FIXCOVER" />
+          <ScalarProperty Name="TOT_MANH_REG" ColumnName="TOT_MANH_REG" />
+          <ScalarProperty Name="DPP" ColumnName="DPP" />
+          <ScalarProperty Name="TOT_MANH_OT" ColumnName="TOT_MANH_OT" />
+          <ScalarProperty Name="OFFHIR_LOCATION_SW" ColumnName="OFFHIR_LOCATION_SW" />
+          <ScalarProperty Name="OT_RATE" ColumnName="OT_RATE" />
+          <ScalarProperty Name="STSELSCR" ColumnName="STSELSCR" />
+          <ScalarProperty Name="TOT_MANH_DT" ColumnName="TOT_MANH_DT" />
+          <ScalarProperty Name="EQPROFIL" ColumnName="EQPROFIL" />
+          <ScalarProperty Name="TOT_MANH_MISC" ColumnName="TOT_MANH_MISC" />
+          <ScalarProperty Name="EQINDAT" ColumnName="EQINDAT" />
+          <ScalarProperty Name="TOT_PREP_HRS" ColumnName="TOT_PREP_HRS" />
+          <ScalarProperty Name="EQRUTYP" ColumnName="EQRUTYP" />
+          <ScalarProperty Name="TOT_LABOR_HRS" ColumnName="TOT_LABOR_HRS" />
+          <ScalarProperty Name="TOT_LABOR_COST" ColumnName="TOT_LABOR_COST" />
+          <ScalarProperty Name="EQRUMAN" ColumnName="EQRUMAN" />
+          <ScalarProperty Name="TOT_SHOP_AMT" ColumnName="TOT_SHOP_AMT" />
+          <ScalarProperty Name="TOT_LABOR_COST_CPH" ColumnName="TOT_LABOR_COST_CPH" />
+          <ScalarProperty Name="TOT_COST_LOCAL" ColumnName="TOT_COST_LOCAL" />
+          <ScalarProperty Name="EQMANCD" ColumnName="EQMANCD" />
+          <ScalarProperty Name="VENDOR_REF_NO" ColumnName="VENDOR_REF_NO" />
+          <ScalarProperty Name="TOT_SHOP_AMT_CPH" ColumnName="TOT_SHOP_AMT_CPH" />
+          <ScalarProperty Name="EQIOFLT" ColumnName="EQIOFLT" />
+          <ScalarProperty Name="TOT_MAERSK_PARTS_CPH" ColumnName="TOT_MAERSK_PARTS_CPH" />
+          <ScalarProperty Name="VOUCHER_NO" ColumnName="VOUCHER_NO" />
+          <ScalarProperty Name="INVOICE_DTE" ColumnName="INVOICE_DTE" />
+          <ScalarProperty Name="TOT_MAN_PARTS_CPH" ColumnName="TOT_MAN_PARTS_CPH" />
+          <ScalarProperty Name="TOT_COST_CPH" ColumnName="TOT_COST_CPH" />
+          <ScalarProperty Name="CHECK_NO" ColumnName="CHECK_NO" />
+          <ScalarProperty Name="PAID_DTE" ColumnName="PAID_DTE" />
+          <ScalarProperty Name="AMOUNT_PAID" ColumnName="AMOUNT_PAID" />
+          <ScalarProperty Name="RKRP_REPAIR_DTE" ColumnName="RKRP_REPAIR_DTE" />
+          <ScalarProperty Name="RKRP_XMIT_DTE" ColumnName="RKRP_XMIT_DTE" />
+          <ScalarProperty Name="RKRP_XMIT_SW" ColumnName="RKRP_XMIT_SW" />
+          <ScalarProperty Name="WO_RECV_DTE" ColumnName="WO_RECV_DTE" />
+          <ScalarProperty Name="APPROVED_BY" ColumnName="APPROVED_BY" />
+          <ScalarProperty Name="SHOP_WORKING_SW" ColumnName="SHOP_WORKING_SW" />
+          <ScalarProperty Name="APPROVAL_DTE" ColumnName="APPROVAL_DTE" />
+          <ScalarProperty Name="IMPORT_TAX" ColumnName="IMPORT_TAX" />
+          <ScalarProperty Name="IMPORT_TAX_CPH" ColumnName="IMPORT_TAX_CPH" />
+          <ScalarProperty Name="SALES_TAX_LABOR" ColumnName="SALES_TAX_LABOR" />
+          <ScalarProperty Name="SALES_TAX_LABOR_CPH" ColumnName="SALES_TAX_LABOR_CPH" />
+          <ScalarProperty Name="SALES_TAX_PARTS" ColumnName="SALES_TAX_PARTS" />
+          <ScalarProperty Name="SALES_TAX_PARTS_CPH" ColumnName="SALES_TAX_PARTS_CPH" />
+          <ScalarProperty Name="TOT_MAERSK_PARTS" ColumnName="TOT_MAERSK_PARTS" />
+          <ScalarProperty Name="TOT_MAN_PARTS" ColumnName="TOT_MAN_PARTS" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="EQPNO" ColumnName="EQPNO" />
+          <ScalarProperty Name="COTYPE" ColumnName="COTYPE" />
+          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
+          <ScalarProperty Name="REQ_REMARK_SW" ColumnName="REQ_REMARK_SW" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+          <ScalarProperty Name="OT_RATE_CPH" ColumnName="OT_RATE_CPH" />
+          <ScalarProperty Name="DT_RATE" ColumnName="DT_RATE" />
+          <ScalarProperty Name="DT_RATE_CPH" ColumnName="DT_RATE_CPH" />
+          <ScalarProperty Name="MISC_RATE" ColumnName="MISC_RATE" />
+          <ScalarProperty Name="MISC_RATE_CPH" ColumnName="MISC_RATE_CPH" />
+          <ScalarProperty Name="TOTAL_COST_LOCAL_USD" ColumnName="TOTAL_COST_LOCAL_USD" />
+          <ScalarProperty Name="TOT_COST_REPAIR" ColumnName="TOT_COST_REPAIR" />
+          <ScalarProperty Name="TOT_COST_REPAIR_CPH" ColumnName="TOT_COST_REPAIR_CPH" />
+          <ScalarProperty Name="SALES_TAX_LABOR_PCT" ColumnName="SALES_TAX_LABOR_PCT" />
+          <ScalarProperty Name="SALES_TAX_PARTS_PCT" ColumnName="SALES_TAX_PARTS_PCT" />
+          <ScalarProperty Name="IMPORT_TAX_PCT" ColumnName="IMPORT_TAX_PCT" />
+          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+          <ScalarProperty Name="AGENT_PARTS_TAX" ColumnName="AGENT_PARTS_TAX" />
+          <ScalarProperty Name="AGENT_PARTS_TAX_CPH" ColumnName="AGENT_PARTS_TAX_CPH" />
+          <ScalarProperty Name="COUNTRY_CUCDN" ColumnName="COUNTRY_CUCDN" />
+          <ScalarProperty Name="COUNTRY_EXCHANGE_RATE" ColumnName="COUNTRY_EXCHANGE_RATE" />
+          <ScalarProperty Name="COUNTRY_EXCHANGE_DTE" ColumnName="COUNTRY_EXCHANGE_DTE" />
+          <ScalarProperty Name="DAMAGE" ColumnName="DAMAGE" />
+          <ScalarProperty Name="LSCOMP" ColumnName="LSCOMP" />
+          <ScalarProperty Name="LSCONTR" ColumnName="LSCONTR" />
+          <ScalarProperty Name="REVISION_NO" ColumnName="REVISION_NO" />
+          <ScalarProperty Name="PREV_STATUS" ColumnName="PREV_STATUS" />
+          <ScalarProperty Name="PREV_DATE" ColumnName="PREV_DATE" />
+          <ScalarProperty Name="PREV_LOC_CD" ColumnName="PREV_LOC_CD" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT" ColumnName="TOT_W_MATERIAL_AMT" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT" ColumnName="TOT_T_MATERIAL_AMT" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT_CPH" ColumnName="TOT_W_MATERIAL_AMT_CPH" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT_CPH" ColumnName="TOT_T_MATERIAL_AMT_CPH" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT_USD" ColumnName="TOT_W_MATERIAL_AMT_USD" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT_USD" ColumnName="TOT_T_MATERIAL_AMT_USD" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT_CPH_USD" ColumnName="TOT_T_MATERIAL_AMT_CPH_USD" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT_CPH_USD" ColumnName="TOT_W_MATERIAL_AMT_CPH_USD" />
+          <ScalarProperty Name="PRESENTLOC" ColumnName="PRESENTLOC" />
+          <ScalarProperty Name="GATEINDTE" ColumnName="GATEINDTE" />
+          <ScalarProperty Name="prev_wo_id" ColumnName="prev_wo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_WOAUDIT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WOAUDIT">
+        <MappingFragment StoreEntitySet="MESC1TS_WOAUDIT">
+          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
+          <ScalarProperty Name="AUDIT_TEXT" ColumnName="AUDIT_TEXT" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_WOPART">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WOPART">
+        <MappingFragment StoreEntitySet="MESC1TS_WOPART">
+          <ScalarProperty Name="PART_CD" ColumnName="PART_CD" />
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="COST_CPH" ColumnName="COST_CPH" />
+          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
+          <ScalarProperty Name="COST_LOCAL" ColumnName="COST_LOCAL" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="SERIAL_NUMBER" ColumnName="SERIAL_NUMBER" />
+          <ScalarProperty Name="QTY_PARTS" ColumnName="QTY_PARTS" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_WOREMARK">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WOREMARK">
+        <MappingFragment StoreEntitySet="MESC1TS_WOREMARK">
+          <ScalarProperty Name="WOREMARK_ID" ColumnName="WOREMARK_ID" />
+          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
+          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+          <ScalarProperty Name="REMARK_TYPE" ColumnName="REMARK_TYPE" />
+          <ScalarProperty Name="XMIT_DTE" ColumnName="XMIT_DTE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="SUSPCAT_ID" ColumnName="SUSPCAT_ID" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_WOREPAIR">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WOREPAIR">
+        <MappingFragment StoreEntitySet="MESC1TS_WOREPAIR">
+          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
+          <ScalarProperty Name="REPAIR_CD" ColumnName="REPAIR_CD" />
+          <ScalarProperty Name="QTY_REPAIRS" ColumnName="QTY_REPAIRS" />
+          <ScalarProperty Name="SHOP_MATERIAL_AMT" ColumnName="SHOP_MATERIAL_AMT" />
+          <ScalarProperty Name="CPH_MATERIAL_AMT" ColumnName="CPH_MATERIAL_AMT" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="ACTUAL_MANH" ColumnName="ACTUAL_MANH" />
+          <ScalarProperty Name="NONS_CD" ColumnName="NONS_CD" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="DAMAGE_CD" ColumnName="DAMAGE_CD" />
+          <ScalarProperty Name="REPAIR_LOC_CD" ColumnName="REPAIR_LOC_CD" />
+          <ScalarProperty Name="TPI_CD" ColumnName="TPI_CD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_XML_LOG">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_XML_LOG">
+        <MappingFragment StoreEntitySet="MESC1TS_XML_LOG">
+          <ScalarProperty Name="XML_ID" ColumnName="XML_ID" />
+          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+          <ScalarProperty Name="XML_TEXT" ColumnName="XML_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_ACTION">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_ACTION">
+        <MappingFragment StoreEntitySet="SEC_ACTION">
+          <ScalarProperty Name="ACTION_ID" ColumnName="ACTION_ID" />
+          <ScalarProperty Name="WEBPAGE_ID" ColumnName="WEBPAGE_ID" />
+          <ScalarProperty Name="ACTION_NAME" ColumnName="ACTION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_AUTHGROUP">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_AUTHGROUP">
+        <MappingFragment StoreEntitySet="SEC_AUTHGROUP">
+          <ScalarProperty Name="AUTHGROUP_ID" ColumnName="AUTHGROUP_ID" />
+          <ScalarProperty Name="AUTHGROUP_NAME" ColumnName="AUTHGROUP_NAME" />
+          <ScalarProperty Name="PARENT_AUTHGROUP_ID" ColumnName="PARENT_AUTHGROUP_ID" />
+          <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+          <ScalarProperty Name="COLUMN_NAME" ColumnName="COLUMN_NAME" />
+          <ScalarProperty Name="COLUMN_DESC" ColumnName="COLUMN_DESC" />
+          <ScalarProperty Name="READONLY_SW" ColumnName="READONLY_SW" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_AUTHGROUP_ACTION">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_AUTHGROUP_ACTION">
+        <MappingFragment StoreEntitySet="SEC_AUTHGROUP_ACTION">
+          <ScalarProperty Name="AUTHGROUP_ID" ColumnName="AUTHGROUP_ID" />
+          <ScalarProperty Name="ACTION_ID" ColumnName="ACTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_AUTHGROUP_FUNCTION">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_AUTHGROUP_FUNCTION">
+        <MappingFragment StoreEntitySet="SEC_AUTHGROUP_FUNCTION">
+          <ScalarProperty Name="AUTHGROUP_ID" ColumnName="AUTHGROUP_ID" />
+          <ScalarProperty Name="FUNCTION_ID" ColumnName="FUNCTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_AUTHGROUP_USER">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_AUTHGROUP_USER">
+        <MappingFragment StoreEntitySet="SEC_AUTHGROUP_USER">
+          <ScalarProperty Name="ACCESS_ID" ColumnName="ACCESS_ID" />
+          <ScalarProperty Name="AUTHGROUP_ID" ColumnName="AUTHGROUP_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="COLUMN_VALUE" ColumnName="COLUMN_VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_AUTHGROUP_WEBPAGE">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_AUTHGROUP_WEBPAGE">
+        <MappingFragment StoreEntitySet="SEC_AUTHGROUP_WEBPAGE">
+          <ScalarProperty Name="AUTHGROUP_ID" ColumnName="AUTHGROUP_ID" />
+          <ScalarProperty Name="WEBPAGE_ID" ColumnName="WEBPAGE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_FUNCTION">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_FUNCTION">
+        <MappingFragment StoreEntitySet="SEC_FUNCTION">
+          <ScalarProperty Name="FUNCTION_ID" ColumnName="FUNCTION_ID" />
+          <ScalarProperty Name="ACTION_ID" ColumnName="ACTION_ID" />
+          <ScalarProperty Name="FUNCTION_NAME" ColumnName="FUNCTION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_USER">
+        <MappingFragment StoreEntitySet="SEC_USER">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="LOC_CD" ColumnName="LOC_CD" />
+          <ScalarProperty Name="ACTIVE_STATUS" ColumnName="ACTIVE_STATUS" />
+          <ScalarProperty Name="APPROVAL_AMOUNT" ColumnName="APPROVAL_AMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_WEBPAGE">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_WEBPAGE">
+        <MappingFragment StoreEntitySet="SEC_WEBPAGE">
+          <ScalarProperty Name="WEBPAGE_ID" ColumnName="WEBPAGE_ID" />
+          <ScalarProperty Name="WEBSITE_ID" ColumnName="WEBSITE_ID" />
+          <ScalarProperty Name="WEBPAGE_NAME" ColumnName="WEBPAGE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_WEBSITE">
+      <EntityTypeMapping TypeName="MESC2DSModel.SEC_WEBSITE">
+        <MappingFragment StoreEntitySet="SEC_WEBSITE">
+          <ScalarProperty Name="WEBSITE_ID" ColumnName="WEBSITE_ID" />
+          <ScalarProperty Name="WEBSITE_NAME" ColumnName="WEBSITE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTEQUIPNOes">
+      <EntityTypeMapping TypeName="MESC2DSModel.TESTEQUIPNO">
+        <MappingFragment StoreEntitySet="TESTEQUIPNO">
+          <ScalarProperty Name="EQPNO" ColumnName="EQPNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1VS_CUST_SHOP">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1VS_CUST_SHOP">
+        <MappingFragment StoreEntitySet="MESC1VS_CUST_SHOP">
+          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1VS_SHOP_LOCATION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1VS_SHOP_LOCATION">
+        <MappingFragment StoreEntitySet="MESC1VS_SHOP_LOCATION">
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
+          <ScalarProperty Name="SHOP_DESC" ColumnName="SHOP_DESC" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+          <ScalarProperty Name="PREPTIME_SW" ColumnName="PREPTIME_SW" />
+          <ScalarProperty Name="LOC_CD" ColumnName="LOC_CD" />
+          <ScalarProperty Name="REGION_CD" ColumnName="REGION_CD" />
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+          <ScalarProperty Name="AREA_CD" ColumnName="AREA_CD" />
+          <ScalarProperty Name="SHOP_ACTIVE_SW" ColumnName="SHOP_ACTIVE_SW" />
+          <ScalarProperty Name="PCT_MATERIAL_FACTOR" ColumnName="PCT_MATERIAL_FACTOR" />
+          <ScalarProperty Name="IMPORT_TAX" ColumnName="IMPORT_TAX" />
+          <ScalarProperty Name="SALES_TAX_PART_CONT" ColumnName="SALES_TAX_PART_CONT" />
+          <ScalarProperty Name="SALES_TAX_PART_GEN" ColumnName="SALES_TAX_PART_GEN" />
+          <ScalarProperty Name="SALES_TAX_LABOR_CON" ColumnName="SALES_TAX_LABOR_CON" />
+          <ScalarProperty Name="SALES_TAX_LABOR_GEN" ColumnName="SALES_TAX_LABOR_GEN" />
+          <ScalarProperty Name="SHOP_TYPE_CD" ColumnName="SHOP_TYPE_CD" />
+          <ScalarProperty Name="OVERTIME_SUSP_SW" ColumnName="OVERTIME_SUSP_SW" />
+          <ScalarProperty Name="AUTO_COMPLETE_SW" ColumnName="AUTO_COMPLETE_SW" />
+          <ScalarProperty Name="BYPASS_LEASE_RULES" ColumnName="BYPASS_LEASE_RULES" />
+          <ScalarProperty Name="DECENTRALIZED" ColumnName="DECENTRALIZED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SEC_AUTHGROUP_WEBSITE" TypeName="MESC2DSModel.SEC_AUTHGROUP_WEBSITE" StoreEntitySet="SEC_AUTHGROUP_WEBSITE">
+      <EndProperty Name="SEC_AUTHGROUP">
+        <ScalarProperty Name="AUTHGROUP_ID" ColumnName="AUTHGROUP_ID" />
+      </EndProperty>
+      <EndProperty Name="SEC_WEBSITE">
+        <ScalarProperty Name="WEBSITE_ID" ColumnName="WEBSITE_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,112 @@
+﻿
+@model MercPlusClient.Areas.ManageMasterData.Models.ManageEqtypeModeEntry
+
+@{
+    ViewBag.Title = "ViewEqTypeModeEntry";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<link href="~/Areas/ManageWorkOrder/Style/WorkOrder.css" rel="stylesheet" /> 
+<script src="~/Areas/ManageMasterData/Script/EqMode.js"></script>
+
+
+ <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_eqmode_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+<br />
+
+<h3><B>Equipment Type / Mode Association View</B></h3>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+ 
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    
+    
+
+        <table>
+          <tr>
+              <td><b>Eqtype</b></td>
+              <td><b>Subtype</b></td>
+              <td><b>Size</b></td>
+              <td><b>Aluminum</b></td>
+              <td></td>
+               <td></td>
+         </tr>
+
+          <tr>
+               
+               <td> @Html.DropDownListFor(model => model.EqType, Model.drpEqType,"Select EqType", new {id="ddlEqType", style="width:150px;"})</td>
+               <td> @Html.DropDownListFor(model => model.SubType, Model.drpSubType,"Select Sub Type", new {id="ddlSubType", style="width:150px;"}) </td>
+               <td> @Html.DropDownListFor(model => model.Size, Model.drpSize,"Select Size", new {id="ddlSize", style="width:150px;"})</td>
+               <td> @Html.DropDownListFor(model => model.Aluminum, Model.drpAluminum,"Select Aluminum", new {id="ddlAluminum", style="width:150px;"})</td>
+               <td> <input name="SearchButton" type="submit" value="Query" id="BtnEQSearch" onclick="return ClientViewValidation()"  formaction ="/ManageMasterData/ManageMasterData/GetEqtypeModeEntryDetails"  /></td>
+               <td> &nbsp;&nbsp;&nbsp;&nbsp; <input name="SearchButton" type="submit" value="Add New Association" id="BtnEQAdd"  formaction ="/ManageMasterData/ManageMasterData/SubmitEqTypeEntry?EQ_ID="  /> </td>
+         </tr>
+
+            <tr>
+                <td>
+                 
+                </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+            </tr>
+         
+    </table>
+    
+    <table>
+        <tr>
+            <td>
+                  
+            </td>
+        </tr>
+    </table>
+   
+    <br>       
+             
+   <div id="gridContent">
+      @if (Model.SearchData != null)
+       {
+
+
+           var grid1 = new WebGrid(Model.SearchData, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+           //grid1.Pager(WebGridPagerModes.NextPrevious)
+
+        
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+
+                             grid1.Column("EQ_EQUIPMENT", header: "Equipment"),
+                             grid1.Column("EQ_SUB_TYPE", header: "Sub Type"),
+                             grid1.Column("EQ_SIZE", header: "Size"),
+                             grid1.Column("EQ_MATERIAL", header: "Material"),
+                             grid1.Column("EQ_MODE", header: "Mode"),
+                             grid1.Column("EQ_EDIT", "", format: (item) => Html.ActionLink(("edit"),
+                                          "SubmitEqTypeEntry", "ManageMasterData", new { EQ_ID = @item.EQ_MODE_ID , getEqType = @item.EQ_EQUIPMENT , getSubType = @item.EQ_SUB_TYPE  , getSize = @item.EQ_SIZE, getAluminium = @item.EQ_MATERIAL, getMode = @item.EQ_MODE }, null))
+
+                                         )) 
+          
+       
+       }
+           
+</div>
+
+   
+}
+    
+
+
+
+
+

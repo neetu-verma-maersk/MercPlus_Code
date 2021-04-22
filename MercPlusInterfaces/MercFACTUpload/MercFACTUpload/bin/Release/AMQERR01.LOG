@@ -1,0 +1,34 @@
+5/9/2016 1:25:04 AM - Process(9276.10) User(ibm) Program(se\MercFACTUpload.EXE)
+AMQ9518: File
+'C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\
+bin\Release\AMQCLCHL.TAB' not found.
+
+EXPLANATION:
+The program requires that the file
+'C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\
+bin\Release\AMQCLCHL.TAB' is present and available.
+ACTION:
+This may be caused by invalid values for the optional environment variables
+MQCHLLIB, MQCHLTAB or MQDATA. If these variables are valid or not set then
+record the name of the file and tell the systems administrator who must ensure
+that file
+'C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\
+bin\Release\AMQCLCHL.TAB' is available to the program.
+----- IBM.WMQ.MQChannelTable.GetStream : 0 ------------------------------------
+5/9/2016 1:40:29 AM - Process(10184.10) User(ibm) Program(e\MercFACTUpload.EXE)
+AMQ9518: File
+'C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\
+bin\Release\AMQCLCHL.TAB' not found.
+
+EXPLANATION:
+The program requires that the file
+'C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\
+bin\Release\AMQCLCHL.TAB' is present and available.
+ACTION:
+This may be caused by invalid values for the optional environment variables
+MQCHLLIB, MQCHLTAB or MQDATA. If these variables are valid or not set then
+record the name of the file and tell the systems administrator who must ensure
+that file
+'C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\
+bin\Release\AMQCLCHL.TAB' is available to the program.
+----- IBM.WMQ.MQChannelTable.GetStream : 0 ------------------------------------

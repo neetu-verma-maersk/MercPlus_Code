@@ -1,0 +1,315 @@
+﻿
+@model MercPlusClient.Areas.ManageMasterData.Models.ManageCustomerShopMode
+
+@{
+    ViewBag.Title = "ViewCustShopModeDetails";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+ <script type="text/javascript">
+    
+     function ValidateNumber(e) {
+         var evt = (e) ? e : window.event;
+         var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+         if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+             return false;
+         else
+             return true;
+     }
+
+     function ClientValidation() {
+
+         var errMsg = "";
+         var isError = false;
+         $("#ErrorMsgContainer").html("");
+
+         HighlightInputsForError($("#lstCustomerList"), false)
+         if (document.getElementById('lstCustomerList').selectedIndex == 0) {
+             isError = true;
+             errMsg = "Please select a Customer";
+             HighlightInputsForError($("#lstCustomerList"), isError)
+         }
+
+         HighlightInputsForError($("#lstShopList"), false)
+         if (document.getElementById('lstShopList').selectedIndex == 0) {
+             isError = true;
+             if (errMsg.trim() == "") {
+                 errMsg = "Please select an Shop";
+             }
+             else {
+                 errMsg += ", a Shop";
+             }
+             HighlightInputsForError($("#lstShopList"), isError)
+         }
+         if (errMsg != null) {
+             errMsg += " to query.";
+         }
+         if (isError == true) {
+             ShowRemoveValidationMessage(errMsg, "Warning")
+             errMsg = "";
+             return false;
+         }
+         else {
+             return true;
+         }
+     }
+
+     function DeleteCsmCode(Csm) {
+         if (confirm("Are you sure you want to delete this record?")) {
+             document.location.href = "/ManageMasterData/ManageMasterData/DeleteCustShopModeDetails?CSM_CD=" + Csm;
+         }
+         else
+             return false;
+     }
+   </script> 
+
+
+<link href="~/Areas/ManageWorkOrder/Style/WorkOrder.css" rel="stylesheet" /> 
+
+  <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_csm_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+<br />
+
+
+  <h3><b>Customer/Shop/Mode Association View</b></h3>
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+ 
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+        @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+
+                  @if (Session["Msg"] == "True")
+                  { 
+                       <table><tr><td>@Session["DisplayMsg"].ToString()</td></tr></table>
+                  }
+    </div>
+      <div id="HideCsmCode" style="display:none;">
+          @Html.TextBoxFor(model => model.txtCSMCode, new { id = "txtCSMCode" })
+    </div>
+    
+                  if (Model.Flag)
+                  {
+         <table>
+
+            <tr>
+                <td><b>Customer</b><b>Shop</b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+            <tr>
+             <td> @Html.DropDownList("lstCustomerList", Model.CustomerList, "Select Customer", new { id = "lstCustomerList", style = "width:150px;" })  
+                @Html.DropDownList("lstShopList", Model.ShopList, "Select Shop", new { id = "lstShopList", style = "width:150px;" }) </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+
+            </tr>
+
+          <tr>
+              <td><b>Mode</b></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+               <td></td>
+         </tr>
+
+          <tr>
+               <td> @Html.DropDownList("lstModeList", Model.ModeList, "Select Mode", new { id = "lstModeList", style = "width:300px;" })  </td>
+              
+
+               <td> <input name="SearchButton" type="submit" value="Query" id="BtnEQSearch" onclick="return ClientValidation()"  formaction ="/ManageMasterData/ManageMasterData/GetCustShopModeList"  /></td>
+                    <td> &nbsp;&nbsp;&nbsp;&nbsp; <input name="SearchButton" type="submit" value="Add New Association" id="BtnCustAdd" formaction ="/ManageMasterData/ManageMasterData/CustShopMode?CSM_CD="  /> </td>
+          <td>     </td>
+               <td>    </td>
+          </tr>
+
+            <tr>
+                <td>
+                   
+                </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+            </tr>
+         
+    </table>
+   
+    <br>       
+             
+   <div id="gridContent">
+      @if (Model.SearchData != null)
+      {
+
+
+          var grid1 = new WebGrid(Model.SearchData, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+          //grid1.Pager(WebGridPagerModes.NextPrevious)
+
+        
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                        columns: grid1.Columns(
+                             grid1.Column("COCUSTOMER", header: "Customer"),
+                             grid1.Column("COSHOP", header: "Shop"),
+                             grid1.Column("COMODE", header: "Mode"),
+                             grid1.Column("COPAYAGENT", header: "Payagent"),
+                             grid1.Column("COCORPPAYAGENT", header: "Corp Payagent"),
+                             grid1.Column("CORRIS", header: "RRIS Format"),
+                             grid1.Column("COCPC", header: "Corp Profit Center"),
+                             grid1.Column("COPROFITCENTER", header: "Profit Center"),
+                             grid1.Column("COEXPCODE", header: "Expense Code"),
+                             grid1.Column("CO_EDIT", "", format: (item) => Html.ActionLink(("edit"), "UpdateCustShopMode", "ManageMasterData", new { CSM_CD = @item.CO_CSM_CD }, null)),
+
+
+
+                             grid1.Column(header: "Action", format: @<text>  <a href="#" id="Delete_@item.CO_CSM_CD" class="delete" onclick="DeleteCsmCode('@item.CO_CSM_CD');">Delete</a></text>)
+
+
+                             )) 
+
+      }
+           
+</div>
+                  }
+                  else
+                  {
+                       <table>
+
+    <tr>
+        <td><b>Customer</b></td>
+        <td><b>Shop</b></td>
+        <td><b>Mode</b></td>    
+    </tr>
+
+     <tr>
+        <td>
+              @Html.DropDownList("lstCustomerList", Model.CustomerList, "Select Customer", new { id = "CustomerList", style = "width:150px;" ,@readonly = "readonly"})               
+      </td>
+        <td> 
+              @Html.DropDownList("lstShopList", Model.ShopList, "Select Shop ", new { id = "ShopList", style = "width:150px;",@readonly = "readonly" })
+        </td>
+        <td> 
+               @Html.DropDownList("lstModeList", Model.ModeList, "Select Mode", new { id = "ModeList", style = "width:300px;",@readonly = "readonly" })
+       </td>      
+    </tr>
+      <tr>
+        <td><b>Payagent</b></td>
+        <td><b>Corporate Profit Center</b></td>
+        <td></td>    
+      </tr>
+
+       <tr>
+        <td> @Html.DropDownList("txtPayAgent", Model.ddlPayAgent, "Select PayAgent Code", new { id = "ddlPayAgent", style = "width:150px;",@readonly = "readonly" })</td>
+        @*<td> @Html.TextBoxFor(model => model.txtCPC, new { id = "txtCorpProfitCenter", maxlength = "2"}) </td>*@
+            <td> @Html.TextBoxFor(model => model.txtCPC , new { id = "txtCorpProfitCenter",maxlength="2" }) </td>
+        <td>  </td>    
+      </tr>
+
+       <tr>
+        <td><b>Corp Payagent</b></td>
+        <td><b>Profit Center</b></td>
+        <td></td>    
+      </tr>
+
+       <tr>
+        <td> @Html.TextBoxFor(model => model.txtCorpPayagent, new { id = "txtCorpPayagent", maxlength = "3",@readonly = "readonly" }) </td>
+        <td> @Html.TextBoxFor(model => model.txtProfitCenter, new { id = "txtProfitCenter", maxlength = "2" ,@readonly = "readonly"}) </td>
+        <td>  </td>    
+      </tr>
+
+        <tr>
+        <td><b>Expense Code</b></td>
+        <td><b>RRIS Format</b></td>
+        <td></td>    
+        </tr> 
+
+       <tr>
+        <td> @Html.TextBoxFor(model => model.txtExpenseCode, new { id = "txtExpenseCode", maxlength = "7", onkeypress = "return ValidateNumber(event);" }) </td>
+        <td> @Html.DropDownList("txtRRIS", Model.ddlRRIS, "Select RRIS Code", new { id = "ddlRRIS", style = "width:150px;",@readonly = "readonly" }) </td>
+        <td>  </td>    
+      </tr>
+
+         <tr>
+        <td>
+             @if (Model.IsAdd == true || Model.IsView == true)
+             {
+                <span><b>Change User Name</b></span>
+             }
+
+        </td>
+        <td>
+             @if (Model.IsAdd == true || Model.IsView == true)
+             {
+               <span><b>Change Time</b></span>
+             }
+
+        </td>
+        <td></td>    
+        </tr> 
+
+       <tr>
+        <td>
+            @if (Model.IsAdd == true || Model.IsView == true)
+            {
+                @Html.TextBoxFor(model => model.txtChangedUserName, new { id = "txtChangedUserName", @readonly = "readonly" }) 
+            } 
+
+        </td>
+        <td>
+            @if (Model.IsAdd == true || Model.IsView == true)
+            {
+               @Html.TextBoxFor(model => model.txtChangeTime, new { id = "txtChangeTime", @readonly = "readonly" })
+            }
+        </td>
+        <td>      
+
+        </td>    
+      </tr>
+
+            <tr>
+             <td>
+                 @* @if (Model.IsAdd == false)
+                  {
+                    <input name="SearchButton" type="submit" value="Submit" id="BtnEQ_Add" onclick="return ClientValidation();" formaction ="/ManageMasterData/ManageMasterData/InsertCustShopMode"  />
+                  }*@
+                  @if (Model.IsAdd == true)
+                  {
+                    <input name="SearchButton" type="submit" value="Submit" id="BtnEQ_Edit"  formaction ="/ManageMasterData/ManageMasterData/EditCustShopMode"  />
+                  }
+             </td>
+              <td>
+               @*<input name="SearchButton" type="submit" value="Return To Update"  formaction ="/ManageMasterData/ManageMasterData/ViewCustShopModeDetails"  />
+                  *@
+             </td>
+             <td>
+
+             </td>
+         </tr>
+
+    </table>
+                  }
+
+
+
+
+}
+    
+
+
+
+
+

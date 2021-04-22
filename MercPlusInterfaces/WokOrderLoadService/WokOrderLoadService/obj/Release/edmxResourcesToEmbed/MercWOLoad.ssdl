@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESC2DSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MESC2DSModelStoreContainer">
+    <EntitySet Name="MESC1TS_EDI_ERROR" EntityType="MESC2DSModel.Store.MESC1TS_EDI_ERROR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EDI_LINEITEM" EntityType="MESC2DSModel.Store.MESC1TS_EDI_LINEITEM" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EDI_TRANSMISSION" EntityType="MESC2DSModel.Store.MESC1TS_EDI_TRANSMISSION" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="MESC1TS_EDI_ERROR">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" />
+    <Property Name="LINE_NO" Type="int" Nullable="false" />
+    <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EDI_LINEITEM">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" />
+    <Property Name="LINE_NO" Type="int" Nullable="false" />
+    <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EDI_TRANSMISSION">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CRTS" Type="datetime" />
+    <Property Name="WO_QTY" Type="int" />
+    <Property Name="WO_PASS_QTY" Type="int" />
+    <Property Name="WO_FAIL_QTY" Type="int" />
+  </EntityType>
+</Schema>

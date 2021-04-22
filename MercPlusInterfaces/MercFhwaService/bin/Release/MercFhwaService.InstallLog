@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\MercPlus\code check\MercPlusServices\MercFhwaService\bin\Release\MercFhwaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\MercPlus\code check\MercPlusServices\MercFhwaService\bin\Release\MercFhwaService.InstallLog
+   assemblypath = C:\MercPlus\code check\MercPlusServices\MercFhwaService\bin\Release\MercFhwaService.exe
+Installing service MercFhwaService...
+Service MercFhwaService has been successfully installed.
+Creating EventLog source MercFhwaService in log Application...
+Committing assembly 'C:\MercPlus\code check\MercPlusServices\MercFhwaService\bin\Release\MercFhwaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\MercPlus\code check\MercPlusServices\MercFhwaService\bin\Release\MercFhwaService.InstallLog
+   assemblypath = C:\MercPlus\code check\MercPlusServices\MercFhwaService\bin\Release\MercFhwaService.exe

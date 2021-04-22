@@ -1,0 +1,77 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterReTransmissionToolModel
+@{
+    
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="~/Areas/ManageMasterData/Script/ReTransmit.js"></script>
+
+@using (Html.BeginForm("ReTransmissionTool", "ManageMasterReTransmissionTool", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div id="divMain">
+
+    <table border="0"  
+            style="width: 70%; vertical-align:text-top;">
+       <tr>
+        <td style="vertical-align:top; text-align:left; margin-top:50px; margin-left:30px;">
+        <h3>ReTransmission Tool</h3>
+        </td>
+
+        </tr>
+       <tr>
+          
+            <td style="text-align:left;">
+                <div id="ErrorMsgContainer" style="width: 700px; word-wrap:break-word;" vertical-align: text-top;"> 
+                       @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                       
+                </div>
+            </td>
+        
+        </tr>
+    </table>
+
+    <table border="0"  id="tblReTransmit" style="width: 700px; vertical-align:text-top;">
+         <tr>
+            <td style="width: 18%; height: 99px;">Work Order ID:</td>
+            <td style="width: 30%; height: 99px;">
+                <input type="text" name="WorkOrder" id="WorkOrder" value="" tabindex="120" maxlength="10"></td>
+            <td style="width: 27%; height: 99px; text-align: center; vertical-align: middle;">
+                <input type="button" name="goAdd" value="   Add >>  " onmouseup="doAdd()"></td>
+            <td style="width: 25%; height: 196px;" rowspan="2">&nbsp;&nbsp;&nbsp;&nbsp;
+           <select name="WorkOrderList" id="WorkOrderList" style="width: 100px;" size="7" value="" multiple="multiple">
+           </select>
+            </td>
+        </tr>
+         <tr>
+            <!--<td height="93"><input name="GetValue" value="Process WorkOrder" tabindex="400" type="button"  onclick="getValue()"></td>-->
+            <td style="height: 9px;">
+                <div class="helpButton">
+                    <input name="btnWOUpdate" id="btnWOUpdate" value="Process WorkOrder" tabindex="400" type="button" onmouseup="getValue()">
+                    </div>
+            </td>
+            <td style="height: 93px;">
+                <input type="hidden" name="HoldWorkOrder" id="HoldWorkOrder" value="" maxlength="10" size="15"></td>
+            <td style="height: 9px; text-align: center;">
+                <input type="button" name="goRemove" value="<< Remove" onclick="doRemove()"></td>
+        </tr>
+         <tr>
+            <td style="height: 50px;">File To Upload:</td>
+            <td style="height: 50px;" colspan="2" font size="5">
+                <input id="fileupload1" type="file" name="upfile" aria-multiselectable="true" style="font: 15px verdana;"></td>
+            <!--<td height="50"><input type = "button" value = "  Process File " onclick="read_xl(myform)"></td>-->
+            <td style="height: 50px;" colspan="2">
+                <div class="helpButton">
+                    <input type="submit" value="Process File"></div>
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <input type="hidden" name="HoldWorkOrder1" id="HoldWorkOrder1" value="" maxlength="15" size="15"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+     </table>
+
+</div>
+}

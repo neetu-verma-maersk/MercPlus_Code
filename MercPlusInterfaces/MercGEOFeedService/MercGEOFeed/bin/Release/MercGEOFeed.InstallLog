@@ -1,0 +1,26 @@
+﻿Installing assembly 'C:\Udita\MERC+\Merc GEO Feed\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Udita\MERC+\Merc GEO Feed\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.InstallLog
+   assemblypath = C:\Udita\MERC+\Merc GEO Feed\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe
+Installing service MercGEOFeedService...
+Service MercGEOFeedService has been successfully installed.
+Creating EventLog source MercGEOFeedService in log Application...
+Committing assembly 'C:\Udita\MERC+\Merc GEO Feed\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Udita\MERC+\Merc GEO Feed\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.InstallLog
+   assemblypath = C:\Udita\MERC+\Merc GEO Feed\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe
+Installing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.InstallLog
+Installing service MercGEOFeedService...
+Service MercGEOFeedService has been successfully installed.
+Creating EventLog source MercGEOFeedService in log Application...
+Committing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercGEOFeed\MercGEOFeed\bin\Release\MercGEOFeed.InstallLog

@@ -1,0 +1,1147 @@
+<html>
+
+<head>
+<meta http-equiv="KEYWORDS" content="rris, accounting, accting, security">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body leftmargin="3">
+
+<p><span lang="en-us"><font face="Verdana">RRIS in MERC+</font></span></p>
+<p>&nbsp;</p>
+<ul>
+  <li><span lang="en-us"><font face="Verdana" size="2"><a href="#Data Definitions">Data 
+Definitions</a></font></span><br>
+&nbsp;</li>
+  <li><span lang="en-us"><font face="Verdana" size="2"><a href="#Functional Processing">
+Functional Processing</a></font></span><br>
+&nbsp;</li>
+  <li><span lang="en-us"><font face="Verdana" size="2"><a href="#Security">Security</a></font></span><br>
+&nbsp;</li>
+  <li><span lang="en-us"><font face="Verdana" size="2"><a href="#RRIS Payagent Setup">RRIS - 
+security for new Pay Agents</a></font></span><br>
+&nbsp;</li>
+  <li><span lang="en-us"><font face="Verdana" size="2"><a href="#RRIS in original MERC">RRIS 
+in the original MERC</a></font></span><br>
+&nbsp;</li>
+  <li><font size="1" face="Verdana">RELATED TOPIC - <a href="accounting.htm">
+  RRIS screens</a></font></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" cellpadding="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="75%" id="AutoNumber4">
+    <tr>
+      <td width="100%"><font face="Verdana" size="2">RE:
+      <a name="RRIS Payagent Setup">RRIS Payagent Setup </a><br>
+      I came across the following telex from EWK to you last year regarding the 
+      security that needs to be set up in RRIS for new payagents. I thought you 
+      might want to include it in your business documentation <br>
+      if you don't already have it as this is one of the issues that causes 
+      payments to not make it into RRIS. <br>
+      <br>
+      &quot;Ed, <br>
+      <br>
+      The reason for all the security errors are: <br>
+      The MERC userid (BNYCWMES) needs to be defined to all payagent codes for 
+      all the formats (52,70,72) that payagent will be used for. <br>
+      NAMFIN ,ACC /DML (Dave Lannon) needs to update the RRIT49 and RRIT57 all 
+      payagents that MERC user BNYCWMES will be supporting in RRIS. <br>
+      NOTE: If no payagent is defined to RRIS, then you get a security err the 
+      printer report, BUT MERC application does not get a notification that this 
+      happened, and so the status in MERC will remain as &quot;SENT TO We would then 
+      manually have to go in and change each of the status to to RRIS. <br>
+      Elly&quot; </font>
+      <p><font face="Verdana" size="2">Elly is Elly Kaufmann of ASI/MDUSA</font></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<p><b><font face="Verdana" size="2"><a name="RRIS in original MERC">RRIS in original MERC</a></font></b></p>
+<p><span lang="en-us"><font size="2" face="Verdana">T</font></span><font face="Verdana"><span lang="en-us"><font size="2">he 
+current MERC process uses the following system table driven information to 
+transmit invoices to RRIS.</font></span></font></p>
+<ul>
+  <li><font face="Verdana" size="2"><span lang="en-us">Y/N switch to transmit to RRIS&nbsp; - 
+  based on Customer Code and WO Mode</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">ACCOUNT_CD - based on Customer 
+  Code and WO Mode</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">PAYAGENT_CD&nbsp; - based on Customer 
+  Code, Shop and Mode</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">RRIS screen Format to send (52, 
+  70, 72)&nbsp; - based on Payagent</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">Profit Center&nbsp; - based on Payagent</span>
+  </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">Corporate Payagent Code&nbsp; - based 
+  on Payagent</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">Sub Profit Center&nbsp; - based on 
+  Payagent</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">Local Account Code - based on 
+  Payagent and Vendor</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">Supplier Code&nbsp; - based on Payagent 
+  and Vendor </span></font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">Accounting periods - based on 
+  Corporate Payagent Code.</span> </font></li>
+  <li><font face="Verdana" size="2"><span lang="en-us">Activity periods - based on 
+  Corporate Payagent Code</span> </font></li>
+</ul>
+<p><font face="Verdana" size="2"><span lang="en-us">Depending upon the PayAgent Code set 
+up in the system tables, one of the three following &quot;screen&quot; formats is 
+populated via a file interface format. (The following definitions were taken 
+from MERC document dated 5/3/2001)</span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">RRIS52:</span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">&nbsp;&nbsp;&nbsp; Normally only used for payagent 
+MSC and modes that begin with 0 or 2.&nbsp; The payagent code will be assigned at the 
+customer, shop mode level.&nbsp; Only one Profit Center code is required.</span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">RRIS70:</span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">&nbsp;&nbsp;&nbsp; Normally only used for payagent 
+M99 and modes that begin with 1 or 3.&nbsp; The payagent code will be assigned at the 
+customer, shop, mode level.&nbsp; A corporate Profit Center code is required for the 
+payagent. A second Profit Center code (know as branch pc code) is required at 
+the sub level.&nbsp; This may or may not be the same as the corporate Profit Center 
+code.</span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">RRIS72:</span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">&nbsp;&nbsp;&nbsp; Can be used for any mode.&nbsp;&nbsp; The 
+payagent code will be assigned at the customer, shop, mode level and must be a 
+branch payagent.&nbsp; Branch payagent code must also have a corporate payagent 
+assigned.&nbsp; The corporate payagent (known as &quot;payagent&quot; ) will have a corporate 
+pc code (known as pc code).&nbsp;&nbsp; The branch payagent will have a sub level profit 
+center code ( known as branch pc code) assigned, as in RRIS70.&nbsp; This may or may 
+not be the same as the corporate pc code.&nbsp; </span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">The RRIS72 format is used to combine 
+work order payments from several branches(locations) of one company, so only one 
+check needs to be sent per company.</span></font></p>
+<p><font face="Verdana" size="2"><span lang="en-us">An example is UMS.&nbsp; They have 
+locations in NWK, NFK, MIA and HOU. Each shop has it's own payagent code for 
+it's customer, mode.&nbsp; The UMS corporate code is MC1.&nbsp; The branches are MC2, MC3, 
+MC4, etc.&nbsp; Usually only branches submit WO, but a branch can be a corporate 
+too.&nbsp; In that case, the RRIS70 format would be used.</span></font></p>
+<table id="AutoNumber1" cellSpacing="0" cellPadding="0" width="84%" border="1">
+  <tr>
+    <td style="BACKGROUND-COLOR: #009ace" width="20%">
+    <p align="center"><span lang="en-us">
+    <font color="#ffffff" face="Verdana" size="2">
+    PayAgent</font></span></td>
+    <td style="BACKGROUND-COLOR: #009ace" width="22%" align="center"><span lang="en-us">
+    <font color="#ffffff" face="Verdana" size="2">RRIS format</font></span></td>
+    <td style="BACKGROUND-COLOR: #009ace" width="23%">
+    <p align="center"><span lang="en-us">
+    <font color="#ffffff" face="Verdana" size="2">PC 
+    Code</font></span></td>
+    <td style="BACKGROUND-COLOR: #009ace" width="35%">
+    <p align="center"><span lang="en-us">
+    <font color="#ffffff" face="Verdana" size="2">
+    Corporate PayAgent</font></span></td>
+  </tr>
+  <tr>
+    <td align="middle" width="20%">
+    <p align="center"><font face="Verdana" size="2"><span lang="en-us">MSC</span></font></td>
+    <td align="middle" width="22%"><font face="Verdana" size="2"><span lang="en-us">52</span></font></td>
+    <td align="middle" width="23%"><font face="Verdana" size="2"><span lang="en-us">39</span></font></td>
+    <td align="middle" width="35%"><font face="Verdana" size="2">&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td align="middle" width="20%"><font face="Verdana" size="2"><span lang="en-us">MC5</span></font></td>
+    <td align="middle" width="22%"><font face="Verdana" size="2"><span lang="en-us">72</span></font></td>
+    <td align="middle" width="23%"><font face="Verdana" size="2"><span lang="en-us">01</span></font></td>
+    <td align="middle" width="35%"><font face="Verdana" size="2"><span lang="en-us">MC1</span></font></td>
+  </tr>
+  <tr>
+    <td align="middle" width="20%"><font face="Verdana" size="2"><span lang="en-us">MC4</span></font></td>
+    <td align="middle" width="22%"><font face="Verdana" size="2"><span lang="en-us">72</span></font></td>
+    <td align="middle" width="23%"><font face="Verdana" size="2"><span lang="en-us">01</span></font></td>
+    <td align="middle" width="35%"><font face="Verdana" size="2"><span lang="en-us">MC1</span></font></td>
+  </tr>
+  <tr>
+    <td align="middle" width="20%"><font face="Verdana" size="2"><span lang="en-us">P01</span></font></td>
+    <td align="middle" width="22%"><font face="Verdana" size="2"><span lang="en-us">70</span></font></td>
+    <td align="middle" width="23%"><font face="Verdana" size="2"><span lang="en-us">01</span></font></td>
+    <td align="middle" width="35%"><font face="Verdana" size="2">&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td align="middle" width="20%"><font face="Verdana" size="2"><span lang="en-us">P02</span></font></td>
+    <td align="middle" width="22%"><font face="Verdana" size="2"><span lang="en-us">72</span></font></td>
+    <td align="middle" width="23%"><font face="Verdana" size="2"><span lang="en-us">01</span></font></td>
+    <td align="middle" width="35%"><font face="Verdana" size="2"><span lang="en-us">P01</span></font></td>
+  </tr>
+  <tr>
+    <td width="20%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="22%" align="center"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="23%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="35%"><font face="Verdana" size="2">&nbsp;</font></td>
+  </tr>
+</table>
+<p><font face="Verdana" size="2"><span lang="en-us">&nbsp;From the above example, MC1 is the 
+corporate and MC5 the branch so the RRIS72 format is used.&nbsp; P01 is both a branch 
+and a corporate payagent.&nbsp; When P01 is the branch, teh RRIS70 format is used.&nbsp; 
+When it's corporate, the RRIS72 format is used.</span></font></p>
+<h2><font face="Verdana" size="2">&nbsp;</font></h2>
+<h2><font face="Verdana" size="2">&nbsp;</font></h2>
+<h2><font face="Verdana"><a name="Data Definitions">Data Definitions<span lang="en-us">&nbsp;
+</span></a></font></h2>
+<p><font face="Verdana" size="2">Data that comprise the scope of the interface.</font></p>
+<table id="AutoNumber3" style="BORDER-COLLAPSE: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="68%" border="1">
+  <tr>
+    <td width="100%">
+    <p align="center"><font face="Verdana" size="2"><b><span lang="en-us">100 START 
+    RECORD - USED FOR ALL TRANSMISSIONS</span></b></font></td>
+  </tr>
+</table>
+<table id="AutoNumber2" style="BORDER-COLLAPSE: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="68%" border="1">
+  <tr>
+    <td width="13%"><font face="Verdana" size="2"><span lang="en-us">Name</span></font></td>
+    <td width="11%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="14%"><font face="Verdana" size="2"><span lang="en-us">Length</span></font></td>
+    <td width="17%"><font face="Verdana" size="2"><span lang="en-us">Value</span></font></td>
+    <td width="7%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="38%"><font face="Verdana" size="2"><span lang="en-us">Description</span></font></td>
+  </tr>
+  <tr>
+    <td width="13%"><font face="Verdana" size="2"><span lang="en-us">Table ID</span></font></td>
+    <td width="11%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="14%"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="17%"><font face="Verdana" size="2"><span lang="en-us">'100'</span></font></td>
+    <td width="7%"><font face="Verdana" size="2"><span lang="en-us">M</span></font></td>
+    <td width="38%"><font face="Verdana" size="2"><span lang="en-us">Table Identity</span></font></td>
+  </tr>
+  <tr>
+    <td width="13%"><font face="Verdana" size="2"><span lang="en-us">User ID</span></font></td>
+    <td width="11%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="14%"><font face="Verdana" size="2"><span lang="en-us">STR008</span></font></td>
+    <td width="17%"><font face="Verdana" size="2"><span lang="en-us">'BNYCWMES'</span></font></td>
+    <td width="7%"><font face="Verdana" size="2"><span lang="en-us">M</span></font></td>
+    <td width="38%"><font face="Verdana" size="2"><span lang="en-us">UserID</span></font></td>
+  </tr>
+  <tr>
+    <td width="13%"><font face="Verdana" size="2"><span lang="en-us">Filler</span></font></td>
+    <td width="11%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="14%"><font face="Verdana" size="2"><span lang="en-us">STR138</span></font></td>
+    <td width="17%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="7%"><font face="Verdana" size="2"><span lang="en-us">M</span></font></td>
+    <td width="38%"><font face="Verdana" size="2"><span lang="en-us">Blanks</span></font></td>
+  </tr>
+  <tr>
+    <td width="13%"><font face="Verdana" size="2"><span lang="en-us">End</span></font></td>
+    <td width="11%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="14%"><font face="Verdana" size="2"><span lang="en-us">STR001</span></font></td>
+    <td width="17%"><font face="Verdana" size="2"><span lang="en-us">'E'</span></font></td>
+    <td width="7%"><font face="Verdana" size="2"><span lang="en-us">M</span></font></td>
+    <td width="38%"><font face="Verdana" size="2"><span lang="en-us">End-Of-Record Flag</span></font></td>
+  </tr>
+  <tr>
+    <td width="13%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="11%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="14%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="17%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="7%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="38%"><font face="Verdana" size="2">&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td width="13%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="11%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="14%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="17%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="7%"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="38%"><font face="Verdana" size="2">&nbsp;</font></td>
+  </tr>
+</table>
+<p><font face="Verdana">&nbsp;</font></p>
+<table height="2782" width="1002" bordercolorlight="#009ACE" bordercolor="#009ACE" cellspacing="1" border="2">
+  <tr>
+    <td width="990" colSpan="6" height="16"><font face="Verdana"><b>
+    <span lang="en-us">101 HEADER RECORD - USED FOR ALL SCREENS</span></b></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">MVS4 
+    TableID</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">Table_ID</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2"><span lang="en-us">'100'</span></font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">Table 
+    Identification</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="88"><font face="Verdana" size="2"><span lang="en-us">PayAgent</span></font></td>
+    <td width="168" height="88"><font face="Verdana" size="2"><span lang="en-us">AGENT</span></font></td>
+    <td width="61" height="88"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="88"><font face="Verdana" size="2"><span lang="en-us">if detail 
+    type is 52</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">Payagent.PayAgent_CD</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">otherwise</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">Payagent.CORP_PAYAGENT_CD</span></font></p>
+    <p><font face="Verdana" size="2">&nbsp;</font></p>
+    <p><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="88"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="88"><font face="Verdana"><span lang="en-us">Agent 
+    Code, M99, MSC</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="160"><font face="Verdana" size="2"><span lang="en-us">
+    &nbsp;Accounting Period Year</span></font></td>
+    <td width="168" height="160"><font face="Verdana" size="2"><span lang="en-us">ACCYR</span></font></td>
+    <td width="61" height="160"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="160"><font face="Verdana" size="2"><span lang="en-us">Function 
+    Of Corporate Pay Agent accounting month length, date of transmission and 
+    WO.Repair_Dte </span></font></td>
+    <td align="middle" width="13" height="160"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="160"><font face="Verdana"><span lang="en-us">Two 
+    digit year</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="80"><font face="Verdana" size="2"><span lang="en-us">
+    Calculated - unique number</span></font></td>
+    <td width="168" height="80"><font face="Verdana" size="2"><span lang="en-us">VOUCNO</span></font></td>
+    <td width="61" height="80"><font face="Verdana" size="2"><span lang="en-us">STR008</span></font></td>
+    <td width="281" height="80"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="80"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="80"><font face="Verdana"><span lang="en-us">'Z' + 
+    Julian Day Of Transmission + 4 digit sequence number&nbsp;&nbsp;(0000 - 9999) </span>
+    </font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">&nbsp;Payagent.RRIS_Format</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">PICNO</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2"><span lang="en-us">&nbsp; </span>
+    </font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">RRIS 
+    Picture Number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="160"><font face="Verdana" size="2"><span lang="en-us">
+    &nbsp;Accounting Period Month</span></font></td>
+    <td width="168" height="160"><font face="Verdana" size="2"><span lang="en-us">ACCMO</span></font></td>
+    <td width="61" height="160"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="160"><font face="Verdana" size="2"><span lang="en-us">Function 
+    Of Corporate Pay Agent accounting month length , date of transmission and 
+    WO.Repair_Dte</span></font></td>
+    <td align="middle" width="13" height="160"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="160"><font face="Verdana"><span lang="en-us">Two 
+    digit month</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">
+    WO.Repair_Dte</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">INVDAT</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR006</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">Invoice 
+    date (YYMMDD)</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="172"><font face="Verdana" size="2"><span lang="en-us">
+    Payagent.Profit_Center</span></font></td>
+    <td width="168" height="172"><font face="Verdana" size="2"><span lang="en-us">PCCODE</span></font></td>
+    <td width="61" height="172"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="172"><font face="Verdana" size="2"><span lang="en-us">If 
+    detail type is 52</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">Payagent.PROFIT_CENTER</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">otherwise</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">PAYAGENT.SUB_PROFIT_CENTER</span></font></p>
+    <p><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="172"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="172"><font face="Verdana"><span lang="en-us">Profit 
+    Center Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">
+    Payagent_Vendor.Local_Account_Cd</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">LOCACC</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR006</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">Locat 
+    Account Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="48"><font face="Verdana" size="2"><span lang="en-us">WO.WO_ID</span></font></td>
+    <td width="168" height="48"><font face="Verdana" size="2"><span lang="en-us">DESC</span></font></td>
+    <td width="61" height="48"><font face="Verdana" size="2"><span lang="en-us">STR040</span></font></td>
+    <td width="281" height="48"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="48"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="48"><font face="Verdana"><span lang="en-us">WO_ID 
+    left justified in first 10 characters of field</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="80"><font face="Verdana" size="2"><span lang="en-us">
+    WO.TOT_COST_LOCAL </span></font></td>
+    <td width="168" height="80"><font face="Verdana" size="2"><span lang="en-us">INVAMT</span></font></td>
+    <td width="61" height="80"><font face="Verdana" size="2"><span lang="en-us">STR015</span></font></td>
+    <td width="281" height="80">
+    <p align="justify"><font face="Verdana" size="2"><span lang="en-us">AMOUNT IN 101 
+    HEADER MUST HAVE NEGATIVE PREFIX</span></font></td>
+    <td align="middle" width="13" height="80"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="80"><font face="Verdana"><span lang="en-us">Invoice 
+    amount as typed in input&nbsp; picture - with decimal point </span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="80"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="168" height="80"><font face="Verdana" size="2"><span lang="en-us">PAYDAT</span></font></td>
+    <td width="61" height="80"><font face="Verdana" size="2"><span lang="en-us">STR006</span></font></td>
+    <td width="281" height="80"><font face="Verdana" size="2"><span lang="en-us">BLANKS 
+    WITH DASH '-' AT FIRST POSITION</span></font></td>
+    <td align="middle" width="13" height="80"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="80"><font face="Verdana"><span lang="en-us">Payment 
+    Date YYMMDD</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="48"><font face="Verdana" size="2"><span lang="en-us">
+    WO.Repair_Dte (Month)</span></font></td>
+    <td width="168" height="48"><font face="Verdana" size="2"><span lang="en-us">ACTMO</span></font></td>
+    <td width="61" height="48"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="48"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="48"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="48"><font face="Verdana"><span lang="en-us">Activity 
+    Month - date work was done</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">
+    WO.Repair_Dte (Year)</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">ACTYR</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">Activity 
+    Year- date work was done</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="99"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="168" height="99"><font face="Verdana" size="2"><span lang="en-us">SUFFIX</span></font></td>
+    <td width="61" height="99"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="99"><font face="Verdana" size="2"><span lang="en-us">'70' if 
+    102 detail is type 70</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">otherwise blank</span></font></td>
+    <td align="middle" width="13" height="99"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="99"><font face="Verdana"><span lang="en-us">Suffix 
+    Code </span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">&nbsp;not 
+    populated</span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">CURRCD</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Currency 
+    Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">&nbsp;not 
+    populated</span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">EXRATE</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR008</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Exchange 
+    Rate</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">
+    WO.Vendor_Ref_No </span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">INVNO</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR010</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">
+    Reference Number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">
+    Payagent_Vendor.Supplier_Cd</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">SUPPCD</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR006</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">RRIS 
+    Supplier Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="118"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="168" height="118"><font face="Verdana" size="2"><span lang="en-us">APMGRP</span></font></td>
+    <td width="61" height="118"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="118"><font face="Verdana" size="2"><span lang="en-us">&nbsp; if 102 
+    detail is type 52</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">'01'</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">otherwise blank</span></font></td>
+    <td align="middle" width="13" height="118"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="118"><font face="Verdana"><span lang="en-us">APM 
+    Group (only RRIS5*)</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="118"><font face="Verdana" size="2"><span lang="en-us">
+    Shop.RKRPLoc</span></font></td>
+    <td width="168" height="118"><font face="Verdana" size="2"><span lang="en-us">ACTPORT</span></font></td>
+    <td width="61" height="118"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="118"><font face="Verdana" size="2"><span lang="en-us">If 
+    detail is type 52</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">Shop.RKRPLoc</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">otherwise blank</span></font></td>
+    <td align="middle" width="13" height="118"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="118"><font face="Verdana"><span lang="en-us">
+    Activity Port (only RRIS5*)</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">&nbsp;</span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">RATEDAT</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR006</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Date of 
+    rate</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">Batch</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">MUST BE 
+    BLANK</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">Filler</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR007</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">MUST BE 
+    BLANK</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">End</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR001</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">'E'</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">
+    End-Of-Record</span></font></td>
+  </tr>
+  <tr>
+    <td width="990" colSpan="6" height="16"><font face="Verdana"><b>
+    <span lang="en-us">102 DETAIL SCREEN RRIS52</span></b></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">MVS4 
+    TableID</span></font></td>
+    <td width="168" height="16"></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">'102'</span></font></td>
+    <td align="middle" width="13" height="16"></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Table ID</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">AGENT</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Agent 
+    Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACCYR</span></font></td>
+    <td width="61" height="16"></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">VOUCNO</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR008</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Voucher 
+    number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">PICNO</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">RRIS 
+    Picture number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="80"><font face="Verdana" size="2"><span lang="en-us">
+    WO.TOT_COST_LOCAL </span></font></td>
+    <td width="168" height="80"><font face="Verdana" size="2"><span lang="en-us">AMT</span></font></td>
+    <td width="61" height="80"><font face="Verdana" size="2"><span lang="en-us">STR015</span></font></td>
+    <td width="281" height="80"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="80"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="80"><font face="Verdana"><span lang="en-us">Invoice 
+    amount as typed in input picture - with decimal point&nbsp; - positive</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">
+    TRANSMIT.ACCOUNT_CD</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">APMACC</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR007</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">APM 
+    Account number </span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">LINECD</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">&nbsp;&quot;99&quot;</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Line 
+    Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACTMO</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Activity 
+    Month</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACTYR</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Activity 
+    Year</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">populate 
+    as spaces </span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">SUFFIX</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Suffix</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    blank+WO.EQPNO</span></font><p><font face="Verdana" size="2"><span lang="en-us">+blank+WO.SHOP_CD+blank+SHOP.DESCRIPTION</span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">DESC</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR033</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">As much 
+    of shop description as will fit in remaining space</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">
+    Description</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">Filler</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR068</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Must be 
+    blank</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR001</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">'E'</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">
+    End-Of-Record</span></font></td>
+  </tr>
+  <tr>
+    <td width="990" colSpan="6" height="16"><font face="Verdana"><b>
+    <span lang="en-us">102 DETAIL SCREEN RRIS70</span></b></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">MVS4 
+    Table ID</span></font></td>
+    <td width="168" height="16"></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">'102'</span></font></td>
+    <td align="middle" width="13" height="16"></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">AGENT</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Agent 
+    Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACCYR</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">VOUCNO</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR008</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Voucher 
+    number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">PICNO</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">RRIS 
+    Picture number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="80"><font face="Verdana" size="2"><span lang="en-us">
+    WO.TOT_COST_LOCAL </span></font></td>
+    <td width="168" height="80"><font face="Verdana" size="2"><span lang="en-us">AMT</span></font></td>
+    <td width="61" height="80"><font face="Verdana" size="2"><span lang="en-us">STR015</span></font></td>
+    <td width="281" height="80"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="80"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="80"><font face="Verdana"><span lang="en-us">Invoice 
+    amount as typed in input picture - with decimal point&nbsp; - positive</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">PCCode</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Profit 
+    Center</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    TRANSMIT.ACCOUNT_CD</span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">LOCACC</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR006</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    &nbsp;Left$(TRANSMIT.ACCOUNT_CD,6)</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Local 
+    Account </span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    blank+WO.EQPNO</span></font><p><font face="Verdana" size="2"><span lang="en-us">+blank+WO.SHOP_CD+blank+SHOP.DESCRIPTION</span></font></p>
+    <p><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">DESC</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR040</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">As much 
+    of shop description as will fit in remaining space</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">
+    Description</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACTMO</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Activity 
+    Month</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACTYR</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Activity 
+    Year</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    SHOP.RRIS70_SUFFIX_CD </span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">SUFF</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">Filler</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR062</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR001</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">'E'</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">
+    End-Of-Record</span></font></td>
+  </tr>
+  <tr>
+    <td width="990" colSpan="6" height="16"><font face="Verdana"><b>
+    <span lang="en-us">102 DETAIL SCREEN RRIS72</span></b></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">'102'</span></font></td>
+    <td align="middle" width="13" height="16"></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="15"><font face="Verdana" size="2"><span lang="en-us">PayAgent</span></font></td>
+    <td width="168" height="15"><font face="Verdana" size="2"><span lang="en-us">AGENT</span></font></td>
+    <td width="61" height="15"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="15"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="15"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="15"><font face="Verdana"><span lang="en-us">Agent 
+    Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACCYR</span></font></td>
+    <td width="61" height="16"></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Two 
+    digit year</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">VOUCNO</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR008</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Voucher 
+    number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">PICNO</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">RRIS 
+    Picture number</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="80"><font face="Verdana" size="2"><span lang="en-us">
+    WO.TOT_COST_LOCAL </span></font></td>
+    <td width="168" height="80"><font face="Verdana" size="2"><span lang="en-us">AMT</span></font></td>
+    <td width="61" height="80"><font face="Verdana" size="2"><span lang="en-us">STR015</span></font></td>
+    <td width="281" height="80"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="80"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="80"><font face="Verdana"><span lang="en-us">Invoice 
+    amount as typed in input picture - with decimal point&nbsp; - positive</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="32"><font face="Verdana" size="2"><span lang="en-us">
+    Payagent.PayAgent_CD</span></font></td>
+    <td width="168" height="32"><font face="Verdana" size="2"><span lang="en-us">AGENT1</span></font></td>
+    <td width="61" height="32"><font face="Verdana" size="2"><span lang="en-us">STR003</span></font></td>
+    <td width="281" height="32"><font face="Verdana" size="2">&nbsp;</font></td>
+    <td align="middle" width="13" height="32"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="32"><font face="Verdana"><span lang="en-us">Agent 
+    Code Branch</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    Payagent.PROFIT_CENTER</span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">PCCODE</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Profit 
+    Center Code</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    TRANSMIT.ACCOUNT_CD</span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">LOCACC</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR006</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    &nbsp;Left$(TRANSMIT.ACCOUNT_CD,6)</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Local 
+    Account </span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    blank+WO.EQPNO+</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">+blank+WO.SHOP_CD+blank+SHOP.DESCRIPTION</span></font></p>
+    <p>&nbsp;</td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">DESC</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR034</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">As much 
+    of shop description as will fit in remaining space</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">
+    Description</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACTMO</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Activity 
+    Month</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">ACTYR</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">Same as 
+    in 101 Header</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">Activity 
+    Year</span></font></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"><font face="Verdana" size="2"><span lang="en-us">
+    SHOP.RRIS70_SUFFIX_CD </span></font></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">SUFF</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR002</span></font></td>
+    <td width="281" height="16"></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"><font face="Verdana" size="2"><span lang="en-us">Filler</span></font></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR065</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">blank</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"></td>
+  </tr>
+  <tr>
+    <td width="326" height="16"></td>
+    <td width="168" height="16"></td>
+    <td width="61" height="16"><font face="Verdana" size="2"><span lang="en-us">STR001</span></font></td>
+    <td width="281" height="16"><font face="Verdana" size="2"><span lang="en-us">'E'</span></font></td>
+    <td align="middle" width="13" height="16"><font face="Verdana">
+    <span lang="en-us">M</span></font></td>
+    <td width="120" height="16"><font face="Verdana"><span lang="en-us">
+    End-Of-Record</span></font></td>
+  </tr>
+</table>
+<p><font face="Verdana" size="2">* Key to Requirement: M=Mandatory, O=Optional, 
+C=Conditional, D=Display</font></p>
+<h2><font face="Verdana">&nbsp;</font></h2>
+<h2><font face="Verdana"><a name="Functional Processing">Functional Processing</a></font></h2>
+<p><font face="Verdana" size="2">The detailed steps that define how this data will be 
+processed.</font></p>
+<table width="100%">
+  <tr>
+    <th width="1%"><font face="Verdana">Function</font></th>
+    <th width="62%"><font face="Verdana">Processing Logic</font></th>
+  </tr>
+  <tr>
+    <td width="1%"><font face="Verdana" size="2"><span lang="en-us">&nbsp;</span></font></td>
+    <td width="62%"><font face="Verdana" size="2"><span lang="en-us">&nbsp;Find work orders 
+    satisfying the following criteria:</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">if STATUS_CODE=400 (ACCEPTED) OR 
+    STATUS_CODE=550 (REJECTED) </span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp;Generate a 100 start record</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp;For Each Work Order where the 
+    daily work order total is less than ten thousand:</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; BEGIN</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">If the work order shop level RRIS_XMIT_SW='Y' and the transmit table RRIS_XMIT_SW='Y' then&nbsp; increment the daily work order 
+    accumulator by 1</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">Determine the accounting period 
+    for the work order REPAIR_DTE field&nbsp; If the current day within the current 
+    month is greater than&nbsp;&nbsp; the ACTDAY_END value for the work order corporate 
+    pay agent then the accounting period month will be the repair date month 
+    plus one.&nbsp; If adding a month to the repair date month changes the year then 
+    the account period year is the year following the repair date year.</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">Determine the activity period for 
+    the work order REPAIR_DTE field. The activity period year and month for a 
+    corporate pay agent is a function of the activity period start and end dates 
+    defined for that pay agent. If the repair date is greater than the activity 
+    period start date for one of the twelve defined activity periods, then use 
+    the activity start year and month associated with that period rather than 
+    the repair year and month.</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; Generate a 101 header record</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; Generate a 102 detail record</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; Send to RRIS</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; set the work order STATUS_CODE=500 
+    (RRIS_SENT) </span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; END</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; if the work order RKRP_XMIT_SW='N' 
+    then</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; BEGIN</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; set the work order STATUS_CODE=900 
+    (COMPLETED)</span> </font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">&nbsp; END</span></font></td>
+  </tr>
+</table>
+<h2><font face="Verdana"><a name="Security">Security</a></font></h2>
+<p><font face="Verdana" size="2">Any rules or special constraints that deal specifically 
+with security.</font></p>
+<table width="100%">
+  <tr>
+    <th width="1%"><font face="Verdana">&nbsp;</font></th>
+    <th width="62%"><font face="Verdana">&nbsp;</font></th>
+  </tr>
+  <tr>
+    <th width="1%"><font face="Verdana">Rule</font></th>
+    <th width="62%"><font face="Verdana">Rule Description</font></th>
+  </tr>
+  <tr>
+    <td width="5%"><font face="Verdana" size="2"><span lang="en-us">File Format</span></font></td>
+    <td width="58%"><font face="Verdana" size="2"><span lang="en-us">An RRIS upload file 
+    from MERC contains three sections in the following order:</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">One START record with MVS4 MERC 
+    UserID 'BNYCWMES' field</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">One or more HEADER records with 
+    '101' identifier and Description field containing left justified work order 
+    record pointer from DB</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">One or more DETAIL records with 
+    '102' identifier and a 52, 70 or 72 layout</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">HEADER/DETAIL records are always 
+    in pairs</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">Record length is 150 characters.&nbsp; 
+    Default character value is blank unless specified otherwise in above 
+    layouts.</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">All text field data must be upper 
+    case</span></font></td>
+  </tr>
+  <tr>
+    <td width="5%"><font face="Verdana" size="2"><span lang="en-us">File Processing</span></font></td>
+    <td width="58%"><font face="Verdana" size="2"><span lang="en-us">All of the required 
+    permissions and table look up values required by RRIS to respond to a 
+    payment request must exist at the time of receipt of the request.&nbsp; If a 
+    table look up fails an error is sent to the internal RRIS error queue and no 
+    response is generated or voucher is rejected.&nbsp; Need to have RRIS expert 
+    confirm what happens.</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">A maximum of ten thousand voucher 
+    requests can be submitted for a given calendar day (the day being defined by 
+    the time in Denmark).&nbsp; Voucher numbers from MERC have the following layout 
+    :&nbsp; 'Z'+NNN+SSSS</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">NNN - number of days since the 
+    first day of the current year.&nbsp; Three digits required.</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">SSSS -- Daily sequence number 
+    reset to zero each day.&nbsp; Valid values '0000' thru '9999'</span></font></p>
+    <p><font face="Verdana" size="2"><span lang="en-us">The concatenation of pay agent 
+    code plus voucher number plus account year</span></font></td>
+  </tr>
+  <tr>
+    <td width="5%"><font face="Verdana" size="2">Daily Load</font></td>
+    <td width="58%"><font face="Verdana" size="2"><span lang="en-us">MERC UserID BNYCWMES 
+    must be defined for all payagent codes for all the formats (52, 70, 72) that 
+    payagent will be used for.</span> </font>
+    <p><font face="Verdana" size="2"><span lang="en-us">RRIT49 and RRIT57 need to be 
+    updated for all payagents that MERC user BNYCWMES will be supporting in RRIS</span></font></td>
+  </tr>
+</table>
+<h2><font face="Verdana">&nbsp;</font></h2>
+<hr>
+    <p align="right"><font face="Verdana" size="1"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%m/%d/%Y" startspan -->12/02/2004<!--webbot bot="Timestamp" endspan i-checksum="12521" --></span></font><p>&nbsp;</p>
+
+</body>
+
+</html>

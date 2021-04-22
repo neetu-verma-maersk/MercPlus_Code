@@ -1,0 +1,71 @@
+﻿@model MercPlusClient.Areas.ManageReports.Models.ManageReportsModel
+
+
+@{
+    ViewBag.Title = "PDFMercC02";
+}
+@using (Html.BeginForm())
+        {
+        <table style="width: 700px; vertical-align:text-top;" border="0" cellpadding="5" cellspacing="0"> 
+         <tr>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th colspan="2" style="text-align:center">@Html.DisplayName("MERCC02 – Mode/Code/Part number associations")</th>
+            <th>&nbsp;</th>
+        </tr> 
+        <tr>
+            
+            <th colspan="6" style="text-align:center">@Html.DisplayName("Report Date " + DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm") + " UTC")</th>
+            
+        </tr> 
+        <tr>
+            <th>&nbsp;</th>
+            <th colspan="5">@Html.DisplayName("Manual/Mode/Repair code/Part number associations")</th>
+        </tr> 
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Manual)</th>
+            <th>@Html.DisplayNameFor(model => model.Mode) </th>
+            <th>@Html.DisplayNameFor(model => model.RepairCode)</th>
+            <th>@Html.DisplayNameFor(model => model.RepairCodeDescription)</th>
+            <th>@Html.DisplayNameFor(model => model.AssociatedPartNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.PartDescription)</th>
+        </tr> 
+        @foreach (var item in Model.ReportsList)
+        {
+        <tr>
+            @if (Model.HiddenManual == item.Manual)
+                {
+                    item.Manual = string.Empty;
+                }
+                else
+                {
+                    Model.HiddenManual = item.Manual;
+                }
+                @if (Model.HiddenMode == item.Mode)
+                {
+                    item.Mode = string.Empty;
+                }
+                else
+                {
+                    Model.HiddenMode = item.Mode;
+                }
+                @if (Model.HiddenRepairCode == item.RepairCod)
+                {
+                    item.RepairCod = string.Empty;
+                }
+                else
+                {
+                    Model.HiddenRepairCode = item.RepairCod;
+                }
+            <td>@Html.DisplayFor(modelItem => item.Manual)</td>
+            <td>@Html.DisplayFor(modelItem => item.Mode) </td>
+            <td>@Html.DisplayFor(modelItem => item.RepairCod)</td>
+            <td>@Html.DisplayFor(modelItem => item.RepairCodeDesc)</td>
+            <td>@Html.DisplayFor(modelItem => item.PART_CD)</td>
+            <td>@Html.DisplayFor(modelItem => item.PartDesc)</td>
+        </tr> 
+        }
+    </table>
+    }
+

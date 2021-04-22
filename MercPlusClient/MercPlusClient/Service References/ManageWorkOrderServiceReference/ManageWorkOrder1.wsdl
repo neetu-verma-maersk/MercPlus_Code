@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManageWorkOrder" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52652/ManageWorkOrderService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52652/ManageWorkOrderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52652/ManageWorkOrderService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary" />
+      <xsd:import schemaLocation="http://localhost:52652/ManageWorkOrderService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IManageWorkOrder_SendGradeCodeToRKEM_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendGradeCodeToRKEM" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SendGradeCodeToRKEM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendGradeCodeToRKEMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CallSaveMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:CallSaveMethod" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CallSaveMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CallSaveMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CallValidateMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:CallValidateMethod" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CallValidateMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CallValidateMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWorkOrderDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWorkOrderDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHours" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetDamageCodeAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCodeAll" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetDamageCodeAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCodeAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetShopCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetShopCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetShopDetailsOnShopCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopDetailsOnShopCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetShopDetailsOnShopCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopDetailsOnShopCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetCustomerCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetCustomerCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetCurrency_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrency" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetCurrency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetRepairLocCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairLocCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetRepairLocCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairLocCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetRepairCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetRepairCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetTpiCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTpiCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetTpiCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTpiCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetEquipmentDetailsFromRKEM_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentDetailsFromRKEM" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetEquipmentDetailsFromRKEM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentDetailsFromRKEMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_RSByMfgAndModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:RSByMfgAndModel" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_RSByMfgAndModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RSByMfgAndModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_ApproveWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_ApproveWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetCustomerCodeByShopCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCodeByShopCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetCustomerCodeByShopCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCodeByShopCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateNewTPI_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNewTPI" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateNewTPI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNewTPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetEquipmentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentType" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetEquipmentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetEquipmentSubType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentSubType" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetEquipmentSubType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentSubTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetSerialNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSerialNo" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetSerialNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSerialNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWorkOrderByCountryOrHigher_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderByCountryOrHigher" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWorkOrderByCountryOrHigher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderByCountryOrHigherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_RSUserByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:RSUserByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_RSUserByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RSUserByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SetWorkingSwitchByWOID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkingSwitchByWOID" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SetWorkingSwitchByWOID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkingSwitchByWOIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateCompleteApprovedWO_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompleteApprovedWO" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateCompleteApprovedWO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompleteApprovedWOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateApproveWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApproveWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateApproveWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApproveWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateApproveWorkOrderByReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApproveWorkOrderByReview" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateApproveWorkOrderByReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApproveWorkOrderByReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SetWorkingSwitchByWOIDByReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkingSwitchByWOIDByReview" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SetWorkingSwitchByWOIDByReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkingSwitchByWOIDByReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateCompleteApprovedWOByReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompleteApprovedWOByReview" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateCompleteApprovedWOByReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompleteApprovedWOByReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetVenRefNoByWOID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenRefNoByWOID" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetVenRefNoByWOID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenRefNoByWOIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_Review_InputMessage">
+    <wsdl:part name="parameters" element="tns:Review" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_Review_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SubmitWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SubmitWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetAuditRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditRecord" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetAuditRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWOAdditionalDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWOAdditionalDetails" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetWOAdditionalDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWOAdditionalDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SaveAsDraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAsDraft" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_SaveAsDraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAsDraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_ChangeStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStatus" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_ChangeStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_LoadRemarksDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadRemarksDetails" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_LoadRemarksDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadRemarksDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_AddRemarkByTypeAndWOID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRemarkByTypeAndWOID" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_AddRemarkByTypeAndWOID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRemarkByTypeAndWOIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateThirdPartyCause_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateThirdPartyCause" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateThirdPartyCause_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateThirdPartyCauseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateRepairDateByWOID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRepairDateByWOID" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateRepairDateByWOID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRepairDateByWOIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateSerialNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateSerialNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateRevNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRevNo" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateRevNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRevNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateShopWorkingSwitch_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShopWorkingSwitch" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_UpdateShopWorkingSwitch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShopWorkingSwitchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetPrevStatusDateLoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrevStatusDateLoc" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetPrevStatusDateLoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrevStatusDateLocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_AuthenticateShopCodeByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateShopCodeByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_AuthenticateShopCodeByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateShopCodeByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CompleteWorkOrderByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteWorkOrderByID" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CompleteWorkOrderByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteWorkOrderByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_RevertTotalLoss_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevertTotalLoss" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_RevertTotalLoss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevertTotalLossResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_ChangeStatusForOtherWOs_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStatusForOtherWOs" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_ChangeStatusForOtherWOs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStatusForOtherWOsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CheckWordOrdersTotalLosscontainer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckWordOrdersTotalLosscontainer" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_CheckWordOrdersTotalLosscontainer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckWordOrdersTotalLosscontainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetMercDamageCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMercDamageCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetMercDamageCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMercDamageCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetServiceStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceStatus" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetServiceStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IManageWorkOrder">
+    <wsdl:operation name="SendGradeCodeToRKEM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/SendGradeCodeToRKEM" message="tns:IManageWorkOrder_SendGradeCodeToRKEM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/SendGradeCodeToRKEMResponse" message="tns:IManageWorkOrder_SendGradeCodeToRKEM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CallSaveMethod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/CallSaveMethod" message="tns:IManageWorkOrder_CallSaveMethod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/CallSaveMethodResponse" message="tns:IManageWorkOrder_CallSaveMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CallValidateMethod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/CallValidateMethod" message="tns:IManageWorkOrder_CallValidateMethod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/CallValidateMethodResponse" message="tns:IManageWorkOrder_CallValidateMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWorkOrderDetails" message="tns:IManageWorkOrder_GetWorkOrderDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWorkOrderDetailsResponse" message="tns:IManageWorkOrder_GetWorkOrderDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetHours" message="tns:IManageWorkOrder_GetHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetHoursResponse" message="tns:IManageWorkOrder_GetHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDamageCodeAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetDamageCodeAll" message="tns:IManageWorkOrder_GetDamageCodeAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetDamageCodeAllResponse" message="tns:IManageWorkOrder_GetDamageCodeAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShopCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetShopCode" message="tns:IManageWorkOrder_GetShopCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetShopCodeResponse" message="tns:IManageWorkOrder_GetShopCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShopDetailsOnShopCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetShopDetailsOnShopCode" message="tns:IManageWorkOrder_GetShopDetailsOnShopCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetShopDetailsOnShopCodeResponse" message="tns:IManageWorkOrder_GetShopDetailsOnShopCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetCustomerCode" message="tns:IManageWorkOrder_GetCustomerCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetCustomerCodeResponse" message="tns:IManageWorkOrder_GetCustomerCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetCurrency" message="tns:IManageWorkOrder_GetCurrency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetCurrencyResponse" message="tns:IManageWorkOrder_GetCurrency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairLocCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetRepairLocCode" message="tns:IManageWorkOrder_GetRepairLocCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetRepairLocCodeResponse" message="tns:IManageWorkOrder_GetRepairLocCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetRepairCode" message="tns:IManageWorkOrder_GetRepairCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetRepairCodeResponse" message="tns:IManageWorkOrder_GetRepairCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTpiCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetTpiCode" message="tns:IManageWorkOrder_GetTpiCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetTpiCodeResponse" message="tns:IManageWorkOrder_GetTpiCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentDetailsFromRKEM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetEquipmentDetailsFromRKEM" message="tns:IManageWorkOrder_GetEquipmentDetailsFromRKEM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetEquipmentDetailsFromRKEMResponse" message="tns:IManageWorkOrder_GetEquipmentDetailsFromRKEM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RSByMfgAndModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/RSByMfgAndModel" message="tns:IManageWorkOrder_RSByMfgAndModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/RSByMfgAndModelResponse" message="tns:IManageWorkOrder_RSByMfgAndModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/ApproveWorkOrder" message="tns:IManageWorkOrder_ApproveWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/ApproveWorkOrderResponse" message="tns:IManageWorkOrder_ApproveWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCodeByShopCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetCustomerCodeByShopCode" message="tns:IManageWorkOrder_GetCustomerCodeByShopCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetCustomerCodeByShopCodeResponse" message="tns:IManageWorkOrder_GetCustomerCodeByShopCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNewTPI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateNewTPI" message="tns:IManageWorkOrder_UpdateNewTPI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateNewTPIResponse" message="tns:IManageWorkOrder_UpdateNewTPI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetEquipmentType" message="tns:IManageWorkOrder_GetEquipmentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetEquipmentTypeResponse" message="tns:IManageWorkOrder_GetEquipmentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentSubType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetEquipmentSubType" message="tns:IManageWorkOrder_GetEquipmentSubType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetEquipmentSubTypeResponse" message="tns:IManageWorkOrder_GetEquipmentSubType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWorkOrder" message="tns:IManageWorkOrder_GetWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWorkOrderResponse" message="tns:IManageWorkOrder_GetWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSerialNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetSerialNo" message="tns:IManageWorkOrder_GetSerialNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetSerialNoResponse" message="tns:IManageWorkOrder_GetSerialNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderByCountryOrHigher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWorkOrderByCountryOrHigher" message="tns:IManageWorkOrder_GetWorkOrderByCountryOrHigher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWorkOrderByCountryOrHigherResponse" message="tns:IManageWorkOrder_GetWorkOrderByCountryOrHigher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RSUserByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/RSUserByUserId" message="tns:IManageWorkOrder_RSUserByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/RSUserByUserIdResponse" message="tns:IManageWorkOrder_RSUserByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateWorkOrder" message="tns:IManageWorkOrder_UpdateWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateWorkOrderResponse" message="tns:IManageWorkOrder_UpdateWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkingSwitchByWOID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/SetWorkingSwitchByWOID" message="tns:IManageWorkOrder_SetWorkingSwitchByWOID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/SetWorkingSwitchByWOIDResponse" message="tns:IManageWorkOrder_SetWorkingSwitchByWOID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompleteApprovedWO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateCompleteApprovedWO" message="tns:IManageWorkOrder_UpdateCompleteApprovedWO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateCompleteApprovedWOResponse" message="tns:IManageWorkOrder_UpdateCompleteApprovedWO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApproveWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateApproveWorkOrder" message="tns:IManageWorkOrder_UpdateApproveWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateApproveWorkOrderResponse" message="tns:IManageWorkOrder_UpdateApproveWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApproveWorkOrderByReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateApproveWorkOrderByReview" message="tns:IManageWorkOrder_UpdateApproveWorkOrderByReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateApproveWorkOrderByReviewResponse" message="tns:IManageWorkOrder_UpdateApproveWorkOrderByReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkingSwitchByWOIDByReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/SetWorkingSwitchByWOIDByReview" message="tns:IManageWorkOrder_SetWorkingSwitchByWOIDByReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/SetWorkingSwitchByWOIDByReviewResponse" message="tns:IManageWorkOrder_SetWorkingSwitchByWOIDByReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompleteApprovedWOByReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateCompleteApprovedWOByReview" message="tns:IManageWorkOrder_UpdateCompleteApprovedWOByReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateCompleteApprovedWOByReviewResponse" message="tns:IManageWorkOrder_UpdateCompleteApprovedWOByReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenRefNoByWOID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetVenRefNoByWOID" message="tns:IManageWorkOrder_GetVenRefNoByWOID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetVenRefNoByWOIDResponse" message="tns:IManageWorkOrder_GetVenRefNoByWOID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Review">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/Review" message="tns:IManageWorkOrder_Review_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/ReviewResponse" message="tns:IManageWorkOrder_Review_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/SubmitWorkOrder" message="tns:IManageWorkOrder_SubmitWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/SubmitWorkOrderResponse" message="tns:IManageWorkOrder_SubmitWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetAuditRecord" message="tns:IManageWorkOrder_GetAuditRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetAuditRecordResponse" message="tns:IManageWorkOrder_GetAuditRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWOAdditionalDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWOAdditionalDetails" message="tns:IManageWorkOrder_GetWOAdditionalDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetWOAdditionalDetailsResponse" message="tns:IManageWorkOrder_GetWOAdditionalDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAsDraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/SaveAsDraft" message="tns:IManageWorkOrder_SaveAsDraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/SaveAsDraftResponse" message="tns:IManageWorkOrder_SaveAsDraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/ChangeStatus" message="tns:IManageWorkOrder_ChangeStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/ChangeStatusResponse" message="tns:IManageWorkOrder_ChangeStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadRemarksDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/LoadRemarksDetails" message="tns:IManageWorkOrder_LoadRemarksDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/LoadRemarksDetailsResponse" message="tns:IManageWorkOrder_LoadRemarksDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRemarkByTypeAndWOID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/AddRemarkByTypeAndWOID" message="tns:IManageWorkOrder_AddRemarkByTypeAndWOID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/AddRemarkByTypeAndWOIDResponse" message="tns:IManageWorkOrder_AddRemarkByTypeAndWOID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateThirdPartyCause">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateThirdPartyCause" message="tns:IManageWorkOrder_UpdateThirdPartyCause_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateThirdPartyCauseResponse" message="tns:IManageWorkOrder_UpdateThirdPartyCause_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRepairDateByWOID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateRepairDateByWOID" message="tns:IManageWorkOrder_UpdateRepairDateByWOID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateRepairDateByWOIDResponse" message="tns:IManageWorkOrder_UpdateRepairDateByWOID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSerialNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateSerialNumber" message="tns:IManageWorkOrder_UpdateSerialNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateSerialNumberResponse" message="tns:IManageWorkOrder_UpdateSerialNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRevNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateRevNo" message="tns:IManageWorkOrder_UpdateRevNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateRevNoResponse" message="tns:IManageWorkOrder_UpdateRevNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShopWorkingSwitch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateShopWorkingSwitch" message="tns:IManageWorkOrder_UpdateShopWorkingSwitch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/UpdateShopWorkingSwitchResponse" message="tns:IManageWorkOrder_UpdateShopWorkingSwitch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrevStatusDateLoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetPrevStatusDateLoc" message="tns:IManageWorkOrder_GetPrevStatusDateLoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetPrevStatusDateLocResponse" message="tns:IManageWorkOrder_GetPrevStatusDateLoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateShopCodeByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/AuthenticateShopCodeByUserID" message="tns:IManageWorkOrder_AuthenticateShopCodeByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/AuthenticateShopCodeByUserIDResponse" message="tns:IManageWorkOrder_AuthenticateShopCodeByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteWorkOrderByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/CompleteWorkOrderByID" message="tns:IManageWorkOrder_CompleteWorkOrderByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/CompleteWorkOrderByIDResponse" message="tns:IManageWorkOrder_CompleteWorkOrderByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevertTotalLoss">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/RevertTotalLoss" message="tns:IManageWorkOrder_RevertTotalLoss_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/RevertTotalLossResponse" message="tns:IManageWorkOrder_RevertTotalLoss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatusForOtherWOs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/ChangeStatusForOtherWOs" message="tns:IManageWorkOrder_ChangeStatusForOtherWOs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/ChangeStatusForOtherWOsResponse" message="tns:IManageWorkOrder_ChangeStatusForOtherWOs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckWordOrdersTotalLosscontainer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/CheckWordOrdersTotalLosscontainer" message="tns:IManageWorkOrder_CheckWordOrdersTotalLosscontainer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/CheckWordOrdersTotalLosscontainerResponse" message="tns:IManageWorkOrder_CheckWordOrdersTotalLosscontainer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMercDamageCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetMercDamageCode" message="tns:IManageWorkOrder_GetMercDamageCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetMercDamageCodeResponse" message="tns:IManageWorkOrder_GetMercDamageCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetServiceStatus" message="tns:IManageWorkOrder_GetServiceStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetServiceStatusResponse" message="tns:IManageWorkOrder_GetServiceStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IManageWorkOrder" type="tns:IManageWorkOrder">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendGradeCodeToRKEM">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/SendGradeCodeToRKEM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallSaveMethod">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/CallSaveMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallValidateMethod">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/CallValidateMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderDetails">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetWorkOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHours">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDamageCodeAll">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetDamageCodeAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetShopCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopDetailsOnShopCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetShopDetailsOnShopCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetCustomerCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairLocCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetRepairLocCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetRepairCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTpiCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetTpiCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentDetailsFromRKEM">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetEquipmentDetailsFromRKEM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RSByMfgAndModel">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/RSByMfgAndModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/ApproveWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCodeByShopCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetCustomerCodeByShopCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNewTPI">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateNewTPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentType">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetEquipmentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentSubType">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetEquipmentSubType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSerialNo">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetSerialNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderByCountryOrHigher">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetWorkOrderByCountryOrHigher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RSUserByUserId">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/RSUserByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkingSwitchByWOID">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/SetWorkingSwitchByWOID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompleteApprovedWO">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateCompleteApprovedWO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApproveWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateApproveWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApproveWorkOrderByReview">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateApproveWorkOrderByReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkingSwitchByWOIDByReview">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/SetWorkingSwitchByWOIDByReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompleteApprovedWOByReview">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateCompleteApprovedWOByReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenRefNoByWOID">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetVenRefNoByWOID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Review">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/Review" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/SubmitWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditRecord">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetAuditRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWOAdditionalDetails">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetWOAdditionalDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAsDraft">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/SaveAsDraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/ChangeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadRemarksDetails">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/LoadRemarksDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRemarkByTypeAndWOID">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/AddRemarkByTypeAndWOID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateThirdPartyCause">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateThirdPartyCause" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRepairDateByWOID">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateRepairDateByWOID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSerialNumber">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateSerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRevNo">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateRevNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShopWorkingSwitch">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/UpdateShopWorkingSwitch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrevStatusDateLoc">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetPrevStatusDateLoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateShopCodeByUserID">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/AuthenticateShopCodeByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteWorkOrderByID">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/CompleteWorkOrderByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevertTotalLoss">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/RevertTotalLoss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatusForOtherWOs">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/ChangeStatusForOtherWOs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckWordOrdersTotalLosscontainer">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/CheckWordOrdersTotalLosscontainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMercDamageCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetMercDamageCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceStatus">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetServiceStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageWorkOrder">
+    <wsdl:port name="BasicHttpBinding_IManageWorkOrder" binding="tns:BasicHttpBinding_IManageWorkOrder">
+      <soap:address location="http://localhost:52652/ManageWorkOrderService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

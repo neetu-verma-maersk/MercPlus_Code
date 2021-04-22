@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MercPlusLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApproveAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AuthGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChangeTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ChangeUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsUserActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastLogInDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Loccd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginFirstAndLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChangeTimeCon" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ChangeUserCon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCodeAndDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryGeoID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryNotFound" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="tns:ErrMessage" />
+      <xs:element minOccurs="0" name="RepairLimitAdjFactor" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ShowDiv" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="ErrMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrMessage" nillable="true" type="tns:ErrMessage" />
+  <xs:complexType name="ArrayOfUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInfo" nillable="true" type="tns:ArrayOfUserInfo" />
+  <xs:complexType name="ArrayOfAssignAuthGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssignAuthGroup" nillable="true" type="tns:AssignAuthGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssignAuthGroup" nillable="true" type="tns:ArrayOfAssignAuthGroup" />
+  <xs:complexType name="AssignAuthGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListItem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueItem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignAuthGroup" nillable="true" type="tns:AssignAuthGroup" />
+  <xs:complexType name="ArrayOfAvailableAssignAuthGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvailableAssignAuthGroup" nillable="true" type="tns:AvailableAssignAuthGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvailableAssignAuthGroup" nillable="true" type="tns:ArrayOfAvailableAssignAuthGroup" />
+  <xs:complexType name="AvailableAssignAuthGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListItem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueItem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvailableAssignAuthGroup" nillable="true" type="tns:AvailableAssignAuthGroup" />
+  <xs:complexType name="ArrayOfSecAuthGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecAuthGroup" nillable="true" type="tns:SecAuthGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecAuthGroup" nillable="true" type="tns:ArrayOfSecAuthGroup" />
+  <xs:complexType name="SecAuthGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="AuthGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentAuthGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReadOnlySw" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecAuthGroup" nillable="true" type="tns:SecAuthGroup" />
+  <xs:complexType name="ArrayOfSecAuthGroupUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecAuthGroupUserInfo" nillable="true" type="tns:SecAuthGroupUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecAuthGroupUserInfo" nillable="true" type="tns:ArrayOfSecAuthGroupUserInfo" />
+  <xs:complexType name="SecAuthGroupUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessId" type="xs:int" />
+      <xs:element minOccurs="0" name="AuthGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="AuthGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecAuthGroupUserInfo" nillable="true" type="tns:SecAuthGroupUserInfo" />
+  <xs:complexType name="ArrayOfSecWebSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecWebSite" nillable="true" type="tns:SecWebSite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecWebSite" nillable="true" type="tns:ArrayOfSecWebSite" />
+  <xs:complexType name="SecWebSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebSiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="WebSiteName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecWebSite" nillable="true" type="tns:SecWebSite" />
+  <xs:complexType name="ArrayOfSecWebPage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecWebPage" nillable="true" type="tns:SecWebPage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecWebPage" nillable="true" type="tns:ArrayOfSecWebPage" />
+  <xs:complexType name="SecWebPage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebPageId" type="xs:int" />
+      <xs:element minOccurs="0" name="WebPageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebSiteId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecWebPage" nillable="true" type="tns:SecWebPage" />
+</xs:schema>

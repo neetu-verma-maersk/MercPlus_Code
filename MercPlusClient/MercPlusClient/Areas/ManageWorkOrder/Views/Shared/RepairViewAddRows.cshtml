@@ -1,0 +1,52 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel
+
+@*@if (Model.dbWOD.RepairsViewList != null && Model.dbWOD.RepairsViewList.Count() > 0)
+{
+    foreach (var rView in Model.dbWOD.RepairsViewList)
+    {
+    <tr>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Damage.DamageCedexCode, new { style = "width: 60px;float:left;", @class = "cDCode" })&nbsp;<span class="glyphicon glyphicon-search clsDamageCode" style="clear: right;" title="Search Damage code" data-toggle="modal" data-target="#mercModal"></span>
+        </td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.RepairCode.RepairCod, new { style = "width: 60px;float:left;", @class = "CRep" })&nbsp;<span class="glyphicon glyphicon-search clsRepairCode" style="clear: right;" title="Search Repair code" data-toggle="modal" data-target="#mercModal"></span>
+        </td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.RepairLocationCode.CedexCode, new { style = "width: 60px;float:left;", @class = "cRLocCode" })&nbsp;<span class="glyphicon glyphicon-search clsRepairLocCode" style="clear: right;" title="Search Repair Location code" data-toggle="modal" data-target="#mercModal"></span>
+        </td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Pieces, new { style = "width: 40px;", @class = "cPieces CLSNUMERIC", @maxquantity = rView.RepairCode.MaxQuantity, @manualcode = rView.RepairCode.ManualCode, onblur = "PiecesOnBlur(this)" })</td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.MaterialCost, new { style = "width: 80px;", @class = "cMCost CLSDECIMAL" })</td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.ManHoursPerPiece, new { style = "width: 50px;", @class = "cMHours CLSDECIMAL" })</td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Tpi.CedexCode, new { style = "width: 30px;float:left;", @class = "cTPI" })&nbsp;<span class="glyphicon glyphicon-search clsTPI" style="clear: right;" title="Search TPI code" data-toggle="modal" data-target="#mercModal"></span>
+        </td>
+    </tr>                          
+    }
+}
+else
+{*@
+
+@for (int i = 0; i < Model.RAdditionalRows; i++)
+{
+    <tr>
+        <td style="vertical-align: top;">
+            <input type="text" style="width: 71%; float: left; text-transform: uppercase;" class="cDCode" name="DamageCedexCode" maxlength="2" />&nbsp;                               
+                                <span class="glyphicon glyphicon-search clsDamageCode" style="clear: right;" title="Search Damage code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+        </td>
+        <td style="vertical-align: top;">
+            <input type="text" style="width: 71%; float: left;" class="CRep" name="RepairCod" maxlength="4" onblur="RepBlur(this);" />&nbsp;
+                                <span class="glyphicon glyphicon-search clsRepairCode" style="clear: right;" title="Search Repair code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+        </td>
+        <td style="vertical-align: top;">
+            <input type="text" style="width: 71%; float: left; text-transform: uppercase;" class="cRLocCode" name="CedexCode" maxlength="4" onblur="LocBlur(this);" />&nbsp;
+                                <span class="glyphicon glyphicon-search clsRepairLocCode" style="clear: right;" title="Search Repair Location code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+        </td>
+        <td style="text-align: left; vertical-align: top;">
+            <input type="text" style="width: 90%;" class="cPieces CLSNUMERIC" name="Pieces" maxquantity="0" manualcode=""  maxlength="2" onfocus="return NumFocus(this);" onblur="return NumDecBlur(this);" onkeydown="return NumKeyDown(this,event);" /></td>
+        <td style="text-align: left; vertical-align: top;">
+            <input type="text" style="width: 90%;" class="cMCost CLSDECIMAL" value="0.0" name="MaterialCost" onblur="return NumDecBlur(this);" onkeydown="return DecKeyDown(this,event);" /></td>
+        <td style="text-align: left; vertical-align: top;">
+            <input type="text" style="width: 90%;" class="cMHours CLSDECIMAL" value="0.0" name="ManHoursPerPiece" onblur="return NumDecBlur(this);" onkeydown="return DecKeyDown(this,event);" /></td>
+        <td style="vertical-align: top;">
+            <input type="text" style="width: 61%; float: left; text-transform: uppercase;" class="cTPI" name="Tpi" value="O" maxlength="1" onkeydown="changeVal(this,'C');" />&nbsp;
+                                 <span class="glyphicon glyphicon-search clsTPI" style="clear: right;" title="Search TPI code" data-toggle="modal" data-target="#mercModal" onclick="RepairClick(this);"></span>
+        </td>
+    </tr>   
+}
+@*}*@

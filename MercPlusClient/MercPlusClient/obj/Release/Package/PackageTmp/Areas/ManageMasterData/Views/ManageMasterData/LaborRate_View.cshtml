@@ -1,0 +1,730 @@
+﻿<form  id="Labor" method="post"></form>
+@model MercPlusClient.Areas.ManageMasterData.Models.LaborRateModel
+@{
+    ViewBag.Title = "LaborRate";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<link href="~/Areas/ManageMasterData/Style/MasterData.css" rel="stylesheet" />
+
+
+@*<script src="../../Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>  *@
+@*<script src="~/Areas/ManageMasterData/Script/mainjs.js"></script>*@
+ 
+
+<script type="text/javascript">
+
+    function ValidateNumber(e) {
+
+        var evt = (e) ? e : window.event;
+
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+
+        if (charCode == 190) {
+            return true;
+        }
+        else if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+
+        else
+
+            return true;
+    }
+
+    $(function () {
+
+        $(".CLSDTFROM").datepicker({
+            inline: true,
+            numberOfMonths: 2,
+            onSelect: function (selected) {
+                var dt = new Date(selected);
+                dt.setDate(dt.getDate() + 1);
+                $(".CLSDTTO").datepicker("option", "minDate", dt);
+            }
+        });
+        $(".CLSDTTO").datepicker({
+            inline: true,
+            numberOfMonths: 2,
+            onSelect: function (selected) {
+                var dt = new Date(selected);
+                dt.setDate(dt.getDate() - 1);
+                $(".CLSDTFROM").datepicker("option", "maxDate", dt);
+            }
+        });
+
+        
+        $('#btnSubmitAdd').click(function () {
+            
+            // e.preventDefault();
+          
+            $('#lblErrorMesage').css("display", "none");
+            $('#lblMesage').css("display", "none");
+            $('#gridContent').css("display", "block");
+            
+            var ShIdA = $("#drpshopListA").val();
+            var CustIdA = $("#drpCustomerListA").val();
+            var EqpIdA = $("#drpEqupListA").val();
+
+             
+            var EffDt = $('#txtEffDate').val();
+            var ExpDt =  $('#txtExpDate').val();
+            var OrdRate = $ ('#txRegrate').val();
+            var Ot1 = $('#txOt1').val();
+            var Ot2 = $('#txOt2').val();
+            var Ot3 = $('#txOt3').val();
+          
+            var errMsg = "";
+            var isError = false;
+            $("#ErrorMsgContainer").html("");
+
+            var err = "Please Select ";
+            HighlightInputsForError($("#drpshopListA"), false)
+            if ( ShIdA == '') {
+                isError = true;
+                errMsg += " a Shop to Query ";
+                HighlightInputsForError($("#drpshopListA"), isError);
+            }
+
+            HighlightInputsForError($("#drpCustomerListA"), false)
+            if ( CustIdA =='') {
+                isError = true;
+                if (errMsg.length > 1) {
+                    errMsg += " , a Customer to Query ";
+                }
+                else
+                    errMsg += " a Customer to Query ";
+
+                
+                HighlightInputsForError($("#drpCustomerListA"), isError);
+            }
+
+
+            HighlightInputsForError($("#drpEqupListA"), false)
+            if (EqpIdA == '') {
+                isError = true;
+                if (errMsg.length > 1) {
+                    errMsg += " , a EquipmentType to Query ";
+                }
+                else
+                    errMsg += " a EquipmentType to Query ";
+
+                 
+                HighlightInputsForError($("#drpEqupListA"), isError);
+            }
+            HighlightInputsForError($("#txtEffDate"), false)
+           if (EffDt=='')
+
+           {
+               isError = true;
+               if (errMsg.length > 1) {
+                   errMsg += " , Effective date to Query ";
+               }
+               else
+                   errMsg += " Effective date to Query ";
+
+                
+               HighlightInputsForError($("#txtEffDate"), isError);
+           }
+           HighlightInputsForError($("#txtExpDate"), false)
+           if (ExpDt=='')
+
+           {
+               isError = true;
+               if (errMsg.length > 1) {
+                   errMsg += " , Exp date to Query ";
+               }
+               else
+                   errMsg += " Exp date to Query ";
+
+                
+               HighlightInputsForError($("#txtExpDate"), isError);
+           }
+          
+
+           HighlightInputsForError($("#txRegrate"), false)
+           if (OrdRate == '') {
+               isError = true;
+               if (errMsg.length > 1) {
+                   errMsg += " , Ordinary Rate to Query ";
+               }
+               else
+                   errMsg += " Ordinary Rate to Query ";
+
+
+               HighlightInputsForError($("#txRegrate"), isError);
+           }
+
+           HighlightInputsForError($("#txOt1"), false)
+           if (Ot1 == '') {
+               isError = true;
+               if (errMsg.length > 1) {
+                   errMsg += " , OT1 to Query ";
+               }
+               else
+                   errMsg += " OT1 to Query ";
+
+
+               HighlightInputsForError($("#txOt1"), isError);
+           }
+           HighlightInputsForError($("#txOt2"), false)
+           if (Ot2 == '') {
+               isError = true;
+               if (errMsg.length > 1) {
+                   errMsg += " , OT2 to Query ";
+               }
+               else
+                   errMsg += " Ot2 to Query ";
+
+
+               HighlightInputsForError($("#txOt2"), isError);
+           }
+           HighlightInputsForError($("#txOt3"), false)
+           if (Ot3 == '') {
+               isError = true;
+               if (errMsg.length > 1) {
+                   errMsg += " , OT3 to Query ";
+               }
+               else
+                   errMsg += " OT3 to Query ";
+
+
+               HighlightInputsForError($("#txOt3"), isError);
+           }
+
+
+
+
+            if (errMsg.length > 1 &&  isError == true) {
+                errMsg = err + errMsg;
+            }
+           
+        
+
+
+             
+
+            var Edate = new Date(ExpDt); // or Date.parse(...)
+            Edate.setHours(23);
+            Edate.setMinutes(59);//Kasturee_Labor_rate_Exp_19-07-19
+            Edate.setSeconds(59);
+            var dateNow = new Date(); // or Date.now()
+            if (dateNow > Edate) {
+           
+                
+                isError = true;
+                errMsg += "Exp Date must be greater than today's date ";
+                HighlightInputsForError($("#txtExpDate"), isError);
+            }
+
+
+           
+           else if (EffDt > ExpDt) {
+                isError = true;
+                errMsg += "Exp Date must be greater than Effective date";
+                HighlightInputsForError($("#txtEffDate"), isError);
+            }
+
+           
+           
+            HighlightInputsForError($("#txRegrate"), false)
+            if (isNaN(OrdRate)) {
+                isError = true;
+                errMsg += "Ordinary rate should be numeric" ;
+                HighlightInputsForError($("#txRegrate"), isError);
+                 
+            }
+            HighlightInputsForError($("#txOt1"), false)
+            if (isNaN(Ot1)) {
+                isError = true;
+                errMsg += "OT1 should be numeric";
+                HighlightInputsForError($("#txOt1"), isError);
+             
+            }
+            HighlightInputsForError($("#txOt2"), false);
+            if (isNaN(Ot2)) {
+                isError = true;
+                errMsg += "OT2 should be numeric";
+                HighlightInputsForError($("#txOt2"), isError);
+
+            }
+            HighlightInputsForError($("#txOt3"), false)
+            if (isNaN(Ot3)) {
+                isError = true;
+                errMsg += "OT3 should be numeric";
+                HighlightInputsForError($("#txOt3"), isError);
+
+            }
+            
+
+            if (isError == true) {
+                errMsg = errMsg;
+                 
+                ShowRemoveValidationMessage(errMsg, "Warning");
+                return;
+            }
+
+            else {
+                $('#lblErrorMesage').css("display", "none");
+                $('#lblMesage').css("display", "none");
+                $('#gridContent').css("display", "block");
+
+                
+            $.ajax({
+
+                url: "/ManageMasterData/ManageMasterData/CreateLaborRate",
+                type: 'POST',
+                data: { ShopCode: ShIdA, CustCode: CustIdA, eqtypeCode: EqpIdA , EFFDate: EffDt , EXPDate: ExpDt, OrdRate: OrdRate, OT1: Ot1,OT2:Ot2 ,OT3: Ot3 },
+
+                cache: false,
+                success: function (Result) {
+
+                   
+                    if (Result.data == "SUCCESS") {
+                      
+                        
+                        $('#lblErrorMesage').css("display", "none");
+                        $('#lblMesage').css("display", "none");
+                        $('#gridContent').css("display", "block");
+                        $("#txtCurrCode").val(Result.id);
+                        ShowRemoveValidationMessage('**Labor Rates:  ' + ShIdA + ' / ' + CustIdA + ' / ' + EqpIdA + ' Added**', "Success");
+                      //  $('#lblMesage').text('**Labor Rates:  ' + ShIdA + ' / ' + CustIdA + ' / ' + EqpIdA + ' Added**');
+                       // $('#lblMesage').css("display", "block");
+                      
+                    }
+                    if (Result.data == "Duplicate")
+                    {
+                        
+                        $('#lblErrorMesage').css("display", "none");
+                        $('#lblMesage').css("display", "none");
+                        $('#gridContent').css("display", "block");
+                        $("#txtCurrCode").val(Result.id);
+                        
+                        ShowRemoveValidationMessage('**Duplicate Record Exist ' + ShIdA + ' / ' + CustIdA + ' / ' + EqpIdA + ' **', "Warning");
+                        //$('#lblErrorMesage').text('Duplicate Record Exist');
+                        //$('#lblErrorMesage').css("display", "block");
+                    }
+                    if (Result.data == "FAILED") {
+                        
+                        $("#txtCurrCode").val(Result.id);
+                        $('#lblErrorMesage').css("display", "none");
+                        $('#lblMesage').css("display", "none");
+                        $('#gridContent').css("display", "block");
+                        //$('#lblErrorMesage').text('Addition failed');
+                        //$('#lblErrorMesage').css("display", "block");
+                        ShowRemoveValidationMessage('**Addition failed ' + ShIdA + ' / ' + CustIdA + ' / ' + EqpIdA + ' **', "Warning");
+                    }
+                },
+                error: function (data) {
+                    
+                    $('#lblErrorMesage').text('Exception occoured');
+                    $('#lblErrorMesage').css("display", "block");
+                }
+            });
+            } //else
+
+        });
+        
+
+
+        $('#btnQuery').click(function (e) {
+            $('#lblErrorMesage').css("display", "none");
+            $('#lblMesage').css("display", "none");
+            $('#gridContent').css("display", "block");
+
+            e.preventDefault();
+            $('#divEquipmentModelSearch').show();
+
+            $('#divAddRate').hide();
+            var ShId = $("#drpshopList").val();
+            var CustId = $("#drpCustomerList").val();
+            var EqpId = $("#drpEqupList").val();
+
+            var errMsg = "";
+            var isError = false;
+            $("#ErrorMsgContainer").html("");
+
+            
+
+            HighlightInputsForError($("#drpshopList"), false);
+            if (ShId == '') {
+                isError = true;
+                errMsg += "Please Select a Shop to Query ";
+               
+                HighlightInputsForError($("#drpshopList"), isError);
+            }
+             
+            //HighlightInputsForError($("#drpCustomerList"), false);
+            //if (CustId == '') {
+            //    isError = true;
+            //    errMsg += "Please Select a Customer to Query ";
+            //    HighlightInputsForError($("#drpCustomerList"), isError);
+            //}
+             
+
+            //HighlightInputsForError($("#drpEqupList"), false);
+            ////if ( EqpId =='') {
+            //    isError = true;
+            //    errMsg += "Please Select a EquipmentType to Query ";
+            //    HighlightInputsForError($("#drpEqupList"), isError);
+            //}
+
+ 
+           
+            if (isError == true) {
+                
+                $('#gridContent').css("display", "none");
+                ShowRemoveValidationMessage(errMsg, "Warning");
+                return;
+            }
+
+
+            //if (ShId == '' && CustId == '' && EqpId=='') {
+            //    //$('#lblErrorMesage').text('Please select All the dropdown list');
+            //    //$('#lblErrorMesage').css("display", "block");
+            //    //$('#lblMesage').text('**** NO RECORDS FOUND MATCHING SEARCH CRITERIA ****');
+            //    //$('#lblMesage').css("display", "block");
+            //    $('#gridContent').css("display", "none");
+            //}
+
+
+            else {
+                
+                $('#lblErrorMesage').css("display", "none");
+                $('#lblMesage').css("display", "none");
+                $('#gridContent').css("display", "block");
+
+                var url = 'SearchLaborRate_View';
+                $.post(url, {
+                    ShopCode: ShId, CustCode: CustId, eqtypeCode: EqpId
+
+
+                }, function (result) {
+                    var n = result.indexOf("**NO**");
+                     
+                    if (n > 0) {
+                        $('#gridContentModel').hide();
+                        ShowRemoveValidationMessage("No Results Found Matching Search Criteria", "Warning");
+                    }
+                    else {
+                        $('#gridContentModel').html(result);
+                    }
+
+                    
+
+                });
+            }
+
+        });
+
+        
+     
+    });
+
+    function ModeChange() {
+ 
+
+        var SCode = $("#drpshopListA").val();
+        $("#txtCurrCode").val("");
+        $.ajax({
+            url: "/ManageMasterData/ManageMasterData/GetCurrCode",
+            type: 'POST',
+            data: { ShopCode: SCode },
+            cache: false,
+            success: function (data) {
+               
+                $("#txtCurrCode").val(data);
+
+            },
+            error: function (data) {
+
+            }
+        });
+    }
+
+    function ModeChangeE() {
+
+
+        var SCode = $("#drpshopListE").val();
+        $("#txtCurrCodeE").val("");
+        $.ajax({
+            url: "/ManageMasterData/ManageMasterData/GetCurrCode",
+            type: 'POST',
+            data: { ShopCode: SCode },
+            cache: false,
+            success: function (data) {
+
+                $("#txtCurrCodeE").val(data);
+
+            },
+            error: function (data) {
+
+            }
+        });
+    }
+
+    function divAddRateShow() { 
+
+        $('#divEquipmentModelSearch').hide();
+        $('#gridContentModel').hide();
+        $('#divAddRate').show();
+       
+        $('#lblHeader').html("Shop Labour Rates Add");
+
+        $("#ErrorMsgContainer").html("");
+        $('#lblErrorMesage').css("display", "none");
+        $('#lblMesage').css("display", "none");
+        $('#gridContent').css("display", "block");
+
+    }
+    //function divEditRateShow() {
+
+    //    $('#divEquipmentModelSearch').hide();
+    //    $('#gridContentModel').hide();
+    //    $('#divEditRate').show();
+
+    //    $('#lblHeader').html("Shop Labour Rates Edit");
+
+    //    $("#ErrorMsgContainer").html("");
+    //    $('#lblErrorMesage').css("display", "none");
+    //    $('#lblMesage').css("display", "none");
+    //    $('#gridContent').css("display", "block");
+
+    //}
+    </script>
+
+@using (Html.BeginForm())
+{
+     <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_labor_rate_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+
+    
+    <div>
+         <h3>
+         @Html.Label("Shop Labour Rates View", new { id = "lblHeader" })  
+        </h3>
+
+    </div>
+   
+       
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+
+     <div id="divEquipmentModelSearch" style=" width: 800px;" >
+        @* <h3>Shop Labour Rates View</h3>*@
+
+            
+
+        <table >
+           
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.ShopLists, "Shop")
+            </td>
+         
+           <td class="style3" style="text-align: left; vertical-align: top; width:100px">
+                @Html.LabelFor(model => model.CustomerLists)
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top; width:100px">
+                @Html.LabelFor(model => model.EqupList)
+            </td>
+
+            <td style="text-align: left; vertical-align: top; width:150px;">
+
+           </td>
+            </tr>
+        <tr>
+
+            
+            <td class="style2" style="text-align: left; vertical-align: top;  width:150px;">
+                @Html.DropDownListFor(model => model.ShopList, Model.drpShopList, "Select Shop ", new { id = "drpshopList" })
+            </td>
+
+            <td class="style2" style="text-align: left; vertical-align: top;  width:150px;">
+                @Html.DropDownListFor(model => model.CustomerList, Model.drpCustomerList, new { id = "drpCustomerList" })
+            </td>
+
+            <td class="style2" style="text-align: left; vertical-align: top;  width:150px;">
+                @Html.DropDownListFor(model => model.EqupList, Model.drpEqupList, "Select Equipment ", new { id = "drpEqupList" })
+                
+            </td>
+
+            <td style="text-align: left; vertical-align: top; width:150px;">
+                 
+                <input type="button" value="Query" id="btnQuery" />
+            </td>
+            
+            @*<td style="text-align: left; vertical-align: top; width: 150px;">
+                <input type="button" value="Add New Rates" id="btnAdd" onclick="divAddRateShow();" />
+
+            </td>*@
+        </tr>
+
+   </table>
+
+   </div>
+    
+     <div id="divAddRate" style="display: none; width: 800px;" >
+        @* <h3>Shop Labour Rates Add</h3>*@
+
+        <table >
+
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.ShopList)
+            </td>
+         
+           <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.CustomerList)
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.EqupList)
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top; width: 200px; ">
+                @Html.LabelFor(model => model.CurrCode)
+            </td>
+           <td style="text-align: left; vertical-align: top; width: 100px;">
+
+           </td>
+        
+            </tr>
+        <tr>
+
+            
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.ShopListA, Model.drpShopListA, "Select Shop ", new { id = "drpshopListA", onchange = "ModeChange()" })
+            </td>
+
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.CustomerList, Model.drpCustomerList, "Select Customer", new { id = "drpCustomerListA" })
+            </td>
+
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.EqupList, Model.drpEqupList, "Select Equipment ", new { id = "drpEqupListA" })
+                
+            </td>
+            <td style="text-align: left; vertical-align: top; ">                 
+                   @Html.TextBoxFor(model => model.CurrCode, new { id = "txtCurrCode", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+            </td>
+             
+        </tr>
+
+          <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.Effdate)
+            </td>
+         
+           <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.Expdate, "Expiration Date")
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+               
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                
+            </td>
+           <td style="text-align: left; vertical-align: top; width: 240px;">
+
+           </td>
+        
+            </tr>
+
+             <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.TextBox("txtEffDate", Model._sEffdate, new { style = "width:120px;background-color:#DCDCDC!important;", @readonly = true }) (YYYY-MM-DD)
+            </td>
+         
+           <td class="style3" style="text-align: left; vertical-align: top;">
+               @Html.TextBox("txtExpDate", Model._sExpdate, new { style = "width:120px;background-color:#DCDCDC!important;", @readonly = true }) (YYYY-MM-DD)
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+               
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                
+            </td>
+           <td style="text-align: left; vertical-align: top; width: 240px;">
+
+           </td>
+        
+            </tr>
+               <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.RegularRate)
+            </td>
+         
+           <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.OvertimeRate)
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.DoubletimeRate)
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.MiscRate)
+            </td>
+           <td style="text-align: left; vertical-align: top; width: 240px;">
+
+           </td>
+        
+            </tr>
+            <tr>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+               
+                    @Html.TextBoxFor(model => model.RegularRate, new { id = "txRegrate", @MaxLength = "16", onkeydown = "return ValidateNumber(event);", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+         
+           <td class="style3" style="text-align: left; vertical-align: top;">
+               
+                @Html.TextBoxFor(model => model.OvertimeRate, new { id = "txOt1", @MaxLength = "16", onkeydown = "return ValidateNumber(event);", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+              @Html.TextBoxFor(model => model.DoubletimeRate, new { id = "txOt2", @MaxLength = "16", onkeydown = "return ValidateNumber(event);", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                
+                @Html.TextBoxFor(model => model.MiscRate, new { id = "txOt3", @MaxLength = "16", onkeydown = "return ValidateNumber(event);", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+           <td style="text-align: left; vertical-align: top; width: 240px;">
+
+           </td>
+        
+            </tr>
+
+            
+   </table>
+
+   </div>
+ 
+    
+     <table  width="100%">
+      <tr>
+            <td  style="width:100%;">
+            
+            <div id="gridContentModel">  
+                  
+                </div>  
+             
+            
+            </td>
+        </tr>
+      <tr><td colspan="8">
+
+            @Html.Label("lbl", new { id = "lblErrorMesage", style = "color: red; text-size:12px; display: none;" })
+           <br />
+           <p style="text-align:center;"><h3>@Html.Label("lbl", new { id = "lblMesage", style = "display: none;" }) </h3></p>
+            </td></tr>
+        </table>
+}

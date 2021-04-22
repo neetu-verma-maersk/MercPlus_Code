@@ -1,0 +1,340 @@
+﻿@*@model IEnumerable<MercPlusClient.Areas.HSUDData.Models.HSUDDataModel>
+@model IEnumerable<MercPlusClient.Areas.HSUDData.Models.EstLifeCycle_ApprovalCanceledModel>
+@model IEnumerable<MercPlusClient.Areas.HSUDData.Models.EstLineItemAnalysisModel>   
+@model IEnumerable<MercPlusClient.Areas.HSUDData.Models.EstLifeCycle_ApprovalCanceledModel>*@
+
+@{
+ 
+    
+
+
+    ViewBag.Title = "HSUDDetails";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+
+ 
+@using (Html.BeginForm())
+{
+    <div style="width: 90%" id="divMain">
+        
+        <table width="100%">
+            <tr>
+                <td colspan="8">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; vertical-align: text-top;">
+
+                        <tr>
+                            <td style="vertical-align: top; text-align: right; margin-right: 0px; font-size: xx-small; font-size: 8px;">
+                               
+                                <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/mgrapproval1_help.htm" target="_blank"></a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;">
+                        @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    @*@Html.Label("lblMessage", Model.ErrorMsg, new { style = "color: red; text-size:8px;" })*@
+                     <h2>HSUD REZ1 </h2>
+                </td>
+            </tr>
+
+           
+
+
+            <tr>
+                <td nowrap="nowrap">Equipment No:
+               
+                    @*@Html.TextBox("txtEqpNo", Model.EquipmentNo, new { style = "width:120px;" })*@
+                </td>
+               
+                <td style="text-align: left; vertical-align: bottom;">
+                    <button id="search" style="background-color: white;">Query</button>
+                    @*<input type="button" id="btnSearch" value="Query" style="display:block;" name="btnSearch"  /> *@
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="8" style="width: 100%;">
+                                      
+                          <div id="gridContent">  
+                                                    
+                    </div>
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+
+                    @Html.Label("lbl", new { id = "lblErrorMesage", style = "color: red; text-size:12px; display: none;" })
+                    <br />
+                    <p style="text-align: center;">
+                        <h3>@Html.Label("lbl", new { id = "lblMesage", style = "display: none;" }) </h3>
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+
+
+    </div>
+    <div>@Html.Hidden("hdSession", ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).UserType)</div>
+}
+
+
+<h2>HSUD-REZ1 Data</h2>
+<h3>Equipment number for Estimate Number :</h3>
+
+
+<div>
+
+    <h2>EstLifeCycle_ApprovalCanceledData</h2>
+    //Kasturee
+
+@if (Model.Approve_Canceled!=null)
+     {
+       if (Model.Approve_Canceled.Count == 0)
+       {
+           <p style="text-align:center;"><h3>**** NO RECORDS FOUND MATCHING SEARCH CRITERIA **** </h3></p>
+       }
+       
+
+  @if (Model.Approve_Canceled.Count > 0)
+       {
+           var grid1 = new WebGrid(Model.Approve_Canceled, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+            
+
+                {
+                @grid1.GetHtml(
+                tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: grid1.Columns(
+                grid1.Column("Facility_Code", header: "Facility Code"),
+                grid1.Column("Facility_Name", header: "Facility Name"),
+                grid1.Column("EquipmentType", header: "Equipment Type"),
+                grid1.Column("Summary_Size_Type", header: "Summary_Size_Type"),
+                grid1.Column("EstimateNumber", header: "EstimateNumber"),
+                grid1.Column("Estimate_Status", header: "Estimate_Status"),
+                
+                
+                grid1.Column("Estimate_Original_Date", header: "Estimate Original Date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Estimate_Original_Date)),
+                grid1.Column("Estimate_Transmission_date", header: "Estimate Transmission date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Estimate_Transmission_date)),
+                
+                grid1.Column("Base_Currency_Original", header: "Base Currency Original"),
+                
+                grid1.Column("Owner_total_labor_original", header: "Owner total labor original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_labor_original) ),  
+                grid1.Column("Owner_total_material_original", header: "Owner total material original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_material_original) ),  
+                grid1.Column("Owner_total_handling_original", header: "Owner total handling original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_handling_original) ),  
+                grid1.Column("Owner_total_tax_original", header: "Owner total tax original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_tax_original) ),  
+                grid1.Column("Owner_total_original", header: "Owner total original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_original) ),  
+                 
+                grid1.Column("User_total_labor_original", header: "User total labor Original"),
+                grid1.Column("User_Total_material_Original", header: "User Total material Original"),
+                grid1.Column("User_Total_handling_Original", header: "User Total handling Original"),
+                grid1.Column("User_Total_tax_Original", header: "User Total tax Original"),
+                
+                grid1.Column("User_Total_Original", header: "User Total Original" ,format: (item) => String.Format("{0:0.##}", item.User_Total_Original) ),  
+               
+                grid1.Column("Surveyrequested", header: "Survey Requested"),
+                
+                grid1.Column("Revision_Number", header: "Revision_Number" ,format: (item) => String.Format("{0:0.##}", item.Revision_Number) ),  
+                 
+                grid1.Column("Cancelled_Date", header: "Cancelled_Date"),
+                grid1.Column("Cancelled_By", header: "Cancelled By"),
+                grid1.Column("Owner_Approval_Date", header: "Owner_Approval_Date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Owner_Approval_Date)),
+                
+                
+                  
+                grid1.Column("Approved_By", header: "Approved By"),
+                grid1.Column("Onwer_Approval_Number_Original", header: "Onwer Approval Number Original"),
+                grid1.Column("Base_Currency_Approved", header: "Base_Currency_Approved"),
+                
+                grid1.Column("Owner_Labor_Approved", header: "Owner_Labor_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Labor_Approved) ), 
+                grid1.Column("Owner_Material_Approved", header: "Owner_Material_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Material_Approved) ), 
+                grid1.Column("Owner_Handling_Approved", header: "Owner_Handling_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Handling_Approved) ), 
+                grid1.Column("Owner_Tax_Approved", header: "Owner_Tax_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Tax_Approved) ), 
+                grid1.Column("Owner_Total_Approved", header: "Owner_Total_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Total_Approved) ), 
+                grid1.Column("User_Total_Approved", header: "User_Total_Approved" ,format: (item) => String.Format("{0:0.##}", item.User_Total_Approved) ), 
+                grid1.Column("Estimate_Grand_Total_Approved", header: "Estimate_Grand_Total_Approved" ,format: (item) => String.Format("{0:0.##}", item.Estimate_Grand_Total_Approved) )
+                
+           )
+           )
+                                                                                                                                                                                                                                                          
+         }
+         
+        }
+         
+    else
+       {
+          
+            @Html.Label("#ErrorMsgContainer", "**NO**", new { style = "width: 750px; vertical-align: text-top;" });
+       }
+    
+}
+</div>
+
+<div>
+
+<h2>EstLifeCycleAnalysisData</h2>
+
+
+@if (Model.Lifecycle != null)
+     {
+         if (Model.Lifecycle.Count == 0)
+       {
+           <p style="text-align:center;"><h3>**** NO RECORDS FOUND MATCHING SEARCH CRITERIA **** </h3></p>
+       }
+       
+  @if (Model.Lifecycle.Count > 0)
+       {
+           var grid2 = new WebGrid(Model.Lifecycle, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+                {
+                @grid2.GetHtml(
+                tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: grid2.Columns(
+                grid2.Column("Facility_Code", header: "Facility Code"),
+                grid2.Column("Facility_Name", header: "Facility Name"),
+                grid2.Column("EquipmentType", header: "Equipment Type"),
+                grid2.Column("Summary_Size_Type", header: "Summary_Size_Type"),
+                grid2.Column("EquimentID", header: "EquimentID"), 
+                grid2.Column("EstimateNumber", header: "EstimateNumber"),
+                grid2.Column("Estimate_Status", header: "Estimate_Status"),
+                grid2.Column("Estimate_Original_Date", header: "Estimate Original Date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Estimate_Original_Date)),
+                grid2.Column("Estimate_Transmission_date", header: "Estimate Transmission date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Estimate_Transmission_date)),
+                grid2.Column("Base_Currency_Original", header: "Base Currency Original"),
+                grid2.Column("Owner_total_labor_original", header: "Owner total labor original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_labor_original) ),  
+                grid2.Column("Owner_total_material_original", header: "Owner total material original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_material_original) ),  
+                grid2.Column("Owner_total_handling_original", header: "Owner total handling original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_handling_original) ),  
+                grid2.Column("Owner_total_tax_original", header: "Owner total tax original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_tax_original) ),  
+                grid2.Column("Owner_total_original", header: "Owner total original" ,format: (item) => String.Format("{0:0.##}", item.Owner_total_original) ),                 
+                grid2.Column("User_total_labor_original", header: "User total labor Original"),
+                grid2.Column("User_Total_material_Original", header: "User Total material Original"),
+                grid2.Column("User_Total_handling_Original", header: "User Total handling Original"),
+                grid2.Column("User_Total_tax_Original", header: "User Total tax Original"),
+                grid2.Column("User_Total_Original", header: "User Total Original" ,format: (item) => String.Format("{0:0.##}", item.User_Total_Original) ),  
+                grid2.Column("Estimate_Grand_Total_Original", header: "Estimate_Grand_Total_Original" ,format: (item) => String.Format("{0:0.##}", item.User_Total_Original) ),  
+                grid2.Column("Surveyrequested", header: "Survey Requested"),
+                grid2.Column("Revision_Number", header: "Revision_Number" ,format: (item) => String.Format("{0:0.##}", item.Revision_Number) ),  
+                grid2.Column("Cancelled_Date", header: "Cancelled_Date"),
+                grid2.Column("Cancelled_By", header: "Cancelled By"),
+                grid2.Column("Owner_Approval_Date", header: "Owner_Approval_Date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Owner_Approval_Date)),
+                grid2.Column("Approved_By", header: "Approved By"),
+                grid2.Column("Onwer_Approval_Number_Original", header: "Onwer Approval Number Original"),
+                grid2.Column("Base_Currency_Approved", header: "Base_Currency_Approved"),                
+                grid2.Column("Owner_Labor_Approved", header: "Owner_Labor_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Labor_Approved) ), 
+                grid2.Column("Owner_Material_Approved", header: "Owner_Material_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Material_Approved) ), 
+                grid2.Column("Owner_Handling_Approved", header: "Owner_Handling_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Handling_Approved) ), 
+                grid2.Column("Owner_Tax_Approved", header: "Owner_Tax_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Tax_Approved) ), 
+                grid2.Column("Owner_Total_Approved", header: "Owner_Total_Approved" ,format: (item) => String.Format("{0:0.##}", item.Owner_Total_Approved) ), 
+                grid2.Column("User_Total_Approved", header: "User_Total_Approved" ,format: (item) => String.Format("{0:0.##}", item.User_Total_Approved) ), 
+                grid2.Column("Estimate_Grand_Total_Approved", header: "Estimate_Grand_Total_Approved" ,format: (item) => String.Format("{0:0.##}", item.Estimate_Grand_Total_Approved) ),
+                grid2.Column("Repair_Completed_Date", header: "Repair Completed Date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Repair_Completed_Date)),
+                grid2.Column("Repair_Complete_Reported", header: "Repair Complete Reported",format: (item) => string.Format("{0:yyyy-MM-dd}", item.Repair_Complete_Reported))
+                             
+                )         
+           )                                                                                                  
+         }        
+        }         
+    else
+       {          
+            @Html.Label("#ErrorMsgContainer", "**NO**", new { style = "width: 750px; vertical-align: text-top;" });
+       }       
+}
+</div>
+
+
+<div style="height:50px;overflow-y:scroll" > @*Kasturee_HSUD_before_PROD_02-07-19*@
+
+<h2>EstLineItemAnalysis</h2>
+
+
+@if (Model.EstLineItem != null)
+     {
+         if (Model.EstLineItem.Count == 0)
+       {
+           <p style="text-align:center;"><h3>**** NO RECORDS FOUND MATCHING SEARCH CRITERIA **** </h3></p>
+       }
+       
+  @if (Model.EstLineItem.Count > 0)
+       {
+           var grid3 = new WebGrid(Model.EstLineItem, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+                {
+                @grid3.GetHtml(
+                tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: grid3.Columns(
+                
+                grid3.Column("Facility_Code", header: "Facility Code"),
+                grid3.Column("Facility_Name", header: "Facility Name"),
+                grid3.Column("EquipmentType", header: "Equipment Type"),
+                grid3.Column("Summary_Size_Type", header: "Summary_Size_Type"),
+                grid3.Column("EQUIPMENTID", header: "EQUIPMENTID"),
+                grid3.Column("SENDERESTIMATEID", header: "SENDERESTIMATEID"),
+                
+                
+                grid3.Column("ESTIMATEDATE", header: "ESTIMATEDATE",format: (item) => string.Format("{0:yyyy-MM-dd}", item.ESTIMATEDATE)),
+                grid3.Column("APPROVALDATE", header: "APPROVALDATE",format: (item) => string.Format("{0:yyyy-MM-dd}", item.APPROVALDATE)),
+                
+                grid3.Column("CREATEDBYUSER", header: "CREATEDBYUSER"),
+                
+                
+                grid3.Column("ISSURVEYREQUESTED", header: "ISSURVEYREQUESTED"),
+                grid3.Column("LINEITEMNUMBER", header: "LINEITEMNUMBER"),
+                
+                grid3.Column("COMPONENTCODE", header: "COMPONENTCODE"),
+                grid3.Column("LOCATIONCODE", header: "LOCATIONCODE"),
+                grid3.Column("REPAIRCODE", header: "REPAIRCODE"),
+                grid3.Column("DAMAGECODE", header: "DAMAGECODE"),
+                grid3.Column("MATERIALCODE", header: "MATERIALCODE"),
+                grid3.Column("UNITOFMEASURE", header: "UNITOFMEASURE"),
+                
+                grid3.Column("QUANTITY", header: "QUANTITY"),
+                grid3.Column("LENGTH", header: "LENGTH"),
+                
+                
+                grid3.Column("WIDTH", header: "WIDTH"),
+                grid3.Column("ORGANIZATIONTYPE", header: "ORGANIZATIONTYPE"),
+                grid3.Column("BASECURRENCYCODE", header: "BASECURRENCYCODE"),                
+                
+                
+                
+                
+                grid3.Column("LABORHOURS", header: "LABORHOURS" ,format: (item) => String.Format("{0:0.##}", item.LABORHOURS) ),  
+                grid3.Column("LABORRATEBASE", header: "LABORRATEBASE" ,format: (item) => String.Format("{0:0.##}", item.LABORRATEBASE) ),  
+                grid3.Column("LABORCOSTBASE", header: "LABORCOSTBASE" ,format: (item) => String.Format("{0:0.##}", item.LABORCOSTBASE) ),  
+                grid3.Column("MATERIALCOSTBASE", header: "MATERIALCOSTBASE" ,format: (item) => String.Format("{0:0.##}", item.MATERIALCOSTBASE) ),  
+                grid3.Column("TOTALBASE", header: "TOTALBASE" ,format: (item) => String.Format("{0:0.##}", item.TOTALBASE) )
+               
+                )         
+           )                                                                                                  
+         }        
+        }         
+    else
+       {          
+            @Html.Label("#ErrorMsgContainer", "**NO**", new { style = "width: 750px; vertical-align: text-top;" });
+       }       
+}
+</div>
+

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESC2DSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MESC2DSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="MESC1TS_EVENT_LOG" EntityType="MESC2DSModel.MESC1TS_EVENT_LOG" />
+    <EntitySet Name="MESC1TS_INSPECTION" EntityType="MESC2DSModel.MESC1TS_INSPECTION" />
+  </EntityContainer>
+  <EntityType Name="MESC1TS_EVENT_LOG">
+    <Key>
+      <PropertyRef Name="EVENT_ID" />
+    </Key>
+    <Property Name="EVENT_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EVENT_NAME" Type="String" Nullable="false" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="UNIQUE_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TABLE_NAME" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="EVENT_DESC" Type="String" Nullable="false" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="CHTS" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MESC1TS_INSPECTION">
+    <Key>
+      <PropertyRef Name="INSP_DTE" />
+      <PropertyRef Name="CHAS_EQPNO" />
+    </Key>
+    <Property Name="INSP_DTE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CHAS_EQPNO" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="true" />
+    <Property Name="INSP_BY" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="RKEMLOC" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="XMIT_RC" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="XMIT_DTE" Type="DateTime" Precision="3" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="CHTS" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

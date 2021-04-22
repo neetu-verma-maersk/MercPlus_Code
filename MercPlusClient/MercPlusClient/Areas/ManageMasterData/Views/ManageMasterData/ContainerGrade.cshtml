@@ -1,0 +1,422 @@
+﻿@*@using MercPlusClient.Areas.ManageMasterData.Models.
+    @using System;
+    @model ContainerGrade*@
+
+@model MercPlusClient.Areas.ManageMasterData.Models.ContainerGrade
+@{
+    ViewBag.Title = "ContainerGrade";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<style type="text/css">
+    table td {
+        font-family: Arial;
+        font-size: 14pt;
+        width: 120px;
+        color: #333;
+        margin: 5px;
+    }
+
+    .label {
+        color: #333;
+        font-family: Arial;
+        font-size: 10pt;
+    }
+</style>
+<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<div id="gc" style="padding:20px;margin-right:20px;">
+    <div style="float:right;">
+        <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_shop_limits_help.htm" target="_blank">
+            Tables and Dependencies Help File
+        </a>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+
+
+        <table border="0" cellpadding="5" cellspacing="0"
+               style="width: 100%; vertical-align:text-top; margin-right:20px; ">
+
+            <tr>
+                <td style="vertical-align:top; text-align:left; margin-top:50px; margin-left:30px;">
+                    <h3>Equipment Grade :</h3>
+                </td>
+
+                @*<td style="vertical-align:top; text-align:right; margin-right:0px; font-size:xx-small; font-size=8px;">
+                           <a href="~/HelpFiles/reportframes.htm">Tables and Dependencies Help File</a>
+                    </td>*@
+            </tr>
+
+            <tr>
+                <td style="text-align:left; margin-left:-500px;">
+                    <div id="ErrorMsgContainer" style="width: 700px; vertical-align: text-top; font-family: Arial;font-size: 10pt;">
+                        @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+
+
+
+
+
+        <div>
+
+            <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="1" cellspacing="0">
+
+                <tr>
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 200px;">
+                        <span class="label">Shop Code:</span>
+                    </td>
+
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 200px;">
+                        @Html.DropDownListFor(model => model.ShopCode, Model.DDLShop, "--Select--", new { id = "drpShop", @class = "drpShopCodesList", style = "width:250px;" })
+
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Container Number:</span></td>
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 200px;"><input type="text" id="txtContainerId" value="" maxlength="11"></td>
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 300px;"><input type="button" id="btnGetDetail" value="Get Detail"></td>
+                    <!--<input name="Button" type="submit" value="Get Details" id="btnGetDetail" onclick="return ClientValidation();" formaction="/ManageMasterData/ManageMasterData/ContainerGradeDetails" />-->
+            </table>
+        </div>
+        <div id="rkemDetails">
+            <table border="0" cellpadding="5" cellspacing="0" id="tblAdd"
+                   style="width: 700px; vertical-align: text-top; display:none;">
+                <tr>
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Equipment:</span></td>
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 200px;"><span id="RKEqpNotFound" class="label"></span></td>
+                    <td class="style3" style="text-align: left; vertical-align: top; width: 200px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Type:</span></td>
+                    @*<td style="text-align: left; vertical-align: top; width: 250px;"><span class="label" >@Model.ContainerType </span></td>*@
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span id="RKType" class="label"> @Html.DisplayTextFor(model => Model.ContainerType)</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Size:</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">
+                        <span id="RKSize" class="label">
+                            @Html.DisplayTextFor(model => Model.ContainerSize)
+                        </span>
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Profile:</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;"><span id="RKProfile" class="label">@Html.DisplayTextFor(model => Model.ContainerProfile)</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">In Service:</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;"><span id="RKInService" class="label">@Html.DisplayTextFor(model => Model.ContainerInService)</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Damage Code:</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;"><span id="RKDamage" class="label">@Html.DisplayTextFor(model => Model.ContainerDamageCode)</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Acitve Status:</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;"><span id="RKEQIoflt" class="label">@Html.DisplayTextFor(model => Model.EQIoflt)</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Current Location:</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;"><span id="RKLocation" class="label">@Html.DisplayTextFor(model => Model.ContainerCurrentLocation)</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;"><span class="label">Grade:</span></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">
+                        <span id="labelGradeCode" class="label">@Html.DisplayTextFor(model => Model.GradeCode)  </span>
+
+                        <span id="dropdownGradeCode" class="dropdown" style="display:none">
+                            @Html.DropDownListFor(model => model.GradeCode, Model.DDLGrade, "--Select--", new { id = "drpGrade", @class = "drpGradeCodesList", style = "width:250px;" })
+                        </span>
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">
+                        <span class="link">
+                            <a id="lnkEdit" class="Edit" style="margin:auto" href="javascript:;">Edit</a>
+                            <a id="lnkUpdate" class="Update" href="javascript:;" style="display:none">Submit</a>
+                            <a id="lnkCancel" class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <label id="lblMessage"></label>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+
+
+    // Edit event handler.
+    $("#lnkEdit").on("click", function () {
+        $("#labelGradeCode").hide();
+        $("#dropdownGradeCode").show();
+        $("#lnkEdit").hide();
+        $("#lnkUpdate").show();
+        $("#lnkCancel").show();
+    });
+
+
+
+
+    function AddContainerGrade() {
+
+        clearError();
+
+        // var _ConNo2 = document.getElementById('txtContainerId').value.trim().toUpperCase();
+        var _ConNo = $("#RKEqpNotFound").text();
+        // alert(_ConNo);
+        var _CurrLoc = $("#RKLocation").text();
+        //  alert(_CurrLoc);
+        var _GrCode = $("#labelGradeCode").text();
+        // alert(_GrCode);
+        var _GrCodeNew = $("#drpGrade").val();
+        var _Status = $("#RKEQIoflt").text();
+
+        //var el = document.getElementById('drpGrade');
+        //var _GrCodeNew = el.options[el.selectedIndex].innerHTML;
+
+        // alert(_GrCodeNew);
+        if (_Status.trim() != "") {
+            appendMsg("Container is Inactive status Not applicable for Food Grade update", MESSAGETYPE.ERROR);
+            return false;
+        }
+
+        if (_GrCodeNew == null || _GrCodeNew == "") {
+            appendMsg("Please select new Grade", MESSAGETYPE.ERROR);
+            HighlightInputsForError($("#txtContainerId"), isError)
+
+            return false;
+        }
+
+        $.ajax({
+            url: "/ManageMasterData/ManageMasterData/AddContainerGrade",
+            traditional: true,
+            data: { ConNo: _ConNo, CurrLoc: _CurrLoc, GrCode: _GrCode, GrCodeNew: _GrCodeNew },
+            type: 'POST',
+            dataType: 'json',
+            error: function () {
+
+                clearRKEM();
+                appendMsg("EQP Not found in RKEM", MESSAGETYPE.ERROR);
+            },
+            success: function (data) {
+
+
+                if (data == 'Success') {
+
+                    ShowRemoveValidationMessage("Grade code: " + _GrCodeNew + " send successfully to RKEM.Please Refresh.");
+                    //$('#lblMessage').text('Grade code: ' + _GrCodeNew + ' send to RKEM. Please refresh the data for update.');
+                    //$('#lblMessage').css("color", "green");
+
+                }
+                else {
+                    ShowRemoveValidationMessage(data, "Warning");
+                }
+            },
+            error: function (data) {
+                ShowRemoveValidationMessage(data, "Warning");
+                //$('#lblMessage').text('Failed to send GradeCode');
+                //$('#lblMessage').css("color", "red");
+                // ShowEditMode(relationId);
+            }
+        });
+    }
+
+
+
+    // Update event handler.
+    $("#lnkUpdate").on("click", function () {
+        clearError();
+        //$('#lblMessage').text('');
+        //DataValidation();
+        AddContainerGrade();
+
+        $("#labelGradeCode").show();
+        $("#dropdownGradeCode").hide();
+        $("#lnkEdit").show();
+        $("#lnkUpdate").hide();
+        $("#lnkCancel").hide();
+        EqpRKEMdtls();
+    });
+    // Cancel event handler.
+    $("#lnkCancel").on("click", function () {
+        $("#labelGradeCode").show();
+        $("#dropdownGradeCode").hide();
+        $("#lnkEdit").show();
+        $("#lnkUpdate").hide();
+        $("#lnkCancel").hide();
+        //$('#lblMessage').text('');
+
+    });
+
+    function ClientValidation() {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+
+
+        HighlightInputsForError($("#drpShop"), false)
+        if (document.getElementById('drpShop').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select a Shop";
+            }
+            else {
+                errMsg += ",a Shop";
+            }
+            HighlightInputsForError($("#drpShop"), isError)
+        }
+        HighlightInputsForError($("#txtContainerId"), false)
+        if (document.getElementById('txtContainerId').value == "") {
+            isError = true;
+            errMsg = "Please Provide Container";
+            HighlightInputsForError($("#txtContainerId"), isError)
+        }
+
+        if (isError == true) {
+
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    } //
+
+
+
+    function EqpRKEMdtls() {
+
+        var ShopID = document.getElementById('drpShop').value;
+        var conID = document.getElementById('txtContainerId').value.trim().toUpperCase();
+        //alert(conID);
+        //alert(ShopID);
+        if (document.getElementById('drpShop').selectedIndex == 0) {
+            appendMsg("Please select shop", MESSAGETYPE.ERROR);
+            HighlightInputsForError($("#drpShop"), isError)
+
+            return false;
+        }
+        else if (conID == null || conID == "") {
+            appendMsg("Equipment is missing", MESSAGETYPE.ERROR);
+            HighlightInputsForError($("#txtContainerId"), isError)
+
+            return false;
+        }
+        else {
+            //appendMsg(WOMSG.EQP_MISSING, MESSAGETYPE.CLEAR);
+        }
+
+        event.preventDefault();
+
+
+
+        $.ajax({
+            url: "/ManageWorkOrder/ManageWorkOrder/TabbedCallRKEM",
+            traditional: true,
+            data: { EqpNo: conID, shpCode: ShopID, vendRefNo: "" },
+            type: 'POST',
+            dataType: 'json',
+            error: function () {
+
+                clearRKEM();
+                appendMsg("Equipment not found in RKEM / RKEM Interface is down", MESSAGETYPE.ERROR);
+            },
+            success: function (data) {
+
+                if (data == null || data.data == null || data.data.ModeList == null) {
+
+                    appendMsg("Equipment not found in RKEM", MESSAGETYPE.ERROR);
+                    $("#RKEqpNotFound").html("Equipment not found in RKEM");
+                    clearRKEM();
+                }
+
+                else {
+
+                    //clearError();
+                    //appendMsg(WOMSG.RKEM_NOTCALLED, MESSAGETYPE.CLEAR);
+                    //appendMsg(WOMSG.MODE_MISSING, MESSAGETYPE.CLEAR);
+                    var Type = data.data.COType + "/" + data.data.Eqstype;
+                    $("#RKType").html(Type);
+
+                    $("#RKInService").html(GetDate(data.data.EQInDate));
+                    $("#RKProfile").html(data.data.EQProfile);
+                    if ((data.data.Size != null && data.data.Size != undefined) && (data.data.Eqouthgu != null && data.data.Eqouthgu != undefined))
+                        $("#RKSize").html(data.data.Size + "/" + data.data.Eqouthgu);
+                    else
+                        $("#RKSize").html("");
+
+
+                    $("#RKEQIoflt").html(data.data.EQIoflt);
+
+                    $("#RKDamage").html(data.data.Damage);
+                    $("#RKLocation").html(data.data.CurrentLoc);
+                    //$("#RKLeasingContract").html(data.data.LeasingContract);
+                    $("#labelGradeCode").html(data.data.GradeCode);
+                    //$("#RKEqpNotFound").html(data.data.EqpNotFound);
+                    $("#RKEqpNotFound").html(conID);
+                    $("#lnkEdit").show();
+                }
+            }
+        });
+    }
+
+    function clearRKEM() {
+        $("#RKType").html("");
+        $("#RKInService").html("");
+        $("#RKProfile").html("");
+
+        $("#RKSize").html("");
+
+        $("#RKDamage").html("");
+
+        $("#labelGradeCode").html("");
+        $("#RKEqpNotFound").html("");
+        $("#RKLocation").html("");
+        $("#RKEQIoflt").html("");
+        //$('#lblMessage').text('');
+        $("#lnkEdit").hide();
+        $("#lnkUpdate").hide();
+        $("#lnkCancel").hide();
+        $("#dropdownGradeCode").hide();
+        $("#labelGradeCode").show();
+    }
+
+    $("#btnGetDetail").on("click", function () {
+
+
+        $("#ErrorMsgContainer").html("");
+        clearError();
+        clearRKEM();
+        ClearHighlightErrorForInputs($("#tblAdd"), false);
+
+        ClientValidation();
+
+
+        EqpRKEMdtls();
+
+        $('#tblAdd').show();
+
+
+        ///////////////////////
+
+    });
+
+
+
+
+</script>

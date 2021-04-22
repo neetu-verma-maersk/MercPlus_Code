@@ -1,0 +1,61 @@
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe.config
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.pdb
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\amqmdnet.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\EntityFramework.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\EntityFramework.xml
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.pdb
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.csprojResolveAssemblyReference.cache
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.ProjectInstaller.resources
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.csproj.GenerateResource.Cache
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.exe
+C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe.config
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.exe
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\amqmdnet.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\EntityFramework.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\EntityFramework.xml
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.csprojResolveAssemblyReference.cache
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.ProjectInstaller.resources
+C:\MercPlus\code check\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.csproj.GenerateResource.Cache
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe.config
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\amqmdnet.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\EntityFramework.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\EntityFramework.xml
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.csprojResolveAssemblyReference.cache
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.ProjectInstaller.resources
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.csproj.GenerateResource.Cache
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercDERTService\MercDERTService\obj\Release\MercDERTService.pdb

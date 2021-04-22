@@ -1,0 +1,16 @@
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Merc_INLC.exe.config
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Merc_INLC.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Merc_INLC.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\EntityFramework.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\amqmdnet.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\EntityFramework.xml
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\obj\Release\Merc_INLC.csprojResolveAssemblyReference.cache
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\obj\Release\Merc_INLC.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\Merc_INLC\Merc_INLC\obj\Release\Merc_INLC.pdb

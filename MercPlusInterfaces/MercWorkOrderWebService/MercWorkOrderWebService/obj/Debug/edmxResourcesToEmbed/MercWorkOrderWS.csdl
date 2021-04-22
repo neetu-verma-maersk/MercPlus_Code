@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESC2DSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MESC2DSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="MESC1TS_XML_LOG" EntityType="MESC2DSModel.MESC1TS_XML_LOG" />
+  </EntityContainer>
+  <EntityType Name="MESC1TS_XML_LOG">
+    <Key>
+      <PropertyRef Name="XML_ID" />
+    </Key>
+    <Property Name="XML_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CRTS" Type="DateTime" Precision="3" />
+    <Property Name="XML_TEXT" Type="String" MaxLength="4096" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

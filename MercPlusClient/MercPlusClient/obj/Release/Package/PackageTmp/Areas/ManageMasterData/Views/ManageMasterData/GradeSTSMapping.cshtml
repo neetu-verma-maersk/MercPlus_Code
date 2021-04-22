@@ -1,0 +1,189 @@
+﻿@using MercPlusClient.Areas.ManageMasterData.Models
+@using System;
+@model IEnumerable<GradeSTSModel>
+
+@{
+    ViewBag.Title = "STSGrade";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<style type="text/css">
+    div, body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .Grid {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+        .Grid th {
+            background-color: #F7F7F7;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            /*width: 150px;*/
+            border: 1px solid #ccc;
+        }
+
+        .Grid, .Grid table td {
+            border: 0px solid #ccc;
+        }
+
+            .Grid th a, .Grid th a:visited, .Grid td {
+                color: #333;
+            }
+
+                .Grid td span a {
+                    margin: 10px;
+                }
+
+    .label {
+        color: black;
+    }
+</style>
+<script src="~/Areas/ManageMasterData/Script/GradeSTSMapping.js"></script>
+
+<br />
+<div id="gridContent" style="padding:10px;">
+    <div>
+        <table style="width:90%">
+
+            <tr>
+                <td style="vertical-align:top; text-align:left; margin-top:10px; margin-left:30px;">
+                    <h3>STS Grade Mapping :</h3>
+                </td>
+
+               
+            </tr>
+            <tr>
+                <td style="width:30%;"><input type="button" id="btnAddSTSGradeMapping" class="AddSTSGradeMapping" value="Add STS Grade Mapping"></td>
+                <td style="width:70%;"><label id="lblMessage"></label></td>
+            </tr>
+        </table>
+    </div>
+    <div id="divContent" style="height:375px; width: 990px; overflow-y:auto;">
+        <table id="WebGrid" class="Grid" style="width: 975px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        STS Code
+                    </th>
+                    <th scope="col">
+                        STS Description
+                    </th>
+                    <th scope="col">
+                        Mode
+                    </th>
+                    @foreach (var grade in ViewBag.GradeNames)
+                    {
+                        <th scope="col">
+                            @grade
+                        </th>
+                    }
+                    <th scope="col" class="actioncolumn">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var gradeSTS in Model)
+                {
+                    <tr id="@("row_" + gradeSTS.GradeSTSRowId)">
+                        <td>
+                            <span id="@("spanSTSCode_" + gradeSTS.GradeSTSRowId)" class="label">
+                                @gradeSTS.STSCode
+                            </span>
+                        </td>
+                        <td>
+                            <span id="@("spanSTSDescription_" + gradeSTS.GradeSTSRowId)" style="word-break:break-all;" class="label">
+                                @gradeSTS.STSDescription
+                            </span>
+                        </td>
+                        <td>
+                            <span id="@("spanSTSMode_" + gradeSTS.GradeSTSRowId)" class="label">
+                                @gradeSTS.Mode
+                            </span>
+                        </td>
+                        @foreach (var grade in ViewBag.GradeNames)
+                        {
+                            <td>
+                                <span>
+                                    @if (@gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null)
+                                    {
+                                        <span id="@("spanGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="label" style="color:darkgreen">
+                                          
+                                                @(gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null ? "Applicable" : "Not Applicable")
+                                             
+                                        </span>
+                                    }
+                                    @if (@gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) == null)
+                                    {
+                                        <span id="@("spanGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="label"  style="color:orangered">
+                                            
+                                                @(gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null ? "Applicable" : "Not Applicable")
+                                            
+                                        </span>
+                                    }
+                                    <select id="@("dropDownGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="dropdown" style="width:90px;display:none">
+                                        <option value="Applicable">Applicable</option>
+                                        <option value="Not Applicable">Not Applicable</option>
+                                    </select>
+                                </span>
+                            </td>
+                        }
+                        <td id="@gradeSTS.GradeSTSRowId" style="min-width:100px;" class="actioncolumn">
+                            <span class="link">
+                                <a id="@("btnEdit_" + gradeSTS.GradeSTSRowId)" class="Edit" style="margin:auto" href="javascript:;">Edit</a>
+                                <a id="@("btnDelete_" + gradeSTS.GradeSTSRowId)" class="Delete" href="javascript:;">Delete</a>
+                                <a id="@("btnUpdate_" + gradeSTS.GradeSTSRowId)" class="Update" href="javascript:;" style="display:none">Update</a>
+                                <a id="@("btnCancel_" + gradeSTS.GradeSTSRowId)" class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                            </span>
+                        </td>
+                    </tr>
+                }
+                <tr id="rowAdd" style="display:none">
+                    <td>
+                        <span class="label">
+                            <input id="newSTSCode" style="width:50px;" name="newSTSCode" type="text" value="" />
+                        </span>
+                    </td>
+                    <td>
+                        @*<span class="label">
+                          
+                            <input id="newSTSDescription" style="width:180px;" name="newSTSDescription" type="text" value=""  />
+                        </span>*@
+                        <span id="newSTSDescription" style="width:180px; word-break:break-all;" class="label">
+                           
+                        </span>
+                    </td>
+                    <td>
+                        <select id="dropDownSTSMode" style="width:50px;" class="dropdown">
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                        </select>
+                    </td>
+                    @foreach (var grade in ViewBag.GradeNames)
+                    {
+                        <td>
+                            <select id="@("dropDownGradeCode_000" + grade)" style="width:90px;" class="dropdown">
+                                <option value="Applicable">Applicable</option>
+                                <option value="Not Applicable">Not Applicable</option>
+                            </select>
+                        </td>
+                    }
+                    <td class="actioncolumn">
+                        <span class="link">
+                            <a id="btnAddSTSGrade" style="margin:auto" href="javascript:;">Add</a>
+                            <a id="btnCancelSTSGrade" href="javascript:;">Cancel</a>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,148 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataCountryModel
+
+
+@{
+    ViewBag.Title = "ViewCountrydetails";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+} 
+
+
+<script src="~/Areas/ManageMasterData/Script/Country.js"></script>
+@*<script src="~/Areas/ManageMasterData/Script/mainjs.js"></script>*@
+ 
+
+@using (Html.BeginForm())
+{
+  <div>
+       <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_country_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+          @if(Model.IsShow)
+          {
+        <div>
+                <h2>Country Edit</h2>
+           
+            </div>
+          }
+      else
+      {
+               <div>
+                <h2>Country View</h2>
+           
+            </div>
+      }
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+      </div>
+    <div style="margin-top:20px;border-bottom:2px solid #7A7989;  width:750px; ">
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+            
+        <tr>
+                <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.Country)
+            </td>
+                    </tr>
+        <br />
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.CountryCode, Model.drpCountryList, "Select Country", new { id = "drpCountry", @style = "width:300px;" })
+            </td>
+                
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+                    
+                   <input type="Submit" value="Query" onclick="return ClientValidation()" formaction="/ManageMasterData/ManageMasterData/CountryUpdate_View"/> 
+                </td>
+            </tr> 
+        </table>
+            </div>
+     
+   
+    
+    <table>
+         @if (Model.IsShow)
+         {
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.CountryCode)
+            </td>
+            </tr>
+            <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.CountryCode, new { id = "CountryCode", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.CountryDescription)
+            </td>
+         </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.CountryDescription, new { id = "CountryDescription", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.AreaCode)
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.AreaCode, new { id = "AreaCode", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.RepairLimitAdjFactor)
+            </td>
+            </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.RepairLimitAdjFactor, new { id = "RepairLimitAdjFactor", maxlength = 3 ,onkeydown= "return ValidateNumber(event);",style = "width:300px; background - color:#DCDCDC!important;", @readonly = true})
+            </td>
+            <td style="text-align: center; vertical-align: top;">
+                @*@Html.Label("ex(110 = +10 %)(80 = -20 %)")*@
+                @Html.Label("", "ex.(110 = +10 %)(80 = -20 %)")
+            </td>
+        </tr>
+        
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUserCon)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeTimeCon)
+                </td>
+            </tr>
+        <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeUserCon, new { id = "ChangeUserCon", style = "width:100px;background-color:#DCDCDC!important;", @readonly = true })
+                  
+                </td>
+                
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeTimeCon, new { id = "ChangeTimeCon", style = "width:300px;background-color:#DCDCDC!important;", @readonly = true })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                  <input type="button" id="btnAuditTrail" value="Audit Trail" name="AuditTrail" onclick="javascript: AuditTrailShow('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'Country Audit Trail', 'Country', document.getElementById('CountryCode').value,1000, 1800, scroll);"/>
+                  
+          </td>
+            </tr>
+
+         }
+    </table>
+        
+    
+}

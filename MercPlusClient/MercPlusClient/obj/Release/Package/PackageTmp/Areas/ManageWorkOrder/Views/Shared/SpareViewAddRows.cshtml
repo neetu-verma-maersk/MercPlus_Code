@@ -1,0 +1,28 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel
+
+@*@if (Model.dbWOD.SparePartsViewList != null && Model.dbWOD.SparePartsViewList.Count() > 0)
+{
+    foreach (var rView in Model.dbWOD.SparePartsViewList)
+    {
+    <tr>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.RepairCode, new { style = "width: 90px;" })</td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.Pieces, new { style = "width: 50px;", @class = "cPieces CLSNUMERIC", onblur = "PiecesOnBlur(this)" })</td>
+        <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => rView.OwnerSuppliedPartsNumber, new { style = "width: 160px;" })</td>
+    </tr>                       
+    }
+}
+else
+{*@
+@for (int i = 0; i < Model.SAdditionalRows; i++)
+{
+    <tr>
+        <td style="text-align: left; vertical-align: top;">
+            <input type="text" style="width: 90%;" name="RepairCode" maxlength="4" class="CRep" />
+        </td>
+        <td style="text-align: left; vertical-align: top;">
+            <input type="text" style="width: 90%;" name="Pieces" class="cPieces CLSDECIMAL" maxlength="4" value="0.0" onfocus="return NumFocus(this);" onblur="return NumDecBlur(this);" onkeydown="return DecKeyDown(this,event);" /></td>
+        <td style="text-align: left; vertical-align: top;">
+            <input type="text" style="width: 90%; text-transform: uppercase;" name="OwnerSuppliedPartsNumber" class="cPartCode" /></td>
+    </tr>  
+}
+@*}*@

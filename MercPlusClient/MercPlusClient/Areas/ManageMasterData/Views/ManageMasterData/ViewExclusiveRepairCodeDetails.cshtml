@@ -1,0 +1,229 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataRepairCodeExModel
+
+@{
+    if (Model.IsManual)
+    {
+        ViewBag.Title = "ViewExclusiveRepairCodeDetails";
+    }
+    else if(Model.IsMode)
+    {
+        ViewBag.Title = "ViewExclusiveRepairCodeModeDetails";
+    }
+    else if(Model.IsRepair)
+    {
+        ViewBag.Title = "ViewRepairDetails";
+    }
+    else if(Model.IsCreate)
+    {
+        ViewBag.Title = "ExclusveRprAdd";
+    }
+    else if(Model.IsDelete)
+    {
+        ViewBag.Title = "ExclusvRepairDelete";
+    }
+    
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="~/Areas/ManageMasterData/Script/RepairCodeExclusive.js"></script>
+@*<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>*@
+
+<div>
+        <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_rprcode_exclu_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+    
+        <div style="width:750px; ">
+            <h2>Add or Delete Exclusive Repair Codes</h2>
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+<br />
+
+@using (Html.BeginForm())
+{
+   
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+             
+        @if (Model.IsManual)
+        {
+            
+            <tr>
+                
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Manual Code")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;"> 
+                        
+                    @Html.DropDownListFor(model => model.ManCode, Model.drpManCodeList,"", new { id = "drpManCodeList",style="width:400px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2"></td>
+                
+            </tr>
+            
+            
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 350px;">
+                    <input type="submit" value="Select Mode" onclick="return ClientValidationManual()" formaction="/ManageMasterData/ManageMasterData/ViewExclusiveRepairCodeModeDetails" />
+                </td>
+            </tr>
+        
+        }
+
+        @if(Model.IsMode)
+        {
+             <tr>
+              
+                <td style="text-align: left"; vertical-align: top;">
+                    @Html.Label("Select Mode")
+                </td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.DropDownListFor(model => model.ModCode, Model.drpModCodeList,"", new { id = "drpManCodeList",style="width:400px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+            <tr>
+                <td>
+                    
+                    @Html.TextBoxFor(model => model.ManCode,Model.ManCode, new {style = "display:none;"})
+                </td>
+            </tr>
+                <tr>
+                <td style="text-align: left; vertical-align: top; width: 350px;">
+                    <input type="submit" value="Select Repair Code" onclick="return ClientValidationMode()" formaction="/ManageMasterData/ManageMasterData/ViewRepairDetails" />
+                </td>
+                
+
+            </tr>
+           
+        }
+        @if(Model.IsRepair)
+        {
+             <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Lower Repair Code")
+                </td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.DropDownListFor(model => model.RepCode, Model.drpRepCodeList,"", new { id = "drpRepCodeList",style="width:400px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+            <tr>
+                <td>
+                   
+                    @Html.TextBoxFor(model => model.ModCode,Model.ModCode, new {style = "display:none;"})
+                    @Html.TextBoxFor(model => model.ManCode,Model.ManCode, new {style = "display:none;"})
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 350px;">
+                    <input type="submit" value="Go To Add Delete" onclick="return ClientValidationRepair()" formaction="/ManageMasterData/ManageMasterData/ExclusveRprAdd" />
+                </td>
+
+                
+            </tr>
+        }
+
+           @if(Model.IsCreate)
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;width:200px" >@Html.LabelFor(model => model.ManCode)</td>
+                <td style="text-align: left; vertical-align: top;width:200px" >@Html.TextBoxFor(model => model.ManCode,Model.ManCode,new {@readonly="readonly" })</td>
+                
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;width:200px">@Html.LabelFor(model => model.ModCode)</td>
+                <td style="text-align: left; vertical-align: top;width:200px" >@Html.TextBoxFor(model => model.ModCode, Model.ModCode, new {@readonly="readonly" })</td>
+                
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;width:200px" >@Html.LabelFor(model => model.RepCode)</td>
+                <td style="text-align: left; vertical-align: top;width:200px" >@Html.TextBoxFor(model => model.RepCode, Model.RepCode, new {id="txtRepairCode",@readonly="readonly" })</td>
+              
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;width:400px">@Html.LabelFor(model => model.ExcluRepairCode)</td>
+                <td style="text-align: left; vertical-align: top;width:200px" >@Html.TextBoxFor(model => model.ExcluRepairCode, new { id="txtExcluRepairCode",maxlength="6"})</td>
+                 <td style="text-align: left; vertical-align: top;width:400px" >@Html.Label("","(ex.Higher Repair Code of Pair)")</td> 
+                
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+            <tr>
+
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    <input type="submit" value="Add Record" onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/AddExclusveRpr" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">
+                    <input type="submit" value="Delete Record" onclick="return DeleteConfirmMsg()" formaction="/ManageMasterData/ManageMasterData/DeleteExclusveRpr" />
+                    </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Return To Add-Delete Select" formaction="/ManageMasterData/ManageMasterData/ViewExclusiveRepairCodeDetails" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+            </tr>
+        }
+
+        @if(Model.IsAdd)
+        {
+              <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.ManCode)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ManCode,Model.ManCode,new {@readonly="readonly" })</td>
+                
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.ModCode)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ModCode, Model.ModCode, new {@readonly="readonly" })</td>
+                
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.RepCode)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.RepCode, Model.RepCode, new {@readonly="readonly" })</td>
+              
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.ExcluRepairCode, new { style="300px"})</td>
+                <td style="text-align: left; vertical-align: top;width:400px" >@Html.TextBoxFor(model => model.ExcluRepairCode,Model.ExcluRepairCode)</td>
+                 <td style="text-align: left; vertical-align: top; width:400px" >@Html.Label("","(ex. Higher Repair Code of Pair)")</td> 
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.ChangeUserRpr, new { style="width:200px"})</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeFUserRpr,new {@readonly="readonly" })</td>
+                 <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeLUserRpr,new {@readonly="readonly" })</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.ChangeTimeRpr)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeTimeRpr,Model.ChangeTimeRpr,new {@readonly="readonly" })</td>
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    <input type="submit" value="Add Record"  onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/AddExclusveRpr" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">
+                    <input type="submit" value="Delete Record"  onclick="return ClientValidationDelete()"  formaction="/ManageMasterData/ManageMasterData/DeleteExclusveRpr" />
+                    </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Return To Add-Delete Select" formaction="/ManageMasterData/ManageMasterData/ViewExclusiveRepairCodeDetails" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+            </tr>
+            
+            
+        }
+     
+
+       
+    </table>
+}
+

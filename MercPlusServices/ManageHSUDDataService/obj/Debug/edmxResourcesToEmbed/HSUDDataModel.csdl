@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HSUDDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HSUDDataEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="EstLifeCycle_ApprovalCanceled" EntityType="HSUDDataModel.EstLifeCycle_ApprovalCanceled" />
+    <EntitySet Name="EstLifeCycleAnalysis" EntityType="HSUDDataModel.EstLifeCycleAnalysi" />
+    <EntitySet Name="EstLineItemAnalysis" EntityType="HSUDDataModel.EstLineItemAnalysi" />
+  </EntityContainer>
+  <EntityType Name="EstLifeCycle_ApprovalCanceled">
+    <Key>
+      <PropertyRef Name="EquimentID" />
+      <PropertyRef Name="EstimateNumber" />
+    </Key>
+    <Property Name="Facility_Code" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+    <Property Name="Facility_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EquipmentType" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="Summary_Size_Type" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="EquimentID" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="EstimateNumber" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Estimate_Status" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Estimate_Original_Date" Type="DateTime" Precision="3" />
+    <Property Name="Estimate_Transmission_date" Type="DateTime" Precision="3" />
+    <Property Name="Base_Currency_Original" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="Owner_total_labor_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_material_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_handling_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_tax_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_total_labor_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_material_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_handling_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_tax_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Surveyrequested" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="Revision_Number" Type="Int32" />
+    <Property Name="Cancelled_Date" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Cancelled_By" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Owner_Approval_Date" Type="DateTime" Precision="3" />
+    <Property Name="Approved_By" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Onwer_Approval_Number_Original" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Currency_Approved" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Owner_Labor_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Material_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Handling_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Tax_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Total_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Approved" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="EstLifeCycleAnalysi">
+    <Key>
+      <PropertyRef Name="EquimentID" />
+      <PropertyRef Name="EstimateNumber" />
+    </Key>
+    <Property Name="Facility_Code" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+    <Property Name="Facility_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EquipmentType" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="Summary_Size_Type" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="EquimentID" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="EstimateNumber" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Estimate_Status" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Estimate_Original_Date" Type="DateTime" Precision="3" />
+    <Property Name="Estimate_Transmission_date" Type="DateTime" Precision="3" />
+    <Property Name="Base_Currency_Original" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="Owner_total_labor_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_material_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_handling_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_tax_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_total_labor_original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_material_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_handling_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_tax_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Original" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Surveyrequested" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="Revision_Number" Type="Int32" />
+    <Property Name="Cancelled_Date" Type="DateTime" Precision="3" />
+    <Property Name="Cancelled_By" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Owner_Approval_Date" Type="DateTime" Precision="3" />
+    <Property Name="Approved_By" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Onwer_Approval_Number_Original" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Currency_Approved" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Owner_Labor_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Material_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Handling_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Tax_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Total_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Approved" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Repair_Completed_Date" Type="DateTime" Precision="3" />
+    <Property Name="Repair_Complete_Reported" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EstLineItemAnalysi">
+    <Key>
+      <PropertyRef Name="EQUIPMENTID" />
+      <PropertyRef Name="SENDERESTIMATEID" />
+      <PropertyRef Name="LINEITEMNUMBER" />
+    </Key>
+    <Property Name="FACILITYCODE" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+    <Property Name="FACILITYNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EQUIPMENTTYPE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="SUMMARYSIZETYPE" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="EQUIPMENTID" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="SENDERESTIMATEID" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="ESTIMATEDATE" Type="DateTime" Precision="3" />
+    <Property Name="APPROVALDATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBYUSER" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ISSURVEYREQUESTED" Type="Int32" />
+    <Property Name="LINEITEMNUMBER" Type="Int32" Nullable="false" />
+    <Property Name="COMPONENTCODE" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="LOCATIONCODE" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="REPAIRCODE" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="DAMAGECODE" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="MATERIALCODE" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="UNITOFMEASURE" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="LENGTH" Type="Int32" />
+    <Property Name="WIDTH" Type="Int32" />
+    <Property Name="ORGANIZATIONTYPE" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="BASECURRENCYCODE" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="LABORHOURS" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="LABORRATEBASE" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="LABORCOSTBASE" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="MATERIALCOSTBASE" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="TOTALBASE" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+</Schema>

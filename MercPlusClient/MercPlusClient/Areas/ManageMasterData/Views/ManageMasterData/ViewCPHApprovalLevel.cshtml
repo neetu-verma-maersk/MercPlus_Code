@@ -1,0 +1,658 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataCPHModel
+
+@{
+    ViewBag.Title = "ViewCPHApprovalLevel";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+@*<script src="~/Areas/ManageMasterData/Script/CPHApprovalLevel.js"></script>*@
+<script src="~/Areas/ManageMasterData/Script/mainjs.js"></script>
+<script>
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        else
+            return true;
+    }
+    function ClientValidation() {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+
+
+        HighlightInputsForError($("#drpEqSize"), false)
+        if (document.getElementById('drpEqSize').selectedIndex == 0) {
+            isError = true;
+            errMsg = "Please Select an Equipment Size";
+            HighlightInputsForError($("#drpEqSize"), isError)
+        }
+        HighlightInputsForError($("#drpModeList"), false)
+        if (document.getElementById('drpModeList').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select a Mode";
+            }
+            else {
+                errMsg += ", a Mode";
+            }
+            HighlightInputsForError($("#drpModeList"), isError)
+        }
+        if (errMsg != null) 
+        {
+                errMsg += " to query.";
+        }
+         
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            errMsg = null;
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+
+    function SubmitValidation() {
+
+        var errMsg = "";
+        var isError = false;
+        var isAgeGroup = false;
+        $("#ErrorMsgContainer").html("");
+
+        HighlightInputsForError($("#ddlEqSize"), false)
+        if (document.getElementById('ddlEqSize').selectedIndex == 0) {
+            isError = true;
+            errMsg = "Please Select an Equipment Size";
+            HighlightInputsForError($("#ddlEqSize"), isError)
+        }
+        HighlightInputsForError($("#ddlMode_List"), false)
+        if (document.getElementById('ddlMode_List').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select a Mode";
+            }
+            else {
+                errMsg += ", a Mode";
+            }
+            HighlightInputsForError($("#ddlMode_List"), isError)
+        }
+        
+        /// LimitAmt1
+
+        HighlightInputsForError($("#txtLimitAmt1"), false)
+        var val1 = document.getElementById('txtLimitAmt1').value;
+        if (val1.length < 1) {
+            isError = true;
+            isAgeGroup = true;
+            errMsg += "";
+            HighlightInputsForError($("#txtLimitAmt1"), isError)
+        }
+
+
+        var getAmt2 = document.getElementById("txtLimitAmt1").value;
+        if (getAmt2 > 32767) {
+
+            isError = true;
+            errMsg += "Number cannot be larger than 32,767 </br>";
+            HighlightInputsForError($("#txtLimitAmt1"), isError)
+        }
+
+        /// LimitAmt2
+
+        HighlightInputsForError($("#txtLimitAmt2"), false)
+        var val2 = document.getElementById('txtLimitAmt2').value;
+        if (val2.length < 1) {
+            isError = true;
+            isAgeGroup = true;
+            errMsg += " ";
+            HighlightInputsForError($("#txtLimitAmt2"), isError)
+        }
+        var getAmt2 = document.getElementById("txtLimitAmt2").value;
+        if (getAmt2 > 32767) {
+            isError = true;
+            errMsg += "Number cannot be larger than 32,767 </br>";
+            HighlightInputsForError($("#txtLimitAmt2"), isError)
+        }
+
+        /// LimitAmt3
+
+        HighlightInputsForError($("#txtLimitAmt3"), false)
+        var val3 = document.getElementById('txtLimitAmt3').value;
+        if (val3.length < 1) {
+
+            isError = true;
+            isAgeGroup = true;
+            errMsg += "";
+            HighlightInputsForError($("#txtLimitAmt3"), isError)
+        }
+        var getAmt3 = document.getElementById("txtLimitAmt3").value;
+        if (getAmt3 > 32767) {
+            isError = true;
+            errMsg += "Number cannot be larger than 32,767 </br>";
+            HighlightInputsForError($("#txtLimitAmt3"), isError)
+        }
+
+        /// LimitAmt4
+
+        HighlightInputsForError($("#txtLimitAmt4"), false)
+        var val4 = document.getElementById('txtLimitAmt4').value;
+        if (val4.length < 1) {
+            isError = true;
+            isAgeGroup = true;
+            errMsg += "";
+            HighlightInputsForError($("#txtLimitAmt4"), isError)
+        }
+        var getAmt4 = document.getElementById("txtLimitAmt4").value;
+        if (getAmt4 > 32767) {
+            isError = true;
+            errMsg += "Number cannot be larger than 32,767 </br>";
+            HighlightInputsForError($("#txtLimitAmt4"), isError)
+        }
+
+        /// LimitAmt5
+
+        HighlightInputsForError($("#txtLimitAmt5"), false)
+        var val5 = document.getElementById('txtLimitAmt5').value;
+        if (val5.length < 1) {
+            isError = true;
+            isAgeGroup = true;
+            errMsg += "";
+            HighlightInputsForError($("#txtLimitAmt5"), isError)
+        }
+        var getAmt5 = document.getElementById("txtLimitAmt5").value;
+        if (getAmt5 > 32767) {
+            isError = true;
+            errMsg += "Number cannot be larger than 32,767 </br>";
+            HighlightInputsForError($("#txtLimitAmt5"), isError)
+        }
+
+        /// LimitAmt6
+
+        HighlightInputsForError($("#txtLimitAmt6"), false)
+        var val6 = document.getElementById('txtLimitAmt6').value;
+        if (val6.length < 1) {
+            isError = true;
+            isAgeGroup = true;
+            errMsg += "";
+            HighlightInputsForError($("#txtLimitAmt6"), isError)
+        }
+        var getAmt6 = document.getElementById("txtLimitAmt6").value;
+        if (getAmt6 > 32767) {
+            isError = true;
+            errMsg += "Number cannot be larger than 32,767 </br>";
+            HighlightInputsForError($("#txtLimitAmt6"), isError)
+        }
+
+        /// LimitAmt7
+
+        HighlightInputsForError($("#txtLimitAmt7"), false)
+        var val7 = document.getElementById('txtLimitAmt7').value;
+        if (val7.length < 1) {
+            isError = true;
+            isAgeGroup = true;
+            errMsg += " ";
+            HighlightInputsForError($("#txtLimitAmt7"), isError)
+        }
+        var getAmt7 = document.getElementById("txtLimitAmt7").value;
+        if (getAmt7 > 32767) {
+            isError = true;
+            errMsg += "Number cannot be larger than 32,767 </br>";
+            HighlightInputsForError($("#txtLimitAmt7"), isError)
+        }
+
+        if (isAgeGroup == true) {
+            if (errMsg.trim() == "")
+            {
+                errMsg += "Please enter limit amount for age group.";
+            }
+            else
+            {
+                errMsg += ". Please enter limit amount for age group.";
+            }
+        }
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            errMsg = null;
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+
+</script>
+
+
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_cph_eqplimit_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+
+@if (Model.View)
+{
+    <h4> CPH Approval Level View </h4>
+}
+else if (Model.Header)
+{
+    <h4> CPH Approval Level Add </h4>
+}
+else
+{
+    <h4> CPH Approval Level Edit </h4>
+
+}
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+
+          @*@Html.Raw(TempData["SubmitMsg"] != null ? TempData["SubmitMsg"].ToString() : "")*@
+          
+    </div>
+    @*
+    
+      @Html.Label("", new { id = "lblMessage", style = "display:none; color:red;" })
+
+    
+    *@
+<table>
+
+         <tr>
+        <td>@Html.Label("Eq Size ", new { style = "width:200px" })</td>
+                 <td>  @Html.Label("Mode ", new { style = "width:200px" })
+                
+               </td> 
+             <td></td>
+             <td></td>   
+      </tr>   
+         <tr>
+             <td>
+                 @Html.DropDownListFor(model => model.Eq_Size, Model.drpEqSize, "Select Eq Size", new { id = "drpEqSize", @style = "width:150px;" })</td>
+                 <td>@Html.DropDownListFor(model => model.Mode_List, Model.drpMode_List, "Select Mode", new { id = "drpModeList", @style = "width:300px;" })</td>
+                 <td> <input type="Submit" value="Query" onclick="return ClientValidation()" formaction="/ManageMasterData/ManageMasterData/GetAllDetailsForCPHApproval" /> </td>
+                  
+                <td>
+                   
+                       <input type="Submit" value="Add New Limits" formaction="/ManageMasterData/ManageMasterData/AddCPHApproval"/> 
+                    
+
+            </td> 
+                
+        </tr>
+
+        
+        
+
+    </table>
+    
+    
+    if (Model.IsFlag)
+    {
+
+        if (Model.IsSubmit)
+        {
+            <table>
+           <tr>
+               <td>
+               </td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr>
+               <td>@Html.Label("Eq Size ", new { style = "width:200px" })</td>
+                 <td>  @Html.Label("Mode ", new { style = "width:200px" })
+                
+               </td>
+               <td></td>
+               <td></td>
+           </tr>
+           
+           <tr>
+               <td>
+                
+
+                   @Html.DropDownListFor(model => model.ddlEqSize, Model.drpEqSize, "Select Eq Size", new { id = "ddlEqSize", @style = "width:150px;" })
+                   </td>
+               <td>
+                   @Html.DropDownListFor(model => model.ddlMode_List, Model.drpMode_List, "Select Mode", new { id = "ddlMode_List", @style = "width:150px;" })
+
+                   
+               </td>
+               <td></td>
+               <td></td>
+           </tr>
+           
+       </table> 
+        }
+        else
+        {
+             <table>
+           <tr>
+               <td>
+               </td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr>
+               <td>@Html.Label("Eq Size ", new { style = "width:200px" })</td>
+                 <td>  @Html.Label("Mode ", new { style = "width:200px" })
+                
+               </td>
+               <td></td>
+               <td></td>
+           </tr>
+           
+           <tr>
+               <td>
+                   
+
+                   @Html.TextBoxFor(model => model.Eq_Size, new { id = "EqSize", @style = "width:200px;" })
+                   </td>
+               <td>
+                   @Html.TextBoxFor(model => model.Mode_List, new { id = "ModeList", @style = "width:200px;" })
+
+                   
+               </td>
+               <td></td>
+               <td></td>
+           </tr>
+           
+       </table>
+        }
+       <table>
+
+           <tr>
+               <td><B>Age Group</B></td>
+               <td><B>Limit Amount (USD)</B></td>
+               
+               <td></td>
+               <td></td>
+           </tr>
+
+           <tr>
+               <td><B><= 2 yrs</B></td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmt1, new { id = "txtLimitAmt1", onkeypress = "return ValidateNumber(event)" })</td>
+              
+               <td></td>
+               <td></td>
+           </tr>
+
+           <tr>
+               <td>@Html.Label("> 2 but <= 4") </td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmt2, new { id = "txtLimitAmt2", onkeypress = "return ValidateNumber(event);" }) </td>
+               
+               <td></td>
+               <td></td>
+           </tr>
+
+
+           <tr>
+               <td><B>> 4 but <= 6 </B></td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmt3, new { id = "txtLimitAmt3", onkeypress = "return ValidateNumber(event);" })</td>
+              
+               <td></td>
+           </tr>
+
+
+           <tr>
+               <td><B>> 6 but <= 8 </B></td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmt4, new { id = "txtLimitAmt4", onkeypress = "return ValidateNumber(event);" }) </td>
+            
+               <td></td>
+               <td></td>
+           </tr>
+
+           <tr>
+               <td><B>> 8 but <= 10 </B></td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmt5, new { id = "txtLimitAmt5", onkeypress = "return ValidateNumber(event);" })</td>
+              
+               <td></td>
+               <td></td>
+           </tr>
+
+           <tr>
+               <td><B>> 10 but <= 12 </B></td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmt6, new { id = "txtLimitAmt6", onkeypress = "return ValidateNumber(event);" }) </td>
+             
+               <td></td>
+               <td></td>
+           </tr>
+
+           <tr>
+               <td><B>> 12 yrs  </B></td>
+               <td>    @Html.TextBoxFor(model => model.txtLimitAmt7, new { id = "txtLimitAmt7", onkeypress = "return ValidateNumber(event);" })</td>
+         
+               <td></td>
+               <td></td>
+           </tr>
+
+
+           <tr>
+               
+               <td>
+                   @if (Model.UsrRole == "ADMIN" || Model.UsrRole == "CPH")
+                   {
+                       if (Model.IsSubmit)
+                       {
+                           if (Model.IsEdit)
+                           {
+                                <table>
+                                    <tr>
+                                         <td>
+                                             <input type="submit" value="Submit" onclick="return SubmitValidation();" @*id="btnCPH"*@ formaction="/ManageMasterData/ManageMasterData/SubmitCPHApprovalDetails" /></td>
+                                    </tr>
+                                </table>
+                           }
+                       }
+                       else
+                       {
+                       <table>
+                           <tr>
+                               <td>
+                                   <input type="submit" value="Submit" onclick="return SubmitValidation();" @*id="btnEditCPH"*@ formaction="/ManageMasterData/ManageMasterData/EditCPHApprovalDetails" /></td>
+                           </tr>
+                       </table>
+                       }
+                   }
+               </td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+
+       </table>
+<br />
+       
+    }
+
+    if (Model.IsAdd)
+    {
+     <table>
+           <tr>
+               <td>
+               </td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr>
+               <td>@Html.Label("Eq Size ", new { style = "width:100px" })</td>
+                <td>  @Html.Label("Mode ") </td>
+                   
+               <td>
+               </td>
+               <td></td>
+               <td></td>
+           </tr>
+           
+           <tr>
+               <td>
+                  @Html.TextBoxFor(model => model.Eq_Size, new { style = "width:100px" })</td>
+                  <td>
+              @Html.TextBoxFor(model => model.Mode_List, new { id = "ModeList" })
+</td>
+               <td></td>
+               <td></td>
+           </tr>
+           
+
+           <tr>
+               <td>@Html.Label("Age Group", new { style = "width:100px" })</td>
+               <td>@Html.Label("Limit Amount (USD)", new { style = "width:200px" })</td>
+               <td>@Html.Label("Change User Name", new { id = "lblChName" })</td>
+               <td>@Html.Label("Changed Time", new { id = "lblChTime" })</td>
+           </tr>
+
+           <tr>
+               <td>@Html.Label("<= 2 yrs", new { style = "width:100px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmtAdd1, new { id = "LimitAmt1", style = "width:200px", onkeypress = "return ValidateNumber(event);" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeUser1, new { id = "ChangeUserName1", @readonly = "readonly", style = "width:200px" }) </td>
+               <td>@Html.TextBoxFor(model => model.txtChangeTime1, new { id = "ChangeTime1", @readonly = "readonly", style = "width:200px" })</td>
+           </tr>
+
+           <tr>
+               <td>@Html.Label("> 2 but <= 4", new { style = "width:100px" }) </td>
+              <td>@Html.TextBoxFor(model => model.txtLimitAmtAdd2, new { id = "LimitAmt2", style = "width:200px", onkeypress = "return ValidateNumber(event);" }) </td>
+               <td>@Html.TextBoxFor(model => model.txtChangeUser2, new { id = "ChangeUserName2", @readonly = "readonly", style = "width:200px" }) </td>
+               <td>@Html.TextBoxFor(model => model.txtChangeTime2, new { id = "ChangeTime2", @readonly = "readonly", style = "width:200px" }) </td>
+           </tr>
+
+
+           <tr>
+               <td>@Html.Label("> 4 but <= 6 ", new { style = "width:100px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmtAdd3, new { id = "LimitAmt3", style = "width:200px", onkeypress = "return ValidateNumber(event);" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeUser3, new { id = "ChangeUserName3", @readonly = "readonly", style = "width:200px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeTime3, new { id = "ChangeTime3", @readonly = "readonly", style = "width:200px" }) </td>
+           </tr>
+
+
+           <tr>
+               <td>@Html.Label("> 6 but <= 8 ", new { style = "width:100px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmtAdd4, new { id = "LimitAmt4", style = "width:200px", onkeypress = "return ValidateNumber(event);" }) </td>
+               <td>@Html.TextBoxFor(model => model.txtChangeUser4, new { id = "ChangeUserName4", @readonly = "readonly", style = "width:200px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeTime4, new { id = "ChangeTime4", @readonly = "readonly", style = "width:200px" })</td>
+           </tr>
+
+           <tr>
+               <td>@Html.Label("> 8 but <= 10 ", new { style = "width:100px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmtAdd5, new { id = "LimitAmt5", style = "width:200px", onkeypress = "return ValidateNumber(event);" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeUser5, new { id = "ChangeUserName5", @readonly = "readonly", style = "width:200px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeTime5, new { id = "ChangeTime5", @readonly = "readonly", style = "width:200px" }) </td>
+           </tr>
+
+           <tr>
+               <td>@Html.Label("> 10 but <= 12 ", new { style = "width:100px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtLimitAmtAdd6, new { id = "LimitAmt6", style = "width:200px", onkeypress = "return ValidateNumber(event);" }) </td>
+               <td>@Html.TextBoxFor(model => model.txtChangeUser6, new { id = "ChangeUserName6", @readonly = "readonly", style = "width:200px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeTime6, new { id = "ChangeTime6", @readonly = "readonly", style = "width:200px" }) </td>
+           </tr>
+
+           <tr>
+               <td>@Html.Label("> 12 ", new { style = "width:100px" })</td>
+               <td>    @Html.TextBoxFor(model => model.txtLimitAmtAdd7, new { id = "LimitAmt7", style = "width:200px", onkeypress = "return ValidateNumber(event);" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeUser7, new { id = "ChangeUserName7", @readonly = "readonly", style = "width:200px" })</td>
+               <td>@Html.TextBoxFor(model => model.txtChangeTime7, new { id = "ChangeTime7", @readonly = "readonly", style = "width:200px" }) </td>
+           </tr>
+
+           <tr>
+               <td>
+
+               </td>
+               <td>
+                 
+               </td>
+               <td>
+                   
+               </td>
+               <td>
+
+               </td>
+           </tr>
+
+           <tr>
+               
+               <td>
+                   @if (Model.UsrRole != "ADMIN" || Model.UsrRole != "CPH")
+                   {
+                       if (!Model.IsSubmit)
+                       {
+                       <table>
+                           <tr>
+                               <td>
+                                   <input type="submit" value="Submit" onclick="return SubmitValidation();" formaction="/ManageMasterData/ManageMasterData/EditCPHApprovalDetails" /></td>
+                           </tr>
+                       </table>
+                       }
+                       else
+                       {
+                           <table>
+                           <tr>
+                               <td>
+                                   <input type="submit" value="Submit" onclick="return SubmitValidation();" @*id="btnEditCPH1"*@ formaction="/ManageMasterData/ManageMasterData/EditCPHApprovalDetails" /></td>
+                           </tr>
+                       </table>
+                       }
+                   }
+               </td>
+               <td></td>
+              <td></td>
+               <td></td>
+           </tr>
+
+       </table>
+
+
+    }
+
+
+         
+
+      @*@if (Model.strMsg == null)
+      { }
+
+      else
+      {
+           <table style="width:200px">
+           <tr>
+               <td>
+               </td>
+               <td></td>
+           </tr>
+           <tr>
+               <td>Eq Size 
+            
+                
+               </td>
+               <td> Mode </td>
+           </tr>
+           <tr>
+               <td style="width:100px;">
+                   @Html.TextBoxFor(model => model.Eq_Size, new { id = "EqSize", @style = "width:150px;", @disabled = "disabled" })
+                           
+               </td>
+               <td style="width:100px;"> @Html.TextBoxFor(model => model.Mode_List, new { id = "ModeList", @style = "width:150px;", @disabled = "disabled" }) </td>
+           </tr>
+           <tr style="height: 10px;">
+               <td></td>
+               <td></td>
+           </tr>
+       </table>*@
+          
+          
+         
+    
+}
+

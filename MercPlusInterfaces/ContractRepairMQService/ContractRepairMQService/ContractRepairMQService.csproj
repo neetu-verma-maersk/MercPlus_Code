@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65C582AA-797C-41C4-9ADD-7B8BDD343BFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ContractRepairMQService</RootNamespace>
+    <AssemblyName>ContractRepairMQService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="amqmdnet">
+      <HintPath>..\..\..\..\MercWorkingCode\Dll\amqmdnet.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MercPlusLibrary">
+      <HintPath>..\..\..\..\MercWorkingCode\MercPlusLibrary\bin\Debug\MercPlusLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MercWorkingCode\Dll\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContractRepairMQ.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractRepairMQ.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractRepairMQ1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractRepairMQ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractRepairMQ1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractRepairMQ.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY.cs">
+      <DependentUpon>ContractRepairMQ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY_CONT.cs">
+      <DependentUpon>ContractRepairMQ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CURRENCY.cs">
+      <DependentUpon>ContractRepairMQ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REPAIR_CODE.cs">
+      <DependentUpon>ContractRepairMQ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP.cs">
+      <DependentUpon>ContractRepairMQ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP_CONT.cs">
+      <DependentUpon>ContractRepairMQ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContractRepairMQ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContractRepairMQ.Designer.cs">
+      <DependentUpon>ContractRepairMQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="ContractRepairMQ.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ContractRepairMQ1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ContractRepairMQ.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContractRepairMQ.edmx</DependentUpon>
+      <LastGenOutput>ContractRepairMQ.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ContractRepairMQ.edmx.diagram">
+      <DependentUpon>ContractRepairMQ.edmx</DependentUpon>
+    </None>
+    <None Include="ContractRepairMQ.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContractRepairMQ.edmx</DependentUpon>
+      <LastGenOutput>ContractRepairMQ1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Customer.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Damage.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.EqsType.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.EqType.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Equipment.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.ErrMessage.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RemarkEntry.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RepairCode.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RepairLoc.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RepairsView.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Shop.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Tpi.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.WorkOrderDetail.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

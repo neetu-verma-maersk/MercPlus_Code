@@ -1,0 +1,53 @@
+﻿@model MercPlusClient.Areas.ManageReports.Models.ManageReportsModel
+
+<script src="~/Areas/ManageReports/Script/reports.js"></script>
+@{
+    ViewBag.Title = "Reports";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+    <tr>
+        <td style="text-align: right; vertical-align: top; ">&nbsp;</td>
+        <td style="text-align: left; vertical-align: top; " >&nbsp;</td>
+        <td style="text-align: left; vertical-align: top; width: 200px;"><a href="~/HelpFiles/help/merc/report/reportframes.htm" target="_blank">Estimate Help File</a></td>
+    </tr>
+    <tr>
+        <td style="text-align: left; vertical-align: top;" class="style3"><h2 style="font-size: 110%"></>@Html.LabelFor(model => model.Reports)</td>
+        <td style="text-align: left; vertical-align: top;" class="style2"></td>
+        <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+    </tr>
+    @if(!((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isReadOnly)
+    {
+    <tr>
+        <td style="text-align: right; vertical-align: top;" class="style3">@Html.DropDownListFor(model => model.Reports, Model.drpReports, "Select Report", new { id = "drpReportsList" })</td>
+        <td style="text-align: left; vertical-align: top;" class="style2">&nbsp;</td>
+        <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+    </tr>
+    }
+   else
+    {
+    <tr>
+        <td style="text-align: right; vertical-align: top;" class="style3">@Html.DropDownListFor(model => model.Reports, Model.drpReports, "Select Report", new { id = "drpReportsList" })</td>
+        <td style="text-align: left; vertical-align: top;" class="style2">&nbsp;</td>
+        <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+    </tr>
+    }
+    
+  @*  else
+    {
+        <tr>
+        <td style="text-align: right; vertical-align: top;" class="style3">@Html.DropDownListFor(model => model.Reports, Model.drpReports, "No reports to display for the current user")</td>
+        <td style="text-align: left; vertical-align: top;" class="style2">&nbsp;</td>
+        <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+    </tr>
+    }*@
+</table>
+
+
+<div id="container">
+</div>
+

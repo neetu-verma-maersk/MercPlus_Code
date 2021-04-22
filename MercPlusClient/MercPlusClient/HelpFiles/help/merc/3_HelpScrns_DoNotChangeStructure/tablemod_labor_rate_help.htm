@@ -1,0 +1,802 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<link REL="STYLESHEET" HREF="../main.css" TYPE="text/css">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="tablemod_labor_rate_help_files/filelist.xml">
+
+<title>How to update MERC+ - Labour Rate</title>
+<style>
+<!--
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body topmargin="20" leftmargin="33">
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td height="35">
+    <p style="margin-left:36.0pt;" align="left">
+    <span style="font-family: Verdana; background-color: #FFFFFF; background-position: 0% 0%">
+    <font size="4"><br>
+    </font><b><font size="5">&nbsp;Manage Shop Labor Rates<br>
+&nbsp;</font></b></span></p>
+    </td>
+  </tr>
+  </table>
+
+<p class="MsoNormal"><b><font size="3"><span lang="EN-US">OVERVIEW</span></font></b><span lang="EN-US" style="font-size:11.0pt"><br>
+<br>
+</span><span lang="EN-US"><font size="2">This screen will be used to create and 
+manage Labor Rates for each Shop. It provides users with an interface where 
+users can Query, Update and Add new Labor Rates. </font></span></p>
+<p class="MsoNormal"><b><font size="3"><span lang="EN-US">AUTHORITY</span></font></b><span lang="EN-US" style="font-size:11.0pt">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">Only Country, Region, MSL 
+(Location/Local EMR) will have access to the Shop Contract Screens.</font></span></p>
+<p class="MsoNormal"><b><font size="3"><span lang="EN-US">QUERY</span></font></b><span lang="EN-US" style="font-size:11.0pt">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">F</font></span><font size="2"><span lang="EN-US">or 
+querying Shop Labor Rates 'Shop’ is Mandatory (Cannot do a search without 
+selecting a Shop) - Also search can be further filtered by Customer and 
+Equipment Type in order to display all the existing Labor rates for the selected 
+Shop.</span></font></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> Users will only see 
+Labor rates for Shops under their permission levels</font></span></p>
+<p class="MsoNormal"><span lang="EN-US"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1035" type="#_x0000_t75" alt="" style='width:423pt;
+ height:153pt'>
+ <v:imagedata src="tablemod_labor_rate_help_files/image001.jpg" o:href="http://www.americasys.com/merc/publish_dir/60_testing/Design/ScreenShots/Images/query36.jpg"
+  croptop="2503f" cropbottom="24121f" cropright="4635f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1000 height=250
+src="Images/LabourRate/Labour_view.jpg" v:shapes="_x0000_s1035"><![endif]></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:11.0pt"><br>
+</span><b><font size="3"><span lang="EN-US">UPDATE</span></font></b><span lang="EN-US" style="font-size:11.0pt">&nbsp;&nbsp;</span></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> Users will not be able 
+to update Shop Labor Rates when shop active switch = 'y' – Users will have to 
+request CPH/Admin to make the shop inactive in order to edit the Labor Rates.<br>
+<br>
+Users will be able to view and or edit Shop Labor Rates by clicking on the edit 
+link next to the record. Will only be able to edit the following information:</font></span></p>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Effective date</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Expiration date</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Regular Rate</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;O/T rate</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Double time rate</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Miscellaneous rate</font></span></li>
+  </ul>
+</blockquote>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> If Exp date less than 
+current date no edit link will be available<br>
+</font></span><b><span lang="EN-US" style="color: red"><font size="2"><br>
+Note:</font></span></b><span lang="EN-US"><font size="2"> The new Effective Date 
+(If a Labor Rate already exists) must be one day after the Expiration Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+of the Existing Labor Rate<br>
+</font></span><b><span lang="EN-US" style="color: red"><font size="2"><br>
+Note:</font></span></b><span lang="EN-US"><font size="2"> Expiration date must 
+be greater than or equal to the effective date.<br>
+</font></span><b><span lang="EN-US" style="color: red"><font size="2"><br>
+Note:</font></span></b><span lang="EN-US"><font size="2"> Expiration date must 
+not be less than Current Date<br>
+</font></span><b><span lang="EN-US" style="color: red"><font size="2"><br>
+Note:</font></span></b><span lang="EN-US"><font size="2"> Date format expected 
+as YYYY-MM-DD</font></span></p>
+<p class="MsoNormal"><span lang="EN-US"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" alt="" style='width:331.5pt;height:162pt'>
+ <v:imagedata src="tablemod_labor_rate_help_files/image003.jpg" o:href="http://www.americasys.com/merc/publish_dir/60_testing/Design/ScreenShots/Images/update36.jpg"
+  croptop="2503f" cropbottom="22073f" cropright="17205f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=600 height=350
+src="Images/LabourRate/Labour_edit.JPG" v:shapes="_x0000_s1033"><![endif]></span></p>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><b><font size="3">FIELDS</font></b></li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%; border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="148" style="width: 110.8pt; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Field Name</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Type</font></span></td>
+    <td width="270" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Description</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Required</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Editable</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Shop</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Display</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Selected Shop</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Customer</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Display</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Selected Customer</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Equipment Type</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Display</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Selected Equipment 
+    Type</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Currency Code</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Display</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Shop Currency / 
+    Currency of the Labor Rates</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N/A</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Effective Date</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Date when the 
+    Contract takes effect</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Expiration date</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Date when the 
+    Contract ends</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Ordinary rates</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Regular Rates</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">OT1</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Over Time Rates</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">OT2</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Double Rate </font>
+    </span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">OT3</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Miscellaneous Rate</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Change User Name</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Display</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">The Last user who 
+    made any change to any of the fields</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N/A</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Changed Time</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Display</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Date and time of the 
+    last change made</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N/A</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+</table>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US" style="font-size:11.0pt">&nbsp;<b>BUTTONS</b></span></li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="639" style="width: 479.4pt; border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="128" valign="top" style="width: 95.75pt; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Caption</font></span></td>
+    <td width="88" valign="top" style="width: 65.65pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Type</font></span></td>
+    <td width="424" valign="top" style="width: 318.0pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Description</font></span></td>
+  </tr>
+  <tr>
+    <td width="128" style="width: 95.75pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Submit </font></span>
+    </td>
+    <td width="88" style="width: 65.65pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Button</font></span></td>
+    <td width="424" valign="top" style="width: 318.0pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Updates any changes 
+    made to the editable fields and Captures the time and name of the user who 
+    made the change.</font></span></td>
+  </tr>
+  <tr>
+    <td width="128" style="width: 95.75pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Audit Trail</font></span></td>
+    <td width="88" style="width: 65.65pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Button</font></span></td>
+    <td width="424" valign="top" style="width: 318.0pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Captures the changes 
+    made to the Rate fields – Previous Values, New Values and Change User 
+    information</font></span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:11.0pt">&nbsp;<br>
+</span><b><font size="3"><span lang="EN-US">ADD NEW</span></font></b><span lang="EN-US" style="font-size:11.0pt">&nbsp;</span></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> Users will be able to 
+add Labor Rates only when shop active switch = ‘N’ - Users will have to request 
+CPH/Admin to make the shop inactive in order to add a new Labor Rate for a Shop.</font></span></p>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">Users will be able to add 
+new Shop Labor Rates by clicking on the ‘Add New Rates’ button provided on the 
+Search Screen which will take them to an “Add New Page’. </font></span></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> If Exp date less than 
+current date no edit link will be available</font></span></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> The new Effective Date 
+(If a Labor Rate already exists) must be one day after the Expiration Date of 
+the Existing Labor Rate</font></span></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> Expiration date must 
+be greater than or equal to the effective date.</font></span></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> Expiration date must 
+not be less than Current Date</font></span></p>
+<p class="MsoNormal"><b><span lang="EN-US" style="color: red"><font size="2">
+Note:</font></span></b><span lang="EN-US"><font size="2"> Date format expected 
+as YYYY-MM-DD</font></span></p>
+<p class="MsoNormal"><span lang="EN-US"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1034" type="#_x0000_t75" alt="" style='width:351.75pt;height:141pt'>
+ <v:imagedata src="tablemod_labor_rate_help_files/image005.jpg" o:href="http://www.americasys.com/merc/publish_dir/60_testing/Design/ScreenShots/Images/add36.jpg"
+  croptop="2276f" cropbottom="29127f" cropright="16417f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=600 height=250
+src="Images/LabourRate/Labour_add.jpg" v:shapes="_x0000_s1034"><![endif]></span></p>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><b><span lang="EN-US"><font size="3">Fields&nbsp;</font></span></b></li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%; border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="148" style="width: 110.8pt; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Field Name</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Type</font></span></td>
+    <td width="270" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Description</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Required</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Editable</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Shop</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">DD</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Shop</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Customer</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">DD</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Customer</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Equipment Type</font></span></td>
+    <td width="76" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">DD</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Equipment Type</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Currency Code</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Display</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Shop Currency / 
+    Currency of the Labor Rates</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N/A</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Effective Date</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Date when the 
+    Contract takes effect</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Expiration date</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Date when the 
+    Contract ends</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Ordinary rates</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Regular Rates</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">OT1</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Over Time Rates</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">OT2</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Double Rate </font>
+    </span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+  <tr>
+    <td width="148" style="width: 110.8pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">OT3</font></span></td>
+    <td width="76" valign="top" style="width: 57.05pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td width="270" valign="top" style="width: 202.35pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Miscellaneous Rate</font></span></td>
+    <td width="73" style="width: 54.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+    <td width="72" style="width: 53.8pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+  </tr>
+</table>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><b><span lang="EN-US"><font size="3">&nbsp;Buttons</font></span></b></li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="639" style="width: 479.4pt; border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="128" valign="top" style="width: 95.75pt; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Caption</font></span></td>
+    <td width="88" valign="top" style="width: 65.65pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Type</font></span></td>
+    <td width="424" valign="top" style="width: 318.0pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Description</font></span></td>
+  </tr>
+  <tr>
+    <td width="128" style="width: 95.75pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Submit </font></span>
+    </td>
+    <td width="88" style="width: 65.65pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Button</font></span></td>
+    <td width="424" valign="top" style="width: 318.0pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Adds the Record and 
+    Captures the time and User Name</font></span></td>
+  </tr>
+</table>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US" style="font-weight: 700">
+    <font size="3">&nbsp;Message</font></span></li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="328" valign="top" style="width: 246.3pt; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Message</font></span></td>
+    <td width="310" valign="top" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Reason</font></span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b><i>
+    <span lang="EN-US" style="font-family:Verdana;
+  color:green">There were no results meeting your query parameters</span></i></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">No Labor Rates match 
+    the Query Criteria.</font></span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:Verdana;color:green">Labor Rates
+    </span></b></p>
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:Verdana;color:black">099 / CSXL / 7UY</span><span lang="EN-US" style="font-family:Verdana;
+  color:green"> Added</span></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">After Successfully 
+    adding new Shop Labor Rate </font></span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:&quot;MS Sans Serif&quot;;
+  color:red">Date is invalid: format expected as YYYY-MM-DD. Date entered as: 
+    wewe</span></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Dates should be in 
+    yyyy/mm/dd format</font></span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:&quot;MS Sans Serif&quot;;
+  color:red">Expiration date must be greater than or equal to the effective 
+    date.</span></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US" style="font-family: MS Sans Serif">
+    Expiration date must be greater than or equal to the effective date.</span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:&quot;MS Sans Serif&quot;;
+  color:red">Expiration date must not be less than Current Date</span></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">To stop from entering 
+    overlapping Shop Contracts</font></span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:&quot;MS Sans Serif&quot;;
+  color:red">New contract effective date does not follow last existing contract</span></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">To stop from entering 
+    overlapping Shop Contracts</font></span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:Verdana;color:green">Labor Rates
+    </span></b></p>
+    <p class="MsoNormal"><b>
+    <span lang="EN-US" style="font-family:Verdana;color:black">099 / CSXL / 7UY</span><span lang="EN-US" style="font-family:Verdana;
+  color:green"> Updated</span></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">After successfully 
+    updating the editable fields</font></span></td>
+  </tr>
+</table>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><span lang="EN-US" style="font-weight: 700">
+    <font size="3">&nbsp;Correlation with Estimate Creation</font></span></li>
+  </ul>
+</blockquote>
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="638" style="width: 478.8pt; border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="143" valign="top" style="width: 107.4pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E6E6E6">
+    <p class="MsoNormal"><span lang="EN-US">Country Labor rate Exists?</span></td>
+    <td width="168" valign="top" style="width: 126.0pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E6E6E6">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Shop Labor rate </span></p>
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Exists?</span></td>
+    <td width="327" valign="top" style="width: 245.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E6E6E6">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Results</span></td>
+  </tr>
+  <tr>
+    <td width="143" valign="top" style="width: 107.4pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">No </span></td>
+    <td width="168" valign="top" style="width: 126.0pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">No</span></td>
+    <td width="327" valign="top" style="width: 245.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US">Validation Rules Line 34 - STOP - 
+    INFORMATIVE states LABOUR RATE NOT CREATED FOR THIS EQUIPMENT TYPE</span></td>
+  </tr>
+  <tr>
+    <td width="143" valign="top" style="width: 107.4pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">No</span></td>
+    <td width="168" valign="top" style="width: 126.0pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Yes</span></td>
+    <td width="327" valign="top" style="width: 245.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US">The Shop Labor rate will be used as 
+    an agreement rate between Local MSL &amp; CPH</span></td>
+  </tr>
+  <tr>
+    <td width="143" valign="top" style="width: 107.4pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Yes</span></td>
+    <td width="168" valign="top" style="width: 126.0pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">No</span></td>
+    <td width="327" valign="top" style="width: 245.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US">Validation Rules Line 34 - STOP - 
+    INFORMATIVE states LABOUR RATE NOT CREATED FOR THIS EQUIPMENT TYPE</span></td>
+  </tr>
+  <tr>
+    <td width="143" valign="top" style="width: 107.4pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Yes</span></td>
+    <td width="168" valign="top" style="width: 126.0pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Yes</span></td>
+    <td width="327" valign="top" style="width: 245.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US">Use Respective Labor Rates</span></td>
+  </tr>
+</table>
+<blockquote>
+  <ul>
+    <li>
+    <p class="MsoNormal"><span style="font-size: 11pt; font-weight: 700">Open 
+    Issues</span></li>
+  </ul>
+</blockquote>
+<p class="MsoNormal"><span lang="EN-US">N/A</span></p>
+<blockquote>
+  <blockquote>
+    <p align="center">
+<a href="javascript:void(parent.close())">Close this window</a></p>
+  </blockquote>
+</blockquote>
+
+</body>
+
+</html>

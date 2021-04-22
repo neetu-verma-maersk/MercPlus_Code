@@ -1,0 +1,2288 @@
+<html>
+
+<head>
+<meta http-equiv="KEYWORDS" content="fields, names, attributes, entities, fieldnames, field names">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="5" leftmargin="5">
+
+<font face="Arial" size="3">
+<p>&nbsp;</p>
+<p>MERC+ </p>
+<p>&nbsp;</p>
+<table border="1" width="98%" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <b>
+    <th><font size="2"><a name="Entity">Entity</a> Name</font></th>
+    <th><font size="2">Entity Definition</font></th>
+    <th><font size="2">Entity Note</font></th>
+    <th><font size="2">Entity Logical Only</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">ACCOUNTING_PERIOD</font></td>
+    <td><font size="2">An identification to determine the accounting period ending date and 
+    activity period ending date for the accounting books in RRIS, based on a 
+    corporate payagent code.</font></td>
+    <td><font size="2">Accounting Period will allow the application to determine what activity 
+    period and what accounting period a workorder will fall in. &nbsp;This period 
+    month and year &nbsp;will be transmitted to RRIS in the interface.</font></td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">AREA</font></td>
+    <td><font size="2">Area is a collection of countires</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHASSIS </font> </td>
+    <td><font size="2">A specific equipment type used to transport other equipment.</font></td>
+    <td><font size="2">Used to identify Chassis that come through the workorder system to allow 
+    management to keep track of yearly inspections performed on equipment.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CORP_PAYAGENT</font></td>
+    <td><font size="2">The ’header’ payagent defined to RRIS system.</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COUNTRY</font></td>
+    <td><font size="2">Country is a collection of Locaions. A country is same as geo-political 
+    countries.</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COUNTRY_CONTRACT</font></td>
+    <td><font size="2">An agreement between CPH and a country to pay certain material costs for 
+    repairs performed.</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">COUNTRY_LABOR_RATE</font></td>
+    <td><font size="2">Labor Rates defined at Country Level</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CPH EQUIPMENT REPAIR LIMITS</font></td>
+    <td><span lang="en-us"><font size="2">Limitations to an equipment repair based on Mode of 
+    the repair, age of equipment, and modified by a country factor</font></span></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CURRENCY</font></td>
+    <td><font size="2">A list of currency codes and currenct exchange rates</font></td>
+    <td><font size="2">Exchange rates will be download from the mainframe system on daily basis 
+    and will be maintained in this table for their use in merc+</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CUSTOMER</font></td>
+    <td><font size="2">The company currently responsible for equipment being repaired</font></td>
+    <td><font size="2">Primarily, all work will be done for Customer Maersk-Sealand. &nbsp;There is 
+    equipment that processes through for other customers which can be accepted 
+    into system but not necessarily paid out within RRIS. &nbsp;These WO would be 
+    stopped from transmission to RRIS and RKRP.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">EQSTYPE</font></td>
+    <td><font size="2">A sub classification of equipment which further qualifies the unit.</font></td>
+    <td><font size="2">The subtypes of equipment will be used in the validation of correct Mode 
+    for a given piece of equipment. &nbsp;The Eqstype data will also be replicated to 
+    the WO to be used in reporting summaries.</font></td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT AGE GROUP</font></td>
+    <td><font size="2">Grouping of Equipment Ages. This is a logical only entity and replaced 
+    by the CPH EQUIPMENT REPAIR LIMITS’ AGE_FROM and AGE_TO attributes</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT MATERIAL</font></td>
+    <td><font size="2">A Master list of all available equipment Material</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT MODE</font></td>
+    <td><font size="2">Relationship of valid mode to RKEM equipment based on type, subtype, 
+    size and material</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT SIZE</font></td>
+    <td><font size="2">a Master list of all available equipment sizes</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT TYPE</font></td>
+    <td><font size="2">A classification of equipment such as container, chassis, reefer, 
+    genset.</font></td>
+    <td><font size="2">Equipment type is used to validate the Mode reported on the WO.</font></td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">INDEX</font></td>
+    <td><font size="2">Area of Equipment being repaired. &nbsp;The Index helps to group Repair Codes 
+    associated to the same section of equipment.</font></td>
+    <td><font size="2">INDEX DESCRIPTIONS PREPARATION TIME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    MISCELLANEOUS / CLEANING / DECALS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ROOF 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FRONT 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SIDES 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAR 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOOR 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FLOOR 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CROSSMEMBER / TUNNEL SECTION / 
+    FORK LIFT POCKET</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">INSPECTIONS</font></td>
+    <td><font size="2">Inspection information &nbsp;pertaining to the Chassis equipment.</font></td>
+    <td><font size="2">The business needs to keep track of when inspections are performed on 
+    Chassis and charged as a repair on a WO. &nbsp;Pulling reports showing the 
+    frequency of inspections being done may show abuses being done in terms of 
+    un-necessary inspections. &nbsp;A query will also enable Shops to determine if an 
+    inspection actually does need to be done on the Chassis, or if the sticker 
+    on the equipment was missing or in error.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">LABOR RATE </font> </td>
+    <td><font size="2">The hourly amount charged to a Customer, by a Shop for repair work done 
+    on equipment. &nbsp;The Rate is determined by the type of equipment being 
+    repaired and the type of hours the mechanic worked.</font></td>
+    <td><font size="2">Each Shop may have different rates depending upon the Customer the work 
+    is being performed for, and the rates vary depending on the type of 
+    equipment being worked on as well as the kind of hours being worked. &nbsp;The 
+    business also has the need to retain the rates for a given time period to 
+    enable them to increase the rates begining with a set date, and not have the 
+    new rate reflect on work done prior to the effective date.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">LOCATION</font></td>
+    <td><font size="2">A geographical area in the world.</font></td>
+    <td><font size="2">This will be used to group Shops in a particular area of the country as 
+    managers oversee all Shops in a Location.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL</font></td>
+    <td><font size="2">A guideline to equipment repairs.</font></td>
+    <td><font size="2">A reference guide of repair codes. &nbsp;Existing manuals in WMNR will be 
+    replicated down at start of system.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUFACTURER</font></td>
+    <td><font size="2">The producer of the equipment.</font></td>
+    <td><font size="2">This entity will be used to validate the repair codes selected for 
+    Reefer equipment. &nbsp;There are different repair code set up for the various 
+    manufactures, and the correct repair code must be used. The table is also 
+    used to identify Genset’s manufacturer and warrenty period.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MASTER PART</font></td>
+    <td><font size="2">Master Part is a list of part codes</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MESC1TS_CUST_SHOP_MODE</font></td>
+    <td><font size="2">This entity defines a relationship between CUSTOMER, SHOP and MODE. &nbsp;It 
+    is used for Non STS Modes to identify non standard time billing that will 
+    need approvals from a different security profile set up specifically &nbsp;for 
+    Non STS Approvers. &nbsp;It is also used to define a PAYAGENT associated with 
+    each combination for proper payment of a workorder in RRIS system.</font></td>
+    <td><font size="2">This will &nbsp;be used in the system logic &nbsp;to identify the workorders a Non 
+    STS Approver will have the authority to approve, and to define the payagent 
+    associated to a given Customer, Shop and Mode on a workorder.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A grouping of similar repair requirements, either pertaining to a 
+    particular type of equipment or pertaining to a particular type of repair 
+    work.</font></td>
+    <td><font size="2">MODE &nbsp;DEFINITIONS 00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REEFER BOXES &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 01 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALUMINUM CONTAINERS - STANDARD REPAIRS 02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STAINLESS STEEL REEFER 
+    CONTAINERS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 03 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STEEL CONTAINERS -STANDARD REPAIRS &nbsp;&nbsp;&nbsp;&nbsp; 04 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPECIAL EQUIPMENT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 05 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STEEL OPEN TOP 
+    CONTAINERS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 06 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALUMINUN OPEN TOP CONTAINERS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHASSIS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REEFERS ORDINARY PARTS</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE_PREP_TIME</font></td>
+    <td><font size="2">Maximum time that can be allocated for a given type of preparation work 
+    being done on an equipment</font></td>
+    <td><font size="2">PrepTime defines the Prep Codes to be sent to RKRP when transmitting a 
+    WO. &nbsp;The Prep_Time_Max is the sliding scale indicator, so if the Workorder 
+    is calculated as using 2 preparation hours, the process must look for the 
+    appropriate Prep_Cd that represents 2 hours. &nbsp;For instance, the table would 
+    be looked up to find the record where 2 hours is less than or equal to the 
+    Prep_time_Max, ordered by Prep_TIme_Max to be able to retrieve the first one 
+    only. &nbsp;This Prep_Cd would be added to the WO data when transmitted to RKRP.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MODEL</font></td>
+    <td><font size="2">A list of Manufacturer’s Model numbers. This table is used to find the 
+    first digit of the repair code that must be used when repairing gensets 
+    whose equipment number falls within the given range.</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">NON STS CODE </font> </td>
+    <td><font size="2">This entity represents work that was done and is being invoiced that 
+    does not include repair work to a piece of equipment</font></td>
+    <td><font size="2">These codes will be set up to represent miscellaneous work done and 
+    being invoiced back to the Customer. &nbsp;The work is not necessary done as a 
+    repair nor is it done under a stand time and material rate, it is done as a 
+    flexible rate.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PARTS_GROUP</font></td>
+    <td><font size="2">A List of parts group</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PAYAGENT</font></td>
+    <td><font size="2">The Payagents defined in RRIS accounting system which determine the 
+    characteristics of a payment, such as how the payment is made and &nbsp;the 
+    organization responsible for making the payment.</font></td>
+    <td><font size="2">RRIS requires different information in the data transmission depending 
+    on the payagent involved</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PTI DEFAULT INFO</font></td>
+    <td><font size="2">This entity defines the PTI days allowed for vrious equipment ranges</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REF AUDIT</font></td>
+    <td><font size="2">Audit Table for all Reference data</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REGION</font></td>
+    <td><font size="2">A defined geographical area encompassing many locations</font></td>
+    <td><font size="2">This entity will be used to group multiple locations as a Regional 
+    manager has access to all the Location’s Shops within the Region.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REMARK </font> </td>
+    <td><font size="2">Additional freehand information about the WO either sent by vendor, 
+    system generated, or manager’s notations regarding the repair.</font></td>
+    <td><font size="2">A history of all comments and remarks applied against a WO will be 
+    retained for future reference. &nbsp;This will include the system generated 
+    information regarding the reason a WO was suspended for manager’s review.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR CODE EXCLUSIONARY</font></td>
+    <td><font size="2">A designated relationship between one repair codes and another, which 
+    indicates the codes that are excluded from being added to a workorder when a 
+    specific repair code is already used.</font></td>
+    <td><font size="2">Certain Repair Codes are created that include activities that could be 
+    listed separately as their own Repair Code. &nbsp;&nbsp;When one of these codes is 
+    used on a WO, it must be checked that the the Exclusionary Code &nbsp;does not 
+    appear on the WO as well.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR MASTER PART</font></td>
+    <td><font size="2">An entity that links workorder Repair and master parts list</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CODE</font></td>
+    <td><font size="2">An identifier of work performed, including description, maximum 
+    quantities and amounts.</font></td>
+    <td><font size="2">These codes will be initially downloaded from the WMNR mainframe system. 
+    &nbsp;They represent standard time and material charges that are not to be 
+    exceeded when the repair code is used on the WO. &nbsp;The business will also 
+    have the ability to create their own specific Repair Codes that are not used 
+    in RKRP, and associate the correct RKRP repair code with it.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_LIMIT_ADJ_FACTOR</font></td>
+    <td><font size="2">Most of the countries will have a adjustment factor set in. When Repair 
+    limits are computed, this factor wil be taken into account</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_SUSPENSE</font></td>
+    <td><font size="2">Workorders sent by a Shop, containing these Repair Codes are elligible 
+    to be suspended for management review.</font></td>
+    <td><font size="2">This entity will allow managers to flag individual repair codes they 
+    would like the system to suspend when appearing on a WO. &nbsp;This will allow 
+    the managers to review these particular workorders more closely.</font></td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RKEM EQUIPMENT</font></td>
+    <td><font size="2">List of Equipments</font></td>
+    <td><font size="2">This list is maintained in RKEM</font></td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP</font></td>
+    <td><font size="2">A facility doing repair work on equipment</font></td>
+    <td><font size="2">The Shops will be downloaded from current shops in WMNR system. &nbsp;The 
+    Shops will be responsible for completing the WOs and transmitting to system 
+    or entering the information directly on the web.</font></td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_CONTRACT</font></td>
+    <td><font size="2">Shops <span lang="en-us">may</span> have contracts with the local MSL 
+    agents. Reapirs will be &nbsp;paid as per these contracts</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_REPAIR_LIMITS</font></td>
+    <td><font size="2">The limited amount a Shop can charge for repairs on a Mode. &nbsp;Any 
+    workorder exceeding amount will be marked for suspension for review by 
+    management.</font></td>
+    <td><font size="2">Based on the Mode of the WO submitted, a Shop will have a limited total 
+    amount that can be charged on the WO. &nbsp;If a Shop exceeds this limit, the WO 
+    will be flagged as suspended for manager’s review.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_TYPE</font></td>
+    <td><font size="2">Shop types are the classification of shops.</font></td>
+    <td><font size="2">Shops are classified into 3 types. Type 1, type2 and type 3 and based on 
+    how numbered spare parts are used and treated.</font></td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SPECIAL REMARKS</font></td>
+    <td><font size="2">Special Remarks<span lang="en-us"> are based on RKEM Profile ID </span>
+    &nbsp;per equipment<span lang="en-us"> number</span> range</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">STATUS_CODE</font></td>
+    <td><font size="2">Master list of all status codes used by the system to manage the flow of 
+    workorder</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">SUSPEND CATEGORY</font></td>
+    <td><font size="2">Reasons for suspending workorder for management’s approval.</font></td>
+    <td><font size="2">These generic categories will be set up by management to identify the 
+    reasons a WO will be suspended, such as third party involvement.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">TAX</font></td>
+    <td><span lang="en-us"><font size="2">Sales/Vat </font> </span>
+    <font size="2">Tax information per shop for 
+    equipment type (Container or Genset) on Sales and Labor</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">TRANSMIT_OPTIONS</font></td>
+    <td><font size="2">An association of Customer to the repair Mode. &nbsp;This association will 
+    determine data transmission to other systems.</font></td>
+    <td><font size="2">The WO data may or may not have to be sent to RKRP for reporting 
+    purposes, &nbsp;or RRIS for payment purposes. &nbsp;Based on the Customer the work is 
+    being done for, and the type of work being done ( the Mode) &nbsp;the WO 
+    information will or will not be transmitted.</font></td>
+    <td><font size="2">No</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">VENDOR</font></td>
+    <td><font size="2">The Company responsible for repair work done on eqipment and the 
+    receiver of payment for work performed.</font></td>
+    <td><font size="2">A Vendor may be responsible for many Shops in multiple locations. &nbsp;To be 
+    paid from RRIS, the Vendor must be set up in RRIS system, and the 
+    appropriate supplier codes generated by RRIS must be updated on the Payagent 
+    Vendor table.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">WO AUDIT</font></td>
+    <td><font size="2">Audit information on Work orders</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">WORKORDER HEADER</font></td>
+    <td><font size="2">A summary of equipment repairs or equipment maintance performed</font></td>
+    <td><font size="2">The common information about the repair work is retained on the header 
+    entity, as well as summary totals of the detail cost to assist in reporting 
+    purposes.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">WORKORDER REPAIR</font></td>
+    <td><font size="2">Individual detailed repairs made within a workorder.</font></td>
+    <td><font size="2">The specific Repair Codes associated to the WO are stored along with the 
+    acutal costs and hours.</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">WORKORDER_EQUIPMENT</font></td>
+    <td><font size="2">Equipment information will come from the RKEM table duringthe equipment 
+    validation and will be kept along with the work order</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">Yes</font></td>
+  </tr>
+</table>
+</font>
+<p>&nbsp;</p>
+<hr><font face="Arial" size="3">
+<p>&nbsp;</p>
+<table border="1" width="99%" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AGE_FROM</font></td>
+    <td><font size="2">The (minimum) age from where the age group range starts from</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AGE_TO</font></td>
+    <td><font size="2">The (maximum) age from where the age group range ends with</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">LIMIT_AMOUNT</font></td>
+    <td><font size="2">Repair Limit amount</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CURRENCY</font></td>
+    <td><font size="2">CURRENCY_CD</font></td>
+    <td><font size="2">Currency Code - A 3 character code defining the currency to beused</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CURRENCY_DESC</font></td>
+    <td><font size="2">A description of the currency code</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EXCHANGE_RATE</font></td>
+    <td><font size="2">Exchange rate to be used for conversion to the US Dollars</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CUSTOMER</font></td>
+    <td><font size="2">CUSTOMER_CD</font></td>
+    <td><font size="2">A unique identifier representing a the current owner or leaser of a 
+    piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CUSTOMER_DESC</font></td>
+    <td><font size="2">A description/name of the Customer.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MAERSK_SW</font></td>
+    <td><font size="2">An indication that the Customer is part of the Maersk family and any 
+    special system logic pertaining to &quot;Maersk&quot; would pertain to all Customers 
+    where this switch is ’Y’</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CUSTOMER_ACTIVE_SW</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQSTYPE</font></td>
+    <td><font size="2">EQSTYPE</font></td>
+    <td><font size="2">A sub classification of equipment types - &nbsp;EQSTYPE from RKEM.RKEMUVEQBC 
+    &nbsp;CONT = &nbsp;REEF / TWDK , COFL, FLAT,OSOT,/ OPEN</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQTYPE</font></td>
+    <td><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE from 
+    RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQSTYPE_DESC</font></td>
+    <td><font size="2">A descriptive defintition of the equipment sub type.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT AGE GROUP</font></td>
+    <td><font size="2">EQTYPE</font></td>
+    <td><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE from 
+    RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQSIZE</font></td>
+    <td><font size="2">Equipment Size</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQ_MATERIAL</font></td>
+    <td><font size="2">Equipment Material Code such as Steel, Aluminium</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AGE_FROM</font></td>
+    <td><font size="2">The (minimum) age from where the age group range starts from</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AGE_TO</font></td>
+    <td><font size="2">The (maximum) age from where the age group range ends with</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">YEARS_0_2</font></td>
+    <td><font size="2">If the years is between 0 and 2, this is the repair Limit</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">YEARS_3_4</font></td>
+    <td><font size="2">If the years is between 3 and 4, this is the repair Limit</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">YEARS_5_6</font></td>
+    <td><font size="2">If the years is between 5 and 6, this is the repair Limit</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">YEARS_7_8</font></td>
+    <td><font size="2">If the years is between 7 and 8, this is the repair Limit</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">YEARS_9_10</font></td>
+    <td><font size="2">If the years is between 9 and 10, this is the repair Limit</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">YEARS_11_12</font></td>
+    <td><font size="2">If the years is between 11 and 12, this is the repair Limit</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">YEARS_12_ABOVE</font></td>
+    <td><font size="2">If the years is 12 and above, this is the repair Limit</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT MATERIAL</font></td>
+    <td><font size="2">EQ_MATERIAL</font></td>
+    <td><font size="2">Equipment Material Code such as Steel, Aluminium</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT MODE</font></td>
+    <td><font size="2">EQTYPE</font></td>
+    <td><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE from 
+    RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQSTYPE</font></td>
+    <td><font size="2">A sub classification of equipment types - &nbsp;EQSTYPE from RKEM.RKEMUVEQBC 
+    &nbsp;CONT = &nbsp;REEF / TWDK , COFL, FLAT,OSOT,/ OPEN</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQ_MATERIAL</font></td>
+    <td><font size="2">Equipment Material Code such as Steel, Aluminium</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQSIZE</font></td>
+    <td><font size="2">Equipment Size</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">ACTIVE_SW</font></td>
+    <td><font size="2">Indicates whether the particular equipment mode combination is active</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT SIZE</font></td>
+    <td><font size="2">EQSIZE</font></td>
+    <td><font size="2">Equipment Size</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EQUIPMENT TYPE</font></td>
+    <td><font size="2">EQTYPE</font></td>
+    <td><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE from 
+    RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQTYPE_DESC</font></td>
+    <td><font size="2">A descriptive defintition of the equipment type.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">FUNCTION</font></td>
+    <td><font size="2">FUNCTION_ID</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;Function </font> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">ACTION_ID</font></td>
+    <td><font size="2">A unique identity key defining an Action</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">FUNCTION_NAME</font></td>
+    <td><font size="2">A textual definition of a Function within an Action</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">INDEX</font></td>
+    <td><font size="2">INDEX_ID</font></td>
+    <td><font size="2">A unique identifier to an index record which groups repair codes for 
+    faster searching capabilities</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CUSTOMER_CD</font></td>
+    <td><font size="2">A unique identifier representing a the current owner or leaser of a 
+    piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">INDEX_DESC</font></td>
+    <td><font size="2">A descriptive text description of a defined index.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">INSPECTIONS</font></td>
+    <td><font size="2">INSP_DTE</font></td>
+    <td><font size="2">The date the inspection was done on the equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">INSP_BY</font></td>
+    <td><font size="2">The mechanic or shop performing the inspection on the equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKEMLOC</font></td>
+    <td><font size="2">Location code where inspection was performed as defined in RKEM system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">XMIT_RC</font></td>
+    <td><font size="2">Indication of a successful transmission to RKEM.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">XMIT_DTE</font></td>
+    <td><font size="2">Date of transmission to RKEM</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">LABOR RATE </font> </td>
+    <td><font size="2">EQTYPE</font></td>
+    <td><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE from 
+    RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EFF_DTE</font></td>
+    <td><font size="2">Date the rate becomes effective.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EXP_DTE</font></td>
+    <td><font size="2">Date the rate expires.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REGULAR_RT</font></td>
+    <td><font size="2">The labor rate for working during regular hours.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">OVERTIME_RT</font></td>
+    <td><font size="2">The labor rate for working during overtime ours.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">DOUBLETIME_RT</font></td>
+    <td><font size="2">The labor rate for working during doubletime hours.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MISC_RT</font></td>
+    <td><font size="2">A miscellaneous rate type to be used for any other type of work hours 
+    not previously defined.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">LOCATION</font></td>
+    <td><font size="2">LOC_CD</font></td>
+    <td><font size="2">A unique identifier to represent the geographical place repair work is 
+    done.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REGION_CD</font></td>
+    <td><font size="2">A &nbsp;unique identifier to a Region.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">LOC_DESC</font></td>
+    <td><font size="2">A description/name of the location.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">Country_cd</font></td>
+    <td><font size="2">Country Code</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKRPLOC</font></td>
+    <td><font size="2">Associated RKRP location code equivalent to RKEM location code</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CONTACT_EQSAL_SW</font></td>
+    <td><font size="2">Indicates the local EMR attached to the location has the authorization 
+    to send estimates directly to CENEQUSAL bypassing CPH review. Only those 
+    estimates for shops residingin the approved location may be sent. Even 
+    though the local EMR may be overseeing multiple locations.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">Area_cd</font></td>
+    <td><font size="2">Area Code</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL</font></td>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_DESC</font></td>
+    <td><font size="2">A descriptive name for the manual.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_ACTIVE_SW</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUFACTURER</font></td>
+    <td><font size="2">MANUFCTR</font></td>
+    <td><font size="2">Name of the company who built the equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUFACTUR_ACTIVE_SW</font></td>
+    <td><font size="2">Active Switch defines whether the Manufacturer is active or not</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">DISCOUNT_PERCENT</font></td>
+    <td><font size="2">Discount Percentage that is applicable for repairs that involves this 
+    manufacturer</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUFACTUR_NAME</font></td>
+    <td><font size="2">NAME OF THE MANUFACTURER</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MASTER PART</font></td>
+    <td><font size="2">PART_CD</font></td>
+    <td><font size="2">Part Code</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PARTS_GROUP_CD</font></td>
+    <td><font size="2">A 4 character code defining the part group</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PART_DESC</font></td>
+    <td><font size="2">A description about the paty code</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PART_PRICE</font></td>
+    <td><font size="2">Price of the Part in US dollars</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">QUANTITY</font></td>
+    <td><font size="2">Number of parts included in the part’s price.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PART_DESIGNATION_1</font></td>
+    <td><font size="2">Requested for future business use</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PART_DESIGNATION_2</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PART_DESIGNATION_3</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PART_ACTIVE_SW</font></td>
+    <td><font size="2">Active Switch that defines whether the part is active or not</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CORE_VALUE</font></td>
+    <td><font size="2">Value of the core part in US dollars</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">DEDUCT_CORE</font></td>
+    <td><font size="2">This used when calculating the list price of reefer/genset parts
+    </font> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REMARKS</font></td>
+    <td><font size="2">General Remarks about the Part</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUFCTR</font></td>
+    <td><font size="2">Name of the company who built the equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CORE_PART_IND</font></td>
+    <td><font size="2">Core Part Indicator, indicating whether the part is a &quot;core&quot; part or a 
+    &quot;Maersk&quot; part</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MESC1TS_CUST_SHOP_MODE</font></td>
+    <td><font size="2">CSM_CD</font></td>
+    <td><font size="2">A unique identifier, created by concatenating Customer/Shop/Mode into 
+    one field. &nbsp;This represents the set of non STS WOs that can be approved by a 
+    given authorization group.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PAYAGENT_CD</font></td>
+    <td><font size="2">An identifier to a Payagent as defined in the RRIS system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CUSTOMER_CD</font></td>
+    <td><font size="2">A unique identifier representing a the current owner or leaser of a 
+    piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE_DESC</font></td>
+    <td><font size="2">A description of the defined mode.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">STANDARD_TIME_SW</font></td>
+    <td><font size="2">An indicator determining if Mode is for standard time repairs or not. 
+    &nbsp;Standard time repairs will use codes from Repair Codes table, non standard 
+    modes will use the NON STS Codes.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">VALIDATION_SW</font></td>
+    <td><font size="2">An indicator to determine whether or not the system should validate the 
+    Mode specified on the WO against the equipment identified in the WO. &nbsp;By 
+    default, non-standard modes will not/can not &nbsp;be validated</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE_ACTIVE_SW</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">Standard Vs Offhire</font></td>
+    <td><font size="2">Standard Vs Offhire - needs clarification</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE_PREP_TIME</font></td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PREP_CD</font></td>
+    <td><font size="2">A unique identifier for preparation time within a particular mode</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PREP_TIME_MAX</font></td>
+    <td><font size="2">The maximum amount of prepartion time allowed.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PREP_HRS</font></td>
+    <td><font size="2">The preptime hours which can be added to WO based on total manhours 
+    worked.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODEL</font></td>
+    <td><font size="2">MANUFCTR</font></td>
+    <td><font size="2">Name of the company who built the equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODEL_NO</font></td>
+    <td><font size="2">Manufacturer’s Model Numer</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">INDICATOR_CD</font></td>
+    <td><font size="2">A one character code which represents the first digit of the repair code 
+    that must be used when repairing gensets whose equipment number falls within 
+    the given range.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">NON STS CODE </font> </td>
+    <td><font size="2">NONS_CD</font></td>
+    <td><font size="2">A code that represents work done that does not include standard time and 
+    material costs.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">NONS_DESC</font></td>
+    <td><font size="2">A descriptive text definition to define a non standard time and material 
+    code.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">NONS_ACTIVE_SW</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PARTS_GROUP</font></td>
+    <td><font size="2">PARTS_GROUP_CD</font></td>
+    <td><font size="2">A 4 character code defining the part group</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PARTS_GROUP_DESC</font></td>
+    <td><font size="2">Description of the Parts Group</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REMARKS</font></td>
+    <td><font size="2">Remarks about the Group</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PARTS_GROUP_ACTIVE_SW</font></td>
+    <td><font size="2">Active Switch defining whther the Group is active or not</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PAYAGENT</font></td>
+    <td><font size="2">PAYAGENT_CD</font></td>
+    <td><font size="2">An identifier to a Payagent as defined in the RRIS system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CORP_PAYAGENT_CD</font></td>
+    <td><font size="2">An identification of the corporate payagent code as defined in RRIS</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RRIS_FORMAT</font></td>
+    <td><font size="2">An indicator of the format type of transmission to RRIS accounting 
+    system. &nbsp;Based on the Payagent, different formats of transmission 
+    information must be sent.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PROFIT_CENTER</font></td>
+    <td><font size="2">Defined profit center code set up in RRIS system to transmit the data 
+    under.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SUB_PROFIT_CENTER</font></td>
+    <td><font size="2">Defined profit center code set up in RRIS system to transmit the data 
+    under, either the RRIS branch profit center, or the profit center attached 
+    to the branch payagent code.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PTI DEFAULT INFO</font></td>
+    <td><font size="2">SERIAL_NO_FROM</font></td>
+    <td><font size="2">Start equipment serial number for the given PTI days. Note: If 
+    SERIAL_NO_FROM and SERIAL_NO_TO are ’0’, then that forms the &quot;default PTI 
+    days&quot;.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SERIAL_NO_TO</font></td>
+    <td><font size="2">End equipment serial number for the given PTI days. Note: If 
+    SERIAL_NO_FROM and SERIAL_NO_TO are ’0’, then that forms the &quot;default PTI 
+    days&quot;.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">NO_DAYS</font></td>
+    <td><font size="2">Number of PTI days for that Group</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REF AUDIT</font></td>
+    <td><font size="2">AUDIT_ID</font></td>
+    <td><font size="2">System’s Unique identifer</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TABLE_NAME</font></td>
+    <td><font size="2">Table Name which was responsible for generating this audit information</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">UNIQUE_ID</font></td>
+    <td><font size="2">Unique Id that can define uniquely the row that was changed in the table</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">COL_NAME</font></td>
+    <td><font size="2">Name of thw column which was modified</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">OLD_VALUE</font></td>
+    <td><font size="2">Original value -before modification of the column</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">NEW_VALUE</font></td>
+    <td><font size="2">New Value - after modification of the column’s value. Note: This will be 
+    NULL in case of deletes</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODIFY_USER</font></td>
+    <td><font size="2">User who modified this record</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">Date and Time the record was changed</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REGION</font></td>
+    <td><font size="2">REGION_CD</font></td>
+    <td><font size="2">A &nbsp;unique identifier to a Region.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REGION_DESC</font></td>
+    <td><font size="2">A description/name of the Region.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REMARK </font> </td>
+    <td><font size="2">WOREMARK_ID</font></td>
+    <td><font size="2">A unique identifier to a Workorder Remark</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CRTS</font></td>
+    <td><font size="2">Date/Timestamp the Remark was inserted to system</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REMARK_TYPE</font></td>
+    <td><font size="2">An indicator to specify if Remark was ’S’ystem generated, ’V’endor 
+    comment, ’I’nternal manager’s comment or ’E’xternal manager’s comment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SUSPCAT_ID</font></td>
+    <td><font size="2">A unique table identifier to represent a suspension category.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REMARK</font></td>
+    <td><font size="2">A textual remark or comment used to clairify information regarding the 
+    WO.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR CODE EXCLUSIONARY</font></td>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EXCLU_REPAIR_CD</font></td>
+    <td><font size="2">A repair code, that by business definition, should not be included on a 
+    workorder repair when it’s corresponding &nbsp;repair code is on the workorder. 
+    &nbsp;This is because the time and dollar allotments already include this 
+    exclusionary repair code.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR MASTER PART</font></td>
+    <td><font size="2">PART_CD</font></td>
+    <td><font size="2">Part Code</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">COST_CPH</font></td>
+    <td><font size="2">Copenhagen cost</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">COST_LOCAL</font></td>
+    <td><font size="2">Local shop cost</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SERIAL_NUMBER</font></td>
+    <td><font size="2">Serial Number of the part</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CODE</font></td>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_DESC</font></td>
+    <td><font size="2">A descriptive text definition of a repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKRP_REPAIR_CD</font></td>
+    <td><font size="2">The equivilent RKRP repair code, used when transmitting information to 
+    RKRP system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MAX_QUANTITY</font></td>
+    <td><font size="2">The quantity of units associated to the repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_MATERIAL_CEILING</font></td>
+    <td><font size="2">The amount per repair code that is the limited amount a shop can specify 
+    for material costs incurred while doing repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_IND</font></td>
+    <td><font size="2">Identifies non typical repair codes which might include repairs that do 
+    not allow prep time or repairs that must have the man-hours lowered.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MAN_HOUR</font></td>
+    <td><font size="2">The number of hours assciated to do given repair</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_ACTIVE_SW</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MULTIPLE_UPDATE_SW</font></td>
+    <td><font size="2">Allows multiple update using multiple update screen,if the switch is set 
+    to yes</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WARRANTY_PERIOD</font></td>
+    <td><font size="2">Warratnty period in number of days</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TAX_APPLIED_SW</font></td>
+    <td><font size="2">This YES/NO switch defines whether the tax needs to be applied over the 
+    calculated amount for this repair code. </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_LIMIT_ADJ_FACTOR</font></td>
+    <td><font size="2">REPAIR_LIMIT_ADJ_FACTOR</font></td>
+    <td><font size="2">Repair Limit Adjustment Factor in percentage</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">Country_cd</font></td>
+    <td><font size="2">Country Code</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_SUSPENSE</font></td>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SUSPCAT_ID</font></td>
+    <td><font size="2">A unique table identifier to represent a suspension category.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RKEM EQUIPMENT</font></td>
+    <td><font size="2">EQPNO</font></td>
+    <td><font size="2">Equipment Number as existing in RKEM</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQSIZE</font></td>
+    <td><font size="2">Equipment Size</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQ_MATERIAL</font></td>
+    <td><font size="2">Equipment Material Code such as Steel, Aluminium</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQSTYPE</font></td>
+    <td><font size="2">A sub classification of equipment types - &nbsp;EQSTYPE from RKEM.RKEMUVEQBC 
+    &nbsp;CONT = &nbsp;REEF / TWDK , COFL, FLAT,OSOT,/ OPEN</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SEC_AUTHGROUP_ACTION</font></td>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">ACTION_ID</font></td>
+    <td><font size="2">A unique identity key defining an Action</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SEC_AUTHGROUP_FUNCTION</font></td>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">FUNCTION_ID</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;Function </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">SEC_AUTHGROUP_USER</font></td>
+    <td><font size="2">ACCESS_ID</font></td>
+    <td><font size="2">A unique identity key defining a combination of User to an Authority 
+    Group</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">USER_ID</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;User</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">COLUMN_VALUE</font></td>
+    <td><font size="2">The actual data value a user has access to. &nbsp;The Column_Name and 
+    Table_Name where the data value exists is from the Authorization Group 
+    &nbsp;entity.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SEC_AUTHGROUP_WEBPAGE</font></td>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WEBPAGE_ID</font></td>
+    <td><font size="2">A unique identity key defining a Webpage</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SEC_AUTHGROUP_WEBSITE</font></td>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WEBSITE_ID</font></td>
+    <td><font size="2">A unique identity key defining a WebSite </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">SEC_WEBPAGE</font></td>
+    <td><font size="2">WEBPAGE_ID</font></td>
+    <td><font size="2">A unique identity key defining a Webpage</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WEBSITE_ID</font></td>
+    <td><font size="2">A unique identity key defining a WebSite </font> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WEBPAGE_NAME</font></td>
+    <td><font size="2">A textual definition of a WebPage on a WebSite</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP</font></td>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">VENDOR_CD</font></td>
+    <td><font size="2">A unique identifier of a vendor.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_DESC</font></td>
+    <td><font size="2">A description/name of the shop.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKRPLOC</font></td>
+    <td><font size="2">RKCC Location code associated to place of Repair Shop. &nbsp;This code is 
+    used when transmitting to RKRP.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">LOC_CD</font></td>
+    <td><font size="2">A unique identifier to represent the geographical place repair work is 
+    done.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CUCDN</font></td>
+    <td><font size="2">Maersk currency code as kept in global system table &nbsp;INLC1T01CURR. 
+    &nbsp;Value for US dollar is ’001’.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EMAIL</font></td>
+    <td><font size="2">Email address used to send messages.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PHONE</font></td>
+    <td><font size="2">Contact phone number at Shop.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EDI_PARTNER</font></td>
+    <td><font size="2">The partner id used to EDI data back to the shop.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RRIS70_SUFFIX_CD</font></td>
+    <td><font size="2">The RRIS70 &nbsp;suffix code transmitted to RRIS system - it represents a 
+    location code to RRIS system and required by RRIS70..</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PREPTIME_SW</font></td>
+    <td><font size="2">A Yes/No indication of whether or not a Shop receives preparation time 
+    calculated onto WO.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_ACTIVE_SW</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PCT_MATERIAL_FACTOR</font></td>
+    <td><font size="2">The percentage, over or under, that a shop is allowed to charge for shop 
+    supplied material and parts for a given repair code.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RRIS_XMIT_SW</font></td>
+    <td><font size="2">An indicator to determine if workorders for shop should be transmitted 
+    to RRIS system or not.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CURRENCY_CD</font></td>
+    <td><font size="2">Currency Code - A 3 character code defining the currency to beused</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">OVERTIME_SUSP_SW</font></td>
+    <td><font size="2">Overtim suspend Switch</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_TYPE_CD</font></td>
+    <td><font size="2">Type of shop. Such as Type1, Type2 etc...</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">IMPORT_TAX</font></td>
+    <td><font size="2">Import Tax defined in % for the cost of parts</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_CONTRACT</font></td>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EFF_DTE</font></td>
+    <td><font size="2">Effective Date from which the contract starts</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EXP_DTE</font></td>
+    <td><font size="2">Expire Date of the contract. Contractis not valid after this date.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CONTRACT_AMOUNT</font></td>
+    <td><font size="2">Amount of contract</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_REPAIR_LIMITS</font></td>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_AMT_LIMIT</font></td>
+    <td><font size="2">The amount limit a shop can charge on a workorder before it is flagged 
+    for suspension.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AUTO_APPROVE_LIMIT</font></td>
+    <td><font size="2">Limit below which the work order is approved automatically</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_MATERIAL_LIMIT</font></td>
+    <td><font size="2">Maximum total shop material limit that a shop is allowed for that mode. 
+    This will be compared against workorder’s total_shop_amount.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_TYPE</font></td>
+    <td><font size="2">SHOP_TYPE_CD</font></td>
+    <td><font size="2">Type of shop. Such as Type1, Type2 etc...</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SPECIAL REMARKS</font></td>
+    <td><font size="2">REMARKS_ID</font></td>
+    <td><font size="2">Unique identifier</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKEM PROFILE</font></td>
+    <td><font size="2">The profile code as stored in RKEM. Remarks are applied if the equipment 
+    from RKEM is within the range and profile is matching</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SERIAL_NO_FROM</font></td>
+    <td><font size="2">Starting range for the Equipment serial Number. Remarks are applied if 
+    the equipment from RKEM is within the range and profile is matching</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SERIAL_NUMBER_TO</font></td>
+    <td><font size="2">End range for the Equipment serial Number. Remarks are applied if the 
+    equipment from RKEM is within the range and profile is matching</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SUSPEND_SW</font></td>
+    <td><font size="2">Suspend due to remarks Y/N </font> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REMARKS</font></td>
+    <td><font size="2">Remarks that will be seen by the approver or the vendor</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_CEILING</font></td>
+    <td><font size="2">Repair Ceiling.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">STATUS_CODE</font></td>
+    <td><font size="2">STATUS_CODE</font></td>
+    <td><font size="2">State of the work order such as Estimate, Draft.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">STATUS_DSC</font></td>
+    <td><font size="2">Description of the Status Code sucha s ’Draft’, Pending’, ’Suspended’ 
+    etc...</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SUSPEND CATEGORY</font></td>
+    <td><font size="2">SUSPCAT_ID</font></td>
+    <td><font size="2">A unique table identifier to represent a suspension category.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SUSPCAT_DESC</font></td>
+    <td><font size="2">A descriptive messsage identifying reason the workorder has been 
+    suspended.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">TAX</font></td>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQTYPE</font></td>
+    <td><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE from 
+    RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SALES_TAX_PARTS</font></td>
+    <td><font size="2">Sales Tax (VAT) Parts and materials - free text (%)</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SALES_TAX_LABOR</font></td>
+    <td><font size="2">Sales tax (VAT) &nbsp;- labor - free text (%) </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">TRANSMIT_OPTIONS</font></td>
+    <td><font size="2">CUSTOMER_CD</font></td>
+    <td><font size="2">A unique identifier representing a the current owner or leaser of a 
+    piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RRIS_XMIT_SW</font></td>
+    <td><font size="2">An indicator to determine if workorders for the given mode and customer 
+    should be transmitted to RRIS system or not.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKRP_XMIT_SW</font></td>
+    <td><font size="2">An indicator to determine if workorders for the given mode and customer 
+    should be transmitted to RKRP system or not.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">ACCOUNT_CD</font></td>
+    <td><font size="2">Defined account code set up in RRIS system to transmit the data under.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">USER</font></td>
+    <td><font size="2">USER_ID</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;User</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">USER LOGIN</font></td>
+    <td><font size="2">A given user handle to log onto the web application. With Merc+, this 
+    column will tie up ther mERC+ security with the Get Access security</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">FIRSTNAME</font></td>
+    <td><font size="2">User given name</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">LASTNAME</font></td>
+    <td><font size="2">User surname</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">COMPANY</font></td>
+    <td><font size="2">Name of the Company user is associated with or employed by</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">ACTIVE_STATUS</font></td>
+    <td><font size="2">Identifies the status of the User as being in an Active state or 
+    Inactive state</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">APPROVAL_AMOUNT</font></td>
+    <td><font size="2">Maximum amount a user is authorized to approve on an estimate</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">LOC_CD</font></td>
+    <td><font size="2">A unique identifier to represent the geographical place repair work is 
+    done.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">VENDOR</font></td>
+    <td><font size="2">VENDOR_CD</font></td>
+    <td><font size="2">A unique identifier of a vendor.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">VENDOR_DESC</font></td>
+    <td><font size="2">Descriptive information identifying Vendor.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">VENDOR_ACTIVE_SW</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">DISCOUNT_PCT</font></td>
+    <td><font size="2">The discount percentage taken off workorders prior to sentding to RRIS 
+    for payment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">DISCOUNT_DAYS</font></td>
+    <td><font size="2">The number of days allowed between receipt of workorder and transmission 
+    of payment to RRIS. &nbsp;If transmission occurs with the number of DISCOUNT_DAYS, 
+    the the DISCOUNT_PCT amount can be taken. &nbsp;This DISCOUNT_DAYS does not 
+    represent the contractual agreement with the Vendor as additional time must 
+    be added in for the time it takes RRIS to do a check run.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WEBSITE</font></td>
+    <td><font size="2">WEBSITE_ID</font></td>
+    <td><font size="2">A unique identity key defining a WebSite </font> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WEBSITE_NAME</font></td>
+    <td><font size="2">A textual definition of an WebSite</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WO AUDIT</font></td>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AUDIT_TEXT</font></td>
+    <td><font size="2">Audit Text is system generated text that explains the action that took 
+    place which triggered this audit</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">User who is responsible for this action</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">Date time when the action was made</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WORKORDER HEADER</font></td>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CUSTOMER_CD</font></td>
+    <td><font size="2">A unique identifier representing a the current owner or leaser of a 
+    piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WOTYPE</font></td>
+    <td><font size="2">Used to identify standard time WO from non standard time WOs. &nbsp;May also 
+    be used in future to identify other categories of WOs.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_DTE</font></td>
+    <td><font size="2">The date the repair work was performed.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">STATUS_CODE</font></td>
+    <td><font size="2">State of the work order such as Estimate, Draft.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQTYPE</font></td>
+    <td><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE from 
+    RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CAUSE</font></td>
+    <td><font size="2">A code value 1 - 4 representing the reason for the equipment damage, ie 
+    normal wear and tear, handling, third party confirmed, third party 
+    unconfirmed</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">THIRD_PARTY</font></td>
+    <td><font size="2">The RKCC location code representing the place of 3rd party damage to 
+    equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANH_RATE</font></td>
+    <td><font size="2">The man hour rate charged to perform this work.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANH_RATE_CPH</font></td>
+    <td><font size="2">The man hour rate paid by CPH to local EMR &nbsp;in US$</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EXCHANGE_RATE</font></td>
+    <td><font size="2">The exchange rate captured at time of workorder creation &nbsp;for the local 
+    currency.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_REPAIR_MANH</font></td>
+    <td><font size="2">Sum of all detail records REP-MANH = WDF-ACTUAL-MANH * WDF-QTY-REPAIRS &nbsp; 
+    TOT-MANH = TOT-MANH + REP-MANH</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_MANH_REG</font></td>
+    <td><font size="2">The number of regular manhours worked on repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_MANH_OT</font></td>
+    <td><font size="2">The number of overtime &nbsp;manhours worked on repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_MANH_DT</font></td>
+    <td><font size="2">The number of double time &nbsp;manhours worked on repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_MANH_MISC</font></td>
+    <td><font size="2">The number of miscellaneous &nbsp;&nbsp;time &nbsp;manhours worked on repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_PREP</font></td>
+    <td><font size="2">Total number of preparation hours associated to &nbsp;workorder.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_LABOR</font></td>
+    <td><font size="2">Total man hours worked as sum of regular, overtime and doubletime hours 
+    &nbsp;+ tot-prep</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_LABOR_COST</font></td>
+    <td><font size="2">Total cost of labor to do repair. COMPUTE WC-TOT-LABOR-COST ROUNDED = &nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;(WC-TOT-MANH-REG * TB-RATE-REG) + &nbsp;&nbsp;&nbsp;&nbsp;(WC-TOT-MANH-OT &nbsp;* TB-RATE-OT) + &nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;(WC-TOT-MANH-DT &nbsp;* TB-RATE-DT)</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_LABOR_COST_CPH</font></td>
+    <td><font size="2">Total cost of labor paid by CPH to local EMR in US$</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_SHOP_AMT</font></td>
+    <td><font size="2">Total of repairs shop part’s cost.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_SHOP_AMT_CPH</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_COST_LOCAL</font></td>
+    <td><font size="2">COMPUTE WOF-TOT-COST-LOCAL = WOF-TOT-LABOR-COST + 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WOF-TOT-SHOP-AMT</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_COST_CPH</font></td>
+    <td><font size="2">Total Cost paid by CPH to local EMR in US$</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">VENDOR_REF_NO</font></td>
+    <td><font size="2">Vendor’s reference number to be used during invoicing process (Estimate 
+    number)</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">VOUCHER_NO</font></td>
+    <td><font size="2">Voucher number received from RRIS which indicates payment of invoice.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">INVOICE_DTE</font></td>
+    <td><font size="2">Date the workorder was transmitted to RRIS system for invoicing.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CHECK_NO</font></td>
+    <td><font size="2">The Check number returned from RRIS</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PAID_DTE</font></td>
+    <td><font size="2">Payment date for invoice received from RRIS.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">AMOUNT_PAID</font></td>
+    <td><font size="2">The amount that was sent to RRIS for payment. Note : &nbsp;For Maersk parts - 
+    type 2 shopes, amount paid will not match the work order total cost.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKRP_REPAIR_DTE</font></td>
+    <td><font size="2">The Repair date that is transmitted to RKRP. When legitimate duplicate 
+    WO exists and the date must be changed, need to retain that date so that a 
+    new unique date can be transmitted</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKRP_XMIT_DTE</font></td>
+    <td><font size="2">Date and time of transmission to the RKRP system</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKRP_XMIT_SW</font></td>
+    <td><font size="2">Value of the corresponding RKRP_XMIT_SW from MESC1TS_TRANSMIT</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">WO_RECV_DTE</font></td>
+    <td><font size="2">Date the WO was received into system. &nbsp;This date will be passed to RRIS 
+    system as the date used to calculate the saving percentage when bills are 
+    paid within a given time frame in RRIS.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">APPROVED_BY</font></td>
+    <td><font size="2">UserID of person approving the WO for payment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_WORKING_SW</font></td>
+    <td><font size="2">A switch to indicate whether the shop is working on the workorder.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">APPROVAL_DTE</font></td>
+    <td><font size="2">Approval Date - Date when the Work order estimate was approved</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">IMPORT_TAX</font></td>
+    <td><font size="2">Local Shop Import Tax for the parts</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">IMPORT_TAX_CPH</font></td>
+    <td><font size="2">CPH Import Tax for the parts</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SALES_TAX_LABOR</font></td>
+    <td><font size="2">Local Shop Sales Tax for the Labor</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SALES_TAX_LABOR_CPH</font></td>
+    <td><font size="2">CPH Sales Tax for the Labor</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SALES_TAX_PARTS</font></td>
+    <td><font size="2">Local Shop Sales Tax for the Parts</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SALES_TAX_PARTS_CPH</font></td>
+    <td><font size="2">CPH Sales Tax for the Labor</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CURRENCY_CD</font></td>
+    <td><font size="2">Currency Code - A 3 character code defining the currency to beused</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_MAERSK_PARTS</font></td>
+    <td><font size="2">Total cost of the parts owned by Maersk</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">TOT_MAN_PARTS</font></td>
+    <td><font size="2">Total cost of Manufacturer parts</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WORKORDER REPAIR</font></td>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">QTY_REPAIRS</font></td>
+    <td><font size="2">The number of repairs of one kind done.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SHOP_MATERIAL_AMT</font></td>
+    <td><font size="2">The amount a Shop charged for parts on a repair.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">CPH_MATERIAL_AMT</font></td>
+    <td><font size="2">Amount from country contract rates that copenhagen will pay the local 
+    EMR for shop supplied materials</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">ACTUAL_MANH</font></td>
+    <td><font size="2">The number of manhours worked on a &nbsp;given repair.
+    </font> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">NONS_CD</font></td>
+    <td><font size="2">A code that represents work done that does not include standard time and 
+    material costs.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WORKORDER_EQUIPMENT</font></td>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQPNO</font></td>
+    <td><font size="2">This Equipment Number exists in RKEM</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQ_SIZE</font></td>
+    <td><font size="2">Equipment Size - Length and Height</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">Equipment Height</font></td>
+    <td><font size="2">Height of the equipment</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQ_TYPE</font></td>
+    <td><font size="2">Equipment type - e.g. reefer </font> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQSTYPE</font></td>
+    <td><font size="2">Equipment Sub Type</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">OWNER_TYPE</font></td>
+    <td><font size="2">Owner type (OWN, LT, ST VSA, SO, ONE)</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">EQ_MATERIAL</font></td>
+    <td><font size="2">Material . eg. steel</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PTI_DATE</font></td>
+    <td><font size="2">PTI (Inspection) Date</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">FULL_EMPTY</font></td>
+    <td><font size="2">Full / Empty Indicator</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REFURBISHMENT_SW</font></td>
+    <td><font size="2">Indicator whether the conatiner is for refurbushment</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REFURBISHMENT_DATE</font></td>
+    <td><font size="2">Refurbishment Date</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">GLOBAL_HUNT</font></td>
+    <td><font size="2">Global Hunt Flag as set in RKEM</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">FIXED_COVER</font></td>
+    <td><font size="2">Fixed Cover - Coming from RKEM</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">DPP</font></td>
+    <td><font size="2">Damage Protection Plan</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">OFFHIR_LOCATION_SW</font></td>
+    <td><font size="2">Indicates whether the equipment is at offhire location</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">SALE_SW</font></td>
+    <td><font size="2">Indicates whether the equipment is for sale</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKEM_PROFILE</font></td>
+    <td><font size="2">RKEM Equipment Profile</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">PRODUCTION_DATE</font></td>
+    <td><font size="2">Date of Manufacture for the equipment</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REEFER_MAKE</font></td>
+    <td><font size="2">Make information for the reefer</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">REEFER_MODEL</font></td>
+    <td><font size="2">Make/Model infor for reefer units</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">GENSET_MAKE</font></td>
+    <td><font size="2">Make information for the Genset</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">GENSET_MODEL</font></td>
+    <td><font size="2">Make model info for genset units</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">MANUFCTR</font></td>
+    <td><font size="2">Name of the company who built the equipment.</font></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font size="2">RKEM_ACTIVE_SW</font></td>
+    <td><font size="2">The (EQBC) field is blank when equipment is active D = Disposed R = 
+    Redelivered V = VSA/SO inactive</font></td>
+  </tr>
+</table>
+</font>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+    <p align="right"><font face="Verdana" size="1"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%m/%d/%Y" startspan -->12/02/2004<!--webbot bot="Timestamp" endspan i-checksum="12521" --></span></font></body></html>

@@ -1,0 +1,5 @@
+C:\Users\IBM_ADMIN\Desktop\Merc+\MercPlusServices\MercPlusServices\BusinessObject\bin\Debug\BusinessObject.dll
+C:\Users\IBM_ADMIN\Desktop\Merc+\MercPlusServices\MercPlusServices\BusinessObject\bin\Debug\BusinessObject.pdb
+C:\Users\IBM_ADMIN\Desktop\Merc+\MercPlusServices\MercPlusServices\BusinessObject\obj\Debug\BusinessObject.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Desktop\Merc+\MercPlusServices\MercPlusServices\BusinessObject\obj\Debug\BusinessObject.dll
+C:\Users\IBM_ADMIN\Desktop\Merc+\MercPlusServices\MercPlusServices\BusinessObject\obj\Debug\BusinessObject.pdb

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HSUDDataModelStoreContainer" CdmEntityContainer="HSUDDataEntities">
+    <EntitySetMapping Name="EstLifeCycle_ApprovalCanceled">
+      <EntityTypeMapping TypeName="HSUDDataModel.EstLifeCycle_ApprovalCanceled">
+        <MappingFragment StoreEntitySet="EstLifeCycle_ApprovalCanceled">
+          <ScalarProperty Name="Facility_Code" ColumnName="Facility_Code" />
+          <ScalarProperty Name="Facility_Name" ColumnName="Facility_Name" />
+          <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+          <ScalarProperty Name="Summary_Size_Type" ColumnName="Summary_Size_Type" />
+          <ScalarProperty Name="EquimentID" ColumnName="EquimentID" />
+          <ScalarProperty Name="EstimateNumber" ColumnName="EstimateNumber" />
+          <ScalarProperty Name="Estimate_Status" ColumnName="Estimate_Status" />
+          <ScalarProperty Name="Estimate_Original_Date" ColumnName="Estimate_Original_Date" />
+          <ScalarProperty Name="Estimate_Transmission_date" ColumnName="Estimate_Transmission_date" />
+          <ScalarProperty Name="Base_Currency_Original" ColumnName="Base_Currency_Original" />
+          <ScalarProperty Name="Owner_total_labor_original" ColumnName="Owner_total_labor_original" />
+          <ScalarProperty Name="Owner_total_material_original" ColumnName="Owner_total_material_original" />
+          <ScalarProperty Name="Owner_total_handling_original" ColumnName="Owner_total_handling_original" />
+          <ScalarProperty Name="Owner_total_tax_original" ColumnName="Owner_total_tax_original" />
+          <ScalarProperty Name="Owner_total_original" ColumnName="Owner_total_original" />
+          <ScalarProperty Name="User_total_labor_original" ColumnName="User_total_labor_original" />
+          <ScalarProperty Name="User_Total_material_Original" ColumnName="User_Total_material_Original" />
+          <ScalarProperty Name="User_Total_handling_Original" ColumnName="User_Total_handling_Original" />
+          <ScalarProperty Name="User_Total_tax_Original" ColumnName="User_Total_tax_Original" />
+          <ScalarProperty Name="User_Total_Original" ColumnName="User_Total_Original" />
+          <ScalarProperty Name="Estimate_Grand_Total_Original" ColumnName="Estimate_Grand_Total_Original" />
+          <ScalarProperty Name="Surveyrequested" ColumnName="Surveyrequested" />
+          <ScalarProperty Name="Revision_Number" ColumnName="Revision_Number" />
+          <ScalarProperty Name="Cancelled_Date" ColumnName="Cancelled_Date" />
+          <ScalarProperty Name="Cancelled_By" ColumnName="Cancelled_By" />
+          <ScalarProperty Name="Owner_Approval_Date" ColumnName="Owner_Approval_Date" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+          <ScalarProperty Name="Onwer_Approval_Number_Original" ColumnName="Onwer_Approval_Number_Original" />
+          <ScalarProperty Name="Base_Currency_Approved" ColumnName="Base_Currency_Approved" />
+          <ScalarProperty Name="Owner_Labor_Approved" ColumnName="Owner_Labor_Approved" />
+          <ScalarProperty Name="Owner_Material_Approved" ColumnName="Owner_Material_Approved" />
+          <ScalarProperty Name="Owner_Handling_Approved" ColumnName="Owner_Handling_Approved" />
+          <ScalarProperty Name="Owner_Tax_Approved" ColumnName="Owner_Tax_Approved" />
+          <ScalarProperty Name="Owner_Total_Approved" ColumnName="Owner_Total_Approved" />
+          <ScalarProperty Name="User_Total_Approved" ColumnName="User_Total_Approved" />
+          <ScalarProperty Name="Estimate_Grand_Total_Approved" ColumnName="Estimate_Grand_Total_Approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstLifeCycleAnalysis">
+      <EntityTypeMapping TypeName="HSUDDataModel.EstLifeCycleAnalysi">
+        <MappingFragment StoreEntitySet="EstLifeCycleAnalysis">
+          <ScalarProperty Name="Facility_Code" ColumnName="Facility_Code" />
+          <ScalarProperty Name="Facility_Name" ColumnName="Facility_Name" />
+          <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+          <ScalarProperty Name="Summary_Size_Type" ColumnName="Summary_Size_Type" />
+          <ScalarProperty Name="EquimentID" ColumnName="EquimentID" />
+          <ScalarProperty Name="EstimateNumber" ColumnName="EstimateNumber" />
+          <ScalarProperty Name="Estimate_Status" ColumnName="Estimate_Status" />
+          <ScalarProperty Name="Estimate_Original_Date" ColumnName="Estimate_Original_Date" />
+          <ScalarProperty Name="Estimate_Transmission_date" ColumnName="Estimate_Transmission_date" />
+          <ScalarProperty Name="Base_Currency_Original" ColumnName="Base_Currency_Original" />
+          <ScalarProperty Name="Owner_total_labor_original" ColumnName="Owner_total_labor_original" />
+          <ScalarProperty Name="Owner_total_material_original" ColumnName="Owner_total_material_original" />
+          <ScalarProperty Name="Owner_total_handling_original" ColumnName="Owner_total_handling_original" />
+          <ScalarProperty Name="Owner_total_tax_original" ColumnName="Owner_total_tax_original" />
+          <ScalarProperty Name="Owner_total_original" ColumnName="Owner_total_original" />
+          <ScalarProperty Name="User_total_labor_original" ColumnName="User_total_labor_original" />
+          <ScalarProperty Name="User_Total_material_Original" ColumnName="User_Total_material_Original" />
+          <ScalarProperty Name="User_Total_handling_Original" ColumnName="User_Total_handling_Original" />
+          <ScalarProperty Name="User_Total_tax_Original" ColumnName="User_Total_tax_Original" />
+          <ScalarProperty Name="User_Total_Original" ColumnName="User_Total_Original" />
+          <ScalarProperty Name="Estimate_Grand_Total_Original" ColumnName="Estimate_Grand_Total_Original" />
+          <ScalarProperty Name="Surveyrequested" ColumnName="Surveyrequested" />
+          <ScalarProperty Name="Revision_Number" ColumnName="Revision_Number" />
+          <ScalarProperty Name="Cancelled_Date" ColumnName="Cancelled_Date" />
+          <ScalarProperty Name="Cancelled_By" ColumnName="Cancelled_By" />
+          <ScalarProperty Name="Owner_Approval_Date" ColumnName="Owner_Approval_Date" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+          <ScalarProperty Name="Onwer_Approval_Number_Original" ColumnName="Onwer_Approval_Number_Original" />
+          <ScalarProperty Name="Base_Currency_Approved" ColumnName="Base_Currency_Approved" />
+          <ScalarProperty Name="Owner_Labor_Approved" ColumnName="Owner_Labor_Approved" />
+          <ScalarProperty Name="Owner_Material_Approved" ColumnName="Owner_Material_Approved" />
+          <ScalarProperty Name="Owner_Handling_Approved" ColumnName="Owner_Handling_Approved" />
+          <ScalarProperty Name="Owner_Tax_Approved" ColumnName="Owner_Tax_Approved" />
+          <ScalarProperty Name="Owner_Total_Approved" ColumnName="Owner_Total_Approved" />
+          <ScalarProperty Name="User_Total_Approved" ColumnName="User_Total_Approved" />
+          <ScalarProperty Name="Estimate_Grand_Total_Approved" ColumnName="Estimate_Grand_Total_Approved" />
+          <ScalarProperty Name="Repair_Completed_Date" ColumnName="Repair_Completed_Date" />
+          <ScalarProperty Name="Repair_Complete_Reported" ColumnName="Repair_Complete_Reported" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstLineItemAnalysis">
+      <EntityTypeMapping TypeName="HSUDDataModel.EstLineItemAnalysi">
+        <MappingFragment StoreEntitySet="EstLineItemAnalysis">
+          <ScalarProperty Name="FACILITYCODE" ColumnName="FACILITYCODE" />
+          <ScalarProperty Name="FACILITYNAME" ColumnName="FACILITYNAME" />
+          <ScalarProperty Name="EQUIPMENTTYPE" ColumnName="EQUIPMENTTYPE" />
+          <ScalarProperty Name="SUMMARYSIZETYPE" ColumnName="SUMMARYSIZETYPE" />
+          <ScalarProperty Name="EQUIPMENTID" ColumnName="EQUIPMENTID" />
+          <ScalarProperty Name="SENDERESTIMATEID" ColumnName="SENDERESTIMATEID" />
+          <ScalarProperty Name="ESTIMATEDATE" ColumnName="ESTIMATEDATE" />
+          <ScalarProperty Name="APPROVALDATE" ColumnName="APPROVALDATE" />
+          <ScalarProperty Name="CREATEDBYUSER" ColumnName="CREATEDBYUSER" />
+          <ScalarProperty Name="ISSURVEYREQUESTED" ColumnName="ISSURVEYREQUESTED" />
+          <ScalarProperty Name="LINEITEMNUMBER" ColumnName="LINEITEMNUMBER" />
+          <ScalarProperty Name="COMPONENTCODE" ColumnName="COMPONENTCODE" />
+          <ScalarProperty Name="LOCATIONCODE" ColumnName="LOCATIONCODE" />
+          <ScalarProperty Name="REPAIRCODE" ColumnName="REPAIRCODE" />
+          <ScalarProperty Name="DAMAGECODE" ColumnName="DAMAGECODE" />
+          <ScalarProperty Name="MATERIALCODE" ColumnName="MATERIALCODE" />
+          <ScalarProperty Name="UNITOFMEASURE" ColumnName="UNITOFMEASURE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="LENGTH" ColumnName="LENGTH" />
+          <ScalarProperty Name="WIDTH" ColumnName="WIDTH" />
+          <ScalarProperty Name="ORGANIZATIONTYPE" ColumnName="ORGANIZATIONTYPE" />
+          <ScalarProperty Name="BASECURRENCYCODE" ColumnName="BASECURRENCYCODE" />
+          <ScalarProperty Name="LABORHOURS" ColumnName="LABORHOURS" />
+          <ScalarProperty Name="LABORRATEBASE" ColumnName="LABORRATEBASE" />
+          <ScalarProperty Name="LABORCOSTBASE" ColumnName="LABORCOSTBASE" />
+          <ScalarProperty Name="MATERIALCOSTBASE" ColumnName="MATERIALCOSTBASE" />
+          <ScalarProperty Name="TOTALBASE" ColumnName="TOTALBASE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

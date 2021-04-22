@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESC2DSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MESC2DSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="MESC1TS_COUNTRY" EntityType="MESC2DSModel.MESC1TS_COUNTRY" />
+    <EntitySet Name="MESC1TS_COUNTRY_CONT" EntityType="MESC2DSModel.MESC1TS_COUNTRY_CONT" />
+    <EntitySet Name="MESC1TS_CURRENCY" EntityType="MESC2DSModel.MESC1TS_CURRENCY" />
+    <EntitySet Name="MESC1TS_REPAIR_CODE" EntityType="MESC2DSModel.MESC1TS_REPAIR_CODE" />
+    <EntitySet Name="MESC1TS_SHOP" EntityType="MESC2DSModel.MESC1TS_SHOP" />
+    <EntitySet Name="MESC1TS_SHOP_CONT" EntityType="MESC2DSModel.MESC1TS_SHOP_CONT" />
+    <AssociationSet Name="FK__MESC1TS_C__COUNT__00DF2177" Association="MESC2DSModel.FK__MESC1TS_C__COUNT__00DF2177">
+      <End Role="MESC1TS_COUNTRY" EntitySet="MESC1TS_COUNTRY" />
+      <End Role="MESC1TS_COUNTRY_CONT" EntitySet="MESC1TS_COUNTRY_CONT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__CUCDN__7FEAFD3E" Association="MESC2DSModel.FK__MESC1TS_C__CUCDN__7FEAFD3E">
+      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
+      <End Role="MESC1TS_COUNTRY_CONT" EntitySet="MESC1TS_COUNTRY_CONT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__CUCDN__214BF109" Association="MESC2DSModel.FK__MESC1TS_S__CUCDN__214BF109">
+      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__SHOP___251C81ED" Association="MESC2DSModel.FK__MESC1TS_S__SHOP___251C81ED">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_SHOP_CONT" EntitySet="MESC1TS_SHOP_CONT" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MESC1TS_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRY_CD" />
+    </Key>
+    <Property Name="COUNTRY_CD" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="COUNTRY_DESC" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="AREA_CD" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="REPAIR_LIMIT_ADJ_FACTOR" Type="Double" />
+    <Property Name="COUNTRY_GEO_ID" Type="String" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="MESC1TS_COUNTRY_CONT" Relationship="MESC2DSModel.FK__MESC1TS_C__COUNT__00DF2177" FromRole="MESC1TS_COUNTRY" ToRole="MESC1TS_COUNTRY_CONT" />
+  </EntityType>
+  <EntityType Name="MESC1TS_COUNTRY_CONT">
+    <Key>
+      <PropertyRef Name="COUNTRY_CONT_ID" />
+    </Key>
+    <Property Name="COUNTRY_CONT_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="COUNTRY_CD" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="EFF_DTE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="EXP_DTE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="CONTRACT_AMOUNT" Type="Decimal" Nullable="false" Precision="16" Scale="4" />
+    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REPAIR_CD" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="CUCDN" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="MANUAL_CD" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="MESC1TS_COUNTRY" Relationship="MESC2DSModel.FK__MESC1TS_C__COUNT__00DF2177" FromRole="MESC1TS_COUNTRY_CONT" ToRole="MESC1TS_COUNTRY" />
+    <NavigationProperty Name="MESC1TS_CURRENCY" Relationship="MESC2DSModel.FK__MESC1TS_C__CUCDN__7FEAFD3E" FromRole="MESC1TS_COUNTRY_CONT" ToRole="MESC1TS_CURRENCY" />
+  </EntityType>
+  <EntityType Name="MESC1TS_CURRENCY">
+    <Key>
+      <PropertyRef Name="CUCDN" />
+    </Key>
+    <Property Name="CURCD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="CUCDN" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="CURRNAMC" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="EXRATDKK" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="EXRATUSD" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="EXRATYEN" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EXRATEUR" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="QUOTEDAT" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MESC1TS_COUNTRY_CONT" Relationship="MESC2DSModel.FK__MESC1TS_C__CUCDN__7FEAFD3E" FromRole="MESC1TS_CURRENCY" ToRole="MESC1TS_COUNTRY_CONT" />
+    <NavigationProperty Name="MESC1TS_SHOP" Relationship="MESC2DSModel.FK__MESC1TS_S__CUCDN__214BF109" FromRole="MESC1TS_CURRENCY" ToRole="MESC1TS_SHOP" />
+  </EntityType>
+  <EntityType Name="MESC1TS_REPAIR_CODE">
+    <Key>
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+    </Key>
+    <Property Name="REPAIR_CD" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="MODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="MANUAL_CD" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+    <Property Name="REPAIR_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="RKRP_REPAIR_CD" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="MAX_QUANTITY" Type="Int16" />
+    <Property Name="SHOP_MATERIAL_CEILING" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REPAIR_IND" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="MAN_HOUR" Type="Double" />
+    <Property Name="REPAIR_ACTIVE_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="MULTIPLE_UPDATE_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="WARRANTY_PERIOD" Type="Double" />
+    <Property Name="TAX_APPLIED_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="REPAIR_PRIORITY" Type="Int16" />
+    <Property Name="INDEX_ID" Type="Int32" />
+    <Property Name="ALLOW_PARTS_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SHOP">
+    <Key>
+      <PropertyRef Name="SHOP_CD" />
+    </Key>
+    <Property Name="SHOP_CD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="VENDOR_CD" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+    <Property Name="SHOP_DESC" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="RKRPLOC" Type="String" MaxLength="5" Unicode="false" FixedLength="true" />
+    <Property Name="LOC_CD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EMAIL_ADR" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="PHONE" Type="String" MaxLength="15" Unicode="false" FixedLength="true" />
+    <Property Name="EDI_PARTNER" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="RRIS70_SUFFIX_CD" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="PREPTIME_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SHOP_ACTIVE_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="PCT_MATERIAL_FACTOR" Type="Double" />
+    <Property Name="RRIS_XMIT_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="OVERTIME_SUSP_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="IMPORT_TAX" Type="Double" />
+    <Property Name="SHOP_TYPE_CD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SALES_TAX_PART_CONT" Type="Double" />
+    <Property Name="SALES_TAX_PART_GEN" Type="Double" />
+    <Property Name="SALES_TAX_LABOR_CON" Type="Double" />
+    <Property Name="CUCDN" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="SALES_TAX_LABOR_GEN" Type="Double" />
+    <Property Name="ACEP_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="DECENTRALIZED" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="AUTO_COMPLETE_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="BYPASS_LEASE_RULES" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="MESC1TS_CURRENCY" Relationship="MESC2DSModel.FK__MESC1TS_S__CUCDN__214BF109" FromRole="MESC1TS_SHOP" ToRole="MESC1TS_CURRENCY" />
+    <NavigationProperty Name="MESC1TS_SHOP_CONT" Relationship="MESC2DSModel.FK__MESC1TS_S__SHOP___251C81ED" FromRole="MESC1TS_SHOP" ToRole="MESC1TS_SHOP_CONT" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SHOP_CONT">
+    <Key>
+      <PropertyRef Name="SHOP_CONT_ID" />
+    </Key>
+    <Property Name="SHOP_CONT_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SHOP_CD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="MODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="REPAIR_CD" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="CONTRACT_AMOUNT" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="EFF_DTE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="EXP_DTE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MANUAL_CD" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="MESC1TS_SHOP" Relationship="MESC2DSModel.FK__MESC1TS_S__SHOP___251C81ED" FromRole="MESC1TS_SHOP_CONT" ToRole="MESC1TS_SHOP" />
+  </EntityType>
+  <Association Name="FK__MESC1TS_C__COUNT__00DF2177">
+    <End Role="MESC1TS_COUNTRY" Type="MESC2DSModel.MESC1TS_COUNTRY" Multiplicity="1" />
+    <End Role="MESC1TS_COUNTRY_CONT" Type="MESC2DSModel.MESC1TS_COUNTRY_CONT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_COUNTRY">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY_CONT">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__CUCDN__7FEAFD3E">
+    <End Role="MESC1TS_CURRENCY" Type="MESC2DSModel.MESC1TS_CURRENCY" Multiplicity="0..1" />
+    <End Role="MESC1TS_COUNTRY_CONT" Type="MESC2DSModel.MESC1TS_COUNTRY_CONT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CURRENCY">
+        <PropertyRef Name="CUCDN" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY_CONT">
+        <PropertyRef Name="CUCDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__CUCDN__214BF109">
+    <End Role="MESC1TS_CURRENCY" Type="MESC2DSModel.MESC1TS_CURRENCY" Multiplicity="0..1" />
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.MESC1TS_SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CURRENCY">
+        <PropertyRef Name="CUCDN" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP">
+        <PropertyRef Name="CUCDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__SHOP___251C81ED">
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.MESC1TS_SHOP" Multiplicity="1" />
+    <End Role="MESC1TS_SHOP_CONT" Type="MESC2DSModel.MESC1TS_SHOP_CONT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP_CONT">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

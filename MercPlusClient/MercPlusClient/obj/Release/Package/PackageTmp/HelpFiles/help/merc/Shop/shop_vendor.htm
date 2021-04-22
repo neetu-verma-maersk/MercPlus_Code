@@ -1,0 +1,251 @@
+<html>
+
+<head>
+<meta http-equiv="KEYWORDS" content="shop, shop contract, shop limit, labor rates, vendor">
+<meta http-equiv="Content-Language" content="da">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SHOP</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body topmargin="4" leftmargin="4">
+
+&nbsp;<p><font face="Verdana" size="4"><span lang="en-us">SHOP and VENDOR</span></font></p>
+
+<font size="1">RELATED SUBJECT -
+<a href="../3_HelpScrns_DoNotChangeStructure/tablemod_shop_help.htm">
+Process to set up a shop</a></font><p><span lang="en-us"><b><font face="Verdana" size="2">Vendor - A vendor 
+is the owner of a shop. A vendor can operate one or multiple shops.</font></b></span></p>
+<p>&nbsp;</p>
+<p><b><font face="Verdana" size="2"><a name="SHOP TYPES">SHOP TYPES</a></font></b></p>
+  <ul>
+    <li>
+    <p class="MsoNormal"><b><span lang="EN-GB"><font size="2" face="Verdana">TYPE 1 SHOP</font></span></b><ul>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">This shop type is 
+    defined as a Maersk Line owned or a Maersk Line affiliated repair 
+    shop. </font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">A type 1 shop is 
+    allowed to purchase spare parts directly from the manufacturer of numbered 
+    parts using the agreement of Maersk Line Copenhagen and sell them to 
+    Maersk Line Copenhagen adding a mark up as updated in shop profile, to 
+    the purchase price.</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">Apart from a few 
+    parts (parts marked “Maersk = Y” in master part table) a type 1 shop 
+    supplies all parts needed for a given repair.</font></span></li>
+    <li>
+    <p align="left"><font face="Verdana" size="2"><span lang="en-us">How Type 1 
+    shops use this table</span> </font>
+    <ul>
+    <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Parts 
+      numbers entered are paid at list price from the master parts table with 
+      following adjustments</span> </font>
+      <ul type="disc">
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">&nbsp;less 
+        the </span>
+        <a href="../3_HelpScrns_DoNotChangeStructure/tablemod_manufacturer_help.htm">Manufacturer's discount</a> (as if Maersk was buying)<span lang="en-us">. </span></font>
+        </li>
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">Plus 
+        discount/markup field at the shop level.</span> </font></li>
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">Plus 
+        import tax and/or sales tax or VAT if applicable at shop level</span> </font></li>
+      </ul>
+      </li>
+    <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Vendor is 
+      paid for parts per above</span> </font></li>
+    <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Amount 
+      for same is reported to RKRP – no part numbers to be transferred</span>
+      </font></li>
+  </ul>
+  
+    </li>
+  </ul>
+  
+    </li>
+    <li>
+    <p class="MsoNormal"><font face="Verdana" size="2"><b><span lang="EN-GB">
+    Shop type 2</span></b></font><ul>
+    <li>
+    <p class="MsoNormal"><font face="Verdana" size="2"><span lang="EN-GB">This 
+    shop type is defined as a non Maersk Line owned or a non Maersk Line 
+    affiliated repair shop.</span></font></li>
+    <li><span lang="EN-GB" style="font-family: Verdana"><font size="2">A type 2 
+    shop does not deliver numbered parts for repair of reefer/gensets, instead 
+    all numbered parts are supplied from and owned by Maersk Line Copenhagen</font></span></li>
+    <li>
+    <p align="left"><font face="Verdana" size="2"><span lang="en-us">How Type 2 
+    shops use this table</span> </font>
+    <ul>
+    <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Part 
+      numbers entered are verified against master parts table with following 
+      adjustments</span> </font>
+      <ul type="disc">
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">less 
+        the </span>
+        <a href="../3_HelpScrns_DoNotChangeStructure/tablemod_manufacturer_help.htm">Manufacturer's discount</a> (as if Maersk was buying). </font>
+        </li>
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">Plus 
+        discount/markup field at the shop level.</span> </font></li>
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">Plus 
+        tax and/or VAT if applicable at shop level</span> </font></li>
+      </ul>
+      </li>
+    <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">No amount 
+      is paid to vendor for parts reported by part number</span> </font></li>
+    <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Part 
+      numbers are reported to RKRP for deduction from stock and price is sent to 
+      RKRP as well.</span> </font>
+      <ul type="disc">
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">This 
+        price sent to RKRP should be list less mfg’s discount but with no 
+        markup.</span> </font></li>
+      </ul>
+      </li>
+  </ul>
+  
+    </li>
+  </ul>
+  
+    </li>
+    <li>
+    <p class="MsoNormal"><b><span lang="EN-GB"><font size="2" face="Verdana">Shop type 3</font></span></b><ul>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">This shop type is 
+    defined as a non Maersk Line owned or a non Maersk Line affiliated 
+    repair shop.</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">A type 3 shop is 
+    purchasing spare parts directly from the manufacturer of numbered parts and 
+    sell them to Maersk Line with a mark up or a discount as updated in shop 
+    profile.</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">Apart from a few 
+    parts (parts marked “Maersk = Y” in master part table) a type 3 shop 
+    supplies all parts needed for a given repair.</font></span></li>
+    <li>
+    <p align="left"><font face="Verdana" size="2"><span lang="en-us">How Type 3 
+    shops use this table</span> </font>
+    <ul>
+      <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Type 3 
+      &nbsp;shops – Supplying parts that they purchase (exception are mandatory 
+      Maersk parts – explained below)</span> </font></li>
+      <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Part 
+      numbers entered are paid at list price from this table, adjusted by</span>
+      </font>
+      <ul type="disc">
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">
+        Discount/markup field at the shop level </span></font></li>
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">Plus 
+        tax and/or VAT if applicable at shop level.</span> </font></li>
+      </ul>
+      </li>
+      <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Vendor is 
+      paid for parts per above</span> </font></li>
+      <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Amount 
+      for same is reported to RKRP – no part numbers to be transferred.</span>
+      </font></li>
+      <li>
+      <p align="left"><font face="Verdana" size="2">A type 3 shop is similar to 
+      type 1 except they do not enjoy the
+      <a href="../3_HelpScrns_DoNotChangeStructure/tablemod_manufacturer_help.htm">Manufacturer's discount</a>.</font></li>
+    </ul>
+    </li>
+  </ul>
+  
+    </li>
+    <li>
+      <p class="MsoNormal"><b><span lang="EN-GB"><font size="2" face="Verdana">Shop type 4</font></span></b><ul>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">This shop type is 
+    defined as a non Maersk Line owned or a non Maersk Line affiliated 
+    repair shop.</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">A type 4 shop does 
+    not deliver numbered parts for repair of reefer/gensets, instead all 
+    numbered parts are supplied from and owned by the local Maersk Line 
+    agency (MSL).</font></span></li>
+    <li>
+    <p class="MsoNormal"><span lang="EN-GB"><font size="2" face="Verdana">Apart from a few 
+    parts (parts marked “Maersk = Y” in master part table) MSL supplies all 
+    parts needed for a given repair.</font></span></li>
+    <li>
+      <p align="left"><font face="Verdana" size="2">How Type 4 shops use this 
+      table</font><ul>
+    <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Type 4 
+      &nbsp;shops – Using parts supplied by local MSL agent (exception are mandatory 
+      Maersk parts)</span> </font></li>
+      <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Part 
+      numbers entered are paid at list price from this table, adjusted by</span>
+      </font>
+      <ul type="disc">
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">
+        Discount/markup field at the shop level </span></font></li>
+        <li>
+        <p align="left"><font face="Verdana" size="2"><span lang="en-us">Plus 
+        tax and/or VAT if applicable at shop level.</span> </font></li>
+      </ul>
+      </li>
+      <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Local MSL 
+      agent is 
+      paid for parts per above</span> </font></li>
+      <li>
+      <p align="left"><font face="Verdana" size="2"><span lang="en-us">Amount 
+      for same is reported to RKRP – no part numbers to be transferred.</span>
+      </font></li>
+  </ul>
+  
+    </li>
+  </ul>
+  
+    </li>
+  </ul>
+  
+      <p align="left">&nbsp;<p align="left">&nbsp;<p align="left">&nbsp;<hr>
+    <p align="right"><span lang="en-gb"><font face="Verdana" size="1"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%m/%d/%Y" startspan -->04/10/2006<!--webbot bot="Timestamp" endspan i-checksum="12504" --></span></font></span><p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

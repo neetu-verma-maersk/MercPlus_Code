@@ -1,0 +1,600 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManagerApprovalModel
+@using MercPlusClient.UtilityClass
+<tr>
+    <td colspan="12">
+        @if (!Model.IsCreateNew)
+        {
+            switch (Model.dbWOD.WorkOrderStatus.ToString())
+            {
+                //Draft
+                case "0":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Submit" name="btnSubmitMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                //'Rejected
+                case "100":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                            <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                //''Rejected to MSL
+                @*case "130":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    else if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                    {
+                        <span>
+                            <input type="button" value="Fwd to EMR Specialist" name="btnFwd2EMRMA" style="width: 120px;" />
+                        </span>
+                        <span>
+                            <input type="button" value="Reject" name="btnRejectMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                //''Rejected to CPH
+                case "140":
+                    if (Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP)
+                    {
+                        <span>
+                            <input type="button" value="Reject" name="btnRejectMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;*@
+                //'Total Loss
+                // case "150": break;
+                //Pending
+                case "200":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    else if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP || Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP)
+                    {
+                        if (Model.CreateApprovalBtn)
+                        {
+                            <span>
+                                <input type="button" value="Approve" name="btnApproveMA" />
+                            </span>
+                        }
+
+                        <span>
+                            <input type="button" value="Suspend" name="btnSuspendMA" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Reject" name="btnRejectMA" />
+                        </span>
+                        if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                        { 
+                        <span>
+                         <input type="button" value="Fwd to Specialist" name="btnFwd2EMRMA" style="width: 120px;" />
+        
+                         </span>
+                        }
+                     
+                            <span>
+                                <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                            </span>
+                         
+                    }
+                    else if (Model.CPH)
+                    {
+                        
+                          <span>
+                            <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                //'Suspended to MSL
+                case "310":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    else if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP || Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP)
+                    {
+                        if (Model.CreateApprovalBtn)
+                        {
+                            <span>
+                                <input type="button" value="Approve" name="btnApproveMA" />
+                            </span>
+                        }
+                        @*<span>
+                            <input type="button" value="Suspend" name="btnSuspendMA" />
+                        </span>*@
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Reject" name="btnRejectMA" />
+                        </span>
+                       @* if (Model.EMR_SPECIALIST_SHOP)
+                        {
+                            <span>
+                                <input type="button" value="Reject to Approver" name="btnReject2ApproverMA" />
+                            </span>
+                             
+                           
+                        }*@
+                        if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                        {
+                         
+                        <span>
+                            <input type="button" value="Fwd to Specialist" name="btnFwd2EMRMA" style="width: 150px;" />
+                        </span>
+                        }
+                       
+                            <span>
+                                <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 160px;" />
+                            </span>
+                        
+                    }
+                    else if (Model.CPH)
+                    {
+                        <span>
+                                <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                            </span>
+                        
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                //'Suspended to MSL then forward to CPH
+                case "320":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+
+                    if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Reject" name="btnRejectMA" />
+                        </span>
+                        <span>
+                            <input type="button" value="Fwd to Specialist" name="btnFwd2EMRMA" style="width: 150px;" />
+                        </span>
+                         <span>
+                                <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                            </span>
+
+                    }
+                    else if (Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP)
+                    {
+                        <span>
+                            <input type="button" value="Reject" name="btnRejectMA" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        if (Model.CreateApprovalBtn)
+                        {
+                            <span>
+                                <input type="button" value="Approve" name="btnApproveMA" />
+                            </span>
+                        }
+                                <span>
+                                <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                            </span>
+                    }
+
+                    @*else if (Model.EMR_SPECIALIST_SHOP)
+                    {
+                         <span>
+                                <input type="button" value="Reject to Approver" name="btnReject2ApproverMA" />
+                            </span>
+                             
+                    }*@
+                    if (Model.CPH)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                             <span>
+                            <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                //'Suspend to CPH
+                case "330":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                    {
+                         <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP)
+                    {
+                        if (Model.CreateApprovalBtn)
+                        {
+                            <span>
+                                <input type="button" value="Approve" name="btnApproveMA" />
+                            </span>
+                        }
+                        @*<span>
+                            <input type="button" value="Reject to Approver" name="btnReject2ApproverMA" />
+                        </span>*@
+                         <span>
+                            <input type="button" value="Reject" name="btnRejectMA" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                        </span>
+                    }
+                    if (Model.CPH)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                         <span>
+                            <input type="button" value="Fwd to CENEQU/CPH" name="btnFwd2CENEQULOSMA" class="woBtnWidth" style="width: 150px;" />
+                        </span>
+                    }
+
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                //'Suspend to CENEQULOS
+                case "340":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP || Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.CPH)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+            if (Model.CreateApprovalBtn){
+                        <span>
+                            <input type="button" value="Approve" name="btnApproveMA" />
+                        </span>
+                                         }
+        @*
+                        <span>
+                            <input type="button" value="Reject to Approver" name="btnReject2ApproverMA" />
+                        </span>
+                        <span>
+                            <input type="button" value="Reject to Specialist" name="btnRejectMA" />
+                        </span>*@
+                        <span>
+                            <input type="button" value="Advise Approver" name="btnAdviseMSLMA" />
+                        </span>
+                        <span>
+                            <input type="button" value="Advise EMR Specialist" name="btnAdviseEMRMGRMA" />
+                        </span>
+                        <span>
+                            <input type="button" value="Total Loss" name="btnTOTALLOSSMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)   //Pinaki
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>                      
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    
+                    }
+
+                    break;
+                //'Total Loss  Pinaki
+                case "150":
+                    if (Model.CPH)
+                    {
+                        <span>
+                            <input type="button" value="Re-Act TTL" name="btnRevertTL" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+            <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span> 
+                    }
+                    break;
+                //' Approved
+                case "390":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Edit" name="btnEditMA" class="woBtnWidth" style="width:70px;" onclick="@("location.href='" + Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = Model.dbWOD.WorkOrderID }) + "'")" />
+                        </span>
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                        if ((Model.dbWOD.ShopWorkingSW != null && Model.dbWOD.ShopWorkingSW.Equals("Y")))
+                        {
+                            <span>
+                                <input type="button" value="Complete" name="btnCompleteMA" class="woBtnWidth" />
+                            </span>
+                        }
+                        else
+                        {
+                            <span>
+                                <input type="button" value="Working" name="btnWorkingMA" class="woBtnWidth" />
+                            </span>
+                            <span>
+                                <input type="button" value="Complete" name="btnCompleteMA" class="woBtnWidth" />
+                            </span>
+                        }
+                    }
+                    else if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP || Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP || Model.CPH)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                case "400":
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                            <input type="button" value="Submit" name="btnSubmitMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    @*else if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP || Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP || Model.CPH || Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }*@
+                    if (Model.ADMIN)
+                    {
+                        @*<span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>*@
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                case "600":
+                    @*if (Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP || Model.EMR_SPECIALIST_COUNTRY || Model.EMR_SPECIALIST_SHOP || Model.CPH)
+                    {
+                        <span>
+                            <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    if (Model.ISANYSHOP)
+                    {
+                        <span>
+                          <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                        </span>
+                    }*@
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+                case "900":
+
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+
+                    break;
+                default:
+                   @* if (Model.ISANYCPH || Model.EMR_APPROVER_COUNTRY || Model.EMR_APPROVER_SHOP || Model.ADMIN)
+                    {
+                        if (Model.dbWOD.WorkOrderStatus >= 400 && Model.dbWOD.WorkOrderStatus < 9999)
+                        {
+                            <span>
+                                <input type="button" value="Update" name="btnUpdateMA" class="woBtnWidth" />
+                            </span>
+                        }
+                    }*@
+                    if (Model.ADMIN)
+                    {
+                        <span>
+                            <input type="button" value="Delete" name="btnDeleteMA" class="woBtnWidth" />
+                        </span>
+                    }
+                    break;
+            }
+        }
+        <span>
+            <input type="button" value="<<<" name="btnFirst" title="View first record." onclick="@("location.href='" + Url.Action("GetNextWODetail", "ManagerApproval", new { area = "ManageWorkOrder", WOID = Model.dbWOD.WorkOrderID, ACTIONTYPE = "FIRST" }) + "'")" />
+        </span>
+        <span>
+            <input type="button" value="<<" name="btnPrev" title="View previous record." onclick="@("location.href='" + Url.Action("GetNextWODetail", "ManagerApproval", new { area = "ManageWorkOrder", WOID = Model.dbWOD.WorkOrderID, ACTIONTYPE = "PREVIOUS" }) + "'")" />
+        </span>
+        <span>
+            <input type="button" value="New Query" title="Go to Review Estimate " name="btnNewQuery" onclick="@("location.href='" + Url.Action("ReviewEstimates", "ReviewEstimates", new { area = "ManageWorkOrder" }) + "'")" />
+        </span>
+        <span>
+            @*<input type="button" value=">>" name="btnNxt" title="View next record." class="traverse" />*@
+            <input type="button" value=">>" title="View next record" name="btnNxt" onclick="@("location.href='" + Url.Action("GetNextWODetail", "ManagerApproval", new { area = "ManageWorkOrder", WOID = Model.dbWOD.WorkOrderID, ACTIONTYPE = "NEXT" }) + "'")" />
+        </span>
+        <span>
+            <input type="button" value=">>>" name="btnLast" title="View last record." onclick="@("location.href='" + Url.Action("GetNextWODetail", "ManagerApproval", new { area = "ManageWorkOrder", WOID = Model.dbWOD.WorkOrderID, ACTIONTYPE = "LAST" }) + "'")" />
+        </span>
+        @{
+            if (!Model.IsCreateNew)
+            {
+                if (!Model.ISANYSHOP)
+                {
+                    <span>
+                        <input type="button" value="Audit Trail" name="btnAuditTrail" class="woBtnWidth"
+                               onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'ManagerApproval', 'WorkOrder',@Model.dbWOD.WorkOrderID.ToString(), '', '', 800, 450, scroll);" />
+                    </span>
+                }
+            }
+        }
+        <span>
+            <input type="button" value="Font <" name="btnFont" onclick="toggleFont(this);" class="woBtnWidth" />
+        </span>
+        <span>
+            <input type="button" value="Print" name="btnPrint" class="woBtnWidth" />
+        </span>
+    </td>
+</tr>

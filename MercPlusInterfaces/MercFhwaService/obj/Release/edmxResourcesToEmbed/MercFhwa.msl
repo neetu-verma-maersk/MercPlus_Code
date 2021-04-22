@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="MESC2DSEntities">
+    <EntitySetMapping Name="MESC1TS_EVENT_LOG">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EVENT_LOG">
+        <MappingFragment StoreEntitySet="MESC1TS_EVENT_LOG">
+          <ScalarProperty Name="EVENT_ID" ColumnName="EVENT_ID" />
+          <ScalarProperty Name="EVENT_NAME" ColumnName="EVENT_NAME" />
+          <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+          <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+          <ScalarProperty Name="EVENT_DESC" ColumnName="EVENT_DESC" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_INSPECTION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_INSPECTION">
+        <MappingFragment StoreEntitySet="MESC1TS_INSPECTION">
+          <ScalarProperty Name="INSP_DTE" ColumnName="INSP_DTE" />
+          <ScalarProperty Name="CHAS_EQPNO" ColumnName="CHAS_EQPNO" />
+          <ScalarProperty Name="INSP_BY" ColumnName="INSP_BY" />
+          <ScalarProperty Name="RKEMLOC" ColumnName="RKEMLOC" />
+          <ScalarProperty Name="XMIT_RC" ColumnName="XMIT_RC" />
+          <ScalarProperty Name="XMIT_DTE" ColumnName="XMIT_DTE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

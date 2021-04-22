@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESC2DSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MESC2DSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="MESC1TS_EDI_ERROR" EntityType="MESC2DSModel.MESC1TS_EDI_ERROR" />
+    <EntitySet Name="MESC1TS_EDI_LINEITEM" EntityType="MESC2DSModel.MESC1TS_EDI_LINEITEM" />
+    <EntitySet Name="MESC1TS_EDI_TRANSMISSION" EntityType="MESC2DSModel.MESC1TS_EDI_TRANSMISSION" />
+  </EntityContainer>
+  <EntityType Name="MESC1TS_EDI_ERROR">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="EDI_ID" Type="Int32" Nullable="false" />
+    <Property Name="LINE_NO" Type="Int32" Nullable="false" />
+    <Property Name="LINE_DETAIL" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EDI_LINEITEM">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="EDI_ID" Type="Int32" Nullable="false" />
+    <Property Name="LINE_NO" Type="Int32" Nullable="false" />
+    <Property Name="LINE_DETAIL" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EDI_TRANSMISSION">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+    </Key>
+    <Property Name="EDI_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CRTS" Type="DateTime" Precision="3" />
+    <Property Name="WO_QTY" Type="Int32" />
+    <Property Name="WO_PASS_QTY" Type="Int32" />
+    <Property Name="WO_FAIL_QTY" Type="Int32" />
+  </EntityType>
+</Schema>

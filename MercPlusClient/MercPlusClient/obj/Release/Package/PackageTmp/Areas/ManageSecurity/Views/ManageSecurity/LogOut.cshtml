@@ -1,0 +1,29 @@
+﻿
+ <script type="text/javascript">
+
+     history.pushState(null, null, 'LogOut');
+     window.addEventListener('popstate', function (event) {
+         history.pushState(null, null, 'LogOut');
+     });
+
+    </script>
+@{
+    ViewBag.Title = "LogOut";
+    Layout = "~/Views/Shared/_MercPlusLoginLayout.cshtml";
+}
+
+<div>
+    <div style="margin-top: 120px; margin-left: 20px; width: 750px; border: 2px solid #7A7989; vertical-align: central;">
+        <table style="width: 750px; vertical-align: text-top; table-layout: fixed;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="text-align: center; vertical-align: top; width: 750px; font-weight: bold; font-size: 11px;">
+                    <p>You Have Successfully Log Out </p>
+                    <p>
+                        Click @Html.ActionLink("Login", "DefaultLogin", "ManageSecurity", new { area = "ManageSecurity" }, null)
+                        to Login again.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

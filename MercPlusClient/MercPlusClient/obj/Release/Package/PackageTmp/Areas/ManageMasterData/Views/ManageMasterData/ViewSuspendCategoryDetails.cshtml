@@ -1,0 +1,186 @@
+﻿
+
+@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataSuspendCategoryModel
+
+@{
+    if (Model.IsUpdate)
+    {
+        ViewBag.Title = "ViewSuspendCategoryDetails";
+    }
+    else
+    {
+        ViewBag.Title = "CreateSuspendCategory";
+    }
+
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="~/Areas/ManageMasterData/Script/SuspendCategory.js"></script>
+  
+
+<div>
+        <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_suspend_cat_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+    
+        <div style="width:750px; ">
+            <h2>Update, Delete or Add New Suspend Category</h2>
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+<br />
+@using (Html.BeginForm())
+{
+    
+    
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+        
+        @if (Model.IsUpdate)
+        {
+            <tr>
+                <td  style="text-align: left; vertical-align: top; width:300px">
+                    @Html.LabelFor(model => model.SuspcatID)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.SuspcatID, Model.drpSuspendCatList, "Select Suspend Category", new { id = "drpSuspendCatList", @onchange = "GetValues()" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        
+       
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.SuspcatDesc, new { id="SusDesc",style="width:250px"})
+            </td>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.SuspcatDesc, new { id = "SuspcatDesc", style = "width: 300px" })
+
+            </td>
+          
+
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        
+
+            <tr>
+                <td  style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUserSus)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeFUserSus, new { id = "ChangeUserSus" })
+                    
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeLUserSus, new { id = "ChangeUserSus1",style="width:200px" })
+                    
+                </td>
+            </tr>
+            <tr>
+                <td  style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeTimeSus)
+                </td>
+                <td  style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeTimeSus, new { id = "ChangeTimeSus" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Update" onclick="return ClientValidation()" formaction="/ManageMasterData/ManageMasterData/UpdateSuspendCategory" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+                    <input type="submit" value=" Delete " onclick="return DeleteConfirmMsg()" formaction="/ManageMasterData/ManageMasterData/DeleteSuspendCategory" />
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+                    <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/SuspendCategoryCreate" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;"></td>
+            </tr>
+        }
+        @if(Model.IsCreate)
+        {
+             <tr>
+            <td  style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.SuspcatDesc, new { style="width:250px"})
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.SuspcatDesc, new { id = "SuspcatDesc", style = "width: 300px"})
+
+            </td>
+          
+
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+            
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/CreateSuspendCategory" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    
+                    <input type="submit" value="Return to Update-Delete" formaction="/ManageMasterData/ManageMasterData/ReturnSuspendCategoryDetails" />
+                    
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }
+        @if (Model.IsAdd)
+        {
+              <tr>
+            <td  style="text-align: left; vertical-align: top; width:1500px">
+                @Html.LabelFor(model => model.SuspcatDesc, new { style="width:250px"})
+            </td>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.SuspcatDesc, new { id = "SuspcatDesc", style = "width: 300px" })
+
+            </td>
+          
+
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUserSus, new { style="width:200px"})
+                </td>
+                 <td style="padding:0 0 0 0;">
+                     @Html.TextBoxFor(model => model.ChangeFUserSus, new { id = "ChangeUserSus",@readonly="readonly" })
+                </td>
+                 <td style="padding:0 0 0 0;">
+                    @Html.TextBoxFor(model => model.ChangeLUserSus, new { id = "ChangeUserSus1",style="width:300px",@readonly="readonly" })
+                  
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td  style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeTimeSus,new { style="width:200px"})
+                </td>
+                <td  style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeTimeSus, new { id = "ChangeTimeSus",@readonly="readonly" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <br />
+            <br />
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" formaction="/ManageMasterData/ManageMasterData/CreateSuspendCategory" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    
+                    <input type="submit" value="Return to Update-Delete" formaction="/ManageMasterData/ManageMasterData/ReturnSuspendCategoryDetails" />
+                    
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }
+    </table>
+}

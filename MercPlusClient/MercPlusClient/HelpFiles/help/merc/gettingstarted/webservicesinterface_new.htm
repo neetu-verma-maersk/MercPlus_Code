@@ -1,0 +1,509 @@
+<html>
+
+<head>
+<link REL="STYLESHEET" HREF="../main.css" TYPE="text/css">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>VENDOR - web services interface </title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body topmargin="20" leftmargin="33">
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td height="35">
+    <font face="Arial" size="6">Interface Spec<span lang="en-us">ification</span>:<span lang="en-us">
+    </span>MERC+ Web Service</font></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td height="20">
+<h2><font face="Arial"><br>
+Purpose</font></h2>
+<p><font face="Arial"><span lang="en-us">MERC+ will provide a web service to 
+create work orders for clients. The web service will accept a single work order 
+for validation and/or insert and provide an accept reply or reject reply with 
+stated reasons for failure.</span></font></p>
+<h2><font face="Arial"><span lang="en-us">requirements</span></font></h2>
+<p><font face="Arial">Work orders sent to MERC+ via the web service must adhere 
+to a pre-defined XML format or DTD (Document Type Definition) as provided in 
+this document. The response XML will also be defined. Clients wishing to create 
+work orders with MERC+ via the web service are responsible for developing and 
+maintaining client based software to use the web service. It is expected that 
+the client will use a digital certificate just as is required for the MERC+ web 
+application.</font></p>
+<table id="AutoNumber2" style="BORDER-COLLAPSE: collapse" borderColor="#111111" height="61" cellSpacing="1" width="100%" border="0">
+  <tr>
+    <td style="BACKGROUND-COLOR: #009ace" noWrap align="middle" width="13%" height="27">
+    <span lang="en-us"><b>
+    <font style="FONT-SIZE: 9pt" face="Arial" color="#ffffff">Description</font></b></span></td>
+    <td style="BACKGROUND-COLOR: #009ace" noWrap align="middle" width="42%" height="27">
+    <span lang="en-us"><b>
+    <font style="FONT-SIZE: 9pt" face="Arial" color="#ffffff">&nbsp;</font></b></span></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><span lang="en-us"><b>
+    <font style="FONT-SIZE: 9pt" face="Arial" color="#000066">Interface Type</font></b></span></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial"><span lang="en-us">&nbsp;Asynchronous&nbsp;&nbsp; /&nbsp; web 
+    service</span></font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><span lang="en-us"><b>
+    <font style="FONT-SIZE: 9pt" face="Arial" color="#000066">&nbsp;Persistency</font></b></span></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial"><span lang="en-us">Request/response 
+    messaging. Only successfully processed work orders will persist in database.</span></font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><font face="Arial">
+    <span lang="en-us"><b>&nbsp;Expiry</b></span></font></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial"><span lang="en-us">Work orders which have 
+    failed validation will not be persisted. Results are returned immediately to 
+    the request process for handling. Expiration periods do not apply. </span>
+    </font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><font face="Arial">
+    <span lang="en-us"><b>Delimiter format </b></span></font></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial"><span lang="en-us">Fields are defined in 
+    XML tags - no padding is required.</span></font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><font face="Arial">
+    <span lang="en-us"><b>Individual Messages</b></span></font></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial"><span lang="en-us">Single work orders 
+    will be processed per request only</span></font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><font face="Arial">
+    <span lang="en-us"><b>Performance Considerations</b></span></font></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial">Performance is expected to be similar as 
+    is for the UI - same MERC+ components will be used to validate and persist a 
+    work order.</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><font face="Arial">
+    <span lang="en-us"><b>Design Considerations</b></span></font></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial"><span lang="en-us">Web service will be 
+    developed to run in the Microsoft .NET runtime</span></font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"><font face="Arial">
+    <span lang="en-us"><b>Message Design</b></span></font></td>
+    <td align="middle" width="42%" height="16">
+    <p align="left"><font face="Arial">Work order will be delivered in an XML 
+    format (DTD defined below)</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"></td>
+    <td align="middle" width="42%" height="16"></td>
+  </tr>
+  <tr>
+    <td align="left" width="13%" height="16"></td>
+    <td align="middle" width="42%" height="16"></td>
+  </tr>
+</table>
+<h2><font face="Arial"><span lang="en-us">DTD (Document Type Definition)</span></font></h2>
+<p><font size="4" face="Arial">Work order DTD - Send to MERC+ via client 
+software: </font></p>
+<p><font face="Arial"><font color="#008080" size="1">&lt;?xml version=&quot;1.0&quot; 
+encoding=&quot;UTF-8&quot;?&gt; </font><font color="#0000ff" size="1"><br>
+&lt;!--</font><font color="#808080" size="1"> edited with XML Spy v4.4 U 
+(http://www.xmlspy.com) by Vince Panvini (Maersk Data USA Inc) </font>
+<font color="#0000ff" size="1">--&gt; </font><font color="#000080" size="1"><br>
+&lt;!ELEMENT workorder (equipment, totalhours, cost, remark?, repairgroup)&gt; <br>
+&lt;!ATTLIST workorder <br>
+shop CDATA #REQUIRED <br>
+customer CDATA #REQUIRED <br>
+location CDATA #REQUIRED <br>
+type (W | E) #REQUIRED <br>
+Date CDATA #REQUIRED <br>
+&gt; <br>
+&lt;!ELEMENT equipment EMPTY&gt; <br>
+&lt;!ATTLIST equipment <br>
+number CDATA #REQUIRED <br>
+mode CDATA #REQUIRED <br>
+cause CDATA #REQUIRED <br>
+&gt; <br>
+&lt;!ELEMENT totalhours EMPTY&gt; <br>
+&lt;!ATTLIST totalhours <br>
+straighttime CDATA #IMPLIED <br>
+overtime CDATA #IMPLIED <br>
+doubletime CDATA #IMPLIED <br>
+miscellaneoustime CDATA #IMPLIED <br>
+&gt; <br>
+&lt;!ELEMENT cost EMPTY&gt; <br>
+&lt;!ATTLIST cost <br>
+total CDATA #REQUIRED <br>
+&gt; <br>
+&lt;!ELEMENT remark EMPTY&gt; <br>
+&lt;!ATTLIST remark <br>
+text CDATA #IMPLIED <br>
+&gt; <br>
+&lt;!ELEMENT repairgroup (repair+)&gt; <br>
+&lt;!ELEMENT repair (part)*&gt; <br>
+&lt;!ATTLIST repair <br>
+code CDATA #REQUIRED <br>
+quantity CDATA #REQUIRED <br>
+cost CDATA #REQUIRED <br>
+manhours CDATA #REQUIRED <br>
+&gt; <br>
+&lt;!ELEMENT part EMPTY&gt; <br>
+&lt;!ATTLIST part <br>
+number CDATA #REQUIRED <br>
+quantity CDATA #REQUIRED &gt; </font></font></p>
+<p><b><font color="#000080" face="Arial">Example XML (workorder)</font></b></p>
+<font color="#008080" size="1">
+<p><font face="Arial">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; </font></font>
+<font face="Arial"><font color="#0000ff" size="1"><br>
+&lt;!--</font><font color="#808080" size="1">Sample XML file generated by XML Spy 
+v4.4 U (http://www.xmlspy.com)</font><font color="#0000ff" size="1">--&gt; </font>
+<font color="#000080" size="1"><br>
+&lt;!DOCTYPE workorder SYSTEM &quot;D:\MyDocuments\Merc+\workorder.dtd&quot;&gt; </font>
+<font color="#0000ff" size="1"><br>
+&lt;</font><font color="#800000" size="1">workorder</font><font color="#ff0000" size="1"> 
+shop</font><font color="#0000ff" size="1">=&quot;</font><font size="1">329</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+customer</font><font color="#0000ff" size="1">=&quot;</font><font size="1">CMAG</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+location</font><font color="#0000ff" size="1">=&quot;</font><font size="1">CAN</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+type</font><font color="#0000ff" size="1">=&quot;</font><font size="1">E</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+Date</font><font color="#0000ff" size="1">=&quot;</font><font size="1">15082003</font><font color="#0000ff" size="1">&quot;&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">equipment</font><font color="#ff0000" size="1"> 
+number</font><font color="#0000ff" size="1">=&quot;</font><font size="1">MAEU1234567</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+mode</font><font color="#0000ff" size="1">=&quot;</font><font size="1">23</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+cause</font><font color="#0000ff" size="1">=&quot;</font><font size="1">1</font><font color="#0000ff" size="1">&quot;/&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">totalhours</font><font color="#ff0000" size="1"> 
+straighttime</font><font color="#0000ff" size="1">=&quot;</font><font size="1">3.5</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+overtime</font><font color="#0000ff" size="1">=&quot;</font><font size="1">0t</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+doubletime</font><font color="#0000ff" size="1">=&quot;</font><font size="1">0</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+miscellaneoustime</font><font color="#0000ff" size="1">=&quot;</font><font size="1">1</font><font color="#0000ff" size="1">&quot;/&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">cost</font><font color="#ff0000" size="1"> 
+total</font><font color="#0000ff" size="1">=&quot;</font><font size="1">50.00</font><font color="#0000ff" size="1">&quot;/&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">remark</font><font color="#ff0000" size="1"> 
+text</font><font color="#0000ff" size="1">=&quot;</font><font size="1">Any text 
+allowed</font><font color="#0000ff" size="1">&quot;/&gt; </font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">repairgroup</font><font color="#0000ff" size="1">&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">repair</font><font color="#ff0000" size="1"> 
+code</font><font color="#0000ff" size="1">=&quot;</font><font size="1">4010</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+quantity</font><font color="#0000ff" size="1">=&quot;</font><font size="1">1</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+cost</font><font color="#0000ff" size="1">=&quot;</font><font size="1">40.00</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+manhours</font><font color="#0000ff" size="1">=&quot;</font><font size="1">4</font><font color="#0000ff" size="1">&quot;&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">part</font><font color="#ff0000" size="1"> 
+number</font><font color="#0000ff" size="1">=&quot;</font><font size="1">12345</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+quantity</font><font color="#0000ff" size="1">=&quot;</font><font size="1">1</font><font color="#0000ff" size="1">&quot;/&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">part</font><font color="#ff0000" size="1"> 
+number</font><font color="#0000ff" size="1">=&quot;</font><font size="1">2345</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+quantity</font><font color="#0000ff" size="1">=&quot;</font><font size="1">2</font><font color="#0000ff" size="1">&quot;/&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;/</font><font color="#800000" size="1">repair</font><font color="#0000ff" size="1">&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">repair</font><font color="#ff0000" size="1"> 
+code</font><font color="#0000ff" size="1">=&quot;</font><font size="1">2310</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+quantity</font><font color="#0000ff" size="1">=&quot;</font><font size="1">1</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+cost</font><font color="#0000ff" size="1">=&quot;</font><font size="1">5.00</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+manhours</font><font color="#0000ff" size="1">=&quot;</font><font size="1">2</font><font color="#0000ff" size="1">&quot;&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">part</font><font color="#ff0000" size="1"> 
+number</font><font color="#0000ff" size="1">=&quot;</font><font size="1">45432</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+quantity</font><font color="#0000ff" size="1">=&quot;</font><font size="1">1</font><font color="#0000ff" size="1">&quot;/&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">part</font><font color="#ff0000" size="1"> 
+number</font><font color="#0000ff" size="1">=&quot;</font><font size="1">7876454</font><font color="#0000ff" size="1">&quot;</font><font color="#ff0000" size="1"> 
+quantity</font><font color="#0000ff" size="1">=&quot;</font><font size="1">1</font><font color="#0000ff" size="1">&quot;/&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;/</font><font color="#800000" size="1">repair</font><font color="#0000ff" size="1">&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;/</font><font color="#800000" size="1">repairgroup</font><font color="#0000ff" size="1">&gt;
+<br>
+&lt;/</font><font color="#800000" size="1">workorder</font><font color="#0000ff" size="1">&gt;
+</font></font></p>
+<p><font size="4" face="Arial">Response DTD - MERC+ return response to the 
+client software.</font></p>
+<p><font face="Arial"><font color="#008080" size="1"><br>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; </font><font color="#0000ff" size="1">
+<br>
+&lt;!--</font><font color="#808080" size="1"> edited with XML Spy v4.4 U <br>
+(http://www.xmlspy.com) (Maersk Data USA Inc) </font>
+<font color="#0000ff" size="1">--&gt; </font><font color="#000080" size="1"><br>
+&lt;!ELEMENT workorderresponse (errorgroup)?&gt; <br>
+&lt;!ATTLIST workorderresponse <br>
+accept (YES | NO) #REQUIRED&nbsp;&gt; <br>
+&lt;!ELEMENT errorgroup (error*)?&gt; <br>
+&lt;!ELEMENT error (#PCDATA)&gt; </font></font></p>
+<p><b><font color="#000080" face="Arial">Example XML (workorderresponse)</font></b></p>
+<p><font face="Arial"><font color="#008080" size="1">&lt;?xml version=&quot;1.0&quot; 
+encoding=&quot;UTF-8&quot;?&gt;</font><font color="#0000ff" size="1"><br>
+&lt;!--</font><font color="#808080" size="1">Sample XML file generated by XML Spy 
+v4.4 U (http://www.xmlspy.com)</font><font color="#0000ff" size="1">--&gt; </font>
+<font color="#000080" size="1"><br>
+&lt;!DOCTYPE workorderresponse SYSTEM &quot;D:\MyDocuments\Merc+\workorderresponse.dtd&quot;&gt;
+</font><font color="#0000ff" size="1"><br>
+&lt;</font><font color="#800000" size="1">workorderresponse</font><font color="#ff0000" size="1"> 
+accept</font><font color="#0000ff" size="1">=&quot;</font><font size="1">NO</font><font color="#0000ff" size="1">&quot;&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">errorgroup</font><font color="#0000ff" size="1">&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">error</font><font color="#0000ff" size="1">&gt;</font><font size="1">WO 
+exceeds limit for shop supply materials, please check</font><font color="#0000ff" size="1">&lt;/</font><font color="#800000" size="1">error</font><font color="#0000ff" size="1">&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;</font><font color="#800000" size="1">error</font><font color="#0000ff" size="1">&gt;</font><font size="1">Repair 
+date is required</font><font color="#0000ff" size="1">&lt;/</font><font color="#800000" size="1">error</font><font color="#0000ff" size="1">&gt;
+</font><font size="1"><br>
+</font><font color="#0000ff" size="1">&lt;/</font><font color="#800000" size="1">errorgroup</font><font color="#0000ff" size="1">&gt;
+<br>
+&lt;/</font><font color="#800000" size="1">workorderresponse</font><font color="#0000ff" size="1">&gt;
+</font></font></p>
+<h2><font face="Arial">Data Definitions<span lang="en-us"> - REQUEST</span></font></h2>
+<p><font face="Arial">Data that will comprise the scope of the interface. 
+Element is in brackets.</font></p>
+<table width="100%">
+  <tr>
+    <th><font face="Arial">Data Field Name</font></th>
+    <th><font face="Arial">Type</font></th>
+    <th><font face="Arial">Requirement<br>
+    (M / O / C / D) </font></th>
+    <th><font face="Arial"><span lang="en-us">Description</span></font></th>
+  </tr>
+  <tr>
+    <td><font face="Arial">shop (workorder)</font></td>
+    <td><font face="Arial"><span lang="en-us">3 character AlphaNumeric</span></font></td>
+    <td>
+    <p align="center"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Shop code&nbsp;</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">customer (workorder) </font></td>
+    <td><font face="Arial"><span lang="en-us">4 character AlphaNumeric</span></font></td>
+    <td>
+    <p align="center"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Customer code</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">location (workorder)</font></td>
+    <td><font face="Arial"><span lang="en-us">3 character AlphaNumeric</span></font></td>
+    <td>
+    <p align="center"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Port/Location</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">type (workorder)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 character ('E' estimate/ 'W' 
+    workordre)</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Estimate/Workorder</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">date (workorder)</font></td>
+    <td><font face="Arial"><span lang="en-us">8 character format(DDMMYYYY)</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Estimate repair date</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">number (equipment)</font></td>
+    <td><font face="Arial"><span lang="en-us">11 character AlphaNumeric</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Equipment number</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">mode (equipment)</font></td>
+    <td><font face="Arial"><span lang="en-us">2 character AlphaNumeric</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Mode</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">cause (equipment)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 character</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Damage cause</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">straighttime (totalhours)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 5 character format (99.99)</span></font></td>
+    <td align="middle"><font face="Arial">O</font></td>
+    <td><font face="Arial"><span lang="en-us">sum for all repairs</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">overtime(totalhours)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 5 character format (99.99)</span></font></td>
+    <td align="middle"><font face="Arial">O</font></td>
+    <td><font face="Arial"><span lang="en-us">sum for all repairs</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">doubletime(totalhours)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 5 character format (99.99)</span></font></td>
+    <td align="middle"><font face="Arial">O</font></td>
+    <td><font face="Arial"><span lang="en-us">sum for all repairs</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">&nbsp;miscellaneoustime(totalhours)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 5 character format (99.99)</span></font></td>
+    <td align="middle"><font face="Arial">O</font></td>
+    <td><font face="Arial"><span lang="en-us">sum for all repairs</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">total (cost)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 13 character 
+    format(99999999999.99)</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">total cost of estimate</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">text (remark)</font></td>
+    <td><font face="Arial"><span lang="en-us">0 to 77 character AlphaNumeric</span></font></td>
+    <td align="middle"><font face="Arial">O</font></td>
+    <td><font face="Arial"><span lang="en-us">Remark - free form text</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">code (repair)</font></td>
+    <td><font face="Arial"><span lang="en-us">4 to 6 character repair code</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">Normally is a 4 character repair 
+    code</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">quantity (repair)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 3 char numeric</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">quantity of repairs</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">cost (repair)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 13 character 
+    format(99999999.99)</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">cost of materials for repair</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">manhours (repair)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 5 character format (99.99)</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">man hours required for repair</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">number (part)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 14 character AlphaNumeric</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">part number</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">quantity (part)</font></td>
+    <td><font face="Arial"><span lang="en-us">1 to 3 character numeric</span></font></td>
+    <td align="middle"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">quantity of parts required</span></font></td>
+  </tr>
+</table>
+<p><font face="Arial">* Key to Requirement: M=Mandatory, O=Optional, 
+C=Conditional, D=Display</font></p>
+<h2><font face="Arial">&nbsp;</font></h2>
+<h2><font face="Arial">Data Definitions<span lang="en-us"> - REPLY</span></font></h2>
+<p><font face="Arial">Data that will comprise the scope of the interface.</font></p>
+<table width="100%">
+  <tr>
+    <th><font face="Arial">Data Field Name</font></th>
+    <th><font face="Arial">Type</font></th>
+    <th><font face="Arial">Requirement<br>
+    (M / O / C / D) </font></th>
+    <th><font face="Arial"><span lang="en-us">Description</span></font></th>
+  </tr>
+  <tr>
+    <td><font face="Arial">accept (workorderresponse)</font></td>
+    <td><font face="Arial">Alpha values 'YES' or 'NO'</font></td>
+    <td>
+    <p align="center"><font face="Arial">M</font></td>
+    <td><font face="Arial"><span lang="en-us">&nbsp;Yes= workorder submitted 
+    successfully.</span> </font>
+    <p><font face="Arial"><span lang="en-us">No= workorder rejected</span></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">(error)</font></td>
+    <td><font face="Arial">AlphaNumeric</font></td>
+    <td>
+    <p align="center"><font face="Arial">O</font></td>
+    <td><font face="Arial"><span lang="en-us">1 or more error messages containng 
+    information regarding failure of estimate.</span></font></td>
+  </tr>
+</table>
+<p><font face="Arial">* Key to Requirement: M=Mandatory, O=Optional, 
+C=Conditional, D=Display&nbsp;</font></p>
+<h2><font face="Arial">Functional Processing</font></h2>
+<p><font face="Arial">The detailed steps that define how this data will be 
+processed.</font></p>
+<table width="100%">
+  <tr>
+    <th width="1%"><font face="Arial">Function</font></th>
+    <th width="62%"><font face="Arial">Processing Logic</font></th>
+  </tr>
+  <tr>
+    <td width="1%"><font face="Arial">Send workorder to MERC+ via web service</font></td>
+    <td width="62%"><font face="Arial">Web service will accept a request for a 
+    work order via HTTP. It will extract the certificate ID and validate against 
+    Get Access. Once the user is validated, the service will continue to parse 
+    the work order information from the XML document and populate the 
+    MercWorkOrder component with the work order data. It will call the 
+    components Validate method. If no errors are received from the validation, 
+    it will call the component's save method. Upon a successful save, the 
+    service will return a response to the client with an accepted status of 
+    'YES'. If the estimate fails validation, the response will be sent with an 
+    accepted status of 'NO' and the error(s) will be included in the response 
+    document. Note: if the user cannot be validated against Get Access, the 
+    response will be returned with an accept status of 'NO' with a 'no 
+    authorization' error message.</font></td>
+  </tr>
+</table>
+<h2><font face="Arial">Security</font></h2>
+<p><font face="Arial">Any rules or special constraints that deal specifically 
+with security.</font></p>
+<table width="100%">
+  <tr>
+    <th width="1%"><font face="Arial">Rule</font></th>
+    <th width="62%"><font face="Arial">Rule Description</font></th>
+  </tr>
+  <tr>
+    <td width="5%"><font face="Arial">&nbsp;</font></td>
+    <td width="58%"><font face="Arial">Security will be consistent with UI, 
+    i.e., certificates will be required for a successful estimate transaction.</font></td>
+  </tr>
+</table>
+
+<p><img border="0" src="../images/IF_WO_Service.gif" width="554" height="779"></p>
+
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="20">
+    <p align="center">&nbsp;<a href="javascript:void(parent.close())">Close this window</a></td>
+  </tr>
+  <tr>
+    <td height="10">
+    <p align="right"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%d %B %Y" startspan -->07 November 2004<!--webbot bot="Timestamp" endspan i-checksum="39954" --></span></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

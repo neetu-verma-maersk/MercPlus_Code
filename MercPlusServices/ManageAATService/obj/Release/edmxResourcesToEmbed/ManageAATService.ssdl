@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManageAATServiceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ManageAATServiceModelStoreContainer">
+    <EntitySet Name="MESC1TS_APPROVER_DETAILS" EntityType="ManageAATServiceModel.Store.MESC1TS_APPROVER_DETAILS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_LOCATION" EntityType="ManageAATServiceModel.Store.MESC1TS_LOCATION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_MODE" EntityType="ManageAATServiceModel.Store.MESC1TS_MODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SHOP" EntityType="ManageAATServiceModel.Store.MESC1TS_SHOP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WO" EntityType="ManageAATServiceModel.Store.MESC1TS_WO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOAUDIT" EntityType="ManageAATServiceModel.Store.MESC1TS_WOAUDIT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WODAMAGE" EntityType="ManageAATServiceModel.Store.MESC1TS_WODAMAGE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOPART" EntityType="ManageAATServiceModel.Store.MESC1TS_WOPART" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOREMARK" EntityType="ManageAATServiceModel.Store.MESC1TS_WOREMARK" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOREPAIR" EntityType="ManageAATServiceModel.Store.MESC1TS_WOREPAIR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP" EntityType="ManageAATServiceModel.Store.SEC_AUTHGROUP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP_USER" EntityType="ManageAATServiceModel.Store.SEC_AUTHGROUP_USER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_USER" EntityType="ManageAATServiceModel.Store.SEC_USER" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__MESC1TS_S__LOC_C__22401542" Association="ManageAATServiceModel.Store.FK__MESC1TS_S__LOC_C__22401542">
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__SHOP___308E3499" Association="ManageAATServiceModel.Store.FK__MESC1TS_W__SHOP___308E3499">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__WO_ID__20ACD28B" Association="ManageAATServiceModel.Store.FK__MESC1TS_W__WO_ID__20ACD28B">
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+      <End Role="MESC1TS_WOREPAIR" EntitySet="MESC1TS_WOREPAIR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_WO__MODE__32767D0B" Association="ManageAATServiceModel.Store.FK__MESC1TS_WO__MODE__32767D0B">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_USER__LOC_CD__23F3538A" Association="ManageAATServiceModel.Store.FK__SEC_USER__LOC_CD__23F3538A">
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+      <End Role="SEC_USER" EntitySet="SEC_USER" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MESC1TS_APPROVER_DETAILS">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="STATUS" Type="int" />
+    <Property Name="APPROVAL_LEVEL" Type="int" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_LOCATION">
+    <Key>
+      <PropertyRef Name="LOC_CD" />
+    </Key>
+    <Property Name="LOC_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="REGION_CD" Type="char" MaxLength="2" />
+    <Property Name="LOC_DESC" Type="varchar" MaxLength="30" />
+    <Property Name="COUNTRY_CD" Type="char" MaxLength="2" />
+    <Property Name="RKRPLOC" Type="char" MaxLength="5" />
+    <Property Name="LOC_GEO_ID" Type="char" MaxLength="13" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CONTACT_EQSAL_SW" Type="char" MaxLength="1" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_MODE">
+    <Key>
+      <PropertyRef Name="MODE" />
+    </Key>
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MODE_DESC" Type="varchar" MaxLength="60" />
+    <Property Name="STANDARD_TIME_SW" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="VALIDATION_SW" Type="char" MaxLength="1" />
+    <Property Name="MODE_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="MODE_IND" Type="char" MaxLength="1" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SHOP">
+    <Key>
+      <PropertyRef Name="SHOP_CD" />
+    </Key>
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="VENDOR_CD" Type="char" MaxLength="6" />
+    <Property Name="SHOP_DESC" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="RKRPLOC" Type="char" MaxLength="5" />
+    <Property Name="LOC_CD" Type="char" MaxLength="8" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="EMAIL_ADR" Type="varchar" MaxLength="60" />
+    <Property Name="PHONE" Type="char" MaxLength="15" />
+    <Property Name="EDI_PARTNER" Type="varchar" MaxLength="36" />
+    <Property Name="RRIS70_SUFFIX_CD" Type="char" MaxLength="2" />
+    <Property Name="PREPTIME_SW" Type="char" MaxLength="1" />
+    <Property Name="SHOP_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="PCT_MATERIAL_FACTOR" Type="float" />
+    <Property Name="RRIS_XMIT_SW" Type="char" MaxLength="1" />
+    <Property Name="OVERTIME_SUSP_SW" Type="char" MaxLength="1" />
+    <Property Name="IMPORT_TAX" Type="float" />
+    <Property Name="SHOP_TYPE_CD" Type="char" MaxLength="1" />
+    <Property Name="SALES_TAX_PART_CONT" Type="float" />
+    <Property Name="SALES_TAX_PART_GEN" Type="float" />
+    <Property Name="SALES_TAX_LABOR_CON" Type="float" />
+    <Property Name="CUCDN" Type="char" MaxLength="3" />
+    <Property Name="SALES_TAX_LABOR_GEN" Type="float" />
+    <Property Name="ACEP_SW" Type="char" MaxLength="1" />
+    <Property Name="DECENTRALIZED" Type="char" MaxLength="1" />
+    <Property Name="AUTO_COMPLETE_SW" Type="char" MaxLength="1" />
+    <Property Name="BYPASS_LEASE_RULES" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WO">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_CD" Type="char" MaxLength="4" />
+    <Property Name="EQSIZE" Type="char" MaxLength="2" />
+    <Property Name="MODE" Type="char" MaxLength="2" />
+    <Property Name="WOTYPE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="EQOUTHGU" Type="char" MaxLength="7" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="REPAIR_DTE" Type="datetime" />
+    <Property Name="EQOWNTP" Type="char" MaxLength="3" />
+    <Property Name="EQSTYPE" Type="char" MaxLength="4" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="STATUS_CODE" Type="smallint" />
+    <Property Name="EQMATR" Type="char" MaxLength="3" />
+    <Property Name="EQTYPE" Type="char" MaxLength="4" />
+    <Property Name="CAUSE" Type="char" MaxLength="1" />
+    <Property Name="DELDATSH" Type="datetime" />
+    <Property Name="THIRD_PARTY" Type="char" MaxLength="8" />
+    <Property Name="STEMPTY" Type="char" MaxLength="1" />
+    <Property Name="STREFURB" Type="char" MaxLength="1" />
+    <Property Name="MANH_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MANH_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="REFRBDAT" Type="datetime" />
+    <Property Name="EXCHANGE_RATE" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="STREDEL" Type="char" MaxLength="1" />
+    <Property Name="TOT_REPAIR_MANH" Type="float" />
+    <Property Name="FIXCOVER" Type="float" />
+    <Property Name="TOT_MANH_REG" Type="float" />
+    <Property Name="DPP" Type="float" />
+    <Property Name="TOT_MANH_OT" Type="float" />
+    <Property Name="OFFHIR_LOCATION_SW" Type="char" MaxLength="1" />
+    <Property Name="OT_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="STSELSCR" Type="char" MaxLength="1" />
+    <Property Name="TOT_MANH_DT" Type="float" />
+    <Property Name="EQPROFIL" Type="char" MaxLength="11" />
+    <Property Name="TOT_MANH_MISC" Type="float" />
+    <Property Name="EQINDAT" Type="datetime" />
+    <Property Name="TOT_PREP_HRS" Type="float" />
+    <Property Name="EQRUTYP" Type="varchar" MaxLength="15" />
+    <Property Name="TOT_LABOR_HRS" Type="float" />
+    <Property Name="TOT_LABOR_COST" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EQRUMAN" Type="varchar" MaxLength="15" />
+    <Property Name="TOT_SHOP_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_LABOR_COST_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_LOCAL" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EQMANCD" Type="char" MaxLength="3" />
+    <Property Name="VENDOR_REF_NO" Type="varchar" MaxLength="10" />
+    <Property Name="TOT_SHOP_AMT_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EQIOFLT" Type="char" MaxLength="1" />
+    <Property Name="TOT_MAERSK_PARTS_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="VOUCHER_NO" Type="char" MaxLength="8" />
+    <Property Name="INVOICE_DTE" Type="datetime" />
+    <Property Name="TOT_MAN_PARTS_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHECK_NO" Type="varchar" MaxLength="36" />
+    <Property Name="PAID_DTE" Type="datetime" />
+    <Property Name="AMOUNT_PAID" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="RKRP_REPAIR_DTE" Type="datetime" />
+    <Property Name="RKRP_XMIT_DTE" Type="datetime" />
+    <Property Name="RKRP_XMIT_SW" Type="char" MaxLength="1" />
+    <Property Name="WO_RECV_DTE" Type="datetime" />
+    <Property Name="APPROVED_BY" Type="char" MaxLength="8" />
+    <Property Name="SHOP_WORKING_SW" Type="char" MaxLength="1" />
+    <Property Name="APPROVAL_DTE" Type="datetime" />
+    <Property Name="IMPORT_TAX" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="IMPORT_TAX_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_PARTS" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_PARTS_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_MAERSK_PARTS" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_MAN_PARTS" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MANUAL_CD" Type="char" MaxLength="4" />
+    <Property Name="EQPNO" Type="varchar" MaxLength="11" />
+    <Property Name="COTYPE" Type="char" MaxLength="4" />
+    <Property Name="VENDOR_CD" Type="char" MaxLength="6" />
+    <Property Name="REQ_REMARK_SW" Type="char" MaxLength="1" />
+    <Property Name="CUCDN" Type="char" MaxLength="3" />
+    <Property Name="OT_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="DT_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="DT_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MISC_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MISC_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOTAL_COST_LOCAL_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_REPAIR" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_REPAIR_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR_PCT" Type="float" />
+    <Property Name="SALES_TAX_PARTS_PCT" Type="float" />
+    <Property Name="IMPORT_TAX_PCT" Type="float" />
+    <Property Name="CRTS" Type="datetime" />
+    <Property Name="AGENT_PARTS_TAX" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="AGENT_PARTS_TAX_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="COUNTRY_CUCDN" Type="char" MaxLength="3" />
+    <Property Name="COUNTRY_EXCHANGE_RATE" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="COUNTRY_EXCHANGE_DTE" Type="datetime" />
+    <Property Name="DAMAGE" Type="char" MaxLength="1" />
+    <Property Name="LSCOMP" Type="char" MaxLength="3" />
+    <Property Name="LSCONTR" Type="char" MaxLength="10" />
+    <Property Name="REVISION_NO" Type="smallint" />
+    <Property Name="PREV_STATUS" Type="smallint" />
+    <Property Name="PREV_DATE" Type="datetime" />
+    <Property Name="PREV_LOC_CD" Type="char" MaxLength="8" />
+    <Property Name="TOT_W_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_CPH_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_CPH_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="PRESENTLOC" Type="char" MaxLength="8" />
+    <Property Name="GATEINDTE" Type="datetime" />
+    <Property Name="prev_wo_id" Type="int" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOAUDIT">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+      <PropertyRef Name="CHTS" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="AUDIT_TEXT" Type="varchar" MaxLength="4000" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WODAMAGE">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="EQPNO" Type="varchar" Nullable="false" MaxLength="11" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="SHOP_LOC_CD" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="CURR_MOVE" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CURR_LOC_CD" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="MERC_DAMAGE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="RKEM_DAMAGE" Type="char" MaxLength="2" />
+    <Property Name="RKEM_STATUS" Type="int" Nullable="false" />
+    <Property Name="CRTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOPART">
+    <Key>
+      <PropertyRef Name="PART_CD" />
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="PART_CD" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="COST_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="COST_LOCAL" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="SERIAL_NUMBER" Type="varchar" MaxLength="36" />
+    <Property Name="QTY_PARTS" Type="float" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOREMARK">
+    <Key>
+      <PropertyRef Name="WOREMARK_ID" />
+    </Key>
+    <Property Name="WOREMARK_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="CRTS" Type="datetime" Nullable="false" />
+    <Property Name="REMARK_TYPE" Type="char" MaxLength="1" />
+    <Property Name="XMIT_DTE" Type="smalldatetime" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="SUSPCAT_ID" Type="int" />
+    <Property Name="REMARK" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOREPAIR">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="REPAIR_LOC_CD" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="QTY_REPAIRS" Type="smallint" />
+    <Property Name="SHOP_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CPH_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="ACTUAL_MANH" Type="float" />
+    <Property Name="NONS_CD" Type="char" MaxLength="8" />
+    <Property Name="MODE" Type="char" MaxLength="2" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="MANUAL_CD" Type="char" MaxLength="4" />
+    <Property Name="DAMAGE_CD" Type="char" MaxLength="2" />
+    <Property Name="REPAIR_LOC_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="TPI_CD" Type="char" MaxLength="1" />
+    <Property Name="NEW_TPI" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP">
+    <Key>
+      <PropertyRef Name="AUTHGROUP_ID" />
+    </Key>
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AUTHGROUP_NAME" Type="varchar" MaxLength="36" />
+    <Property Name="PARENT_AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="TABLE_NAME" Type="varchar" MaxLength="128" />
+    <Property Name="COLUMN_NAME" Type="varchar" MaxLength="128" />
+    <Property Name="COLUMN_DESC" Type="varchar" MaxLength="36" />
+    <Property Name="READONLY_SW" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP_USER">
+    <Key>
+      <PropertyRef Name="ACCESS_ID" />
+    </Key>
+    <Property Name="ACCESS_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="COLUMN_VALUE" Type="varchar" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="SEC_USER">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="15" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="36" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="36" />
+    <Property Name="LOC_CD" Type="char" MaxLength="8" />
+    <Property Name="ACTIVE_STATUS" Type="char" MaxLength="1" />
+    <Property Name="APPROVAL_AMOUNT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="LastLoginDateTime" Type="datetime" />
+    <Property Name="IsUserActive" Type="bit" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__MESC1TS_S__LOC_C__22401542">
+    <End Role="MESC1TS_LOCATION" Type="ManageAATServiceModel.Store.MESC1TS_LOCATION" Multiplicity="0..1" />
+    <End Role="MESC1TS_SHOP" Type="ManageAATServiceModel.Store.MESC1TS_SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_LOCATION">
+        <PropertyRef Name="LOC_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP">
+        <PropertyRef Name="LOC_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__SHOP___308E3499">
+    <End Role="MESC1TS_SHOP" Type="ManageAATServiceModel.Store.MESC1TS_SHOP" Multiplicity="1" />
+    <End Role="MESC1TS_WO" Type="ManageAATServiceModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__WO_ID__20ACD28B">
+    <End Role="MESC1TS_WO" Type="ManageAATServiceModel.Store.MESC1TS_WO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MESC1TS_WOREPAIR" Type="ManageAATServiceModel.Store.MESC1TS_WOREPAIR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_WO">
+        <PropertyRef Name="WO_ID" />
+      </Principal>
+      <Dependent Role="MESC1TS_WOREPAIR">
+        <PropertyRef Name="WO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_WO__MODE__32767D0B">
+    <End Role="MESC1TS_MODE" Type="ManageAATServiceModel.Store.MESC1TS_MODE" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="ManageAATServiceModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_USER__LOC_CD__23F3538A">
+    <End Role="MESC1TS_LOCATION" Type="ManageAATServiceModel.Store.MESC1TS_LOCATION" Multiplicity="0..1" />
+    <End Role="SEC_USER" Type="ManageAATServiceModel.Store.SEC_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_LOCATION">
+        <PropertyRef Name="LOC_CD" />
+      </Principal>
+      <Dependent Role="SEC_USER">
+        <PropertyRef Name="LOC_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

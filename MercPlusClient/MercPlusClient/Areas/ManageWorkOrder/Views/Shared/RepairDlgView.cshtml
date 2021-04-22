@@ -1,0 +1,118 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel
+<script src="~/Areas/ManageWorkOrder/Script/workOrder.js"></script>
+<script type="text/javascript">
+    $(".clickable-row").click(function () {
+        $(this).find("input[type=radio]").prop('checked', true);
+        $("#btnModelOk").focus();
+    });
+</script>
+
+<style type="text/css">
+    .tbl_dlg tr:hover {
+        background-color: #F8F8F8;
+    }
+</style>
+
+<table style="width: 700px; overflow: scroll; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0" class="tbl_dlg">
+    @if (Model.RepairDlgType == (int)MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel.DLGTYPE.DAMAGE)
+    {
+        if (Model.LstDamage != null && Model.LstDamage.Count > 0)
+        {
+        <tr style="width: auto;">
+            <th>&nbsp;</th>
+            <th style="text-align: left;">@Html.Label("Damage Code")</th>
+            <th style="text-align: left;">@Html.Label("Damage Code Description")</th>
+        </tr>    
+            foreach (var item in Model.LstDamage)
+            {
+        <tr class="clickable-row">
+            <td>@Html.RadioButton("Select", item.DamageCedexCode, new { @class = "clsCode" })</td>
+            <td>@Html.DisplayFor(modelItem => item.DamageCedexCode)</td>
+            <td>@Html.DisplayFor(modelItem => item.DamageDescription) </td>
+        </tr> 
+            }
+        }
+        else
+        {
+        <tr>
+            <td colspan="3">No records found.</td>
+        </tr>  
+        }
+    }
+    else if (Model.RepairDlgType == (int)MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel.DLGTYPE.REPAIR)
+    {
+        if (Model.LstRepairCode != null && Model.LstRepairCode.Count > 0)
+        {
+        <tr style="width: auto;">
+            <th>&nbsp;</th>
+            <th style="text-align: left;">@Html.Label("Repair Code")</th>
+            <th style="text-align: left;">@Html.Label("Repair Code Description")</th>
+        </tr>    
+            foreach (var item in Model.LstRepairCode)
+            {
+        <tr class="clickable-row">
+            <th>@Html.RadioButton("Select", item.RepairCod, new { @class = "clsCode", @maxquantity = item.MaxQuantity, @manualcode = item.ManualCode })</th>
+            <td>@Html.DisplayFor(modelItem => item.RepairCod)</td>
+            <td>@Html.DisplayFor(modelItem => item.RepairDesc) </td>
+        </tr> 
+            }
+        }
+        else
+        {
+        <tr>
+            <td colspan="3">No records found.</td>
+        </tr> 
+        }
+    }
+    else if (Model.RepairDlgType == (int)MercPlusClient.Areas.ManageWorkOrder.Models.ManageWorkOrderModel.DLGTYPE.REPAIRLOCCODE)
+    {
+        if (Model.LstRepLocCode != null && Model.LstRepLocCode.Count > 0)
+        {
+        <tr>
+            <th>&nbsp;</th>
+            <th style="text-align: left;">@Html.Label("Repair Location Code")</th>
+            <th style="text-align: left;">@Html.Label("Repair Location Code Description")</th>
+        </tr>    
+            foreach (var item in Model.LstRepLocCode)
+            {
+        <tr class="clickable-row">
+            <th>@Html.RadioButton("Select", item.CedexCode, new { @class = "clsCode" })</th>
+            <td>@Html.DisplayFor(modelItem => item.CedexCode)</td>
+            <td>@Html.DisplayFor(modelItem => item.Description) </td>
+        </tr> 
+            }
+        }
+        else
+        {
+        <tr>
+            <td colspan="3">No records found.</td>
+        </tr> 
+        }
+    }
+    else
+    {
+        if (Model.LstTPI != null && Model.LstTPI.Count > 0)
+        {
+        <tr>
+            <th>&nbsp;</th>
+            <th style="text-align: left;">@Html.Label("TPI Code")</th>
+            <th style="text-align: left;">@Html.Label("TPI Description")</th>
+        </tr>    
+            foreach (var item in Model.LstTPI)
+            {
+        <tr class="clickable-row">
+            <th>@Html.RadioButton("Select", item.CedexCode, new { @class = "clsCode" })</th>
+            <td>@Html.DisplayFor(modelItem => item.CedexCode)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name) </td>
+        </tr> 
+            }
+        }
+        else
+        {
+        <tr>
+            <td colspan="3">No records found.</td>
+        </tr> 
+        }
+    }
+
+</table>

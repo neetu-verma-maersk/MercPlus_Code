@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\ReleaseUserRemapV1\ManageUserService</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/amqmdnet.dll">
+      <publishTime>11/27/2020 11:15:00</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/27/2020 11:15:18</publishTime>
+    </File>
+    <File Include="bin/ManageUserService.dll">
+      <publishTime>12/02/2020 15:31:37</publishTime>
+    </File>
+    <File Include="bin/ManageUserService.pdb">
+      <publishTime>02/26/2020 17:51:53</publishTime>
+    </File>
+    <File Include="bin/MercPlusLibrary.dll">
+      <publishTime>12/02/2020 15:06:20</publishTime>
+    </File>
+    <File Include="bin/MercPlusLibrary.pdb">
+      <publishTime>02/26/2020 17:48:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>11/27/2020 11:15:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll">
+      <publishTime>11/27/2020 11:15:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>11/27/2020 11:15:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>11/27/2020 11:15:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Interception.dll">
+      <publishTime>11/27/2020 11:15:00</publishTime>
+    </File>
+    <File Include="ManageUserService.Context.tt">
+      <publishTime>11/27/2020 11:15:18</publishTime>
+    </File>
+    <File Include="ManageUserService.edmx.diagram">
+      <publishTime>11/27/2020 11:15:18</publishTime>
+    </File>
+    <File Include="ManageUserService.svc">
+      <publishTime>11/27/2020 11:15:18</publishTime>
+    </File>
+    <File Include="ManageUserService.tt">
+      <publishTime>11/27/2020 11:15:18</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/27/2020 11:15:18</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/02/2020 15:37:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

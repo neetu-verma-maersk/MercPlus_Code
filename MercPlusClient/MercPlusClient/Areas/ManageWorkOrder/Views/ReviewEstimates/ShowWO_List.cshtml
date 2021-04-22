@@ -1,0 +1,490 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ReviewEstimatesModel
+<link href="~/Areas/ManageWorkOrder/Style/WorkOrder.css" rel="stylesheet" />
+<script src="~/Areas/ManageWorkOrder/Script/Review_Estimate_Button.js"></script>
+
+<div id="gridposition" style="width: 100%;" nowrap="nowrap"> 
+   <table>
+       
+           <tr>
+            <td> @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")</td>
+        </tr>
+       
+   </table>
+    @if (Model.SearchResults!=null)
+    {
+        if (Model.SearchResults.Count >= 100 )
+        {
+            @Html.Label("lblMessage", "Note: Please limit your query. The maximum 100 records have been returned.", new { style = "color: red; text-size:12px;" })
+        }
+    }
+    
+     @if (Model.SearchResults!=null)
+     {
+       if (Model.SearchResults.Count == 0)
+       {
+           <p style="text-align:center;"><h3>**** NO RECORDS FOUND MATCHING SEARCH CRITERIA **** </h3></p>
+       }
+       else
+       {
+           var grid1 = new WebGrid(Model.SearchResults, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+           //grid1.Pager(WebGridPagerModes.NextPrevious)
+
+
+           if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop )
+           {
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    htmlAttributes: new { id = "grdWO" },
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+
+                    grid1.Column(header: "", format: (item) => Convert.ToInt32(item.STATUS_CD) == 390 && item.intSerialNo==1 ? Html.Raw(string.Format("<input id='chkBox1' name='chkWOIDBox' type='checkbox' visibility='false' value='{0}' />", @item.WO_ID)) : Html.Raw("")),
+                    grid1.Column("LOC_CD", "Location", format: (item) => Html.ActionLink(((string)item.LOC_CD),
+                                "ManagerApproval", "ManagerApproval", new { area = "ManageWorkOrder", WO_ID = @item.WO_ID }, null)),
+                    grid1.Column("SHOP_CD", header: "Shop "),
+
+                    grid1.Column("Status", format: (item) =>
+                    {
+                        string cStatus = "";
+                        if ((item.SHOP_WORKING_SW != null && item.SHOP_WORKING_SW.Equals("Y")) && item.STATUS_CD.ToString().Equals("390"))
+                        {
+                            if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop)
+                            {
+                                cStatus = "s" + "-" + item.STATUS_CD.ToString();
+                                if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                                {
+                                   var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                   cStatus =  statusCode.Value;
+                                }
+                                else
+                                {
+                                   cStatus = "-" + item.STATUS_CD.ToString();
+                                   if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                                   {
+                                       var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                       cStatus = statusCode.Value;
+                                   }
+                                }
+
+                            }
+                            else
+                            {
+                                cStatus = "-" + item.STATUS_CD.ToString();
+                               if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                               {
+                                   var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                   cStatus = statusCode.Value;
+                               }
+                            }
+                        }
+                        else if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop && ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey("s" + item.STATUS_CD.ToString()))
+                        {
+                            cStatus = "s" + item.STATUS_CD.ToString();
+                           if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                           {
+                               var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                               cStatus = statusCode.Value;
+                           }
+                        }
+                        else
+                        {
+                            cStatus = item.STATUS_CD.ToString();
+                            if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                            {
+                                var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                cStatus = statusCode.Value;
+                            }
+                            else
+                            {
+                                cStatus = "";
+                            }
+                        }
+
+                        return cStatus;
+                                
+                            }),
+
+                             //grid1.Column("STATUS_DESC", header: "Status"),
+                             grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"),
+                             grid1.Column("EQPNO", header: "Equip # "),
+                             grid1.Column("VENDOR_REF_NO", header: "Ref Number"),
+                             grid1.Column("MODE", header: "Mode"),
+                             grid1.Column("Created On", format: (item) =>
+                             {
+                                 if (Convert.ToInt32(item.STATUS_CD) == 390 && item.intSerialNo==1)
+                                 {
+                                     return Html.Raw(string.Format(@Convert.ToDateTime(item.REPAIR_DTE).ToString("yyyy-MM-dd") + "<br> Completed: " + "<text><input type='textbox' id='txtCompletionDate'  name='txtCompletionDate' value=" + (DateTime.Now).ToString("yyyy-MM-dd") + " width=80px  /></text>"));
+                                     // return   @Html.TextBox("txtCompletionDate", (DateTime.Now).ToString("yyyy-MM-dd"), new { style = "width: 130px;", @class = "CLSDATE" });
+
+                                 }
+                                 else
+                                 {
+                                     return @Convert.ToDateTime(item.REPAIR_DTE).ToString("yyyy-MM-dd");
+                                 }
+                             }),
+                   //grid1.Column("WO_RECV_DTE", header: "Created On"),
+                   //grid1.Column("CHTS", header: "Created On"),
+                             grid1.Column("Edit", "", format: (item) => (Convert.ToInt32(item.STATUS_CD.ToString()) < 400 && Convert.ToInt32(item.STATUS_CD.ToString()) != 150) ? Html.ActionLink("Edit",
+                                        "ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false, orderID = @item.WO_ID }, new { style = "color: blue; font-size:small;" }) : Html.Raw(""))
+
+
+
+
+                          )) 
+           }
+           else if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop )
+           {
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    htmlAttributes: new { id = "grdWO" },
+                    columns: grid1.Columns(
+                    grid1.Column("", format: (item) =>
+                    {
+
+                        if (Convert.ToInt32(item.STATUS_CD) == 200)
+                        {
+                            if (MercPlusClient.UtilityClass.UtilMethods.ApprovalAmt > 0 && Convert.ToDecimal(item.TOTAL_COST_LOCAL_USD) > 0)
+                            {
+                                if (MercPlusClient.UtilityClass.UtilMethods.ApprovalAmt >= Convert.ToDecimal(item.TOTAL_COST_LOCAL_USD))
+                                {
+                                    return Html.Raw(string.Format("<input id='chkBox1' name='chkWOIDBox' type='checkbox' visibility='false' value='{0}' />", @item.WO_ID));
+                                }
+                                else
+                                {
+                                    return Html.Raw(string.Format("<text></text>"));
+                                }
+                            }
+                            else
+                            {
+                                return Html.Raw(string.Format("<text></text>"));
+                            }
+
+
+                        }
+                        else
+                        {
+                            return Html.Raw(string.Format("<text></text>"));
+
+                        }
+                    }),
+                    //grid1.Column(header: "",format: (item) => Convert.ToInt32(item.STATUS_CD)==200 ? Html.Raw(string.Format("<input id='chkBox1' name='chkWOIDBox' type='checkbox' visibility='false' value='{0}' />", @item.WO_ID)) : Html.Raw("")),
+                    grid1.Column("LOC_CD", "Location", format: (item) => Html.ActionLink(((string)item.LOC_CD),
+                                          "ManagerApproval", "ManagerApproval", new { area = "ManageWorkOrder", WO_ID = @item.WO_ID }, null)),
+                    grid1.Column("SHOP_CD", header: "Shop "),
+                    grid1.Column("Status", format: (item) =>
+                            {
+                                string cStatus = item.STATUS_CD.ToString();
+                                var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                return statusCode.Value.ToString();
+                    }),
+                             //grid1.Column("STATUS_DESC", header: "Status"),
+                             grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"),
+                             grid1.Column("TOTAL_COST_LOCAL_USD", header: "Total(Local Rates USD)"),
+                            // grid1.Column("TOTOL_COST_REPAIR_CPH", header: "Total(EMR mng Rates USD)"),
+                             grid1.Column("EQPNO", header: "Equip # "),
+                             grid1.Column("VENDOR_REF_NO", header: "Ref Number"),
+                             grid1.Column("MODE", header: "Mode"),
+                             grid1.Column("Created On",format: (item) =>
+                             {
+                                 if (item.STATUS_CD != null || item.STATUS_CD!="")
+                                 {
+
+                                     return item.REPAIR_DTE;
+
+                                 }
+                                 else
+                                 {
+                                     return "";
+                                 }
+                              }), 
+                            grid1.Column("Agent Code / Voucher No",format: (item) =>
+                             {
+                                 if (item.AgentVouchNo != "")
+                                 {
+                                     if (item.AgentVouchNo.Trim() != "/")
+                                     {
+                                         return item.AgentVouchNo;
+                                     }
+                                     else
+                                     {
+                                         return "";
+                                     }
+                                 }
+                                 else
+                                 {
+                                     return "";
+                                 }
+                             }), 
+                            
+                             grid1.Column("AuditTrail", format: @<text><a href="javascript:ShowAuditTrail('AuditTrail','Estimate Audit Trail','WorkOrder','@item.WO_ID','@item.VENDOR_REF_NO','@item.EQPNO',800,450,scroll);", style="color:blue; font-size:small;">Audit Trail</a></text>, header: "")
+                    ))
+                                           
+           }
+
+           else if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin||((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH )
+           {
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+                             grid1.Column("LOC_CD", "Location", format: (item) => Html.ActionLink(((string)item.LOC_CD),
+                                          "ManagerApproval", "ManagerApproval", new { area = "ManageWorkOrder", WO_ID = @item.WO_ID }, null)),
+                             grid1.Column("SHOP_CD", header: "Shop "),
+                             grid1.Column("Status", format: (item) =>
+                            {
+                                string cStatus = item.STATUS_CD.ToString();
+                                var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                return statusCode.Value.ToString();
+                            }),
+
+                            // grid1.Column("STATUS_DESC", header: "Status"),
+                             //grid1.Column("TOTOL_COST_REPAIR_CPH", header: "Total(Local Rates USD)"),
+                              grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"), //new requirement_leo_Debadrita
+                            // grid1.Column("TOTAL_COST_LOCAL_USD", header: "Total(Local Rates USD)"),
+                             //grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"),
+                             grid1.Column("TOTAL_COST_LOCAL_USD", header: "Total(Local Rates USD)"),//new requirement_leo_Debadrita
+                             grid1.Column("TOTOL_COST_REPAIR_CPH", header: "Total(EMR mng Rates USD)"),  //new requirement_leo_Debadrita
+                             grid1.Column("EQPNO", header: "Equip # "),
+                             grid1.Column("VENDOR_REF_NO", header: "Ref Number"),
+                             grid1.Column("MODE", header: "Mode"),
+                             grid1.Column("WO_RECV_DTE", header: "Created On"),
+                             grid1.Column("Agent Code / Voucher No",format: (item) =>
+                             {
+                                 if (item.AgentVouchNo != "")
+                                 {
+                                     if (item.AgentVouchNo.Trim() != "/")
+                                     {
+                                         return item.AgentVouchNo;
+                                     }
+                                     else
+                                     {
+                                         return "";
+                                     }
+                                 }
+                                 else
+                                 {
+                                     return "";
+                                 }
+                             }), 
+                             //grid1.Column(format: (item) =>  item.VoucherNo.ToString()=="" || item.VoucherNo.ToString()==null ? "" : item.PayAgent_CD.ToString()==null ? string.Empty : item.PayAgent_CD.ToString() + "/" + item.VoucherNo.ToString(), header:"Agent Code / Voucher No"),
+                             //grid1.Column("AgentVouchNo", header: "Agent Code / Voucher No"),
+                             grid1.Column("AuditTrail", format: @<text><a href="javascript:ShowAuditTrail('AuditTrail','Estimate Audit Trail','WorkOrder','@item.WO_ID','@item.VENDOR_REF_NO','@item.EQPNO',800,450,scroll);", style="color:blue; font-size:small;">Audit Trail</a></text>, header: "")
+                    ))
+                                           
+           }
+           
+            else if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop)
+           {
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+                             grid1.Column("LOC_CD", "Location", format: (item) => Html.ActionLink(((string)item.LOC_CD),
+                                          "ManagerApproval", "ManagerApproval", new { area = "ManageWorkOrder", WO_ID = @item.WO_ID }, null)),
+                             grid1.Column("SHOP_CD", header: "Shop "),
+                             grid1.Column("Status", format: (item) =>
+                            {
+                                string cStatus = item.STATUS_CD.ToString();
+                                var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                return statusCode.Value.ToString();
+                            }),
+
+                            // grid1.Column("STATUS_DESC", header: "Status"),
+                             //grid1.Column("TOTOL_COST_REPAIR_CPH", header: "Total(Local Rates USD)"),
+                              grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"), //new requirement_leo_Debadrita
+                            // grid1.Column("TOTAL_COST_LOCAL_USD", header: "Total(Local Rates USD)"),
+                             //grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"),
+                             grid1.Column("TOTAL_COST_LOCAL_USD", header: "Total(Local Rates USD)"),//new requirement_leo_Debadrita
+                             //grid1.Column("TOTOL_COST_REPAIR_CPH", header: "Total(EMR mng Rates USD)"),  //new requirement_leo_Debadrita
+                             grid1.Column("EQPNO", header: "Equip # "),
+                             grid1.Column("VENDOR_REF_NO", header: "Ref Number"),
+                             grid1.Column("MODE", header: "Mode"),
+                             grid1.Column("WO_RECV_DTE", header: "Created On"),
+                             grid1.Column("Agent Code / Voucher No",format: (item) =>
+                             {
+                                 if (item.AgentVouchNo != "")
+                                 {
+                                     if (item.AgentVouchNo.Trim() != "/")
+                                     {
+                                         return item.AgentVouchNo;
+                                     }
+                                     else
+                                     {
+                                         return "";
+                                     }
+                                 }
+                                 else
+                                 {
+                                     return "";
+                                 }
+                             }), 
+                             //grid1.Column(format: (item) =>  item.VoucherNo.ToString()=="" || item.VoucherNo.ToString()==null ? "" : item.PayAgent_CD.ToString()==null ? string.Empty : item.PayAgent_CD.ToString() + "/" + item.VoucherNo.ToString(), header:"Agent Code / Voucher No"),
+                             //grid1.Column("AgentVouchNo", header: "Agent Code / Voucher No"),
+                             grid1.Column("AuditTrail", format: @<text><a href="javascript:ShowAuditTrail('AuditTrail','Estimate Audit Trail','WorkOrder','@item.WO_ID','@item.VENDOR_REF_NO','@item.EQPNO',800,450,scroll);", style="color:blue; font-size:small;">Audit Trail</a></text>, header: "")
+                    ))
+                                           
+           }
+           
+           
+           else if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isThirdPartyInput || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROCluster || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isReadOnly)
+           {
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+                             grid1.Column("LOC_CD", "Location", format: (item) => Html.ActionLink(((string)item.LOC_CD),
+                                           "ManagerApproval", "ManagerApproval", new { area = "ManageWorkOrder", WO_ID = @item.WO_ID }, null)),
+                            grid1.Column("SHOP_CD", header: "Shop "),
+                            grid1.Column("Status", format: (item) =>
+                            {
+                                string cStatus = item.STATUS_CD.ToString();
+                                var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                return statusCode.Value.ToString();
+                    }),
+                            // grid1.Column("STATUS_DESC", header: "Status"),
+                           // grid1.Column("TOTOL_COST_REPAIR_CPH", header: "Total(Local Rates USD)"),
+                             grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"), //new requirement_leo_Debadrita
+                           //  grid1.Column("TOTAL_COST_LOCAL_USD", header: "Total(Local Rates USD)"),
+                            //grid1.Column("TOTAL_COST_LOCAL", header: "Total(Local Rates / Currency)"),
+                             grid1.Column("TOTAL_COST_LOCAL_USD", header: "Total(Local Rates USD)"), //new requirement_leo_Debadrita
+                             //grid1.Column("TOTOL_COST_REPAIR_CPH", header: "Total(EMR mng Rates USD)"), //new requirement_leo_Debadrita
+                             grid1.Column("EQPNO", header: "Equip # "),
+                             grid1.Column("VENDOR_REF_NO", header: "Ref Number"),
+                             grid1.Column("MODE", header: "Mode"),
+                             grid1.Column("WO_RECV_DTE", header: "Created On"),
+                              grid1.Column("Agent Code / Voucher No",format: (item) =>
+                             {
+                                 if (item.AgentVouchNo != "")
+                                 {
+                                     if (item.AgentVouchNo.Trim() != "/")
+                                     {
+                                         return item.AgentVouchNo;
+                                     }
+                                     else
+                                     {
+                                         return "";
+                                     }
+                                 }
+                                 else
+                                 {
+                                     return "";
+                                 }
+                             })
+                            
+
+                                         )) 
+           }
+           
+           else 
+           {
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+                             grid1.Column("LOC_CD", "Location", format: (item) => Html.ActionLink(((string)item.LOC_CD),
+                                           "ManagerApproval", "ManagerApproval", new { area = "ManageWorkOrder", WO_ID = @item.WO_ID }, null)),
+                            grid1.Column("SHOP_CD", header: "Shop "),
+                            grid1.Column("Status", format: (item) =>
+                            {
+                                string cStatus = item.STATUS_CD.ToString();
+                                var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                return statusCode.Value.ToString();
+                    }),
+                            // grid1.Column("STATUS_DESC", header: "Status"),
+                             grid1.Column("EQPNO", header: "Equip # "),
+                             grid1.Column("VENDOR_REF_NO", header: "Ref Number"),
+                             grid1.Column("MODE", header: "Mode"),
+                             grid1.Column("WO_RCV_DTE", header: "Created On"),
+                             grid1.Column("Agent Code / Voucher No",format: (item) =>
+                             {
+                                 if (item.AgentVouchNo != "")
+                                 {
+                                     if (item.AgentVouchNo.Trim() != "/")
+                                     {
+                                         return item.AgentVouchNo;
+                                     }
+                                     else
+                                     {
+                                         return "";
+                                     }
+                                 }
+                                 else
+                                 {
+                                     return "";
+                                 }
+                             }), 
+                             grid1.Column("AuditTrail", format: @<text><a href="javascript:ShowAuditTrail('AuditTrail','Estimate Audit Trail','WorkOrder','@item.WO_ID','@item.VENDOR_REF_NO','@item.EQPNO',800,450,scroll);", style="color:blue; font-size:small;">Audit Trail</a></text>, header: "")
+
+                                         )) 
+           }
+        
+       
+     
+           
+    <div style="text-align:center;">
+        @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH)
+        {
+            <button type="button" id="btnPrint" value="Print" name="Print" onclick="javascript:PrintDoc()">Print</button>
+        }
+        else if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAnyShop)
+        {
+            if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop)
+            {
+                if(Model.initPendingflag==1)
+                {
+                    <button id="btnApproved">Approve Selected</button>
+                    <button id="btnSelect">Select All Pending</button>   
+                    <button id="btnClear">Clear All Selected Pending</button> 
+                }
+            }
+            else 
+            {
+                 if(Model.intWorkingflag==1)
+                 {
+                    <button id="btnCompleted">Completed Selected</button>
+                    <button id="btnWorking">Working Selected</button>
+                    <button id="btnSelect">Select All</button>   
+                    <button id="btnClear">Clear Select All</button> 
+                } 
+            }
+                      
+              
+            
+            <button type="button" id="btnPrint1" value="Print" name="Print" onclick="javascript:PrintReviewEstimate()">Print</button>
+               
+           
+        }
+        else
+        {
+            <button type="button" id="btnPrint2" value="Print" name="Print" onclick="javascript:PrintReviewEstimate()">Print</button>
+        }
+       
+       
+    </div> 
+           
+     }
+
+     }
+    else
+    {
+         <p style="text-align:center;"><h3>**** NO RECORDS FOUND MATCHING SEARCH CRITERIA **** </h3></p>
+     }
+      
+    
+
+    </div>  
+

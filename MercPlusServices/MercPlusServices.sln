@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageReportsService", "ManageReportsService\ManageReportsService.csproj", "{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35051BB7-DF1E-4763-812A-540C32EFE282} = {35051BB7-DF1E-4763-812A-540C32EFE282}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageMasterDataService", "ManageMasterDataService\ManageMasterDataService.csproj", "{DA844389-A792-47AD-8DC9-50345FFDF41C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35051BB7-DF1E-4763-812A-540C32EFE282} = {35051BB7-DF1E-4763-812A-540C32EFE282}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageUserService", "ManageUserService\ManageUserService.csproj", "{2EFA814E-644D-461A-993F-E7F5606ADD3F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35051BB7-DF1E-4763-812A-540C32EFE282} = {35051BB7-DF1E-4763-812A-540C32EFE282}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercPlusLibrary", "..\MercPlusLibrary\MercPlusLibrary.csproj", "{35051BB7-DF1E-4763-812A-540C32EFE282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageWorkOrderService", "ManageWorkOrderService\ManageWorkOrderService.csproj", "{AA79E79E-5529-421F-9138-6FA87397B1E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35051BB7-DF1E-4763-812A-540C32EFE282} = {35051BB7-DF1E-4763-812A-540C32EFE282}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageAATService", "ManageAATService\ManageAATService.csproj", "{7166A264-F13B-4EDA-9E4A-29AD259D3AFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageHSUDDataService", "ManageHSUDDataService\ManageHSUDDataService.csproj", "{A4EF3AE0-6FEB-42C9-B523-484095070A2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35051BB7-DF1E-4763-812A-540C32EFE282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35051BB7-DF1E-4763-812A-540C32EFE282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35051BB7-DF1E-4763-812A-540C32EFE282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35051BB7-DF1E-4763-812A-540C32EFE282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7166A264-F13B-4EDA-9E4A-29AD259D3AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7166A264-F13B-4EDA-9E4A-29AD259D3AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7166A264-F13B-4EDA-9E4A-29AD259D3AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7166A264-F13B-4EDA-9E4A-29AD259D3AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4EF3AE0-6FEB-42C9-B523-484095070A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4EF3AE0-6FEB-42C9-B523-484095070A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4EF3AE0-6FEB-42C9-B523-484095070A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4EF3AE0-6FEB-42C9-B523-484095070A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A283C381-8C80-497C-8DB8-91B48BA29B7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MercPlusDataAccessLayer</RootNamespace>
+    <AssemblyName>MercPlusDataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MercPlusLibrary">
+      <HintPath>..\..\MercPlusLibrary\bin\Debug\MercPlusLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dtproperty.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManageReportsDAL.cs" />
+    <Compile Include="ManageWorkOrderDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MercPlusDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercPlusDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercPlusDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercPlusDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercPlusDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_AREA.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY_CONT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY_LABOR.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CPH_EQP_LIMIT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CURRENCY.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CUSTOMER.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CUST_SHOP_MODE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_DAMAGE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_ERROR.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_LINEITEM.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_TRANSMISSION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQMODE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQSTYPE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQTYPE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_ERR_MESSAGE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EVENT_LOG.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_INDEX.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_INSPECTION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_LABOR_RATE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_LOCATION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUAL.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUAL_MODE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUFACTUR.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MASTER_PART.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MASTER_PARTbackup111011.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MODE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MODEL.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_NONSCODE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PARTS_GROUP.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PAYAGENT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PAYAGENT_VENDOR.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PREPTIME.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PROCESS_IDENTIFIER.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PTI.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REFAUDIT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REGION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REPAIR_CODE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REPAIR_LOC.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_EXCLU.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_IMPORT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_PART.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP_CONT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP_LIMITS.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SPECIAL_REMARKS.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SPECIAL_REMARKS_old.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_STATUS_CODE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SUSPEND.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SUSPEND_CAT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_TPI.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_TRANSMIT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_VENDOR.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WO.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOAUDIT.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOPART.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOREMARK.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOREPAIR.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_XML_LOG.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1VS_CUST_SHOP.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1VS_SHOP_LOCATION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEC_ACTION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_ACTION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_FUNCTION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_USER.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_WEBPAGE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_FUNCTION.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_USER.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_WEBPAGE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_WEBSITE.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test1Table.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test2Table.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test3Table.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TESTEQUIPNO.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestTable07072011.cs">
+      <DependentUpon>MercPlusDataModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="MercPlusDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MercPlusDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MercPlusDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercPlusDataModel.edmx</DependentUpon>
+      <LastGenOutput>MercPlusDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="MercPlusDataModel.edmx.diagram">
+      <DependentUpon>MercPlusDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="MercPlusDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercPlusDataModel.edmx</DependentUpon>
+      <LastGenOutput>MercPlusDataModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

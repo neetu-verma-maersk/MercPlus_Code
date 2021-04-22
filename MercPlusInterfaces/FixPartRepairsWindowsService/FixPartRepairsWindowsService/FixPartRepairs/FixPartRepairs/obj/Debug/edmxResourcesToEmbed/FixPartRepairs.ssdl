@@ -1,0 +1,2124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESC2DSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MESC2DSModelStoreContainer">
+    <EntitySet Name="dtproperties" EntityType="MESC2DSModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_AREA" EntityType="MESC2DSModel.Store.MESC1TS_AREA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_COUNTRY" EntityType="MESC2DSModel.Store.MESC1TS_COUNTRY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_COUNTRY_CONT" EntityType="MESC2DSModel.Store.MESC1TS_COUNTRY_CONT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_COUNTRY_LABOR" EntityType="MESC2DSModel.Store.MESC1TS_COUNTRY_LABOR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_CPH_EQP_LIMIT" EntityType="MESC2DSModel.Store.MESC1TS_CPH_EQP_LIMIT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_CURRENCY" EntityType="MESC2DSModel.Store.MESC1TS_CURRENCY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_CUST_SHOP_MODE" EntityType="MESC2DSModel.Store.MESC1TS_CUST_SHOP_MODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_CUSTOMER" EntityType="MESC2DSModel.Store.MESC1TS_CUSTOMER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_DAMAGE" EntityType="MESC2DSModel.Store.MESC1TS_DAMAGE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_DISCOUNT" EntityType="MESC2DSModel.Store.MESC1TS_DISCOUNT" store:Type="Tables" store:Schema="dbo" store:Name="MESC1TS_DISCOUNT">
+      <DefiningQuery>SELECT 
+      [MESC1TS_DISCOUNT].[SHOP_CD] AS [SHOP_CD], 
+      [MESC1TS_DISCOUNT].[MANUFCTR] AS [MANUFCTR], 
+      [MESC1TS_DISCOUNT].[DISCOUNT] AS [DISCOUNT], 
+      [MESC1TS_DISCOUNT].[CHUSER] AS [CHUSER], 
+      [MESC1TS_DISCOUNT].[CHTS] AS [CHTS]
+      FROM [dbo].[MESC1TS_DISCOUNT] AS [MESC1TS_DISCOUNT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MESC1TS_EDI_ERROR" EntityType="MESC2DSModel.Store.MESC1TS_EDI_ERROR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EDI_ERROR1" EntityType="MESC2DSModel.Store.MESC1TS_EDI_ERROR1" store:Type="Tables" store:Schema="dbo" store:Name="MESC1TS_EDI_ERROR1">
+      <DefiningQuery>SELECT 
+      [MESC1TS_EDI_ERROR1].[EDI_ID] AS [EDI_ID], 
+      [MESC1TS_EDI_ERROR1].[LINE_NO] AS [LINE_NO], 
+      [MESC1TS_EDI_ERROR1].[LINE_DETAIL] AS [LINE_DETAIL]
+      FROM [dbo].[MESC1TS_EDI_ERROR1] AS [MESC1TS_EDI_ERROR1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MESC1TS_EDI_LINEITEM" EntityType="MESC2DSModel.Store.MESC1TS_EDI_LINEITEM" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EDI_LINEITEM1" EntityType="MESC2DSModel.Store.MESC1TS_EDI_LINEITEM1" store:Type="Tables" store:Schema="dbo" store:Name="MESC1TS_EDI_LINEITEM1">
+      <DefiningQuery>SELECT 
+      [MESC1TS_EDI_LINEITEM1].[EDI_ID] AS [EDI_ID], 
+      [MESC1TS_EDI_LINEITEM1].[LINE_NO] AS [LINE_NO], 
+      [MESC1TS_EDI_LINEITEM1].[LINE_DETAIL] AS [LINE_DETAIL]
+      FROM [dbo].[MESC1TS_EDI_LINEITEM1] AS [MESC1TS_EDI_LINEITEM1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MESC1TS_EDI_TRANSMISSION" EntityType="MESC2DSModel.Store.MESC1TS_EDI_TRANSMISSION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EQMODE" EntityType="MESC2DSModel.Store.MESC1TS_EQMODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EQSTYPE" EntityType="MESC2DSModel.Store.MESC1TS_EQSTYPE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EQTYPE" EntityType="MESC2DSModel.Store.MESC1TS_EQTYPE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_ERR_MESSAGE" EntityType="MESC2DSModel.Store.MESC1TS_ERR_MESSAGE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_EVENT_LOG" EntityType="MESC2DSModel.Store.MESC1TS_EVENT_LOG" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_INDEX" EntityType="MESC2DSModel.Store.MESC1TS_INDEX" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_INSPECTION" EntityType="MESC2DSModel.Store.MESC1TS_INSPECTION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_LABOR_RATE" EntityType="MESC2DSModel.Store.MESC1TS_LABOR_RATE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_LOCATION" EntityType="MESC2DSModel.Store.MESC1TS_LOCATION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_MANUAL" EntityType="MESC2DSModel.Store.MESC1TS_MANUAL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_MANUAL_MODE" EntityType="MESC2DSModel.Store.MESC1TS_MANUAL_MODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_MANUFACTUR" EntityType="MESC2DSModel.Store.MESC1TS_MANUFACTUR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_MASTER_PART" EntityType="MESC2DSModel.Store.MESC1TS_MASTER_PART" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_MODE" EntityType="MESC2DSModel.Store.MESC1TS_MODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_MODEL" EntityType="MESC2DSModel.Store.MESC1TS_MODEL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_NONSCODE" EntityType="MESC2DSModel.Store.MESC1TS_NONSCODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_PARTS_GROUP" EntityType="MESC2DSModel.Store.MESC1TS_PARTS_GROUP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_PAYAGENT" EntityType="MESC2DSModel.Store.MESC1TS_PAYAGENT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_PAYAGENT_VENDOR" EntityType="MESC2DSModel.Store.MESC1TS_PAYAGENT_VENDOR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_PREPTIME" EntityType="MESC2DSModel.Store.MESC1TS_PREPTIME" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_PROCESS_IDENTIFIER" EntityType="MESC2DSModel.Store.MESC1TS_PROCESS_IDENTIFIER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_PTI" EntityType="MESC2DSModel.Store.MESC1TS_PTI" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_REFAUDIT" EntityType="MESC2DSModel.Store.MESC1TS_REFAUDIT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_REGION" EntityType="MESC2DSModel.Store.MESC1TS_REGION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_REPAIR_CODE" EntityType="MESC2DSModel.Store.MESC1TS_REPAIR_CODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_REPAIR_LOC" EntityType="MESC2DSModel.Store.MESC1TS_REPAIR_LOC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_RPRCODE_EXCLU" EntityType="MESC2DSModel.Store.MESC1TS_RPRCODE_EXCLU" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_RPRCODE_IMPORT" EntityType="MESC2DSModel.Store.MESC1TS_RPRCODE_IMPORT" store:Type="Tables" store:Schema="dbo" store:Name="MESC1TS_RPRCODE_IMPORT">
+      <DefiningQuery>SELECT 
+      [MESC1TS_RPRCODE_IMPORT].[REPAIR_CD] AS [REPAIR_CD], 
+      [MESC1TS_RPRCODE_IMPORT].[EXCLU_REPAIR_CD] AS [EXCLU_REPAIR_CD], 
+      [MESC1TS_RPRCODE_IMPORT].[MODE] AS [MODE], 
+      [MESC1TS_RPRCODE_IMPORT].[MANUAL_CD] AS [MANUAL_CD], 
+      [MESC1TS_RPRCODE_IMPORT].[CHUSER] AS [CHUSER], 
+      [MESC1TS_RPRCODE_IMPORT].[CHTS] AS [CHTS]
+      FROM [dbo].[MESC1TS_RPRCODE_IMPORT] AS [MESC1TS_RPRCODE_IMPORT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MESC1TS_RPRCODE_PART" EntityType="MESC2DSModel.Store.MESC1TS_RPRCODE_PART" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SHOP" EntityType="MESC2DSModel.Store.MESC1TS_SHOP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SHOP_CONT" EntityType="MESC2DSModel.Store.MESC1TS_SHOP_CONT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SHOP_LIMITS" EntityType="MESC2DSModel.Store.MESC1TS_SHOP_LIMITS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SPECIAL_REMARKS" EntityType="MESC2DSModel.Store.MESC1TS_SPECIAL_REMARKS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_STATUS_CODE" EntityType="MESC2DSModel.Store.MESC1TS_STATUS_CODE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SUSPEND" EntityType="MESC2DSModel.Store.MESC1TS_SUSPEND" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SUSPEND_CAT" EntityType="MESC2DSModel.Store.MESC1TS_SUSPEND_CAT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_TPI" EntityType="MESC2DSModel.Store.MESC1TS_TPI" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_TRANSMIT" EntityType="MESC2DSModel.Store.MESC1TS_TRANSMIT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_VENDOR" EntityType="MESC2DSModel.Store.MESC1TS_VENDOR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WO" EntityType="MESC2DSModel.Store.MESC1TS_WO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOAUDIT" EntityType="MESC2DSModel.Store.MESC1TS_WOAUDIT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOPART" EntityType="MESC2DSModel.Store.MESC1TS_WOPART" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOREMARK" EntityType="MESC2DSModel.Store.MESC1TS_WOREMARK" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_WOREPAIR" EntityType="MESC2DSModel.Store.MESC1TS_WOREPAIR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_XML_LOG" EntityType="MESC2DSModel.Store.MESC1TS_XML_LOG" store:Type="Tables" store:Schema="dbo" store:Name="MESC1TS_XML_LOG">
+      <DefiningQuery>SELECT 
+      [MESC1TS_XML_LOG].[XML_ID] AS [XML_ID], 
+      [MESC1TS_XML_LOG].[CRTS] AS [CRTS], 
+      [MESC1TS_XML_LOG].[XML_TEXT] AS [XML_TEXT]
+      FROM [dbo].[MESC1TS_XML_LOG] AS [MESC1TS_XML_LOG]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SEC_ACTION" EntityType="MESC2DSModel.Store.SEC_ACTION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP" EntityType="MESC2DSModel.Store.SEC_AUTHGROUP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP_ACTION" EntityType="MESC2DSModel.Store.SEC_AUTHGROUP_ACTION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP_FUNCTION" EntityType="MESC2DSModel.Store.SEC_AUTHGROUP_FUNCTION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP_USER" EntityType="MESC2DSModel.Store.SEC_AUTHGROUP_USER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP_WEBPAGE" EntityType="MESC2DSModel.Store.SEC_AUTHGROUP_WEBPAGE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_AUTHGROUP_WEBSITE" EntityType="MESC2DSModel.Store.SEC_AUTHGROUP_WEBSITE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_FUNCTION" EntityType="MESC2DSModel.Store.SEC_FUNCTION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_USER" EntityType="MESC2DSModel.Store.SEC_USER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_WEBPAGE" EntityType="MESC2DSModel.Store.SEC_WEBPAGE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEC_WEBSITE" EntityType="MESC2DSModel.Store.SEC_WEBSITE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TESTEQUIPNO" EntityType="MESC2DSModel.Store.TESTEQUIPNO" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__MESC1TS_C__AREA___7E02B4CC" Association="MESC2DSModel.Store.FK__MESC1TS_C__AREA___7E02B4CC">
+      <End Role="MESC1TS_AREA" EntitySet="MESC1TS_AREA" />
+      <End Role="MESC1TS_COUNTRY" EntitySet="MESC1TS_COUNTRY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__COUNT__00DF2177" Association="MESC2DSModel.Store.FK__MESC1TS_C__COUNT__00DF2177">
+      <End Role="MESC1TS_COUNTRY" EntitySet="MESC1TS_COUNTRY" />
+      <End Role="MESC1TS_COUNTRY_CONT" EntitySet="MESC1TS_COUNTRY_CONT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__COUNT__02C769E9" Association="MESC2DSModel.Store.FK__MESC1TS_C__COUNT__02C769E9">
+      <End Role="MESC1TS_COUNTRY" EntitySet="MESC1TS_COUNTRY" />
+      <End Role="MESC1TS_COUNTRY_LABOR" EntitySet="MESC1TS_COUNTRY_LABOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__CUCDN__01D345B0" Association="MESC2DSModel.Store.FK__MESC1TS_C__CUCDN__01D345B0">
+      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
+      <End Role="MESC1TS_COUNTRY_LABOR" EntitySet="MESC1TS_COUNTRY_LABOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__CUCDN__7FEAFD3E" Association="MESC2DSModel.Store.FK__MESC1TS_C__CUCDN__7FEAFD3E">
+      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
+      <End Role="MESC1TS_COUNTRY_CONT" EntitySet="MESC1TS_COUNTRY_CONT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__CUSTO__05A3D694" Association="MESC2DSModel.Store.FK__MESC1TS_C__CUSTO__05A3D694">
+      <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
+      <End Role="MESC1TS_CUST_SHOP_MODE" EntitySet="MESC1TS_CUST_SHOP_MODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__EQTYP__03BB8E22" Association="MESC2DSModel.Store.FK__MESC1TS_C__EQTYP__03BB8E22">
+      <End Role="MESC1TS_EQTYPE" EntitySet="MESC1TS_EQTYPE" />
+      <End Role="MESC1TS_COUNTRY_LABOR" EntitySet="MESC1TS_COUNTRY_LABOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__MANUA__09746778" Association="MESC2DSModel.Store.FK__MESC1TS_C__MANUA__09746778">
+      <End Role="MESC1TS_MANUAL" EntitySet="MESC1TS_MANUAL" />
+      <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__PAYAG__078C1F06" Association="MESC2DSModel.Store.FK__MESC1TS_C__PAYAG__078C1F06">
+      <End Role="MESC1TS_PAYAGENT" EntitySet="MESC1TS_PAYAGENT" />
+      <End Role="MESC1TS_CUST_SHOP_MODE" EntitySet="MESC1TS_CUST_SHOP_MODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_C__SHOP___0697FACD" Association="MESC2DSModel.Store.FK__MESC1TS_C__SHOP___0697FACD">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_CUST_SHOP_MODE" EntitySet="MESC1TS_CUST_SHOP_MODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_CP__MODE__04AFB25B" Association="MESC2DSModel.Store.FK__MESC1TS_CP__MODE__04AFB25B">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_CPH_EQP_LIMIT" EntitySet="MESC1TS_CPH_EQP_LIMIT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_CU__MODE__0880433F" Association="MESC2DSModel.Store.FK__MESC1TS_CU__MODE__0880433F">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_CUST_SHOP_MODE" EntitySet="MESC1TS_CUST_SHOP_MODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_EQ__MODE__0A688BB1" Association="MESC2DSModel.Store.FK__MESC1TS_EQ__MODE__0A688BB1">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_EQMODE" EntitySet="MESC1TS_EQMODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_L__COUNT__11158940" Association="MESC2DSModel.Store.FK__MESC1TS_L__COUNT__11158940">
+      <End Role="MESC1TS_COUNTRY" EntitySet="MESC1TS_COUNTRY" />
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_L__CUSTO__0E391C95" Association="MESC2DSModel.Store.FK__MESC1TS_L__CUSTO__0E391C95">
+      <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
+      <End Role="MESC1TS_LABOR_RATE" EntitySet="MESC1TS_LABOR_RATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_L__EQTYP__10216507" Association="MESC2DSModel.Store.FK__MESC1TS_L__EQTYP__10216507">
+      <End Role="MESC1TS_EQTYPE" EntitySet="MESC1TS_EQTYPE" />
+      <End Role="MESC1TS_LABOR_RATE" EntitySet="MESC1TS_LABOR_RATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_L__REGIO__1209AD79" Association="MESC2DSModel.Store.FK__MESC1TS_L__REGIO__1209AD79">
+      <End Role="MESC1TS_REGION" EntitySet="MESC1TS_REGION" />
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_L__SHOP___0F2D40CE" Association="MESC2DSModel.Store.FK__MESC1TS_L__SHOP___0F2D40CE">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_LABOR_RATE" EntitySet="MESC1TS_LABOR_RATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_M__MANUA__12FDD1B2" Association="MESC2DSModel.Store.FK__MESC1TS_M__MANUA__12FDD1B2">
+      <End Role="MESC1TS_MANUAL" EntitySet="MESC1TS_MANUAL" />
+      <End Role="MESC1TS_MANUAL_MODE" EntitySet="MESC1TS_MANUAL_MODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_M__MANUF__15DA3E5D" Association="MESC2DSModel.Store.FK__MESC1TS_M__MANUF__15DA3E5D">
+      <End Role="MESC1TS_MANUFACTUR" EntitySet="MESC1TS_MANUFACTUR" />
+      <End Role="MESC1TS_MASTER_PART" EntitySet="MESC1TS_MASTER_PART" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_M__MANUF__16CE6296" Association="MESC2DSModel.Store.FK__MESC1TS_M__MANUF__16CE6296">
+      <End Role="MESC1TS_MANUFACTUR" EntitySet="MESC1TS_MANUFACTUR" />
+      <End Role="MESC1TS_MODEL" EntitySet="MESC1TS_MODEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_M__PARTS__14E61A24" Association="MESC2DSModel.Store.FK__MESC1TS_M__PARTS__14E61A24">
+      <End Role="MESC1TS_PARTS_GROUP" EntitySet="MESC1TS_PARTS_GROUP" />
+      <End Role="MESC1TS_MASTER_PART" EntitySet="MESC1TS_MASTER_PART" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_MA__MODE__13F1F5EB" Association="MESC2DSModel.Store.FK__MESC1TS_MA__MODE__13F1F5EB">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_MANUAL_MODE" EntitySet="MESC1TS_MANUAL_MODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_NO__MODE__17C286CF" Association="MESC2DSModel.Store.FK__MESC1TS_NO__MODE__17C286CF">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_NONSCODE" EntitySet="MESC1TS_NONSCODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_P__PAYAG__19AACF41" Association="MESC2DSModel.Store.FK__MESC1TS_P__PAYAG__19AACF41">
+      <End Role="MESC1TS_PAYAGENT" EntitySet="MESC1TS_PAYAGENT" />
+      <End Role="MESC1TS_PAYAGENT_VENDOR" EntitySet="MESC1TS_PAYAGENT_VENDOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_P__VENDO__18B6AB08" Association="MESC2DSModel.Store.FK__MESC1TS_P__VENDO__18B6AB08">
+      <End Role="MESC1TS_VENDOR" EntitySet="MESC1TS_VENDOR" />
+      <End Role="MESC1TS_PAYAGENT_VENDOR" EntitySet="MESC1TS_PAYAGENT_VENDOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_PR__MODE__1A9EF37A" Association="MESC2DSModel.Store.FK__MESC1TS_PR__MODE__1A9EF37A">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_PREPTIME" EntitySet="MESC1TS_PREPTIME" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_R__MANUA__1C873BEC" Association="MESC2DSModel.Store.FK__MESC1TS_R__MANUA__1C873BEC">
+      <End Role="MESC1TS_MANUAL" EntitySet="MESC1TS_MANUAL" />
+      <End Role="MESC1TS_REPAIR_CODE" EntitySet="MESC1TS_REPAIR_CODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_R__PART___1F63A897" Association="MESC2DSModel.Store.FK__MESC1TS_R__PART___1F63A897">
+      <End Role="MESC1TS_MASTER_PART" EntitySet="MESC1TS_MASTER_PART" />
+      <End Role="MESC1TS_RPRCODE_PART" EntitySet="MESC1TS_RPRCODE_PART" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_RE__MODE__1D7B6025" Association="MESC2DSModel.Store.FK__MESC1TS_RE__MODE__1D7B6025">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_REPAIR_CODE" EntitySet="MESC1TS_REPAIR_CODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__CUCDN__214BF109" Association="MESC2DSModel.Store.FK__MESC1TS_S__CUCDN__214BF109">
+      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__LOC_C__22401542" Association="MESC2DSModel.Store.FK__MESC1TS_S__LOC_C__22401542">
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__SHOP___251C81ED" Association="MESC2DSModel.Store.FK__MESC1TS_S__SHOP___251C81ED">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_SHOP_CONT" EntitySet="MESC1TS_SHOP_CONT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__SHOP___2610A626" Association="MESC2DSModel.Store.FK__MESC1TS_S__SHOP___2610A626">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_SHOP_LIMITS" EntitySet="MESC1TS_SHOP_LIMITS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__SHOP___28ED12D1" Association="MESC2DSModel.Store.FK__MESC1TS_S__SHOP___28ED12D1">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_SUSPEND" EntitySet="MESC1TS_SUSPEND" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__SUSPC__27F8EE98" Association="MESC2DSModel.Store.FK__MESC1TS_S__SUSPC__27F8EE98">
+      <End Role="MESC1TS_SUSPEND_CAT" EntitySet="MESC1TS_SUSPEND_CAT" />
+      <End Role="MESC1TS_SUSPEND" EntitySet="MESC1TS_SUSPEND" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__VENDO__2334397B" Association="MESC2DSModel.Store.FK__MESC1TS_S__VENDO__2334397B">
+      <End Role="MESC1TS_VENDOR" EntitySet="MESC1TS_VENDOR" />
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_T__CUSTO__2AD55B43" Association="MESC2DSModel.Store.FK__MESC1TS_T__CUSTO__2AD55B43">
+      <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
+      <End Role="MESC1TS_TRANSMIT" EntitySet="MESC1TS_TRANSMIT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_TR__MODE__29E1370A" Association="MESC2DSModel.Store.FK__MESC1TS_TR__MODE__29E1370A">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_TRANSMIT" EntitySet="MESC1TS_TRANSMIT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__CUCDN__2DB1C7EE" Association="MESC2DSModel.Store.FK__MESC1TS_W__CUCDN__2DB1C7EE">
+      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__CUSTO__318258D2" Association="MESC2DSModel.Store.FK__MESC1TS_W__CUSTO__318258D2">
+      <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__EQTYP__2F9A1060" Association="MESC2DSModel.Store.FK__MESC1TS_W__EQTYP__2F9A1060">
+      <End Role="MESC1TS_EQTYPE" EntitySet="MESC1TS_EQTYPE" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__MANUA__2CBDA3B5" Association="MESC2DSModel.Store.FK__MESC1TS_W__MANUA__2CBDA3B5">
+      <End Role="MESC1TS_MANUAL" EntitySet="MESC1TS_MANUAL" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__PART___3552E9B6" Association="MESC2DSModel.Store.FK__MESC1TS_W__PART___3552E9B6">
+      <End Role="MESC1TS_MASTER_PART" EntitySet="MESC1TS_MASTER_PART" />
+      <End Role="MESC1TS_WOPART" EntitySet="MESC1TS_WOPART" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__SHOP___308E3499" Association="MESC2DSModel.Store.FK__MESC1TS_W__SHOP___308E3499">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__STATU__2EA5EC27" Association="MESC2DSModel.Store.FK__MESC1TS_W__STATU__2EA5EC27">
+      <End Role="MESC1TS_STATUS_CODE" EntitySet="MESC1TS_STATUS_CODE" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__SUSPC__36470DEF" Association="MESC2DSModel.Store.FK__MESC1TS_W__SUSPC__36470DEF">
+      <End Role="MESC1TS_SUSPEND_CAT" EntitySet="MESC1TS_SUSPEND_CAT" />
+      <End Role="MESC1TS_WOREMARK" EntitySet="MESC1TS_WOREMARK" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__VENDO__2BC97F7C" Association="MESC2DSModel.Store.FK__MESC1TS_W__VENDO__2BC97F7C">
+      <End Role="MESC1TS_VENDOR" EntitySet="MESC1TS_VENDOR" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__WO_ID__20ACD28B" Association="MESC2DSModel.Store.FK__MESC1TS_W__WO_ID__20ACD28B">
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+      <End Role="MESC1TS_WOREPAIR" EntitySet="MESC1TS_WOREPAIR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_WO__MODE__32767D0B" Association="MESC2DSModel.Store.FK__MESC1TS_WO__MODE__32767D0B">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__AUTHG__1881A0DE" Association="MESC2DSModel.Store.FK__SEC_AUTHG__AUTHG__1881A0DE">
+      <End Role="SEC_AUTHGROUP" EntitySet="SEC_AUTHGROUP" />
+      <End Role="SEC_AUTHGROUP1" EntitySet="SEC_AUTHGROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__AUTHG__1975C517" Association="MESC2DSModel.Store.FK__SEC_AUTHG__AUTHG__1975C517">
+      <End Role="SEC_AUTHGROUP" EntitySet="SEC_AUTHGROUP" />
+      <End Role="SEC_AUTHGROUP_ACTION" EntitySet="SEC_AUTHGROUP_ACTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__AUTHG__1B5E0D89" Association="MESC2DSModel.Store.FK__SEC_AUTHG__AUTHG__1B5E0D89">
+      <End Role="SEC_AUTHGROUP" EntitySet="SEC_AUTHGROUP" />
+      <End Role="SEC_AUTHGROUP_FUNCTION" EntitySet="SEC_AUTHGROUP_FUNCTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__AUTHG__1D4655FB" Association="MESC2DSModel.Store.FK__SEC_AUTHG__AUTHG__1D4655FB">
+      <End Role="SEC_AUTHGROUP" EntitySet="SEC_AUTHGROUP" />
+      <End Role="SEC_AUTHGROUP_USER" EntitySet="SEC_AUTHGROUP_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__AUTHG__1F2E9E6D" Association="MESC2DSModel.Store.FK__SEC_AUTHG__AUTHG__1F2E9E6D">
+      <End Role="SEC_AUTHGROUP" EntitySet="SEC_AUTHGROUP" />
+      <End Role="SEC_AUTHGROUP_WEBPAGE" EntitySet="SEC_AUTHGROUP_WEBPAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__AUTHG__2116E6DF" Association="MESC2DSModel.Store.FK__SEC_AUTHG__AUTHG__2116E6DF">
+      <End Role="SEC_AUTHGROUP" EntitySet="SEC_AUTHGROUP" />
+      <End Role="SEC_AUTHGROUP_WEBSITE" EntitySet="SEC_AUTHGROUP_WEBSITE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__USER___1E3A7A34" Association="MESC2DSModel.Store.FK__SEC_AUTHG__USER___1E3A7A34">
+      <End Role="SEC_USER" EntitySet="SEC_USER" />
+      <End Role="SEC_AUTHGROUP_USER" EntitySet="SEC_AUTHGROUP_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_AUTHG__WEBSI__220B0B18" Association="MESC2DSModel.Store.FK__SEC_AUTHG__WEBSI__220B0B18">
+      <End Role="SEC_WEBSITE" EntitySet="SEC_WEBSITE" />
+      <End Role="SEC_AUTHGROUP_WEBSITE" EntitySet="SEC_AUTHGROUP_WEBSITE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_USER__LOC_CD__23F3538A" Association="MESC2DSModel.Store.FK__SEC_USER__LOC_CD__23F3538A">
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+      <End Role="SEC_USER" EntitySet="SEC_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SEC_WEBPA__WEBSI__24E777C3" Association="MESC2DSModel.Store.FK__SEC_WEBPA__WEBSI__24E777C3">
+      <End Role="SEC_WEBSITE" EntitySet="SEC_WEBSITE" />
+      <End Role="SEC_WEBPAGE" EntitySet="SEC_WEBPAGE" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_AREA">
+    <Key>
+      <PropertyRef Name="AREA_CD" />
+    </Key>
+    <Property Name="AREA_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="AREA_DESC" Type="varchar" MaxLength="20" />
+    <Property Name="AREA_GEO_ID" Type="char" MaxLength="13" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRY_CD" />
+    </Key>
+    <Property Name="COUNTRY_CD" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="COUNTRY_DESC" Type="varchar" MaxLength="36" />
+    <Property Name="AREA_CD" Type="char" MaxLength="3" />
+    <Property Name="REPAIR_LIMIT_ADJ_FACTOR" Type="float" />
+    <Property Name="COUNTRY_GEO_ID" Type="char" MaxLength="13" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_COUNTRY_CONT">
+    <Key>
+      <PropertyRef Name="COUNTRY_CONT_ID" />
+    </Key>
+    <Property Name="COUNTRY_CONT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="COUNTRY_CD" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="EFF_DTE" Type="datetime" Nullable="false" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="EXP_DTE" Type="datetime" Nullable="false" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CONTRACT_AMOUNT" Type="numeric" Nullable="false" Precision="16" Scale="4" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="CUCDN" Type="char" MaxLength="3" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="MESC1TS_COUNTRY_LABOR">
+    <Key>
+      <PropertyRef Name="COUNTRY_LABOR_ID" />
+    </Key>
+    <Property Name="COUNTRY_LABOR_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EQTYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="EXP_DTE" Type="datetime" Nullable="false" />
+    <Property Name="EFF_DTE" Type="datetime" Nullable="false" />
+    <Property Name="COUNTRY_CD" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="REGULAR_RT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="OVERTIME_RT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="DOUBLETIME_RT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHTS" Type="datetime" />
+    <Property Name="MISC_RT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CUCDN" Type="char" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="MESC1TS_CPH_EQP_LIMIT">
+    <Key>
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="AGE_FROM" />
+      <PropertyRef Name="EQSIZE" />
+      <PropertyRef Name="AGE_TO" />
+    </Key>
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="AGE_FROM" Type="smallint" Nullable="false" />
+    <Property Name="LIMIT_AMOUNT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EQSIZE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="AGE_TO" Type="smallint" Nullable="false" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_CURRENCY">
+    <Key>
+      <PropertyRef Name="CUCDN" />
+    </Key>
+    <Property Name="CURCD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="CUCDN" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="CURRNAMC" Type="varchar" MaxLength="36" />
+    <Property Name="EXRATDKK" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="EXRATUSD" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="EXRATYEN" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="EXRATEUR" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="QUOTEDAT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_CUST_SHOP_MODE">
+    <Key>
+      <PropertyRef Name="CSM_CD" />
+    </Key>
+    <Property Name="CSM_CD" Type="char" Nullable="false" MaxLength="9" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="RRIS_FORMAT" Type="char" MaxLength="2" />
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="PROFIT_CENTER" Type="char" MaxLength="2" />
+    <Property Name="PAYAGENT_CD" Type="char" MaxLength="3" />
+    <Property Name="SUB_PROFIT_CENTER" Type="char" MaxLength="2" />
+    <Property Name="ACCOUNT_CD" Type="char" MaxLength="7" />
+    <Property Name="CUSTOMER_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="CORP_PAYAGENT_CD" Type="char" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="MESC1TS_CUSTOMER">
+    <Key>
+      <PropertyRef Name="CUSTOMER_CD" />
+    </Key>
+    <Property Name="CUSTOMER_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="CUSTOMER_DESC" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="MAERSK_SW" Type="char" MaxLength="1" />
+    <Property Name="CUSTOMER_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_DAMAGE">
+    <Key>
+      <PropertyRef Name="cedex_code" />
+    </Key>
+    <Property Name="cedex_code" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="name" Type="varchar" MaxLength="30" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="numerical_code" Type="char" MaxLength="5" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MESC2DS.dbo.MESC1TS_DISCOUNT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MESC1TS_DISCOUNT">
+    <Key>
+      <PropertyRef Name="SHOP_CD" />
+    </Key>
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="MANUFCTR" Type="char" MaxLength="3" />
+    <Property Name="DISCOUNT" Type="float" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="30" />
+    <Property Name="CHTS" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EDI_ERROR">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" />
+    <Property Name="LINE_NO" Type="int" Nullable="false" />
+    <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MESC2DS.dbo.MESC1TS_EDI_ERROR1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MESC1TS_EDI_ERROR1">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" />
+    <Property Name="LINE_NO" Type="int" />
+    <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EDI_LINEITEM">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" />
+    <Property Name="LINE_NO" Type="int" Nullable="false" />
+    <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MESC2DS.dbo.MESC1TS_EDI_LINEITEM1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MESC1TS_EDI_LINEITEM1">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" />
+    <Property Name="LINE_NO" Type="int" />
+    <Property Name="LINE_DETAIL" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EDI_TRANSMISSION">
+    <Key>
+      <PropertyRef Name="EDI_ID" />
+    </Key>
+    <Property Name="EDI_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CRTS" Type="datetime" />
+    <Property Name="WO_QTY" Type="int" />
+    <Property Name="WO_PASS_QTY" Type="int" />
+    <Property Name="WO_FAIL_QTY" Type="int" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EQMODE">
+    <Key>
+      <PropertyRef Name="EQMODE_ID" />
+    </Key>
+    <Property Name="EQMODE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EQSTYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="EQSIZE" Type="char" MaxLength="2" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="COTYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="ALUMINIUM_SW" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EQSTYPE">
+    <Key>
+      <PropertyRef Name="EQSTYPE" />
+      <PropertyRef Name="COTYPE" />
+    </Key>
+    <Property Name="EQSTYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="COTYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="TYPE_DESC" Type="varchar" MaxLength="20" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EQTYPE">
+    <Key>
+      <PropertyRef Name="EQTYPE" />
+    </Key>
+    <Property Name="EQTYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="EQTYPE_DESC" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_ERR_MESSAGE">
+    <Key>
+      <PropertyRef Name="ERROR_NO" />
+    </Key>
+    <Property Name="ERROR_NO" Type="int" Nullable="false" />
+    <Property Name="ERROR_MSG" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MESC1TS_EVENT_LOG">
+    <Key>
+      <PropertyRef Name="EVENT_ID" />
+    </Key>
+    <Property Name="EVENT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EVENT_NAME" Type="varchar" Nullable="false" MaxLength="35" />
+    <Property Name="UNIQUE_ID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TABLE_NAME" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="EVENT_DESC" Type="varchar" Nullable="false" MaxLength="4000" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_INDEX">
+    <Key>
+      <PropertyRef Name="INDEX_ID" />
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+    </Key>
+    <Property Name="INDEX_ID" Type="int" Nullable="false" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="INDEX_DESC" Type="varchar" MaxLength="60" />
+    <Property Name="INDEX_PRIORITY" Type="smallint" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_INSPECTION">
+    <Key>
+      <PropertyRef Name="INSP_DTE" />
+      <PropertyRef Name="CHAS_EQPNO" />
+    </Key>
+    <Property Name="INSP_DTE" Type="datetime" Nullable="false" />
+    <Property Name="CHAS_EQPNO" Type="char" Nullable="false" MaxLength="11" />
+    <Property Name="INSP_BY" Type="char" MaxLength="3" />
+    <Property Name="RKEMLOC" Type="char" MaxLength="8" />
+    <Property Name="XMIT_RC" Type="char" MaxLength="1" />
+    <Property Name="XMIT_DTE" Type="datetime" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_LABOR_RATE">
+    <Key>
+      <PropertyRef Name="LABOR_RATE_ID" />
+    </Key>
+    <Property Name="LABOR_RATE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EQTYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="EFF_DTE" Type="datetime" Nullable="false" />
+    <Property Name="EXP_DTE" Type="datetime" Nullable="false" />
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="CUSTOMER_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="REGULAR_RT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="OVERTIME_RT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="DOUBLETIME_RT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MISC_RT" Type="numeric" Precision="16" Scale="4" />
+  </EntityType>
+  <EntityType Name="MESC1TS_LOCATION">
+    <Key>
+      <PropertyRef Name="LOC_CD" />
+    </Key>
+    <Property Name="LOC_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="REGION_CD" Type="char" MaxLength="2" />
+    <Property Name="LOC_DESC" Type="varchar" MaxLength="30" />
+    <Property Name="COUNTRY_CD" Type="char" MaxLength="2" />
+    <Property Name="RKRPLOC" Type="char" MaxLength="5" />
+    <Property Name="LOC_GEO_ID" Type="char" MaxLength="13" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CONTACT_EQSAL_SW" Type="char" MaxLength="1" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_MANUAL">
+    <Key>
+      <PropertyRef Name="MANUAL_CD" />
+    </Key>
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="MANUAL_DESC" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="MANUAL_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_MANUAL_MODE">
+    <Key>
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+    </Key>
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_MANUFACTUR">
+    <Key>
+      <PropertyRef Name="MANUFCTR" />
+    </Key>
+    <Property Name="MANUFCTR" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="DISCOUNT_PERCENT" Type="float" />
+    <Property Name="MANUFACTUR_NAME" Type="varchar" MaxLength="35" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_MASTER_PART">
+    <Key>
+      <PropertyRef Name="PART_CD" />
+    </Key>
+    <Property Name="PARTS_GROUP_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="PART_CD" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PART_DESC" Type="varchar" MaxLength="36" />
+    <Property Name="PART_PRICE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="QUANTITY" Type="int" />
+    <Property Name="PART_DESIGNATION_1" Type="char" MaxLength="3" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="PART_DESIGNATION_2" Type="char" MaxLength="3" />
+    <Property Name="PART_DESIGNATION_3" Type="char" MaxLength="3" />
+    <Property Name="PART_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CORE_VALUE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="DEDUCT_CORE" Type="char" MaxLength="1" />
+    <Property Name="REMARKS" Type="varchar" MaxLength="255" />
+    <Property Name="MANUFCTR" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="CORE_PART_SW" Type="char" MaxLength="1" />
+    <Property Name="MSL_PART_SW" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="MESC1TS_MODE">
+    <Key>
+      <PropertyRef Name="MODE" />
+    </Key>
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MODE_DESC" Type="varchar" MaxLength="60" />
+    <Property Name="STANDARD_TIME_SW" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="VALIDATION_SW" Type="char" MaxLength="1" />
+    <Property Name="MODE_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="MODE_IND" Type="char" MaxLength="1" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_MODEL">
+    <Key>
+      <PropertyRef Name="MODEL_NO" />
+      <PropertyRef Name="MANUFCTR" />
+    </Key>
+    <Property Name="MODEL_NO" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="INDICATOR_CD" Type="char" MaxLength="1" />
+    <Property Name="MANUFCTR" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_NONSCODE">
+    <Key>
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="NONS_CD" />
+    </Key>
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="NONS_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="NONS_DESC" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="NONS_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_PARTS_GROUP">
+    <Key>
+      <PropertyRef Name="PARTS_GROUP_CD" />
+    </Key>
+    <Property Name="PARTS_GROUP_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="PARTS_GROUP_DESC" Type="varchar" MaxLength="30" />
+    <Property Name="REMARKS" Type="varchar" MaxLength="255" />
+    <Property Name="PARTS_GROUP_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_PAYAGENT">
+    <Key>
+      <PropertyRef Name="PAYAGENT_CD" />
+    </Key>
+    <Property Name="PAYAGENT_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="CORP_PAYAGENT_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="RRIS_FORMAT" Type="char" MaxLength="2" />
+    <Property Name="PROFIT_CENTER" Type="char" MaxLength="2" />
+    <Property Name="SUB_PROFIT_CENTER" Type="char" MaxLength="2" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_PAYAGENT_VENDOR">
+    <Key>
+      <PropertyRef Name="PAYAGENT_CD" />
+      <PropertyRef Name="VENDOR_CD" />
+    </Key>
+    <Property Name="PAYAGENT_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="VENDOR_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="LOCAL_ACCOUNT_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="SUPPLIER_CD" Type="char" MaxLength="6" />
+    <Property Name="PAYMENT_METHOD" Type="char" MaxLength="1" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_PREPTIME">
+    <Key>
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="PREP_TIME_MAX" />
+    </Key>
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="PREP_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="PREP_TIME_MAX" Type="float" Nullable="false" />
+    <Property Name="PREP_HRS" Type="float" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_PROCESS_IDENTIFIER">
+    <Key>
+      <PropertyRef Name="PROCESS_ID" />
+    </Key>
+    <Property Name="PROCESS_ID" Type="int" Nullable="false" />
+    <Property Name="PROCESS_DESC" Type="varchar" MaxLength="35" />
+    <Property Name="PARAM_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PARAM_VALUE" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MESC1TS_PTI">
+    <Key>
+      <PropertyRef Name="SERIAL_NO_FROM" />
+      <PropertyRef Name="SERIAL_NO_TO" />
+    </Key>
+    <Property Name="SERIAL_NO_FROM" Type="char" Nullable="false" MaxLength="11" />
+    <Property Name="SERIAL_NO_TO" Type="char" Nullable="false" MaxLength="11" />
+    <Property Name="NO_OF_DAYS" Type="int" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_REFAUDIT">
+    <Key>
+      <PropertyRef Name="AUDIT_ID" />
+    </Key>
+    <Property Name="AUDIT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TAB_NAME" Type="varchar" MaxLength="128" />
+    <Property Name="UNIQUE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="COL_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="OLD_VALUE" Type="varchar" MaxLength="255" />
+    <Property Name="NEW_VALUE" Type="varchar" MaxLength="255" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_REGION">
+    <Key>
+      <PropertyRef Name="REGION_CD" />
+    </Key>
+    <Property Name="REGION_CD" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="REGION_DESC" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_REPAIR_CODE">
+    <Key>
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+    </Key>
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="REPAIR_DESC" Type="varchar" MaxLength="100" />
+    <Property Name="RKRP_REPAIR_CD" Type="char" MaxLength="6" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="MAX_QUANTITY" Type="smallint" />
+    <Property Name="SHOP_MATERIAL_CEILING" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="REPAIR_IND" Type="char" MaxLength="1" />
+    <Property Name="MAN_HOUR" Type="float" />
+    <Property Name="REPAIR_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="MULTIPLE_UPDATE_SW" Type="char" MaxLength="1" />
+    <Property Name="WARRANTY_PERIOD" Type="float" />
+    <Property Name="TAX_APPLIED_SW" Type="char" MaxLength="1" />
+    <Property Name="REPAIR_PRIORITY" Type="smallint" />
+    <Property Name="INDEX_ID" Type="int" />
+    <Property Name="ALLOW_PARTS_SW" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="MESC1TS_REPAIR_LOC">
+    <Key>
+      <PropertyRef Name="cedex_code" />
+    </Key>
+    <Property Name="cedex_code" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="MESC1TS_RPRCODE_EXCLU">
+    <Key>
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="EXCLU_REPAIR_CD" />
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+    </Key>
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="EXCLU_REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MESC2DS.dbo.MESC1TS_RPRCODE_IMPORT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MESC1TS_RPRCODE_IMPORT">
+    <Key>
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="EXCLU_REPAIR_CD" />
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+      <PropertyRef Name="CHTS" />
+    </Key>
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="EXCLU_REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_RPRCODE_PART">
+    <Key>
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+      <PropertyRef Name="PART_CD" />
+    </Key>
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="PART_CD" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="MAX_PART_QTY" Type="int" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SHOP">
+    <Key>
+      <PropertyRef Name="SHOP_CD" />
+    </Key>
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="VENDOR_CD" Type="char" MaxLength="6" />
+    <Property Name="SHOP_DESC" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="RKRPLOC" Type="char" MaxLength="5" />
+    <Property Name="LOC_CD" Type="char" MaxLength="8" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="EMAIL_ADR" Type="varchar" MaxLength="60" />
+    <Property Name="PHONE" Type="char" MaxLength="15" />
+    <Property Name="EDI_PARTNER" Type="varchar" MaxLength="36" />
+    <Property Name="RRIS70_SUFFIX_CD" Type="char" MaxLength="2" />
+    <Property Name="PREPTIME_SW" Type="char" MaxLength="1" />
+    <Property Name="SHOP_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="PCT_MATERIAL_FACTOR" Type="float" />
+    <Property Name="RRIS_XMIT_SW" Type="char" MaxLength="1" />
+    <Property Name="OVERTIME_SUSP_SW" Type="char" MaxLength="1" />
+    <Property Name="IMPORT_TAX" Type="float" />
+    <Property Name="SHOP_TYPE_CD" Type="char" MaxLength="1" />
+    <Property Name="SALES_TAX_PART_CONT" Type="float" />
+    <Property Name="SALES_TAX_PART_GEN" Type="float" />
+    <Property Name="SALES_TAX_LABOR_CON" Type="float" />
+    <Property Name="CUCDN" Type="char" MaxLength="3" />
+    <Property Name="SALES_TAX_LABOR_GEN" Type="float" />
+    <Property Name="ACEP_SW" Type="char" MaxLength="1" />
+    <Property Name="DECENTRALIZED" Type="char" MaxLength="1" />
+    <Property Name="AUTO_COMPLETE_SW" Type="char" MaxLength="1" />
+    <Property Name="BYPASS_LEASE_RULES" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SHOP_CONT">
+    <Key>
+      <PropertyRef Name="SHOP_CONT_ID" />
+    </Key>
+    <Property Name="SHOP_CONT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="CONTRACT_AMOUNT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EFF_DTE" Type="datetime" Nullable="false" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="EXP_DTE" Type="datetime" Nullable="false" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SHOP_LIMITS">
+    <Key>
+      <PropertyRef Name="SHOP_CD" />
+      <PropertyRef Name="MODE" />
+    </Key>
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="REPAIR_AMT_LIMIT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="AUTO_APPROVE_LIMIT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SHOP_MATERIAL_LIMIT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SPECIAL_REMARKS">
+    <Key>
+      <PropertyRef Name="REMARKS_ID" />
+    </Key>
+    <Property Name="REMARKS_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RKEM_PROFILE" Type="varchar" MaxLength="11" />
+    <Property Name="SERIAL_NO_FROM" Type="char" MaxLength="11" />
+    <Property Name="SERIAL_NO_TO" Type="char" MaxLength="11" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="DISPLAY_SW" Type="char" MaxLength="1" />
+    <Property Name="REMARKS" Type="varchar" MaxLength="255" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="REPAIR_CEILING" Type="numeric" Precision="16" Scale="4" />
+  </EntityType>
+  <EntityType Name="MESC1TS_STATUS_CODE">
+    <Key>
+      <PropertyRef Name="STATUS_CODE" />
+    </Key>
+    <Property Name="STATUS_CODE" Type="smallint" Nullable="false" />
+    <Property Name="STATUS_DSC" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SUSPEND">
+    <Key>
+      <PropertyRef Name="SHOP_CD" />
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="MANUAL_CD" />
+    </Key>
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="MANUAL_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="SUSPCAT_ID" Type="int" Nullable="false" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SUSPEND_CAT">
+    <Key>
+      <PropertyRef Name="SUSPCAT_ID" />
+    </Key>
+    <Property Name="SUSPCAT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SUSPCAT_DESC" Type="varchar" MaxLength="255" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_TPI">
+    <Key>
+      <PropertyRef Name="cedex_code" />
+    </Key>
+    <Property Name="cedex_code" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="name" Type="varchar" MaxLength="30" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="numerical_code" Type="char" MaxLength="5" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="MESC1TS_TRANSMIT">
+    <Key>
+      <PropertyRef Name="CUSTOMER_CD" />
+      <PropertyRef Name="MODE" />
+    </Key>
+    <Property Name="CUSTOMER_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="MODE" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="RRIS_XMIT_SW" Type="char" MaxLength="1" />
+    <Property Name="RKRP_XMIT_SW" Type="char" MaxLength="1" />
+    <Property Name="ACCOUNT_CD" Type="char" MaxLength="7" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_VENDOR">
+    <Key>
+      <PropertyRef Name="VENDOR_CD" />
+    </Key>
+    <Property Name="VENDOR_CD" Type="char" Nullable="false" MaxLength="6" />
+    <Property Name="VENDOR_DESC" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="VENDOR_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="DISCOUNT_PCT" Type="float" />
+    <Property Name="DISCOUNT_DAYS" Type="smallint" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="COUNTRY_CD" Type="char" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WO">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_CD" Type="char" MaxLength="4" />
+    <Property Name="EQSIZE" Type="char" MaxLength="2" />
+    <Property Name="MODE" Type="char" MaxLength="2" />
+    <Property Name="WOTYPE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="EQOUTHGU" Type="char" MaxLength="7" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="REPAIR_DTE" Type="datetime" />
+    <Property Name="EQOWNTP" Type="char" MaxLength="3" />
+    <Property Name="EQSTYPE" Type="char" MaxLength="4" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="STATUS_CODE" Type="smallint" />
+    <Property Name="EQMATR" Type="char" MaxLength="3" />
+    <Property Name="EQTYPE" Type="char" MaxLength="4" />
+    <Property Name="CAUSE" Type="char" MaxLength="1" />
+    <Property Name="DELDATSH" Type="datetime" />
+    <Property Name="THIRD_PARTY" Type="char" MaxLength="8" />
+    <Property Name="STEMPTY" Type="char" MaxLength="1" />
+    <Property Name="STREFURB" Type="char" MaxLength="1" />
+    <Property Name="MANH_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MANH_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="REFRBDAT" Type="datetime" />
+    <Property Name="EXCHANGE_RATE" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="STREDEL" Type="char" MaxLength="1" />
+    <Property Name="TOT_REPAIR_MANH" Type="float" />
+    <Property Name="FIXCOVER" Type="float" />
+    <Property Name="TOT_MANH_REG" Type="float" />
+    <Property Name="DPP" Type="float" />
+    <Property Name="TOT_MANH_OT" Type="float" />
+    <Property Name="OFFHIR_LOCATION_SW" Type="char" MaxLength="1" />
+    <Property Name="OT_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="STSELSCR" Type="char" MaxLength="1" />
+    <Property Name="TOT_MANH_DT" Type="float" />
+    <Property Name="EQPROFIL" Type="char" MaxLength="11" />
+    <Property Name="TOT_MANH_MISC" Type="float" />
+    <Property Name="EQINDAT" Type="datetime" />
+    <Property Name="TOT_PREP_HRS" Type="float" />
+    <Property Name="EQRUTYP" Type="varchar" MaxLength="15" />
+    <Property Name="TOT_LABOR_HRS" Type="float" />
+    <Property Name="TOT_LABOR_COST" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EQRUMAN" Type="varchar" MaxLength="15" />
+    <Property Name="TOT_SHOP_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_LABOR_COST_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_LOCAL" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EQMANCD" Type="char" MaxLength="3" />
+    <Property Name="VENDOR_REF_NO" Type="varchar" MaxLength="10" />
+    <Property Name="TOT_SHOP_AMT_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="EQIOFLT" Type="char" MaxLength="1" />
+    <Property Name="TOT_MAERSK_PARTS_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="VOUCHER_NO" Type="char" MaxLength="8" />
+    <Property Name="INVOICE_DTE" Type="datetime" />
+    <Property Name="TOT_MAN_PARTS_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHECK_NO" Type="varchar" MaxLength="36" />
+    <Property Name="PAID_DTE" Type="datetime" />
+    <Property Name="AMOUNT_PAID" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="RKRP_REPAIR_DTE" Type="datetime" />
+    <Property Name="RKRP_XMIT_DTE" Type="datetime" />
+    <Property Name="RKRP_XMIT_SW" Type="char" MaxLength="1" />
+    <Property Name="WO_RECV_DTE" Type="datetime" />
+    <Property Name="APPROVED_BY" Type="char" MaxLength="8" />
+    <Property Name="SHOP_WORKING_SW" Type="char" MaxLength="1" />
+    <Property Name="APPROVAL_DTE" Type="datetime" />
+    <Property Name="IMPORT_TAX" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="IMPORT_TAX_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_PARTS" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_PARTS_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_MAERSK_PARTS" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_MAN_PARTS" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MANUAL_CD" Type="char" MaxLength="4" />
+    <Property Name="EQPNO" Type="varchar" MaxLength="11" />
+    <Property Name="COTYPE" Type="char" MaxLength="4" />
+    <Property Name="VENDOR_CD" Type="char" MaxLength="6" />
+    <Property Name="REQ_REMARK_SW" Type="char" MaxLength="1" />
+    <Property Name="CUCDN" Type="char" MaxLength="3" />
+    <Property Name="OT_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="DT_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="DT_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MISC_RATE" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="MISC_RATE_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOTAL_COST_LOCAL_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_REPAIR" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_REPAIR_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR_PCT" Type="float" />
+    <Property Name="SALES_TAX_PARTS_PCT" Type="float" />
+    <Property Name="IMPORT_TAX_PCT" Type="float" />
+    <Property Name="CRTS" Type="datetime" />
+    <Property Name="AGENT_PARTS_TAX" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="AGENT_PARTS_TAX_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="COUNTRY_CUCDN" Type="char" MaxLength="3" />
+    <Property Name="COUNTRY_EXCHANGE_RATE" Type="numeric" Precision="14" Scale="6" />
+    <Property Name="COUNTRY_EXCHANGE_DTE" Type="datetime" />
+    <Property Name="DAMAGE" Type="char" MaxLength="1" />
+    <Property Name="LSCOMP" Type="char" MaxLength="3" />
+    <Property Name="LSCONTR" Type="char" MaxLength="10" />
+    <Property Name="REVISION_NO" Type="smallint" />
+    <Property Name="PREV_STATUS" Type="smallint" />
+    <Property Name="PREV_DATE" Type="datetime" />
+    <Property Name="PREV_LOC_CD" Type="char" MaxLength="8" />
+    <Property Name="TOT_W_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_CPH_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_CPH_USD" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="PRESENTLOC" Type="char" MaxLength="8" />
+    <Property Name="GATEINDTE" Type="datetime" />
+    <Property Name="prev_wo_id" Type="int" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOAUDIT">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+      <PropertyRef Name="CHTS" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="AUDIT_TEXT" Type="varchar" MaxLength="4000" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOPART">
+    <Key>
+      <PropertyRef Name="PART_CD" />
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="PART_CD" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="COST_CPH" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="COST_LOCAL" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="SERIAL_NUMBER" Type="varchar" MaxLength="36" />
+    <Property Name="QTY_PARTS" Type="float" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOREMARK">
+    <Key>
+      <PropertyRef Name="WOREMARK_ID" />
+    </Key>
+    <Property Name="WOREMARK_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="CRTS" Type="datetime" Nullable="false" />
+    <Property Name="REMARK_TYPE" Type="char" MaxLength="1" />
+    <Property Name="XMIT_DTE" Type="smalldatetime" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="SUSPCAT_ID" Type="int" />
+    <Property Name="REMARK" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MESC1TS_WOREPAIR">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+      <PropertyRef Name="REPAIR_CD" />
+      <PropertyRef Name="REPAIR_LOC_CD" />
+    </Key>
+    <Property Name="WO_ID" Type="int" Nullable="false" />
+    <Property Name="REPAIR_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="QTY_REPAIRS" Type="smallint" />
+    <Property Name="SHOP_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CPH_MATERIAL_AMT" Type="numeric" Precision="16" Scale="4" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="ACTUAL_MANH" Type="float" />
+    <Property Name="NONS_CD" Type="char" MaxLength="8" />
+    <Property Name="MODE" Type="char" MaxLength="2" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="MANUAL_CD" Type="char" MaxLength="4" />
+    <Property Name="DAMAGE_CD" Type="char" MaxLength="2" />
+    <Property Name="REPAIR_LOC_CD" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="TPI_CD" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MESC2DS.dbo.MESC1TS_XML_LOG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MESC1TS_XML_LOG">
+    <Key>
+      <PropertyRef Name="XML_ID" />
+    </Key>
+    <Property Name="XML_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CRTS" Type="datetime" />
+    <Property Name="XML_TEXT" Type="varchar" MaxLength="4096" />
+  </EntityType>
+  <EntityType Name="SEC_ACTION">
+    <Key>
+      <PropertyRef Name="ACTION_ID" />
+    </Key>
+    <Property Name="ACTION_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WEBPAGE_ID" Type="int" Nullable="false" />
+    <Property Name="ACTION_NAME" Type="varchar" Nullable="false" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP">
+    <Key>
+      <PropertyRef Name="AUTHGROUP_ID" />
+    </Key>
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AUTHGROUP_NAME" Type="varchar" MaxLength="36" />
+    <Property Name="PARENT_AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="TABLE_NAME" Type="varchar" MaxLength="128" />
+    <Property Name="COLUMN_NAME" Type="varchar" MaxLength="128" />
+    <Property Name="COLUMN_DESC" Type="varchar" MaxLength="36" />
+    <Property Name="READONLY_SW" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP_ACTION">
+    <Key>
+      <PropertyRef Name="AUTHGROUP_ID" />
+      <PropertyRef Name="ACTION_ID" />
+    </Key>
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="ACTION_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP_FUNCTION">
+    <Key>
+      <PropertyRef Name="AUTHGROUP_ID" />
+      <PropertyRef Name="FUNCTION_ID" />
+    </Key>
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="FUNCTION_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP_USER">
+    <Key>
+      <PropertyRef Name="ACCESS_ID" />
+    </Key>
+    <Property Name="ACCESS_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="COLUMN_VALUE" Type="varchar" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP_WEBPAGE">
+    <Key>
+      <PropertyRef Name="AUTHGROUP_ID" />
+      <PropertyRef Name="WEBPAGE_ID" />
+    </Key>
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="WEBPAGE_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_AUTHGROUP_WEBSITE">
+    <Key>
+      <PropertyRef Name="AUTHGROUP_ID" />
+      <PropertyRef Name="WEBSITE_ID" />
+    </Key>
+    <Property Name="AUTHGROUP_ID" Type="int" Nullable="false" />
+    <Property Name="WEBSITE_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEC_FUNCTION">
+    <Key>
+      <PropertyRef Name="FUNCTION_ID" />
+    </Key>
+    <Property Name="FUNCTION_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ACTION_ID" Type="int" Nullable="false" />
+    <Property Name="FUNCTION_NAME" Type="varchar" Nullable="false" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="SEC_USER">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="15" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="36" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="36" />
+    <Property Name="LOC_CD" Type="char" MaxLength="8" />
+    <Property Name="ACTIVE_STATUS" Type="char" MaxLength="1" />
+    <Property Name="APPROVAL_AMOUNT" Type="numeric" Precision="16" Scale="4" />
+  </EntityType>
+  <EntityType Name="SEC_WEBPAGE">
+    <Key>
+      <PropertyRef Name="WEBPAGE_ID" />
+    </Key>
+    <Property Name="WEBPAGE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WEBSITE_ID" Type="int" Nullable="false" />
+    <Property Name="WEBPAGE_NAME" Type="varchar" Nullable="false" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="SEC_WEBSITE">
+    <Key>
+      <PropertyRef Name="WEBSITE_ID" />
+    </Key>
+    <Property Name="WEBSITE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WEBSITE_NAME" Type="varchar" Nullable="false" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="TESTEQUIPNO">
+    <Key>
+      <PropertyRef Name="EQPNO" />
+    </Key>
+    <Property Name="EQPNO" Type="varchar" Nullable="false" MaxLength="11" />
+  </EntityType>
+  <Association Name="FK__MESC1TS_C__AREA___7E02B4CC">
+    <End Role="MESC1TS_AREA" Type="MESC2DSModel.Store.MESC1TS_AREA" Multiplicity="0..1" />
+    <End Role="MESC1TS_COUNTRY" Type="MESC2DSModel.Store.MESC1TS_COUNTRY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_AREA">
+        <PropertyRef Name="AREA_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY">
+        <PropertyRef Name="AREA_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__COUNT__00DF2177">
+    <End Role="MESC1TS_COUNTRY" Type="MESC2DSModel.Store.MESC1TS_COUNTRY" Multiplicity="1" />
+    <End Role="MESC1TS_COUNTRY_CONT" Type="MESC2DSModel.Store.MESC1TS_COUNTRY_CONT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_COUNTRY">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY_CONT">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__COUNT__02C769E9">
+    <End Role="MESC1TS_COUNTRY" Type="MESC2DSModel.Store.MESC1TS_COUNTRY" Multiplicity="1" />
+    <End Role="MESC1TS_COUNTRY_LABOR" Type="MESC2DSModel.Store.MESC1TS_COUNTRY_LABOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_COUNTRY">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY_LABOR">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__CUCDN__01D345B0">
+    <End Role="MESC1TS_CURRENCY" Type="MESC2DSModel.Store.MESC1TS_CURRENCY" Multiplicity="0..1" />
+    <End Role="MESC1TS_COUNTRY_LABOR" Type="MESC2DSModel.Store.MESC1TS_COUNTRY_LABOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CURRENCY">
+        <PropertyRef Name="CUCDN" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY_LABOR">
+        <PropertyRef Name="CUCDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__CUCDN__7FEAFD3E">
+    <End Role="MESC1TS_CURRENCY" Type="MESC2DSModel.Store.MESC1TS_CURRENCY" Multiplicity="0..1" />
+    <End Role="MESC1TS_COUNTRY_CONT" Type="MESC2DSModel.Store.MESC1TS_COUNTRY_CONT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CURRENCY">
+        <PropertyRef Name="CUCDN" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY_CONT">
+        <PropertyRef Name="CUCDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__CUSTO__05A3D694">
+    <End Role="MESC1TS_CUSTOMER" Type="MESC2DSModel.Store.MESC1TS_CUSTOMER" Multiplicity="1" />
+    <End Role="MESC1TS_CUST_SHOP_MODE" Type="MESC2DSModel.Store.MESC1TS_CUST_SHOP_MODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_CUST_SHOP_MODE">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__EQTYP__03BB8E22">
+    <End Role="MESC1TS_EQTYPE" Type="MESC2DSModel.Store.MESC1TS_EQTYPE" Multiplicity="1" />
+    <End Role="MESC1TS_COUNTRY_LABOR" Type="MESC2DSModel.Store.MESC1TS_COUNTRY_LABOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_EQTYPE">
+        <PropertyRef Name="EQTYPE" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY_LABOR">
+        <PropertyRef Name="EQTYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__MANUA__09746778">
+    <End Role="MESC1TS_MANUAL" Type="MESC2DSModel.Store.MESC1TS_MANUAL" Multiplicity="1" />
+    <End Role="MESC1TS_CUSTOMER" Type="MESC2DSModel.Store.MESC1TS_CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MANUAL">
+        <PropertyRef Name="MANUAL_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_CUSTOMER">
+        <PropertyRef Name="MANUAL_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__PAYAG__078C1F06">
+    <End Role="MESC1TS_PAYAGENT" Type="MESC2DSModel.Store.MESC1TS_PAYAGENT" Multiplicity="0..1" />
+    <End Role="MESC1TS_CUST_SHOP_MODE" Type="MESC2DSModel.Store.MESC1TS_CUST_SHOP_MODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_PAYAGENT">
+        <PropertyRef Name="PAYAGENT_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_CUST_SHOP_MODE">
+        <PropertyRef Name="PAYAGENT_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_C__SHOP___0697FACD">
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="1" />
+    <End Role="MESC1TS_CUST_SHOP_MODE" Type="MESC2DSModel.Store.MESC1TS_CUST_SHOP_MODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_CUST_SHOP_MODE">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_CP__MODE__04AFB25B">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1" />
+    <End Role="MESC1TS_CPH_EQP_LIMIT" Type="MESC2DSModel.Store.MESC1TS_CPH_EQP_LIMIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_CPH_EQP_LIMIT">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_CU__MODE__0880433F">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1" />
+    <End Role="MESC1TS_CUST_SHOP_MODE" Type="MESC2DSModel.Store.MESC1TS_CUST_SHOP_MODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_CUST_SHOP_MODE">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_EQ__MODE__0A688BB1">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1" />
+    <End Role="MESC1TS_EQMODE" Type="MESC2DSModel.Store.MESC1TS_EQMODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_EQMODE">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_L__COUNT__11158940">
+    <End Role="MESC1TS_COUNTRY" Type="MESC2DSModel.Store.MESC1TS_COUNTRY" Multiplicity="0..1" />
+    <End Role="MESC1TS_LOCATION" Type="MESC2DSModel.Store.MESC1TS_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_COUNTRY">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_LOCATION">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_L__CUSTO__0E391C95">
+    <End Role="MESC1TS_CUSTOMER" Type="MESC2DSModel.Store.MESC1TS_CUSTOMER" Multiplicity="1" />
+    <End Role="MESC1TS_LABOR_RATE" Type="MESC2DSModel.Store.MESC1TS_LABOR_RATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_LABOR_RATE">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_L__EQTYP__10216507">
+    <End Role="MESC1TS_EQTYPE" Type="MESC2DSModel.Store.MESC1TS_EQTYPE" Multiplicity="1" />
+    <End Role="MESC1TS_LABOR_RATE" Type="MESC2DSModel.Store.MESC1TS_LABOR_RATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_EQTYPE">
+        <PropertyRef Name="EQTYPE" />
+      </Principal>
+      <Dependent Role="MESC1TS_LABOR_RATE">
+        <PropertyRef Name="EQTYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_L__REGIO__1209AD79">
+    <End Role="MESC1TS_REGION" Type="MESC2DSModel.Store.MESC1TS_REGION" Multiplicity="0..1" />
+    <End Role="MESC1TS_LOCATION" Type="MESC2DSModel.Store.MESC1TS_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_REGION">
+        <PropertyRef Name="REGION_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_LOCATION">
+        <PropertyRef Name="REGION_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_L__SHOP___0F2D40CE">
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="1" />
+    <End Role="MESC1TS_LABOR_RATE" Type="MESC2DSModel.Store.MESC1TS_LABOR_RATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_LABOR_RATE">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_M__MANUA__12FDD1B2">
+    <End Role="MESC1TS_MANUAL" Type="MESC2DSModel.Store.MESC1TS_MANUAL" Multiplicity="1" />
+    <End Role="MESC1TS_MANUAL_MODE" Type="MESC2DSModel.Store.MESC1TS_MANUAL_MODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MANUAL">
+        <PropertyRef Name="MANUAL_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_MANUAL_MODE">
+        <PropertyRef Name="MANUAL_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_M__MANUF__15DA3E5D">
+    <End Role="MESC1TS_MANUFACTUR" Type="MESC2DSModel.Store.MESC1TS_MANUFACTUR" Multiplicity="1" />
+    <End Role="MESC1TS_MASTER_PART" Type="MESC2DSModel.Store.MESC1TS_MASTER_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MANUFACTUR">
+        <PropertyRef Name="MANUFCTR" />
+      </Principal>
+      <Dependent Role="MESC1TS_MASTER_PART">
+        <PropertyRef Name="MANUFCTR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_M__MANUF__16CE6296">
+    <End Role="MESC1TS_MANUFACTUR" Type="MESC2DSModel.Store.MESC1TS_MANUFACTUR" Multiplicity="1" />
+    <End Role="MESC1TS_MODEL" Type="MESC2DSModel.Store.MESC1TS_MODEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MANUFACTUR">
+        <PropertyRef Name="MANUFCTR" />
+      </Principal>
+      <Dependent Role="MESC1TS_MODEL">
+        <PropertyRef Name="MANUFCTR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_M__PARTS__14E61A24">
+    <End Role="MESC1TS_PARTS_GROUP" Type="MESC2DSModel.Store.MESC1TS_PARTS_GROUP" Multiplicity="1" />
+    <End Role="MESC1TS_MASTER_PART" Type="MESC2DSModel.Store.MESC1TS_MASTER_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_PARTS_GROUP">
+        <PropertyRef Name="PARTS_GROUP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_MASTER_PART">
+        <PropertyRef Name="PARTS_GROUP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_MA__MODE__13F1F5EB">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1" />
+    <End Role="MESC1TS_MANUAL_MODE" Type="MESC2DSModel.Store.MESC1TS_MANUAL_MODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_MANUAL_MODE">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_NO__MODE__17C286CF">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1" />
+    <End Role="MESC1TS_NONSCODE" Type="MESC2DSModel.Store.MESC1TS_NONSCODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_NONSCODE">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_P__PAYAG__19AACF41">
+    <End Role="MESC1TS_PAYAGENT" Type="MESC2DSModel.Store.MESC1TS_PAYAGENT" Multiplicity="1" />
+    <End Role="MESC1TS_PAYAGENT_VENDOR" Type="MESC2DSModel.Store.MESC1TS_PAYAGENT_VENDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_PAYAGENT">
+        <PropertyRef Name="PAYAGENT_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_PAYAGENT_VENDOR">
+        <PropertyRef Name="PAYAGENT_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_P__VENDO__18B6AB08">
+    <End Role="MESC1TS_VENDOR" Type="MESC2DSModel.Store.MESC1TS_VENDOR" Multiplicity="1" />
+    <End Role="MESC1TS_PAYAGENT_VENDOR" Type="MESC2DSModel.Store.MESC1TS_PAYAGENT_VENDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_VENDOR">
+        <PropertyRef Name="VENDOR_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_PAYAGENT_VENDOR">
+        <PropertyRef Name="VENDOR_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_PR__MODE__1A9EF37A">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MESC1TS_PREPTIME" Type="MESC2DSModel.Store.MESC1TS_PREPTIME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_PREPTIME">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_R__MANUA__1C873BEC">
+    <End Role="MESC1TS_MANUAL" Type="MESC2DSModel.Store.MESC1TS_MANUAL" Multiplicity="1" />
+    <End Role="MESC1TS_REPAIR_CODE" Type="MESC2DSModel.Store.MESC1TS_REPAIR_CODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MANUAL">
+        <PropertyRef Name="MANUAL_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_REPAIR_CODE">
+        <PropertyRef Name="MANUAL_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_R__PART___1F63A897">
+    <End Role="MESC1TS_MASTER_PART" Type="MESC2DSModel.Store.MESC1TS_MASTER_PART" Multiplicity="1" />
+    <End Role="MESC1TS_RPRCODE_PART" Type="MESC2DSModel.Store.MESC1TS_RPRCODE_PART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MASTER_PART">
+        <PropertyRef Name="PART_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_RPRCODE_PART">
+        <PropertyRef Name="PART_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_RE__MODE__1D7B6025">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1" />
+    <End Role="MESC1TS_REPAIR_CODE" Type="MESC2DSModel.Store.MESC1TS_REPAIR_CODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_REPAIR_CODE">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__CUCDN__214BF109">
+    <End Role="MESC1TS_CURRENCY" Type="MESC2DSModel.Store.MESC1TS_CURRENCY" Multiplicity="0..1" />
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CURRENCY">
+        <PropertyRef Name="CUCDN" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP">
+        <PropertyRef Name="CUCDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__LOC_C__22401542">
+    <End Role="MESC1TS_LOCATION" Type="MESC2DSModel.Store.MESC1TS_LOCATION" Multiplicity="0..1" />
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_LOCATION">
+        <PropertyRef Name="LOC_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP">
+        <PropertyRef Name="LOC_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__SHOP___251C81ED">
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="1" />
+    <End Role="MESC1TS_SHOP_CONT" Type="MESC2DSModel.Store.MESC1TS_SHOP_CONT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP_CONT">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__SHOP___2610A626">
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="1" />
+    <End Role="MESC1TS_SHOP_LIMITS" Type="MESC2DSModel.Store.MESC1TS_SHOP_LIMITS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP_LIMITS">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__SHOP___28ED12D1">
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MESC1TS_SUSPEND" Type="MESC2DSModel.Store.MESC1TS_SUSPEND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SUSPEND">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__SUSPC__27F8EE98">
+    <End Role="MESC1TS_SUSPEND_CAT" Type="MESC2DSModel.Store.MESC1TS_SUSPEND_CAT" Multiplicity="1" />
+    <End Role="MESC1TS_SUSPEND" Type="MESC2DSModel.Store.MESC1TS_SUSPEND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SUSPEND_CAT">
+        <PropertyRef Name="SUSPCAT_ID" />
+      </Principal>
+      <Dependent Role="MESC1TS_SUSPEND">
+        <PropertyRef Name="SUSPCAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__VENDO__2334397B">
+    <End Role="MESC1TS_VENDOR" Type="MESC2DSModel.Store.MESC1TS_VENDOR" Multiplicity="0..1" />
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_VENDOR">
+        <PropertyRef Name="VENDOR_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP">
+        <PropertyRef Name="VENDOR_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_T__CUSTO__2AD55B43">
+    <End Role="MESC1TS_CUSTOMER" Type="MESC2DSModel.Store.MESC1TS_CUSTOMER" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MESC1TS_TRANSMIT" Type="MESC2DSModel.Store.MESC1TS_TRANSMIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_TRANSMIT">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_TR__MODE__29E1370A">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MESC1TS_TRANSMIT" Type="MESC2DSModel.Store.MESC1TS_TRANSMIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_TRANSMIT">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__CUCDN__2DB1C7EE">
+    <End Role="MESC1TS_CURRENCY" Type="MESC2DSModel.Store.MESC1TS_CURRENCY" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CURRENCY">
+        <PropertyRef Name="CUCDN" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="CUCDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__CUSTO__318258D2">
+    <End Role="MESC1TS_CUSTOMER" Type="MESC2DSModel.Store.MESC1TS_CUSTOMER" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__EQTYP__2F9A1060">
+    <End Role="MESC1TS_EQTYPE" Type="MESC2DSModel.Store.MESC1TS_EQTYPE" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_EQTYPE">
+        <PropertyRef Name="EQTYPE" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="EQTYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__MANUA__2CBDA3B5">
+    <End Role="MESC1TS_MANUAL" Type="MESC2DSModel.Store.MESC1TS_MANUAL" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MANUAL">
+        <PropertyRef Name="MANUAL_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="MANUAL_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__PART___3552E9B6">
+    <End Role="MESC1TS_MASTER_PART" Type="MESC2DSModel.Store.MESC1TS_MASTER_PART" Multiplicity="1" />
+    <End Role="MESC1TS_WOPART" Type="MESC2DSModel.Store.MESC1TS_WOPART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MASTER_PART">
+        <PropertyRef Name="PART_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WOPART">
+        <PropertyRef Name="PART_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__SHOP___308E3499">
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__STATU__2EA5EC27">
+    <End Role="MESC1TS_STATUS_CODE" Type="MESC2DSModel.Store.MESC1TS_STATUS_CODE" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_STATUS_CODE">
+        <PropertyRef Name="STATUS_CODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="STATUS_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__SUSPC__36470DEF">
+    <End Role="MESC1TS_SUSPEND_CAT" Type="MESC2DSModel.Store.MESC1TS_SUSPEND_CAT" Multiplicity="0..1" />
+    <End Role="MESC1TS_WOREMARK" Type="MESC2DSModel.Store.MESC1TS_WOREMARK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SUSPEND_CAT">
+        <PropertyRef Name="SUSPCAT_ID" />
+      </Principal>
+      <Dependent Role="MESC1TS_WOREMARK">
+        <PropertyRef Name="SUSPCAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__VENDO__2BC97F7C">
+    <End Role="MESC1TS_VENDOR" Type="MESC2DSModel.Store.MESC1TS_VENDOR" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_VENDOR">
+        <PropertyRef Name="VENDOR_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="VENDOR_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__WO_ID__20ACD28B">
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MESC1TS_WOREPAIR" Type="MESC2DSModel.Store.MESC1TS_WOREPAIR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_WO">
+        <PropertyRef Name="WO_ID" />
+      </Principal>
+      <Dependent Role="MESC1TS_WOREPAIR">
+        <PropertyRef Name="WO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_WO__MODE__32767D0B">
+    <End Role="MESC1TS_MODE" Type="MESC2DSModel.Store.MESC1TS_MODE" Multiplicity="0..1" />
+    <End Role="MESC1TS_WO" Type="MESC2DSModel.Store.MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__AUTHG__1881A0DE">
+    <End Role="SEC_AUTHGROUP" Type="MESC2DSModel.Store.SEC_AUTHGROUP" Multiplicity="1" />
+    <End Role="SEC_AUTHGROUP1" Type="MESC2DSModel.Store.SEC_AUTHGROUP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_AUTHGROUP">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP1">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__AUTHG__1975C517">
+    <End Role="SEC_AUTHGROUP" Type="MESC2DSModel.Store.SEC_AUTHGROUP" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SEC_AUTHGROUP_ACTION" Type="MESC2DSModel.Store.SEC_AUTHGROUP_ACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_AUTHGROUP">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP_ACTION">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__AUTHG__1B5E0D89">
+    <End Role="SEC_AUTHGROUP" Type="MESC2DSModel.Store.SEC_AUTHGROUP" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SEC_AUTHGROUP_FUNCTION" Type="MESC2DSModel.Store.SEC_AUTHGROUP_FUNCTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_AUTHGROUP">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP_FUNCTION">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__AUTHG__1D4655FB">
+    <End Role="SEC_AUTHGROUP" Type="MESC2DSModel.Store.SEC_AUTHGROUP" Multiplicity="1" />
+    <End Role="SEC_AUTHGROUP_USER" Type="MESC2DSModel.Store.SEC_AUTHGROUP_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_AUTHGROUP">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP_USER">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__AUTHG__1F2E9E6D">
+    <End Role="SEC_AUTHGROUP" Type="MESC2DSModel.Store.SEC_AUTHGROUP" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SEC_AUTHGROUP_WEBPAGE" Type="MESC2DSModel.Store.SEC_AUTHGROUP_WEBPAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_AUTHGROUP">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP_WEBPAGE">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__AUTHG__2116E6DF">
+    <End Role="SEC_AUTHGROUP" Type="MESC2DSModel.Store.SEC_AUTHGROUP" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SEC_AUTHGROUP_WEBSITE" Type="MESC2DSModel.Store.SEC_AUTHGROUP_WEBSITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_AUTHGROUP">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP_WEBSITE">
+        <PropertyRef Name="AUTHGROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__USER___1E3A7A34">
+    <End Role="SEC_USER" Type="MESC2DSModel.Store.SEC_USER" Multiplicity="1" />
+    <End Role="SEC_AUTHGROUP_USER" Type="MESC2DSModel.Store.SEC_AUTHGROUP_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_USER">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP_USER">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_AUTHG__WEBSI__220B0B18">
+    <End Role="SEC_WEBSITE" Type="MESC2DSModel.Store.SEC_WEBSITE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SEC_AUTHGROUP_WEBSITE" Type="MESC2DSModel.Store.SEC_AUTHGROUP_WEBSITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_WEBSITE">
+        <PropertyRef Name="WEBSITE_ID" />
+      </Principal>
+      <Dependent Role="SEC_AUTHGROUP_WEBSITE">
+        <PropertyRef Name="WEBSITE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_USER__LOC_CD__23F3538A">
+    <End Role="MESC1TS_LOCATION" Type="MESC2DSModel.Store.MESC1TS_LOCATION" Multiplicity="0..1" />
+    <End Role="SEC_USER" Type="MESC2DSModel.Store.SEC_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_LOCATION">
+        <PropertyRef Name="LOC_CD" />
+      </Principal>
+      <Dependent Role="SEC_USER">
+        <PropertyRef Name="LOC_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SEC_WEBPA__WEBSI__24E777C3">
+    <End Role="SEC_WEBSITE" Type="MESC2DSModel.Store.SEC_WEBSITE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SEC_WEBPAGE" Type="MESC2DSModel.Store.SEC_WEBPAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_WEBSITE">
+        <PropertyRef Name="WEBSITE_ID" />
+      </Principal>
+      <Dependent Role="SEC_WEBPAGE">
+        <PropertyRef Name="WEBSITE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'MESC2DS.dbo.MESC1TS_DISCOUNT2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="MESC1TS_DISCOUNT2">
+        <Property Name="SHOP_CD" Type="char" MaxLength="3" />
+        <Property Name="MANUFCTR" Type="char" MaxLength="3" />
+        <Property Name="DISCOUNT" Type="float" />
+        <Property Name="CHUSER" Type="varchar" MaxLength="30" />
+        <Property Name="CHTS" Type="datetime" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'MESC2DS.dbo.sqltrace' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="sqltrace">
+        <Property Name="query" Type="varchar" />
+        <Property Name="duration" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'MESC2DS.dbo.Temp_corevalue1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Temp_corevalue1">
+        <Property Name="PART_CD" Type="nvarchar" MaxLength="255" />
+        <Property Name="CORE_VALUE" Type="decimal" Precision="16" Scale="4" />
+      </EntityType>-->
+</Schema>

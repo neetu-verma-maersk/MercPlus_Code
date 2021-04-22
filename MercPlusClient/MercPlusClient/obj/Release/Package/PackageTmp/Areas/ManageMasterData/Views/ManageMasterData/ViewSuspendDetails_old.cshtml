@@ -1,0 +1,427 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataSuspendModel
+
+
+
+@{
+    if(Model.IsAddShop || Model.IsDelShop)
+    {
+        ViewBag.Title = "ViewSuspendDetails";
+    }
+    else if (Model.IsAddManual || Model.IsDelManual)
+    {
+        ViewBag.Title = "ViewSuspendManualDetails";
+    }
+    else if(Model.IsAddMode || Model.IsDelMode)
+    {
+        ViewBag.Title = "ViewSuspendModeDetails";
+    }
+    else if(Model.IsAddRepair || Model.IsDelRepair)
+    {
+        ViewBag.Title = "ViewSuspendRepairDetails";
+    }
+    else if(Model.IsCreate)
+    {
+        ViewBag.Title = "SuspendCreate";
+    }
+    
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<script src="~/Areas/ManageMasterData/Script/Suspend.js"></script>
+
+<div>
+         <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_suspend_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+     
+        <div width:"750px; ">
+            
+                    
+            <h2>Add or Delete Suspend Table</h2>
+               
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+
+
+@using (Html.BeginForm())
+{
+   
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+        @if (Model.IsDelShop)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Shop Code")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.ShopCode, Model.drpShopCodeList,"Select Shop", new { id = "drpShopCodeList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+                </tr>
+                <br />
+                <br />
+                <tr>
+                
+                
+
+                
+            </tr>
+
+        }
+        @if (Model.IsAddShop)
+        {
+                <tr>
+                    <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Shop Code")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.ShopCode, Model.drpShopCodeList,"Select Shop", new { id = "drpShopCodeList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+                    </tr>
+                <br />
+                <br />
+                    <tr>
+                
+                
+
+                <td style="text-align: left; vertical-align: top; width: 150px;">
+                    <input type="submit" value="Return To Delete" formaction="/ManageMasterData/ManageMasterData/ViewSuspendDetails" />
+                </td>
+            </tr>
+           
+        }
+        
+        @if (Model.IsDelManual)
+        {
+         if(Model.FlagManual)
+         {   
+            <tr>
+                
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Manual Code")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                   
+                        
+                  
+                    @Html.DropDownListFor(model => model.Manual, Model.drpManualCodeList,"Select Manual", new { id = "drpManualCodeList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                    <td style="text-align: left; vertical-align: top;" class="style2"></td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextBoxFor(model => model.ShopCode, new {style = "display:none;"})
+                </td>
+                </tr>
+            
+                <br />
+                <br />
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 350px;">
+                    <input type="submit" value="Delete-Get Mode" onclick="return ClientValidationManual()" formaction="/ManageMasterData/ManageMasterData/ViewSuspendModeDetails" />
+                </td>
+
+                
+            </tr>
+        }
+        else
+        {
+           
+         }
+        }
+       @if (Model.IsAddManual)
+            {
+           if(Model.FlagManual)
+           {
+           <tr>
+                
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Manual Code")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                   
+                        
+                  
+                    @Html.DropDownListFor(model => model.Manual, Model.drpManualCodeList,"Select Manual", new { id = "drpManualCodeList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                    <td style="text-align: left; vertical-align: top;" class="style2"></td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextBoxFor(model => model.ShopCode, new {style = "display:none;"})
+                </td>
+                </tr>
+                <tr>
+               
+                
+
+                <td style="text-align: left; vertical-align: top; width: 150px;">
+                    <input type="submit" value="Return To Delete" formaction="/ManageMasterData/ManageMasterData/ViewSuspendDetails" />
+                </td>
+            </tr>
+       }
+        else
+        {
+
+         }
+        }
+
+        @if(Model.IsDelMode)
+        {
+            if(Model.FlagMode)
+            {
+             <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Mode")
+                </td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.DropDownListFor(model => model.Mode, Model.drpModeSusList,"Select Mode", new { id = "drpModeSusList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+            <tr>
+                <td>
+                    @Html.TextBoxFor(model => model.ShopCode, new {style = "display:none;"})
+                    @Html.TextBoxFor(model => model.Manual, new {style = "display:none;"})
+                </td>
+            </tr>
+            
+             <tr>
+                <td style="text-align: left; vertical-align: top; width: 350px;">
+                    <input type="submit" value="Delete-Get Repair Code" onclick="return ClientValidationMode()" formaction="/ManageMasterData/ManageMasterData/ViewSuspendRepairDetails" />
+                </td>
+
+                
+            </tr>
+        }
+         else
+        {
+               
+         }
+        }
+        @if (Model.IsAddMode)
+            {
+            if(Model.FlagMode)
+            {
+             <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Mode")
+                </td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.DropDownListFor(model => model.Mode, Model.drpModeSusList,"Select Mode", new { id = "drpModeSusList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+            <tr>
+                <td>
+                    @Html.TextBoxFor(model => model.ShopCode, new {style = "display:none;"})
+                    @Html.TextBoxFor(model => model.Manual, new {style = "display:none;"})
+                </td>
+            </tr>
+            
+                <tr>
+                
+                
+
+                <td style="text-align: left; vertical-align: top; width: 150px;">
+                    <input type="submit" value="Return To Delete" formaction="/ManageMasterData/ManageMasterData/ViewSuspendDetails" />
+                </td>
+            </tr>
+        }
+         else
+        {
+               
+         }
+        }
+        @if(Model.IsDelRepair)
+        {
+            if(Model.FlagRepairCode)
+            {
+             <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Repair Code")
+                </td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.DropDownListFor(model => model.RepairCod, Model.drpRepairCodeList,"Select Repair Code", new { id = "drpRepairCodeList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+            <tr>
+                <td>
+                    @Html.TextBoxFor(model => model.ShopCode, new {style = "display:none;"})
+                    @Html.TextBoxFor(model => model.Manual, new {style = "display:none;"})
+                    @Html.TextBoxFor(model => model.Mode, new {style = "display:none;"})
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 350px;">
+                    <input type="submit" value="Get Suspend Record To Delete" onclick="return ClientValidationRepair()" formaction="/ManageMasterData/ManageMasterData/ViewSuspendDetailsForDelete" />
+                </td>
+
+                
+            </tr>
+        }
+         else
+        {
+                
+         }
+        }
+
+        @if (Model.IsAddRepair)
+        {
+            if(Model.FlagRepairCode)
+            {
+              <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select Repair Code")
+                </td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.DropDownListFor(model => model.RepairCod, Model.drpRepairCodeList,"Select Repair Code", new { id = "drpRepairCodeList",style="width:300px" })</td>
+                
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Suspend Category")
+                </td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.DropDownListFor(model => model.SuspendCatID, Model.drpSuspendList,"Select Suspend Category", new { id = "drpSuspendList",style="width:300px" })</td>
+               
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+             <td>
+                    @Html.TextBoxFor(model => model.ShopCode, new {style = "display:none;"})
+                    @Html.TextBoxFor(model => model.Manual, new {style = "display:none;"})
+                    @Html.TextBoxFor(model => model.Mode, new {style = "display:none;"})
+                </td>
+             </tr>
+            <tr>
+
+                
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Return To Delete" formaction="/ManageMasterData/ManageMasterData/ViewSuspendDetails" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+            </tr>
+        }
+         else
+        {
+               
+         }
+        }
+
+        @if(Model.IsDelete)
+        {
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.ShopCode)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ShopCode,new {@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.Manual)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.Manual,new {@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.Mode)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.Mode,new {@readonly="readonly",style="width=350px" })</td>
+                 <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+               
+            </tr> 
+            <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.RepairCod)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.RepairCod,new {@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+               
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.SuspendCatID)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.SuspendCatID,new {@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+               
+            </tr>
+            if(Model.IsFlag)
+            {
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.Label("Change User Name")</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeFUserSp,new {@readonly="readonly" })</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeLUserSp,new {@readonly="readonly",style="width=350px" })</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.ChangeTimeSp)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeTimeSp,new {@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+        }
+            <tr>
+               
+               
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+            
+            
+        }
+        @if (Model.IsCreate)
+        {
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.ShopCode)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ShopCode,Model.ShopCode,new {disabled="disabled",@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.Manual)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.Manual, Model.Manual,new {disabled="disabled",@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.Mode)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.Mode, Model.Mode,new {disabled="disabled",@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+            <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.RepairCod)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.RepairCod, Model.RepairCod,new {disabled="disabled",@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.SuspendCatID)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.SuspendCatID, Model.SuspendCatID,new {disabled="disabled",@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr>
+            if(Model.IsFlag)
+            {
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.Label("Change User Name")</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeFUserSp,new {@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeLUserSp,new {@readonly="readonly",style="width=350px" })</td>
+            </tr>  
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.ChangeTimeSp)</td>
+                <td style="text-align: left; vertical-align: top;" >@Html.TextBoxFor(model => model.ChangeTimeSp,Model.ChangeTimeSp,new {@readonly="readonly",style="width=350px" })</td>
+                <td style="text-align: left; vertical-align: top; ">&nbsp;</td>
+            </tr> 
+        }
+            <tr>
+                <td style="text-align: left; vertical-align: top; ">
+                    <input type="submit" value="Return To Add Delete" formaction="/ManageMasterData/ManageMasterData/ViewSuspendDetails" /></td>
+                
+            </tr> 
+        }
+       
+       
+    </table>
+}
+

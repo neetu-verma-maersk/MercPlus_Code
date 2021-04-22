@@ -1,0 +1,198 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataTransmitModel
+
+
+
+@{
+    if(Model.IsCust)
+    {
+        ViewBag.Title = "ViewTransmitDetails";
+    }
+    else if (Model.IsUpdate)
+    {
+        ViewBag.Title = "ViewTransmitEditDetails";
+    }
+    else if(Model.IsMode)
+    {
+        ViewBag.Title = "ViewTransmitModeDetails";
+    }
+    else if(Model.IsCreate)
+    {
+        ViewBag.Title = "TransmitCreate";
+    }
+    
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="~/Areas/ManageMasterData/Script/Transmit.js"></script>
+
+<div>
+        <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_transmit_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+    
+        <div>
+           <h2>Add or Update Transmit Table</h2>
+               
+        </div>
+     <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+
+
+@using (Html.BeginForm())
+{
+        <br />
+        <br />
+        
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+        
+        @if (Model.IsCust)
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select- Customer Code")
+
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.Customer, Model.drpCustomerCodeList,"Select Customer Code ", new { id = "drpCustomerCodeList",style="width:300px" })
+                </td>
+                
+            </tr>
+           
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Update-Get Mode" id="mode" onclick="return ClientValidationMode()" formaction="/ManageMasterData/ManageMasterData/ViewTransmitModeDetails" />
+                </td>
+
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/TransmitCreate" />
+                </td>
+            </tr>
+        }
+        
+        @if (Model.IsMode)
+        {
+            
+            <tr>
+                
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.Label("Select- Mode")
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                   
+                        
+                  
+                    @Html.DropDownListFor(model => model.ModeCode, Model.drpModeLCodeList,"Select Mode ", new { id = "drpModeLCodeList",style="width:300px" })
+                </td>
+                <td style="text-align: left; vertical-align: top;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2"></td>
+                
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextBoxFor(model => model.Customer, new {style = "display:none;"})
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Update-Get Transmit Record" onclick="return ClientValidationTransmit()" formaction="/ManageMasterData/ManageMasterData/ViewTransmitEditDetails" />
+                </td>
+
+                
+            </tr>
+        }
+
+        @if(Model.IsUpdate)
+        {
+             <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.Customer)</td>
+                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => model.Customer,  new { id="CustomerCode",@readonly="readonly" })</td>
+
+                   <td style="text-align: left; vertical-align: top; width: 200px;"></td>
+            </tr> 
+            <tr></tr>
+             <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.ModeCode)</td>
+                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => model.ModeCode,new {id="drpModeLCodeList",@readonly="readonly" })</td>
+                <td style="text-align: left; vertical-align: top;">&nbsp;</td>
+            </tr> 
+            <tr></tr>
+             <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.RRISXMITSwitch)</td>
+                <td style="text-align: left; vertical-align: top;">@Html.DropDownListFor(model => model.RRISXMITSwitch, Model.drpRRISList,"Select Switch", new { id="drpRRISList"})</td>
+                <td style="text-align: left; vertical-align: top;">&nbsp;</td>
+            </tr> 
+            <tr></tr>
+             <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.AccountCode)</td>
+                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => model.AccountCode, Model.AccountCode, new { id="txtAccountCode",onkeydown="return ValidateNumber(event);",maxlength="7"})</td>
+               
+            </tr> 
+        <tr></tr>
+             <tr>
+                <td style="text-align: left; vertical-align: top;" >@Html.LabelFor(model => model.ChangeUserTransmit)</td>
+                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => model.ChangeFUserTransmit,new {id="txtChangeUserName",disabled="disabled",@readonly="readonly" })</td>
+               <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => model.ChangeLUserTransmit,new {id="txtChangeUserName1",disabled="disabled",@readonly="readonly" })</td>
+            </tr> 
+             <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.ChangeTimeTransmit)</td>
+                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => model.ChangeTimeTransmit,Model.ChangeTimeTransmit,new {disabled="disabled",@readonly="readonly" })</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <input type="submit" value="Update" onclick="return ClientValidationUpdate()" id="Submit" formaction="/ManageMasterData/ManageMasterData/UpdateTransmit" /></td>
+                <td style="text-align: left; vertical-align: top; ">
+                    
+                    <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/TransmitCreate" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+            
+            
+        }
+        @if(Model.IsCreate)
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;width: 500px;">@Html.LabelFor(model => model.Customer)</td>
+                <td style="text-align: left; vertical-align: top;width: 190px;">@Html.DropDownListFor(model => model.Customer, Model.drpCustomerCodeList, "Select Customer Code",new { id = "drpCustomerCodeList",style="width:300px" })</td>
+               
+            </tr> 
+            <tr></tr>
+             <tr>
+                <td style="text-align: left; vertical-align: top;width: 190px;">@Html.LabelFor(model => model.ModeCode)</td>
+                <td style="text-align: left; vertical-align: top;width: 190px;" >@Html.DropDownListFor(model => model.ModeCode, Model.drpModeLCodeList,"Select Mode", new { id = "drpModeLCodeList",style="width:300px" })</td>
+               
+            </tr> 
+            <tr></tr>
+             <tr>
+                <td style="text-align: left; vertical-align: top;width: 190px;">@Html.LabelFor(model => model.RRISXMITSwitch)</td>
+                <td style="text-align: left; vertical-align: top;width: 190px;">@Html.DropDownListFor(model => model.RRISXMITSwitch, Model.drpRRISList,"Select Switch", new { id="drpRRISList"})</td>
+                <td style="text-align: left; vertical-align: top;width: 190px; ">@Html.ValidationMessageFor(model => model.RRISXMITSwitch)</td>
+                 
+            </tr> 
+            <tr></tr>
+             <tr>
+                <td style="text-align: left; vertical-align: top;width: 190px;" >@Html.LabelFor(model => model.AccountCode)</td>
+                <td style="text-align: left; vertical-align: top;width: 190px;" >@Html.TextBoxFor(model => model.AccountCode,Model.AccountCode,new { id="txtAccountCode",onkeydown="return ValidateNumber(event);",maxlength="7"})</td>
+                 
+            </tr> 
+            <tr></tr>
+            <tr>
+
+                <td style="text-align: left; vertical-align: top; width: 190px;">
+                    <input type="submit" value="Add Record" onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/CreateTransmit" />
+                </td>
+                
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Return To Update" formaction="/ManageMasterData/ManageMasterData/ViewReturnTransmitDetails" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+            </tr>
+        }
+
+       
+    </table>
+}

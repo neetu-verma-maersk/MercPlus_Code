@@ -1,0 +1,298 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataDamageCodeModel
+@{
+    if (Model.IsDamgeUpdate)
+    {
+        if(Model.IsViewMode)
+        {
+            ViewBag.Title = "View Damage Code";
+        }
+        else
+        {
+            ViewBag.Title = "Edit Damage Code";
+        }
+    }
+    else
+    {
+        if (Model.IsAddMode)
+        {
+            ViewBag.Title = "Add Damage Code";
+        }
+        else
+        {
+            ViewBag.Title = "View Damage Code";
+        }
+    }
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript" src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<script type="text/javascript" src="~/Scripts/mainjs.js"></script>
+
+<script type="text/javascript">
+    function ClientValidation(isAdd)
+    {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+        var val1 = "";
+        if (isAdd)
+        {
+            HighlightInputsForError($("#txtDamageCode"), false)
+            val1 = $("#txtDamageCode").val();
+            if (val1.trim() == "")
+            {
+                isError = true;
+                errMsg += "Please Enter Damage Code";
+                HighlightInputsForError($("#txtDamageCode"), isError)
+            }
+        }
+        HighlightInputsForError($("#txtDamageName"), false)
+        val1 = $("#txtDamageName").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter Damage Code Name";
+            else
+                errMsg += ", Damage Code Name";
+            HighlightInputsForError($("#txtDamageName"), isError)
+        }
+        HighlightInputsForError($("#txtDamageDescription"), false)
+        val1 = $("#txtDamageDescription").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg += "Please Enter Damage Code Description ";
+            else
+                errMsg += ", Damage Code Description";
+            HighlightInputsForError($("#txtDamageDescription"), isError)
+        }
+        HighlightInputsForError($("#txtNumericalCode"), false)
+        val1 = $("#txtNumericalCode").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg += "Please Enter Damage Code Numeric Code ";
+            else
+                errMsg += ", Damage Code Numeric Code";
+            HighlightInputsForError($("#txtNumericalCode"), isError)
+        }
+        else if (!isNumeric(val1.trim()))
+        {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg += "Numerical code can only be digits";
+            else
+                errMsg += ". Numerical code can only be digits";
+            HighlightInputsForError($("#txtNumericalCode"), isError)
+        }
+        else if (val1.trim().length < 5)
+        {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg += "Please Enter 5 digits for Numerical Code";
+            else
+                errMsg += ". Please Enter 5 digits for Numerical Code";
+            HighlightInputsForError($("#txtNumericalCode"), isError)
+        }
+        if (isAdd) {
+            HighlightInputsForError($("#txtDamageCode"), false)
+            val1 = $("#txtDamageCode").val();
+            if (!isAlpha(val1.trim())) {
+                isError = true;
+                if (errMsg.trim() == "")
+                    errMsg += "Please Enter only Alphabets for Damage Code";
+                else
+                    errMsg += ". Please Enter only Alphabets for Damage Code";
+                HighlightInputsForError($("#txtDamageCode"), isError)
+            }
+        }
+        if (isError == true)
+        {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    function DeleteConfirmMsg()
+    {
+        return confirm("Are you sure you want to delete this record?")
+    }
+
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function isAlpha(elm) {
+        var elmstr = elm.toString();
+        for (var i = 0; i < elmstr.length; i++) {
+            if ((elmstr.charAt(i) < "a" || elmstr.charAt(i) > "z") && (elmstr.charAt(i) < "A" || elmstr.charAt(i) > "Z")) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+
+
+
+@using (Html.BeginForm())
+{
+    <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_damage_code_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+    <h2 id="h2ID">@ViewBag.Title</h2>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    <table style="width: 800px; vertical-align: text-top;" border="0" cellpadding="5"
+        cellspacing="0">
+        <tr>
+            <td style="width:50%">
+                @Html.Label("Damage Codes") &nbsp;
+                @Html.DropDownListFor(model=>model.DamageCode, ViewBag.DamageFullDescription as SelectList, new { id = "drpDamageCode", @onchange="$('#hddIndexDamageCode').val()"})
+            </td>
+            <td>
+                <input type="submit" value="Query" id="btnDamageQuery" formaction="/ManageMasterData/ManageMasterData/GetAllDetailsForDamageCode?id=" + @Model.DamageCode />
+                @*<input type="submit" value="Query" id="btnDamageQuery" for />*@
+            </td>
+            @if(Model.IsAdmin)
+            {
+                <td>
+                    <input type="submit" value="Add New Damage code" formaction="/ManageMasterData/ManageMasterData/DamageCodeCreate" />
+                </td>
+            }
+            else
+            {
+                <td>
+                   &nbsp;
+                </td>
+            }
+        </tr>
+    </table> 
+    <hr />
+}
+<br />
+
+@using (Html.BeginForm())
+{
+    if (Model.IsDamgeUpdate)
+    {
+@*<div id="divDamageCode" style="display: none; width: 800px">*@
+    <table style="width: 800px; vertical-align: text-top;" border="0" cellpadding="3">
+        <tr>
+            <td style="text-align: left; vertical-align: top; width:15%" class="style3">@Html.Label("Damage Code")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageCedexCode, new { id = "txtDamageCode", size = "5", @readonly = "true" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width:15%" class="style3">@Html.Label("Name")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageName, new { id = "txtDamageName", size = "30", maxlength = 30 })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width:15%" class="style3">@Html.Label("Description")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageDescription, new { id = "txtDamageDescription", size = "50" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width:15%" class="style3">@Html.Label("Numerical Code")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageNumericalCode, new { id = "txtNumericalCode", maxlength = 5, onkeypress="return ValidateNumber(event);" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width:15%" class="style3">@Html.Label("Change User")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageCHUser, new { id = "txtChangeUser", @readonly = "true" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Change Time")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageCHTS, new { id = "txtChangeTime", @readonly = "true" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            @if(Model.IsAdmin)
+            {
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Submit" formaction="/ManageMasterData/ManageMasterData/UpdateDamageCode" onclick="return ClientValidation(false);" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    <input type="submit" value="Delete" formaction="/ManageMasterData/ManageMasterData/DeleteDamageCode" onclick="return DeleteConfirmMsg();" />
+                </td>
+            }
+            else
+            {
+                <td colspan="2">&nbsp;</td>
+            }
+            <td style="text-align: left; vertical-align: top; width: 200px;">
+                <input type="button" value="Audit Trail"  onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'DamageCodeAuditTrail', 'Damage', document.getElementById('txtDamageCode').value, '', '', 800, 450, scroll);" />
+            </td>
+        </tr>
+    </table>
+@*</div>*@
+    }
+    else if(Model.IsAddMode)
+    {
+    @*<div id="divDamageCode1" ,  style="width:800px">*@
+    <table style="width: 800px; vertical-align: text-top;" border="0" cellpadding="3">
+        <tr>
+            <td style="text-align: left; vertical-align: top; width:15%;" class="style3">@Html.Label("Damage Code")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageCedexCode, new { id = "txtDamageCode", size = "5", maxlength = 2, style = "text-transform:uppercase;" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Name")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageName, new { id = "txtDamageName", size = "30", maxlength = 30 })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Description")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageDescription, new { id = "txtDamageDescription", size = "50" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Numerical Code")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageNumericalCode, new { id = "txtNumericalCode", maxlength = 5, onkeydown="return ValidateNumber(event);" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Change User")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageCHUser, new { id = "txtChangeUser", @readonly = "true" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Change Time")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DamageCHTS, new { id = "txtChangeTime", @readonly = "true" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        
+        <tr>
+            @if(Model.IsAdmin)
+            {
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Submit"  formaction="/ManageMasterData/ManageMasterData/CreateDamageCode" onclick="return ClientValidation(true);"/>
+                </td>
+            }
+            else
+            {
+                <td>&nbsp;</td>
+            }
+        </tr>
+    </table>
+        @Html.HiddenFor(model=>model.DamageCode,new{id="hddIndexDamageCode"})
+@*</div>*@
+    }
+}
+   
+        
+

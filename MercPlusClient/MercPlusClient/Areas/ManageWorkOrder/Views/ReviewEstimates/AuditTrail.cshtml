@@ -1,0 +1,208 @@
+﻿@{
+
+    var grid = new WebGrid(Model, ajaxUpdateContainerId: "gridAudit");
+}
+
+
+
+
+<link href="@Url.Content("~/Content/MercStyle.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/jquery-ui.css")" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/jquery-1.11.3.min.js"></script>
+
+
+<style type="text/css">
+    body {
+        background-color: #e9eff5;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    .webGrid {
+        margin: 4px;
+        border-collapse: collapse;
+        width: 90%;
+        background-color: #e9eff5;
+    }
+    /*.header { background-color: #e9eff5; font-weight:bold; font-size:12px; text-decoration:none; font-style:italic; fore:red;}*/
+    .gridHead th {
+        font-weight: bold;
+        background-color: #e9eff5;
+        color: white;
+        padding: 2px;
+        font-size: 10px;
+    }
+    /*.gridHead a:link,.gridHead a:visited,.gridHead a:active,.gridHead a:hover {color: blue;}*/
+    .gridHead a:hover {
+        text-decoration: underline;
+    }
+
+    .webGrid th, .webGrid td {
+        border: 1px solid black;
+        padding: 1px;
+        font-size: 9px;
+        text-align: left;
+        color: black;
+    }
+
+    .description {
+        width: auto;
+    }
+</style>
+<div id="divMain">
+    <table style="width: 90%;">
+
+        <tr>
+            <td colspan="2">
+                <p style="font-size: 10px; font-style: normal; font-weight: bold;">@Request.QueryString["PageName"]</p>
+
+            </td>
+
+        </tr>
+        @if (Request.QueryString["TableName"] == "WorkOrder")
+        {
+            <tr>
+                <td style="font-size: 10px; font-style: normal;">Vendor Reference Number : @Request.QueryString["val"].Split(',')[1]
+
+                </td>
+
+            </tr>
+            <tr>
+                <td style="font-size: 10px; font-style: normal;">Equipment Number : @Request.QueryString["val"].Split(',')[2]
+
+                </td>
+
+
+
+            </tr>
+
+     
+        }
+        <tr>
+            <td style="font-size: 10px; font-style: normal;">Table Name : @Request.QueryString["TableName"]
+
+            </td>
+
+        </tr>
+        <tr>
+            <td style="font-size: 10px; font-style: normal;">Record Id : @Request.QueryString["val"].Split(',')[0]
+
+            </td>
+
+            @if (Request.QueryString["TableName"] == "LabourRates")
+            {
+                <tr>
+                    <td style="font-size: 10px; font-style: normal;">Shop: @Request.QueryString["val"].Split(',')[1]
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="font-size: 10px; font-style: normal;">Customer: @Request.QueryString["val"].Split(',')[2]
+
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td style="font-size: 10px; font-style: normal;">Ori Equipment Type: @Request.QueryString["val"].Split(',')[3]
+
+                    </td>
+
+                </tr>
+
+     
+            }
+@* <td style="text-align:right;">
+             <a href="#"  onclick = "window.close();"><img src="~/Content/images/close.jpg"/></a>
+           
+                <a href="#" onclick = "window.print()"><img src="~/Content/images/print.JPG"/></a>
+         </td>*@
+
+        </tr>
+        <tr>
+        </tr>
+    </table>
+    @if (Model.Count > 0)
+    {
+        <div id="gridAudit">
+            @if (Request.QueryString["TableName"] == "WorkOrder")
+            {  
+            
+                @grid.GetHtml(
+                     tableStyle: "webGrid",
+                      headerStyle: "gridHead",
+
+                     columns: grid.Columns(
+
+                             grid.Column("Description", header: "Description"),
+                             grid.Column("ChangeUser", header: "Change User"),
+                             grid.Column("Timestamp", header: "Timestamp")
+                       ))
+                            
+                            
+            }
+            else if (Request.QueryString["TableName"] == "User")
+            {              
+                @grid.GetHtml(
+                     tableStyle: "webGrid",
+                      headerStyle: "gridHead",
+
+                     columns: grid.Columns(
+
+                             grid.Column("ColName", header: "Field Name"),
+                             grid.Column("OldValue", header: "Previous Value"),
+                             grid.Column("NewValue", header: "New Value"),
+                             grid.Column("ChangeUser", header: "Change User"),
+            //grid.Column("LastName", header: "Last Name"),
+            //grid.Column("FirstName", header: "First Name"),
+                             grid.Column("ChangeTime", header: "Timestamp")
+                       ))
+                            
+                            
+            }
+            else
+            {
+                @grid.GetHtml(
+                     tableStyle: "webGrid",
+                     headerStyle: "gridHead",
+
+                     columns: grid.Columns(
+
+                             grid.Column("ColName", header: "Field Name"),
+                             grid.Column("OldValue", header: "Previous Value"),
+                             grid.Column("NewValue", header: "New Value"),
+                             grid.Column("ChangeUser", header: "Change User"),
+                             grid.Column("LastName", header: "Last Name"),
+                             grid.Column("FirstName", header: "First Name"),
+                             grid.Column("ChangeTime", header: "Timestamp")
+
+
+                       ))
+            }
+        </div>
+    }
+    else
+    {
+        <div id="gridAudit1">
+            <h5>No Audit Trail Records Found</h5>
+        </div>
+    }
+</div>
+
+<div>
+    <table style="width: 100%;">
+        <tr>
+
+            <td style="vertical-align: top; text-align: left; margin-right: 0px; font-size: 12px; width: 150px;">
+                <a href="#" onclick="window.close();">Close this window</a>
+            </td>
+            <td style="vertical-align: top; text-align: left; margin-right: 0px; font-size: 12px;">
+                <a href="#" onclick="window.print()">Print</a>
+            </td>
+
+        </tr>
+    </table>
+</div>
+

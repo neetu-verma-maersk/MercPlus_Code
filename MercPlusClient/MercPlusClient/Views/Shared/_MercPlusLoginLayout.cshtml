@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>    
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/mainjs.js"></script>
+
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" align="center" width="1000px" style="border:2px solid #fff;">
+        <tr>
+            <td width="884" bgcolor="#000033" colspan="3" height="33">
+                <a href="http://www.maerskline.com" target="maersk"><img border="0" src="~/Content/Images/Logo.gif" width="247" height="30" /></a>
+            </td>
+            <td width="206" bgcolor="#000033" height="27">
+                <p align="center"><img border="0" src="~/Content/Images/MERC.gif" width="82" height="27" /></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="20" bgcolor="#0099CC" height="27"> &nbsp;</td>
+            <td width="9" bgcolor="#0099CC" height="27">&nbsp;</td>
+            <td width="855" bgcolor="#0099CC" height="27">&nbsp;</td>
+            <td width="206" bgcolor="#0099CC" height="27" align="center">&nbsp;
+                @*@Html.ActionLink("Log Out", "ActionName", "ControllerName")*@
+            </td>
+        </tr>
+        <tr>
+            <td width="20" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+            <td width="9" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+            <td width="855" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+            <td width="206" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="20" bordercolor="#111111" bgcolor="#000033" height="360">&nbsp;</td>
+            <td width="9" height="360" bgcolor="#D9E4F6">&nbsp;</td>
+            <td width="1060" height="360" bgcolor="#D9E4F6" valign="top" colspan="2">
+                <div id="MainContent" >
+                    <div class="ContentPlaceHolderCss">
+                        @RenderBody()
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="20" bordercolor="#000033" bgcolor="#000033" height="19">&nbsp;</td>
+            <td width="9" bordercolor="#000033" bgcolor="#000033" height="19"> &nbsp; </td>
+            <td width="855" bordercolor="#000033" bgcolor="#000033" height="19" align="center" valign="middle">
+                <a href="http://www.ibm.com" class="amsysLabel" target="amsys">©2004 Maersk Line, All Rights Reserved<br /> IBM Global Services - Transport & Logistics</a>
+            </td>
+            <td width="206" bordercolor="#000033" bgcolor="#000033" height="19"> &nbsp; </td>
+        </tr>
+    </table>
+</body>
+</html>

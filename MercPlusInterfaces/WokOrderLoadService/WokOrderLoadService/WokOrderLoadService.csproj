@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0351276A-7725-490D-9B7A-A408A9916A70}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WokOrderLoadService</RootNamespace>
+    <AssemblyName>WokOrderLoadService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="amqmdnet">
+      <HintPath>..\..\..\..\MercWorkingCode\Dll\amqmdnet.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MercPlusLibrary">
+      <HintPath>..\..\..\MercPlusLibrary\bin\Debug\MercPlusLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MercWorkingCode\Dll\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MercWOLoad.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWOLoad.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercWOLoad.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWOLoad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercWOLoad.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWOLoad.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_ERROR.cs">
+      <DependentUpon>MercWOLoad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_LINEITEM.cs">
+      <DependentUpon>MercWOLoad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_TRANSMISSION.cs">
+      <DependentUpon>MercWOLoad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ManageWorkOrderServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SQLDataClass.cs" />
+    <Compile Include="WOLoad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WOLoad.Designer.cs">
+      <DependentUpon>WOLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="MercWOLoad.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MercWOLoad.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MercWOLoad.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercWOLoad.edmx</DependentUpon>
+      <LastGenOutput>MercWOLoad.Context.cs</LastGenOutput>
+    </None>
+    <None Include="MercWOLoad.edmx.diagram">
+      <DependentUpon>MercWOLoad.edmx</DependentUpon>
+    </None>
+    <None Include="MercWOLoad.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercWOLoad.edmx</DependentUpon>
+      <LastGenOutput>MercWOLoad.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Customer.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Damage.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.EqsType.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.EqType.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Equipment.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.ErrMessage.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RemarkEntry.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RepairCode.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RepairLoc.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.RepairsView.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Shop.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.Tpi.datasource" />
+    <None Include="Properties\DataSources\MercPlusLibrary.WorkOrderDetail.datasource" />
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrder.wsdl" />
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\WokOrderLoadService.ManageWorkOrderServiceReference.CallSaveMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\WokOrderLoadService.ManageWorkOrderServiceReference.CallValidateMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\WokOrderLoadService.ManageWorkOrderServiceReference.GetHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\WokOrderLoadService.ManageWorkOrderServiceReference.ReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\WokOrderLoadService.ManageWorkOrderServiceReference.SaveAsDraftResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManageWorkOrderServiceReference\WokOrderLoadService.ManageWorkOrderServiceReference.SubmitWorkOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ManageWorkOrderServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManageWorkOrderServiceReference\ManageWorkOrderService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManageWorkOrderServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManageWorkOrderServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManageWorkOrderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

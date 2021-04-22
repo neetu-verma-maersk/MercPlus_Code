@@ -1,0 +1,255 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataManualModel
+
+@{
+    if (Model.IsManualUpdate)
+    {
+        ViewBag.Title = "EditManual";
+    }
+    else
+    {
+        ViewBag.Title = "AddManual";
+    }
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript" src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<script type="text/javascript">
+    //$(function () {
+    //    $("#drpManual").change(function () {
+    //        var c = $(this).val();
+    //        // var a = JSON.stringify({ customerId: $(this).val() };
+    //        $.ajax({
+    //            url: "/ManageMasterData/ManageMasterData/GetAllDetailsForManual",
+    //            type: 'POST',
+    //            data: { id: c },
+    //            cache: false,
+    //            success: function (data) {
+    //                $("#txtManualDesc").val(data.ManualDesc)
+    //                $("#drpManualActiveSwitch").val(data.ManualActiveSW);
+                    
+    //                $("#txtChangeUserName").val(data.ManualChangeUser);
+    //                $("#txtChangeTime").val(data.ManualChTime);
+
+
+    //            },
+    //            error: function (data) {
+
+    //            }
+    //        });
+    //    });
+    //});
+
+    function drpManualChange(val)
+    {
+        //alert(val);
+        $("#ErrorMsgContainer").html(""); 
+        $("#ErrorMsgContainer1").html("");
+        if (val.trim() == "")
+        {
+            $("#txtManualDesc").val("")
+            $("#drpManualActiveSwitch").val("");
+            $("#txtManualChangeUserName").val("");
+            $("#txtManualChangeUserName1").val("");
+            $("#txtManualChangeTime").val("");
+            return;
+        }
+            
+        $.ajax({
+            url: "/ManageMasterData/ManageMasterData/GetAllDetailsForManual",
+            type: 'POST',
+            data: { id: val },
+            cache: false,
+            success: function (data) {
+                $("#txtManualDesc").val(data.ManualDesc)
+                $("#drpManualActiveSwitch").val(data.ManualActiveSW);
+                //$("#txtManualChangeUserName").val(data.ChangeUser);
+                var userName = data.ChangeUser;
+                if (userName.indexOf("|") > 0) {
+                    $("#txtManualChangeUserName").val(userName.substring(0, userName.indexOf("|")));
+                    $("#txtManualChangeUserName1").val(userName.substring(userName.indexOf("|") + 1));
+                }
+                else {
+                    $("#txtManualChangeUserName").val(userName);
+                    $("#txtManualChangeUserName1").val("");
+                }
+                var d = new Date();
+                d.setTime(parseInt(data.ChTime.substring(6)));
+                $("#txtManualChangeTime").val(FormatDate(d));
+
+
+            },
+            error: function (xhr, status, error) {
+                ShowRemoveValidationMessage("Unable to get data for selected Manual", "Warning")
+            }
+        });
+    }
+
+    function ClientValidation(isAdd) {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+        var val1 = "";
+        if (isAdd) {
+            HighlightInputsForError($("#txtManualDescription"), false);
+            val1 = $("#txtManualDescription").val();
+            if (val1.trim() == "") {
+                isError = true;
+                errMsg += "Please Enter a New Manual Code";
+                HighlightInputsForError($("#txtManualDescription"), isError)
+            }
+        }
+        else {
+            HighlightInputsForError($("#drpManual"), false); 
+            if (document.getElementById('drpManual').selectedIndex == 0) {
+                isError = true;
+                errMsg += "Please Select a Manual Code";
+                HighlightInputsForError($("#drpManual"), isError)
+            }
+        }
+        HighlightInputsForError($("#txtManualDesc"), false)
+        val1 = $("#txtManualDesc").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if(errMsg.trim()=="")
+                errMsg = "Please Enter a Manual Description ";
+            else
+                errMsg += ", Manual Description";
+            HighlightInputsForError($("#txtManualDesc"), isError)
+        }
+        else if(val1.indexOf('"')>1){
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Remove Double Quote Character in Manual Code";
+            else
+                errMsg += ", Please Remove Double Quote Character in Manual Code";
+            HighlightInputsForError($("#txtManualDesc"), isError)
+        }
+        HighlightInputsForError($("#drpManualActiveSwitch"), false)
+        if (document.getElementById('drpManualActiveSwitch').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Select your Active Switch";
+            else
+                errMsg += ", Please Select your Active Switch";
+            HighlightInputsForError($("#drpManualActiveSwitch"), isError)
+        }
+        
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+
+@using (Html.BeginForm())
+{
+    <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_manual_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+    <h2>Update Or Add New Manual</h2>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 750px; vertical-align: text-top;">
+        @if (Model.IsManualUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Manual Code")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.ManualFullDesc, Model.drpManual, "", new { id = "drpManual", @onchange="drpManualChange(this.value)" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Manual Code")</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.txtManual, new { id = "txtManualDescription", maxlength=4, style = "text-transform:uppercase;" })</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr> 
+        }
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Manual Description")</td>
+
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => Model.ManualDesc, new { id = "txtManualDesc", size="60", maxlength=70 })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Manual Active Switch")</td>
+
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.ManualActiveSW, Model.drpManualActiveSwitch, "", new { id = "drpManualActiveSwitch" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+       
+
+
+        @if (Model.IsManualUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Change User")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top; padding:0 0 0 0 ;">
+                    <table>
+                        <tr>
+                            <td style="padding:0 0 0 2;">
+                                @Html.TextBoxFor(model => model.ManualChangeUserFName, new { id = "txtManualChangeUserName", style="width:200px" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(model => model.ManualChangeUserLName, new { id = "txtManualChangeUserName1", style="width:200px" })
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Change Time")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ManualChTime, new { id = "txtManualChangeTime" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Update Description" formaction="/ManageMasterData/ManageMasterData/UpdateManualDescription" onclick="return ClientValidation(false);" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Update Active Switch" formaction="/ManageMasterData/ManageMasterData/UpdateManualActiveSwitch" onclick="return ClientValidation(false);" />
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+
+                    <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/ManualCreate" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;"></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" formaction="/ManageMasterData/ManageMasterData/CreateManual" onclick="return ClientValidation(true);" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+
+                    <input type="submit" value="Return to Update" formaction="/ManageMasterData/ManageMasterData/EditManual" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }
+    </table>
+}
+
+
+

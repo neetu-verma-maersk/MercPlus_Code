@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC6AEC47-BF5E-4654-B68D-C77D810A9F74}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MercWOApprovalDAL</RootNamespace>
+    <AssemblyName>MercWOApproval</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Mercapp\MercAuditTool\MercWOApproval\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B68A0DEB3B38A9A62E6C3BCB0103EE8D2DBD902B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MercWOApproval_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MercPlusLibrary">
+      <HintPath>..\..\..\..\Merc_Build\MercPlusLibrary\bin\Release\MercPlusLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dtproperty.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercWOApproval.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWOApproval.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercWoApproval.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MercWoApproval.Designer.cs">
+      <DependentUpon>MercWoApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MercWOApproval1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercWOApprovalBAL.cs" />
+    <Compile Include="MercWOApproval1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercWOApproval.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MercWOApprovalDAL.cs" />
+    <Compile Include="MESC1TS_APPROVER_DETAILS.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_AREA.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_AUDITRESULT_CODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_AUDITSTATUS_CODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_AUDIT_HISTORY.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY_CONT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY_LABOR.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CPH_EQP_LIMIT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CURRENCY.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CUSTOMER.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CUST_SHOP_MODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_DAMAGE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_DISCOUNT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_ERROR.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_ERROR2.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_LINEITEM.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_LINEITEM2.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_TRANSMISSION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQMODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQSTYPE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQTYPE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_ERR_MESSAGE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EVENT_LOG.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_INDEX.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_INSPECTION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_LABOR_RATE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_LOCATION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUAL.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUAL_MODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUFACTUR.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MASTER_PART.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MODEL.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_NONSCODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PARTS_GROUP.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PAYAGENT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PAYAGENT_VENDOR.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PREPTIME.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PROCESS_IDENTIFIER.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PTI.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REFAUDIT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REGION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REPAIR_CODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REPAIR_LOC.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_EXCLU.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_IMPORT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_PART.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP_CONT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP_LIMITS.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SPECIAL_REMARKS.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_STATUS_CODE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SUSPEND.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SUSPEND_CAT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_TPI.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_TRANSMIT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_VENDOR.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WO.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOAUDIT.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOPART.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOREMARK.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOREPAIR.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_XML_LOG.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1VS_CUST_SHOP.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1VS_SHOP_LOCATION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEC_ACTION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_ACTION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_FUNCTION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_USER.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_WEBPAGE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_FUNCTION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_USER.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_WEBPAGE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_WEBSITE.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TESTEQUIPNO.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_UserInformation.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WO_VALIDATION.cs">
+      <DependentUpon>MercWOApproval.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="MercWOApproval.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MercWOApproval1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MercWOApproval.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercWOApproval.edmx</DependentUpon>
+      <LastGenOutput>MercWOApproval.Context.cs</LastGenOutput>
+    </None>
+    <None Include="MercWOApproval.edmx.diagram">
+      <DependentUpon>MercWOApproval.edmx</DependentUpon>
+    </None>
+    <None Include="MercWOApproval.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MercWOApproval.edmx</DependentUpon>
+      <LastGenOutput>MercWOApproval1.cs</LastGenOutput>
+    </None>
+    <None Include="MercWOApproval_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MercWoApproval.resx">
+      <DependentUpon>MercWoApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

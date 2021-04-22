@@ -1,0 +1,3703 @@
+<html>
+
+<head>
+<meta http-equiv="KEYWORDS" content="dictionary, technical, field definitions, field names, field, fields">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MERC</title>
+</head>
+
+<body topmargin="5" leftmargin="5">
+
+<font face="Arial" size="4"><b>
+<h1 align="center"><span lang="en-us">MERC+ data dictionary</span></h1>
+<p align="right">Last updated:&nbsp;<!--webbot bot="Timestamp" s-type="EDITED" s-format="%m/%d/%y" startspan -->12/02/04<!--webbot bot="Timestamp" endspan i-checksum="12753" -->
+</b></font><font face="Arial" size="3"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</font><font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_ACCOUNTING_PERIOD </p>
+<p><b>Table Comment</b> An identification to determine the accounting period 
+ending date and activity period ending date for the accounting books in RRIS, 
+based on a corporate payagent code. </p>
+</font><font face="Arial" size="3">
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">CORP_PAYAGENT_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">An identification of the corporate payagent code as defined in RRIS</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MONTH_CLOSE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font><font size="2">&nbsp;</font></td>
+    <td><font size="2">A 2 character identification of the month involved for the closing 
+    period.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">YEAR_CLOSE</font></td>
+    <td><font face="Arial" size="2">char(2)</font><font size="2">&nbsp;</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font><font size="2">&nbsp;</font></td>
+    <td><font size="2">A 2 character identification of the year involved for the closing 
+    period.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACC_START_DTE</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The date that begins the Accounting period for the given Month and Year 
+    close.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACC_END_DTE</font></td>
+    <td><font face="Arial" size="2">datetime</font><font size="2">&nbsp;</font></td>
+    <td><font face="Arial" size="2">NULL</font><font size="2">&nbsp;</font></td>
+    <td><font size="2">The date that completes the Accounting period for the given Month and 
+    Year close.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACT_START_DTE</font></td>
+    <td><font face="Arial" size="2">datetime</font><font size="2">&nbsp;</font></td>
+    <td><font face="Arial" size="2">NULL</font><font size="2">&nbsp;</font></td>
+    <td><font size="2">The date that begins the Activity period for the given Month and Year 
+    close.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACT_END_DTE</font></td>
+    <td><font face="Arial" size="2">datetime</font><font size="2">&nbsp;</font></td>
+    <td><font face="Arial" size="2">NULL</font><font size="2">&nbsp;</font></td>
+    <td><font size="2">The date that completes the Activity period for the given Month and Year 
+    close.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_AREA </p>
+<p><b>Table Comment</b> Area is a collection of countires </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">AREA_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">AREA_DESC</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_CHASSIS </p>
+<p><b>Table Comment</b> A specific equipment type used to transport other 
+equipment. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">CHAS_EQPNO</font></td>
+    <td><font size="2">char(11)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_COUNTRY </p>
+<p><b>Table Comment</b> Country is a collection of Locaions. A country is same 
+as geo-political countries. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">COUNTRY_CD</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">COUNTRY_DESC</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">AREA_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><span lang="en-us"><font size="2">CPH_ADJUSTMENT_FACTOR</font></span></td>
+    <td><span lang="en-us"><font size="2">Float</font></span></td>
+    <td><span lang="en-us"><font face="Arial" size="2">NULL</font></span></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_COUNTRY_CONT </p>
+<p><b>Table Comment</b> A country will have several contracts based on which the 
+repairs will be paid by the CPH </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="141"><font size="2">Column Name</font></th>
+    <th width="82"><font size="2">Datatype</font></th>
+    <th width="79"><font size="2">Null Option</font></th>
+    <th width="510"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">COUNTRY_CD</font></td>
+    <td width="82"><font size="2">char(2)</font></td>
+    <td width="79"><font size="2">NOT NULL</font></td>
+    <td width="510">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">EFF_DTE</font></td>
+    <td width="82"><font size="2">datetime</font></td>
+    <td width="79"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="510"><font size="2">Effective date of the contract</font></td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">EXP_DTE</font></td>
+    <td width="82"><font size="2">datetime</font></td>
+    <td width="79"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="510"><font size="2">Expire date of the contract</font></td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">MODE</font></td>
+    <td width="82"><font size="2">char(2)</font></td>
+    <td width="79"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="510"><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode 
+    refers to the style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">CURRENCY_CD</font></td>
+    <td width="82"><font size="2">char(3)</font></td>
+    <td width="79"><font size="2">NULL</font></td>
+    <td width="510">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">CONTRACT_AMOUNT</font></td>
+    <td width="82"><font size="2">Numeric(16,4)</font></td>
+    <td width="79"><font size="2">NOT NULL</font></td>
+    <td width="510"><font size="2">Total contract Amount</font></td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">ACTIVE_SW</font></td>
+    <td width="82"><font size="2">char(1)</font></td>
+    <td width="79"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="510"><font size="2">Active switch. ’Y’ = Active, ’N’ = Inactive</font></td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">REPAIR_CD</font></td>
+    <td width="82"><font size="2">char(6)</font></td>
+    <td width="79"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="510"><font size="2">A code used to define standard time and material repair 
+    work.</font></td>
+  </tr>
+  <tr>
+    <td width="141"><font size="2">MANUAL_CD</font></td>
+    <td width="82"><font size="2">char(4)</font></td>
+    <td width="79"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="510"><font size="2">A unique 4 character code to identify a specific manual. 
+    ’MAER’ - Maersk manual</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_COUNTRY_LABOR </p>
+<p><b>Table Comment</b> Labor Rates defined at Country Level </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="113"><font size="2">Column Name</font></th>
+    <th width="111"><font size="2">Datatype</font></th>
+    <th width="77"><font size="2">Null Option</font></th>
+    <th width="511"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">EQTYPE</font></td>
+    <td width="111"><font size="2">char(4)</font></td>
+    <td width="77"><font size="2">NOT NULL</font></td>
+    <td width="511"><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE 
+    from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">EXP_DTE</font></td>
+    <td width="111"><font size="2">datetime</font></td>
+    <td width="77"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="511"><font size="2">Date the rate expires.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">EFF_DTE</font></td>
+    <td width="111"><font size="2">datetime</font></td>
+    <td width="77"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="511"><font size="2">Date the rate becomes effective.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">COUNTRY_CD</font></td>
+    <td width="111"><font size="2">char(2)</font></td>
+    <td width="77"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="511">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">REGULAR_RT</font></td>
+    <td width="111"><font size="2">Numeric(16,4)</font></td>
+    <td width="77"><font size="2">NULL</font></td>
+    <td width="511"><font size="2">The labor rate for working during regular hours.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">OVERTIME_RT</font></td>
+    <td width="111"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td width="77"><font face="Arial" size="2">NULL</font></td>
+    <td width="511"><font size="2">The labor rate for working during overtime ours.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">DOUBLETIME_RT</font></td>
+    <td width="111"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td width="77"><font face="Arial" size="2">NULL</font></td>
+    <td width="511"><font size="2">The labor rate for working during doubletime hours.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">MISC_RT</font></td>
+    <td width="111"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td width="77"><font face="Arial" size="2">NULL</font></td>
+    <td width="511"><font size="2">A miscellaneous rate type to be used for any other type of 
+    work hours not previously defined.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">CURRENCY_CD</font></td>
+    <td width="111"><font size="2">char(3)</font></td>
+    <td width="77"><font face="Arial" size="2">NULL</font></td>
+    <td width="511">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_CPH_EQP_LIMIT </p>
+<p><b>Table Comment</b> Repair Limit information </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="837">
+  <tr>
+    <b>
+    <th width="99"><font size="2">Column Name</font></th>
+    <th width="121"><font size="2">Datatype</font></th>
+    <th width="82"><font size="2">Null Option</font></th>
+    <th width="535"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">EQTYPE</font></td>
+    <td width="121"><font size="2">char(4)</font></td>
+    <td width="82"><font size="2">NOT NULL</font></td>
+    <td width="535"><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE 
+    from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">EQSIZE</font></td>
+    <td width="121"><font size="2">char(2)</font></td>
+    <td width="82"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="535">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">EQ_MATERIAL</font></td>
+    <td width="121"><font size="2">char(3)</font></td>
+    <td width="82"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="535">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">AGE_FROM</font></td>
+    <td width="121"><font size="2">smallint</font></td>
+    <td width="82"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="535"><font size="2">The (minimum) age from where the age group range starts from</font></td>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">AGE_TO</font></td>
+    <td width="121"><font size="2">smallint</font></td>
+    <td width="82"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="535"><font size="2">The (maximum) age from where the age group range ends with</font></td>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">LIMIT_AMOUNT</font></td>
+    <td width="121"><font size="2">Numeric(16,4)</font></td>
+    <td width="82"><font size="2">NULL</font></td>
+    <td width="535">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_CURRENCY </p>
+<p><b>Table Comment</b> A list of currency codes and currenct exchange rates </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">CURRENCY_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CURRENCY_DESC</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">EXCHANGE_RATE</font></td>
+    <td><font size="2">numeric(1<span lang="en-us">4</span>,6)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_CUST_SHOP_MODE </p>
+<p><b>Table Comment</b> This entity defines a relationship between CUSTOMER, 
+SHOP and MODE. &nbsp;It is used for Non STS Modes to identify non standard time 
+billing that will need approvals from a different security profile set up 
+specifically &nbsp;for Non STS Approvers. &nbsp;It is also used to define a PAYAGENT 
+associated with each combination for proper payment of a workorder in RRIS 
+system. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="103"><font size="2">Column Name</font></th>
+    <th width="50"><font size="2">Datatype</font></th>
+    <th width="105"><font size="2">Null Option</font></th>
+    <th width="554"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">CSM_CD</font></td>
+    <td width="50"><font size="2">char(9)</font></td>
+    <td width="105"><font size="2">NOT NULL</font></td>
+    <td width="554"><font size="2">A unique identifier, created by concatenating 
+    Customer/Shop/Mode into one field. &nbsp;This represents the set of non STS WOs 
+    that can be approved by a given authorization group.</font></td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">MODE</font></td>
+    <td width="50"><font size="2">char(2)</font></td>
+    <td width="105"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="554"><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode 
+    refers to the style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">SHOP_CD</font></td>
+    <td width="50"><font size="2">char(3)</font></td>
+    <td width="105"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="554"><font size="2">A unique identifier to represent the business doing the 
+    actual repairs and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">PAYAGENT_CD</font></td>
+    <td width="50"><font size="2">char(3)</font></td>
+    <td width="105"><font size="2">NULL</font></td>
+    <td width="554"><font size="2">An identifier to a Payagent as defined in the RRIS system.</font></td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">CUSTOMER_CD</font></td>
+    <td width="50"><font size="2">char(4)</font></td>
+    <td width="105"><font size="2">NOT NULL</font></td>
+    <td width="554"><font size="2">A unique identifier representing a the current owner or 
+    leaser of a piece of equipment.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_CUSTOMER </p>
+<p><b>Table Comment</b> The company currently responsible for equipment being 
+repaired </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="161"><font size="2">Column Name</font></th>
+    <th width="67"><font size="2">Datatype</font></th>
+    <th width="89"><font size="2">Null Option</font></th>
+    <th width="495"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="161"><font size="2">CUSTOMER_CD</font></td>
+    <td width="67"><font size="2">char(4)</font></td>
+    <td width="89"><font size="2">NOT NULL</font></td>
+    <td width="495"><font size="2">A unique identifier representing a the current owner or 
+    leaser of a piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td width="161"><font size="2">CUSTOMER_DESC</font></td>
+    <td width="67"><font size="2">varchar(30)</font></td>
+    <td width="89"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="495"><font size="2">A description/name of the Customer.</font></td>
+  </tr>
+  <tr>
+    <td width="161"><font size="2">MANUAL_CD</font></td>
+    <td width="67"><font size="2">char(4)</font></td>
+    <td width="89"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="495"><font size="2">A unique 4 character code to identify a specific manual. 
+    ’MAER’ - Maersk manual</font></td>
+  </tr>
+  <tr>
+    <td width="161"><font size="2">MAERSK_SW</font></td>
+    <td width="67"><font size="2">char(1)</font></td>
+    <td width="89"><font size="2">NULL</font></td>
+    <td width="495"><font size="2">An indication that the Customer is part of the Maersk family 
+    and any special system logic pertaining to &quot;Maersk&quot; would pertain to all 
+    Customers where this switch is ’Y’</font></td>
+  </tr>
+  <tr>
+    <td width="161"><font size="2">CUSTOMER_ACTIVE_SW</font></td>
+    <td width="67"><font size="2">char(1)</font></td>
+    <td width="89"><font size="2">NULL</font></td>
+    <td width="495"><font size="2">A Yes/No indicator determining if the record is still valid 
+    for use in the system.</font></td>
+  </tr>
+  <tr>
+    <td width="161"><font size="2">CHUSER</font></td>
+    <td width="67"><font size="2">varchar(20)</font></td>
+    <td width="89"><font size="2">NOT NULL</font></td>
+    <td width="495">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="161"><font size="2">CHTS</font></td>
+    <td width="67"><font size="2">datetime</font></td>
+    <td width="89"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="495">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_EQMODE </p>
+<p><b>Table Comment</b> The resolving entityu between the equipments and the 
+mode </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="103"><font size="2">Column Name</font></th>
+    <th width="50"><font size="2">Datatype</font></th>
+    <th width="91"><font size="2">Null Option</font></th>
+    <th width="568"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">EQTYPE</font></td>
+    <td width="50"><font size="2">char(4)</font></td>
+    <td width="91"><font size="2">NOT NULL</font></td>
+    <td width="568"><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE 
+    from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">EQSTYPE</font></td>
+    <td width="50"><font size="2">char(4)</font></td>
+    <td width="91"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="568"><font size="2">A sub classification of equipment types - &nbsp;EQSTYPE from 
+    RKEM.RKEMUVEQBC &nbsp;CONT = &nbsp;REEF / TWDK , COFL, FLAT,OSOT,/ OPEN</font></td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">EQSIZE</font></td>
+    <td width="50"><font size="2">char(2)</font></td>
+    <td width="91"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="568">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">MODE</font></td>
+    <td width="50"><font size="2">char(2)</font></td>
+    <td width="91"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="568"><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode 
+    refers to the style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">ALUMINIUM_SW</font></td>
+    <td width="50"><font size="2">char(1)</font></td>
+    <td width="91"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="568">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="103"><font size="2">ACTIVE_SW</font></td>
+    <td width="50"><font size="2">char(1)</font></td>
+    <td width="91"><font size="2">NULL</font></td>
+    <td width="568"><font size="2">Indicates whether the particular equipment mode combination 
+    is active</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_EQTYPE </p>
+<p><b>Table Comment</b> A classification of equipment such as container, 
+chassis, reefer, genset. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="99"><font size="2">Column Name</font></th>
+    <th width="67"><font size="2">Datatype</font></th>
+    <th width="76"><font size="2">Null Option</font></th>
+    <th width="570"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">EQTYPE</font></td>
+    <td width="67"><font size="2">char(4)</font></td>
+    <td width="76"><font size="2">NOT NULL</font></td>
+    <td width="570"><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE 
+    from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td width="99"><font size="2">EQTYPE_DESC</font></td>
+    <td width="67"><font size="2">varchar(30)</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="570"><font size="2">A descriptive defintition of the equipment type.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_ERR_MESSAGE </p>
+<p><b>Table Comment</b> Error Messges Table - System Managed table </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">ERROR_NO</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">ERROR_MSG</font></td>
+    <td><font size="2">varchar(255)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_INDEX </p>
+<p><b>Table Comment</b> Area of Equipment being repaired. &nbsp;The Index helps to 
+group Repair Codes associated to the same section of equipment. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="110"><font size="2">Column Name</font></th>
+    <th width="67"><font size="2">Datatype</font></th>
+    <th width="76"><font size="2">Null Option</font></th>
+    <th width="559"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="110"><font size="2">INDEX_ID</font></td>
+    <td width="67"><font size="2">int</font></td>
+    <td width="76"><font size="2">NOT NULL</font></td>
+    <td width="559"><font size="2">A unique identifier to an index record which groups repair 
+    codes for faster searching capabilities</font></td>
+  </tr>
+  <tr>
+    <td width="110"><font size="2">MODE</font></td>
+    <td width="67"><font size="2">char(2)</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="559"><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode 
+    refers to the style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td width="110"><font size="2">MANUAL_CD</font></td>
+    <td width="67"><font size="2">char(4)</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="559"><font size="2">A unique 4 character code to identify a specific manual. 
+    ’MAER’ - Maersk manual</font></td>
+  </tr>
+  <tr>
+    <td width="110"><font size="2">INDEX_DESC</font></td>
+    <td width="67"><font size="2">varchar(60)</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="559"><font size="2">A descriptive text description of a defined index.</font></td>
+  </tr>
+  <tr>
+    <td width="110"><font size="2">INDEX_PRIORITY</font></td>
+    <td width="67"><font size="2">smallint</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="559">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_INSPECTION </p>
+<p><b>Table Comment</b> Inspection information &nbsp;pertaining to the Chassis 
+equipment. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">INSP_DTE</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">The date the inspection was done on the equipment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHAS_EQPNO</font></td>
+    <td><font size="2">char(11)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">INSP_BY</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The mechanic or shop performing the inspection on the equipment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RKEMLOC</font></td>
+    <td><font size="2">char(8)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Location code where inspection was performed as defined in RKEM system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">XMIT_RC</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Indication of a successful transmission to RKEM.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">XMIT_DTE</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_LABOR_RATE </p>
+<p><b>Table Comment</b> The hourly amount charged to a Customer, by a Shop for 
+repair work done on equipment. &nbsp;The Rate is determined by the type of equipment 
+being repaired and the type of hours the mechanic worked. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="113"><font size="2">Column Name</font></th>
+    <th width="82"><font size="2">Datatype</font></th>
+    <th width="76"><font size="2">Null Option</font></th>
+    <th width="541"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">SHOP_CD</font></td>
+    <td width="82"><font size="2">char(3)</font></td>
+    <td width="76"><font size="2">NOT NULL</font></td>
+    <td width="541"><font size="2">A unique identifier to represent the business doing the 
+    actual repairs and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">CUSTOMER_CD</font></td>
+    <td width="82"><font size="2">char(4)</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="541"><font size="2">A unique identifier representing a the current owner or 
+    leaser of a piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">EQTYPE</font></td>
+    <td width="82"><font size="2">char(4)</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="541"><font size="2">A code identifier for a type of equipment , based on &nbsp;EQTYPE 
+    from RKEM.RKEMUVEQBC , however extended to divide reefer equipment into the 
+    refrigeration unit vs the container CONT, CHAS, GENS, REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">EFF_DTE</font></td>
+    <td width="82"><font size="2">datetime</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="541"><font size="2">Date the rate becomes effective.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">EXP_DTE</font></td>
+    <td width="82"><font size="2">datetime</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="541"><font size="2">Date the rate expires.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">REGULAR_RT</font></td>
+    <td width="82"><font size="2">Numeric(16,4)</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="541"><font size="2">The labor rate for working during regular hours.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">OVERTIME_RT</font></td>
+    <td width="82"><font size="2">Numeric(16,4)</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="541"><font size="2">The labor rate for working during overtime ours.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">DOUBLETIME_RT</font></td>
+    <td width="82"><font size="2">Numeric(16,4)</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="541"><font size="2">The labor rate for working during doubletime hours.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">MISC_RT</font></td>
+    <td width="82"><font size="2">Numeric(16,4)</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="541"><font size="2">A miscellaneous rate type to be used for any other type of 
+    work hours not previously defined.</font></td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">CHUSER</font></td>
+    <td width="82"><font size="2">varchar(20)</font></td>
+    <td width="76"><font size="2">NOT NULL</font></td>
+    <td width="541">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="113"><font size="2">CHTS</font></td>
+    <td width="82"><font size="2">datetime</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="541">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_LOCATION </p>
+<p><b>Table Comment</b> A geographical area in the world. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">LOC_CD</font></td>
+    <td><font size="2">char(8)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to represent the geographical place repair work is 
+    done.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REGION_CD</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A &nbsp;unique identifier to a Region.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">LOC_DESC</font></td>
+    <td><font size="2">varchar(30)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A description/name of the location.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COUNTRY_CD</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">RKRPLOC</font></td>
+    <td><font size="2">char(5)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CONTACT_EQSAL_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Indicates the local EMR attached to the location has the authorization 
+    to send estimates directly to CENEQUSAL bypassing CPH review. Only those 
+    estimates for shops residingin the approved location may be sent. Even 
+    though the local EMR may be overseeing multiple locations.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_MANUAL </p>
+<p><b>Table Comment</b> A guideline to equipment repairs. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_DESC</font></td>
+    <td><font size="2">varchar(60)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A descriptive name for the manual.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_ACTIVE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_MANUAL_MODE </p>
+<p><b>Table Comment</b> Resolution Table between Manual and Mode </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACTIVE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_MANUFACTUR </p>
+<p><b>Table Comment</b> The producer of the equipment. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">MANUFCTR</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">Name of the company who built the equipment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUFACTUR_ACTIVE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">DISCOUNT_PERCENT</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUFACTUR_NAME</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">NAME OF THE MANUFACTURER</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_MASTER_PART </p>
+<p><b>Table Comment</b> Master Part is a list of part codes </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">PART_CD</font></td>
+    <td><font size="2">varchar(14)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PARTS_GROUP_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_DESC</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_PRICE</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">QUANTITY</font></td>
+    <td><font size="2">int</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Number of parts included in the part’s price.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_DESIGNATION_1</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_DESIGNATION_2</font></td>
+    <td><font face="Arial" size="2">char(3)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_DESIGNATION_3</font></td>
+    <td><font face="Arial" size="2">char(3)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_ACTIVE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CORE_VALUE</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">DEDUCT_CORE</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">This used when calculating the list price of reefer/genset parts
+    </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">REMARKS</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUFCTR</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">Name of the company who built the equipment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_IND</font></td>
+    <td><font size="2">char(<span lang="en-us">1</span>)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Core Part Indicator, indicating whether the part is a &quot;core&quot; part or a 
+    &quot;Maersk&quot; part</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_MODE </p>
+<p><b>Table Comment</b> A grouping of similar repair requirements, either 
+pertaining to a particular type of equipment or pertaining to a particular type 
+of repair work. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE_DESC</font></td>
+    <td><font size="2">varchar(60)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A description of the defined mode.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">STANDARD_TIME_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">An indicator determining if Mode is for standard time repairs or not. 
+    &nbsp;Standard time repairs will use codes from Repair Codes table, non standard 
+    modes will use the NON STS Codes.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">VALIDATION_SW</font></td>
+    <td><font face="Arial" size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">An indicator to determine whether or not the system should validate the 
+    Mode specified on the WO against the equipment identified in the WO. &nbsp;By 
+    default, non-standard modes will not/can not &nbsp;be validated</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE_ACTIVE_SW</font></td>
+    <td><font face="Arial" size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">STANDARD_SW</font></td>
+    <td><font face="Arial" size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Standard Vs Offhire - needs clarification</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_MODEL </p>
+<p><b>Table Comment</b> A list of Manufacturer’s Model numbers. This table is 
+used to find the first digit of the repair code that must be used when repairing 
+gensets whose equipment number falls within the given range. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">MANUFCTR</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">Name of the company who built the equipment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODEL_NO</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">Manufacturer’s Model Numer</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">INDICATOR_CD</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A one character code which represents the first digit of the repair code 
+    that must be used when repairing gensets whose equipment number falls within 
+    the given range.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_NONSCODE </p>
+<p><b>Table Comment</b> This entity represents work that was done and is being 
+invoiced that does not include repair work to a piece of equipment </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">NONS_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A code that represents work done that does not include standard time and 
+    material costs.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">NONS_DESC</font></td>
+    <td><font size="2">varchar(100)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A descriptive text definition to define a non standard time and material 
+    code.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">NONS_ACTIVE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_PARTS_GROUP </p>
+<p><b>Table Comment</b> A List of parts group? </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">PARTS_GROUP_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PARTS_GROUP_DESC</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REMARKS</font></td>
+    <td><font face="Arial" size="2">varchar(20)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PARTS_GROUP_ACTIVE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_PAYAGENT </p>
+<p><b>Table Comment</b> The Payagents defined in RRIS accounting system which 
+determine the characteristics of a payment, such as how the payment is made and 
+&nbsp;the organization responsible for making the payment. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">PAYAGENT_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">An identifier to a Payagent as defined in the RRIS system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CORP_PAYAGENT_CD</font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><font size="2">An identification of the corporate payagent code as defined in RRIS</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RRIS_FORMAT</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">An indicator of the format type of transmission to RRIS accounting 
+    system. &nbsp;Based on the Payagent, different formats of transmission 
+    information must be sent.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PROFIT_CENTER</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Defined profit center code set up in RRIS system to transmit the data 
+    under.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SUB_PROFIT_CENTER</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Defined profit center code set up in RRIS system to transmit the data 
+    under, either the RRIS branch profit center, or the profit center attached 
+    to the branch payagent code.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_PAYAGENT_VENDOR </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">PAYAGENT_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">An identifier to a Payagent as defined in the RRIS system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">VENDOR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier of a vendor.</font></td>
+  </tr>
+  <tr>
+    <td><span lang="en-us"><font face="Arial" size="2">LOCAL_ACCOUNT_CD</font></span></td>
+    <td><font face="Arial" size="2"><span lang="en-us">char(6)</span></font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><span lang="en-us"><font face="Arial" size="2">SUPPLIER_CD</font></span></td>
+    <td><font face="Arial" size="2"><span lang="en-us">char(6)</span></font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><span lang="en-us"><font face="Arial" size="2">PAYMENT_METHOD</font></span></td>
+    <td><font face="Arial" size="2"><span lang="en-us">char(1)</span></font></td>
+    <td><span lang="en-us"><font face="Arial" size="2">NULL</font></span></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_PREPTIME </p>
+<p><b>Table Comment</b> Maximum time that can be allocated for a given type of 
+preparation work being done on an equipment </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PREP_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier for preparation time within a particular mode</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PREP_TIME_MAX</font></td>
+    <td><font size="2">float</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">The maximum amount of prepartion time allowed.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PREP_HRS</font></td>
+    <td><font size="2">float</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The preptime hours which can be added to WO based on total manhours 
+    worked.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_PROCESS_IDENTIFIER </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">PROCESS_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PROCESS_DESC</font></td>
+    <td><font size="2">varchar(35)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PARAM_NAME</font></td>
+    <td><font size="2">varchar(50)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">PARAM_VALUE</font></td>
+    <td><font size="2">varchar(255)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_PTI </p>
+<p><b>Table Comment</b> This entity defines the PTI days allowed for vrious 
+equipment ranges </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">SERIAL_NO_FROM</font></td>
+    <td><font size="2">char(11)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">Start equipment serial number for the given PTI days. Note: If 
+    SERIAL_NO_FROM and SERIAL_NO_TO are ’0’, then that forms the &quot;default PTI 
+    days&quot;.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SERIAL_NO_TO</font></td>
+    <td><font size="2">char(11)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">End equipment serial number for the given PTI days. Note: If 
+    SERIAL_NO_FROM and SERIAL_NO_TO are ’0’, then that forms the &quot;default PTI 
+    days&quot;.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">NO_OF_DAYS</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Number of PTI days for that Group</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_REFAUDIT </p>
+<p><b>Table Comment</b> Audit Table for all Reference data </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">AUDIT_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">System’s Unique identifer</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">TAB_NAME</font></td>
+    <td><font size="2">varchar(128)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Table Name which was responsible for generating this audit information</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">UNIQUE_ID</font></td>
+    <td><font size="2">varchar(50)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Unique Id that can define uniquely the row that was changed in the table</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COL_NAME</font></td>
+    <td><font face="Arial" size="2">varchar(50)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Name of thw column which was modified</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">OLD_VALUE</font></td>
+    <td><font size="2">varchar(255)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Original value -before modification of the column</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">NEW_VALUE</font></td>
+    <td><font face="Arial" size="2">varchar(255)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">New Value - after modification of the column’s value. Note: This will be 
+    NULL in case of deletes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">User who modified this record</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Date and Time the record was changed</font><span lang="en-us"><font size="2"> - Default 
+    current_timestamp</font></span></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_REGION </p>
+<p><b>Table Comment</b> A defined geographical area encompassing many locations
+</p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">REGION_CD</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A &nbsp;unique identifier to a Region.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REGION_DESC</font></td>
+    <td><font size="2">varchar(30)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A description/name of the Region.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_REPAIR_CODE </p>
+<p><b>Table Comment</b> An identifier of work performed, including description, 
+maximum quantities and amounts. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_DESC</font></td>
+    <td><font size="2">varchar(100)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A descriptive text definition of a repair.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RKRP_REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The equivilent RKRP repair code, used when transmitting information to 
+    RKRP system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MAX_QUANTITY</font></td>
+    <td><font size="2">smallint</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The quantity of units associated to the repair.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_MATERIAL_CEILING</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The amount per repair code that is the limited amount a shop can specify 
+    for material costs incurred while doing repair.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_IND</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Identifies non typical repair codes which might include repairs that do 
+    not allow prep time or repairs that must have the man-hours lowered.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MAN_HOUR</font></td>
+    <td><font size="2">float</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The number of hours assciated to do given repair</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_ACTIVE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MULTIPLE_UPDATE_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Allows multiple update using multiple update screen,if the switch is set 
+    to yes</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WARRANTY_PERIOD</font></td>
+    <td><font size="2">float</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Warratnty period in number of days</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">TAX_APPLIED_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">This YES/NO switch defines whether the tax needs to be applied over the 
+    calculated amount for this repair code. </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_PRIORITY</font></td>
+    <td><font size="2">smallint</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font size="2">NOT </font> <font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">INDEX_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A unique identifier to an index record which groups repair codes for 
+    faster searching capabilities</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_RPRCODE_EXCLU </p>
+<p><b>Table Comment</b> A designated relationship between one repair codes and 
+another, which indicates the codes that are excluded from being added to a 
+workorder when a specific repair code is already used. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EXCLU_REPAIR_CD</font></td>
+    <td>&nbsp;</td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A repair code, that by business definition, should not be included on a 
+    workorder repair when it’s corresponding &nbsp;repair code is on the workorder. 
+    &nbsp;This is because the time and dollar allotments already include this 
+    exclusionary repair code.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_RPRCODE_PART </p>
+<p><b>Table Comment</b> Resolution Table between Repair code, Mode, Manual and 
+Master Parts </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PART_CD</font></td>
+    <td><font size="2">varchar(14)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_SHOP </p>
+<p><b>Table Comment</b> A facility doing repair work on equipment </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">VENDOR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier of a vendor.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_DESC</font></td>
+    <td><font size="2">varchar(30)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A description/name of the shop.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RKRPLOC</font></td>
+    <td><font size="2">char(5)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">RKCC Location code associated to place of Repair Shop. &nbsp;This code is 
+    used when transmitting to RKRP.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">LOC_CD</font></td>
+    <td><font size="2">char(8)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to represent the geographical place repair work is 
+    done.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CUCDN</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">Maersk currency code as kept in global system table &nbsp;INLC1T01CURR. 
+    &nbsp;Value for US dollar is ’001’.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EMAIL_ADR</font></td>
+    <td><font size="2">varchar(60)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Email address used to send messages.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PHONE</font></td>
+    <td><font size="2">char(15)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Contact phone number at Shop.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EDI_PARTNER</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The partner id used to EDI data back to the shop.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RRIS70_SUFFIX_CD</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The RRIS70 &nbsp;suffix code transmitted to RRIS system - it represents a 
+    location code to RRIS system and required by RRIS70..</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PREPTIME_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">A Yes/No indication of whether or not a Shop receives preparation time 
+    calculated onto WO.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_ACTIVE_SW</font></td>
+    <td><font face="Arial" size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">A Yes/No indicator determining if the record is still valid for use in 
+    the system.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PCT_MATERIAL_FACTOR</font></td>
+    <td><font size="2">float</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The percentage, over or under, that a shop is allowed to charge for shop 
+    supplied material and parts for a given repair code.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RRIS_XMIT_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">An indicator to determine if workorders for shop should be transmitted 
+    to RRIS system or not.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CURRENCY_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">OVERTIME_SUSP_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Overtim suspend Switch</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_TYPE_CD</font></td>
+    <td><font face="Arial" size="2">char(1)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">IMPORT_TAX</font></td>
+    <td><font size="2">float</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Import Tax defined in % for the cost of parts</font></td>
+  </tr>
+  <tr>
+    <td><span lang="en-us"><font size="2">SALES_TAX_</font></span><font size="2">PART_CONT</font></td>
+    <td><font size="2">float</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Sales Tax (VAT) Percentage for Part in container repairs</font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial" size="2"><span lang="en-us">SALES_TAX_</span></font><font size="2">PART_GEN</font></td>
+    <td><font size="2">float</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Sales Tax (VAT) Percentage for Part in Non - container or Genset repairs</font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial" size="2"><span lang="en-us">SALES_TAX_</span></font><font size="2">LABOR_CON</font></td>
+    <td><font size="2">float</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Sales Tax (VAT) Percentage for Labor in container repairs</font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial" size="2"><span lang="en-us">SALES_TAX_</span></font><font size="2">LABOR_GEN</font></td>
+    <td><font size="2">float</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Sales Tax (VAT) Percentage for Labor &nbsp;in Non - container or Genset 
+    repairs</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_SHOP_CONT </p>
+<p><b>Table Comment</b> Shops will have contracts with the local MSL agents. 
+Reapirs will be &nbsp;paid as per these contracts </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EFFECTIVE_DT</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">Effective Date from which the contract starts</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">EXP_DTE</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">Expire Date of the contract. Contractis not valid after this date.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CONTRACT_AMOUNT</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_SHOP_LIMITS </p>
+<p><b>Table Comment</b> The limited amount a Shop can charge for repairs on a 
+Mode. &nbsp;Any workorder exceeding amount will be marked for suspension for review 
+by management. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_AMT_LIMIT</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The amount limit a shop can charge on a workorder before it is flagged 
+    for suspension.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">AUTO_APPROVE_LIMIT</font></td>
+    <td><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Limit below which the work order is approved automatically</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_MATERIAL_LIMIT</font></td>
+    <td><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_SPECIAL_REMARKS </p>
+<p><b>Table Comment</b> Special Remarks maintained per equipment or per 
+equipment range </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">REMARKS_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">RKEM_PROFILE</font></td>
+    <td><font size="2">varchar(11)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">SERIAL_NO_FROM</font></td>
+    <td><font size="2">char(11)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">SERIAL_NUMBER_TO</font></td>
+    <td>&nbsp;</td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">SUSPEND_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Suspend due to remarks Y/N </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">REMARKS</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Remarks that will be seen by the approver or the vendor</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CEILING</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Repair Ceiling.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_STATUS_CODE </p>
+<p><b>Table Comment</b> Master list of all status codes used by the system to 
+manage the flow of workorder </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">STATUS_CODE</font></td>
+    <td><font size="2">smallint</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">State of the work order such as Estimate, Draft.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">STATUS_DSC</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Description of the Status Code sucha s ’Draft’, Pending’, ’Suspended’ 
+    etc...</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_SUSPEND </p>
+<p><b>Table Comment</b> Workorders sent by a Shop, containing these Repair Codes 
+are elligible to be suspended for management review. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_CD</font></td>
+    <td><font size="2">char(3)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to represent the business doing the actual repairs 
+    and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SUSPCAT_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique table identifier to represent a suspension category.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_SUSPEND_CAT </p>
+<p><b>Table Comment</b> Reasons for suspending workorder for management’s 
+approval. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">SUSPCAT_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique table identifier to represent a suspension category.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SUSPCAT_DESC</font></td>
+    <td><font size="2">varchar(255)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A descriptive messsage identifying reason the workorder has been 
+    suspended.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_TRANSMIT </p>
+<p><b>Table Comment</b> An association of Customer to the repair Mode. &nbsp;This 
+association will determine data transmission to other systems. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">CUSTOMER_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier representing a the current owner or leaser of a 
+    piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RRIS_XMIT_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">An indicator to determine if workorders for the given mode and customer 
+    should be transmitted to RRIS system or not.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">RKRP_XMIT_SW</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">An indicator to determine if workorders for the given mode and customer 
+    should be transmitted to RKRP system or not.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACCOUNT_CD</font></td>
+    <td><font size="2">char(7)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">Defined account code set up in RRIS system to transmit the data under.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_VENDOR </p>
+<p><b>Table Comment</b> The Company responsible for repair work done on eqipment 
+and the receiver of payment for work performed. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="812">
+  <tr>
+    <b>
+    <th width="142"><font size="2">Column Name</font></th>
+    <th width="67"><font size="2">Datatype</font></th>
+    <th width="76"><font size="2">Null Option</font></th>
+    <th width="527"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td width="142"><font size="2">VENDOR_CD</font></td>
+    <td width="67"><font size="2">char(6)</font></td>
+    <td width="76"><font size="2">NOT NULL</font></td>
+    <td width="527"><font size="2">A unique identifier of a vendor.</font></td>
+  </tr>
+  <tr>
+    <td width="142"><font size="2">VENDOR_DESC</font></td>
+    <td width="67"><font size="2">varchar(30)</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="527"><font size="2">Descriptive information identifying Vendor.</font></td>
+  </tr>
+  <tr>
+    <td width="142"><font size="2">VENDOR_ACTIVE_SW</font></td>
+    <td width="67"><font size="2">char(1)</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="527"><font size="2">A Yes/No indicator determining if the record is still valid 
+    for use in the system.</font></td>
+  </tr>
+  <tr>
+    <td width="142"><font size="2">DISCOUNT_PCT</font></td>
+    <td width="67"><font size="2">float</font></td>
+    <td width="76"><font face="Arial" size="2">NULL</font></td>
+    <td width="527"><font size="2">The discount percentage taken off workorders prior to 
+    sentding to RRIS for payment.</font></td>
+  </tr>
+  <tr>
+    <td width="142"><font size="2">DISCOUNT_DAYS</font></td>
+    <td width="67"><font size="2">smallint</font></td>
+    <td width="76"><font size="2">NULL</font></td>
+    <td width="527"><font size="2">The number of days allowed between receipt of workorder and 
+    transmission of payment to RRIS. &nbsp;If transmission occurs with the number of 
+    DISCOUNT_DAYS, the the DISCOUNT_PCT amount can be taken. &nbsp;This DISCOUNT_DAYS 
+    does not represent the contractual agreement with the Vendor as additional 
+    time must be added in for the time it takes RRIS to do a check run.</font></td>
+  </tr>
+  <tr>
+    <td width="142"><font size="2">CHUSER</font></td>
+    <td width="67"><font size="2">varchar(20)</font></td>
+    <td width="76"><font size="2">NOT NULL</font></td>
+    <td width="527">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="142"><font size="2">CHTS</font></td>
+    <td width="67"><font size="2">datetime</font></td>
+    <td width="76"><font face="Arial" size="2">NOT NULL</font></td>
+    <td width="527">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_WO </p>
+<p><b>Table Comment</b> A summary of equipment repairs or equipment maintance 
+performed </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" height="1485" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th height="32"><font size="2">Column Name</font></th>
+    <th height="32"><font size="2">Datatype</font></th>
+    <th height="32"><font size="2">Null Option</font></th>
+    <th height="32"><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">WO_ID</font></td>
+    <td height="16"><font face="Arial" size="2">int</font></td>
+    <td height="16"><font face="Arial" size="2">IDENTITY</font></td>
+    <td height="16"><font face="Arial" size="2">A unique identifier to the WO header 
+    table.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">CUSTOMER_CD</font></td>
+    <td height="16"><font face="Arial" size="2">char(4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">A unique identifier representing a the 
+    current owner or leaser of a piece of equipment.</font></td>
+  </tr>
+  <tr>
+    <td height="32"><font face="Arial" size="2">MODE</font></td>
+    <td height="32"><font face="Arial" size="2">char(2)</font></td>
+    <td height="32"><font face="Arial" size="2">NULL</font></td>
+    <td height="32"><font face="Arial" size="2">A unique 2 character code used to 
+    identify mode. &nbsp;Mode refers to the style or kind of equipment is being 
+    repaired.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">MANUAL_CD</font></td>
+    <td height="16"><font face="Arial" size="2">char(4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">A unique 4 character code to identify a 
+    specific manual. ’MAER’ - Maersk manual</font></td>
+  </tr>
+  <tr>
+    <td height="32"><font face="Arial" size="2">WOTYPE</font></td>
+    <td height="32"><font face="Arial" size="2">char(1)</font></td>
+    <td height="32"><font face="Arial" size="2">NOT NULL</font></td>
+    <td height="32"><font face="Arial" size="2">Used to identify standard time WO from 
+    non standard time WOs. &nbsp;May also be used in future to identify other 
+    categories of WOs.</font></td>
+  </tr>
+  <tr>
+    <td height="32"><font face="Arial" size="2">SHOP_CD</font></td>
+    <td height="32"><font face="Arial" size="2">char(3)</font></td>
+    <td height="32"><font face="Arial" size="2">NOT NULL</font></td>
+    <td height="32"><font face="Arial" size="2">A unique identifier to represent the 
+    business doing the actual repairs and submitting workorders.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">REPAIR_DTE</font></td>
+    <td height="16"><font face="Arial" size="2">datetime</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The date the repair work was performed.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">STATUS_CODE</font></td>
+    <td height="16"><font face="Arial" size="2">smallint</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">State of the work order such as Estimate, 
+    Draft.</font></td>
+  </tr>
+  <tr>
+    <td height="32"><font face="Arial" size="2">CAUSE</font></td>
+    <td height="32"><font face="Arial" size="2">char(1)</font></td>
+    <td height="32"><font face="Arial" size="2">NULL</font></td>
+    <td height="32"><font face="Arial" size="2">A code value 1 - 4 representing the 
+    reason for the equipment damage, ie normal wear and tear, handling, third 
+    party confirmed, third party unconfirmed</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">THIRD_PARTY</font></td>
+    <td height="16"><font face="Arial" size="2">char(3)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The RKCC location code representing the 
+    place of 3rd party damage to equipment.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">MANH_RATE</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The man hour rate charged to perform this 
+    work.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">MANH_RATE_CPH</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The man hour rate paid by CPH to local 
+    EMR &nbsp;in US$</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">EXCHANGE_RATE</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(1<span lang="en-us">4</span>,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The exchange rate captured at time of 
+    workorder creation &nbsp;for the local currency.</font></td>
+  </tr>
+  <tr>
+    <td height="32"><font face="Arial" size="2">TOT_REPAIR_MANH</font></td>
+    <td height="32"><font face="Arial" size="2">float</font></td>
+    <td height="32"><font face="Arial" size="2">NULL</font></td>
+    <td height="32"><font face="Arial" size="2">Sum of all detail records REP-MANH = 
+    WDF-ACTUAL-MANH * WDF-QTY-REPAIRS &nbsp; TOT-MANH = TOT-MANH + REP-MANH</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_MANH_REG</font></td>
+    <td height="16"><font face="Arial" size="2">float</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The number of regular manhours worked on 
+    repair.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_MANH_OT</font></td>
+    <td height="16"><font face="Arial" size="2">float</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The number of overtime &nbsp;manhours worked 
+    on repair.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_MANH_DT</font></td>
+    <td height="16"><font face="Arial" size="2">float</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The number of double time &nbsp;manhours 
+    worked on repair.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_MANH_MISC</font></td>
+    <td height="16"><font face="Arial" size="2">float</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The number of miscellaneous &nbsp;&nbsp;time &nbsp;manhours 
+    worked on repair.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_PREP_HRS</font></td>
+    <td height="16"><font face="Arial" size="2">float</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Total number of preparation hours 
+    associated to &nbsp;workorder.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_LABOR_HRS</font></td>
+    <td height="16"><font face="Arial" size="2">float</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Total man hours worked as sum of regular, 
+    overtime and doubletime hours &nbsp;+ tot-prep</font></td>
+  </tr>
+  <tr>
+    <td height="48"><font face="Arial" size="2">TOT_LABOR_COST</font></td>
+    <td height="48"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="48"><font face="Arial" size="2">NULL</font></td>
+    <td height="48"><font face="Arial" size="2">Total cost of labor to do repair. COMPUTE 
+    WC-TOT-LABOR-COST ROUNDED = &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;(WC-TOT-MANH-REG * TB-RATE-REG) + 
+    &nbsp;&nbsp;&nbsp;&nbsp;(WC-TOT-MANH-OT &nbsp;* TB-RATE-OT) + &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;(WC-TOT-MANH-DT &nbsp;* TB-RATE-DT)</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_LABOR_COST_CPH</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Total cost of labor paid by CPH to local 
+    EMR in US$</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_SHOP_AMT</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Total of repairs shop part’s cost.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_SHOP_AMT_CPH</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"></td>
+  </tr>
+  <tr>
+    <td height="32"><font face="Arial" size="2">TOT_COST_LOCAL</font></td>
+    <td height="32"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="32"><font face="Arial" size="2">NULL</font></td>
+    <td height="32"><font face="Arial" size="2">COMPUTE WOF-TOT-COST-LOCAL = WOF-TOT-LABOR-COST 
+    + &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WOF-TOT-SHOP-AMT</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_COST_CPH</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Total Cost paid by CPH to local EMR in 
+    US$</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">VENDOR_REF_NO</font></td>
+    <td height="16"><font face="Arial" size="2">varchar(10)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Vendor’s reference number to be used 
+    during invoicing process (Estimate number)</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">VOUCHER_NO</font></td>
+    <td height="16"><font face="Arial" size="2">char(8)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Voucher number received from RRIS which 
+    indicates payment of invoice.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">INVOICE_DTE</font></td>
+    <td height="16"><font face="Arial" size="2">datetime</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Date the workorder was transmitted to 
+    RRIS system for invoicing.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">CHECK_NO</font></td>
+    <td height="16"><font face="Arial" size="2">varchar(36)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The Check number returned from RRIS</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">PAID_DTE</font></td>
+    <td height="16"><font face="Arial" size="2">datetime</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Payment date for invoice received from 
+    RRIS.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">AMOUNT_PAID</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">The amount of the WO that was paid in 
+    RRIS system.</font></td>
+  </tr>
+  <tr>
+    <td height="48"><font face="Arial" size="2">RKRP_REPAIR_DTE</font></td>
+    <td height="48"><font face="Arial" size="2">datetime</font></td>
+    <td height="48"><font face="Arial" size="2">NULL</font></td>
+    <td height="48"><font face="Arial" size="2">The Repair date that is transmitted to 
+    RKRP. When legitimate duplicate WO exists and the date must be changed, need 
+    to retain that date so that a new unique date can be transmitted</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">RKRP_XMIT_DTE</font></td>
+    <td height="16"></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">RKRP_XMIT_SW</font></td>
+    <td height="16"><font face="Arial" size="2">char(1)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Value of the corresponding RKRP_XMIT_SW 
+    from MESC1TS_TRANSMIT</font></td>
+  </tr>
+  <tr>
+    <td height="48"><font face="Arial" size="2">WO_RECV_DTE</font></td>
+    <td height="48"><font face="Arial" size="2">datetime</font></td>
+    <td height="48"><font face="Arial" size="2">NULL</font></td>
+    <td height="48"><font face="Arial" size="2">Date the WO was received into system. 
+    &nbsp;This date will be passed to RRIS system as the date used to calculate the 
+    saving percentage when bills are paid within a given time frame in RRIS.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">APPROVED_BY</font></td>
+    <td height="16"><font face="Arial" size="2">char(8)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">UserID of person approving the WO for 
+    payment.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">SHOP_WORKING_SW</font></td>
+    <td height="16"><font face="Arial" size="2">char(1)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">A switch to indicate whether the shop is 
+    working on the workorder.</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">APPROVAL_DTE</font></td>
+    <td height="16"><font face="Arial" size="2">datetime</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Approval Date - Date when the Work order 
+    estimate was approved</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">IMPORT_TAX</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Local Shop Import Tax for the parts</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">IMPORT_TAX_CPH</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">CPH Import Tax for the parts</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">SALES_TAX_LABOR</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Local Shop Sales Tax for the Labor</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">SALES_TAX_LABOR_CPH</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">CPH Sales Tax for the Labor</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">SALES_TAX_PARTS</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Local Shop Sales Tax for the Parts</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">SALES_TAX_PARTS_CPH</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">CPH Sales Tax for the Labor</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">CURRENCY_CD</font></td>
+    <td height="16"><font face="Arial" size="2">char(3)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">TOT_MAERSK_PARTS</font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Total cost of the parts owned by Maersk</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2"><span lang="en-us">TOT_MAERSK_PARTS_CPH</span></font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"></td>
+    <td height="16"></td>
+  </tr>
+  <tr>
+    <td height="17"><font face="Arial" size="2">TOT_MAN_PARTS</font></td>
+    <td height="17"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="17"><font face="Arial" size="2">NULL</font></td>
+    <td height="17"><font face="Arial" size="2">Total cost of Manufacturer parts</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2"><span lang="en-us">TOT_MAN_PARTS_CPH</span></font></td>
+    <td height="16"><font face="Arial" size="2">Numeric(16,4)</font></td>
+    <td height="16"></td>
+    <td height="16"></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">EQPNO</font></td>
+    <td height="16"><font face="Arial" size="2">varchar(11)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">This Equipment Number exists in RKEM</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">EQSIZE</font></td>
+    <td height="16"><font face="Arial" size="2">char(2)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Equipment Size - Length and Height</font></td>
+  </tr>
+  <tr>
+    <td height="48"><font face="Arial" size="2">EQTYPE</font></td>
+    <td height="48"><font face="Arial" size="2">char(4)</font></td>
+    <td height="48"><font face="Arial" size="2">NULL</font></td>
+    <td height="48"><font face="Arial" size="2">A code identifier for a type of equipment 
+    , based on &nbsp;EQTYPE from RKEM.RKEMUVEQBC , however extended to divide reefer 
+    equipment into the refrigeration unit vs the container CONT, CHAS, GENS, 
+    REEF, REFU</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">EQOUTHGU</font></td>
+    <td height="16"><font face="Arial" size="2">char(7)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Height of the equipment</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">EQSTYPE</font></td>
+    <td height="16"><font face="Arial" size="2">char(4)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Equipment Sub Type</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">EQOWNTP</font></td>
+    <td height="16"><font face="Arial" size="2">char(3)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Owner type (OWN, LT, ST VSA, SO, ONE)</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font face="Arial" size="2">EQMATR</font></td>
+    <td height="16"><font face="Arial" size="2">char(3)</font></td>
+    <td height="16"><font face="Arial" size="2">NULL</font></td>
+    <td height="16"><font face="Arial" size="2">Material . eg. steel</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font size="2">DELDATSH</font></td>
+    <td height="16"><font size="2">datetime</font></td>
+    <td height="16"><font size="2">NULL</font></td>
+    <td height="16"><font size="2">PTI Date</font></td>
+  </tr>
+  <tr>
+    <td height="16"><font size="2">STEMPTY</font></td>
+    <td height="16"><font size="2">char(1)</font></td>
+    <td height="16"><font size="2">NULL</font></td>
+    <td height="16"><font size="2">Full / Empty Indicator</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">STREFURB</font></td>
+    <td height="18"><font face="Arial" size="2">char(1)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"><font size="2">Indicator whether the conatiner is for refurbushment</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">REFRBDAT</font></td>
+    <td height="18"><font size="2">datetime</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"><font size="2">Refurbishment Date</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">STREDEL</font></td>
+    <td height="18"><font size="2">char(1)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">FIXCOVER</font></td>
+    <td height="18"><font size="2">float</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">DPP</font></td>
+    <td height="18"><font face="Arial" size="2">float</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">OFFHIR_LOCATION_SW</font></td>
+    <td height="18"><font size="2">char(1)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"><font size="2">Indicates whether the equipment is at offhire location</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">STSELSCR</font></td>
+    <td height="18"><font face="Arial" size="2">char(1)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"><font size="2">Indicates whether the equipment is for sale</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">EQMANCD</font></td>
+    <td height="18"><font size="2">char(3)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"><font size="2">RKEM Manufacturer code</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">EQPROFIL</font></td>
+    <td height="18"><font size="2">char(11)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">EQINDAT</font></td>
+    <td height="18"><font size="2">datetime</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">REEFER_MAKE</font></td>
+    <td height="18"><font size="2">varchar(15)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"><font size="2">Make information for the reefer</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">REEFER_MODEL</font></td>
+    <td height="18"><font face="Arial" size="2">varchar(15)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"><font size="2">Make/Model infor for reefer units</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">GENSET_MAKE</font></td>
+    <td height="18"><font face="Arial" size="2">varchar(15)</font></td>
+    <td height="18"><font face="Arial" size="2">NULL</font></td>
+    <td height="18"></td>
+  </tr>
+  <tr>
+    <td height="18"><font size="2">GENSET_MODEL</font></td>
+    <td height="18"><font face="Arial" size="2">varchar(15)</font></td>
+    <td height="18"><font size="2">NULL</font></td>
+    <td height="18"><font size="2">Make model info for genset units</font></td>
+  </tr>
+  <tr>
+    <td height="32"><font size="2">EQIOFLT</font></td>
+    <td height="32"><font size="2">char(1)</font></td>
+    <td height="32"><font size="2">NULL</font></td>
+    <td height="32"><font size="2">The (EQBC) field is blank when equipment is active D = 
+    Disposed R = Redelivered V = VSA/SO inactive</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_WOAUDIT </p>
+<p><b>Table Comment</b> Audit information on Work orders </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">AUDIT_TEXT</font></td>
+    <td><font size="2">varchar(<span lang="en-us">40</span>00)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Audit Text is system generated text that explains the action that took 
+    place which triggered this audit</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">User who is responsible for this action</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CHTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Date time when the action was made</font><span lang="en-us"><font size="2"> -
+    </font> </span>
+    <font face="Arial" size="2"><span lang="en-us">D</span>efault 
+    current_timestamp</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_WOPART </p>
+<p><b>Table Comment</b> An entity that links workorder Repair and master parts 
+list </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">PART_CD</font></td>
+    <td><font size="2">varchar(14)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COST_CPH</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Copenhagen cost</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COST_LOCAL</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Local shop cost</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SERIAL_NUMBER</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">Serial Number of the part</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_WOREMARK </p>
+<p><b>Table Comment</b> Additional freehand information about the WO either sent 
+by vendor, system generated, or manager’s notations regarding the repair. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">WOREMARK_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">IDENTITY</font></td>
+    <td><font size="2">A unique identifier to a Workorder Remark</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WO_ID</font></td>
+    <td>&nbsp;</td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REMARK_TYPE</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">An indicator to specify if Remark was ’S’ystem generated, ’V’endor 
+    comment, ’I’nternal manager’s comment or ’E’xternal manager’s comment.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SUSPCAT_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A unique table identifier to represent a suspension category.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REMARK</font></td>
+    <td><font size="2">varchar(255)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A textual remark or comment used to clairify information regarding the 
+    WO.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">XMIT_DTE</font></td>
+    <td><font size="2">smalldatetime</font></td>
+    <td><font size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CHUSER</font></td>
+    <td><font size="2">varchar(20)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">CRTS</font></td>
+    <td><font size="2">datetime</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">Date/Timestamp the Remark was inserted to system</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> MESC1TS_WOREPAIR </p>
+<p><b>Table Comment</b> Individual detailed repairs made within a workorder. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">WO_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the WO header table.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">REPAIR_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A code used to define standard time and material repair work.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">QTY_REPAIRS</font></td>
+    <td><font size="2">smallint</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The number of repairs of one kind done.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">SHOP_MATERIAL_AMT</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The amount a Shop charged for parts on a repair.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">CPH_MATERIAL_AMT</font></td>
+    <td><font face="Arial" size="2">Numeric(16,4)</font><font size="2">&nbsp;</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Amount from country contract rates that copenhagen will pay the local 
+    EMR for shop supplied materials</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACTUAL_MANH</font></td>
+    <td><font size="2">float</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">The number of manhours worked on a &nbsp;given repair.
+    </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">NONS_CD</font></td>
+    <td><font size="2">char(6)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A code that represents work done that does not include standard time and 
+    material costs.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MODE</font></td>
+    <td><font size="2">char(2)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">A unique 2 character code used to identify mode. &nbsp;Mode refers to the 
+    style or kind of equipment is being repaired.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">MANUAL_CD</font></td>
+    <td><font size="2">char(4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">A unique 4 character code to identify a specific manual. ’MAER’ - Maersk 
+    manual</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_ACTION </p>
+<p><b>Table Comment</b> An event that initiates presentation of given 
+functionality </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">ACTION_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining an Action</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WEBPAGE_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a Webpage</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACTION_NAME</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A textual definition of an Action on a WebPage</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_AUTHGROUP </p>
+<p><b>Table Comment</b> An identified level of security used for grouping 
+multiple users with the same access. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">AUTHGROUP_NAME</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A texual definition of the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">PARENT_AUTHGROUP_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">The ID of the parent Authorization Group for this Group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">TABLE_NAME</font></td>
+    <td><font size="2">varchar(128)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The table in the database representing the authorization level of data.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COLUMN_NAME</font></td>
+    <td><font size="2">varchar(128)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The column name in the table specifying the authorization level, most 
+    likely the primary key column.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COLUMN_DESC</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">A description of the information the Column_Name defines. &nbsp;ie &nbsp;LOC_CD 
+    would be Location Code</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_AUTHGROUP_ACTION </p>
+<p><b>Table Comment</b> The established relation between an Action and an 
+Authorization Group. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACTION_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining an Action</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_AUTHGROUP_FUNCTION </p>
+<p><b>Table Comment</b> The established relation between a Function &nbsp;and an 
+Authorization Group. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">FUNCTION_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;Function </font> </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_AUTHGROUP_USER </p>
+<p><b>Table Comment</b> The established relation between a User and an 
+Authorization Group. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">ACCESS_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a combination of User to an Authority 
+    Group</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">USER_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;User</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COLUMN_VALUE</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">The actual data value a user has access to. &nbsp;The Column_Name and 
+    Table_Name where the data value exists is from the Authorization Group 
+    &nbsp;entity.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_AUTHGROUP_WEBPAGE </p>
+<p><b>Table Comment</b> The established relation between a Webpage and an 
+Authorization Group. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WEBPAGE_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a Webpage</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_AUTHGROUP_WEBSITE </p>
+<p><b>Table Comment</b> The established relation between a Website &nbsp;and an 
+Authorization Group. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">AUTHGROUP_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identifier to the authorization group.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WEBSITE_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a WebSite </font> </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_FUNCTION </p>
+<p><b>Table Comment</b> Code that provides and/or manipulates specific 
+information </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">FUNCTION_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;Function </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">ACTION_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining an Action</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">FUNCTION_NAME</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A textual definition of a Function within an Action</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_USER </p>
+<p><b>Table Comment</b> Indentity of an individual launching web application. 
+&nbsp;If a secure site, user is validated by password and access, otherwise 
+anonymous. </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">USER_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a &nbsp;User</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">LOGIN</font></td>
+    <td><font size="2">varchar(32)</font></td>
+    <td><font face="Arial" size="2">NOT NULL</font></td>
+    <td><font size="2">A given user handle to log onto the web application.</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">FIRSTNAME</font></td>
+    <td><font size="2">varchar(15)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">User given name</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">LASTNAME</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">User surname</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">COMPANY</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Name of the Company user is associated with or employed by</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">ACTIVE_STATUS</font></td>
+    <td><font size="2">char(1)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td><font size="2">Identifies the status of the User as being in an Active state or 
+    Inactive state</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">APPROVAL_AMOUNT</font></td>
+    <td><font size="2">Numeric(16,4)</font></td>
+    <td><font face="Arial" size="2">NULL</font></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><font size="2">LOC_CD</font></td>
+    <td><font size="2">char(8)</font></td>
+    <td><font size="2">NULL</font></td>
+    <td><font size="2">A unique identifier to represent the geographical place repair work is 
+    done.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_WEBPAGE </p>
+<p><b>Table Comment</b> The resulting viewable document(s) of translated code.
+</p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">WEBPAGE_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a Webpage</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">WEBSITE_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a WebSite </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">WEBPAGE_NAME</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A textual definition of a WebPage on a WebSite</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+<p><b>Table Name</b> SEC_WEBSITE </p>
+<p><b>Table Comment</b> A named collection of related files hosted on a web 
+server </p>
+</font>
+<table style="border-collapse: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="90%">
+  <tr>
+    <b>
+    <th><font size="2">Column Name</font></th>
+    <th><font size="2">Datatype</font></th>
+    <th><font size="2">Null Option</font></th>
+    <th><font size="2">Comment</font></th>
+    </b>
+  </tr>
+  <tr>
+    <td><font size="2">WEBSITE_ID</font></td>
+    <td><font size="2">int</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A unique identity key defining a WebSite </font> </td>
+  </tr>
+  <tr>
+    <td><font size="2">WEBSITE_NAME</font></td>
+    <td><font size="2">varchar(36)</font></td>
+    <td><font size="2">NOT NULL</font></td>
+    <td><font size="2">A textual definition of an WebSite</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</font>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+    <p align="right"><font face="Verdana" size="1"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%m/%d/%Y" startspan -->12/02/2004<!--webbot bot="Timestamp" endspan i-checksum="12521" --></span></font></body></html>

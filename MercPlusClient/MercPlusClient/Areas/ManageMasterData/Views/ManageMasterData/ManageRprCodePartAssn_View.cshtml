@@ -1,0 +1,415 @@
+﻿<form id="RepairPartForm" method="post">
+
+@model MercPlusClient.Areas.ManageMasterData.Models.ManageRepairPartAssnModel
+
+@{
+    
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+
+    if (Model.showQuery)
+    {
+        ViewBag.Title = "Repair Code/Part Association View";
+    }
+    if (Model.showAdd)
+    {
+        ViewBag.Title = "Repair Code/Part Association Add";
+    }
+    if (Model.showEdit)
+    {
+        ViewBag.Title = "Repair Code/Part Association Edit";
+    }
+    
+    WebGrid codePartGrid = new WebGrid(ViewBag.GridData, canPage: false, canSort: false, selectionFieldName: "selectedRow");
+    
+    
+}
+     
+       @* <link href="@Url.Content("~/Content/MercStyle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Css/jquery-ui.css")" rel="stylesheet" type="text/css" />*@
+   
+     <link href="~/Areas/ManageMasterData/Style/MasterData.css" rel="stylesheet" />
+
+    
+
+
+<script>
+
+
+    // Is it an integer?
+    function isInt(elm) {
+        var elmstr = elm.toString();
+        for (var i = 0; i < elmstr.length; i++) {
+            if (elmstr.charAt(i) < "0" || elmstr.charAt(i) > "9") {
+                return false;
+            }
+        }
+        return true;
+    }
+
+ 
+
+    function ClientValidation() {
+
+        //alert(document.getElementById('txtRepairCod').value.trim().length);
+        var errMsg = "";
+        var repCode = ""; var partNum = ""; var qty = ""; 
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+
+        HighlightInputsForError($("#txtRepairCod"), false)
+        if (document.getElementById('txtRepairCod').value.trim().length == 0) {
+            isError = true;
+            //errMsg += "Please enter Repair Code.";
+            repCode = " Repair Code,";
+            HighlightInputsForError($("#txtRepairCod"), isError)
+        }
+        HighlightInputsForError($("#txtPartNumber"), false)
+        if (document.getElementById('txtPartNumber').value.trim().length == 0) {
+            isError = true;
+            //errMsg += " Please enter Part Number.";
+            partNum = " Part Number,";
+            HighlightInputsForError($("#txtPartNumber"), isError)
+        }
+        HighlightInputsForError($("#txtMaxPartQty"), false)
+        var maxQ = document.getElementById('txtMaxPartQty').value.trim();
+        //alert(isNaN(maxQ));
+        //if (maxQ.trim().length > 0 && isNaN(maxQ.trim())) {
+        //    isError = true;
+        //    //errMsg += " Please enter valid Max Quantity.";            
+        //    qty = " Valid Max Quantity,";
+        //    alert(qty);
+        //    HighlightInputsForError($("#txtMaxPartQty"), isError)
+        //}
+        if (!isInt(maxQ)) {
+            isError = true;
+            qty = " Max Quantity in Numbers Only,";
+            //alert(qty);
+            HighlightInputsForError($("#txtMaxPartQty"), isError)
+        }
+        
+        if (isError == true) {
+            var err = "Please Enter" + repCode + partNum + qty + ".";
+            errMsg = err.replace(",.", ".");
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+
+   
+
+    function DeleteAssociation(manualCode, modeCode, repairCod, partCode) {
+
+        var txt;
+        var r = confirm("Are you sure you want to delete this record ?");
+        if (r == true) {
+            if (manualCode.length > 0 && modeCode.length > 0 && repairCod.length > 0 && partCode.length > 0) {
+                //var ID = manualCode + '-' + modeCode + '-' + repairCod + '-' + partCode;
+               
+                manualCode = encodeURIComponent(manualCode.trim()).trim()
+                modeCode = encodeURIComponent(modeCode.trim()).trim()
+                repairCod = encodeURIComponent(repairCod.trim()).trim()
+                partCode = encodeURIComponent(partCode.trim()).trim()
+
+                //alert(manualCode); alert(modeCode); alert(repairCod); alert(partCode);
+                
+                var form = $("form#RepairPartForm");
+                var action = "@Url.Action("DelMode_RPAssn", new { id =1, ManualCode="manualCode",ModeCode="modeCode",RepairCod="repairCod",PartCode="partCode" })".replace("manualCode", manualCode).replace("modeCode", modeCode).replace("repairCod", repairCod).replace("partCode", partCode);
+
+                //alert(action);
+
+                //form.attr("action", "@Url.Action("DelMode_RPAssn", new {id = "ID"})".replace("ID", ID));
+
+                form.attr("action", action);
+                form.submit();
+            }
+        } else {
+            event.preventDefault();
+            exit;
+        }
+
+
+    }
+
+
+
+    function ShowEditScreen(manualCode, modeCode, repairCod, partCode) {
+
+        if (manualCode.length > 0 && modeCode.length > 0 && repairCod.length > 0 && partCode.length > 0) {
+
+            //manualCode = 'MC@B?C$D%E^F|G*H!\J`K#'
+            //modeCode = '(MC~A@B?C$D%E^F|G*H!J/`K#'
+            //repairCod = 'R,[%A@B?C$D%E^F|G*H!J`K#'
+            //partCode = 'P{[/A@B?C$D%E^F|G*H!J`K#'
+
+            manualCode = encodeURIComponent(manualCode.trim())
+            modeCode = encodeURIComponent(modeCode.trim())
+            repairCod = encodeURIComponent(repairCod.trim())
+            partCode = encodeURIComponent(partCode.trim())
+
+            //var allCode = manualCode + '|' + modeCode + '|' + repairCod + '|' + partCode;
+            //ID = encodeURIComponent(ID)
+
+            //alert(allCode);
+
+            var form = $("form#RepairPartForm");
+
+            var action = "@Url.Action("EditMode_RPAssn", new { id =1, ManualCode="manualCode", ModeCode="modeCode",RepairCod="repairCod",PartCode="partCode" })".replace("manualCode", manualCode).replace("modeCode", modeCode).replace("repairCod", repairCod).replace("partCode", partCode);
+
+            form.attr("action", action);
+
+            //form.attr("action", "@Url.Action("EditMode_RPAssn", new {id = "ID"})".replace("ID", ID));
+
+          
+
+            form.submit();
+        }
+    }
+
+    $(function () {
+        $('#drpScrhManualCode').change(function () {
+
+            var listItems = "";
+            var c = $("#drpScrhManualCode").val();
+            //alert(c);
+
+            $.ajax({
+
+                url: "/ManageMasterData/ManageMasterData/JsonGetModeByManual",
+                type: 'POST',
+                data: { id: c },
+                cache: false,
+                success: function (data) {
+
+                    for (var i = 0; i < data.length; i++) {
+                        listItems += "<option value='" + data[i].ModeCode + "'>" + data[i].ModeFullDescription + "</option>";
+                    }
+                    //alert(listItems);
+                    $("#drpScrhModeCode").html(listItems);
+
+                },
+                error: function (data) {
+                }
+            });
+        });
+    });
+
+</script>
+
+
+@using (Html.BeginForm())
+{
+    
+          
+    
+                <div>
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; vertical-align: text-top;">
+                        <tr>
+                            <td colspan="5" style="vertical-align: top; text-align:center; margin-right: 0px; font-size: xx-small; font-size: 7px; color: blue;">
+                            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_repair_part_help.htm" target="_blank">Table and Dependencies Help File</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+        
+<h2>@ViewBag.Title</h2>
+    
+
+     <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+     </div>
+    
+    if (Model.showQuery)
+    {
+        <div>
+            <table>
+                <tr>
+                    <td>@Html.Label("Manual")</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr>
+                    <td>@Html.DropDownListFor(model => model.SearchRepairPartAssnModel.ScrhManualCode, Model.SearchRepairPartAssnModel.drpManualCode, new { id="drpScrhManualCode"})  
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                 <tr>
+                    <td>@Html.Label("Mode")</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                 <tr>
+                    <td>@Html.DropDownListFor(model => model.SearchRepairPartAssnModel.ScrhModeCode, Model.SearchRepairPartAssnModel.drpModeCode, new { id="drpScrhModeCode"})  </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                 <tr>
+                    <td colspan="2">
+                        
+                         
+
+                        <table style="padding-left:0">
+                            <tr>
+                                <td style="padding-left:0">@Html.Label("Repair Code") </td>
+                                <td>@Html.Label("Part Number")</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:0">@Html.TextBoxFor(model => model.SearchRepairPartAssnModel.ScrhRepairCod, new {maxlength = 4, style = "width:200px" , id="txtScrhRepairCod"})
+                                </td>
+                                <td> @Html.TextBoxFor(model => model.SearchRepairPartAssnModel.ScrhPartNumber, new {maxlength = 20, style = "width:200px" , id="txtScrhPartNumber"})
+                                </td>
+                                <td><input type="submit" value="Query"  id="btnQuery" formaction="PopulateRprCode_PartAssResultGrid_View" ></td>
+                                
+                            </tr>
+                        </table>
+                    </td>    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>                    
+                </tr>
+                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                   
+                </tr>
+            </table>
+        </div>
+    }
+    
+    <div>
+
+    </div>
+    
+    
+    <!-- GRID Section  - START -->
+   
+     //ViewBag.Title = "GRID";
+
+     if (Model.showQueryResult)
+     {
+   <div class="page-content" id="div_grid" style="display:normal">
+        @codePartGrid.GetHtml(
+                tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: codePartGrid.Columns(
+                codePartGrid.Column("GridManualCode", header: "Manual"),
+                codePartGrid.Column("GridModeCode", header: "Mode"),
+                codePartGrid.Column("GridRepairCod", header: "Repair Code"),
+                codePartGrid.Column("GridRepairDesc", header: "Repair Desc"),
+                codePartGrid.Column("GridPartNumber", header: "Part Number"),
+                codePartGrid.Column("GridPartDesc", header: "Part Desc"),
+                codePartGrid.Column("GridMaxPartQty", header: "Max Part Qty"),
+            
+        codePartGrid.Column("Edit", format: @<text><a href="javascript:ShowEditScreen('@item.GridManualCode', '@item.GridModeCode', '@item.GridRepairCod', '@item.GridPartNumber');", style="color:blue; font-size:small;"></a></text>, header: ""),
+        codePartGrid.Column("Delete", format: @<text><a href="javascript:DeleteAssociation('@item.GridManualCode', '@item.GridModeCode', '@item.GridRepairCod', '@item.GridPartNumber');", style="color:blue; font-size:small;"></a></text>, header: "")
+           ))       
+   </div>
+     }
+
+    
+    <!-- GRID Section  - END -->   
+    
+    
+    
+    if (Model.showAdd || Model.showEdit)
+    {
+
+        <div id="div_PartAddDetails"  style="display:normal; width:800px" >
+         <table>
+             <tr><td>@Html.Label("Manual")</td></tr>
+             <tr><td>@Html.DropDownListFor(model => model.ManualCode, Model.drpManualCode, new { id = "drpManualCode" })  
+             </td></tr>
+             <tr><td>@Html.Label("Mode")</td></tr>
+             <tr><td>@Html.DropDownListFor(model => model.ModeCode, Model.drpModeCode, new { id = "drpModeCode" })</td></tr>
+             <tr><td>@Html.Label("Repair Code")</td></tr>
+             <tr><td>@Html.TextBoxFor(model => model.RepairCod, new { id = "txtRepairCod", maxlength = 4, style = "width:80px" })
+             </td></tr>
+             <tr><td>@Html.Label("Part Number")</td></tr>
+             <tr><td>@Html.TextBoxFor(model => model.PartNumber, new { id = "txtPartNumber", maxlength = 20, style = "width:250px" })
+             </td></tr>
+             <tr><td>@Html.Label("Max Part Quantity")</td></tr>
+             <tr><td>@Html.TextBoxFor(model => model.MaxPartQty, new { id = "txtMaxPartQty", maxlength = 8, style = "width:100px" })
+             </td></tr>
+          
+         </table>
+        </div>
+
+    }   
+    
+        
+   if(Model.isEditMode)
+   {
+        <div id="div_UserName_Time"  style="display:normal; width:800px">
+      <table>
+             <tr>
+           <td>@Html.Label("Change User Name")</td>
+           <td>@Html.Label("Changed Time")</td>
+      </tr> 
+      <tr>
+          <td>@Html.TextBoxFor(model => model.ChangeUser, new { id = "txtChangeUserName", style = "width:200px", @readonly="readonly" })</td>
+          <td>@Html.TextBoxFor(model => model.ChangeTime, new { id = "txtChangeTime", style = "width:200px" , @readonly="readonly"})</td>
+      </tr>
+      </table>
+     </div> 
+   }
+    if (Model.showAdd || Model.showEdit)
+    {
+        <div>
+            <table>
+                 <tr>
+                    <td><input type="submit" value="Submit"  id= "btnSubmit" formaction="/ManageMasterData/ManageMasterData/RepairCode_Part_Submit" onclick="return ClientValidation();"  />
+                    </td>           
+                </tr>              
+            </table>
+        </div>
+    
+    
+    }
+    
+     if (Model.Message != null)
+     {
+         <div>
+             <table>
+                 <tr>
+                     <td>
+                          @*
+                          @Html.Label(Model.Message, new { id = "lblMsg" })
+                          *@
+                     </td>
+                 </tr>
+             </table>
+         </div>
+     }
+  
+    @Html.HiddenFor(model => model.isEdit,  new { id = "hdnIsEditMode" })
+    @Html.HiddenFor(model => model.isAdd,  new { id = "hdnIsAddMode" })
+    @Html.HiddenFor(model => model.OrgManualCode,  new { id = "hdnOrgManualCode" })
+    @Html.HiddenFor(model => model.OrgModeCode,  new { id = "hdnOrgModeCode" })
+    @Html.HiddenFor(model => model.OrgPartNumber,  new { id = "hdnOrgPartNumber" })
+    @Html.HiddenFor(model => model.OrgRepairCod,  new { id = "hdnOrgRepairCod" })
+    @Html.HiddenFor(model => model.OrgMaxPartQty,  new { id = "hdnOrgMaxPartQty" })   
+    
+}
+
+</form>

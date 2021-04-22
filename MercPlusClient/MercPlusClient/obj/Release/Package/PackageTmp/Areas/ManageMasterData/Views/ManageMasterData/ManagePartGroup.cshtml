@@ -1,0 +1,360 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManagePartGroupModel
+
+
+@{
+    
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<form id="ManagePartGroup" method="post" >
+
+      
+    <link href="~/Areas/ManageMasterData/Style/MasterData.css" rel="stylesheet" />    
+    <script src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+
+<script type="text/javascript">
+
+
+    function ClientValidation() {
+
+        var errMsg = "";
+        var partCode = ""; var partDesc = "";
+        var isError = false;
+        //$("#ErrorMsgContainer").html("");
+        //$('#ErrorMsgContainer').hide();
+
+        
+        HighlightInputsForError($("#txtPartGroupCode"), false);
+        if (document.getElementById('txtPartGroupCode').value.trim().length == 0) {
+            isError = true;
+            //errMsg += " Please Enter a Parts Group Code.";
+            partCode = " Parts Group Code,";
+            HighlightInputsForError($("#txtPartGroupCode"), isError);
+        }
+        HighlightInputsForError($("#txtPartGroupDesc"), false);
+        if (document.getElementById('txtPartGroupDesc').value.trim().length == 0) {
+            isError = true;
+            //errMsg += " Please Enter a Parts Group Description.";
+            partDesc = " Parts Group Description,";
+            HighlightInputsForError($("#txtPartGroupDesc"), isError);
+        }
+
+        //alert(isError);
+
+        if (isError == true) {
+            
+            var err = "Please Enter" + partCode + partDesc + ".";
+            errMsg = err.replace(",.", ".");
+            
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            //alert($("#ErrorMsgContainer").val());
+            //alert(errMsg);
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+
+
+
+
+    $(function () {
+        $('#btnAddMode').click(function () {
+
+            $("#ErrorMsgContainer").html("");
+            //$('#ErrorMsgContainer').hide();
+
+
+            HighlightInputsForError($("#txtPartGroupCode"), false);
+            HighlightInputsForError($("#txtPartGroupDesc"), false);
+
+
+            $('#div_GroupDetails').show();
+            $('#div_UserName_Time').hide();
+            
+
+            $("#txtPartGroupCode").val("");
+            $("#txtPartGroupDesc").val("");
+            $("#txtPartGroupComment").val("");
+            $("#txtChangeUserName").val("");
+            $("#txtChangeTime").val("");
+
+            $("#drpPartGroupList").get(0).selectedIndex = 0;
+            $("#drpPartGroupActive").get(0).selectedIndex = 0;         
+           
+            $("#txtPartGroupCode").attr('readonly', false);
+
+            $("#hdnIsPartGruopAddMode").val('TRUE');
+            $("#lblErrorMsg").text('');
+
+            $("#lblHeader").text('Parts Group Add');
+
+
+
+            $("#txtPartGroupCode").focus();
+            
+        });
+    });
+
+    $(function () {
+        $('#btnQueryMparts').click(function () {
+
+            $("#ErrorMsgContainer").html("");
+
+
+            HighlightInputsForError($("#txtPartGroupCode"), false);
+            HighlightInputsForError($("#txtPartGroupDesc"), false);
+
+          
+            
+            var c = $("#drpPartGroupList").val();
+
+            $.ajax({
+
+                url: "/ManageMasterData/ManageMasterData/JsonGetPartGroupDetail",
+                type: 'POST',
+                data: { id: c },
+
+                //data: JSON.stringify({ CountryCode: c, locale: locale }),
+                cache: false,
+                success: function (data) {
+
+                    $('#div_GroupDetails').show();
+                    $('#div_UserName_Time').show();
+
+                    $("#txtPartGroupCode").val(data.PartsGroupCd);
+                    $("#txtPartGroupDesc").val(data.PartsGroupDesc);
+                    $("#txtPartGroupComment").val(data.Remarks);
+                    $("#txtChangeUserName").val(data.ChangeUser);
+                    $("#txtChangeTime").val(data.ChangeTime);
+                    $("#drpPartGroupActive").val(data.PartsGroupActiveSW);
+                    $("#lblErrorMsg").text('');
+                                        
+                    $("#txtPartGroupCode").attr('readonly', 'true');
+                    
+
+                    $("#txtChangeUserName").attr('readonly', 'true');
+                    $("#txtChangeTime").attr('readonly', 'true');
+
+                    $("#hdnIsPartGruopAddMode").val('FALSE');
+                    $("#lblHeader").text('Parts Group Edit');
+
+                },
+                error: function (data) {
+                    
+                    ShowRemoveValidationMessage('Error while fetching data', "Warning");
+                }
+            });
+        });
+    });
+
+
+
+
+    $(document).ready(function () {
+
+        
+        //var v = $('#hdnIsPartGruopHideDetail').val();
+        var v = $("#hdnIsPartGruopAddMode").val();
+        var pgc = $("#txtPartGroupCode").val();
+        //alert(pgc);
+        if (v == "TRUE" || v == "FALSE") {
+           
+            $('#div_GroupDetails').show();
+            $('#div_UserName_Time').show();
+            $("#drpPartGroupList").val(pgc);
+            var c = pgc; //$("#drpPartGroupList").val();
+            //alert(c);
+            $.ajax({
+
+                url: "/ManageMasterData/ManageMasterData/JsonGetPartGroupDetail",
+                type: 'POST',
+                data: { id: c },
+               
+                //data: JSON.stringify({ CountryCode: c, locale: locale }),
+                cache: false,
+                success: function (data) {
+                    //alert("1");
+                    $("#txtPartGroupCode").val(data.PartsGroupCd);
+                    $("#txtPartGroupDesc").val(data.PartsGroupDesc);
+                    $("#txtPartGroupComment").val(data.Remarks);
+                    //alert(data.PartsGroupDesc);
+                    $("#txtChangeUserName").val(data.ChangeUser);
+                    $("#txtChangeTime").val(data.ChangeTime);
+                    //$("#drpPartGroupActive").val(data.PartsGroupActiveSW);
+                    $("#lblErrorMsg").text('');
+                   
+                    $("#txtPartGroupCode").attr('readonly', 'true');
+                    $("#txtChangeUserName").attr('readonly', 'true');
+                    $("#txtChangeTime").attr('readonly', 'true');
+
+                    $("#hdnIsPartGruopAddMode").val('FALSE');
+                    $("#lblHeader").text('Parts Group Edit');
+                    //alert("2");
+                },
+                error: function (data) {
+                }
+            });
+        } // if ends
+        else {
+            //alert("No show");
+        }
+    });
+
+
+</script>
+    
+   
+
+@using (Html.BeginForm())
+{
+    
+                <div>
+                    <table border="0" style="width: 100%; vertical-align: text-top;">
+                        <tr>
+                            <td colspan="5" style="vertical-align: top; text-align:center; margin-right: 0px; font-size: xx-small; font-size: 7px; color: blue;">
+                            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_parts_group_help.htm" target="_blank">Table and Dependencies Help File</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+    <table border="0"  style="vertical-align: text-top;">
+
+        <tr><td> <h2>@Html.Label("Parts Group Edit",new { id = "lblHeader" })</h2></td>
+
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                </div> 
+            </td>
+             <td></td> <td></td>
+
+        </tr>
+
+        <tr>
+
+            <td>@Html.Label("Parts Group List")</td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+        <tr>
+
+            <td colspan="3">@Html.DropDownListFor(model => model.PartGroupCodeList, Model.drpPartGroupList, new { id = "drpPartGroupList" }) 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                <input type="button" value="Query"   id="btnQueryMparts">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                <input type="button" value="Add New Parts Group"   id="btnAddMode">
+            </td>
+
+            
+        </tr>
+        <tr>
+            <td colspan="3">
+                <br />
+               <hr />
+
+            </td>  
+        </tr>
+
+        </table>
+
+    //if (Model.showQueryResult || Model.showAdd)
+    //{ 
+  
+     <div id="div_GroupDetails"  style="display:none; width:800px" >
+     <table>
+       
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+     
+            <tr>
+                <td>@Html.Label("Group Code")</td>
+                <td>@Html.Label("Group Description")</td>
+            </tr>
+            <tr>              
+                <td>@Html.TextBoxFor(model => model.PartGroupCode, new { id = "txtPartGroupCode", maxlength = 4, style = "width:100px" })</td>   
+
+                <td>@Html.TextBoxFor(model => model.PartGroupDescription, new { id = "txtPartGroupDesc", maxlength = 30, style = "width:300px" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Comments")</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.TextAreaFor(model => model.PartGroupComment, new { id = "txtPartGroupComment",maxlength = 256, style = "width: 400px; height: 150px;" })</td>
+                <!-- <td></td> -->
+            </tr>
+                
+            <tr>
+                <td>@Html.Label("Active")</td>
+                <td></td>
+            </tr>
+            <tr>
+             
+                <td>@Html.DropDownListFor(model => model.IsPartGroupActive, Model.drpPartGroupActive, new { id = "drpPartGroupActive" })</td>
+                <td></td>
+            </tr>  
+ </table>
+          
+          <div id="div_UserName_Time"  style="display:normal; width:800px">
+          <table>
+            <tr>
+                <td>@Html.Label("Change User Name")</td>
+                <td>@Html.Label("Changed Time")</td>
+            </tr>           
+               
+            <tr>
+                <td>@Html.TextBoxFor(model => model.ChangeUserName, new { id = "txtChangeUserName", style = "width:200px", @readonly="readonly" })</td>
+                <td>@Html.TextBoxFor(model => model.ChangeTime, new { id = "txtChangeTime", style = "width:200px" , @readonly="readonly"})</td>
+            </tr>
+           </table>
+           </div>   
+           
+            <table>
+            <tr>
+                <td>
+                     <input type="submit" value="Submit"  id= "btnSubmit" formaction="/ManageMasterData/ManageMasterData/PartGroupInsert"  onclick="return ClientValidation();" />
+                     <!-- <input type="button" value="Add New Part Group"   id="btnAddData"> -->
+                </td>
+                <td> @Html.HiddenFor(model => model.IsPartGruopAddMode, new { id = "hdnIsPartGruopAddMode" })</td>
+                <td> @Html.HiddenFor(model => model.IsPartGruopHideDetail, new { id = "hdnIsPartGruopHideDetail" })</td>
+            </tr>    
+        </table>
+        <table>
+            <tr>
+                <td> 
+                     @* 
+                    @Html.Label(Model.Message, new { id = "lblErrorMsg" }) 
+                      *@
+                </td> 
+                <td> </td>
+
+            </tr>
+
+
+        </table>
+      </div>
+    
+    //}
+    
+
+}          
+
+    </form>

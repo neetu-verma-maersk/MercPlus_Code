@@ -1,0 +1,176 @@
+﻿@model MercPlusClient.Areas.ManageUser.Models.ManageUserModel
+@{
+    ViewBag.Title = "SecSetUserPermissions";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageUser/Script/SecUserPermission.js"></script>
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/sec_userpermissions_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+<br />
+
+<div>
+    <div style="margin-top: 10px; text-align: right; width: 750px;">
+        &nbsp;
+    </div>
+    <div style="margin-top: 20px; border-bottom: 2px solid #7A7989; width: 750px;">
+        <table style="width: 750px; vertical-align: text-top; table-layout: fixed;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+                {
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Add New User", "SecNewUser", "ManageUser")</td>
+                }
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop == true )
+                {
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Review User", "SecUserEdit", "ManageUser") </td>
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Review Permission", "SecSetUserPermissions", "ManageUser") </td>
+                    <td style="text-align: center; vertical-align: top; width: 225px;">&nbsp; </td>
+                }
+                else{
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Edit User", "SecUserEdit", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Set Permission", "SecSetUserPermissions", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 225px;">&nbsp; </td>
+                 }
+                
+                </tr>
+        </table>
+    </div>
+</div>
+@using (Html.BeginForm("SecSetUserPermissions", "ManageUser", FormMethod.Post, new { id = "submitForm" }))
+{
+    @Html.HiddenFor(model => model.UserId)   
+    @Html.HiddenFor(model => model.AuthGroupId, new { id = "hdAuthGroupId" })
+    @Html.ValidationSummary(true)
+    <div>
+        <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;">
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+        </div>
+        <br />
+        <fieldset>
+            <legend>User Country Option:</legend>
+            @Html.Partial("~/Areas/ManageUser/Views/Shared/UserSelectionBasedOnCountry.cshtml")
+            <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblEditDeleteOperationButton">
+                <tr>
+                    <td style="text-align: right; vertical-align: top; width: 250px;">&nbsp;</td>
+                    <td style="text-align: right; vertical-align: top; width: 250px;">
+                        <input id="btnEdit" type="button" value="Get User Permissions" onclick="CheckForAuthorisationGroup('UserPermission');" />&nbsp;&nbsp;
+                    </td>
+                    @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+                    {
+                        <td style="text-align: left; vertical-align: top; width: 250px;">
+                            <input id="btnManageAuthGroup" type="button" value="Manage Authorisation Group" onclick="CheckForAuthorisationGroup('UserAuthorisationPermission');" class="btnLarge" />
+                        </td>
+                    }
+                </tr>
+            </table>
+        </fieldset>
+        <br />
+        <fieldset id="fieldsetAuthorisationGroup" style="display: none;">
+            <legend>User Authorisation Group:</legend>
+            <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblUserAuthGroupStatus"></table>
+
+            <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblSecAuthGroupListSelection">
+                @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true)
+            {
+              
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.Label("Please Select Authorisation Group: ")</td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">
+                        @Html.DropDownListFor(model => model.AuthGroupId, Model.SecAuthGroupList, new { id = "cmbSecAuthGroup", style = "width:200px;", @onchange = "GetAuthIdFromDropDown()" })
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">
+                        <input id="btnback" type="button" value="Associate User with Authorisation Group" onclick="AssociateAuthorisationGroup();" />
+                    </td>
+                </tr>
+                }
+            </table>
+            <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblUserAssociateAuthGroupStatus"></table>
+            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+            {
+                <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblPermissionsPrefixSearch">
+                    <tr>
+                        <td style="text-align: left; vertical-align: top; width: 250px;">@Html.LabelFor(model => model.PermissionsPrefix)</td>
+                        <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.PermissionsPrefix, new { id = "txtPermissionsPrefix", style = "width:200px;" })</td>
+                        <td style="text-align: left; vertical-align: top; width: 250px;"><input id="btnModifyUserPermission" type="button" value="Modify User Permissions" onclick="ModifyUserPermission();" /></td>
+                        <td style="text-align: left; vertical-align: top; width: 250px;"> <input id="btnAddAllClusters" type="button" value="Add All Clusters" class="btnLarge" onclick="AddAllCluster();" /></td>
+
+                    </tr>
+                </table>
+            }
+                <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblSecAuthGroupPermssionModification">
+                    <tr>
+                        <td style="text-align: right; vertical-align: top; width: 250px;">&nbsp;</td>
+                        <td style="text-align: left; vertical-align: top; width: 250px;">
+                            <input id="btnRemoveAuthGroupPermission" type="button" value="Remove User Authorisation Group Permission" onclick="DeleteUserDataAccessByUserId();" />
+                        </td>
+                        <td style="text-align: left; vertical-align: top; width: 250px; display: none;">
+                            <input id="btnNodifyAuthGroupPermission" type="button" value="Modify Authorisation Group Permission" onclick="ManageWebsiteAccess();" />
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        <br />
+        <fieldset id="fieldsetAuthorisationGroupDataAccess" style="display: none;">
+            <legend>User Authorisation Group Data Access:</legend>
+            <table style="width: 750px; vertical-align: text-top; display: none;" border="0" cellpadding="5" cellspacing="0" id="tblPermissionValues">
+                <tr>
+                    <td colspan="3" style="text-align: right; vertical-align: top;">
+                        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+                            <tr style="font-weight: bold;">
+                                <td style="text-align: center; width: 275px; border: 1px solid #000000; background-color: #7A7989;">Available</td>
+                                <td style="text-align: center; width: 150px;">&nbsp;</td>
+                                <td style="text-align: center; width: 275px; border: 1px solid #000000; background-color: #7A7989;">Active</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right; vertical-align: text-top;">
+                                    @Html.ListBoxFor(model => model.SelectedAvailablePermissionValues, new SelectList(Enumerable.Empty<SelectListItem>(), "Value", "Text"), new { id = "lstSelectedAvailablePermissionValues", style = "width:275px; height:150px;" })
+                                </td>
+                                <td style="text-align: center;">
+                                    <input id="btnAdd" style="width: 50px;" type="button" value=" > " class="btn" onclick="addItem();" /><br />
+                                    <input id="btnRemove" style="width: 50px;" type="button" value=" < " class="btn" onclick="removeItem();" /><br />
+                                    <input id="btnAddAllItems" style="width: 50px;" type="button" value=" >> " class="btn" onclick="addallItems();" />
+                                    <br />
+                                    <input id="btnRemoveAllItems" style="width: 50px;" type="button" value=" << " class="btn" onclick="removeallItems();" />
+                                </td>
+                                <td style="text-align: left; vertical-align: text-top;">
+                                    @Html.ListBoxFor(model => model.ActivePermission, new MultiSelectList(Enumerable.Empty<SelectListItem>(), "Value", "Text"), new { id = "lstSelectedActivePermissionValues", style = "width:275px;height:150px;" })
+                                </td>
+                            </tr>
+                            <tr id="trAvailablePermissionCount">
+                                <td style="text-align: left; width: 150px;" colspan="3">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; vertical-align: top; width: 250px;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">
+                        <input type="button" id="btnUpdateUserAvailableAuth" value="Update User Permission" onclick="SavaAuthGroup();" class="btnLarge" />
+                    </td>
+                </tr>
+                @*<tr>
+                    <td style="text-align: right; vertical-align: top; width: 250px;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">
+                        <input type="button" id="btnModifyAuthGroup" value="Manage Website Access" onclick="ManageWebsiteAccess();" class="btnLarge" />
+                    </td>
+                </tr>*@
+            </table>
+        </fieldset>
+        <fieldset id="fieldsetAuthorisationGroupWebsitePermission" style="display: none;">
+            <legend>User Authorisation Group Web site Permission:</legend>
+            <div id="dvWebSiteAccess">
+                <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0" id="tblWebSite"></table>
+            </div>
+        </fieldset>
+        <br />
+        <fieldset id="fieldsetAuthorisationGroupWebPagePermission" style="display: none;">
+            <legend>User Authorisation Group Web Page Permission:</legend>
+            <div id="dvWebSitePageLevelAccess">
+                <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0" id="tblPageLevelAccess"></table>
+            </div>
+        </fieldset>
+    </div>
+}

@@ -1,0 +1,44 @@
+body {
+background: #ffffff;
+font-family: Verdana,Arial;color:#003366;font-size: 8pt;
+
+	scrollbar-base-color:#ffffff;
+	scrollbar-arrow-color:#ffffff;
+	scrollbar-track-color:#ffffff;
+	scrollbar-3dlight-color:#ffffff;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-darkshadow-color:orange;
+	scrollbar-shadow-color:ffffff;
+	scrollbar-face-color:#003366;
+
+} 
+
+td       { font-size: 8pt; font-family: Verdana,Arial } 
+span.heading { font-family: Verdana,Arial; font-size: 24pt }
+span.sub_heading { font-family: Verdana,Arial; font-size: 18pt }
+span.table_heading { font-size: 10pt; font-family: Verdana,Arial; font-weight: bold }  
+span.updated { font-family: Verdana,Arial; font-size: 7.5pt; color: #000000 }
+
+span.boldtext { font-size: 8pt; font-family: Verdana,Arial; font-weight: bold }
+.text        { font-size: 8pt; font-family: Verdana,Arial }
+
+a:link { color: #003366; font-family:Verdana,Arial; font-size:8pt } 
+a:visited { color: #003366; font-family:Verdana,Arial; font-size:8pt } 
+a:active { color: #ff8c00; font-family:Verdana,Arial; font-size:8pt}
+
+
+
+option { 
+font-family: Verdana,Arial;color:#003366; font-size:8pt; font-weight:normal;
+background-color: #ffffff 
+}
+
+input { 
+font-family: Verdana,Arial;color:#003366; font-size:8pt; font-weight:normal;
+background-color: #ffffff 
+}
+
+textarea { 
+font-family: Verdana,Arial;color:#003366; font-size:8pt; font-weight:normal;
+background-color: #ffffff 
+}

@@ -1,0 +1,198 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterShopVndorModel
+
+@{
+    
+    ViewBag.Title = "ShopLimits";
+
+
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_shop_limits_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+     <table border="0" cellpadding="5" cellspacing="0" 
+            style="width: 100%; vertical-align:text-top;">
+        
+        <tr>
+        <td style="vertical-align:top; text-align:left; margin-top:50px; margin-left:30px;">
+        <h3>Add or Update Shop Limits</h3>
+        </td>
+
+        @*<td style="vertical-align:top; text-align:right; margin-right:0px; font-size:xx-small; font-size=8px;">
+               <a href="~/HelpFiles/reportframes.htm">Tables and Dependencies Help File</a>
+        </td>*@
+        </tr>
+
+             <tr>
+            <td style="text-align:left; margin-left:-500px;">
+                <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                       @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                </div>
+            </td>
+        
+           </tr>
+        </table>
+   
+    
+    <table border="0" cellpadding="5" cellspacing="0" id="tblShop"
+        style="width: 700px; vertical-align: text-top; text-align:left;">
+        
+          <tr>
+                <td class="style3" style="text-align: left;">
+                   @Html.LabelFor(model => model.ShopCode)
+                </td>
+                <td class="style2" style="text-align: left;">
+                     @Html.DropDownListFor(model => model.ShopCode, Model.DDLShop, "--Select--", new { id = "drpShop", @class = "drpShopCodesList",style="width:350px;" })
+                   
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        </table>
+      
+   
+    <table border="0" cellpadding="5" cellspacing="0" id="tblMode"
+        style="width: 700px; text-align:left; vertical-align: text-top; display:none;">
+        
+          <tr>
+                <td class="style3" style="text-align: left;">
+                   @Html.LabelFor(model => model.Mode)
+                </td>
+                <td class="style2" style="text-align: left;">
+                     @Html.DropDownListFor(model => model.Mode, Model.DDLMode, "--Select--", new { id = "drpMode", @Class = "drpModeCodesList" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        </table>
+        
+    <table border="0" cellpadding="5" cellspacing="0" id="tblAdd"
+        style="width: 700px; vertical-align: text-top; display:none;">
+        <tr>
+                <td class="style3" style="text-align: left;">
+                   @Html.LabelFor(model => model.ShopCodeAdd)<span style="color:Red;">*</span>
+                </td>
+                <td class="style2" style="text-align: left;">
+                     @Html.DropDownListFor(model => model.ShopCodeAdd, Model.DDLShopCodeAdd, "--Select--", new { id = "drpShopAdd", @class = "drpShopAddList", Style = "width:300px;" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+         <tr>
+                <td class="style3" style="text-align: left;">
+                   @Html.LabelFor(model => model.ShopModeAdd)<span style="color:Red;">*</span>
+                </td>
+                <td nowrap="nowrap" class="style2" style="text-align: left;">
+                     @Html.DropDownListFor(model => model.ShopModeAdd, Model.DDLShopModeAdd, "--Select--", new { id = "drpModeAdd", @class = "drpShopModeList", Style = "width:450px;" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                
+            </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.SuspendLimit)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.SuspendLimit, new { id = "txtSusLimitAdd", style="width:150px;" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr> 
+         <tr>
+            <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopMaterialLimit)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ShopMaterialLimit, new { id = "txtShopMatLimitAdd", style="width:150px;" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr> 
+         <tr>
+            <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.AutoApprovalLimit)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.AutoApprovalLimit, new { id = "txtAutoAppLimitAdd", style="width:150px;" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr> 
+        </table>
+    
+     <table border="0" cellpadding="1" cellspacing="0" id="tblUpdate"
+        style="width: 40%; vertical-align: text-top; display:none;">
+        <tr>
+                 <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopCodeUpdate)</td>
+                 <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ShopCodeUpdate, new { id="txtShopCode",@disabled=true, style="width:150px;"})</td>
+                 <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+         <tr>
+                <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ModeCodeUpdate)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ModeCodeUpdate, new { id="txtModeCode" , @disabled=true, style="width:150px;"})</td>
+                <td style="text-align: left; vertical-align: top; width: 300px;">&nbsp;</td>
+            </tr>
+         <tr>
+                <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ModeDescUpdate)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2" colspan="2">@Html.TextBoxFor(model => model.ModeDescUpdate, new { id="txtModeDesc" ,@disabled=true, style="width:450px;"})</td>
+                
+            </tr>
+        <tr>
+            <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.SuspendLimitUpdate)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.SuspendLimitUpdate, new { id="txtSuspendLimitUpdate", style="width:150px;"})</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr> 
+         <tr>
+            <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopMaterialLimitUpdate)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ShopMaterialLimitUpdate, new { id="txtShopMaterialLimitUpdate", style="width:150px;"})</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr> 
+         <tr>
+            <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.AutoApprovalLimitUpdate)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.AutoApprovalLimitUpdate, new { id="txtAutoApprovalLimitUpdate", style="width:150px;"})</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr> 
+          <tr>
+            <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ChangeUser)</td>
+            <td nowrap="nowrap" style="text-align: left;" class="style2">@Html.TextBoxFor(model => model.FirstName, new { id="txtFirstName", style="width:150px;", @disabled=true})
+                 </td>
+            <td style="text-align: left; width: 200px;">@Html.TextBoxFor(model => model.LastName, new { id="txtLastName", style="width:150px;", @disabled=true})</td>
+        </tr> 
+          <tr>
+            <td nowrap="nowrap" style="text-align: left; vertical-align: top;  " class="style3" >@Html.LabelFor(model => model.ChangeTime)</td>
+
+            <td style="text-align: left; vertical-align: top; " class="style2">
+
+               @* @Html.TextBoxFor(model => model.ChangeTime, new { id="txtChangeTime", @class="CLSDT"})*@
+
+            
+              @if (Model.ChangeTime.ToShortDateString() != "1/1/0001")
+                    {
+                         @Html.TextBox("txtChangeTime",Model.ChangeTime.ToShortDateString(),new {@class="CLSDTFROM", style="width:150px;", @disabled=true})
+                         
+                    }
+                    else
+                    {
+                         @Html.TextBox("txtChangeTime","",new {@class="CLSDTFROM", style="width:150px;", @disabled=true})                     
+                    }
+                </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr> 
+        </table>
+    <table>
+        <tr style="overflow-wrap:inherit; text-wrap:none; flex-wrap:nowrap;">
+        
+            <td nowrap="nowrap" style="text-align:left;">
+                <input type="button" id="btnFirstUpdateNew" value="Update - Select Mode" name="Update1" />
+                <input type="button" id="btnUpdate" value="Update" name="Update3" style="display:none;"/>
+                <input type="button" id="btnAddRecord" value="Add Record" name="AddRecord" style="display:none;"/>
+            </td>
+           <td nowrap="nowrap" style="text-align:right;">
+                <input type="button" id="btnAddNew" value="AddNew" name="Add" />
+           </td>
+            <td>
+                <input type="button" id="btnSecondUpdateNew" value="Update - Shop Limits" name="Update2" style="display:none;" />
+                <input type="button" id="btnReturn" value="Return - to Update" name="ReturnToUpdate" style="display:none;"/>
+                <input type="button" id="btnAuditTrail" value="Audit Trail" name="AuditTrail" onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'Shop Limits Audit Trail', 'ShopLimits', document.getElementById('txtShopCode').value + document.getElementById('txtModeCode').value, '', '', 800, 450, scroll);" style="display:none;"/>
+            </td>
+         </tr>
+        </table>
+    
+    
+   
+}
+

@@ -1,0 +1,158 @@
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojResolveAssemblyReference.cache
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+D:\Kasturee CODE_NEW\HSUD_AAT_04-06-19\MercWorkingCode\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojResolveAssemblyReference.cache
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+D:\HSUD\MercWorkingCode\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll.config
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csproj.CoreCompileInputs.cache
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csproj.CopyComplete
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+C:\Merc\Merc\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojResolveAssemblyReference.cache
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+D:\Debadrita\UMap\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojResolveAssemblyReference.cache
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+D:\Debadrita\UMap_1\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojResolveAssemblyReference.cache
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+D:\UserMap\UMap_4\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojResolveAssemblyReference.cache
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+D:\UserMap\Umap_5\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll.config
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojAssemblyReference.cache
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csproj.CoreCompileInputs.cache
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csproj.CopyComplete
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+C:\Users\PINAKIBASU\Downloads\Lastet code\Lastet code\UMap_4\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll.config
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojAssemblyReference.cache
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csproj.CoreCompileInputs.cache
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csproj.CopyComplete
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+C:\MERCPLUS_GIT\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.csprojResolveAssemblyReference.cache
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.dll
+D:\Shreya\MERCPLUS_GITNew\MercPlusServices\ManageMasterDataService\obj\Release\ManageMasterDataService.pdb

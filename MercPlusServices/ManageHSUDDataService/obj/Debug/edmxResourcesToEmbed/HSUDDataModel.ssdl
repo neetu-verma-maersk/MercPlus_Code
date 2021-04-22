@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HSUDDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HSUDDataModelStoreContainer">
+    <EntitySet Name="EstLifeCycle_ApprovalCanceled" EntityType="HSUDDataModel.Store.EstLifeCycle_ApprovalCanceled" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstLifeCycleAnalysis" EntityType="HSUDDataModel.Store.EstLifeCycleAnalysis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstLineItemAnalysis" EntityType="HSUDDataModel.Store.EstLineItemAnalysis" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="EstLifeCycle_ApprovalCanceled">
+    <Key>
+      <PropertyRef Name="EquimentID" />
+      <PropertyRef Name="EstimateNumber" />
+    </Key>
+    <Property Name="Facility_Code" Type="nvarchar" MaxLength="9" />
+    <Property Name="Facility_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="EquipmentType" Type="nvarchar" MaxLength="2" />
+    <Property Name="Summary_Size_Type" Type="nvarchar" MaxLength="10" />
+    <Property Name="EquimentID" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="EstimateNumber" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Estimate_Status" Type="char" MaxLength="1" />
+    <Property Name="Estimate_Original_Date" Type="datetime" />
+    <Property Name="Estimate_Transmission_date" Type="datetime" />
+    <Property Name="Base_Currency_Original" Type="nvarchar" MaxLength="3" />
+    <Property Name="Owner_total_labor_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_material_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_handling_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_tax_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_total_labor_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_material_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_handling_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_tax_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Surveyrequested" Type="nvarchar" MaxLength="5" />
+    <Property Name="Revision_Number" Type="int" />
+    <Property Name="Cancelled_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cancelled_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Owner_Approval_Date" Type="datetime" />
+    <Property Name="Approved_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Onwer_Approval_Number_Original" Type="nvarchar" MaxLength="20" />
+    <Property Name="Base_Currency_Approved" Type="nvarchar" MaxLength="20" />
+    <Property Name="Owner_Labor_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Material_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Handling_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Tax_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Total_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Approved" Type="decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="EstLifeCycleAnalysis">
+    <Key>
+      <PropertyRef Name="EquimentID" />
+      <PropertyRef Name="EstimateNumber" />
+    </Key>
+    <Property Name="Facility_Code" Type="nvarchar" MaxLength="9" />
+    <Property Name="Facility_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="EquipmentType" Type="nvarchar" MaxLength="2" />
+    <Property Name="Summary_Size_Type" Type="nvarchar" MaxLength="10" />
+    <Property Name="EquimentID" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="EstimateNumber" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Estimate_Status" Type="nvarchar" MaxLength="10" />
+    <Property Name="Estimate_Original_Date" Type="datetime" />
+    <Property Name="Estimate_Transmission_date" Type="datetime" />
+    <Property Name="Base_Currency_Original" Type="nvarchar" MaxLength="3" />
+    <Property Name="Owner_total_labor_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_material_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_handling_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_tax_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_total_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_total_labor_original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_material_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_handling_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_tax_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Original" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Surveyrequested" Type="nvarchar" MaxLength="5" />
+    <Property Name="Revision_Number" Type="int" />
+    <Property Name="Cancelled_Date" Type="datetime" />
+    <Property Name="Cancelled_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Owner_Approval_Date" Type="datetime" />
+    <Property Name="Approved_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Onwer_Approval_Number_Original" Type="nvarchar" MaxLength="20" />
+    <Property Name="Base_Currency_Approved" Type="nvarchar" MaxLength="25" />
+    <Property Name="Owner_Labor_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Material_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Handling_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Tax_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Owner_Total_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="User_Total_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Estimate_Grand_Total_Approved" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Repair_Completed_Date" Type="datetime" />
+    <Property Name="Repair_Complete_Reported" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EstLineItemAnalysis">
+    <Key>
+      <PropertyRef Name="EQUIPMENTID" />
+      <PropertyRef Name="SENDERESTIMATEID" />
+      <PropertyRef Name="LINEITEMNUMBER" />
+    </Key>
+    <Property Name="FACILITYCODE" Type="nvarchar" MaxLength="9" />
+    <Property Name="FACILITYNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="EQUIPMENTTYPE" Type="nvarchar" MaxLength="2" />
+    <Property Name="SUMMARYSIZETYPE" Type="nvarchar" MaxLength="10" />
+    <Property Name="EQUIPMENTID" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="SENDERESTIMATEID" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="ESTIMATEDATE" Type="datetime" />
+    <Property Name="APPROVALDATE" Type="datetime" />
+    <Property Name="CREATEDBYUSER" Type="nvarchar" MaxLength="50" />
+    <Property Name="ISSURVEYREQUESTED" Type="int" />
+    <Property Name="LINEITEMNUMBER" Type="int" Nullable="false" />
+    <Property Name="COMPONENTCODE" Type="nvarchar" MaxLength="5" />
+    <Property Name="LOCATIONCODE" Type="nvarchar" MaxLength="5" />
+    <Property Name="REPAIRCODE" Type="nvarchar" MaxLength="5" />
+    <Property Name="DAMAGECODE" Type="nvarchar" MaxLength="5" />
+    <Property Name="MATERIALCODE" Type="nvarchar" MaxLength="5" />
+    <Property Name="UNITOFMEASURE" Type="nvarchar" MaxLength="5" />
+    <Property Name="QUANTITY" Type="int" />
+    <Property Name="LENGTH" Type="int" />
+    <Property Name="WIDTH" Type="int" />
+    <Property Name="ORGANIZATIONTYPE" Type="nvarchar" MaxLength="10" />
+    <Property Name="BASECURRENCYCODE" Type="nvarchar" MaxLength="3" />
+    <Property Name="LABORHOURS" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="LABORRATEBASE" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="LABORCOSTBASE" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="MATERIALCOSTBASE" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="TOTALBASE" Type="decimal" Precision="20" Scale="2" />
+  </EntityType>
+</Schema>

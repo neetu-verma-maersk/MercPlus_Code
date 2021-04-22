@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f5042826-dcab-42c2-99e3-1afdf309e6f9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50754/ManageWorkOrderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ManageWorkOrderService.xsd" MetadataType="Schema" ID="c1e95bcb-f46d-4670-8d78-d89fa2f71b65" SourceId="1" SourceUrl="http://localhost:50754/ManageWorkOrderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ManageWorkOrderService1.xsd" MetadataType="Schema" ID="6474e115-9201-4a41-84b3-ac8e803619ca" SourceId="1" SourceUrl="http://localhost:50754/ManageWorkOrderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ManageWorkOrderService2.xsd" MetadataType="Schema" ID="111bd3ab-5284-4716-b6b8-23e29327075d" SourceId="1" SourceUrl="http://localhost:50754/ManageWorkOrderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ManageWorkOrderService3.xsd" MetadataType="Schema" ID="a8654480-d401-4f79-9860-a8a6af98dac5" SourceId="1" SourceUrl="http://localhost:50754/ManageWorkOrderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ManageWorkOrderService.disco" MetadataType="Disco" ID="1e57e0f0-158d-4510-9bb5-aa17f10c56f3" SourceId="1" SourceUrl="http://localhost:50754/ManageWorkOrderService.svc?disco" />
+    <MetadataFile FileName="ManageWorkOrder.wsdl" MetadataType="Wsdl" ID="134ccbbe-d7ac-4927-8daa-400dfdabbf01" SourceId="1" SourceUrl="http://localhost:50754/ManageWorkOrderService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

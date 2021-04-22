@@ -1,0 +1,292 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataModeModel
+
+@{
+    if (Model.IsModeUpdate)
+    {
+        ViewBag.Title = "EditMode";
+    }
+    else
+    {
+        ViewBag.Title = "AddMode";
+    }
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript" src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    $("#drpMode").change(function () {//alert("selected");
+    //        var c = $(this).val();
+    //        $("#txtModeDesc").val("");
+    //        $("#drpModeActiveSwitch").val("");
+    //        $("#drpModeIndicator").val("");
+    //        $("#txtChangeUserName").val("");
+    //        $("#txtChangeTime").val("");
+    //        // var a = JSON.stringify({ customerId: $(this).val() };
+    //        $.ajax({
+    //            url: "/ManageMasterData/ManageMasterData/GetAllDetailsForMode",
+    //            type: 'POST',
+    //            data: { id: c },
+    //            cache: false,
+    //            success: function (data) {
+    //                $("#txtModeDesc").val(data.ModeDescription);
+    //                $("#drpModeActiveSwitch").val(data.ModeActiveSW);
+    //                $("#drpModeIndicator").val(data.ModeInd);
+    //                $("#txtChangeUserName").val(data.ModeChangeUser);
+    //                $("#txtChangeTime").val(data.ModeChangeTime);
+                    
+
+    //            },
+    //            error: function (data) {
+
+    //            }
+    //        });
+    //    });
+    //});
+
+    function drpModeChange(val)
+    {
+        //alert(val);
+        $("#ErrorMsgContainer").html("");
+        $("#ErrorMsgContainer1").html("");
+        $("#txtModeDesc").val("");
+                $("#drpModeActiveSwitch").val("");
+                $("#drpModeIndicator").val("");
+                $("#txtChangeUserName").val("");
+                $("#txtChangeUserName2").val("");
+                $("#txtChangeTime").val("");
+                // var a = JSON.stringify({ customerId: $(this).val() };
+                $.ajax({
+                    url: "/ManageMasterData/ManageMasterData/GetAllDetailsForMode",
+                    type: 'POST',
+                    data: { id: val },
+                    cache: false,
+                    success: function (data) {
+                        $("#txtModeDesc").val(data.ModeDescription);
+                        $("#drpModeActiveSwitch").val(data.ModeActiveSW);
+                        $("#drpModeIndicator").val(data.ModeInd);
+                        var userName = data.ChangeUser;
+                        if (userName.indexOf("|") > 0) {
+                            $("#txtModeChangeUserName").val(userName.substring(0,userName.indexOf("|")));
+                            $("#txtModeChangeUserName2").val(userName.substring(userName.indexOf("|") + 1));
+                        }
+                        else {
+                            $("#txtModeChangeUserName").val(userName);
+                            $("#txtModeChangeUserName2").val("");
+                        }
+                        
+                        var d = new Date();
+                        d.setTime(parseInt(data.ChangeTime.substring(6)));
+                        $("#txtModeChangeTime").val(FormatDate(d));
+
+
+                    },
+                    error: function (data) {
+
+                    }
+                });
+    }
+
+    function ClientValidation(isAdd)
+    {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+        var val1 = "";
+        if (isAdd) {
+            HighlightInputsForError($("#txtModeDescription"), false)
+            val1 = $("#txtModeDescription").val();
+            if (val1.trim() == "") {
+                isError = true;
+                errMsg += "Please Enter a New Mode";
+                HighlightInputsForError($("#txtModeDescription"), isError)
+            }
+        }
+        else {
+            HighlightInputsForError($("#drpModeChange"), false)
+            if ($("#drpModeChange").selectedIndex == 0) {
+                isError = true;
+                errMsg += "Please Select a Mode";
+                HighlightInputsForError($("#drpModeChange"), isError)
+            }
+        }
+        HighlightInputsForError($("#txtModeDesc"), false)
+        val1 = $("#txtModeDesc").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Mode Description";
+            else
+                errMsg += ", Mode Description ";
+            HighlightInputsForError($("#txtModeDesc"), isError)
+        }
+        HighlightInputsForError($("#drpModeActiveSwitch"), false)
+        if (document.getElementById('drpModeActiveSwitch').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Plese Set your Mode Active Switch";
+            else
+                errMsg += ", Mode Active Switch ";
+            HighlightInputsForError($("#drpModeActiveSwitch"), isError)
+        }
+        HighlightInputsForError($("#drpModeIndicator"), false)
+        if (document.getElementById('drpModeIndicator').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Set your Mode Indicator";
+            else
+                errMsg += ", Mode Indicator";
+            HighlightInputsForError($("#drpModeIndicator"), isError)
+        }
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+
+@using (Html.BeginForm())
+{
+    <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_mode_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+    <h2>Update Or Add New Mode</h2>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 900px; vertical-align: text-top;">
+        @if (Model.IsModeUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top; width:50px" >@Html.Label("Mode")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.ModeFullDescription, Model.drpMode, "Select Mode", new { id = "drpMode", @onchange = "drpModeChange(this.value)" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top; width:50px;" class="style3">@Html.Label("Mode")</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.txtMode, new { id = "txtModeDescription", maxlength = 2, style = "text-transform:uppercase;width:200px" })</td>
+                <td style="text-align: left; vertical-align: top; width: 750px;">&nbsp;</td>
+            </tr> 
+        }
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Mode Description")</td>
+
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => Model.ModeDescription, new { id = "txtModeDesc", maxlength = 60, style = "width:400px" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Mode Active Switch")</td>
+
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.ModeActiveSwitch, Model.drpModeActiveSwitch, "", new { id = "drpModeActiveSwitch" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Mode Indicator")</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.ModeInd, Model.drpModeIndicator, "", new { id = "drpModeIndicator" })</td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+
+        @if (Model.IsModeUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Change User")
+                </td>
+                <td  style="text-align: left; vertical-align: top; padding:0 0 0 0;">
+                    <table>
+                        <tr>
+                            <td style="padding:0 0 0 2;">
+                                @Html.TextBoxFor(model => model.ModeChangeUserFName, new { id = "txtModeChangeUserName", @readonly = "true", style = "width:200px" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(model => model.ModeChangeUserLName, new { id = "txtModeChangeUserName2", @readonly = "true", style = "width:200px" })
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.Label("Change Time")
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ModeChangeTime, new { id = "txtModeChangeTime", @readonly = "true", style = "width:200px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Update" formaction="/ManageMasterData/ManageMasterData/UpdateMode" onclick="return ClientValidation(false);" />
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+
+                    <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/ModeCreate" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;"></td>
+            </tr>
+        }
+        else
+        {
+            if (Model.IsModeAdded)
+            {
+                <tr>
+                    <td class="style3" style="text-align: left; vertical-align: top;">
+                        @Html.Label("Change User")
+                    </td>
+                    <td  style="text-align: left; vertical-align: top; padding:0 0 0 0;">
+                        <table>
+                            <tr>
+                                <td style="padding:0 0 0 2;">
+                                    @Html.TextBoxFor(model => model.ModeChangeUserFName, new { id = "txtModeChangeUserName", @readonly = "true", style = "width:200px" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.ModeChangeUserLName, new { id = "txtModeChangeUserName2", @readonly = "true", style = "width:200px" })
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="style3" style="text-align: left; vertical-align: top;">
+                        @Html.Label("Change Time")
+                    </td>
+                    <td class="style2" style="text-align: left; vertical-align: top;">
+                        @Html.TextBoxFor(model => model.ModeChangeTime, new { id = "txtModeChangeTime", @readonly = "true", style = "width:200px" })
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+            }
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" id="btnAddMode" formaction="/ManageMasterData/ManageMasterData/CreateMode" onclick="return ClientValidation(true);" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+
+                    <input type="submit" value="Return to Update" formaction="/ManageMasterData/ManageMasterData/EditModeAdmin" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }
+    </table>
+}
+
+
+
+

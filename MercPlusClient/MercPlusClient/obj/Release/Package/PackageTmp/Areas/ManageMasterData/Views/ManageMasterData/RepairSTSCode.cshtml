@@ -1,0 +1,756 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataRepairSTSCodeModel
+@{
+    ViewBag.Title = "RepairSTSCode";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript" src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<script type="text/javascript">
+    function ComboSelectionValidate(comboName) {
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+        var val1 = "";
+        if (comboName == "drpRCManualCode") {
+            HighlightInputsForError($("#drpRCManualCode"), false)
+            if (document.getElementById('drpRCManualCode').selectedIndex == 0) {
+                isError = true;
+                errMsg += "Please Select a Manual Code ";
+                HighlightInputsForError($("#drpRCManualCode"), isError)
+            }
+        }
+        else if (comboName == "drpRCMode") {
+            HighlightInputsForError($("#drpRCMode"), false)
+            if (document.getElementById('drpRCMode').selectedIndex == 0) {
+                isError = true;
+                errMsg += "Please Select a Mode ";
+                HighlightInputsForError($("#drpRCMode"), isError)
+            }
+        }
+        else if (comboName == "drpRCManualCode/drpRCMode") {
+            if (comboName == "drpRCManualCode") {
+                HighlightInputsForError($("#drpRCManualCode"), false)
+                if (document.getElementById('drpRCManualCode').selectedIndex == 0) {
+                    isError = true;
+                    errMsg += "Please Select a Manual Code ";
+                    HighlightInputsForError($("#drpRCManualCode"), isError)
+                }
+            }
+            else if (comboName == "drpRCMode") {
+                HighlightInputsForError($("#drpRCMode"), false)
+                if (document.getElementById('drpRCMode').selectedIndex == 0) {
+                    isError = true;
+                    errMsg += "Please Select a Mode ";
+                    HighlightInputsForError($("#drpRCMode"), isError)
+                }
+            }
+        }
+        else if (comboName == "drpRCIndex") {
+            HighlightInputsForError($("#drpRCIndex"), false)
+            if (document.getElementById('drpRCIndex').selectedIndex == 0) {
+                isError = true;
+                errMsg += "Please Select an Index ID";
+                HighlightInputsForError($("#drpRCIndex"), isError)
+            }
+        }
+        else if (comboName == "drpRCRepairCode") {
+            HighlightInputsForError($("#drpRCRepairCode"), false)
+            if (document.getElementById('drpRCRepairCode').selectedIndex == 0) {
+                isError = true;
+                errMsg += "Please Select an Repair Code";
+                HighlightInputsForError($("#drpRCRepairCode"), isError)
+            }
+        }
+        else if (comboName == "drpRCIndex/RepairCode") {
+
+            HighlightInputsForError($("#drpRCRepairCode"), false);
+            HighlightInputsForError($("#drpRCIndex"), false);
+            if (document.getElementById('drpRCRepairCode').selectedIndex == 0 &&
+                document.getElementById('drpRCIndex').selectedIndex == 0) {
+                isError = true;
+                errMsg += "Please Select an Index ID or a Repair Code";
+                HighlightInputsForError($("#drpRCRepairCode"), isError)
+                HighlightInputsForError($("#drpRCIndex"), isError)
+            }
+        }
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function ShowIndexForSelection() {
+        if (document.getElementById('drpRCMode').selectedIndex == 0) {
+            document.location.href = '/ManageMasterData/ManageMasterData/RepairSTSCodeManual?manualCode=' + $("#hddRCManual").val() + '&isAddMode=false';
+        }
+        else {
+            document.location.href = "/ManageMasterData/ManageMasterData/RepairSTSCodeGetIndex";
+        }
+    }
+
+    function ValidateAddRecord() {
+        $("#ErrorMsgContainer").html("");
+        $("#ErrorMsgContainer1").html("");
+        var errMsg = "";
+        var isError = false;
+
+        HighlightInputsForError($("#txtRepairCode"), false);
+        if ($("#txtRepairCode").val().trim() == "") {
+            errMsg = "Please Enter a New Repair Code";
+            isError = true;
+            HighlightInputsForError($("#txtRepairCode"), isError);
+        }
+        HighlightInputsForError($("#txtRepairCodeDesc"), false);
+        if ($("#txtRepairCodeDesc").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a New Repair Code Description";
+            else
+                errMsg += ", Repair Code Description";
+            isError = true;
+            HighlightInputsForError($("#txtRepairCodeDesc"), isError);
+        }
+        //HighlightInputsForError($("#txtRepairCodeDesc"), false);
+        //if ($("#txtRepairCodeDesc").val().trim() == "") {
+        //    if (errMsg.trim() == "")
+        //        errMsg = "Please Enter a New Repair Code Description";
+        //    else
+        //        errMsg += ", Repair Code Description";
+        //    isError = true;
+        //    HighlightInputsForError($("#txtRepairCodeDesc"), isError);
+        //}
+        HighlightInputsForError($("#txtRCManHour"), false);
+        if ($("#txtRCManHour").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Man Hour Value";
+            else
+                errMsg += ", Man Hour Value";
+            isError = true;
+            HighlightInputsForError($("#txtRCManHour"), isError);
+
+        }
+        HighlightInputsForError($("#txtRCMaxQty"), false);
+        if ($("#txtRCMaxQty").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Maximum Quantity Value";
+            else
+                errMsg += ", Maximum Quantity Value";
+            isError = true;
+            HighlightInputsForError($("#txtRCMaxQty"), isError);
+        }
+        HighlightInputsForError($("#txtRCCeiling"), false);
+        if ($("#txtRCCeiling").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Shop Material Ceiling";
+            else
+                errMsg += ", Shop Material Ceiling";
+            isError = true;
+            HighlightInputsForError($("#txtRCCeiling"), isError);
+        }
+        //HighlightInputsForError($("#txtRepairCodeDesc"), false);
+        if ($("#txtRepairCodeDesc").val().trim().indexOf('"') > -1) {
+            if (errMsg.trim() == "")
+                errMsg = "Please Remove Double Quote Character in Repair Code Descriptoin";
+            else
+                errMsg += ". Please Remove Double Quote Character in Repair Code Descriptoin";
+            isError = true;
+            HighlightInputsForError($("#txtRepairCodeDesc"), isError);
+        }
+        //HighlightInputsForError($("#txtRCCeiling"), false);
+        if (!isFloat($("#txtRCCeiling").val())) {
+            if (errMsg.trim() != "")
+                errMsg += ". Please Enter Numbers with 2 Decimal Places Only";
+            else
+                errMsg = "Please Enter Numbers with 2 Decimal Places Only";
+            isError = true;
+            HighlightInputsForError($("#txtRCCeiling"), isError);
+        }
+        //HighlightInputsForError($("#txtRCMaxQty"), false);
+        if (parseInt($("#txtRCMaxQty").val().trim()) > parseInt("32767")) {
+            if (errMsg.trim() == "")
+                errMsg = "Max Quantity cannot be larger than 32,767";
+            else
+                errMsg += ". Max Quantity cannot be larger than 32,767";
+            isError = true;
+            HighlightInputsForError($("#txtRCMaxQty"), isError);
+        }
+        else if (parseInt($("#txtRCMaxQty").val()) < parseInt("1")) {
+            if (errMsg.trim() == "")
+                errMsg = "Max Quantity cannot be less than 1";
+            else
+                errMsg += ". Max Quantity cannot be less than 1";
+            isError = true;
+            HighlightInputsForError($("#txtRCMaxQty"), isError);
+        }
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    function ValidateEditRecord() {
+        $("#ErrorMsgContainer").html("");
+        $("#ErrorMsgContainer1").html("");
+        var errMsg = "";
+        var isError = false;
+
+        //HighlightInputsForError($("#txtRepairCode"), false);
+        //if ($("#txtRepairCode").val().trim() == "") {
+        //    errMsg = "Please Enter a New Repair Code";
+        //    isError = true;
+        //    HighlightInputsForError($("#txtRepairCode"), isError);
+        //}
+        HighlightInputsForError($("#txtRepairCodeDesc"), false);
+        if ($("#txtRepairCodeDesc").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Repair Code Description";
+            else
+                errMsg += ", Repair Code Description";
+            isError = true;
+            HighlightInputsForError($("#txtRepairCodeDesc"), isError);
+        }
+        //HighlightInputsForError($("#txtRepairCodeDesc"), false);
+        //if ($("#txtRepairCodeDesc").val().trim() == "") {
+        //    if (errMsg.trim() == "")
+        //        errMsg = "Please Enter a New Repair Code Description";
+        //    else
+        //        errMsg += ", Repair Code Description";
+        //    isError = true;
+        //    HighlightInputsForError($("#txtRepairCodeDesc"), isError);
+        //}
+        HighlightInputsForError($("#txtRCManHour"), false);
+        if ($("#txtRCManHour").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Man Hour Value";
+            else
+                errMsg += ", Man Hour Value";
+            isError = true;
+            HighlightInputsForError($("#txtRCManHour"), isError);
+
+        }
+        HighlightInputsForError($("#txtRCMaxQty"), false);
+        if ($("#txtRCMaxQty").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Maximum Quantity Value";
+            else
+                errMsg += ", Maximum Quantity Value";
+            isError = true;
+            HighlightInputsForError($("#txtRCMaxQty"), isError);
+        }
+        HighlightInputsForError($("#txtRCCeiling"), false);
+        if ($("#txtRCCeiling").val().trim() == "") {
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter a Shop Material Ceiling";
+            else
+                errMsg += ", Shop Material Ceiling";
+            isError = true;
+            HighlightInputsForError($("#txtRCCeiling"), isError);
+        }
+        //HighlightInputsForError($("#txtRepairCodeDesc"), false);
+        if ($("#txtRepairCodeDesc").val().trim().indexOf('"') > -1) {
+            if (errMsg.trim() == "")
+                errMsg = "Please Remove Double Quote Character in Repair Code Descriptoin";
+            else
+                errMsg += ". Please Remove Double Quote Character in Repair Code Descriptoin";
+            isError = true;
+            HighlightInputsForError($("#txtRepairCodeDesc"), isError);
+        }
+        //HighlightInputsForError($("#txtRCCeiling"), false);
+        if (!isFloat($("#txtRCCeiling").val())) {
+            if (errMsg.trim() != "")
+                errMsg += ". Please Enter Numbers with 2 Decimal Places Only";
+            else
+                errMsg = "Please Enter Numbers with 2 Decimal Places Only";
+            isError = true;
+            HighlightInputsForError($("#txtRCCeiling"), isError);
+        }
+        if (!isFloat($("#txtRCManHour").val())) {
+            if (errMsg.trim() != "")
+                errMsg += ". Please Enter valid Numbers for Man Hour";
+            else
+                errMsg = "Please Enter valid Numbers for Man Hour";
+            isError = true;
+            HighlightInputsForError($("#txtRCManHour"), isError);
+        }
+        //HighlightInputsForError($("#txtRCMaxQty"), false);
+        if (parseInt($("#txtRCMaxQty").val().trim()) > parseInt("32767")) {
+            if (errMsg.trim() == "")
+                errMsg = "Max Quantity cannot be larger than 32,767";
+            else
+                errMsg += ". Max Quantity cannot be larger than 32,767";
+            isError = true;
+            HighlightInputsForError($("#txtRCMaxQty"), isError);
+        }
+        else if (parseInt($("#txtRCMaxQty").val()) < parseInt("1")) {
+            if (errMsg.trim() == "")
+                errMsg = "Max Quantity cannot be less than 1";
+            else
+                errMsg += ". Max Quantity cannot be less than 1";
+            isError = true;
+            HighlightInputsForError($("#txtRCMaxQty"), isError);
+        }
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+
+    function ValidateFlotNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            if (charCode == 190 || charCode == 46)
+                return true;
+            else
+                return false;
+        }
+        return true;
+    }
+
+    function isFloat(elm) {
+        var elmstr = elm.toString();
+        var point = 0;
+        for (var i = 0; i < elmstr.length; i++) {
+            if (elmstr.charAt(i) < "0" || elmstr.charAt(i) > "9") {
+                if (elmstr.charAt(i) == ".") {
+                    point++;
+                    if (point > 1)
+                        return false;
+                    else
+                        continue;
+                }
+                else
+                    return false;
+            }
+        }
+        if (elmstr == ".")
+            return false;
+        if (elmstr.substring(elmstr.indexOf(".")).length > 3)
+            return false;
+        return true;
+    }
+
+    function GetDataForRepairCode()
+    {
+       
+        var manual = $("#txtRCManual").val();
+        var mode = $("#txtRCMode").val();
+        var repaircode = $("#drpRCRepare").val();
+        $.ajax({
+            url: "/ManageMasterData/ManageMasterData/RepairSTSCodeGetRecordByRepairCode",
+            type: "POST",
+            data: { Manual: manual, Mode: mode, RepairCode: repaircode },
+            cache: false,
+            success: function (data) {
+                //alert("data received:" + data.IndexID);
+                $("#txtRCIndex").val(data.IndexID);
+                $("#txtRepairCodeDesc").val(data.RepairDesc);
+                $("#txtRCWarrentDays").val(data.WarrantyPeriod);
+                $("#drpMultipleEq").val(data.MultipleUpdateSW);
+                $("#txtRCSTSCode").val(data.RkrpRepairCode);
+                $("#drpTax").val(data.TaxAppliedSW);
+                $("#txtRCManHour").val(data.ManHour);
+                $("#drpRepairActive").val(data.RepairActiveSW);
+                $("#txtRCMaxQty").val(data.MaxQuantity);
+                $("#drpAllowPartse").val(data.AllowPartsSW);
+                $("#txtRCCeiling").val(data.ShopMaterialCeiling.toFixed(2));
+                var username = data.ChangeUser;
+                var fname = "";
+                var lname = "";
+                if (username.indexOf("|") > -1) {
+                    fname = username.substring(0, username.indexOf("|"));
+                    lname = username.substring(username.indexOf("|") + 1);
+                }
+                else {
+                    fname = "";
+                    lname = "";
+                }
+                $("#txtUserName").val(fname);
+                $("#txtUserName1").val(lname);
+                $("#txtRCPrep").val(data.RepairInd);
+                var d = new Date();
+                d.setTime(parseInt(data.ChangeTime.substring(6)));
+                $("#txtChangeTime").val(FormatDate(d));
+            },
+            error: function (data) {
+                alert("error");
+            }
+        });
+    }
+
+    function ModeChange(val, isaddmode)
+    {
+        var manual = $("#drpRCManualCode").val();
+        var mode = val;
+        //if (val == "") {
+        //}
+        //else
+        //{
+        document.location.href = "/ManageMasterData/ManageMasterData/RepairSTSCodeGetIndexModeChange?ManualCode=" + manual + "&ModeCode=" + mode + "&IsAddMode=" + isaddmode;
+        //}
+    }
+
+    function DeleteConfirmMsg() {
+        return confirm("Are you sure you want to delete this record?")
+    }
+
+    function AuditTrail()
+    {
+        var key = $("#txtRCManual").val() + $("#txtRCMode").val() + $("#drpRCRepare").val()
+        ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'RepairCodeAuditTrail', 'Repair Codes', key, '', '', 800, 450, scroll);
+    }
+</script>
+@using (Html.BeginForm())
+{
+    <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_repair_code_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+    <h2>Add, Update or Delete Repair Code</h2>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    if (Model.RepairCodeSelectionMode == MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataRepairSTSCodeModel.RepairCodeSelectionModes.RCManualCode)
+    {
+        <table border="0" cellpadding="5" cellspacing="0" style="width: 700px; vertical-align: text-top;">
+            <tr>
+                <td>@Html.Label("Select Manual Code")</td>
+                <td colspan="2">
+                    @if (Model.IsAddMode)
+                    {
+                        @Html.DropDownListFor(model => Model.ManualCode, Model.drpManual, new { id = "drpRCManualCode", onchange = "document.location.href = '/ManageMasterData/ManageMasterData/RepairSTSCodeManual?manualCode=' + this.options[this.selectedIndex].value + '&isAddMode=true';" })
+                    }
+                    else
+                    {
+                        @Html.DropDownListFor(model => Model.ManualCode, Model.drpManual, new { id = "drpRCManualCode", onchange = "document.location.href = '/ManageMasterData/ManageMasterData/RepairSTSCodeManual?manualCode=' + this.options[this.selectedIndex].value + '&isAddMode=false';" })
+                    }
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Select Mode")</td>
+                <td colspan="2">
+                    @if (Model.IsAddMode)
+                    {
+                        @Html.DropDownListFor(model => Model.ModeCode, Model.drpMode, "", new { id = "drpRCMode", onchange="ModeChange(this.value,true)" })
+                    }
+                    else
+                    {
+                        @Html.DropDownListFor(model => Model.ModeCode, Model.drpMode, "", new { id = "drpRCMode", onchange="ModeChange(this.value,false)" })
+                    }
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            @if (Model.IsAddMode)
+            {
+            <tr>
+                <td>
+                    <input type="submit" value="Go To Add Repair Code" id="btnRCSTCAddReC" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeNewIndex" onclick="return ComboSelectionValidate('drpRCManualCode/drpRCMode');"  />
+                </td>
+                <td>
+                    <input type="submit" value="Return to Update - Delete" id="btnRCReturnUpdateAdd" formaction="/ManageMasterData/ManageMasterData/RepairSTSCode"  />
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        <input type="submit" value="Select Repair Code" id="btnRCSTCSelectRC" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeGetIndex",  onclick="return ComboSelectionValidate('drpRCManualCode/drpRCMode');" />
+                    </td>
+                    <td>
+                        <input type="submit" value="Add New" id="btnRCAdd" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeNew"  />
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            }
+        </table>
+    }
+    else if (Model.RepairCodeSelectionMode == MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataRepairSTSCodeModel.RepairCodeSelectionModes.RepairCode)
+    {
+        <table border="0" cellpadding="5" cellspacing="0" style="width: 700px; vertical-align: text-top;">
+            <tr>
+                <td>@Html.Label("Select Manual Code")</td>
+                <td colspan="2">
+                    @*@Html.DropDownListFor(model=>Model.ManualCode, Model.drpManual, new{id="drpRCManualCode"})*@
+                     @if (Model.IsAddMode)
+                     {
+                        @Html.DropDownListFor(model => Model.ManualCode, Model.drpManual, new { id = "drpRCManualCode", onchange = "document.location.href = '/ManageMasterData/ManageMasterData/RepairSTSCodeManual?manualCode=' + this.options[this.selectedIndex].value + '&isAddMode=true';" })
+                     }
+                     else
+                     {
+                        @Html.DropDownListFor(model => Model.ManualCode, Model.drpManual, new { id = "drpRCManualCode", onchange = "document.location.href = '/ManageMasterData/ManageMasterData/RepairSTSCodeManual?manualCode=' + this.options[this.selectedIndex].value + '&isAddMode=false';" })
+                     }
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Select Mode")</td>
+                <td colspan="2">
+                    @if(Model.IsAddMode)
+                    {
+                        @Html.DropDownListFor(model => Model.ModeCode, Model.drpMode, "", new { id = "drpRCMode", onchange="ModeChange(this.value, true)" })
+                    }
+                    else
+                    {
+                        @Html.DropDownListFor(model => Model.ModeCode, Model.drpMode, "", new { id = "drpRCMode", onchange="ModeChange(this.value,false)" })
+                    }
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Select Index ID")</td>
+                @if (Model.IsAddMode)
+                {
+                    <td colspan="2">
+                        @Html.DropDownListFor(model => Model.IndexID, Model.drpIndex, "", new { id = "drpRCIndex" })
+                    </td>
+                }
+                else
+                {
+                    <td colspan="2">
+                        @Html.DropDownListFor(model => Model.IndexID, Model.drpIndex, "", new { id = "drpRCIndex" }) Or
+                    </td>
+                }
+                
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            @if (Model.IsAddMode)
+            {
+                <tr>
+                    <td>
+                        <input type="submit" value="Go To Add Repair Code" id="btnRCSTCAddRC" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeNewRecord" onclick="return ComboSelectionValidate('drpRCIndex');"  />
+                    </td>
+                    <td><input type="submit" value="Return to Update - Delete" id="btnRCReturnUpdateAdd1" formaction="/ManageMasterData/ManageMasterData/RepairSTSCode"  /></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@Html.Label("Select Repair Code")</td>
+                    <td colspan="2">
+                        @Html.DropDownListFor(model => Model.RepairCode, Model.drpRepairCode, "", new { id = "drpRCRepairCode" })
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Select Repair Code" id="btnRCSTCSelectRC1" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeGetRecord" onclick="return ComboSelectionValidate('drpRCIndex/RepairCode');" />
+                    </td>
+                    <td>
+                        <input type="submit" value="Add New" id="btnRCAdd1" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeNew"  />
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            }
+        </table>
+    }
+    else if (Model.RepairCodeSelectionMode == MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataRepairSTSCodeModel.RepairCodeSelectionModes.Record)
+    {
+        <table border="0" cellpadding="5" cellspacing="0" style="width: 800px; vertical-align: text-top;">
+            <tr>
+                <td style="width:25%;">@Html.Label("Manual Code")</td>
+                <td style="width:20%">
+                    @Html.TextBoxFor(model => Model.ManualCode, new { id = "txtRCManual", @readonly = "true" })
+                </td>
+                <td style="width:13%;">@Html.Label("Mode")</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.ModeCode, new { id = "txtRCMode", @readonly = "true" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Repair Code")</td>
+                @if (Model.IsAddMode)
+                {
+                    <td>
+                        @Html.TextBoxFor(model => Model.RepairCode, new { id = "txtRepairCode", maxlength = "4" })
+                    </td>
+                }
+                else if(Model.IsAfterAddDeleteMode)
+                {
+                    <td>
+                        @Html.TextBoxFor(model => Model.RepairCode, new { id = "txtRepairCode", maxlength = "4", @readonly="true" })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.DropDownListFor(model => Model.RepairCode, Model.drpRepairCodeEdit, new { id = "drpRCRepare", onchange="GetDataForRepairCode();" })
+                    </td>
+                }
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Repair Code Description")</td>
+                <td colspan="3">
+                    @Html.TextBoxFor(model => Model.RepairDesc, new { id = "txtRepairCodeDesc", maxlength = "100" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Index ID")</td>
+                @if (Model.IsAddMode)
+                {
+                    <td>
+                        @Html.TextBoxFor(model => Model.IndexID, new { id = "txtRCIndex", @readonly = "true" })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @*@Html.TextBoxFor(model=>Model.IndexID, new{id="txtRCIndex", @readonly="true"})*@
+                        @Html.DropDownListFor(model => Model.IndexID, Model.drpIndex, new { id = "drpRCIndex" })
+                    </td>
+                }
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Warrenty Days")</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.WarrantyPeriod, new { id = "txtRCWarrentDays", maxlength = "5", onkeypress = "return ValidateNumber(event);" })
+                </td>
+                <td>@Html.Label("Multiple Eq")</td>
+                <td>
+                    @Html.DropDownListFor(model => Model.MultipleUpdateSW, Model.drpYesNo, new { id = "drpMultipleEq" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("STS Repair Code")</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.RepairCode, new { id = "txtRCSTSCode", maxlength = "6" })
+                </td>
+                <td>@Html.Label("Apply Tax")</td>
+                <td>
+                    @Html.DropDownListFor(model => Model.TaxAppliedSW, Model.drpYesNo, new { id = "drpTax" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Man Hour")</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.ManHour, new { id = "txtRCManHour", maxlength = "4", onkeypress = "return ValidateFlotNumber(event);" })
+                </td>
+                <td>@Html.Label("Repair Active")</td>
+                <td>
+                    @Html.DropDownListFor(model => Model.RepairActiveSW, Model.drpYesNo, new { id = "drpRepairActive" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Max Quantity")</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.MaxQuantity, new { id = "txtRCMaxQty", maxlength = "2", onkeypress = "return ValidateNumber(event);" })
+                </td>
+                <td>@Html.Label("Allow Parts")</td>
+                <td>
+                   @Html.DropDownListFor(model => Model.AllowPartsSW, Model.drpYesNo, new { id = "drpAllowPartse" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Shop Material Ceiling")</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.ShopMaterialCeiling, new { id = "txtRCCeiling", maxlength = "10", onkeypress = "return ValidateFlotNumber(event);" })
+                </td>
+                @if (Model.IsAddMode)
+                {
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                }
+                else
+                {
+                    <td>@Html.Label("Change User Name")</td>
+                    <td>
+                        @Html.TextBoxFor(model => Model.ChangeUserFName, new { id = "txtUserName", @readonly = "true" })
+                        @Html.TextBoxFor(model => Model.ChangeUserLName, new { id = "txtUserName1", @readonly = "true" })
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td>@Html.Label("Prep Time")<br />@Html.Label("(X=not applicable)")</td>
+                <td>
+                    @Html.TextBoxFor(model => Model.RepairInd, new { id = "txtRCPrep", maxlength = "1" })
+                </td>
+                @if (Model.IsAddMode)
+                {
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                }
+                else
+                {
+                    <td>@Html.Label("Changed Time")</td>
+                    <td>
+                        @Html.TextBoxFor(model => Model.ChangeTime, new { id = "txtChangeTime", @readonly = "true" })
+                    </td>
+                }
+            </tr>
+            @if (Model.IsAddMode)
+            {
+                <tr>
+                    <td>
+                         <input type="submit" value="Add Record" id="btnRCSTCInsert" formaction="/ManageMasterData/ManageMasterData/InsertRepairSTSCode" onclick="return ValidateAddRecord();" />
+                    </td>
+                    <td>
+                        <input type="submit" value="Return to Update - Delete" id="btnRCReturnUpdateAdd2" formaction="/ManageMasterData/ManageMasterData/RepairSTSCode"  />
+                    </td>
+                    <td>&nbsp;</td>
+                    @*<td>&nbsp;</td>*@
+                </tr>
+            }
+            else if(Model.IsAfterAddDeleteMode)
+            {
+                <tr>
+                    <td>
+                        <input type="submit" value="Return to Update - Delete" id="btnRCReturnUpdateAdd3" formaction="/ManageMasterData/ManageMasterData/RepairSTSCode"  />
+                    </td>
+                    <td>
+                        <input type="submit" value="Add New" id="btnRCReturnUpdateAdd4" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeNew"  />
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                         <input type="submit" value="Update" id="btnRCSTCUpdate" formaction="/ManageMasterData/ManageMasterData/ModifyRepairSTSCode" onclick="return ValidateEditRecord();"  />
+                    </td>
+                    <td>
+                        <input type="submit" value="Delete" id="btnRCSTCDelete" formaction="/ManageMasterData/ManageMasterData/DeleteRepairSTSCode" onclick="return DeleteConfirmMsg();"  />
+                    </td>
+                    <td>
+                         <input type="submit" value="Add New" id="btnRCReturnUpdateAdd5" formaction="/ManageMasterData/ManageMasterData/RepairSTSCodeNew"  />
+                    </td>
+                    <td>
+                        <input type="button" value="Audit Trail" id="btnRCSTCAudit" onclick="AuditTrail();"  />
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    @Html.HiddenFor(model => model.ManualCode, new { IDataBindingsAccessor = "hddRCManual" })
+    @Html.HiddenFor(model => model.ModeCode, new { IDataBindingsAccessor = "hddRCMode" })
+    @Html.HiddenFor(model => model.IndexID, new { IDataBindingsAccessor = "hddRRIndex" })
+    @Html.HiddenFor(model => model.RepairCode, new { IDataBindingsAccessor = "hddRCRepairCode" })
+}

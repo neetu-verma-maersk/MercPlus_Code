@@ -1,0 +1,85 @@
+D:\SBH122\MQSUURA\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe.config
+D:\SBH122\MQSUURA\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe
+D:\SBH122\MQSUURA\MQSUURA\MQSUURA\bin\Debug\MQSUURA.pdb
+D:\SBH122\MQSUURA\MQSUURA\MQSUURA\obj\Debug\MQSUURA.csprojResolveAssemblyReference.cache
+D:\SBH122\MQSUURA\MQSUURA\MQSUURA\obj\Debug\MQSUURA.exe
+D:\SBH122\MQSUURA\MQSUURA\MQSUURA\obj\Debug\MQSUURA.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe.config
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.exe
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\amqmdnet.dll
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MercPlusLibrary.dll
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.dll
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MercPlusLibrary.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.csprojResolveAssemblyReference.cache
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe.config
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\MQSUURA.pdb
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.dll
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\SBH122\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\SBH122\MQSUURA\MQSUURA\obj\Debug\MQSUURA.csprojResolveAssemblyReference.cache
+D:\SBH122\MQSUURA\MQSUURA\obj\Debug\MQSUURA.exe
+D:\SBH122\MQSUURA\MQSUURA\obj\Debug\MQSUURA.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe.config
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\amqmdnet.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MercPlusLibrary.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\MercPlusLibrary.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.csprojResolveAssemblyReference.cache
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe.config
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.exe
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\MQSUURA.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\MercPlusLibrary.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.exe
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MQSUURA\MQSUURA\obj\Debug\MQSUURA.pdb

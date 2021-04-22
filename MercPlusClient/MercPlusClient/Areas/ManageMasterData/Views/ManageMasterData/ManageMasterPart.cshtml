@@ -1,0 +1,622 @@
+﻿
+<form id="PartForm" method="post">
+@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterPartModel
+
+@{
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+
+    if (Model.showQuery)
+    {
+        ViewBag.Title = "Master Parts View";
+    }
+    if (Model.showAdd)
+    {
+        ViewBag.Title = "Master Parts Add";
+    }
+    if (Model.showEdit)
+    {
+        ViewBag.Title = "Master Parts Edit";
+    }
+
+
+    WebGrid PartGrid = new WebGrid(ViewBag.GridData, canPage: false, canSort: false, selectionFieldName: "selectedRow");
+    
+   
+   
+}
+
+
+    <link href="~/Areas/ManageMasterData/Style/MasterData.css" rel="stylesheet" />
+    
+    <script src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<script>
+
+  
+    function trimString(str) {
+        str = this != window ? this : str;
+        return str.replace(/^\s+/g, '').replace(/\s+$/g, '');
+    }
+
+    function is_pay(string) {
+
+        //alert("is_pay");
+        var check_it = trimString(string);
+        //alert(check_it);
+        if (check_it == "") return true;
+
+        
+        if (check_it.search(/^\d*$|^\d*\.\d{2}$/) != -1) {
+            //alert("true");
+            return true;
+        }
+        else {
+            //alert("false");
+            return false;
+        }
+    }
+    // Is it an integer?
+    function isInt(elm) {
+        var elmstr = elm.toString();
+        for (var i = 0; i < elmstr.length; i++) {
+            if (elmstr.charAt(i) < "0" || elmstr.charAt(i) > "9") {
+                return false;
+            }
+        }
+        return true;
+    }
+
+   
+
+    function ClientValidation() {
+
+       
+        var errMsg = "";
+        var partNum = ""; var partDesc = ""; var partQty = ""; var partAmt = ""; var partCore = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+
+        try {
+            HighlightInputsForError($("#txtPartNumber"), false)
+            if (document.getElementById('txtPartNumber').value.trim().length == 0) {
+                isError = true;
+                //errMsg += "Please enter Part Number.";
+                partNum = " Part Number, ";
+                HighlightInputsForError($("#txtPartNumber"), isError)
+            }
+            
+        }
+        catch (err)
+        {
+            //alert("err");
+        }          
+       
+        HighlightInputsForError($("#txtPartDescription"), false)
+        if (document.getElementById('txtPartDescription').value.trim().length == 0) {
+            isError = true;
+            //errMsg += " Please enter Part Description.";
+            partDesc = " Part Description, ";
+            HighlightInputsForError($("#txtPartDescription"), isError)
+        }
+
+
+        /// ************* QTY - Start *************** 
+        HighlightInputsForError($("#txtQuantity"), false)
+        var quantity = document.getElementById('txtQuantity').value;
+        if (trimString(quantity) != "") {
+            numString = trimString(quantity);
+            if (!isInt(numString)) {
+                //errMsg += " Please Enter Quantity in Numbers Only.";
+                partQty = " Quantity in Numbers Only, ";
+                isError = true;
+                HighlightInputsForError($("#txtQuantity"), isError)
+                //alert(" Please Enter Numbers Only ");
+
+            }
+            else if (parseInt(numString) > parseInt("32767")) {
+                //alert("Quantity cannot be larger than 32,767  ");
+                //errMsg += " Quantity cannot be larger than 32,767.";
+                partQty = " Quantity less than 32,767, ";
+                isError = true;
+                HighlightInputsForError($("#txtQuantity"), isError)
+
+            }
+            else if (parseInt(numString) < parseInt("1")) {
+                //alert("Quantity cannot be less than 1 ");
+                //errMsg += " Quantity cannot be less than 1.";
+                partQty = " Quantity greater or equal to 1, ";
+                isError = true;
+                HighlightInputsForError($("#txtQuantity"), isError)
+            }
+        }
+        else {
+            //alert("Please enter a Quantity Value ");
+            //errMsg += " Please enter a Quantity Value.";
+            partQty = " Quantity Value, ";
+            isError = true;
+            HighlightInputsForError($("#txtQuantity"), isError)
+        }       
+        /// ************* QTY - End *************** 
+
+        /// ************** AMOUNT - Start ******************
+        HighlightInputsForError($("#txtAmount"), false)
+        var amount = document.getElementById('txtAmount').value;
+        //alert(amount);
+        if (trimString(amount) == "") {
+            //alert("Please enter Amount or Set Default as 0\n");
+            //errMsg += " Please enter Amount or Set Default as 0.";
+            partAmt = " Amount or Set Default as 0, ";
+            isError = true;
+            HighlightInputsForError($("#txtAmount"), isError)
+            
+        }
+        else if (is_pay(amount) == false) {
+            //alert("else if");
+            //alert("Please Enter Numbers with 2 Decimal Places Only\n");
+            //errMsg += " Please Enter Amount with 2 Decimal Places Only.";
+            partAmt = " Amount with 2 Decimal Places Only, ";
+            isError = true;
+            HighlightInputsForError($("#txtAmount"), isError)
+
+        }
+        else {
+            //alert("else");
+        }
+        /// ************** AMOUNT - End ******************
+        
+        /// ************** CORE - Start ******************
+        HighlightInputsForError($("#txtCoreValue"), false)
+        var coreValue = document.getElementById('txtCoreValue').value;
+        if (trimString(coreValue) == ""){
+            //alert("Please enter Core Value or Set Default as 0\n");
+            //errMsg += " Please enter Core Value or Set Default as 0.";
+            partCore = " Core Value or Set Default as 0, ";
+            isError = true;
+            HighlightInputsForError($("#txtCoreValue"), isError)
+            
+        }
+        else if (!(is_pay(coreValue))) {
+            //alert("Please Enter Numbers with 2 Decimal Places Only\n");
+            //errMsg += " Please Enter Core Value with 2 Decimal Places Only.";
+            partCore = " Core Value with 2 Decimal Places Only, ";
+            isError = true;
+            HighlightInputsForError($("#txtCoreValue"), isError)
+        }
+        else {
+
+        }
+
+        /// ************** CORE - End **********************
+
+        
+        if (isError == true) {
+            var err = "Please Enter" + partNum + partQty + partDesc + partAmt + partCore + ".";
+            errMsg = err.replace(", .", ".");
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+
+    $(function () {
+        $('#btnQueryMPart').click(function (event) {
+             
+            var dataGC = $('#drpSearchGroupCode').val().trim();
+            var dataMC = $('#drpSearchManCode').val();
+            var dataDG = $('#txtSearchDesg').val().trim();
+            var dataPC = $('#txtSearchPartCode').val().trim();
+            var dataDcs = $('#txtSearchDesc').val().trim();
+            var dataAct = $('#drpSearchActive').val();
+            var dataCr = $('#drpSearchCore').val();
+            var dataDcr = $('#drpSearchDeductCore').val();
+            var res;
+
+            if (dataGC.length == 0 && dataMC.length == 0 && dataDG.length == 0 && dataPC.length == 0 && dataDcs.length == 0 &&
+                dataAct.length == 0 && dataCr.length == 0 && dataDcr.length == 0)
+            {
+                res = '0';               
+                //event.preventDefault();
+                //exit;
+            }
+
+            var errMsg = "";
+            var isError = false;
+            $("#ErrorMsgContainer").html("");
+            HighlightInputsForError($("#txtRepairCod"), false)
+            if (res == '0') {
+                isError = true;
+                errMsg = "Please Select/Enter a Minimum of One Field to Query";
+                HighlightInputsForError($("#drpSearchGroupCode"), isError)
+            }
+            if (isError == true) {
+                ShowRemoveValidationMessage(errMsg, "Warning")
+                return false;
+            }
+            else {
+                return true;
+            }                      
+
+        });
+
+    });
+
+
+    $(function () {
+        $('#btnAddMode').click(function () {
+
+            var form = $("form#PartForm");            
+            form.attr("action", "@Url.Action("AddMode")");
+            form.submit();
+            });
+      
+        });
+
+
+    function ShowEditScreen(masterPartCode) {
+      
+       if (masterPartCode.length > 0)
+       {
+           var form = $("form#PartForm");
+           //masterPartCode = 'A@B?C$D%E^F|G*H!J`K#'
+           //alert(masterPartCode);          
+           ////var action = "@Html.Raw(Url.Action("EditMode", new { id = "masterPartCode" }))".replace("masterPartCode", masterPartCode);
+           //form.attr("action", "@Url.Action("EditMode", new { id = "masterPartCode" })".replace("masterPartCode", masterPartCode));
+           //form.attr("action", "@Url.Action("EditMode/12345")");
+        
+           masterPartCode = encodeURIComponent(masterPartCode)
+
+           //alert(masterPartCode);
+
+           var action = "@Url.Action("EditMode", new { id =1, partNumber="masterPartCode" })".replace("masterPartCode", masterPartCode);
+
+           ///var action = "@Url.Action("EditMode/masterPartCode")".replace("masterPartCode", masterPartCode);       
+           //alert(action);
+
+           form.attr("action", action);
+           form.submit();
+        }        
+    } 
+  
+</script>
+
+
+
+@using (Html.BeginForm())
+{
+     <div>
+                <table border="0" style="width: 100%; vertical-align: text-top;">
+                    <tr>
+                        <td colspan="5" style="vertical-align: top; text-align:center; margin-right: 0px; font-size: xx-small; font-size: 7px; color: blue;">
+                           <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_parts_help.htm" target="_blank">Table and Dependencies Help File</a>
+                        </td>
+                    </tr>
+                </table>
+      </div>
+    
+    <h2>@ViewBag.Title</h2>   
+
+    
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    
+    
+    if(Model.showQuery)
+    {
+         <div>
+
+        <table border="0" style="vertical-align: text-top; width:80%">
+            <tr>
+                <td>@Html.Label("Part Group")</td>
+                <td>@Html.Label("Manufacturer Code")</td>
+                <td>@Html.Label("Designation")</td>
+                <td></td> <td></td>
+            </tr>
+             <tr>
+                <td>@Html.DropDownListFor(model => model.SearchMasterPartModel.PartGroupCode, Model.SearchMasterPartModel.drpPartGroupCode,"Select Part Group",  new { id = "drpSearchGroupCode" })  
+                </td>
+                <td>@Html.DropDownListFor(model => model.SearchMasterPartModel.ManufacturerCode, Model.SearchMasterPartModel.drpManufacturerCode, "Select Manufacturer Code", new { id = "drpSearchManCode" })  
+                </td>
+                <td>@Html.TextBoxFor(model => model.SearchMasterPartModel.Designation, new { maxlength = 3, style = "width:100px", id = "txtSearchDesg" })
+                </td>
+                <td></td> <td></td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Part Number (use * for wildcard)")</td>
+                <td>@Html.Label("Description (keyword or phrase)")</td>
+                <td></td>
+                 <td></td> <td></td>
+            </tr>
+             <tr>
+                <td>@Html.TextBoxFor(model => model.SearchMasterPartModel.PartCode, new { maxlength = 20, style = "width:300px", id = "txtSearchPartCode" })
+                </td>
+                <td>@Html.TextBoxFor(model => model.SearchMasterPartModel.PartDescription, new { maxlength = 20, style = "width:300px", id = "txtSearchDesc" })
+                </td>
+                <td></td>
+                <td></td> <td></td>
+            </tr>
+             <tr>
+                <td colspan="2">
+                    @Html.Label("Active") 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.Label("Core")
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.Label("Deduct Core Value")
+                </td>
+                <td> </td>
+                <td></td>
+                <td></td> <td></td>
+            </tr>
+             <tr>
+               <td colspan="4">
+                   @Html.DropDownListFor(model => model.SearchMasterPartModel.Active, Model.SearchMasterPartModel.drpActive, "Select Active", new { id = "drpSearchActive" })  
+                   @Html.DropDownListFor(model => model.SearchMasterPartModel.Core, Model.SearchMasterPartModel.drpCore,"Select Core", new { id = "drpSearchCore" }) 
+                   @Html.DropDownListFor(model => model.SearchMasterPartModel.DeductCoreValue, Model.SearchMasterPartModel.drpDeductCoreValue, "Select Deduct Core", new { id = "drpSearchDeductCore" })  
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <input type="submit" value="Query"   id="btnQueryMPart" formaction="PopulateMasterPartResultGrid" >
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <input type="button" value="Add New Part"   id="btnAddMode" />
+               </td>
+               <!--<td> </td>-->
+               <!--<td></td>-->
+               <td> </td> 
+               <td> </td>
+            </tr>
+        </table>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </div>
+       
+        
+    }
+    
+    
+
+    <!-- GRID Section  - START -->
+   
+     //ViewBag.Title = "GRID";
+
+     if (Model.showQueryResult)
+     {
+   <div id="gridContent" >
+        @PartGrid.GetHtml(
+                tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: PartGrid.Columns(
+                PartGrid.Column("PartGroupCode", header: "Part Group"),
+                PartGrid.Column("Designation", header: "Designation"),
+                PartGrid.Column("ManufacturerCode", header: "Manufacturer Code"),
+                 PartGrid.Column("PartCode", header: "Part Number"),
+                 PartGrid.Column("Quantity", header: "Qty"),
+                PartGrid.Column("PartDescription", header: "Description"),
+                PartGrid.Column("PartPrice", header: "Price USD"),
+                PartGrid.Column("Active", header: "Active"),
+                PartGrid.Column("Core", header: "Core"),
+                PartGrid.Column("CoreValue", header: "Core Value USD"),
+                PartGrid.Column("DeductCore", header: "Deduct Core"),
+        PartGrid.Column("Action", format: @<text><a href="javascript:ShowEditScreen('@item.PartCode');", style="color:blue; font-size:small;">Edit</a></text>, header: "")
+        //PartGrid.Column("Delete", format: @<text><a href="javascript:DeleteMasterPart('@item.PartCode');", style="color:blue; font-size:small;">Delete</a></text>, header: "")
+           ))       
+   </div>
+     }
+
+    
+    <!-- GRID Section  - END -->   
+
+
+     if (Model.showAdd || Model.showEdit)
+     {
+  <div id="div_PartAddDetails"  style="display:normal; width:800px" >
+         <table>
+      <tr>
+          <td>@Html.Label("Part Group")</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td colspan="3">@Html.DropDownListFor(model => model.PartGroupCodeList, Model.drpPartGroupCodeList, new { id = "drpPartGroupCodeList" })  
+          </td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>@Html.Label("Part Designation(s)")</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td style="padding-left:0">
+              <table >
+                  <tr>
+                  <td style="padding-left:0">@Html.TextBoxFor(model => model.PartDesignation1, new { id = "txtPartDesignation1", maxlength = 3, style = "width:100px" })
+                  </td>
+                  <td>@Html.TextBoxFor(model => model.PartDesignation2, new { id = "txtPartDesignation2", maxlength = 3, style = "width:100px" })</td>
+                  <td>@Html.TextBoxFor(model => model.PartDesignation3, new { id = "txtPartDesignation3", maxlength = 3, style = "width:100px" })</td>
+                  </tr> 
+              </table>
+          </td>
+          <td></td>
+          <td></td>
+          
+       </tr>
+       <tr>
+          <td>@Html.Label("Manufacturer Code - Description")</td>
+          <td></td>
+          <td></td>
+      </tr>
+       <tr>
+          <td colspan="3">@Html.DropDownListFor(model => model.ManufacturerCodeList, Model.drpManufacturerCodeList, new { id = "drpManufacturerCodeList" })  
+          </td>
+
+      </tr>
+      <tr>
+        
+          <td style="padding-left:0">
+              <table>
+                  <tr>
+                        <td>@Html.Label("Part Number")</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>@Html.Label("Quantity")</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-left:0">
+                        @if (Model.isEditMode)
+                        { 
+                            @Html.TextBoxFor(model => model.PartNumber, new { id = "txtPartNumber1", maxlength = 20, style = "width:200px", @readonly = "readonly" })
+                        }
+                        else
+                        { 
+                            @Html.TextBoxFor(model => model.PartNumber, new { id = "txtPartNumber", maxlength = 20, style = "width:200px" })
+                        }
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>@Html.TextBoxFor(model => model.Quantity, new { id = "txtQuantity", maxlength = 3, style = "width:50px" })
+                    </td>
+                  </tr>
+              </table>
+          </td>
+                  
+      </tr>
+            
+      <tr>      
+
+       </tr>
+       <tr>
+          <td>@Html.Label("Part Description")</td>
+          <td></td>
+          <td></td>
+      </tr>
+       <tr>
+          <td colspan ="3">@Html.TextBoxFor(model => model.PartDescription, new { id = "txtPartDescription", maxlength = 36, style = "width:370px" })
+          </td>
+         
+       </tr>
+
+      <tr>
+          <td>
+              <table style="padding-left:0">
+                <tr>
+          <td style="padding-left:0">@Html.Label("Amount")</td>
+            <td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td>
+          <td>@Html.Label("Serial TAG Number Required")</td>
+      </tr>
+                <tr>
+            @{var formated = String.Format("{0:0.00}", Model.Amount);}
+          <td style="padding-left:0">@Html.TextBoxFor(model => model.Amount, formated, new { id = "txtAmount", maxlength = 10, style = "width:100px" }) </td>
+           <td>USD</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td>
+          <td> @Html.DropDownListFor(model => model.TAG, Model.drpTAGList, new { id = "drpTAGList" })            
+          </td>
+      </tr>
+                <tr>
+          <td style="padding-left:0">@Html.Label("Core Value")</td>
+          <td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td>
+          <td>@Html.Label("Deduct Core Value")</td>
+          
+      </tr>
+                <tr>
+          <td style="padding-left:0">@Html.TextBoxFor(model => model.CoreValue, new { id = "txtCoreValue", maxlength = 10, style = "width:100px" })</td>
+           <td>USD</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td>
+          <td> @Html.DropDownListFor(model => model.DeductCoreValueList, Model.drpDeductCoreValueList, new { id = "drpDeductCoreValueList" })  
+          </td>
+      </tr>
+                <tr>
+          <td style="padding-left:0">@Html.Label("Maersk")</td>
+          <td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td>
+          <td>@Html.Label("Active")</td>
+          
+      </tr>
+                <tr>
+          <td style="padding-left:0">@Html.DropDownListFor(model => model.Maersk, Model.drpMaerskList, new { id = "drpMaerskList" })  
+          </td>
+           <td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td>
+          <td>@Html.DropDownListFor(model => model.Active, Model.drpActiveList, new { id = "drpActiveList" })  
+          </td>
+      </tr>
+              </table>               
+          </td>
+      </tr>
+       
+        <tr>
+          <td colspan="3">@Html.Label("Comments")</td>        
+          
+      </tr>
+       <tr>
+          <td>@Html.TextAreaFor(model => model.Comment, new { id = "txtComment", maxlength = 225, style = "width: 400px; height: 150px;" })    
+          </td>
+       </tr>
+      
+  </table>
+  </div>  
+   }  
+     
+   
+   if(Model.isEditMode)
+   {
+      <div id="div_UserName_Time"  style="display:normal; width:800px">
+      <table>
+             <tr>
+           <td>@Html.Label("Change User Name")</td>
+           <td>@Html.Label("Changed Time")</td>
+      </tr> 
+      <tr>
+          <td>@Html.TextBoxFor(model => model.ChangeUserName, new { id = "txtChangeUserName", style = "width:200px", @readonly = "readonly" })</td>
+          <td>@Html.TextBoxFor(model => model.ChangeTime, new { id = "txtChangeTime", style = "width:200px", @readonly = "readonly" })</td>
+      </tr>
+      </table>
+     </div> 
+   }
+    if (Model.showAdd)
+    {
+        <div>
+            <table>
+                 <tr>
+                    <td><input type="submit" value="Submit"  id= "btnSubmit" formaction="/ManageMasterData/ManageMasterData/MasterPartInsert"  onclick="return ClientValidation();" />
+                    </td>  
+                </tr>              
+            </table>
+            
+        </div>
+     }
+     else if(Model.showEdit)
+     {             
+                
+         <div>
+            <table>
+                 <tr>
+                 <td style="width:85%"><input type="submit" value="Submit"  id= "btnSubmit" formaction="/ManageMasterData/ManageMasterData/MasterPartInsert"  onclick="return ClientValidation();" />
+                 </td>  
+                 <td> <input type="button" id="btnAuditTrail" value="Audit Trail" name="AuditTrail" onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'Master Parts Audit Trail', 'MESC1TS_MASTER_PART', document.getElementById('txtPartNumber1').value.trim(), '', '', 800, 450, scroll);" style="display:normal;"/>
+                 </td>
+                </tr>              
+            </table> 
+        </div>    
+                     
+     }
+
+     
+  
+   @Html.HiddenFor(model => model.isEdit, new { id = "hdnIsPartEditMode" })
+
+   @Html.HiddenFor(model => model.isAddMode, new { id = "hdnIsPartAddMode" })
+
+    
+    
+
+  
+
+  
+}
+
+     
+    </form>

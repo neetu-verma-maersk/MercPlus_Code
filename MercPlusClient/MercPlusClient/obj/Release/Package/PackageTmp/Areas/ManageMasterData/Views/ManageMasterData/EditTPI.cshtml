@@ -1,0 +1,369 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataTPIIndicatorModel
+
+@{
+    if (Model.IsTPIView || Model.IsTPIDeleted)
+    {
+        ViewBag.Title = "View TPI Indicator";
+    }
+    else if (Model.IsTPIAdd)
+    {
+        ViewBag.Title = "Add TPI Indicator";
+    }
+    else if (Model.IsTPIUpdate)
+    {
+        ViewBag.Title = "Edit TPI Indicator";
+    }
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript" src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+<script type="text/javascript" >
+    $(function () {
+        $('#btnTPIIndicatorQuery').click(function () {
+            $("#ErrorMsgContainer").html("");
+            $("#ErrorMsgContainer1").html("");
+            HighlightInputsForError($("#drpTPI"), false);
+            if (document.getElementById('drpTPI').selectedIndex == 0) {
+                HighlightInputsForError($("#drpTPI"), true);
+                ShowRemoveValidationMessage("Please Select a TPI to query", "Warning")
+                return false;
+            }
+              
+            //$('#divTPI').show();
+            //var c = $("#drpTPI").val();
+            //$.ajax({
+
+            //    url: "/ManageMasterData/ManageMasterData/GetAllDetailsForTPI",
+            //    type: 'POST',
+            //    data: { id: c },
+
+            //    //data: JSON.stringify({ CountryCode: c, locale: locale }),
+            //    cache: false,
+            //    success: function (data) {
+
+            //        $("#txtTPICedexCode").val(data.TPICedexCode);
+            //        $("#txtTPIName").val(data.TPIName);
+            //        $("#txtTPIDescription").val(data.TPIDescription);
+            //        $("#txtTPINumericalCode").val(data.TPINumericalCode);
+            //        $("#txtChangeUser").val(data.TPICHUser);
+            //        var d = new Date();
+            //        d.setTime(parseInt(data.TPICHTS.substring(6)));
+            //        $("#txtChangeTime").val(FormatDate(d));
+            //        $("#drpCategory").val(data.Category);
+            //    },
+            //    error: function (data) {
+            //    }
+            //});
+        });
+    });
+
+    function ClientValidation(isAdd) {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+        $("#ErrorMsgContainer1").html("");
+        var val1 = "";
+        if (isAdd) {
+            HighlightInputsForError($("#txtTPICedexCode"), false)
+            val1 = $("#txtTPICedexCode").val();
+            if (val1.trim() == "") {
+                isError = true;
+                errMsg += "Please Enter TPI Code";
+                HighlightInputsForError($("#txtTPICedexCode"), isError)
+            }
+            else {
+                var strValidChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                if (strValidChars.indexOf(val1) == -1) {
+                    isError = true;
+                    errMsg = "Please enter alphabets for TPI Code";
+                    HighlightInputsForError($("#txtTPICedexCode"), isError);
+                    ShowRemoveValidationMessage(errMsg, "Warning");
+                    return false;
+                }
+            }
+        }
+        HighlightInputsForError($("#txtTPIName"), false)
+        val1 = $("#txtTPIName").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter TPI Name ";
+            else
+                errMsg += ", TPI Name ";
+            HighlightInputsForError($("#txtTPIName"), isError)
+        }
+        else if (val1.indexOf('"') > -1) {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Remove Double Quote Character in TPI Name";
+            else
+                errMsg += ", Remove Double Quote Character in TPI Name";
+            HighlightInputsForError($("#txtTPIName"), isError);
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        HighlightInputsForError($("#txtTPIDescription"), false)
+        val1 = $("#txtTPIDescription").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter TPI Description";
+            else
+                errMsg += ", TPI Description ";
+            HighlightInputsForError($("#txtTPIDescription"), isError)
+        }
+        else if (val1.indexOf('"') > -1) {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Remove Double Quote Character in TPI Description";
+            else
+                errMsg += ", Please Remove Double Quote Character in TPI Description";
+            HighlightInputsForError($("#txtTPIDescription"), isError);
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        HighlightInputsForError($("#txtTPINumericalCode"), false)
+        val1 = $("#txtTPINumericalCode").val();
+        if (val1.trim() == "") {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Please Enter Numerical code";
+            else
+                errMsg += ", Numerical code ";
+            HighlightInputsForError($("#txtTPINumericalCode"), isError)
+        }
+        if (val1.length != 5) {
+            isError = true;
+            if (errMsg.trim() == "")
+                errMsg = "Nemerical code must be 5 characters";
+            else
+                errMsg += ". Nemerical code must be 5 characters";
+            HighlightInputsForError($("#txtTPINumericalCode"), isError)
+        }
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function DeleteConfirmMsg() {
+        return confirm("Are you sure you want to delete this record?")
+    }
+
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+</script>
+<div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_tpi_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+
+<h2>@ViewBag.Title</h2>
+<div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+    @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+</div>
+@using (Html.BeginForm())
+{
+
+
+    <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5"
+        cellspacing="0">
+        <tr>
+            <td>@Html.Label("Select Third Party Indicator")&nbsp;&nbsp;
+                @Html.DropDownListFor(model => model.TPISelectedCedexCode, ViewBag.TPIFullDescription as SelectList, "", new { id = "drpTPI" })
+                <input type="submit" value="Query" id="btnTPIIndicatorQuery" formaction="/ManageMasterData/ManageMasterData/GetAllDetailsForTPI" />
+                
+            </td>
+            <td>
+                @if (Model.IsAdmin)
+                {
+                    <input type="submit" value="Add New TPI Indicator" formaction="/ManageMasterData/ManageMasterData/TPICreate" />
+                }
+            </td>
+             @*@if(Model.IsAdmin)
+            {
+                <td>
+                    
+                </td>
+            }
+            else
+            {
+                <td>&nbsp;</td>
+            }*@
+        </tr>
+    </table>
+      
+}
+<hr />
+
+
+@using (Html.BeginForm())
+{
+    if (Model.ShowData)
+    {
+        if (Model.IsTPIUpdate)
+        {
+        @*<div id="divTPI" style="display: none; width: 800px">*@
+            <table style="width: 800px; vertical-align: text-top;" border="0" cellpadding="3">
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Third Party Indicator")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICedexCode, new { id = "txtTPICedexCode", @readonly = true })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Name")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPIName, new { id = "txtTPIName", maxlength = "20" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Description")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPIDescription, new { id = "txtTPIDescription", maxlength = "80" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Numerical Code")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPINumericalCode, new { id = "txtTPINumericalCode", maxlength = "5", onkeypress = "return ValidateNumber(event);" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Changed User")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICHUser, new { id = "txtChangeUser", @readonly = true })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Changed Time")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICHTS, new { id = "txtChangeTime", @readonly = true })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Category")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Category, Model.drpCategory, "", new { id = "drpCategory" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    @if (Model.IsAdmin)
+                    {
+                        <td style="text-align: left; vertical-align: top; width: 100px;">
+                            <input type="submit" value="Submit" formaction="/ManageMasterData/ManageMasterData/UpdateTPI" onclick="return ClientValidation(false);" />
+                        </td>
+                        <td style="text-align: left; vertical-align: top; width: 120px;">
+                            <input type="submit" value="Delete" formaction="/ManageMasterData/ManageMasterData/DeleteTPI" onclick="return DeleteConfirmMsg();" />
+                        </td>
+                    }
+                    else
+                    {
+                        <td colspan="2">&nbsp;</td>
+                    }
+                    <td>
+                        @if(!Model.IsTPIAdded)
+                        {
+                        <input type="button" value="Audit Trail" onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'TPIAuditTrail', 'TPI', document.getElementById('txtTPICedexCode').value, '', '', 800, 450, scroll);" />
+                        }
+                    </td>
+                </tr>
+                @*<tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;" colspan="3">
+                    
+                    </td>
+                </tr>*@
+            </table>
+        @*</div>*@
+        }
+        else if (Model.IsTPIDeleted)
+        {
+            <table style="width: 800px; vertical-align: text-top;" border="0" cellpadding="3">
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Third Party Indicator")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICedexCode, new { id = "txtTPICedexCode", maxlength = "1" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Name")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPIName, new { id = "txtTPIName", maxlength = "20" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Description")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPIDescription, new { id = "txtTPIDescription", maxlength = "80" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Numerical Code")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPINumericalCode, new { id = "txtTPINumericalCode", maxlength = "5", onkeypress = "return ValidateNumber(event);" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Changed User")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICHUser, new { id = "txtChangeUser", @readonly = true })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Changed Time")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICHTS, new { id = "txtChangeTime", @readonly = true })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                     <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Category")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Category, Model.drpCategory, "", new { id = "drpCategory" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                
+            </table>
+        }
+        else
+        {
+        @*<div id="divTPI1" style="width: 800px">*@
+            <table style="width: 800px; vertical-align: text-top;" border="0" cellpadding="3">
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Third Party Indicator")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICedexCode, new { id = "txtTPICedexCode", maxlength = "1" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Name")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPIName, new { id = "txtTPIName", maxlength = "20" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Description")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPIDescription, new { id = "txtTPIDescription", maxlength = "80" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Numerical Code")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPINumericalCode, new { id = "txtTPINumericalCode", maxlength = "5", onkeypress = "return ValidateNumber(event);" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Changed User")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICHUser, new { id = "txtChangeUser", @readonly = true })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Changed Time")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.TPICHTS, new { id = "txtChangeTime", @readonly = true })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                     <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Category")</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Category, Model.drpCategory, "", new { id = "drpCategory" })</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">
+                        <input type="submit" value="Submit" formaction="/ManageMasterData/ManageMasterData/CreateTPI" onclick="return ClientValidation(true);" />
+                    </td>
+                </tr>
+            </table>
+        @*</div>*@
+        }
+    }
+}

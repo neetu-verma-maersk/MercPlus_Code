@@ -1,0 +1,100 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterShopVndorModel
+
+<link href="~/Areas/ManageWorkOrder/Style/WorkOrder.css" rel="stylesheet" />
+@*<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>*@
+<script src="~/Areas/ManageMasterData/Script/ShopContract_View.js"></script>
+<script src="~/Areas/ManageWorkOrder/Script/workOrder.js"></script>
+
+@{
+    ViewBag.Title = "Shop Contract";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+    
+    
+    }
+
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_shop_contract_help.htm" target="_blank">Tables and Dependencies Help File</a>
+        </div>
+
+@using (Html.BeginForm())
+{
+   <div style="width:100%" id="divMail">
+
+       <table border="0" cellpadding="5" cellspacing="0" 
+            style="width: 100%; vertical-align:text-top;">
+        
+        <tr>
+        <td style="vertical-align:top; text-align:left; margin-top:50px; margin-left:30px;">
+        <h3>Shop Contract View</h3>
+        </td>
+        </tr>
+
+             <tr>
+            <td style="text-align:left; margin-left:-500px;">
+                <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                       @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                </div>
+            </td>
+        
+           </tr>
+        </table>
+    
+   
+      <table border="0" cellpadding="5" cellspacing="0" id="tblShop"
+        style="width:auto; vertical-align: text-top; text-align:left;">
+        
+        <tr>
+            <td style="text-align:left;">
+                @Html.LabelFor(model => model.ShopCode_ShopContract)
+                <br />
+                     @Html.DropDownListFor(model => model.ShopCode_ShopContract, Model.DDLShop_ShopContract, new { id = "ddlShop", style = "width: 100px;" })
+            </td>
+            <td style="text-align:left;">
+                 @Html.LabelFor(model => model.RepairCode_ShopContract)
+                <br />
+                     @Html.TextBox("txtRepairCode",Model.RepairCode_ShopContract,new {style="width:120px;", id="txtRepairCode"})
+            </td>
+            <td style="text-align:left;" colspan="3">
+                @Html.LabelFor(model => model.Mode_ShopContract)
+                <br />
+                      @Html.DropDownListFor(model => model.Mode_ShopContract, Model.DDLMode_ShopContract,"", new { id = "ddlMode", style = "width: 450px;" })
+            </td>
+            <td style="text-align:left; vertical-align:bottom;" colspan="1">
+                   <input type="button" value="search" id="btnSearch" />
+             </td>
+            
+               @*@if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == false)
+               {
+                    <td style="text-align:left; vertical-align:bottom;" colspan="2">
+                            <input type="submit" value="Add New Contract" id="btnContractSearch" formaction="/ManageMasterData/ManageMasterShopVendor/ShopContract_Edit"/>
+                    </td>
+               }
+               else
+               {
+                   <td style="text-align:left;" colspan="2"> </td>
+                        
+               }*@
+            
+            </tr>
+         <tr>
+            <td colspan="8" style="width:100%;" nowrap="nowrap">
+            
+           <div id="gridContent" style="width:100%;">  
+            @if(Model.SearchResults!=null)
+            {
+               Html.RenderPartial("Partial_ShopContract_View", Model.SearchResults);
+                
+            }
+           </div>
+             
+            
+            </td>
+        </tr>
+      </table>
+   
+    
+   </div>
+ 
+}
+
+

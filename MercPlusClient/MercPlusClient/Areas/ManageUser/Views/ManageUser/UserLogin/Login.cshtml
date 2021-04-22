@@ -1,0 +1,60 @@
+﻿@model MercPlusClient.Areas.ManageUser.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_MercPlusLoginLayout.cshtml";
+}
+<script type="text/javascript">
+
+
+    function GetHomePageForaAuthId(server) {
+
+        var SecAuthGroupId = null;
+        if (server == 'DEV') { SecAuthGroupId = $("#drpDevUserRoleList").val(); }
+        else if (server == 'TEST') { SecAuthGroupId = $("#drpTestUserRoleList").val(); }
+        $.ajax({
+            url: "/ManageUser/UserLogin/GetHomePageForaAuthId",
+            type: 'POST',
+            data: { EnvironMent: server, UserLoginAuthType: SecAuthGroupId },
+            //data: null,
+            cache: false,
+            success: function (data) {
+
+                if (data.isRedirect) {
+                    window.location.href = data.redirectUrl;
+                }
+            },
+            error: function (data) {
+            }
+        });
+    }
+
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div>
+        <div style="text-align:center; vertical-align:middle; text-align:left; text-wrap:normal; color:Red;">
+            <p>@(TempData["Msg"] != null ? TempData["Msg"] : " ") </p>
+        </div>
+        <table style="width: 400px; vertical-align:text-top; " border="0" cellpadding="5" cellspacing="0">
+            <tr><td><br /><br /></td></tr>
+            <tr>
+                <td style="text-align: left; border-bottom:2px solid green; vertical-align: top; width: 150px;  font-weight: bold; " colspan="2">@Html.Label("Development") </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 150px;">@Html.Label("Choose User Type:") </td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DropDownList("UserRoleList", null, "<<---Select--->>", new { style = "width:250px", id = "drpDevUserRoleList", @onchange = "GetHomePageForaAuthId('DEV')" })</td>
+            </tr>
+            <tr><td><br /><br /><br /><br /> </td></tr>
+            <tr>
+                <td style="text-align: left; border-bottom: 2px solid green; vertical-align: top; width: 150px; font-weight: bold; " colspan="2">@Html.Label("Test") </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 150px;">@Html.Label("Choose User Type:") </td>
+                <td style="text-align: left; vertical-align: top; width: 250px;">@Html.DropDownList("UserRoleList", null, "<<---Select--->>", new { style = "width:250px", id = "drpTestUserRoleList", @onchange = "GetHomePageForaAuthId('TEST')" })</td>
+            </tr>
+        </table>
+    </div>
+}

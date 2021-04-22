@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ManageAATService.ManageAATService" CodeBehind="ManageAATService.svc.cs" %>

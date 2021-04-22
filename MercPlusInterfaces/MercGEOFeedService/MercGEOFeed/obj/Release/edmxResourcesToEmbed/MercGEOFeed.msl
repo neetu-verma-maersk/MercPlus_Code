@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="MESC2DSEntities">
+    <EntitySetMapping Name="MESC1TS_AREA">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_AREA">
+        <MappingFragment StoreEntitySet="MESC1TS_AREA">
+          <ScalarProperty Name="AREA_CD" ColumnName="AREA_CD" />
+          <ScalarProperty Name="AREA_DESC" ColumnName="AREA_DESC" />
+          <ScalarProperty Name="AREA_GEO_ID" ColumnName="AREA_GEO_ID" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_COUNTRY">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_COUNTRY">
+        <MappingFragment StoreEntitySet="MESC1TS_COUNTRY">
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+          <ScalarProperty Name="COUNTRY_DESC" ColumnName="COUNTRY_DESC" />
+          <ScalarProperty Name="AREA_CD" ColumnName="AREA_CD" />
+          <ScalarProperty Name="REPAIR_LIMIT_ADJ_FACTOR" ColumnName="REPAIR_LIMIT_ADJ_FACTOR" />
+          <ScalarProperty Name="COUNTRY_GEO_ID" ColumnName="COUNTRY_GEO_ID" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_LOCATION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_LOCATION">
+        <MappingFragment StoreEntitySet="MESC1TS_LOCATION">
+          <ScalarProperty Name="LOC_CD" ColumnName="LOC_CD" />
+          <ScalarProperty Name="REGION_CD" ColumnName="REGION_CD" />
+          <ScalarProperty Name="LOC_DESC" ColumnName="LOC_DESC" />
+          <ScalarProperty Name="COUNTRY_CD" ColumnName="COUNTRY_CD" />
+          <ScalarProperty Name="RKRPLOC" ColumnName="RKRPLOC" />
+          <ScalarProperty Name="LOC_GEO_ID" ColumnName="LOC_GEO_ID" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CONTACT_EQSAL_SW" ColumnName="CONTACT_EQSAL_SW" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_REFAUDIT">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_REFAUDIT">
+        <MappingFragment StoreEntitySet="MESC1TS_REFAUDIT">
+          <ScalarProperty Name="AUDIT_ID" ColumnName="AUDIT_ID" />
+          <ScalarProperty Name="TAB_NAME" ColumnName="TAB_NAME" />
+          <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+          <ScalarProperty Name="COL_NAME" ColumnName="COL_NAME" />
+          <ScalarProperty Name="OLD_VALUE" ColumnName="OLD_VALUE" />
+          <ScalarProperty Name="NEW_VALUE" ColumnName="NEW_VALUE" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_SHOP">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_SHOP">
+        <MappingFragment StoreEntitySet="MESC1TS_SHOP">
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
+          <ScalarProperty Name="SHOP_DESC" ColumnName="SHOP_DESC" />
+          <ScalarProperty Name="RKRPLOC" ColumnName="RKRPLOC" />
+          <ScalarProperty Name="LOC_CD" ColumnName="LOC_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="EMAIL_ADR" ColumnName="EMAIL_ADR" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="EDI_PARTNER" ColumnName="EDI_PARTNER" />
+          <ScalarProperty Name="RRIS70_SUFFIX_CD" ColumnName="RRIS70_SUFFIX_CD" />
+          <ScalarProperty Name="PREPTIME_SW" ColumnName="PREPTIME_SW" />
+          <ScalarProperty Name="SHOP_ACTIVE_SW" ColumnName="SHOP_ACTIVE_SW" />
+          <ScalarProperty Name="PCT_MATERIAL_FACTOR" ColumnName="PCT_MATERIAL_FACTOR" />
+          <ScalarProperty Name="RRIS_XMIT_SW" ColumnName="RRIS_XMIT_SW" />
+          <ScalarProperty Name="OVERTIME_SUSP_SW" ColumnName="OVERTIME_SUSP_SW" />
+          <ScalarProperty Name="IMPORT_TAX" ColumnName="IMPORT_TAX" />
+          <ScalarProperty Name="SHOP_TYPE_CD" ColumnName="SHOP_TYPE_CD" />
+          <ScalarProperty Name="SALES_TAX_PART_CONT" ColumnName="SALES_TAX_PART_CONT" />
+          <ScalarProperty Name="SALES_TAX_PART_GEN" ColumnName="SALES_TAX_PART_GEN" />
+          <ScalarProperty Name="SALES_TAX_LABOR_CON" ColumnName="SALES_TAX_LABOR_CON" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+          <ScalarProperty Name="SALES_TAX_LABOR_GEN" ColumnName="SALES_TAX_LABOR_GEN" />
+          <ScalarProperty Name="ACEP_SW" ColumnName="ACEP_SW" />
+          <ScalarProperty Name="DECENTRALIZED" ColumnName="DECENTRALIZED" />
+          <ScalarProperty Name="AUTO_COMPLETE_SW" ColumnName="AUTO_COMPLETE_SW" />
+          <ScalarProperty Name="BYPASS_LEASE_RULES" ColumnName="BYPASS_LEASE_RULES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

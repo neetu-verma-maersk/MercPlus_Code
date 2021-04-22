@@ -1,0 +1,129 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataEquipmentTypeModel
+
+@{
+    if (Model.IsUpdate)
+    {
+        ViewBag.Title = "ViewEquipmentTypeEntryDetails";
+    }
+    else
+    {
+        ViewBag.Title = "CreateEquipmentType";
+    }
+    
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="../../Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+<script src="~/Areas/ManageMasterData/Script/EquipmentType.js"></script>
+
+<div>
+        <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_eqtype_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+    
+        <div width:"750px; ">
+            
+                    <h2 id="h2ID">Update or Add New Equipment Type</h2>
+            
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div>
+<br />
+@using (Html.BeginForm())
+{
+   
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+        @if (Model.IsUpdate)
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.EquipmentType)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.EquipmentType, Model.drpEquipmentTypeList,"Select Equipment", new { id = "drpEquipmentTypeList",style="width:400px", @onchange="drpEquipmentTypeListChange(this.value)" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.EquipmentType)</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.EquipmentType, new { id="txtEqType",style = "text-transform:uppercase;",maxlength=4})</td>
+                
+            </tr> 
+        }
+         <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.EqDesc, new { style="width:200px"})
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.EqDesc,new { id = "txtEqDesc",style = "text-transform:uppercase;" })
+
+            </td>
+           
+
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+         @if (Model.IsUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUser)
+                </td>
+                <td style="padding:0 0 0 0; ">
+                    <table>
+                            <tr>
+                                <td style="padding-left:2px;">
+                    @Html.TextBoxFor(model => model.ChangeFUser, new { id = "ChangeUser",@readonly="readonly" ,style="width:200px"})
+                                    </td>
+                                <td>
+                    @Html.TextBoxFor(model => model.ChangeLUser, new { id = "ChangeUser1",@readonly="readonly" ,style="width:200px"})
+                     </td>
+                            </tr>
+                        </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChTime)
+                </td>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChTime, new { id = "ChTime",@readonly="readonly" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Update" onclick="return ClientValidation()" formaction="/ManageMasterData/ManageMasterData/EditEquipmentTypeEntry" />
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+                    <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/EqTypeCreate" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;"></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/CreateEquipmentTypeEntry" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                   
+                    <input type="submit" value="Return to Update" formaction="/ManageMasterData/ManageMasterData/ViewReturnEquipmentTypeEntryDetails" />
+                    
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }
+        </table>
+}
+    
+ 

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ManageHSUDDataService.ManageHSUDDataService" CodeBehind="ManageHSUDDataService.svc.cs" %>

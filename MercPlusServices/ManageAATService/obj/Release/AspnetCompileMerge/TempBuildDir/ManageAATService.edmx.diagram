@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e11df2b16dc0453199d276f843f06b1c" Name="Diagram1">
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_LOCATION" Width="1.5" PointX="1.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_MODE" Width="1.5" PointX="3.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_SHOP" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_WO" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_WOAUDIT" Width="1.5" PointX="8.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_WODAMAGE" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_WOPART" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_WOREMARK" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_WOREPAIR" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.SEC_AUTHGROUP" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.SEC_AUTHGROUP_USER" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.SEC_USER" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__MESC1TS_S__LOC_C__22401542" ManuallyRouted="false" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__SEC_USER__LOC_CD__23F3538A" ManuallyRouted="false" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__MESC1TS_WO__MODE__32767D0B" ManuallyRouted="false" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__MESC1TS_W__SHOP___308E3499" ManuallyRouted="false" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__MESC1TS_W__WO_ID__20ACD28B" ManuallyRouted="false" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__SEC_AUTHG__AUTHG__1881A0DE" ManuallyRouted="false" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__SEC_AUTHG__AUTHG__1D4655FB" ManuallyRouted="false" />
+        <AssociationConnector Association="ManageAATServiceModel.FK__SEC_AUTHG__USER___1E3A7A34" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ManageAATServiceModel.MESC1TS_APPROVER_DETAILS" Width="1.5" PointX="0.17705885887940362" PointY="9.3297204418711921" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

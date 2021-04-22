@@ -1,0 +1,119 @@
+﻿@model MercPlusClient.Areas.ManageUser.Models.ManageUserModel
+@{
+    ViewBag.Title = "SecNewUser";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageUser/Script/SecNewUser.js"></script>
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/sec_newuser_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+<br />
+<div>
+    <div style="margin-top: 10px; text-align: right; width: 750px;">
+        &nbsp;
+    </div>
+    <div style="margin-top: 20px; border-bottom: 2px solid #7A7989; width: 750px;">
+        <table style="width: 750px; vertical-align: text-top; table-layout: fixed;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+                {
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Add New User", "SecNewUser", "ManageUser")</td>
+                }
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Edit User", "SecUserEdit", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Set Permission", "SecSetUserPermissions", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 225px;">&nbsp; </td>
+                </tr>
+        </table>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div>
+        <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;">
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+        </div>
+        @if (Model!=null && Model.isConfirmUpdate)
+        {
+            <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0" id="tblIsConfirmUpdateButton">
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 750px;">
+                        <input type="button" value="Back"  style="width: 100px"  onclick="location.href='@Url.Action("SecNewUser", "ManageUser")    '"  />
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Login) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Login, new { maxlength = 32 })</td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.Login)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.FirstName) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.FirstName, new { maxlength = 15 }) </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.LastName) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.LastName, new { maxlength = 36 })  </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.LastName)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Company) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Company, new { maxlength = 36 }) </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.Company)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Loccd) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.Loccd, new { maxlength = 8 }) </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.Loccd)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ApproveAmount) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.ApproveAmount, new { id = "ApproveAmount", maxlength = 10, style = "width:150px;", onkeydown = "return ValidateNumber(event);" }) </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.ApproveAmount)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.ActiveStatus) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">
+                        @Html.DropDownListFor(model => model.ActiveStatus, new List<SelectListItem>{
+                    new SelectListItem() {Text = "N", Value="N"},
+                    new SelectListItem() {Text = "Y", Value="Y"}
+                    })
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.ActiveStatus)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.EmailId) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">@Html.TextBoxFor(model => model.EmailId, new { id = "EmailId", maxlength = 50}) </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.EmailId)</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">@Html.LabelFor(model => model.Expired) <font color="red">*</font></td>
+                    <td style="text-align: left; vertical-align: top; width: 250px;">
+                        @Html.DropDownListFor(model => model.Expired, new List<SelectListItem>{
+                    new SelectListItem() {Text = "N", Value="N"},
+                    new SelectListItem() {Text = "Y", Value="Y"}
+                    })
+                    </td>
+                    <td style="text-align: left; vertical-align: top; width: 300px;">@Html.ValidationMessageFor(model => model.Expired)</td>
+                </tr>
+            </table>
+       
+            <table style="width: 750px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td style="text-align: right; vertical-align: top; width: 200px;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top; width: 120px;">
+                        <input type="submit" id="AddNew" name="Command" style="width: 100px" onclick=" return ClientValidation();" value="Add New" /></td>
+                    <td style="text-align: left; vertical-align: top; width: 240px;">
+                        <input type="button" value="Clear"  style="width: 100px"  onclick="location.href='@Url.Action("SecNewUser", "ManageUser")    '"  /></td>
+                    <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+                </tr>
+            </table>
+        }
+    </div>
+}

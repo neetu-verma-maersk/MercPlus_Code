@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="MESC2DSEntities">
+    <EntitySetMapping Name="MESC1TS_EDI_ERROR">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_ERROR">
+        <MappingFragment StoreEntitySet="MESC1TS_EDI_ERROR">
+          <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="LINE_DETAIL" ColumnName="LINE_DETAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EDI_LINEITEM">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_LINEITEM">
+        <MappingFragment StoreEntitySet="MESC1TS_EDI_LINEITEM">
+          <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="LINE_DETAIL" ColumnName="LINE_DETAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_EDI_TRANSMISSION">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EDI_TRANSMISSION">
+        <MappingFragment StoreEntitySet="MESC1TS_EDI_TRANSMISSION">
+          <ScalarProperty Name="EDI_ID" ColumnName="EDI_ID" />
+          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+          <ScalarProperty Name="WO_QTY" ColumnName="WO_QTY" />
+          <ScalarProperty Name="WO_PASS_QTY" ColumnName="WO_PASS_QTY" />
+          <ScalarProperty Name="WO_FAIL_QTY" ColumnName="WO_FAIL_QTY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

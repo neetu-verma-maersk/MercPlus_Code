@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="MESC2DSEntities">
+    <EntitySetMapping Name="MESC1TS_XML_LOG">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_XML_LOG">
+        <MappingFragment StoreEntitySet="MESC1TS_XML_LOG">
+          <ScalarProperty Name="XML_ID" ColumnName="XML_ID" />
+          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+          <ScalarProperty Name="XML_TEXT" ColumnName="XML_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

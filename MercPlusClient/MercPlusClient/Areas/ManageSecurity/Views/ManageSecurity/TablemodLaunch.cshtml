@@ -1,0 +1,28 @@
+﻿@model MercPlusClient.Areas.ManageSecurity.Models.ManageSecurityModel
+
+@{
+    ViewBag.Title = "TablemodLaunch";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<div>
+    <div>
+        <div style="margin-top:10px; text-align:right; width:750px; float:right ">
+           @* @Html.ActionLink("Tables and Dependencies Help File", "NewUser", "ManageUser")*@
+            <a href="~/HelpFiles/help/merc/updateMERC/Update1.htm" target="_blank">Tables and Dependencies Help File</a>
+        </div>
+        <div style="margin-top:20px;border-bottom:2px solid #7A7989;  width:750px; ">
+            <table style="width: 750px; vertical-align:text-top; table-layout:fixed;" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="text-align: left; vertical-align: top; width: 750px; font-weight:bold; font-size:16px; ">System Data </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+
+            <p>@(TempData["UserId"] != null ? TempData["UserId"] : " ") </p>
+        </div>
+    </div>
+   @Html.Raw(TempData["TableModeData"].ToString())
+   
+</div>

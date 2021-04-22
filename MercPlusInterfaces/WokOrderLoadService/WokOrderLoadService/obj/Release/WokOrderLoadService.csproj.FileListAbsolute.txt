@@ -1,0 +1,39 @@
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\WokOrderLoadService.exe.config
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\WokOrderLoadService.exe
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\WokOrderLoadService.pdb
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\amqmdnet.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\EntityFramework.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\EntityFramework.xml
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.csprojResolveAssemblyReference.cache
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.ProjectInstaller.resources
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.csproj.GenerateResource.Cache
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.exe
+C:\MercPlus\code check\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\WokOrderLoadService.exe.config
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\WokOrderLoadService.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\WokOrderLoadService.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\amqmdnet.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\EntityFramework.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\EntityFramework.xml
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.ProjectInstaller.resources
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.csproj.GenerateResource.Cache
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.exe
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Desktop\Interfaces\WokOrderLoadService\WokOrderLoadService\bin\Release\WokOrderLoadService.exe.config
+C:\Users\IBM_ADMIN\Desktop\Interfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.exe
+C:\Users\IBM_ADMIN\Desktop\Interfaces\WokOrderLoadService\WokOrderLoadService\obj\Release\WokOrderLoadService.pdb

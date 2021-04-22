@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MercPurgeTool.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="fact_date" Type="System.String" Scope="User">
+      <Value Profile="(Default)">y</Value>
+    </Setting>
+    <Setting Name="fact_token" Type="System.String" Scope="User">
+      <Value Profile="(Default)">n</Value>
+    </Setting>
+    <Setting Name="edi_date" Type="System.String" Scope="User">
+      <Value Profile="(Default)">y</Value>
+    </Setting>
+    <Setting Name="edi_token" Type="System.String" Scope="User">
+      <Value Profile="(Default)">n</Value>
+    </Setting>
+    <Setting Name="fact_path" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Temp\MercFactUploadXMLStore</Value>
+    </Setting>
+    <Setting Name="edi_path" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\EDILogFiles</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

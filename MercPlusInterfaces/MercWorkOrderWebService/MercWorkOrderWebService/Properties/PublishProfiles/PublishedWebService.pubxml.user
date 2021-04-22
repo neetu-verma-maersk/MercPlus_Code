@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>02/12/2016 13:03:40</publishTime>
+    </File>
+    <File Include="bin/MercPlusLibrary.dll">
+      <publishTime>03/07/2016 17:46:48</publishTime>
+    </File>
+    <File Include="bin/MercWorkOrderWebService.dll">
+      <publishTime>04/18/2016 17:07:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll">
+      <publishTime>02/12/2016 13:03:32</publishTime>
+    </File>
+    <File Include="MercWorkOrderWebService.svc">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="MercWorkOrderWS.Context.tt">
+      <publishTime>02/12/2016 13:04:38</publishTime>
+    </File>
+    <File Include="MercWorkOrderWS.edmx.diagram">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="MercWorkOrderWS.tt">
+      <publishTime>02/12/2016 13:04:40</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/12/2016 13:04:40</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.Customer.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.Damage.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.EqsType.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.EqType.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.Equipment.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.ErrMessage.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.RemarkEntry.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.RepairCode.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.RepairLoc.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.RepairsView.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.Shop.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.Tpi.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Properties/DataSources/MercPlusLibrary.WorkOrderDetail.datasource">
+      <publishTime>02/12/2016 13:04:14</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/ManageWorkOrder1.wsdl">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/ManageWorkOrderService1.disco">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/MercWorkOrderWebService.ManageWorkOrderServiceReference.CallSaveMethodResponse.datasource">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/MercWorkOrderWebService.ManageWorkOrderServiceReference.CallValidateMethodResponse.datasource">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/MercWorkOrderWebService.ManageWorkOrderServiceReference.GetHoursResponse.datasource">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/MercWorkOrderWebService.ManageWorkOrderServiceReference.ReviewResponse.datasource">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/MercWorkOrderWebService.ManageWorkOrderServiceReference.SaveAsDraftResponse.datasource">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Service References/ManageWorkOrderServiceReference/MercWorkOrderWebService.ManageWorkOrderServiceReference.SubmitWorkOrderResponse.datasource">
+      <publishTime>03/09/2016 09:12:08</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/18/2016 17:07:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

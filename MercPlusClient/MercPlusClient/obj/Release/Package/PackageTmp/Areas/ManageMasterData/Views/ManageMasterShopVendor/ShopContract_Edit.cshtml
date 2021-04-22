@@ -1,0 +1,242 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterShopVndorModel
+
+@{
+   
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+@*<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>*@
+<script src="~/Areas/ManageMasterData/Script/ShopContract.js"></script>
+
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_shop_contract_help.htm" target="_blank">Tables and Dependencies Help File</a>
+        </div>
+@using (Html.BeginForm())
+{
+    
+   <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; vertical-align:text-top; ">
+        
+     @* <tr>
+            <td style="vertical-align:top; text-align:right; margin-right:0px; font-size:xx-small; font-size:7px; color:blue;" >
+                @Html.ActionLink("Table and Dependencies Help File", "SecNewUser", "ManageUser")
+            </td>
+        </tr>*@
+         <tr>
+
+        <td style="text-align:left; margin-left:500px;">
+            @if (Model.IsUpdate == false)
+            {
+                <h3>Shop Contract Add</h3>
+            }
+            else
+            {
+                <h3>Shop Contract Update</h3>
+            }
+            
+        </td>
+        
+           </tr>
+        <tr>
+         <td style="text-align:left; margin-left:-500px;">
+           <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                   @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+            </div>
+        </td>
+        
+           </tr>
+    </table>
+    <table border="0" cellpadding="5" cellspacing="0" id="tblAddUpdateShopContract"
+        style="width: 700px; vertical-align: text-top;">
+       
+            <tr>
+                
+                <td class="style3" style="text-align: left; vertical-align: top;" colspan="3">
+                    @Html.LabelFor(model => model.ShopCode_ShopContract)<span style="color:Red;">*</span>
+                    <br />
+                    @if(Model.IsUpdate==true)
+                    {
+                        @Html.DropDownListFor(model => model.ShopCode_ShopContract, Model.DDLShop_ShopContract, new { id = "drpShop", @disabled=true, style="width:150px;" })
+                    }
+                    else
+                    {
+                        @Html.DropDownListFor(model => model.ShopCode_ShopContract, Model.DDLShop_ShopContract, new { id = "drpShop", style="width:150px;" })
+                    }
+                   
+                </td>
+               
+            </tr>
+       
+            <tr>
+                
+                <td class="style3" style="text-align: left; vertical-align: top;" colspan="3">
+                    @Html.LabelFor(model => model.ManualCode_ShopContract)<span style="color:Red;">*</span>
+                    <br />
+                    @if(Model.IsUpdate==true)
+                    {
+                        @Html.DropDownListFor(model => model.ManualCode_ShopContract, Model.DDLManual_ShopContract, new { id = "drpManual", @disabled=true, style="width:300px;" })
+                    }
+                    else
+                    {
+                        @Html.DropDownListFor(model => model.ManualCode_ShopContract, Model.DDLManual_ShopContract, new { id = "drpManual" , style="width:300px;"})
+                    }
+                    
+                </td>
+               
+            </tr>
+
+         <tr>
+                
+                <td class="style3" style="text-align: left; vertical-align: top;" colspan="3">
+                    @Html.LabelFor(model => model.Mode_ShopContract)<span style="color:Red;">*</span>
+                    <br />
+                     @if(Model.IsUpdate==true)
+                     {
+                         @Html.DropDownListFor(model => model.Mode_ShopContract, Model.DDLMode_ShopContract, new { id = "drpMode" , @disabled=true, style="width:450px;"})
+                     }
+                    else
+                    {
+                          @Html.DropDownListFor(model => model.Mode_ShopContract, Model.DDLMode_ShopContract, new { id = "drpMode" , style="width:450px" })
+                    }
+                    
+                </td>
+               
+            </tr>
+       
+            <tr>
+                    <td class="style3" style="text-align: left; vertical-align: top;" nowrap="nowrap">
+                        @Html.LabelFor(model => model.RepairCode_ShopContract)<span style="color:Red;">*</span>
+                    <br />
+                         @if(Model.IsUpdate==true)
+                         {
+                            @Html.TextBoxFor(model => model.RepairCode_ShopContract, new { id = "txtRepairCode", @disabled=true })
+                         }
+                        else
+                        {
+                             @Html.TextBoxFor(model => model.RepairCode_ShopContract, new { id = "txtRepairCode" })
+                         }
+                        
+                    </td>
+                    
+            
+                    <td class="style3" style="text-align: left; vertical-align: top;" nowrap="nowrap">
+                        @Html.LabelFor(model => model.Amount_ShopContract) <span style="color:Red;">*</span>
+                    <br />
+                        @Html.TextBoxFor(model => model.Amount_ShopContract, new { id = "txtAmount" })
+                        
+                    </td>
+                 <td class="style3" style="text-align: left; vertical-align: top;" nowrap="nowrap">
+                        @Html.LabelFor(model => model.Currency_ShopContract)
+                    <br />
+                     @if(Model.IsUpdate==true)
+                     {
+                         @Html.TextBoxFor(model => model.Currency_ShopContract, new { id = "txtCurrencyAmount", @disabled=true })
+                     }
+                     else
+                     {
+                         @Html.TextBoxFor(model => model.Currency_ShopContract, new { id = "txtCurrencyAmount" })
+                     }
+                    </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        
+        <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;" nowrap="nowrap">
+                    @Html.LabelFor(model => model.EffectiveDate_ShopContract)<span style="color:Red;">*</span>
+               <br />
+                    @if(Model.IsUpdate==true)
+                    {
+                        if (Model.EffectiveDate_ShopContract.ToShortDateString() != "1/1/0001")
+                        {
+                             @Html.TextBox("txtEffecDate",Model.EffectiveDate_ShopContract.ToString("yyyy-MM-dd"),new {style="width:140px;", @class="CLSDTFROM", id="txtEffectiveDate", @disabled=true})
+                         
+                        }
+                        else
+                        {
+                             @Html.TextBox("txtEffecDate","",new {style="width:140px;", @class="CLSDTFROM", id="txtEffecDate", @disabled=true})
+                     
+                        }
+                    }
+                    else
+                    {
+                        if (Model.EffectiveDate_ShopContract.ToShortDateString() != "1/1/0001")
+                        {
+                             @Html.TextBox("txtEffecDate",Model.EffectiveDate_ShopContract.ToString("yyyy-MM-dd"),new {style="width:140px;", @class="CLSDTFROM", id="txtEffectiveDate"})
+                         
+                        }
+                        else
+                        {
+                             @Html.TextBox("txtEffecDate","",new {style="width:140px;", @class="CLSDTFROM", id="txtEffecDate"})
+                     
+                        }
+                    }
+                    
+                </td>
+               <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ExpireDate_ShopContract)
+               <br />
+                    @if (Model.ExpireDate_ShopContract.ToShortDateString() != "1/1/0001")
+                    {
+                         @Html.TextBox("txtExpDate",Model.ExpireDate_ShopContract.ToString("yyyy-MM-dd"),new {style="width:140px;", @class="CLSDTTO", id="txtExpDate"}) 
+                         
+                    }
+                    else
+                    {
+                         @Html.TextBox("txtExpDate","",new {style="width:140px;", @class="CLSDTTO"})
+                     
+                    }
+                   
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;"><br /></td>
+        </tr>
+        @if(Model.IsUpdate==true)
+        {
+         <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;" nowrap="nowrap">
+                    @Html.LabelFor(model => model.ChangeUser)
+               <br />
+                    @Html.TextBox("txtChangeUsere",Model.ChangeUser,new {style="width:140px;", id="txtChangeUsere", @disabled=true})
+                               
+                    
+                </td>
+               <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeTime)
+               <br />
+                    @if (Model.ChangeTime.ToShortDateString() != "1/1/0001")
+                    {
+                         @Html.TextBox("txtChangeTime",Model.ChangeTime.ToString("yyyy-MM-dd hh:mm:ss"),new {style="width:140px;", id="txtChangeTime", @disabled=true}) 
+                         
+                    }
+                    else
+                    {
+                         @Html.TextBox("txtChangeTime","",new {style="width:140px;", id="txtChangeTime", @disabled=true})
+                     
+                    }
+                    
+                         
+               </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;"><br /> @Html.TextBoxFor(model => model.ShopContID, new { id = "txtShopContractID", style="display:none;" })</td>
+           </tr> 
+          }
+       <tr>
+                
+                    @if (Model.IsUpdate == true)
+                    {
+                       <td><input type="button" value="Update" name="action" id="btnUpdateContract" /></td>
+                        <td><input type="button" id="btnAuditTrail" value="Audit Trail" name="AuditTrail" onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'Shop Contract Audit Trail', 'ShopContract', document.getElementById('drpShop').value + document.getElementById('txtRepairCode').value, '', '', 800, 450, scroll);" style="display:block;"/></td>
+                       
+                    }
+                    else
+                    {
+                        <td>
+                        <input type="button" value="Submit" name="action" id="btnContractSubmit" />
+                        </td>
+                        <td></td>
+                        <td></td>
+                    }
+              
+            </tr> 
+        
+    </table>
+    
+}
+

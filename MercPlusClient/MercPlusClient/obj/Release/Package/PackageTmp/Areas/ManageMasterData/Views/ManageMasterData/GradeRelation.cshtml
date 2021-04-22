@@ -1,0 +1,195 @@
+﻿@using MercPlusClient.Areas.ManageMasterData.Models
+@using System;
+@model IEnumerable<GradeRelationModel>
+
+@{
+    ViewBag.Title = "GradeRelation";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .Grid {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+        .Grid th {
+            background-color: #F7F7F7;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            width: 150px;
+            border: 1px solid #ccc;
+        }
+
+        .Grid, .Grid table td {
+            border: 0px solid #ccc;
+        }
+
+            .Grid th a, .Grid th a:visited, .Grid td {
+                color: #333;
+            }
+
+                .Grid td span a {
+                    margin: 10px;
+                }
+
+    .label {
+        color: black;
+    }
+</style>
+<script src="~/Areas/ManageMasterData/Script/GradeRelation.js"></script>
+<br />
+<div id="gridContent" style="padding:20px;">
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td style="vertical-align:top; text-align:left; margin-top:10px; margin-left:30px;">
+                    <h3>Grade Relation:</h3>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td style="width:30%;"><input type="button" id="btnAddGradeRelationRow" class="AddGradeRelationRow" value="Add Grade Relation"></td>
+                <td style="width:70%;"><label id="lblMessage"></label></td>
+            </tr>
+        </table>        
+        
+    </div>
+    <table id="WebGrid" class="Grid" style="width: 900px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th scope="col">
+                    Grade Code
+                </th>
+                <th scope="col">
+                    Grade Description
+                </th>
+                <th scope="col">
+                    Upgraded
+                </th>
+                <th scope="col">
+                    Downgraded
+                </th>
+                <th scope="col" class="actioncolumn">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gradeRelation in Model)
+            {
+                <tr id="@("row_" + @gradeRelation.GradeRelationId)">
+                    <td><span class="label" id="@("spanGradeCode_" + @gradeRelation.GradeRelationId)">@gradeRelation.GradeCode</span></td>
+                    <td><span class="label">@gradeRelation.GradeDescription</span></td>
+                    <td>
+                        <span id="@("spanUpgradedGrades_" + @gradeRelation.GradeRelationId)" class="label">
+                            @if (gradeRelation.UpgradedGrades != null && gradeRelation.UpgradedGrades.Count() > 0)
+                            {
+                                for (int i = 0; i < gradeRelation.UpgradedGrades.Count(); i++)
+                                {
+                                    if (i > 0)
+                                    {
+                                        string commaValue = ",";
+                                        @commaValue;
+                                    }
+                                    @gradeRelation.UpgradedGrades[i];
+                                }
+                            }
+                        </span>
+                        <select id="@("dropdownUpgradedGrades_" + @gradeRelation.GradeRelationId)" class="dropdown" style="display:none" multiple>
+                            @if (ViewBag.GradeNames != null && ViewBag.GradeNames.Count > 0)
+                            {
+                                for (int i = 0; i < ViewBag.GradeNames.Count; i++)
+                                {
+                                    <option value="@ViewBag.GradeNames[i]">@ViewBag.GradeNames[i]</option>
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <span id="@("spanDowngradedGrades_" + @gradeRelation.GradeRelationId)" class="label">
+                            @if (gradeRelation.DowngradedGrades != null && gradeRelation.DowngradedGrades.Count() > 0)
+                            {
+                                for (int i = 0; i < gradeRelation.DowngradedGrades.Count(); i++)
+                                {
+                                    if (i > 0)
+                                    {
+                                        string commaValue = ",";
+                                        @commaValue;
+                                    }
+                                    @gradeRelation.DowngradedGrades[i];
+                                }
+                            }
+                        </span>
+                        <select id="@("dropdownDowngradedGrades_" + @gradeRelation.GradeRelationId)" + @gradeRelation.GradeRelationId class="dropdown" style="display:none" multiple>
+                            @if (ViewBag.GradeNames != null && ViewBag.GradeNames.Count > 0)
+                            {
+                                for (int i = 0; i < ViewBag.GradeNames.Count; i++)
+                                {
+                                    <option value="@ViewBag.GradeNames[i]">@ViewBag.GradeNames[i]</option>
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td id="@gradeRelation.GradeRelationId" class="actioncolumn">
+                        <span class="link">
+                            <a id="@("btnEdit_" + @gradeRelation.GradeRelationId)" class="Edit" style="margin:auto" href="javascript:;">Edit</a>
+                            <a id="@("btnDelete_" + @gradeRelation.GradeRelationId)" class="Delete" href="javascript:;">Delete</a>
+                            <a id="@("btnUpdate_" + @gradeRelation.GradeRelationId)" class="Update" href="javascript:;" style="display:none">Update</a>
+                            <a id="@("btnCancel_" + @gradeRelation.GradeRelationId)" class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                        </span>
+                    </td>
+                </tr>
+            }
+            <tr id="rowAdd" style="display:none">
+                <td>
+                    <span class="label">
+                        <input id="newGradeCode" name="newGradeCode" type="text" value="" />
+                    </span>
+                </td>
+                <td>
+                    <span class="label">
+                        <input id="newGradeDescription" name="newGradeDescription" type="text" value="" />
+                    </span>
+                </td>
+                <td>
+                    <select id="dropdownDowngradedGrades" class="dropdown" multiple>
+                        @if (ViewBag.GradeNames != null && ViewBag.GradeNames.Count > 0)
+                        {
+                            for (int i = 0; i < ViewBag.GradeNames.Count; i++)
+                            {
+                                <option value="@ViewBag.GradeNames[i]">@ViewBag.GradeNames[i]</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td>
+                    <select id="dropdownUpgradedGrades" class="dropdown" multiple>
+                        @if (ViewBag.GradeNames != null && ViewBag.GradeNames.Count > 0)
+                        {
+                            for (int i = 0; i < ViewBag.GradeNames.Count; i++)
+                            {
+                                <option value="@ViewBag.GradeNames[i]">@ViewBag.GradeNames[i]</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td class="actioncolumn">
+                    <span class="link">
+                        <a id="btnAddGradeRelation" style="margin:auto" href="javascript:;">Add</a>
+                        <a id="btnCancelGradeRelation" href="javascript:;">Cancel</a>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>        
+</div>

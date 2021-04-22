@@ -1,0 +1,142 @@
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\amqmdnet.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.pdb
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csprojResolveAssemblyReference.cache
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+C:\MercPlus\code check\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.pdb
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csprojResolveAssemblyReference.cache
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+C:\MercPlus\code check\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\amqmdnet.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercPlusLibrary.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercPlusLibrary.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.pdb
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+C:\MercPlus\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.dll
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.dll
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercPlusLibrary.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.pdb
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csprojResolveAssemblyReference.cache
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+E:\MercFinal\2012\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache
+C:\MercFactUploadXMLStore\MercFACTUpload\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csprojResolveAssemblyReference.cache
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.dll
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+C:\MercFactUploadXMLStore\MercFACTUpload_change\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csprojResolveAssemblyReference.cache
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csprojResolveAssemblyReference.cache
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+D:\Kasturee CODE_NEW\Labor_rates_Present_loc_Audit_log\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe.config
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.exe
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.pdb
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.exe
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\MercFACTUpload.pdb
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.dll
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\bin\Release\EntityFramework.xml
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.ProjectInstaller.resources
+D:\Kasturee CODE_NEW\LaborRates_PresentLoc_AuditLogRKEM_PartDesc_Manhour\MercWorkingCode\MercPlusInterfaces\MercFACTUpload\MercFACTUpload\obj\Release\MercFACTUpload.csproj.GenerateResource.Cache

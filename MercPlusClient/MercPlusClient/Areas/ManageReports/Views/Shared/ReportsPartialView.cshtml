@@ -1,0 +1,307 @@
+﻿@model MercPlusClient.Areas.ManageReports.Models.ManageReportsModel
+<script src="~/Areas/ManageReports/Script/reports.js"></script>
+<script src="~/Scripts/mainjs.js"></script>
+
+@using (Html.BeginForm("ManageReports", "ManageReports", new { area = "ManageReports" }, FormMethod.Post))
+{
+    if (Model.ReportsID == 1 || Model.ReportsID == 2 || Model.ReportsID == 3 || Model.ReportsID == 4)
+    {
+    <div id="MERCA01">
+
+
+        <h2 style="font-size: 110%" style="margin-left: 10px">Report Filter Criteria</h2>
+
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.DateFrom):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DateFrom, new { @class = "CLSDTFROM", @readonly = "true" }) (yyyy-mm-dd)</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.DateTo):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.DateTo, new { @class = "CLSDTTO", @readonly = "true" }) (yyyy-mm-dd)</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.LabelFor(model => model.Customer) (Optional):</td>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.DropDownListFor(model => model.Customer, Model.drpCustomer, "***Any***", new { id = "drpCustomer" })</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">&nbsp;</td>
+            </tr>
+            @if (Model.isEMRApproverCountry || Model.isEMRApproverShop || Model.isAnyCPH || Model.isAdmin || Model.isEMRSpecialistCountry || Model.isEMRSpecialistShop)
+            {
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Country) (Optional):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Country, Model.drpCountry, "***Any***", new { id = "drpCountry" })</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            }
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Manual) (Optional):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Manual, Model.drpManual, "***Any***", new { id = "drpManual" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Shop):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Shop, Model.drpShop, new { id = "drpShop" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Mode) (Optional):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Mode, Model.drpMode, "***Any***", new { id = "drpMode" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            @if (Model.ReportsID == 4)
+            {
+                if (Model.isEMRSpecialistCountry || Model.isEMRSpecialistShop || Model.isAnyCPH || Model.isEMRApproverCountry || Model.isEMRApproverShop || Model.isAdmin || Model.isShop)
+                {
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.STSCode):</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.STSCode, Model.drpSTSCode, "***Any***", new { id = "drpSTSCode" }) </td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+            }
+            }
+
+
+        </table>
+
+    </div>
+    }
+
+
+
+    else if (Model.ReportsID == 7 || Model.ReportsID == 8)
+    {
+    <div id="MERCD03">
+
+        <h2 style="font-size: 110%" style="margin-left: 10px">Report Filter Criteria</h2>
+
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.LabelFor(model => model.Customer) (Optional):</td>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.DropDownListFor(model => model.Customer, Model.drpCustomer, "***Any***", new { id = "drpCustomer" })</td>
+                <td style="text-align: left; vertical-align: top;" class="style2"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Country) (Optional):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Country, Model.drpCountry, "***Any***", new { id = "drpCountry" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Manual):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Manual, Model.drpManual, "***Any***", new { id = "drpManual" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            @if (Model.ReportsID == 7)
+            {
+                <tr>
+                    <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Shop):</td>
+                    <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Shop, Model.drpShop, new { id = "drpShop" }) </td>
+                    <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+                </tr>
+            }
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Mode) (Optional):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Mode, Model.drpMode, "***Any***", new { id = "drpMode" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+
+        </table>
+
+    </div>
+    }
+
+    else if (Model.ReportsID == 9)
+    {
+        
+    <div id="MERCE01">
+
+        <h2 style="font-size: 110%" style="margin-left: 10px">Report Filter Criteria</h2>
+
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.LabelFor(model => model.Days):</td>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.DropDownListFor(model => model.Days, Model.drpDays, "***Any***", new { id = "drpDays" })</td>
+                <td style="text-align: left; vertical-align: top;" class="style2"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Select:")</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.RadioButton("radMERCE01", "COCL", true)@Html.Label("COCL")
+                    @Html.RadioButton("radMERCE01", "Country")@Html.Label("Country")
+                    @Html.RadioButton("radMERCE01", "Shop")@Html.Label("Shop")</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <div id="MERCE01COCL">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("COCL:")</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Area, Model.drpArea, "***Any***", new { id = "drpCOCL" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+   
+    <div id="MERCE01Country" style="display: none;">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Country):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Country, Model.drpCountry, "***Any***", new { id = "drpCountry" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+            
+    <div id="MERCE01Shop" style="display: none;">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Shop):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Shop, Model.drpShop, new { id = "drpShop" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Manual):</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Manual, Model.drpManual, "***Any***", new { id = "drpManual" }) </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Mode) (Optional):</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Mode, Model.drpMode, "***Any***", new { id = "drpMode" }) </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+    </table>
+            
+        
+    }
+
+    else if (Model.ReportsID == 10)
+    {
+        
+    <div id="MERCE02">
+
+        <h2 style="font-size: 110%" style="margin-left: 10px">Report Filter Criteria</h2>
+
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.LabelFor(model => model.Days):</td>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.DropDownListFor(model => model.Days, Model.drpDays, "***Any***", new { id = "drpDays" })</td>
+                <td style="text-align: left; vertical-align: top;" class="style2"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.Label("Select:")</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">
+                    @Html.RadioButton("radMERCE02", "Country")@Html.Label("Country")
+                    @Html.RadioButton("radMERCE02", "Shop")@Html.Label("Shop")</td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+    
+     
+    <div id="MERCE02Country">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Country):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Country, Model.drpCountry, "***Any***", new { id = "drpCountry" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+            
+    <div id="MERCE02Shop" style="display: none;">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Shop):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Shop, Model.drpShop, new { id = "drpShop" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Manual):</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Manual, Model.drpManual, "***Any***", new { id = "drpManual" }) </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Mode) (Optional):</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Mode, Model.drpMode, "***Any***", new { id = "drpMode" }) </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+    </table>
+                  
+    }
+
+
+    else if (Model.ReportsID == 11)
+    {
+        
+    <div id="MERCE03">
+
+        <h2 style="font-size: 110%" style="margin-left: 10px">Report Filter Criteria</h2>
+
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.LabelFor(model => model.Days):</td>
+                <td style="text-align: left; vertical-align: top;" class="style1">@Html.DropDownListFor(model => model.Days, Model.drpDays, "***Any***", new { id = "drpDays" })</td>
+                <td style="text-align: left; vertical-align: top;" class="style2"></td>
+            </tr
+        </table>
+
+    </div>
+               
+    <div id="MERCE03Shop">
+        <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Shop):</td>
+                <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Shop, Model.drpShop, new { id = "drpShop" }) </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Manual)</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Manual, Model.drpManual, "***Any***", new { id = "drpManual" }) </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;" class="style3">@Html.LabelFor(model => model.Mode):</td>
+            <td style="text-align: left; vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Mode, Model.drpMode, "***Any***", new { id = "drpMode" }) </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+    </table>
+                  
+    }
+
+
+    <table style="width: 700px; vertical-align: text-top;" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+            
+            <td>
+                <input type="submit" value="Submit" onclick="return SubmitReports();"/>
+            </td>
+            <td>@Html.Hidden("ReportsID", Model.ReportsID)</td>
+        </tr>
+    </table>
+}

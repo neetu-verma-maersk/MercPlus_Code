@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="441b4cdd528c45158353d217c035d997" Name="Diagram1">
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_AREA" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_COUNTRY" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_LOCATION" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_REFAUDIT" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_SHOP" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__AREA___7E02B4CC" ManuallyRouted="false" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_L__COUNT__11158940" ManuallyRouted="false" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__LOC_C__22401542" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

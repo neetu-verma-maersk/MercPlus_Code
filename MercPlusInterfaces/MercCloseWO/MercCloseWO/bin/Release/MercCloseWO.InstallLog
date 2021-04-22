@@ -1,0 +1,46 @@
+﻿Installing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe assembly.
+Committing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe assembly.
+Remove InstallState file because there are no installers.
+Installing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog
+Committing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog
+Installing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog
+Committing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog
+Installing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog
+Installing service MercCloseWOService...
+Service MercCloseWOService has been successfully installed.
+Creating EventLog source MercCloseWOService in log Application...
+Committing assembly 'E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.exe
+   logfile = E:\MercWorkingCode\MercPlusInterfaces\MercCloseWO\MercCloseWO\bin\Release\MercCloseWO.InstallLog

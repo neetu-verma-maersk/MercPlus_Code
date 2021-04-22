@@ -1,0 +1,150 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataCustomerModel
+
+@{
+    if (Model.IsUpdate)
+    {
+        ViewBag.Title = "ViewCustomerDetails";
+    }
+    else
+    {
+        ViewBag.Title = "CreateCustomer";
+    }
+    //ViewBag.Title = "ViewCustomerDetails";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="~/Areas/ManageMasterData/Script/Customer.js"></script>
+
+
+
+
+
+<div>
+        <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_customer_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+     
+        <div width:"750px ">
+           
+                    <h2>Update or Add New Customer</h2>
+              
+        </div>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+<br />
+@using (Html.BeginForm())
+{
+  
+    <table border="0" cellpadding="5" cellspacing="0"
+        style="width: 700px; vertical-align: text-top;">
+        @if (Model.IsUpdate)
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.CustomerCode)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.CustomerCode, Model.drpCustomerList,"Select Customer ", new { id = "drpCustomerList",style="width:400px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top;">@Html.LabelFor(model => model.CustomerCode)</td>
+                <td style="text-align: left; vertical-align: top;">@Html.TextBoxFor(model => model.CustomerCode, new { id="txtCustomer",style = "text-transform:uppercase;",maxlength="4"})</td>
+                
+            </tr> 
+        }
+
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.CustomerName)
+            </td>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.TextBoxFor(model => model.CustomerName, new { id = "CustomerName",style="text-transform:uppercase;width:400px",maxlength="30"})
+
+            </td>
+           
+
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.ManualCode)
+            </td>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.ManualCode,Model.drpManualList, "Select Manual ",new { id = "drpManualList",style="width:400px" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: left; vertical-align: top; width:200px">
+                @Html.LabelFor(model => model.CustomerActiveSw,new{style="width:200px"})
+            </td>
+            <td style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.CustomerActiveSw, Model.drpCustActvSwtchList,"Select Switch " ,new { id = "drpCustActvSwtchList",style="width:400px" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+        </tr>
+
+        @if (Model.IsUpdate)
+        {
+            <tr>
+                <td class="style3" style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.changeUserCust,new{style="width:200px"})
+                </td>
+                <td style="padding:0 0 0 0; ">
+                    <table>
+                            <tr>
+                                <td style="padding-left:2px;">
+                                    @Html.TextBoxFor(model => model.changeFUserCust, new { id = "txtChangeUserName",@readonly="readonly",style="width:200px" })
+                                </td>
+                                <td>
+                                   @Html.TextBoxFor(model => model.changeLUserCust, new { id = "txtChangeUserName1",@readonly="readonly",style="width:195px"  })
+                                </td>
+                            </tr>
+                        </table>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.changeTimeCust)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.changeTimeCust, new { id = "changeTimeUser",@readonly="readonly",style="width:402px" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Update" onclick="return ClientValidation()" formaction="/ManageMasterData/ManageMasterData/UpdateCustomer" />
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 240px;">
+                    <input type="submit" value="Add New" formaction="/ManageMasterData/ManageMasterData/CustomerCreate" />
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 190px;"></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                    <input type="submit" value="Add Record" onclick="return ClientValidationAdd()" formaction="/ManageMasterData/ManageMasterData/CreateCustomer" /></td>
+                <td style="text-align: left; vertical-align: top; width: 120px;">
+                    <input type="submit" value="Return to Update" formaction="/ManageMasterData/ManageMasterData/ViewReturCustomerDetails" />
+                    
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr> 
+        }
+    </table>
+}

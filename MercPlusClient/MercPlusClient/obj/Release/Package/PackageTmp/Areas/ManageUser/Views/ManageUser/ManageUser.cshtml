@@ -1,0 +1,33 @@
+﻿@model MercPlusClient.Areas.ManageUser.Models.ManageUserModel
+@{
+    ViewBag.Title = "ManageUser";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+
+<div>
+    <div style="margin-top:10px; text-align:right; width:750px;  ">
+        &nbsp;
+    </div>
+    <div style="margin-top:20px;border-bottom:2px solid #7A7989;  width:750px; ">
+        <table style="width: 750px; vertical-align:text-top; table-layout:fixed;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+                {
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Add New User", "SecNewUser", "ManageUser")</td>
+                }
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop == true )
+                {
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Review User", "SecUserEdit", "ManageUser") </td>
+                    <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Review Permission", "SecSetUserPermissions", "ManageUser") </td>
+                    <td style="text-align: center; vertical-align: top; width: 225px;">&nbsp; </td>
+                }
+                else{
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Edit User", "SecUserEdit", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 175px;">@Html.ActionLink("Set Permission", "SecSetUserPermissions", "ManageUser") </td>
+                <td style="text-align: center; vertical-align: top; width: 225px;">&nbsp; </td>
+                 }
+            </tr>
+        </table>
+    </div>
+</div>

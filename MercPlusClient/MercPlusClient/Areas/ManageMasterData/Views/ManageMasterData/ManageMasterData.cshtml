@@ -1,0 +1,100 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataModel
+
+@{
+    ViewBag.Title = "SystemData";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<h2 style="font-size: medium">System Data</h2>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse"
+    bordercolor="#111111">
+    <tr>
+        <td style="text-align: left; vertical-align: top; width: 250px;">@Html.Label("Administrator")
+            <br />
+            @Html.ActionLink("ReTrasmission Tool", "ReTransmissionTool", "ManageMasterReTransmissionTool", new { area= "ManageMasterData"},null)
+            <br />
+            <br />
+            <br />
+            Accounting
+            <br />
+         @*   <a href="/ManageMasterData/EditPayAgent">Pay Agent </a>*@
+            @Html.ActionLink("Pay Agent", "EditPayAgent", "ManageMasterData", new { area = "ManageMasterData" }, null)
+            <br />
+            <a>Pay Agent Vendor</a>
+            <br />
+            <a>Transmit</a>
+            <br />
+        </td>
+        <td style="text-align: left; vertical-align: top; width: 450px;">@Html.Label("Manual/Mode/Code")
+            <br />
+            <a>Container Repair Location</a>
+            <br />
+            <a>DamageCode</a>
+            <br />
+            <a>Index</a>
+            <br />
+            <a>Mode</a>
+            <br />
+            <a>Manual</a>
+            <br />
+            <a>ManualMode</a>
+            <br />
+            <a>Repair STS Code</a>
+            <br />
+            <a>Repair Code Exclusive </a>
+            <br />
+            <a>TPI Indicator </a>
+            <br />
+
+               <br />
+            <br />
+            Parts
+            <br />
+         
+             @Html.ActionLink("Country Contract", "ManageCountryContract", "ManageMasterData")
+            <br />
+             @Html.ActionLink("MasterPart", "ManageMasterPart", "ManageMasterData")
+            <br />
+              @Html.ActionLink("Reefer/Genset Parts Group", "ManagePartGroup", "ManageMasterData")
+            <br />
+              @Html.ActionLink("Repair Code/Part Association", "ManageRCPAssociation", "ManageMasterData")
+            <br />
+             @Html.ActionLink("Manufacturer Discount", "ManufacturerDiscount", "ManageMasterData", new { area = "ManageMasterData" }, null)
+            <br />
+             
+               @Html.ActionLink("Manufacturer Model", "ManufacturerModel", "ManageMasterData", new { area = "ManageMasterData" }, null)
+            <br />
+
+
+        </td>
+        <td style="text-align: left; vertical-align: top; width: 400px;" @Html.Label("PrepTime")
+            &nbsp;
+            <br />
+           @Html.ActionLink("Prep Time", "PrepTime", "ManageMasterData", new { area = "ManageMasterData" }, null)
+            <br />
+        </td>
+    </tr>
+     <tr>
+         <td style="text-align: left; vertical-align: top; width: 450px;">@Html.Label("Shop/Vendor")
+            <br />
+            @Html.ActionLink("Shop Profiles", "ShopProfiles", "ManageMasterShopVendor", new { area= "ManageMasterData"},null)
+            <br />
+             @Html.ActionLink("Shop Limits", "ShopLimits", "ManageMasterShopVendor", new { area= "ManageMasterData"},null)
+            <br />
+            
+            
+             @Html.ActionLink("Shop Contract", "ShopContract", "ManageMasterShopVendor", new { area= "ManageMasterData"},null)
+            <br />
+           <br />
+            
+              @Html.ActionLink("Labor Rate", "LaborRate", "ManageMasterData", new { area = "ManageMasterData" }, null)
+            <br />
+            <br />
+            <a>Country Labor Rats</a>
+            <br />
+            <a>Vendor</a>
+            <br />
+        </td>
+
+    </tr>
+</table>

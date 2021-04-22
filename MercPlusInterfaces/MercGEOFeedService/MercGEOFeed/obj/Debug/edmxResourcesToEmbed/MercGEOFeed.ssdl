@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESC2DSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MESC2DSModelStoreContainer">
+    <EntitySet Name="MESC1TS_AREA" EntityType="MESC2DSModel.Store.MESC1TS_AREA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_COUNTRY" EntityType="MESC2DSModel.Store.MESC1TS_COUNTRY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_LOCATION" EntityType="MESC2DSModel.Store.MESC1TS_LOCATION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_REFAUDIT" EntityType="MESC2DSModel.Store.MESC1TS_REFAUDIT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MESC1TS_SHOP" EntityType="MESC2DSModel.Store.MESC1TS_SHOP" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__MESC1TS_C__AREA___7E02B4CC" Association="MESC2DSModel.Store.FK__MESC1TS_C__AREA___7E02B4CC">
+      <End Role="MESC1TS_AREA" EntitySet="MESC1TS_AREA" />
+      <End Role="MESC1TS_COUNTRY" EntitySet="MESC1TS_COUNTRY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_L__COUNT__11158940" Association="MESC2DSModel.Store.FK__MESC1TS_L__COUNT__11158940">
+      <End Role="MESC1TS_COUNTRY" EntitySet="MESC1TS_COUNTRY" />
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_S__LOC_C__22401542" Association="MESC2DSModel.Store.FK__MESC1TS_S__LOC_C__22401542">
+      <End Role="MESC1TS_LOCATION" EntitySet="MESC1TS_LOCATION" />
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MESC1TS_AREA">
+    <Key>
+      <PropertyRef Name="AREA_CD" />
+    </Key>
+    <Property Name="AREA_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="AREA_DESC" Type="varchar" MaxLength="20" />
+    <Property Name="AREA_GEO_ID" Type="char" MaxLength="13" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRY_CD" />
+    </Key>
+    <Property Name="COUNTRY_CD" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="COUNTRY_DESC" Type="varchar" MaxLength="36" />
+    <Property Name="AREA_CD" Type="char" MaxLength="3" />
+    <Property Name="REPAIR_LIMIT_ADJ_FACTOR" Type="float" />
+    <Property Name="COUNTRY_GEO_ID" Type="char" MaxLength="13" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_LOCATION">
+    <Key>
+      <PropertyRef Name="LOC_CD" />
+    </Key>
+    <Property Name="LOC_CD" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="REGION_CD" Type="char" MaxLength="2" />
+    <Property Name="LOC_DESC" Type="varchar" MaxLength="30" />
+    <Property Name="COUNTRY_CD" Type="char" MaxLength="2" />
+    <Property Name="RKRPLOC" Type="char" MaxLength="5" />
+    <Property Name="LOC_GEO_ID" Type="char" MaxLength="13" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CONTACT_EQSAL_SW" Type="char" MaxLength="1" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESC1TS_REFAUDIT">
+    <Key>
+      <PropertyRef Name="AUDIT_ID" />
+    </Key>
+    <Property Name="AUDIT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TAB_NAME" Type="varchar" MaxLength="128" />
+    <Property Name="UNIQUE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="COL_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="OLD_VALUE" Type="varchar" MaxLength="255" />
+    <Property Name="NEW_VALUE" Type="varchar" MaxLength="255" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MESC1TS_SHOP">
+    <Key>
+      <PropertyRef Name="SHOP_CD" />
+    </Key>
+    <Property Name="SHOP_CD" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="VENDOR_CD" Type="char" MaxLength="6" />
+    <Property Name="SHOP_DESC" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="RKRPLOC" Type="char" MaxLength="5" />
+    <Property Name="LOC_CD" Type="char" MaxLength="8" />
+    <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+    <Property Name="CHTS" Type="datetime" Nullable="false" />
+    <Property Name="EMAIL_ADR" Type="varchar" MaxLength="60" />
+    <Property Name="PHONE" Type="char" MaxLength="15" />
+    <Property Name="EDI_PARTNER" Type="varchar" MaxLength="36" />
+    <Property Name="RRIS70_SUFFIX_CD" Type="char" MaxLength="2" />
+    <Property Name="PREPTIME_SW" Type="char" MaxLength="1" />
+    <Property Name="SHOP_ACTIVE_SW" Type="char" MaxLength="1" />
+    <Property Name="PCT_MATERIAL_FACTOR" Type="float" />
+    <Property Name="RRIS_XMIT_SW" Type="char" MaxLength="1" />
+    <Property Name="OVERTIME_SUSP_SW" Type="char" MaxLength="1" />
+    <Property Name="IMPORT_TAX" Type="float" />
+    <Property Name="SHOP_TYPE_CD" Type="char" MaxLength="1" />
+    <Property Name="SALES_TAX_PART_CONT" Type="float" />
+    <Property Name="SALES_TAX_PART_GEN" Type="float" />
+    <Property Name="SALES_TAX_LABOR_CON" Type="float" />
+    <Property Name="CUCDN" Type="char" MaxLength="3" />
+    <Property Name="SALES_TAX_LABOR_GEN" Type="float" />
+    <Property Name="ACEP_SW" Type="char" MaxLength="1" />
+    <Property Name="DECENTRALIZED" Type="char" MaxLength="1" />
+    <Property Name="AUTO_COMPLETE_SW" Type="char" MaxLength="1" />
+    <Property Name="BYPASS_LEASE_RULES" Type="char" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK__MESC1TS_C__AREA___7E02B4CC">
+    <End Role="MESC1TS_AREA" Type="MESC2DSModel.Store.MESC1TS_AREA" Multiplicity="0..1" />
+    <End Role="MESC1TS_COUNTRY" Type="MESC2DSModel.Store.MESC1TS_COUNTRY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_AREA">
+        <PropertyRef Name="AREA_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_COUNTRY">
+        <PropertyRef Name="AREA_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_L__COUNT__11158940">
+    <End Role="MESC1TS_COUNTRY" Type="MESC2DSModel.Store.MESC1TS_COUNTRY" Multiplicity="0..1" />
+    <End Role="MESC1TS_LOCATION" Type="MESC2DSModel.Store.MESC1TS_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_COUNTRY">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_LOCATION">
+        <PropertyRef Name="COUNTRY_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_S__LOC_C__22401542">
+    <End Role="MESC1TS_LOCATION" Type="MESC2DSModel.Store.MESC1TS_LOCATION" Multiplicity="0..1" />
+    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.Store.MESC1TS_SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_LOCATION">
+        <PropertyRef Name="LOC_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_SHOP">
+        <PropertyRef Name="LOC_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

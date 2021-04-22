@@ -1,0 +1,570 @@
+<html>
+	<head>
+		<title>REPAIR TIME PRODUCTIVITY</title><link REL="STYLESHEET" HREF="../main.css" TYPE="text/css">
+			<meta http-equiv="Content-Language" content="en-us">
+			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</head>
+	<body topmargin="20" leftmargin="33">
+		<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111"
+			width="100%" id="AutoNumber1" height="552">
+			<tr>
+				<td height="38">
+					<p align="center"><span class="sub_heading"><font size="6" face="Verdana">QUERY REPAIR TIME 
+								PRODUCTIVITY</font></span></p>
+				</td>
+			</tr>
+			<tr>
+				<td height="30">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="24">
+					<p><b>Related Links
+							<ul>
+								<li>
+									<a href="#Other User">How to Query for repair time productivity (not shop user)</a>
+								<li>
+									<a href="#Shop User">How to Query for repair time productivity (shop user)</a></li>
+							</ul>
+						</b>
+					<P></P>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<P><font face="Verdana" size="2"> <b><FONT face="Verdana"><FONT size="2">OVERVIEW</FONT></FONT></b>
+						</font>
+					</P>
+					<P><FONT face="Verdana" size="2"><B>The screen is used to query the following for 
+								Estimates.</B><BR>
+					</P>
+					<ul>
+						<li>
+						Average Time to Estimate - Average number of days from 'GID (gate in date)' 
+						date to 'Estimate' date for all estimates under selected criteria.
+						<li>
+						Average Time to Authorise - Average number of days from 'Estimate' date to 
+						'Authorized' date for all approved estimates under selected criteria.
+						<li>
+							Average Time to Repair - Average number of days from 'Authorized' date to 
+							'Completion' date for all completed estimates under selected criteria.
+						</li>
+					</ul>
+					</FONT>
+					<P></P>
+				</td>
+			</tr>
+			<tr>
+				<td height="324">
+					<p><b><font face="Verdana" size="2"><a name="Other User">How to Query at different levels for 
+									repair time productivity (not shop user)</a></font></b></p>
+					<p><font face="Verdana" size="2">1) Country is selected by default.</font></p>
+					<blockquote>
+						<p class="MsoNormal">
+							<img border="0" width="500" height="213" src="Images/RepairTimeProductivity/RTP_main.jpg">
+						</p>
+					</blockquote>
+					<p class="MsoNormal"><font face="Verdana"> 2) Give the 'From Date', 'To Date' , select 
+							the country from dropdown menu and click 'Query'. </font>
+					</p>
+					<blockquote>
+						<p class="MsoNormal">
+							<img border="0" width="750" height="279" src="Images/RepairTimeProductivity/RTP_country.jpg">
+						</p>
+					</blockquote>
+					<p class="MsoNormal"><font face="Verdana"> 3) To query at location level, select 
+							'Location' radio button, fill in the date range, select the location from 
+							dropdown menu and click 'Query'. </font>
+					</p>
+					<blockquote>
+						<p class="MsoNormal">
+							<img border="0" width="750" height="250" src="Images/RepairTimeProductivity/RTP_loc.jpg">
+						</p>
+					</blockquote>
+					<p class="MsoNormal"><font face="Verdana"> 4) To query at Shop level, select 'Shop' 
+							radio button, fill in the date range, select the shop from dropdown menu and 
+							click 'Query'. </font>
+					</p>
+					<blockquote>
+						<p class="MsoNormal">
+							<img border="0" width="750" height="250" src="Images/RepairTimeProductivity/RTP_Shop.jpg">
+						</p>
+					</blockquote>
+					<p><font face="Verdana">&nbsp;</p>
+					</FONT>
+				</td>
+			</tr>
+			<tr>
+				<!--Start fields-->
+				<td>
+					<p class="MsoNormal">&nbsp;</p>
+					<p class="MsoNormal"><b><font size="3"> Fields (not Shop User)&nbsp;</font></b>
+						<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 904px; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse"
+							ID="Table1">
+							<tr style=" BACKGROUND: #c5deef">
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Field Name</font></span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Type</font></span></p>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Description</font></span></p>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Required</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Editable</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									Editable by (User type)</td>
+							</tr> <!--1-->
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal">
+										<span lang="EN-US">
+											<font size="2">Date From </font>
+										</span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Text</FONT></SPAN></P>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">Date Range Start</font></span></p>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;"> 
+									Admin, CPH, Area, County, MSL, Vendor</td>
+							</tr> <!--2-->
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US">
+											<font size="2">Date To</font></span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Text</FONT></SPAN></P>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2"> Date Range End</font></span></p>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									N/A</td>
+							</tr>
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US">
+											<font size="2">Country</font>
+										</span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Radio</font></span></p>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2"> Select this radio button to display 
+												the 'Country' drop down&nbsp; </font>
+										</span></p>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									Admin</td>
+							</tr> <!--4-->
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">Location </font>
+										</span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Radio</font></span></p>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal"><SPAN lang="EN-US"><FONT size="2">Select this radio button to display 
+												the&nbsp;'Location' drop down&nbsp;</FONT></SPAN></P>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									Admin</td>
+							</tr>
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US">Shop
+										</span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Radio</font></span></p>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal"><SPAN lang="EN-US"><FONT size="2">Select this radio button to display 
+												the&nbsp;'Shop' drop down&nbsp;</FONT></SPAN></P>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y </font>
+										</span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									Admin</td>
+							</tr> <!--6-->
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US">Country</span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Drop 
+												Down</FONT></SPAN></P>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									Contains all the coutries, user has access to
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									N/A</td>
+							</tr>
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2"> Location</font></span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Drop 
+												Down</FONT></SPAN></P>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									Contains all the locations, user has access to
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">N</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									N/A</td>
+							</tr>
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">Shop</font></span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Drop Down</font></span></p>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									Contains all the shops, user has access to
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Y</FONT></SPAN></P>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									N/A</td>
+							</tr>
+						</table>
+					</p>
+				</td>
+				<!-- End filds -->
+			</tr>
+			<tr>
+				<td>
+					<hr>
+				</td>
+			</tr>
+			<tr>
+				<td height="324">
+					<p><b><font face="Verdana" size="2"><a name="Shop User">How to Query for repair time 
+									productivity (shop user)</a></font></b></p>
+					<p>
+						<font face="Verdana" size="2">1) Fill in the date range, select the shop from 
+							dropdown menu and click 'Query'. </font>
+					</p>
+					<blockquote>
+					<p class="MsoNormal">
+						<img border="0" width="738" height="250" src="Images/RepairTimeProductivity/RTP_Shop.jpg">
+					</p>
+					</blockquote>
+					<p><font face="Verdana">&nbsp;</p>
+					</FONT>
+				</td>
+			</tr>
+			<tr>
+				<!--Start fields-->
+				<td>
+					<p class="MsoNormal">&nbsp;</p>
+					<p class="MsoNormal"><b><font size="3"> Fields (Shop User)&nbsp;</font></b>
+						<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 904px; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse"
+							ID="Table2">
+							<tr style=" BACKGROUND: #c5deef">
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Field Name</font></span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Type</font></span></p>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Description</font></span></p>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Required</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Editable</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									Editable by (User type)</td>
+							</tr> <!--1-->
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal">
+										<span lang="EN-US">
+											<font size="2">Date From </font>
+										</span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Text</FONT></SPAN></P>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">Date Range Start</font></span></p>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;"> 
+									Admin, CPH, Area, County, MSL, Vendor</td>
+							</tr> <!--2-->
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US">
+											<font size="2">Date To</font></span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Text</FONT></SPAN></P>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2"> Date Range End</font></span></p>
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									N/A</td>
+							</tr>
+							<tr>
+								<td width="189" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">Shop</font></span></p>
+								</td>
+								<td width="76" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Drop Down</font></span></p>
+								</td>
+								<td width="318" style="border: 1.0pt solid maroon;">
+									Contains all the shops, user has access to
+								</td>
+								<td width="62" style="border: 1.0pt solid maroon;">
+									<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><SPAN lang="EN-US"><FONT size="2">Y</FONT></SPAN></P>
+								</td>
+								<td width="73" style="border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Y</font></span></p>
+								</td>
+								<td align="center" width="283" style="border: 1.0pt solid maroon;">
+									N/A</td>
+							</tr>
+						</table>
+					</p>
+				</td>
+				<!-- End filds -->
+			</tr>
+			
+			<tr>
+				<td>
+					<!-- Start Buttond-->
+					<p>&nbsp;</p>
+					<p class="MsoNormal"><b><font size="3">Buttons</font></b>
+						<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="639" style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 479.4pt; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse">
+							<tr style = " background: #C5DEEF">
+								<td width="128" valign="top" style = "border: 1.0pt solid maroon; ">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Caption</font></span></p>
+								</td>
+								<td width="88" valign="top" style = "border: 1.0pt solid maroon; ">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Type</font></span></p>
+								</td>
+								<td width="424" valign="top" style = "border: 1.0pt solid maroon; ">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Description</font></span></p>
+								</td>
+							</tr>
+							<tr>
+								<td width="128" style = "border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">Query </font>
+										</span></p>
+								</td>
+								<td width="88" style = "border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Button</font></span></p>
+								</td>
+								<td width="424" style = "border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">Queries 
+									for Average time to Estimate, Authorize, Repair Work Orders 
+									based on the filter criteria selected by the user. </font>
+										</span></p>
+								</td>
+							</tr>
+							
+						</table>
+						<!--End Buttons--></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<!--Start Message-->
+					<p>&nbsp;</p>
+					<p class="MsoNormal"><b><font size="3">Messages</font></b>
+						<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse">
+							<tr style = " background: #C5DEEF">
+								<td width="289" style = "border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Message</font></span></p>
+								</td>
+								<td width="349" style = "border: 1.0pt solid maroon;">
+									<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+										<span lang="EN-US">
+											<font size="2">Reason</font></span></p>
+								</td>
+							</tr>
+							<tr>
+								<td width="289" style = "border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><b><span lang="EN-US" >
+												<font size="2">No Records Found</font></span>
+											</span></b></p>
+								</td>
+								<td width="349" style = "border: 1.0pt solid maroon;">
+									<p class="MsoNormal"><span lang="EN-US"><font size="2">When no records are returned 
+												</font></span></p>
+								</td>
+							</tr>
+							
+						</table>
+						<!--End Message--></p>
+				</td>
+			</tr>
+			
+			<tr>
+				<td height="56">
+					<hr>
+					<p align="right">
+					&nbsp;<p align="right"><span class="updated">Last updated
+   10 March 2016</span>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

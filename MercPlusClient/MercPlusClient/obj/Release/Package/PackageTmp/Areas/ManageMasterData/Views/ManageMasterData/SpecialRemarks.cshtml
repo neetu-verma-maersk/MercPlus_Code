@@ -1,0 +1,376 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataSpecialRemarksModel
+@{
+    ViewBag.Title = "SpecialRemarks";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript" src="~/Areas/ManageMasterData/Script/masterData.js" ></script>
+<script type="text/javascript">
+    function SpecialRemarksComboChange(value,name)
+    {
+        if (name == "profile")
+        {
+            if (value != "")
+                $("#drpRange").val("");
+        }
+        else if (name == "range")
+        {
+            if (value != "")
+                $("#drpProfile").val("");
+        }
+    }
+
+    function BtnQuerySpecialRemarks_Click()
+    {
+        $("#ErrorMsgContainer").html("");
+        $("#ErrorMsgContainer1").html("");
+        if ($("#drpProfile").val() == "" && $("#drpRange").val() == "")
+        {
+            ShowRemoveValidationMessage("Please Select Either RKEM Profile or Equipment Range to Query", "Warning");
+            HighlightInputsForError($("#drpProfile"), true);
+            HighlightInputsForError($("#drpRange"), true);
+            return false;
+        }
+        else
+            return true;
+    }
+
+    function BtnAddSpecialRemarks_Click(isAdd)
+    {
+        $("#ErrorMsgContainer").html("");
+        $("#ErrorMsgContainer1").html("");
+        var errMsg = "";
+        var isError = false;
+        if (isAdd) {
+            HighlightInputsForError($("#txtProfile"), false);
+            HighlightInputsForError($("#txtProfile"), false);
+            HighlightInputsForError($("#txtProfile"), false);
+            if ($("#txtProfile").val().trim() != "" && ($("#txtFrom").val().trim() != "" || $("#txtTo").val().trim() != "")) {
+                errMsg = "Please Enter Only One, Either Profile ID or Equipment Range From and To";
+                isError = true;
+                HighlightInputsForError($("#txtProfile"), isError);
+                HighlightInputsForError($("#txtFrom"), isError);
+                HighlightInputsForError($("#txtTo"), isError);
+            }
+            else if ($("#txtProfile").val().trim() == "" && ($("#txtFrom").val().trim() == "" || $("#txtTo").val().trim() == "")) {
+                errMsg = "Please Enter Either Profile ID or Equipment Range From and To";
+                isError = true;
+                HighlightInputsForError($("#txtProfile"), isError);
+                HighlightInputsForError($("#txtFrom"), isError);
+                HighlightInputsForError($("#txtTo"), isError);
+            }
+
+            HighlightInputsForError($("#txtFrom"), false);
+            HighlightInputsForError($("#txtTo"), false);
+            if ($("#txtFrom").val().trim() != "" && $("#txtTo").val().trim() == "") {
+                errMsg += "Please Enter an Equipment Number To ";
+                isError = true;
+                HighlightInputsForError($("#txtTo"), isError);
+            }
+            else if ($("#txtFrom").val().trim() == "" && $("#txtTo").val().trim() != "") {
+                errMsg += "Please Enter an Equipment Number From ";
+                isError = true;
+                HighlightInputsForError($("#txtFrom"), isError);
+            }
+        }
+
+        HighlightInputsForError($("#txtCelling"), false);
+        //if (is_pay($("#txtCelling").val()) != "")
+        //{
+        if (!isFloat($("#txtCelling").val())) {
+            if(errMsg.trim()!="")
+                errMsg += ". Please Enter Numbers with 2 Decimal Places Only";
+            else
+                errMsg = "Please Enter Numbers with 2 Decimal Places Only";
+                isError = true;
+                HighlightInputsForError($("#txtCelling"), isError);
+            }
+        //}
+
+        HighlightInputsForError($("#drpDisplay"), false);
+        if ($("#drpDisplay").val() == "")
+        {
+            if (errMsg.trim() != "")
+                errMsg += ". Please Select Display Remarks Switch";
+            else
+                errMsg = "Please Select Display Remarks Switch";
+            isError = true;
+            HighlightInputsForError($("#drpDisplay"), isError);
+        }
+
+        HighlightInputsForError($("#txtRemarks"), false);
+        if ($("#drpDisplay").val() == "Y" && $("#txtRemarks").val() == "")
+        {
+            if (errMsg.trim() != "")
+                errMsg += ". Please Add Remarks to Display";
+            else
+                errMsg = "Please Add Remarks to Display";
+            isError = true;
+            HighlightInputsForError($("#txtRemarks"), isError);
+        }
+
+        HighlightInputsForError($("#txtRemarks"), false);
+        if ($("#txtRemarks").val() != "" && $("#txtRemarks").val().indexOf('"')>-1) {
+            if (errMsg.trim() != "")
+                errMsg += ". Please Remove Double Quote Character in Remarks";
+            else
+                errMsg = "Please Remove Double Quote Character in Remarks";
+            isError = true;
+            HighlightInputsForError($("#txtRemarks"), isError);
+        }
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which; 
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+        {
+            if (charCode == 190)
+                return true;
+            else
+                return false;
+        }
+        return true;
+    }
+
+    function is_pay(string) {
+        var check_it = string.trim();
+
+        if (check_it == "") return true;
+
+        if (check_it.search(/^\d*$|^\d*\.\d{2}$/) != -1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function isFloat(elm) {
+        var elmstr = elm.toString();
+        var point = 0;
+        for (var i = 0; i < elmstr.length; i++) {
+            if (elmstr.charAt(i) < "0" || elmstr.charAt(i) > "9") {
+                if (elmstr.charAt(i) == ".") {
+                    point++;
+                    if (point > 1)
+                        return false;
+                    else
+                        continue;
+                }
+                else
+                    return false;
+            }
+        }
+        if (elmstr == ".")
+            return false;
+        return true;
+    }
+
+    function DeleteConfirmMsg() {
+        return confirm("Are you sure you want to delete this record?")
+    }
+</script>
+@using(Html.BeginForm())
+{
+    <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_specialremarks_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+    
+    <h2>@Html.DisplayFor(model=>model.PageTitle, new{id="dispTitle"})</h2>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    <table border="0" cellpadding="5" cellspacing="0" style="width: 700px; vertical-align: text-top;">
+        <tr>
+            <td colspan="3">
+                @Html.Label("RKEM Profile List")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                @Html.DropDownListFor(model=>model.RemarksID, Model.drpProfile, "", new{id="drpProfile", @onchange="SpecialRemarksComboChange(this.value,'profile')"})
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                @Html.Label("Equipment Range List")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DropDownListFor(model=>model.RemarksID1, Model.drpRange, "", new{id="drpRange", @onchange="SpecialRemarksComboChange(this.value,'range')"})
+                <input type="submit" value="Query" id="btnQueryRemarks" formaction="/ManageMasterData/ManageMasterData/GetSpecialRemarks" onclick="return BtnQuerySpecialRemarks_Click()" />
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            @if(Model.IsAdmin || Model.IsCPH)
+            {
+            <td style="text-align:right">
+                <input type="submit" value="Add New Remarks" id="btnCreateRemarks" formaction="/ManageMasterData/ManageMasterData/NewSpecialRemarks" />
+            </td>
+            }
+            else
+            {
+                 <td style="text-align:right">&nbsp;</td>
+            }
+        </tr>
+    </table>
+    <hr />
+    if(Model.ShowDetails)
+    {
+        <table border="0" cellpadding="5" cellspacing="0" style="width: 700px; vertical-align: text-top;">
+            @if(Model.IsInsertMode)
+            {
+                <tr>
+                    <td colspan="2" >
+                        @Html.Label("RKEM Profile ID")
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50%">
+                         @Html.TextBoxFor(model=>model.RKEMProfile, new {id="txtProfile",size="60", maxlength="11"})
+                    </td>
+                    <td>
+                        @Html.Label("or")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Eqipment Number (from)")
+                    </td>
+                    <td>
+                        @Html.Label("Eqipment Number (to)")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model=>model.SerialNoFrom, new {id="txtFrom", maxlength="11" })
+                    </td>
+                    <td>
+                         @Html.TextBoxFor(model=>model.SerialNoTo, new {id="txtTo", maxlength="11"})
+                    </td>
+                </tr>
+            }
+            else
+            {
+                if(Model.IsProfileSelected)
+                {
+                    <tr>
+                        <td colspan="2" >
+                            @Html.Label("RKEM Profile ID")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:50%">
+                             @Html.TextBoxFor(model=>model.RKEMProfile, new {id="txtProfile", @readonly="true", size="60", maxlength="11"})
+                        </td>
+                        @if(Model.IsInsertMode)
+                        {
+                            <td>
+                                @Html.Label("or")
+                            </td>
+                        }
+                        else
+                        {
+                             <td>
+                                &nbsp;
+                            </td>
+                        }
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            @Html.Label("Eqipment Number (from)")
+                        </td>
+                        <td>
+                            @Html.Label("Eqipment Number (to)")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                             @Html.TextBoxFor(model=>model.SerialNoFrom, new {id="txtFrom", @readonly="true", maxlength="11"})
+                        </td>
+                        <td>
+                             @Html.TextBoxFor(model=>model.SerialNoTo, new {id="txtTo", @readonly="true", maxlength="11"})
+                        </td>
+                    </tr>
+                }
+            }
+            <tr>
+                <td>
+                    @Html.Label("Repair Celling (USD)")
+                </td>
+                <td>
+                    @Html.Label("Display Remarks to Vendor")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     @Html.TextBoxFor(model=>model.RepairCeiling, new {id="txtCelling", maxlength="10", onkeydown = "return ValidateNumber(event);"})
+                </td>
+                <td>
+                     @Html.DropDownListFor(model=>model.DisplaySW, Model.drpDisplay, "", new{id="drpDisplay"})
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.Label("Remarks")
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.TextAreaFor(model=>model.Remarks, new{id="txtRemarks", style="height:100px", maxlength="255"})
+                </td>
+            </tr>
+            @if(!Model.IsInsertMode)
+            {
+                <tr>
+                    <td>
+                        @Html.Label("Change User Name")
+                    </td>
+                    <td>
+                        @Html.Label("Change Time")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(model=>model.ChangeUser, new {id="txtUser", @readonly="true"})
+                    </td>
+                    <td>
+                         @Html.TextBoxFor(model=>model.ChangeTime, new {id="txtTime", @readonly="true"})
+                    </td>
+                </tr>
+                if(Model.IsAdmin || Model.IsCPH)
+                {
+                    <tr>
+                        <td>
+                            <input type="submit" value="Submit" id="btnUpdateRemarks" formaction="/ManageMasterData/ManageMasterData/ModifySpecialRemarks" onclick="return BtnAddSpecialRemarks_Click(false)" />
+                        </td>
+                        <td>
+                            <input type="submit" value="Delete" id="btnDeleteRemarks" formaction="/ManageMasterData/ManageMasterData/DeleteSpecialRemarks" onclick="return DeleteConfirmMsg();"  />
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit" id="btnAddRemarks" formaction="/ManageMasterData/ManageMasterData/InsertSpecialRemarks" onclick="return BtnAddSpecialRemarks_Click(true)"  />
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    @Html.HiddenFor(model=>model.RemarksID,new{id="hddRemarksID"})
+    @Html.HiddenFor(model=>model.RemarksID1,new{id="hddRemarksID1"})
+}

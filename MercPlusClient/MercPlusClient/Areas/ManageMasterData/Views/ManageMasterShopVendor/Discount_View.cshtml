@@ -1,0 +1,141 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterShopVndorModel
+
+@{
+    
+    ViewBag.Title = "Discount_View";
+
+
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+
+
+@using (Html.BeginForm())
+{
+    
+    <table style="width:100%;" border="0">
+        <tr>
+            
+             <td style="text-align:right; margin-top:0px;" colspan="2">
+            <a href="~/HelpFiles/reportframes.htm">Tables and Dependencies Help File</a>
+            </td>
+       
+           </tr>
+        <tr>
+        <td style="text-align:left; margin-left:-500px;" colspan="2">
+           <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                   @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+            </div>
+        </td>
+        
+        </tr>
+
+    </table>
+    
+     <table border="0"  id="tblShop"
+        style="width: 80%; vertical-align: text-top;">
+          <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopCode_Profile)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ShopCode_Profile,  new { id = "txtShopCode", style="width:70px;",@readonly = true })</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3"></td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2"></td>
+                <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.PCTMaterialFactor)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.PCTMaterialFactor,  new { id = "txtPCTMaterialFactor", style="width:70px;",@readonly = true })</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3"></td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2"></td>
+                <td></td>
+            </tr>
+          <tr>
+              <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer1)</td>
+              <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer1, Model.DDL_Manufacturer1, new { id = "drpManufacturer1", style="width:70px;",disabled = "disabled"})</td>
+              <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount1)</td>
+              <td style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount1,  new { id = "txtDiscount1", style="width:100px;",@readonly = true })</td>
+              <td><font size="0.1">ex.(110 = +10 %)(80 = -20 %)</td>
+          </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer2)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer2, Model.DDL_Manufacturer2, new { id = "drpManufacturer2", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount2)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount2,  new { id = "txtDiscount2", style="width:100px;",@readonly = true })</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer3)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer3, Model.DDL_Manufacturer3, new { id = "drpManufacturer3", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount3)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount3,  new { id = "txtDiscount3", style="width:100px;" ,@readonly = true})</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer4)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer4, Model.DDL_Manufacturer4, new { id = "drpManufacturer4", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount4)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount4,  new { id = "txtDiscount4", style="width:100px;",@readonly = true })</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer5)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer5, Model.DDL_Manufacturer5, new { id = "drpManufacturer5", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount5)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount5,  new { id = "txtDiscount5", style="width:100px;",@readonly = true })</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer6)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer6, Model.DDL_Manufacturer6, new { id = "drpManufacturer6", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount6)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount6,  new { id = "txtDiscount6", style="width:100px;",@readonly = true })</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer7)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer7, Model.DDL_Manufacturer7, new { id = "drpManufacturer7", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount7)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount7,  new { id = "txtDiscount7", style="width:100px;",@readonly = true })</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer8)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer8, Model.DDL_Manufacturer8, new { id = "drpManufacturer8", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount8)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount8,  new { id = "txtDiscount8", style="width:100px;",@readonly = true })</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer9)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer9, Model.DDL_Manufacturer9, new { id = "drpManufacturer9", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount9)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount9,  new { id = "txtDiscount9", style="width:100px;" ,@readonly = true})</td>
+              <td></td>
+            </tr>
+          <tr>
+                <td nowrap="nowrap" style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Manufacturer10)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.Manufacturer10, Model.DDL_Manufacturer10, new { id = "drpManufacturer10", style="width:70px;",disabled = "disabled"})</td>
+                <td style="text-align: left; width:100px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Discount10)</td>
+                <td nowrap="nowrap" style="text-align: left; width:100px; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Discount10,  new { id = "txtDiscount10", style="width:100px;",@readonly = true })</td>
+              <td></td>
+          </tr>
+         <tr>
+	
+	          <td><input type="hidden" name="ManfString" ></td>
+              <td><input type="hidden" name="DiscString" ></td>
+             <td></td>
+             <td></td>
+             <td></td>
+        </tr>
+
+         <tr>
+              
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+         </tr>
+    </table>
+ }
+
+

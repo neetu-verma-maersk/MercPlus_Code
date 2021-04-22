@@ -1,0 +1,51 @@
+﻿ 
+<link href="~/Areas/ManageMasterData/Style/MasterData.css" rel="stylesheet" />
+@*<script src="~/Areas/ManageMasterData/Script/mainjs.js"></script>*@
+<script src="~/Scripts/mainjs.js"></script>
+<div id="gridposition" style="width: 100%;"> 
+ 
+    
+    
+       @if (Model.Count > 0)
+       {
+           var grid1 = new WebGrid(Model, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContentModel");
+
+            
+
+                {
+                @grid1.GetHtml(
+                tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: grid1.Columns(
+                grid1.Column("ManufacturCd", header: "Manufacturer Code"),
+                grid1.Column("ModelNo", header: "Model Number"),
+                grid1.Column("IndicatorCd", header: "Repair Code Digit"),
+                 
+               
+                
+                 grid1.Column("Edit", format: @<text><a href="javascript:ShowEditModel('ManufactureModel','Manufacture Model Edit','@item.ManufacturCd','@item.ModelNo','@item.IndicatorCd','@item.ChangeUser','@item.ChangeTime',800,450,scroll);", style="color:blue; font-size:small;">Edit</a></text>, header: ""),
+                 //grid1.Column("Delete", "", format: (item) => Html.ActionLink("Delete",
+                   //                   "ManageMasterData", "DeleteManufacturerModel", new { ManufacturCd = @item.ManufacturCd,ModelNo=@item.ModelNo}, new { style = "color: blue; font-size:small;" }))
+                         //                 ))
+                            grid1.Column("Delete", format: @<text><a href="javascript:DeleteModel('ManufactureModel','Manufacture Model Delete','@item.ManufacturCd','@item.ModelNo' ,800,450,scroll);", style="color:blue; font-size:small;">Delete</a></text>, header: "")
+           ))
+              
+                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                             
+}
+             
+
+        }
+           
+           
+           
+    else
+    {
+         @Html.Label("lblMessage", "**NO**", new { style = "color: black; text-size:12px;" })
+       
+           
+       }
+    </div>
+

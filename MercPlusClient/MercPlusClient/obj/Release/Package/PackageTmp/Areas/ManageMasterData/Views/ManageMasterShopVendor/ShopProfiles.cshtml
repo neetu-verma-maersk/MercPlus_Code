@@ -1,0 +1,275 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterShopVndorModel
+
+@{
+    
+    ViewBag.Title = "ShopProfiles";
+
+
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+@*<style type="text/css">
+    
+    td {
+        border: 1px solid black;
+    }
+
+</style>*@
+<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>
+
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_shop_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+
+@using (Html.BeginForm())
+{
+    <div>
+    <table style="width:100%;" border="0">
+        <tr>
+            
+             @*<td style="text-align:right; margin-top:0px;" colspan="2">
+            <a href="~/HelpFiles/reportframes.htm">Tables and Dependencies Help File</a>
+            </td>*@
+       
+           </tr>
+        <tr>
+        <td style="text-align:left; margin-left:-500px;" colspan="2">
+            <h3>@Html.Label("Shop View", new { id = "lblMessage" })</h3>
+        </td>
+        
+           </tr>
+        
+             <tr>
+            <td style="text-align:left; margin-left:-500px;">
+                <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                       @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                </div>
+            </td>
+        
+           </tr>
+    </table>
+    
+    <table border="0"  id="tblShop"
+        style="width: 90%; vertical-align: text-top; text-align:left;">
+        
+          <tr>
+                <td class="style3" style="text-align: left; width:100px;" >
+                     @Html.LabelFor(model => model.ShopCode)
+                </td>
+                <td class="style2" style="text-align: left; width:300px;">
+                      @Html.DropDownListFor(model => model.ShopCode, Model.DDLShop, new { id = "drpShop", @class = "drpShopCodesList", Style="width:300px;"})
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                     <input type="button" id="btnQuery" value="Query" name="Query" /> 
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                     <input type="button" id="btnAddNewShop" value="Add New Shop" name="AddNew" /> 
+                </td>
+             
+            </tr>
+       
+          <tr>
+            <td colspan="4" style="color:black; ">
+                <hr style="color:black;">
+            </td>
+        </tr>
+        </table>
+      
+   
+    <table id="tbAddUpdate"  style="width: 90%; text-align:left; vertical-align: text-top; padding-bottom:0px;" hidden="hidden" >
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopCode)</td>
+                <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ShopCode,  new { id = "txtShopCode", @MaxLength="3", style="width:100px;" })</td>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopActive)</td>
+                <td nowrap="nowrap" style="text-align: left; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.ShopActive, new List<SelectListItem>
+                 {
+                     new SelectListItem{ Text="N", Value = "N" },
+                     new SelectListItem{ Text="Y", Value = "Y" }
+                    
+                 }, new { id = "drpShopActive", style="width:70px;"})</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopDesc)</td>
+                <td nowrap="nowrap" style="text-align: left;  vertical-align: top;" class="style2" colspan="2">@Html.TextBoxFor(model => model.ShopDesc, new { id = "txtShopDesc", style="width:300px;" })</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ShopType)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2" colspan="2">@Html.DropDownListFor(model => model.ShopType, new List<SelectListItem>
+                 {
+                    new SelectListItem{ Text="", Value = "-1",Selected=true },
+                    new SelectListItem{ Text="1 - Using Manufacturer Parts with Discount", Value = "1" },
+                    new SelectListItem{ Text="2 - Using Maersk Supplied Parts", Value = "2" },
+                    new SelectListItem{ Text="3 - Using Manufacturer Parts", Value = "3" }
+                 }, new { id = "drpShopType", style="width:300px;", onchange="doRedirect()"})</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">
+                     @Html.LabelFor(model => model.VendorCode)
+                </td>
+               <td style="text-align: left;  vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.VendorCode, Model.DDLVendor, " ", new { id = "drpVendor", @class = "drpVendorList" , style="width:300px;" })</td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.GEOLocation)</td>
+                <td nowrap="nowrap" style="text-align: left;  vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.GEOLocation, new { id = "txtGeoLoc", style="width:100px;"})</td>
+                <td>Empty = Manual Tax Entry</td>
+                 <td>Parts</td>
+                 
+                 <td colspan="2">Labor</td>
+
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.RKRPLocation)</td>
+                <td style="text-align: left;  vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.RKRPLocation, new { id = "txtRKRPLoc", style="width:100px;"})</td>
+                <td nowrap="nowrap">Container Sales Tax(%)</td>
+                <td nowrap="nowrap">@Html.TextBoxFor(model => model.Parts1, new { id = "txtPart1", style="width:70px;"})</td>
+                
+                <td colspan="2"> @Html.TextBoxFor(model => model.Labor1, new { id = "txtLabor1",style="width:70px;"})</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.CurrencyCode)</td>
+                <td style="text-align: left;  vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.CurrencyCode, Model.DDLCurrency, " ", new { id = "drpCurrency", @class = "drpCurrencyList" , style="width:250px;" })</td>
+                <td nowrap="nowrap">Chassis/Genset Sales Tax(%)</td>
+                <td nowrap="nowrap">@Html.TextBoxFor(model => model.Parts2, new { id = "txtPart2", style="width:70px;"})</td>
+                
+                <td colspan="2">@Html.TextBoxFor(model => model.Labor2, new { id = "txtLabor2",style="width:70px;"})</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.EmailAddress)</td>
+                <td style="text-align: left;  vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.EmailAddress, new { id = "txtEmailAddress", style="width:170px;"})</td>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ImportTax)</td>
+                <td nowrap="nowrap" style="text-align: left;  vertical-align: top;" class="style2">@Html.TextBoxFor(model => model.ImportTax, new { id = "txtImportTax", style="width:70px;"})</td>
+                <td></td>
+                <td></td>
+             </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Phone)</td>
+                <td>@Html.TextBoxFor(model => model.Phone, new { id = "txtPhone", style="width:170px;", MaxLength="15" })</td>
+                <td>@Html.LabelFor(model => model.Discount, new { id = "lblDiscount1" })</td>
+                <td>@Html.TextBoxFor(model => model.Discount, new { id = "txtDiscount", @Value="100", style="width:60px;"})<div id="btnDiscount"><input name="DiscountPerManufacturer"  value="Discount Per Manufacturer" type="button" onmouseup="doSubmit('Redirect')"></div></td>
+                <td><font size="1" id = "lblDiscount3">ex.(110 = +10 %)(80 = -20 %)</font></td>
+                <td style="text-align: right; display:none;"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.LinkAccount)</td>
+                <td style="text-align: left;  vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.LinkAccount, new List<SelectListItem>
+                 {
+                    new SelectListItem{ Text="No", Value = "N", Selected=true  },
+                    new SelectListItem{ Text="FACT", Value = "F" },
+                    new SelectListItem{ Text="RRIS", Value = "Y" }
+                 }, new { id = "drpLinkAccount", style="width:100px;"})</td>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Acep)</td>
+                <td style="text-align: left;  vertical-align: top;" class="style2">@Html.DropDownListFor(model => model.Acep, new List<SelectListItem>
+                 {
+                    new SelectListItem{ Text="", Value = "-1" },
+                    new SelectListItem{ Text="N", Value = "N" },
+                    new SelectListItem{ Text="Y", Value = "Y" },
+                  }, new { id = "drpAcep", style="width:70px;"})</td> 
+                <td></td>
+                <td></td>
+             </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.RRIS70SuffixCode)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.RRIS70SuffixCode, new { id = "txtRRIS70SuffixCode", style="width:100px;" })</td>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.OTSuspended)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.OTSuspended, new List<SelectListItem>
+                 {
+                     new SelectListItem{ Text="", Value = "-1" },
+                     new SelectListItem{ Text="N", Value = "N"},
+                     new SelectListItem{ Text="Y", Value = "Y" }
+   
+                 }, new { id = "drpOTSuspend", style="width:70px;"})</td>
+                <td></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ChangeUserName)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ChangeUserName, new { id = "txtChangeUserName", @Value="N/A", @disabled=true, style="width:170px;" })</td>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.PreparationTime)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.PreparationTime, new List<SelectListItem>
+                 {
+                     new SelectListItem{ Text="", Value = "-1" },
+                     new SelectListItem{ Text="N", Value = "N" },
+                     new SelectListItem{ Text="Y", Value = "Y" }
+                    
+                 }, new { id = "drpPrepTime", style="width:70px;"})</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.ChangedTime)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.ChangedTime, new { id = "txtChangeTime", @Value="N/A", @disabled=true, style="width:170px;" })</td>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.Decentralized)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.Decentralized, new { id = "txtDecentralized", @Value="N", style="width:70px;" })</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">
+                   
+                   @Html.Label("a", new { id="lblByPass"})
+                    
+                 </td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.BypassLeasedContainerValidations, new List<SelectListItem>
+                 {
+                     new SelectListItem{ Text="", Value = "-1" },
+                     new SelectListItem{ Text="N", Value = "N" },
+                     new SelectListItem{ Text="Y", Value = "Y" }
+                    
+                 }, new { id = "drpBypassLeasedContainerValidations", style="width:100px;"})</td>
+                <td style="text-align: left; width:150px; vertical-align: top; " class="style3">@Html.LabelFor(model => model.AutoComplete)</td>
+                <td style="text-align: left; vertical-align: top; " class="style2">@Html.DropDownListFor(model => model.AutoComplete, new List<SelectListItem>
+                 {
+                     new SelectListItem{ Text="", Value = "-1" },
+                     new SelectListItem{ Text="N", Value = "N" },
+                     new SelectListItem{ Text="Y", Value = "Y" }
+                    
+                 }, new { id = "drpAutoComplete", style="width:70px;"})</td>
+                <td></td>
+                <td></td>
+             </tr>
+            <tr>
+                <td style="text-align: center; vertical-align: top;" colspan="2">
+                     <input type="button" id="btnSubmitSP" value="Submit" style="display:none;" name="SubmitSP" onmouseup="doSubmit('Insert')"  /> 
+                     <input type="button" id="btnUpdateSP" value="Submit" style="display:none;" name="SubmitSP" onmouseup="doSubmit('Update')" /> 
+                </td>  
+                <td style="text-align: center; vertical-align: top;" colspan="2">
+                    <input type="button" id="btnAuditTrailSP" value="Audit Trail" name="AuditTrailSP" onclick="javascript: ShowAuditTrail('/ManageWorkOrder/ReviewEstimates/AuditTrail', 'Shop Profile Audit Trail', 'ShopProfile', document.getElementById('txtShopCode').value, '', '', 800, 450, scroll);" style="display:none;"/>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        <tr>
+            <td colspan="4">
+             
+            <input type="hidden" name="MyAction" value="">
+            <input type="hidden" id="MyCheck" name="MyCheck" value="">
+            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin || Model.ShopActiveSW == "N")
+            {
+               <input type="hidden" id="MyCheck1" name="MyCheck1" value="checked1">
+            }
+            else
+            {
+	           <input type="hidden" id="MyCheck1" name="MyCheck1" value="">
+            }
+
+        
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        </table>
+
+            
+    </div>
+   
+}
+

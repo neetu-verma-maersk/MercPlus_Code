@@ -1,0 +1,286 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataManualModeModel
+@{
+    ViewBag.Title = "ManualMode";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script type="text/javascript">
+    function ManualModeComboChange(value, name) {
+        var manualText = "";
+        var modeText = "";
+        if (name == "manual") {
+            if (value != "") {
+                manualText = $("#drpManualAdd option:selected").text(); //alert(length(value));
+                manualText = manualText.substring(value.length + 3); 
+                $("#hddManualDesc").val(manualText);
+            }
+        }
+        else if (name == "mode") {
+            if (value != "") {
+                modeText = $("#drpModeAdd option:selected").text(); 
+                modeText=modeText.substring(value.length + 3);
+                $("#hddModeDesc").val(modeText);
+            }
+        }
+    }
+    function ClientValidation(isAdd) {
+
+        var errMsg = "";
+        var isError = false;
+        if(isAdd){
+        HighlightInputsForError($("#drpManualAdd"), false);
+        if (document.getElementById('drpManualAdd').selectedIndex == 0) {
+            isError = true;
+            if(isAdd)
+                errMsg += "Please Select a Manual Code to Add";
+            else
+                errMsg += "Please Select a Manual Code to Update";
+            HighlightInputsForError($("#drpManualAdd"), isError)
+        }
+        
+        HighlightInputsForError($("#drpModeAdd"), false);
+        if (document.getElementById('drpModeAdd').selectedIndex == 0) {
+            isError = true;
+            if (isAdd)
+                errMsg += "Please Select a Mode to Add ";
+            else
+                errMsg += "Please Select a Mode to Update ";
+            HighlightInputsForError($("#drpModeAdd"), isError)
+        }
+            }
+        HighlightInputsForError($("#drpActiveSw"), false); 
+        if (document.getElementById('drpActiveSw').selectedIndex == 0) {
+            
+            isError = true;
+            errMsg += "Please Select he Active switch ";
+            HighlightInputsForError($("#drpActiveSw"), isError)
+        }
+        
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function ValidateComboSelection(comboname, isAdd)
+    {
+        var errMsg = "";
+        var isError = false;
+        if (comboname == "Manual") {
+            HighlightInputsForError($("#drpManualAdd"), false);
+            if (document.getElementById('drpManualAdd').selectedIndex == 0) {
+                isError = true;
+                if (isAdd)
+                    errMsg += "Please Select a Manual Code to Add";
+                else
+                    errMsg += "Please Select a Manual Code to Update";
+                HighlightInputsForError($("#drpManualAdd"), isError)
+            }
+        }
+        else if (comboname == "Mode") {
+            HighlightInputsForError($("#drpModeAdd"), false);
+            if (document.getElementById('drpModeAdd').selectedIndex == 0) {
+                isError = true;
+                if (isAdd)
+                    errMsg += "Please Select a Mode to Add ";
+                else
+                    errMsg += "Please Select a Mode to Update ";
+                HighlightInputsForError($("#drpModeAdd"), isError)
+            }
+        }
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+<div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_manual_mode_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+<h2>Add or Update Manual Mode</h2>
+<div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+</div>
+@using (Html.BeginForm())
+{
+    
+    if(Model.IsAddMode)
+    {
+        <table border="0" cellpadding="5" cellspacing="0" style="width: 700px; vertical-align: text-top;">
+            <tr>
+                <td>@Html.Label("Manual")</td>
+                <td>
+                    @Html.DropDownListFor(model=>Model.ManualCode, Model.drpManual,"", new{id="drpManualAdd"})
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Mode")</td>
+                <td>
+                    @Html.DropDownListFor(model=>Model.ModeCode, Model.drpMode,"", new{id="drpModeAdd"})
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Active Switch")</td>
+                <td>
+                    @Html.DropDownListFor(model=>Model.ActiveSw, Model.drpYesNo, new{id="drpActiveSw"})
+                </td>
+            </tr>
+            @if(Model.IsAdded)
+            {
+                <tr>
+                    <td>@Html.Label("Change User Name")</td>
+                    @*<td>
+                        @Html.TextBoxFor(model=>model.ChangeUser, new {id="txtIndexCHUser", @readonly="true"})
+                        @Html.TextBoxFor(model=>model.ChangeUser, new {id="txtIndexCHUser1", @readonly="true"})
+                    </td>*@
+                    <td style="padding:0 0 0 0;">
+                        <table>
+                            <tr>
+                                <td style="padding-left:2px;">
+                                    @Html.TextBoxFor(model => model.ChangeFUser, new { id = "txtIndexCHUser", @readonly = "true", style="width:200px" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.ChangeLUser, new { id = "txtIndexCHUser1", @readonly = "true", style="width:200px" })
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Changed Time")</td>
+                    <td>
+                        @Html.TextBoxFor(model=>model.ChangeTime, new {id="txtIndexChTime", @readonly="true"})
+                    </td>
+                </tr>
+                @*<tr>
+                    <td>
+                         <input type="submit" value="Add Record" id="btnManualModeAddNew0" formaction="/ManageMasterData/ManageMasterData/PTIPeriodNew"  />
+                    </td>
+                    <td>
+                         <input type="submit" value="Return To Update" id="btnManualModeUpdate0" formaction="/ManageMasterData/ManageMasterData/ManualMode"  />
+                    </td>
+                </tr>*@
+            }
+            @*else
+            {*@
+                <tr>
+                    <td>
+                         <input type="submit" value="Add Record" id="btnManualModeInsert" formaction="/ManageMasterData/ManageMasterData/InsertManualMode" onclick="return ClientValidation(true);" />
+                    </td>
+                    <td>
+                         <input type="submit" value="Return To Update" id="btnManualModeUpdate" formaction="/ManageMasterData/ManageMasterData/ManualMode"  />
+                    </td>
+                </tr>
+            @*}*@
+        </table>
+    }
+    else
+    {
+        <table border="0" cellpadding="5" cellspacing="0" style="width: 700px; vertical-align: text-top;">
+            @if (Model.IsShowManual)
+            {
+                <tr>
+                    <td>@Html.Label("Select Manual")</td>
+                    <td>
+                        @Html.DropDownListFor(model => Model.ManualCode, Model.drpManual, "", new { id = "drpManualAdd", @onchange = "ManualModeComboChange(this.value,'manual')" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <input type="submit" value="Update - Get Mode" id="btnManualModeMode" formaction="/ManageMasterData/ManageMasterData/ManualModeGetMode" onclick="return ValidateComboSelection('Manual',false)" />
+                    </td>
+                    <td>
+                         <input type="submit" value="Add New" id="btnManualModeAddNew" formaction="/ManageMasterData/ManageMasterData/ManualModeNew"  />
+                    </td>
+                </tr>
+            }
+            else if (Model.IsShowMode)
+            {
+                <tr>
+                    <td>@Html.Label("Select Mode")</td>
+                    <td>
+                        @Html.DropDownListFor(model => Model.ModeCode, Model.drpMode, "", new { id = "drpModeAdd", @onchange = "ManualModeComboChange(this.value,'mode')" })
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50px;">
+                         <input type="submit" value="Update - Get Manual Mode" id="btnManualModeManualMode" formaction="/ManageMasterData/ManageMasterData/ManualModeGetMaualMode" onclick="return ValidateComboSelection('Mode', false)" />
+                    </td>
+                    <td>
+                         <input type="submit" value="Add New" id="btnManualModeAddNew1" formaction="/ManageMasterData/ManageMasterData/ManualModeNew"  />
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td style="width:150px">@Html.Label("Manual Code")</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ManualCode, new { id = "txtManualCode", @readonly = "true" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Manual Description")</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ManualDescription, new { id = "txtManualDesc", @readonly = "true" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Mode")</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ModeCode, new { id = "txtMode", @readonly = "true" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Mode Description")</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ModeDescription, new { id = "txtModeDesc", @readonly = "true" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Active Switch")</td>
+                    <td>
+                        @Html.DropDownListFor(model => Model.ActiveSw, Model.drpYesNo, new { id = "drpActiveSw" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Change User Name")</td>
+                    <td style="padding:0 0 0 0;">
+                        <table>
+                            <tr>
+                                <td style="padding-left:2px;">
+                                    @Html.TextBoxFor(model => model.ChangeFUser, new { id = "txtIndexCHUser", @readonly = "true", style="width:200px" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.ChangeLUser, new { id = "txtIndexCHUser1", @readonly = "true", style="width:200px" })
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Changed Time")</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ChangeTime, new { id = "txtIndexChTime", @readonly = "true", style="width:200px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <input type="submit" value="Update" id="btnManualModeModify" formaction="/ManageMasterData/ManageMasterData/ModifyManualMode" onclick="return ClientValidation(false);" />
+                    </td>
+                    <td>
+                         <input type="submit" value="Add New" id="btnManualModeAddNew2" formaction="/ManageMasterData/ManageMasterData/ManualModeNew"  />
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    @Html.HiddenFor(model => model.ManualCode, new { id = "hddRCManual" })
+    @Html.HiddenFor(model => model.ModeCode, new { id = "hddRCMode" })
+    @Html.HiddenFor(model => model.ManualDescription, new { id = "hddManualDesc" })
+    @Html.HiddenFor(model => model.ModeDescription, new { id = "hddModeDesc" })
+}

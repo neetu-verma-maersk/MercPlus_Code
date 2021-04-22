@@ -1,0 +1,157 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterLocationModel
+
+
+@{
+    ViewBag.Title = "ViewLocationdetails";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageMasterData/Script/Location.js"></script>
+
+
+<div>
+       <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_location_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+
+    @if(Model.IsUpdateLoc)
+            {
+        <div style="width:750px; ">
+            <h2>Location Edit</h2>
+        </div>
+    }
+    else
+    {
+         <div style="width:750px; ">
+            <h2>Location View</h2>
+        </div>
+    }
+     <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    </div> 
+
+
+
+@using (Html.BeginForm())
+{
+    
+        
+        <div style="margin-top: 20px; border-bottom: 2px solid #7A7989; width: 750px;">
+       <table border="0" cellpadding="5" cellspacing="0"
+                style="width: 700px; vertical-align: text-top;">
+                <tr>
+                    <td style="text-align: left; vertical-align: top;">
+                        @Html.LabelFor(model => model.LocCodeQuery)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+
+                    <td style="text-align: left; vertical-align: top;">
+                        @Html.TextBoxFor(model => model.LocCode, new { id = "txtLocCode", style = "text-transform:uppercase;" })
+                    </td>
+
+                    <td style="text-align: left; vertical-align: top; width: 240px;">
+                        <input type="Submit" value="Query" id="btnQueryLoc" onclick="return ClientValidation()"  formaction="/ManageMasterData/ManageMasterData/LocationUpdate_View"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    
+    
+        <table>
+            @if (Model.IsUpdateLoc)
+            {
+                if (Model.Flag == true)
+                {
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.LocCode)
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.LocCode, new { id = "LocCode",  style = "width:300px;background-color:#DCDCDC!important;", @readonly = true })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.LocDesc)
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.LocDesc, new { id = "LocDesc", style = "width:300px;background-color:#DCDCDC!important;", @readonly = true })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.CountryLocCode)
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.CountryLocCode, new { id = "CountryCode",  style = "width:300px;background-color:#DCDCDC!important;", @readonly = true })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ContactEqsalSW)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.RegionCode)
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.ContactEqsalSW, Model.drpContactEqsalSW, new { id = "drpContactEqsalSW", style = "width:250px;background-color:#DCDCDC!important;", disabled = "disabled" })
+                </td>
+
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.DropDownListFor(model => model.RegionCode, Model.drpRegionCode, new { id = "drpRegionCode", style = "width:300px;background-color:#DCDCDC!important;", disabled = "disabled" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUserLoc)
+                </td>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeTimeLoc)
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeUserLoc, new { id = "ChangeUserLoc", style = "width:300px;background-color:#DCDCDC!important;", @readonly = true })
+
+                </td>
+
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeTimeLoc, new { id = "ChangeTimeLoc", style = "width:300px;background-color:#DCDCDC!important;", @readonly = true })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+               
+            </tr>
+            <tr>
+                
+            </tr>
+                }
+                else if (Model.Flag == false)
+                {
+
+                }
+            }
+        </table>
+}
+    
+
+
+

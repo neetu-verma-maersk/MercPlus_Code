@@ -1,0 +1,439 @@
+﻿@model MercPlusClient.Areas.ManageWorkOrder.Models.ManagerApprovalModel
+@using MercPlusClient.UtilityClass
+@{
+    ViewBag.Title = "ManagerApproval";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageWorkOrder/Script/mgrApproval.js"></script>
+<div id="divViewRoot">
+    <div id="ErrorMsgContainer" style="margin: 10px;"></div>
+    <input type="hidden" id="hdnWOID" value="@Model.dbWOD.WorkOrderID" />
+    <table style="border: 1px solid grey; width: 100%;" id="tblRPAdditionalRows">
+        @* partial view for wosummarybuttons *@
+        @Html.Raw(@Model.LoadButtons)
+
+        <tr>
+            <td colspan="12">
+                <div style="overflow-x: auto; width: 100%; border: 2px solid grey;">
+                    <table style="background-color: white;">
+                        <tr>
+                            <td colspan="8">@Html.LabelFor(model => model.EquipmentNo)<span style="width: 10px;">:</span>@Html.DisplayTextFor(model => Model.EquipmentNo)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.LeasingCompany)</td>
+                            <td style="min-width: 150px;" id="RKLeasingCompany">@Html.DisplayTextFor(model => Model.LeasingCompany)</td>
+                            <td>@Html.LabelFor(model => model.LeasingContract)</td>
+                            <td style="min-width: 150px;" id="RKLeasingContract">@Html.DisplayTextFor(model => Model.LeasingContract)</td>
+                            <td>@Html.LabelFor(model => model.Damage)</td>
+                            <td style="min-width: 150px;" id="RKDamage">@Html.DisplayTextFor(model => Model.Damage)</td>
+                            <td>@Html.LabelFor(model => model.GateInDate)</td>
+                            @{
+                                if (Model.IsCountryOrAbove)
+                                {
+                                <td style="min-width: 150px;" id="GateInDate">@Html.DisplayTextFor(model => Model.GateInDate)</td>
+                                }
+                                else
+                                {
+                                <td style="min-width: 150px;" id="GateInDate"></td>                                    
+                                }                                                                                            
+                            }
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Type)</td>
+                            <td style="min-width: 150px;" id="RKType">@Html.DisplayTextFor(model => Model.Type)</td>
+                            <td>@Html.LabelFor(model => model.InService)</td>
+                            <td style="min-width: 150px;" id="RKInService">@Html.DisplayTextFor(model => Model.InService)</td>
+                            @{ 
+                                if (Model.IsApprover)
+                                {
+                                <td style="color: red;">@Html.LabelFor(model => model.StSelCR)</td>
+                                <td style="min-width: 150px; color: red;">@Html.DisplayTextFor(model => Model.StSelCR)</td>
+                                }
+                                else
+                                {
+                                <td style="color: red;">@Html.LabelFor(model => model.StSelCR)</td>
+                                <td style="min-width: 150px; color: red;"></td>
+                                }
+
+                                if (Model.IsCountryOrAbove)
+                                {
+                                <td>@Html.LabelFor(model => model.PresentLoc)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.PresentLoc)</td>
+                                }
+                                else
+                                {
+                                <td>@Html.LabelFor(model => model.PresentLoc)</td>
+                                <td style="min-width: 150px;"></td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Profile)</td>
+                            <td style="min-width: 150px;" id="RKProfile">@Html.DisplayTextFor(model => Model.Profile)</td>
+                            <td>@Html.LabelFor(model => model.ReeferMakeModel)</td>
+                            <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.ReeferMakeModel)</td>
+                            @{
+                                if (Model.IsApprover)
+                                {
+                                <td>@Html.LabelFor(model => model.Owner)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.Owner)</td>
+                                <td>@Html.LabelFor(model => model.AtOfcHrLoc)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.AtOfcHrLoc)</td>
+                                }
+                                else
+                                {
+                                <td>@Html.LabelFor(model => model.Owner)</td>
+                                <td style="min-width: 150px;"></td>
+                                <td>@Html.LabelFor(model => model.AtOfcHrLoc)</td>
+                                <td style="min-width: 150px;"></td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Size)</td>
+                            <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.Size)</td>
+                            <td>@Html.LabelFor(model => model.Deldatsh)</td>
+                            <td style="min-width: 150px;" id="RKPTIDate">@Html.DisplayTextFor(model => Model.Deldatsh)</td>
+                            @{
+                                if (Model.IsApprover)
+                                {
+                                <td style="color: red;">@Html.LabelFor(model => model.OnGlobalHunt)</td>
+                                <td style="min-width: 150px; color: red;">@Html.DisplayTextFor(model => Model.OnGlobalHunt)</td>
+                                <td>@Html.LabelFor(model => model.Empty)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.Empty)</td>                                    
+                                }
+                                else
+                                {
+                                <td style="color: red;">@Html.LabelFor(model => model.OnGlobalHunt)</td>
+                                <td style="min-width: 150px; color: red;"></td>
+                                <td>@Html.LabelFor(model => model.Empty)</td>
+                                <td style="min-width: 150px;"></td> 
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Material)</td>
+                            <td style="min-width: 150px;" id="RKMaterial">@Html.DisplayTextFor(model => Model.Material)</td>
+                            <td>@Html.LabelFor(model => model.GenSetMakeModel)</td>
+                            <td style="min-width: 150px;" id="RKGenSetMakeModel">@Html.DisplayTextFor(model => Model.GenSetMakeModel)</td>
+                            @{
+                                if (Model.IsApprover)
+                                {
+                                <td>@Html.LabelFor(model => model.FixedCover)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.FixedCover)</td>
+                                <td>@Html.LabelFor(model => model.ForRefurb)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.ForRefurb)</td>
+                                }
+                                else
+                                {
+                                <td>@Html.LabelFor(model => model.FixedCover)</td>
+                                <td style="min-width: 150px;"></td>
+                                <td>@Html.LabelFor(model => model.ForRefurb)</td>
+                                <td style="min-width: 150px;"></td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(model => model.BoxMfg)</td>
+                            <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.BoxMfg)</td>
+                            @{
+                                if (Model.IsApprover)
+                                { 
+                                <td>@Html.LabelFor(model => model.DPP)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.DPP)</td>
+                                <td>@Html.LabelFor(model => model.RefurbDate)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.RefurbDate)</td> 
+                                <td>@Html.LabelFor(model => model.MercDamage)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.MercDamage)</td>                                    
+                                }
+                                else
+                                {
+                                <td>@Html.LabelFor(model => model.DPP)</td>
+                                <td style="min-width: 150px;"></td>
+                                <td>@Html.LabelFor(model => model.RefurbDate)</td>
+                                <td style="min-width: 150px;"></td> 
+                                <td>@Html.LabelFor(model=>model.MercDamage)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.MercDamage)</td>}
+                           
+                           
+                            }
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            
+                            @{
+                                if (Model.IsApprover)
+                                { 
+                                <td>@Html.LabelFor(model => model.CurrLoc)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrLoc)</td>
+                                <td>@Html.LabelFor(model => model.CurrMove)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrMove)</td> 
+                                                                 
+                                }
+                                else
+                                {
+                                <td>@Html.LabelFor(model => model.CurrLoc)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model=>Model.CurrLoc)</td>
+                                <td>@Html.LabelFor(model => model.CurrMove)</td>
+                                <td style="min-width: 150px;">@Html.DisplayTextFor(model=>Model.CurrMove)</td> 
+                                }
+                           
+                           
+                            }
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        @{            
+            <tr>
+                <td>Status
+                @if (Model.DISPLAY_STATUS_CODE)
+                {
+                    /* @Html.Label(Model.WOStatus)*/
+                }
+                </td>
+                <td>
+
+                    @{
+                        string cStatus = "";
+                        if ((Model.dbWOD.ShopWorkingSW != null && Model.dbWOD.ShopWorkingSW.Equals("Y")) && Model.dbWOD.WorkOrderStatus.ToString().Equals("390"))
+                        {
+                            if (Model.ISANYSHOP)
+                            {
+@*1480*@                        cStatus = "s" + "-" + Model.dbWOD.WorkOrderStatus.ToString();
+                               if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                               {
+                                   var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                   cStatus = Model.WOStatus = statusCode.Value;
+                               }
+                               else
+                               {
+                                   cStatus = "-" + Model.dbWOD.WorkOrderStatus.ToString();
+                                   if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                                   {
+                                       var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                       cStatus = Model.WOStatus = statusCode.Value;
+                                   }
+                               }
+
+                            }
+                            else
+                            {
+@*1484*@                        cStatus = "-" + Model.dbWOD.WorkOrderStatus.ToString();
+                               if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                               {
+                                   var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                   cStatus = Model.WOStatus = statusCode.Value;
+                               }
+                            }
+                        }
+                        else if (Model.ISANYSHOP && ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey("s" + Model.dbWOD.WorkOrderStatus.ToString()))
+                        {
+@*1484*@                    cStatus = "s" + Model.dbWOD.WorkOrderStatus.ToString();
+                           if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                           {
+                               var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                               cStatus = Model.WOStatus = statusCode.Value;
+                           }
+                        }
+                        else
+                        {
+                            cStatus = Model.dbWOD.WorkOrderStatus.ToString();
+                            if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey(cStatus))
+                            {
+                                var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                                cStatus = Model.WOStatus = statusCode.Value;
+                            }
+                            else
+                            {
+                                cStatus = "";
+                            }
+                        }
+
+                        if (!Model.ISANYSHOP && !string.IsNullOrEmpty(Model.dbWOD.VoucherNumber))
+                        {
+                            var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == Model.dbWOD.WorkOrderStatus.ToString(); });
+                            Model.WOStatus = statusCode.Value;
+                            cStatus = Model.WOStatus + "(Agent code/Voucher no: " + Model.dbWOD.PayAgentCode + "/" + Model.dbWOD.VoucherNumber + ")";
+                        }                             
+                        @cStatus      
+                    }
+
+                </td>
+                <td>Shop Code:</td>
+                @*<td>@Html.ActionLink(Model.dbWOD.Shop.ShopCode, "ManageWorkOrder", "ShopDetails", new { shopcode = Model.dbWOD.Shop.ShopCode }, null)</td>*@
+                <td><a href="javascript:showPopupWindow('/ManageMasterData/ManageMasterShopVendor/ShopDetailsByShopCode','Shop Details','@Model.dbWOD.Shop.ShopCode',435,350);", style="color:blue; font-size:small;">@Model.dbWOD.Shop.ShopCode</a></td>
+                <td>@Html.LabelFor(model => model.Cause)</td>
+                @{
+                    if (Model.IsApprover && Model.dbWOD.WorkOrderStatus >= 130 && Model.dbWOD.WorkOrderStatus < 9999 || (Model.ISANYSHOP && Model.dbWOD.WorkOrderStatus >= 200 && Model.dbWOD.WorkOrderStatus < 9999) || Model.dbWOD.WorkOrderStatus == 0)
+                    {                       
+                    <td>
+                        @Html.DropDownListFor(model => model.CauseCode, Model.DDLCause, new { id = "UICause", style = "width: 150px;", @CauseCode = Model.CauseCode })
+                    </td>
+                    }
+                    else
+                    {
+                    <td>
+                        @Html.LabelForModel(Model.Cause, new { id = "UICause", style = "width: 150px;", @CauseCode = Model.CauseCode })
+                    </td>
+                    }
+                }
+                @*//based on roles and status make it a ddl or label*@
+            </tr>
+            <tr>
+                @*<td>@Html.Label(Model.PrevStatus)</td>*@
+                @*<td></td>*@
+                @*@if (Model.dbWOD.WorkOrderStatus >= 390)
+                {
+                    if (Model.dbWOD.PrevStatus != null && !string.IsNullOrEmpty(Model.dbWOD.PrevLocCode))
+                    {
+                        if (Model.ISANYSHOP && ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.ContainsKey("s" + Model.dbWOD.PrevStatus.ToString()))
+                        {
+                            cStatus = "s" + Model.dbWOD.PrevStatus.ToString();
+                            var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                            Model.PrevStatus = statusCode.Value;
+                        }
+                        else
+                        {
+                            cStatus = Model.dbWOD.PrevStatus.ToString();
+                            var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                            Model.PrevStatus = statusCode.Value;
+                        }
+                    }
+                    else {
+
+                        Model.PrevStatus = "";
+                        
+                    }
+                }
+                else
+                {
+                    cStatus = Model.PrevStatus.ToString();
+                    if (cStatus == "0")
+                    {
+                        cStatus = cStatus.PadLeft(3, '0');
+                    }
+                    var statusCode = ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).WorkOrderStatusDesc.Single(code => { return code.Key == cStatus; });
+                    Model.PrevStatus = statusCode.Value;
+                }*@
+
+                @*//convrt into logical status  1605*@
+
+                <td>@Html.LabelFor(model => model.PrevStatus)</td>
+                <td>@Html.LabelForModel(Model.PrevStatus)</td>
+                <td>@Html.LabelFor(model => model.PrevDate)</td>
+                <td>@Html.LabelForModel(Model.PrevDate)</td>
+                <td>@Html.LabelFor(model => model.PrevLocation)</td>
+                <td>@Html.LabelForModel(Model.PrevLocation)</td>
+            </tr>
+        }
+        <tr>
+            <td>@Html.LabelFor(model => model.RevisionNo)</td>
+            <td>
+                @if (Model.dbWOD.RevisionNo != -1)
+                {
+                    @Model.dbWOD.RevisionNo
+                }
+            </td>
+            @*//convrt into logical status*@
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.VendorRefNo)</td>
+            <td>
+                @Html.LabelForModel(Model.dbWOD.EquipmentList[0].VendorRefNo, new { id = "VenRef", style = "width: 150px;", @refCode = Model.dbWOD.EquipmentList[0].VendorRefNo })
+            </td>
+            <td>@Html.LabelFor(model => model.Mode)</td>
+            <td>@Html.LabelForModel(Model.dbWOD.Mode)</td>
+            <td>@Html.LabelFor(model => model.ThirdPartyPort)</td>
+            @if (Model.IsApprover && Model.dbWOD.WorkOrderStatus >= 130 && Model.dbWOD.WorkOrderStatus < 9999 || (Model.ISANYSHOP && Model.dbWOD.WorkOrderStatus >= 200 && Model.dbWOD.WorkOrderStatus < 9999) || Model.dbWOD.WorkOrderStatus == 0)
+            {
+                <td>@Html.TextBoxFor(model => model.ThirdPartyPort, new { style = "width: 100px;", @maxlength = "8" })</td>
+            }
+            else
+            {
+                <td>@Html.TextBoxFor(model => model.ThirdPartyPort, new { style = "width: 100px;", @readonly = "readonly", @maxlength = "8" })</td>
+            }
+        </tr>
+        <tr>
+            <td>Estimate No.:</td>
+            <td>@Model.dbWOD.WorkOrderID</td>@*//check here for dbwod estimate column*@
+            <td>@Html.LabelFor(model => model.CurrencyName)</td>
+            <td>@Model.dbWOD.Shop.Currency.CurrName</td>
+            <td>@Html.LabelFor(model => model.CompletionDate)</td>
+            <td>
+                @if (Model.ISANYSHOP)
+                {
+                    if (Model.dbWOD.WorkOrderStatus <= 390)
+                    {
+                        if (Model.dbWOD.WorkOrderStatus != 150)
+                        {
+                    @Html.TextBox("txtCompletionDate", (DateTime.Now).ToString("yyyy-MM-dd"), new { style = "width: 130px;", @class = "CLSDATE" })
+                        }
+                    }
+                    else
+                    {
+                    @Convert.ToDateTime(Model.dbWOD.RepairDate).ToString("yyyy-MM-dd");
+                    }
+                }
+                else
+                {
+                    if (Model.dbWOD.WorkOrderStatus > 390)
+                    {
+                    @Convert.ToDateTime(Model.dbWOD.RepairDate).ToString("yyyy-MM-dd");
+                    }
+                }
+            </td>@*//set this in controller*@
+        </tr>
+
+        @if (Model.RepCodeCount > 0)
+        {
+@* put here partial view createWOSummary  *@ 
+            <tr>
+                <td colspan="12" style="width: 100%;">
+                    @{
+            Html.RenderPartial("~/Areas/ManageWorkOrder/Views/Shared/WOSummaryMgrAprvl.cshtml", Model);
+                    }
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="12">
+                <table>
+                    @*remarks*@
+                    <tr>
+                        <td colspan="12" id="tdRemarksSpace">@Html.Raw(@Model.RemarksDetails)</td>
+                    </tr>
+                    @if (Model.CreateRemarksTA)
+                    {
+                        <tr>
+                            <td colspan="3">@Html.LabelFor(model => model.ERemarks):&nbsp;<small>(255 characters max)</small></td>
+                            <td colspan="6">@Html.TextAreaFor(model => model.ERemarks, new { style = "height: 120px; width: 300px;", @maxlength = "255" })</td>
+                            <td colspan="3">Please indicate General condition of box, Main damage consists of, Wear and tear share of repair, Repair in other mode required.</td>
+                        </tr>
+                        if (Model.IsApprover)
+                        {
+                        <tr>
+                            <td colspan="3">@Html.LabelFor(model => model.IRemarks):&nbsp;<small>(255 characters max)</small></td>
+                            <td colspan="6">@Html.TextAreaFor(model => model.IRemarks, new { style = "height: 120px; width: 300px;", @maxlength = "255" })</td>
+                            <td colspan="3">Note: Please indicate 3rd Party responsible.</td>
+                        </tr>
+                        }
+                    }                       
+                        
+@* partial view for wosummarybuttons *@
+                    @Html.Raw(@Model.LoadButtons)
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td id="ModelContainer"></td>
+        </tr>
+    </table>
+</div>

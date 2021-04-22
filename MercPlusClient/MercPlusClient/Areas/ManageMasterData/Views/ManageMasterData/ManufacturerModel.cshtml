@@ -1,0 +1,660 @@
+﻿
+@model MercPlusClient.Areas.ManageMasterData.Models.ManufacturerModel
+
+@{
+    ViewBag.Title = "ManufacturerModel";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+@*<script src="../../Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>*@
+@*<script src="~/Areas/ManageMasterData/Script/mainjs.js"></script>*@
+<script src="~/Scripts/mainjs.js"></script>
+<script type="text/javascript">
+
+
+   $(function () {
+       //$('#btnAdd').click(function () {
+         
+      
+       //    //$('#divManufacturerModelSearch').hide();
+       //    //$('#divManufacturerModelEdit').hide();
+       //    //$('#gridContentModel').hide();
+       //    //$('#divManufacturerModelCreation').show();
+
+       //    //$('#tdMAdd').show();
+       //    //$('#tdMEdit').hide();
+       //    //$('#tdMView').hide();
+
+       //    //$('#lblErrorMesage').css("display", "none");
+       //    //$('#lblMesage').css("display", "none");
+       //    //$('#gridContent').css("display", "block");
+       //    //ShowRemoveValidationMessage("", "");
+       //    //$("#txtManufacturerModelAdd").val("") ;
+       //    //$("#RepaireCodeAdd").val("") ;
+       //    //$("#drpManufacturerListAdd").val("") ;
+
+       //});
+       $('#btnModelAdd').click(function () {
+           $('#lblErrorMesage').css("display", "none");
+           $('#lblMesage').css("display", "none");
+           $('#gridContent').css("display", "block");
+
+           $('#lblErrorMesage').css("display", "none");
+           ShowRemoveValidationMessage("", "");
+           var code = $("#drpManufacturerListAdd").val();
+           var ModelName = $("#txtManufacturerModelAdd").val();
+           var RepaireCode = $("#RepaireCodeAdd").val();
+            
+           var errMsg = "";
+           var isError = false;
+           $("#ErrorMsgContainer").html("");
+
+
+
+           HighlightInputsForError($("#drpManufacturerListAdd"), false);
+
+       
+           var err = "Please Enter ";
+           if (code == '') {
+               isError = true;
+               errMsg += " Manufacturer list";
+
+               HighlightInputsForError($("#drpManufacturerListAdd"), isError);
+           }
+
+           HighlightInputsForError($("#txtManufacturerModelAdd"), false)
+
+           if (ModelName == "") {
+               isError = true;
+               if (errMsg.length > 1) {
+                   errMsg += ", Model";
+               }
+               else
+                   errMsg += " Model";
+               HighlightInputsForError($("#txtManufacturerModelAdd"), isError)
+           }
+           HighlightInputsForError($("#RepaireCodeAdd"), false)
+
+           if (RepaireCode == "" ||RepaireCode.length > 1 ) {
+               isError = true;
+               if (errMsg.length > 1) {
+
+                   errMsg += ", Repair Code ";
+               }
+               else
+                   errMsg += "Repair Code ";
+               HighlightInputsForError($("#RepaireCodeAdd"), isError)
+           }
+ 
+           if (isNaN(RepaireCode)) {
+               isError = true;
+               errMsg += "Repair Code should be Numeric'";
+               HighlightInputsForError($("#RepaireCodeAdd"), isError)
+           }
+           if (isError == true) {
+
+               errMsg = err + errMsg;
+               $('#gridContent').css("display", "none");
+               ShowRemoveValidationMessage(errMsg, "Warning");
+               return;
+           }
+           else {
+
+               $.ajax({
+
+                   url: "/ManageMasterData/ManageMasterData/CreateManufacturerModel",
+                   type: 'POST',
+                   data: { CodeID: code, ModelNameID: ModelName, RepaireCodeID: RepaireCode },
+
+                   cache: false,
+                   success: function (data) {
+                       if (data == true) {
+                           $('#divManufacturerModelSearch').hide();
+                           $('#divManufacturerModelEdit').hide();
+                           $('#gridContentModel').hide();
+                           $('#divManufacturerModelCreation').show();
+
+                           $('#tdMAdd').show();
+                           $('#tdMEdit').hide();
+                           $('#tdMView').hide();
+
+                           //$('#lblMesage').text('**Model: ' + ModelName + ' / ' + code + ' Added**');
+                           //$('#lblMesage').css("display", "block");
+                           ShowRemoveValidationMessage('**Model: ' + ModelName + ' / ' + code + ' Added**', "Success");
+                           $("#txtManufacturerModelAdd").val("");
+                           $("#RepaireCodeAdd").val("");
+                       }
+                       else {
+                           //$('#lblErrorMesage').text('Addition failed');
+                           //$('#lblErrorMesage').css("display", "block");
+                           //ShowRemoveValidationMessage('**Addition failed**', "Warning");
+                           ShowRemoveValidationMessage('Model: ' + ModelName + ' / ' + code + ' Already Exists - Not Added', "Warning");
+                       }
+                   },
+                   error: function (data) {
+                       //$('#lblErrorMesage').text('Addition failed');
+                       //$('#lblErrorMesage').css("display", "block");
+                       ShowRemoveValidationMessage('**Addition failed**', "Warning");
+
+                   }
+               });
+           }
+
+       });
+        $('#btnModelEdit').click(function () {
+            $('#lblErrorMesage').css("display", "none");
+            $('#lblMesage').css("display", "none");
+            $('#gridContent').css("display", "block");
+
+            $('#lblErrorMesage').css("display", "none");
+            ShowRemoveValidationMessage("", "");
+            var code = $("#txtManufacturerCode").val();
+            var ModelName = $("#txtManufacturerModel").val();
+            var RepaireCode = $("#RepaireCode").val();
+            var UserName = $("UserID").val();
+         //   $('#txtManufacturerCode').attr('readonly', 'true'); // mark it as read only
+            // $('#txtManufacturerCode').css('background-color', '#DEDEDE');
+
+            var errMsg = "";
+
+            var isError = false;
+            $("#ErrorMsgContainer").html("");
+
+
+            var erEdit = "Please Select "
+            HighlightInputsForError($("#txtManufacturerCode"), false);
+            if (code == '') {
+                isError = true;
+              
+                    errMsg += " Manufacturer list";
+
+                
+                HighlightInputsForError($("#txtManufacturerCode"), isError);
+            }
+
+            HighlightInputsForError($("#txtManufacturerModel"), false)
+
+            if (ModelName == "") {
+                isError = true;
+                if (errMsg.length > 1) {
+                    errMsg += ", Model";
+                }
+                else
+                    errMsg += " Model";
+
+                HighlightInputsForError($("#txtManufacturerModel"), isError)
+            }
+            HighlightInputsForError($("#RepaireCode"), false)
+
+            if (RepaireCode == "" || RepaireCode.length > 10) {
+                isError = true;
+                if (errMsg.length > 1) {
+
+                    errMsg += ", Repair Code ";
+                }
+                else
+                    errMsg += " Repair Code ";
+                HighlightInputsForError($("#RepaireCode "), isError)
+            }
+
+            if (isNaN(RepaireCode)) {
+                isError = true;
+                errMsg += "Repair Code should be Numeric'";
+                HighlightInputsForError($("#RepaireCode"), isError)
+            }
+       
+
+            if (isError == true) {
+
+                errMsg = erEdit + errMsg;
+                $('#gridContent').css("display", "none");
+                ShowRemoveValidationMessage(errMsg, "Warning");
+                return;
+            }
+            else {
+                $.ajax({
+
+                    url: "/ManageMasterData/ManageMasterData/UpdateManufacturerModel",
+                    type: 'POST',
+                    data: { CodeID: code, ModelNameID: ModelName, RepaireCodeID: RepaireCode, UserID: UserName },
+
+                    cache: false,
+                    success: function (data) {
+
+                        $('#divManufacturerModelSearch').show();
+                        $('#divManufacturerModelEdit').hide();
+                        $('#gridContentModel').hide();
+
+                        $('#divManufacturerModelCreation').hide();
+
+                        $('#tdMAdd').hide();
+                        $('#tdMEdit').hide();
+                        $('#tdMView').show();
+
+                        ShowRemoveValidationMessage('**Model: ' + ModelName + ' / ' + code + ' Updated**', "Success");
+                        //$('#lblMesage').text('**Model: ' + ModelName + ' / ' + code + ' Updated**');
+                        //$('#lblMesage').css("display", "block");
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+
+        });
+
+       
+
+        $('#btnSearch').click(function (e) {
+            ShowRemoveValidationMessage("", "");
+            e.preventDefault();
+            $('#lblErrorMesage').css("display", "none");
+            $('#lblMesage').css("display", "none");
+
+            $('#divManufacturerModelSearch').show();
+            $('#gridContentModel').show();
+            $('#divManufacturerModelEdit').hide();
+
+            $('#tdMAdd').hide();
+            $('#tdMEdit').hide();
+            $('#tdMView').show();
+
+            ShowRemoveValidationMessage("", "");
+            var c = $("#drpManufacturerList").val();
+
+            var errMsg = "";
+            var isError = false;
+            $("#ErrorMsgContainer").html("");
+
+            
+
+            HighlightInputsForError($("#drpManufacturerList"), false);
+            if (c == '') {
+                isError = true;
+                errMsg += "Please select Manufacturer list";
+
+                HighlightInputsForError($("#drpManufacturerList"), isError);
+            }
+            if (isError == true) {
+
+                $('#gridContent').css("display", "none");
+                ShowRemoveValidationMessage(errMsg, "Warning");
+                return;
+            }
+
+
+            else {
+                $('#lblErrorMesage').css("display", "none");
+                $('#lblMesage').css("display", "none");
+                $('#gridContent').css("display", "block");
+               
+
+               
+
+                var url = 'SearchModel';
+                $.post(url, {
+                    ManufactureCode: c
+                    
+
+                }, function (result) {                 
+                   
+                    var n = result.indexOf("**NO**");
+                    //alert(n);
+                    if(n > 0)
+                    {
+                        $('#gridContentModel').hide();
+                        ShowRemoveValidationMessage("No Results Found Matching Search Criteria", "Warning");                      
+                    }
+                    else
+                    {
+                        $('#gridContentModel').html(result);
+                    }
+                });
+            }
+
+        });
+
+   });
+   function ShowEditModel(mypage, pagename, ManufacturCd, ModelNo, IndicatorCd,ChangeUser,ChangeTime, w, h, scroll) {
+       ShowRemoveValidationMessage("", "");
+      
+       $('#divManufacturerModelCreation').hide();
+       $('#divManufacturerModelSearch').hide();
+       $('#divManufacturerModelEdit').show();
+
+       $('#tdMAdd').hide();
+       $('#tdMEdit').show();
+       $('#tdMView').hide();
+
+       $('#gridContentModel').hide();
+       $("#txtManufacturerCode").val(ManufacturCd);
+       $("#txtManufacturerModel").val(ModelNo);
+       $("#RepaireCode").val(IndicatorCd);
+       $("#UserID").val(ChangeUser);
+       //alert(ChangeTime);
+       //var d = new Date();
+       //d.setTime(parseInt(ChangeTime.substring(6)));
+       //alert(d);
+       //var ct = FormatDate(d);
+       //alert(ct);
+       $("#ModifedTime").val(ChangeTime);
+       $("#txtManufacturerCode").disabled;
+       $("#txtManufacturerModel").disabled;
+
+   }
+
+   function FormatDate(date) {
+       var hours = date.getHours();
+       var minutes = date.getMinutes();
+       var seconds = date.getSeconds();
+       var ampm = hours >= 12 ? 'PM' : 'AM';
+       var month = date.getMonth();
+       month++;
+       hours = hours % 12;
+       hours = hours ? hours : 12; // the hour '0' should be '12'
+       minutes = minutes < 10 ? '0' + minutes : minutes;
+       var strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+       //return date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+       return date.getFullYear() + "-" + month + "-" + +date.getDate() + " " + strTime;
+
+   }
+   function DeleteModel(mypage, pagename, ManufacturCd, ModelNo, w, h, scroll) {
+
+       ShowRemoveValidationMessage("", "");
+       var p = false;
+       p= confirm("Are you sure you want to delete this record?");
+       if( p==true)
+       {
+           $.ajax({
+
+               url: "/ManageMasterData/ManageMasterData/DeleteManufacturerModel",
+               type: 'POST',
+               data: { CodeID: ManufacturCd, ModelNameID: ModelNo },
+
+               cache: false,
+               success: function (data) {
+
+                   $('#divManufacturerModelSearch').show();
+                   $('#divManufacturerModelEdit').hide();
+                   $('#gridContentModel').hide();
+
+                   $('#tdMAdd').hide();
+                   $('#tdMEdit').hide();
+                   $('#tdMView').show();
+
+                   $('#divManufacturerModelCreation').hide();
+                   //$('#lblMesage').text('**Model: ' + ModelName + ' / ' + code + ' Deleted**');
+                   //$('#lblMesage').css("display", "block");
+                   ShowRemoveValidationMessage('**Model: ' + ModelNo + ' / ' + ManufacturCd + ' Deleted**', "Success");
+
+               },
+               error: function (data) {
+               }
+           });
+       }
+
+     
+
+   }
+   
+    </script>
+ @{
+List<SelectListItem> listItems = new List<SelectListItem>();
+listItems.Add(new SelectListItem
+{
+    Text = "",
+    Value = "",
+    Selected = true
+});
+listItems.Add(new SelectListItem
+  {
+      Text = "0",
+      Value = "0"
+  });
+listItems.Add(new SelectListItem
+ {
+     Text = "1",
+     Value = "1",
+     
+ });
+listItems.Add(new SelectListItem
+ {
+     Text = "2",
+     Value = "2"
+ });
+listItems.Add(new SelectListItem
+{
+    Text = "3",
+    Value = "3"
+});
+listItems.Add(new SelectListItem
+{
+    Text = "4",
+    Value = "4"
+});
+listItems.Add(new SelectListItem
+{
+    Text = "5",
+    Value = "5"
+});
+listItems.Add(new SelectListItem
+{
+    Text = "6",
+    Value = "6"
+});
+listItems.Add(new SelectListItem
+{
+    Text = "7",
+    Value = "7"
+});
+listItems.Add(new SelectListItem
+{
+    Text = "8",
+    Value = "8"
+});
+listItems.Add(new SelectListItem
+{
+    Text = "9",
+    Value = "9"
+});
+        }
+@using (Html.BeginForm())
+{
+       <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_model_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+     <div id="tdMView"  ><h3>Manufacturer Model View</h3></div> 
+     <div id="tdMEdit" style="display: none;"><h3>Manufacturer Model Edit</h3></div> 
+     <div id="tdMAdd" style="display: none;"><h3>Manufacturer Model Add</h3></div> 
+    
+     <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    
+    
+    
+     <div id="divManufacturerModelSearch" style=" width: 800px;" >
+    <table width="100%">
+          
+         @*<h2>Manufacturer Model View</h2>         *@
+
+        <tr>
+            <td class="style3" style="text-align: left; vertical-align: top;">
+                @Html.LabelFor(model => model.ManufacturerList)
+            </td>
+        </tr>
+        <tr>
+            <td class="style2" style="text-align: left; vertical-align: top;">
+                @Html.DropDownListFor(model => model.ManufacturerList, Model.drpManufacturerList, "Select Manufacturer List", new { id = "drpManufacturerList" })
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 240px;">
+                 
+                <input type="button" value="Query" id="btnSearch" />
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;
+            </td>
+            <td style="text-align: left; vertical-align: top; width: 240px;">
+               @* <input type="button" value="Add New Models" id="btnAdd" />*@
+                 <input type="submit" value="Add New Models" formaction="/ManageMasterData/ManageMasterData/AddNewModels" />
+            </td>
+        </tr>
+
+    </table>
+    <br />
+    <br />
+    </div>
+     <div id="divManufacturerModelCreation" style="display: none; width: 800px;" >
+        <table width="100%">
+            @*<tr>
+                        <td colspan="5" style="vertical-align: top; text-align: right; margin-right: 0px; font-size: xx-small; font-size: 7px; color: blue;">
+                            @Html.ActionLink("Table and Dependencies Help File", "SecNewUser", "ManageUser")
+                        </td>
+                    </tr>*@
+           @* <h4>Manufacturer Model Add</h4>*@
+            
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ManufacturerCode)
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 100px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                      @Html.DropDownListFor(model => model.ManufacturerList, Model.drpManufacturerListC, "Select Manufacturer List", new { id = "drpManufacturerListAdd" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ModelNo)
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ModelNo, new { id = "txtManufacturerModelAdd"  })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.RepaireCode)
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                
+                    @Html.DropDownList("RepaireCodeAdd", listItems, new { @class = "form-control" })
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            
+
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                 
+                    <input type="button" value="Submit" id="btnModelAdd" />
+                <td></td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr>
+
+
+        </table>
+    </div>
+      <div id="divManufacturerModelEdit" style="display: none; width: 800px;" >
+        <table width="100%">
+              
+         @*   <h4>Manufacturer Model Edit</h4>*@
+          
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ManufacturerCode)
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ManufacturerCode, new { id = "txtManufacturerCode", @readonly = "readonly" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ModelNo)
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ModelNo, new { id = "txtManufacturerModel", @readonly = "readonly" })
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.RepaireCode)
+                </td>
+
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2" style="text-align: left; vertical-align: top;">
+                   
+                     
+                     @Html.DropDownListFor(model => model.RepaireCode, listItems, "", new  { @class = "form-control",id = "RepaireCode" })        
+        
+                </td>
+                <td style="text-align: left; vertical-align: top; width: 200px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.ChangeUser_Name, new { id = "UserID1" })
+                </td>
+                
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.LabelFor(model => model.Changed_Time, new { id = "ModifiedTime1" })
+                </td>
+                </tr>
+
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                     @Html.TextBoxFor(model => model.ChangeUser, new { id = "UserID", @readonly = "readonly" })
+                </td>
+                 
+                <td style="text-align: left; vertical-align: top;">
+                    @Html.TextBoxFor(model => model.ChangeTime, new { id = "ModifedTime", @readonly = "readonly"  })
+                </td>
+                </tr>
+
+            <tr>
+                <td style="text-align: left; vertical-align: top; width: 200px;">
+                 
+                    <input type="button" value="Submit" id="btnModelEdit" />
+                <td></td>
+                <td style="text-align: left; vertical-align: top; width: 190px;">&nbsp;</td>
+            </tr>
+
+
+        </table>
+    </div>
+    <table  width="100%">
+      <tr>
+            <td  style="width:100%;">
+            
+            <div id="gridContentModel">  
+                  
+                </div>  
+             
+            
+            </td>
+        </tr>
+      <tr><td colspan="8">
+
+            @Html.Label("lbl", new { id = "lblErrorMesage", style = "color: red; text-size:12px; display: none;" })
+           <br />
+           <p style="text-align:center;"><h3>@Html.Label("lbl", new { id = "lblMesage", style = "display: none;" }) </h3></p>
+            </td></tr>
+        </table>
+}@*  *@

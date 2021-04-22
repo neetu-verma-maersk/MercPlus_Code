@@ -1,0 +1,199 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>PAYAGENT VENDOR</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" height="552">
+  <tr>
+    <td height="38" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <p align="center"><span class="sub_heading"><font size="6" face="Verdana">MERC+ 
+	Pay Agent-Vendor 
+    management</font></span></td>
+  </tr>
+  <tr>
+    <td height="30" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="44" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <font face="Verdana"><b><font size="4">Pay Agent-Vendor.</font></b><p><b>
+    <font size="2">The Pay Agent-Vendor management screen is used to associate a 
+	Pay Agent to a Vendor.<br>
+	The Vendor is the owner of a repair shop and a Vendor can own one or more 
+	shops. By setting up a Pay Agent-Vendor relationship rather than a Pay 
+	Agent-shop relationship some set up work can thus be saved when a Vendor 
+	owns more than 1 shop.</font></b></p>
+	<p><b>
+    <font size="2">The </font>
+<font size="2" face="Verdana">RRIS Payment Account Code and the RRIS supplier 
+	code in </font><font size="2">MERC+ is validated in RRIS, therefore setting 
+	up account and supplier code in MERC+ requires the account and supplier code 
+	is existing in RRIS otherwise the update&nbsp;will not be accepted in MERC+.<br>
+	The Pay Agent-Vendor association is only used when automatic transmission to RRIS or FACT takes 
+	place, if no automatic transmission of repair costs are to take place it is 
+	not necessary to set up a Pay Agent-Vendor association.</font></b></p>
+	<p><b>T<font size="2">he RRIS supplier code is the equivalent to MERC+ 
+	vendor code. It may be the same in both systems but this is not necessarily 
+	the case.<br>
+	</font>
+<font size="2" face="Verdana">Corporate Pay Agent code, RRIS Payment Account Code 
+	and the RRIS supplier code </font><font size="2">must be obtained from local finance 
+	management.<br>
+	MERC+ vendor code can be found in MERC+ under &quot;Vendor&quot; and Shop-Vendor 
+	association can be found &quot;Shop profile&quot;.<br>
+&nbsp;</font></b></p>
+	<hr></font>
+    </td>
+  </tr>
+  <tr>
+    <td height="24" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <font face="Verdana">
+    <b>
+    <font size="4">Required access levels.</font></b><p>
+	<span style="font-weight: 700">Look up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+	CPH or Admin<br>
+	Create new: CPH or Admin<br>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	: CPH or Admin<br>Delete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : CPH or Admin<br>
+&nbsp;</span></p>
+	<hr></font></td>
+  </tr>
+  <tr>
+    <td height="12" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <p><b><font face="Verdana" size="4">Related links.</font><span lang="EN-GB" style="font-size: 7.5pt; font-family: Verdana"><br>
+	<br></span><font face="Verdana" size="2">
+	<a href="#Create Pay Agent-Vendor association">Create a Pay Agent-Vendor 
+	association</a><br>
+	<a href="#Edit Pay Agent-vendor association">Edit a Pay Agent-Vendor 
+	association</a><br>
+	<a href="#Delete Pay Agent-Vendor Association">Delete a Pay Agent-Vendor 
+	association</a><br>
+	<a href="tablemod_payagent_help.htm">Payagent management</a></font></b><br>
+&nbsp;</p><hr></td>
+  </tr>
+  <tr>
+    <td height="12" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+    <font face="Verdana">
+    <b>
+    <font size="4">Tips</font></b></font><p><b><font face="Verdana">Before 
+	attempting to set up a </font></b>
+    <font face="Verdana"><b>
+    <font size="2">Pay Agent-Vendor association ensure that</font></b></font></p>
+	<ol>
+		<li><b><font face="Verdana">The Payagent is existing in MERC+.</font></b></li>
+		<li><b><font face="Verdana">The Vendor code is existing in MERC+.</font></b></li>
+		<li><b><font face="Verdana">You have a valid RRIS Payment Account Code 
+		to insert.</font></b></li>
+		<li><b><font face="Verdana">You have a valid RRIS Supplier Code to 
+		insert.</font></b></li>
+	</ol>
+	<p><b><font face="Verdana">It is <u>extremely important</u> point 3 and 4 
+	are correct in MERC+ as otherwise there is risk of paying the wrong vendor 
+	or to use the wrong account code when the cost is send to RRIS.<br>
+&nbsp;</font></b></p>
+	<hr></td>
+  </tr>
+  <tr>
+    <td height="324" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+
+<h3>
+<font face="Verdana"><a name="Create Pay Agent-Vendor association"></a>How to 
+Create <span lang="en-us"> a Pay Agent-Vendor association</span></font></h3>
+<p>
+<b><font face="Verdana">1) From MERC+ main screen, click on link named &quot;Pay 
+Agent-Vendor&quot;.<br>
+<br>
+2) 
+</font><font face="Verdana" size="2">
+<span style="font-weight: 700" lang="en-us">Click &quot;Add new&quot; to create a new Pay 
+Agent-Vendor association</span>.<br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_main.jpg" width="430" height="219"><br>
+&nbsp;</font></p>
+<p>
+<font face="Verdana">3</font><font size="2" face="Verdana">) Select a Corporate Pay Agent Code from the dropdown<br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_create.JPG" width="436" height="301"><br>
+&nbsp;</font></p>
+<p>
+<font face="Verdana">4</font><font size="2" face="Verdana">) Select a Vendor Code from the dropdown<br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_create_1.JPG" width="434" height="250"><br>
+&nbsp;</font></p>
+<p>
+<font face="Verdana">5</font><font size="2" face="Verdana">) Enter RRIS Payment Account Code.<br>
+6) Enter RRIS supplier code for the Vendor.<br>
+7) Click &quot;Add record&quot;.<br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_add.jpg" width="435" height="237"></font></p></b>
+<p>&nbsp;</p>
+<hr>
+<h3><font face="Verdana"><span lang="en-us">
+<a name="Edit Pay Agent-vendor association"></a>How to Edit a Pay Agent-Vendor 
+association.</span></font></h3>
+<p class="MsoNormal"><b><font face="Verdana">1) From MERC+ main screen, click on link named &quot;Pay 
+Agent-Vendor&quot;.</font></b><font face="Verdana" size="2"><span lang="en-us"><b><br>
+</b></span></font><b><font face="Verdana" size="2">
+<img border="0" src="Images/PayAgentVendor/Pay_ven_main.jpg" width="430" height="219"></font></b></p>
+<p class="MsoNormal"><font face="Verdana" size="2"><span lang="en-us"><b>
+<br>
+2) Select Corporate Pay Agent Code from Dropdown and press &quot;Update-Select MERC Vendor Code&quot;.<br>
+</b></span></font><b><font size="2" face="Verdana">
+<img border="0" src="Images/PayAgentVendor/Pay_ven_cust.jpg" width="430" height="285"></font></b></p>
+<p class="MsoNormal"><b><font size="2" face="Verdana">
+<br>
+3</font></b><font face="Verdana" size="2"><span lang="en-us"><b>) Select MERC+ Vendor Code from Dropdown 
+and press &quot;Update-Delete&quot;.</b></span></font><b><font size="2" face="Verdana"><br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_edit.JPG" width="430" height="204"></font></b></p>
+<p class="MsoNormal"><b><font size="2" face="Verdana">
+<br>
+4) Edit RRIS Payment Account Code or RRIS supplier code as required and press 
+&quot;Update&quot;<br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_update.jpg" width="435" height="253"><br>
+<br>
+<br>
+5) Pay Agent-Vendor association updated.<br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_edit_done.jpg" width="550" height="284"></font></b></p>
+<hr>
+<p class="MsoNormal"><a name="Delete Pay Agent-Vendor Association"></a><b>
+<font face="Verdana" size="4"><span lang="en-us">
+How to Delete a Pay Agent-Vendor 
+association.</span></font></b></p>
+<p class="MsoNormal"><b><font face="Verdana">1) From MERC+ main screen, click on link named &quot;Pay 
+Agent-Vendor&quot;.</font></b><font face="Verdana" size="2"><span lang="en-us"><b><br>
+</b></span></font><b><font face="Verdana" size="2">
+<img border="0" src="Images/PayAgentVendor/Pay_ven_main.jpg" width="430" height="219"></font></b></p>
+<p class="MsoNormal"><font face="Verdana" size="2"><span lang="en-us"><b>
+<br>
+2) Select Corporate Pay Agent Code from Dropdown and press &quot;Update-Select MERC Vendor Code&quot;.<br>
+</b></span></font><b><font size="2" face="Verdana">
+<img border="0" src="Images/PayAgentVendor/Pay_ven_cust.jpg" width="430" height="285"></font></b></p>
+<p class="MsoNormal"><b><font size="2" face="Verdana">
+<br>
+</font><font face="Verdana">3</font></b><font face="Verdana" size="2"><span lang="en-us"><b>) Select MERC+ Vendor Code from Dropdown 
+and press &quot;Update-Delete&quot;.</b></span></font><b><font size="2" face="Verdana"><br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_edit.JPG" width="430" height="204"></font></b></p>
+<p class="MsoNormal"><b><font size="2" face="Verdana">
+<br>
+4) Press 
+&quot;Delete&quot;<br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_update.jpg" width="435" height="253"></font></b></p>
+<p class="MsoNormal"><b><font size="2" face="Verdana"><br>
+5) Pay Agent-Vendor association Deleted.</font></b><br>
+<img border="0" src="Images/PayAgentVendor/Pay_ven_delete.jpg" width="550" height="282"></p>
+<hr>
+    </td>
+  </tr>
+  <tr>
+    <td height="56" style="font-weight: normal; font-size: 10pt; color: #003366; font-family: Verdana,Arial">
+
+    <p align="right">&nbsp;<p align="right"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" s-type="EDITED" s-format="%d %B %Y" startspan -->10 March 2016<!--webbot bot="Timestamp" endspan i-checksum="18821" --></span><p>&nbsp;</td>
+  </tr>
+</table>
+
+</body>
+
+</html>

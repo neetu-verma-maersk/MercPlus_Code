@@ -1,0 +1,167 @@
+Requirements                                                                    
+Communication between outside vendor and Enterprise receiving process will be by
+any standard email facility which allows file attachments to email transmissions.                                                                  
+The attached file must follow the format as defined below.                      
+This file may be system generated or manually created as long as it conforms to 
+the defined format.                                                          
+Estimates may be sent individually on a file, or batched together under one 
+header control record.                                                          
+Each line of the message will be size delimited and must have 80 characters     
+padded with spaces.                                                             
+Each line must be filled capacity as follows:                                   
+  Numbers - with leading zerors, 100.00 in 12 digit field = <000000010000>      
+  Labels  - with leading spaces, A123 in 6 char field     = <  A123>               
+                                                                                
+                                                                                
+EACH MESSAGE STARTS WITH A "CTL" LINE                                           
+EACH ESTIMATE CONSISTS OF AN HD1 LINE, AN HD2 LINE AND AT LEAST ONE RPR LINE.   
+PRT AND RMK LINES ARE INCLUDED IF PARTS WERE USED AND/OR REMARKS ARE PRESENT.   
+                                                                                
+
+                                                                                
+CTL LINE                                                                        
+                                                                                
+1 RECORD_IDENTIFIER     CHAR (3) VALUE ''CTL'                                   
+2 SHOP_CODE             CHAR (3) 3 DIGIT SHOP CODE                              
+3 GENERATED_IDENTIFIER  CHAR (6) 6 DIGIT TRANSMISSION NBR. SEE NOTE1            
+4 Customer_Total        CHAR (5) RECORD COUNT. SEE NOTES 1 AND 2                
+B Filler                CHAR(63) BLANK SPACES SEE NOTE 3                        
+                            (80)                                                
+CTLG27000116                                                                    
+11122233333344444BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                                                                                
+THE SAME LINE WITHOUT THE OPTIONAL RECORD COUNT WOULD BE AS FOLLOWS             
+111222333333BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                                                                                
+NOTE 1 - THESE SECTIONS ARE OPTIONAL - SEE NOTE 3                               
+NOTE 2 - RECORD COUNT IS NUMBER OF ESTIMATES IN MESSAGE. EXAMPLE                
+         OF 12 ESTIMATES IN MSG WOULD BE REPORTED AS 00012                      
+NOTE 3 - AS TRANSMISSION NBR AND RECORD COUNT ARE OPTIONAL - IF THEY            
+         ARE OMITTED - THE FILLER SHOULD BE INCREASED SO THE TOTAL              
+         CHARS IN THE LINE EQUAL 80.                                            
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                
+HD1 LINE  
+                                                                      
+1 RECORD_IDENTIFIER     CHAR (3)  VALUE 'HD1'                                   
+2 CUSTOMER              CHAR (4)  VALUE 'MAER'                                  
+3 SHOP_CODE             CHAR (3)  3 DIGIT RKRP SHOW CODE                        
+4 REPAIR_DATE           CHAR (8)  DDMMYYYY                                      
+5 EQUIPMENT_NUMBER      CHAR(11)                                                
+6 MODE                  CHAR (2)                                                
+7 CAUSE                 CHAR (1)  see note 4                                                 
+8 THIRD_PARTY_LOCATION  CHAR (3)                                                
+9 WO-TYPE               CHAR (1)  ALWAYS "W"                                    
+B blank spaces          CHAR(44)  FILLER (SHOWN AS B's below)                   
+                            (80)                                                
+HD1MAERG2702092003MWCU6549436431   W                                            
+111222233344444444555555555556678889BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                                                                                
+a genset MAEG654321 with 3rd party damage attibuted to NOL would be:            
+HD1MAERG2702092003 MAEG654321332NOLW                                            
+111222233344444444555555555556678889BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+(note the equipment number is right aligned in the 11 char field.)              
+
+Note 4 the CAUSE codes are standard per RKRP 1 thru 4	
+   1 = normal wear and tear                                           
+   2 = handling damage                                                
+   3 = confirmed 3rd party (which which case enter 3 digit loc. code) 
+   4 = unconfirmed 3rd party                                          
+                                                                                
+
+
+                                                                                
+HD2 LINE
+                                                                             
+1 RECORD_IDENTIFIER       CHAR(3)  VALUE 'HD2'                                  
+2 VENDOR_REFERENCE_NUMBER CHAR(36) UP TO 10 CHARS RIGHT ALIGNED IN 36 CHAR FIELD
+3 STRAIGHTTIME_HOURS      CHAR(4)                                               
+4 OVERTIME_HOURS          CHAR(4)                                               
+5 DOUBLETIME_HOURS        CHAR(4)                                               
+6 MISC_HOURS              CHAR(4)                                               
+7 TOTAL_AMOUNT            CHAR(12) TOTAL LABOR + SHOP MATERIALS                 
+B blank spaces            CHAR(13) FILLER (SHOWN AS B's BELOW)                  
+                              (80)                                              
+HD2                         0000068226d0200000000000000000000006043             
+1112222222222222222222222222222222222223333444455556666777777777777BBBBBBBBBBBBB
+                                                                                
+
+
+                                                                                
+RPR LINE                                                                        
+
+REPAIR                                                               
+1 RECORD_IDENTIFIER     CHAR (3)  VALUE 'RPR'                             
+2 REPAIR_CODE           CHAR (6)  NOTE REPAIR CODE FIELD IS 6 SPACE TEXT FIELD  
+3 REPAIR_PIECE-COUNT    CHAR (3)  NUMERIC                                
+4 MATERIAL_AMOUNT       CHAR(12)  NUMERIC FORMAT 999999999999
+5 MAN_HOUR              CHAR (4)  HOURS PER PIECE                               
+B blank spaces          CHAR(52)  FILLER (SHOWN AS B's BELOW)                     
+                            (80)                                                
+RPR  53320020000000000000010
+1112222223334444444444445555BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                                                                                
+
+
+                                                                                
+PRT LINE                                                                        
+
+PARTS                                                                           
+1 RECORD_IDENTIFIER     CHAR(3)  VALUE 'PRT'                                    
+2 PART_PIECE-COUNT      CHAR(3)  NUMERIC   ASSUME 99.9                          
+3 PART_NUMBER           CHAR(14)                                                
+B blank spaces          CHAR(60) FILLER (SHOWN AS B's BELOW)                    
+                                                                                
+PRT020   1260-096-00                                                            
+11122233333333333333BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+NOTE - PRT LINE(s) MUST FOLLOW THE RPR LINE WITH WHICH THEY ARE ASSOCIATED.
+                                                                                
+
+
+                                                                                
+RMK LINE                                                                        
+
+REMARK - 3 MAX                                                       
+1 RECORD_IDENTIFIER     CHAR (3)  VALUE 'RMK'                             
+2 REMARK                CHAR(77)                                                  
+                                                                                
+RMK                           THIS IS A SAMPLE REMARK, IT IS PADDED WITH SPACES.
+11122233333333333333BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+
+
+
+
+
+SAMPLES
+CTLG0500014000319                                                               
+HD1MAERE8818092003 GCEZ400216111   W                                            
+HD2                          E880918Q040190000000000000000000007221             
+RPR  09400010000000003000100                                                    
+RPR  09760010000000001590000                                                    
+PRT020   1260-096-00                                                            
+RPR  41240010000000003600010                                                    
+RPR  71210020000000007080020                                                    
+RPR  76210020000000002360010                                                    
+RPR  86210010000000003280020                                                    
+
+HD1MAERG0518092003 MAEC711667111   W                                            
+HD2                          G050918Q770110000000000000000000003453             
+RPR  09760010000000000370000                                                    
+RPR  41250010000000002000010                                                    
+RPR  44210010000000000130010                                                    
+RPR  54110010000000000000050                                                    
+RPR  61220020000000000000010                                                    
+RPR  76220010000000002330020                                                    
+HD1MAERE8818092003 MAEC745820111   W                                            
+HD2                          E880918Q7H0340000000000000000000021847             
+RMK                                                                  OK PER EARL
+RPR  09760010000000009650000                                                    
+RPR  51210020000000103040110                                                    
+RPR  53250020000000010700050                                                    
+RPR  86210010000000003280020                                                    
+

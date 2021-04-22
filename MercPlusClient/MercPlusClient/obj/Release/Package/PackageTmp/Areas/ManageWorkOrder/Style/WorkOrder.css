@@ -1,0 +1,37 @@
+﻿body {
+}
+
+.ui-datepicker-calendar .ui-state-default {
+    background: #ededed;
+    background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#dedede));
+    background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);
+    background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);
+    background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);
+    background: linear-gradient(top,  #ededed 0%,#dedede 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
+    -webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+    -moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+    box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+}
+.ui-datepicker-unselectable .ui-state-default {
+    background: #f4f4f4;
+    color: #b4b3b3;
+}
+
+ .webGrid { margin: 4px; border-collapse: collapse; width: 90%;  background-color:#B4CFC3;}
+    /*.header { background-color: blue; font-weight: bold; color: #FFF; }*/
+    .header { background-color: #4682CB; font-weight: bold; color: White !important; }
+    
+    .webGrid th, .webGrid td { border: 1px solid #C0C0C0; padding: 5px; }
+    /*.alt { background-color: #E4E9F5; color: #000; }*/
+    .alt {
+        background-color: #F4EFEF;
+    }
+
+    .gridHead a:hover {text-decoration:underline;}
+    .description { width:auto}
+    .select{background-color: #71857C}
+
+    /*.Label { color: red; font-size:larger; }*/
+

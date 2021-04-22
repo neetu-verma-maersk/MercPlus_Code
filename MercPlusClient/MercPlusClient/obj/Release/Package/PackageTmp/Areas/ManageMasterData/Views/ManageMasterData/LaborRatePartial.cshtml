@@ -1,0 +1,53 @@
+﻿ 
+<link href="~/Areas/ManageMasterData/Style/MasterData.css" rel="stylesheet" />
+
+<div id="gridposition" style="width: 100%;"> 
+ 
+    
+    
+       @if (Model.Count > 0)
+       {
+           var grid1 = new WebGrid(Model, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContentModel");
+
+            
+
+                {
+                @grid1.GetHtml(
+                tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: grid1.Columns(
+                grid1.Column("ShopCode", header: "Shop Code"),
+                grid1.Column("CustomerCode", header: "Customer"),
+                grid1.Column("EqpType", header: "Equipment Type"),
+                grid1.Column("EffDate", header: "Effective Date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.EffDate)),
+                grid1.Column("ExpDate", header: "Expiration Date",format: (item) => string.Format("{0:yyyy-MM-dd}", item.ExpDate)),
+                grid1.Column("RegularRT", header: "Ordinary Rate" ,format: (item) => String.Format("{0:0.##}", item.RegularRT) ),
+                grid1.Column("OvertimeRT", header: "OT1 Rate", format: (item) => String.Format("{0:0.##}", item.OvertimeRT)),                 
+                grid1.Column("DoubleTimeRT", header: "OT2 Rate",format: (item) => String.Format("{0:0.##}", item.DoubleTimeRT)),
+                grid1.Column("MiscRT", header: "OT3 Rate",format: (item) => String.Format("{0:0.##}", item.MiscRT)),
+                grid1.Column(format: (item) => ( item.ExpDate>= System.DateTime.Now ? ( item.Shop.ShopActiveSW=="N"  ? Html.ActionLink("Edit", "LaborRateEdit", new { ContID = item.LaborRateID,  style="font-size:8px; color:blue;" }) : Html.Raw("")) : Html.Raw("")))
+                
+               //  grid1.Column("Edit", format: @<text><a href="javascript:ShowEditModel('ManufactureModel','Manufacture Model Edit','@item.ManufacturCd','@item.ModelNo','@item.IndicatorCd','@item.ChangeUser','@item.ChangeTime',800,450,scroll);", style="color:blue; font-size:small;">Edit</a></text>, header: ""),
+           
+                       //     grid1.Column("Delete", format: @<text><a href="javascript:DeleteModel('ManufactureModel','Manufacture Model Delete','@item.ManufacturCd','@item.ModelNo' ,800,450,scroll);", style="color:blue; font-size:small;">Delete</a></text>, header: "")
+           ))
+              
+                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                             
+}
+             
+
+        }
+           
+           
+           
+    else
+       {
+          // var errMsg = "**** NO RECORDS FOUND MATCHING SEARCH CRITERIA ****"
+               //ShowRemoveValidationMessage(errMsg, "Result");
+            @Html.Label("#ErrorMsgContainer", "**NO**", new { style = "width: 750px; vertical-align: text-top;" });
+       }
+    </div>
+

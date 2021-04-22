@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MESC2DSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MESC2DSModelStoreContainer">
+          <EntitySet Name="MESC1TS_XML_LOG" EntityType="MESC2DSModel.Store.MESC1TS_XML_LOG" store:Type="Tables" store:Schema="dbo" store:Name="MESC1TS_XML_LOG">
+            <DefiningQuery>SELECT 
+      [MESC1TS_XML_LOG].[XML_ID] AS [XML_ID], 
+      [MESC1TS_XML_LOG].[CRTS] AS [CRTS], 
+      [MESC1TS_XML_LOG].[XML_TEXT] AS [XML_TEXT]
+      FROM [dbo].[MESC1TS_XML_LOG] AS [MESC1TS_XML_LOG]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MESC2DS.dbo.MESC1TS_XML_LOG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MESC1TS_XML_LOG">
+          <Key>
+            <PropertyRef Name="XML_ID" />
+          </Key>
+          <Property Name="XML_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CRTS" Type="datetime" />
+          <Property Name="XML_TEXT" Type="varchar" MaxLength="4096" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MESC2DSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MESC2DSEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="MESC1TS_XML_LOG" EntityType="MESC2DSModel.MESC1TS_XML_LOG" />
+        </EntityContainer>
+        <EntityType Name="MESC1TS_XML_LOG">
+          <Key>
+            <PropertyRef Name="XML_ID" />
+          </Key>
+          <Property Name="XML_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CRTS" Type="DateTime" Precision="3" />
+          <Property Name="XML_TEXT" Type="String" MaxLength="4096" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="MESC2DSEntities">
+          <EntitySetMapping Name="MESC1TS_XML_LOG">
+            <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_XML_LOG">
+              <MappingFragment StoreEntitySet="MESC1TS_XML_LOG">
+                <ScalarProperty Name="XML_ID" ColumnName="XML_ID" />
+                <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+                <ScalarProperty Name="XML_TEXT" ColumnName="XML_TEXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

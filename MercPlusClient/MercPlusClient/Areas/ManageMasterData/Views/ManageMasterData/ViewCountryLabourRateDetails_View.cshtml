@@ -1,0 +1,140 @@
+﻿
+@*@model PagedList.PagedList<MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataModel>*@
+@*@using PagedList.Mvc;*@
+
+@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterCountryLabourRateModel
+
+@{
+ 
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<link href="~/Areas/ManageWorkOrder/Style/WorkOrder.css" rel="stylesheet" /> 
+<script>
+    function ClientValidation() {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+
+
+        HighlightInputsForError($("#drpCountryList"), false)
+        if (document.getElementById('drpCountryList').selectedIndex == 0) {
+            isError = true;
+            errMsg = "Please Select Country";
+            HighlightInputsForError($("#drpCountryList"), isError)
+        }
+        HighlightInputsForError($("#drpEquipmentType"), false)
+        if (document.getElementById('drpEquipmentType').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select Equipment Type";
+            }
+            else {
+                errMsg += ", Equipment Type.";
+            }
+            HighlightInputsForError($("#drpEquipmentType"), isError)
+        }
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_country_labor_rate_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+
+
+<br />
+@using (Html.BeginForm(FormMethod.Post))
+{
+  <h3><b>Country Labour Rates View</b></h3>
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+     <table>
+          <tr>
+            <td><b>Country</b></td>
+            <td><b>Equipment Type</b></td>
+            <td></td>
+         </tr>
+
+          <tr>
+           
+            <td> @Html.DropDownListFor(model => model.CountryCode, Model.drpCountryList, new { id = "drpCountryList", @style = "width:150px;" })</td>
+
+            <td>@Html.DropDownListFor(model => model.EquipmentType, Model.drpEquipmentType, new { id = "drpEquipmentType", @style = "width:150px;" })</td>
+             <td> &nbsp;    &nbsp;  &nbsp;<input name="SearchButton" type="submit" value="Query" id="BtnSearch" onclick="return ClientValidation()"  formaction ="/ManageMasterData/ManageMasterData/GetCountryLabourRateDetails" /></td>
+         </tr>
+         
+    </table>
+    
+    <br />
+             
+    
+    <table>
+
+        <tr>
+            <td>
+
+                 <div id="gridContent">
+       @if (Model.SearchResult != null)
+       {
+
+
+           var grid1 = new WebGrid(Model.SearchResult, canPage: false, canSort: false, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+
+           //grid1.Pager(WebGridPagerModes.NextPrevious)
+
+        
+                    @grid1.GetHtml(
+                    tableStyle: "webGrid",
+                    headerStyle: "header",
+                    alternatingRowStyle: "alt",
+                    selectedRowStyle: "select",
+                    columns: grid1.Columns(
+
+                             grid1.Column("COUNTRYNAME", header: "Country"),
+                             grid1.Column("EQUIPMENT_TYPE", header: "Equipment Type"),
+                             grid1.Column("EFFECTIVE_DATE", header: "Effective Date"),
+                             grid1.Column("EXPIRATION_DATE", header: "Expiration Date"),
+                             grid1.Column("ORDINARY_RATE", header: "Ordinary Rate"),
+                             grid1.Column("OT1_RATE", header: "OT1 Rate"),
+                             grid1.Column("OT2_RATE", header: "OT2 Rate"),
+                             grid1.Column("OT3_RATE", header: "OT3 Rate")
+
+                                         )) 
+       }
+           
+</div>
+
+            </td>
+           
+        </tr>
+
+        <tr>
+            <td>
+                 @if (Model.SearchResult != null)
+                 {
+
+                     //     @Html.Label("There were no results meeting your query parameters", new { id = "lblMessage", style="display:none;"})
+                 }
+                 else
+                 {
+                     //     @Html.Label("There were no results meeting your query parameters", new { id = "lblMessage"})
+                 }
+            </td>
+        </tr>
+
+   </table>
+}
+    
+
+
+
+

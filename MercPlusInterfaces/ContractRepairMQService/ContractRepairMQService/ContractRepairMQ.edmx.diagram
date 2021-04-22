@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c9ce13fdd48c4ef5b53eb4db2f9629df" Name="Diagram1">
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_COUNTRY" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_COUNTRY_CONT" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_CURRENCY" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_REPAIR_CODE" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_SHOP" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_SHOP_CONT" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__COUNT__00DF2177" ManuallyRouted="false" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__CUCDN__7FEAFD3E" ManuallyRouted="false" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__CUCDN__214BF109" ManuallyRouted="false" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__SHOP___251C81ED" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

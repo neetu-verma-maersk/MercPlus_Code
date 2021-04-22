@@ -1,0 +1,317 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageEqtypeModeEntry
+
+@{
+    ViewBag.Title = "SubmitEqTypeEntry";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<script src="~/Areas/ManageMasterData/Script/EqMode.js"></script>
+ @*<script type="text/javascript">
+    $(function () {
+        $("#ddlSubType").change(function () {
+            var c = $(this).val();
+            // var a = JSON.stringify({ customerId: $(this).val() };
+            $.ajax({
+                url: "/ManageMasterData/ManageMasterData/SetSubTypeDetails",
+                type: 'POST',
+                data: { id: c },
+                cache: false,
+                success: function (data) {
+                    
+                    var items = [];
+                    items.push("<option value=" + -1 + ">" + "--Select--" + "</option>"); //first item
+                    for (var i = 0; i < data.length; i++) {
+                        items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                    }                                         //all data from the team table push into array
+                    $("#ddlEqType").html(items.join(' '));
+
+                },
+                error: function (data) {
+
+                }
+            });
+        });
+    });
+   </script> *@
+
+ <script type="text/javascript">
+
+    function ClientAddValidation() {
+
+        var errMsg = "";    
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+
+        HighlightInputsForError($("#ddlEqType"), false)
+        if (document.getElementById('ddlEqType').selectedIndex == 0) {
+            isError = true;
+            errMsg += "Please select an Equipment Type";
+            HighlightInputsForError($("#ddlEqType"), isError)
+        }
+        HighlightInputsForError($("#ddlSubType"), false)
+        if (document.getElementById('ddlSubType').selectedIndex == 0)
+        {        
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please select the Sub Type";
+            }
+            else {
+                errMsg += ", the Sub Type";
+            }
+            HighlightInputsForError($("#ddlSubType"), isError)
+        }
+
+        HighlightInputsForError($("#ddlAluminum"), false)
+        if (document.getElementById('ddlAluminum').selectedIndex == 0) {
+           
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please select the Aluminum.";
+            }
+            else {
+                errMsg += ", the Aluminum";
+            }
+        HighlightInputsForError($("#ddlAluminum"), isError)
+        }
+        HighlightInputsForError($("#ddlSize"), false)
+        if (document.getElementById('ddlSize').selectedIndex == 0) {
+
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please select the Size.";
+            }
+            else {
+                errMsg += ", the Size";
+            }
+            HighlightInputsForError($("#ddlSize"), isError)
+        }
+
+        HighlightInputsForError($("#ddlMode"), false)
+        if (document.getElementById('ddlMode').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please select the Mode.";
+            }
+            else {
+                errMsg += ", the Mode.";
+            }
+            HighlightInputsForError($("#ddlMode"), isError)
+        }
+      
+
+
+
+        //HighlightInputsForError($("#ddlSize"), false)
+        //if (document.getElementById('ddlSize').selectedIndex == 0) {
+        //    var getVal = document.getElementById("LimitAmt1").value;
+        //    if (getVal == 'Y') {
+        //        isError = true;
+        //        errMsg += "Equipment types without Size must specify Aluminum Switch as N.";
+        //        HighlightInputsForError($("#ddlSize"), isError)
+        //    }
+        //}
+
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function ClientEditValidation() {
+
+        var errMsg = "";
+        var isError = false;
+        $("#ErrorMsgContainer").html("");
+
+        HighlightInputsForError($("#drpCountryList"), false)
+        if (document.getElementById('drpCountryList').selectedIndex == 0) {
+            isError = true;
+            errMsg += "Please Select The country. </br>";
+            HighlightInputsForError($("#drpCountryList"), isError)
+        }
+        HighlightInputsForError($("#drpEquipmentType"), false)
+        if (document.getElementById('drpEquipmentType').selectedIndex == 0) {
+            isError = true;
+            if (errMsg.trim() == "") {
+                errMsg = "Please Select The Equipment Type.";
+            }
+            else {
+                errMsg += ", the Equipment Type.";
+            }
+            HighlightInputsForError($("#drpEquipmentType"), isError)
+        }
+        if (isError == true) {
+            ShowRemoveValidationMessage(errMsg, "Warning")
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+ <div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_eqmode_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+<br />
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    if(Model.IsAdd == true)
+    {
+         <br />
+        <div id="AddTitle">
+            <h3><B>Equipment Type / Mode Association Add</B></h3>
+        </div>
+    }
+    else
+    {
+    
+     <br />
+         <div id="EditTitle">
+             <h3><B>Equipment Type / Mode Association Edit </B></h3>
+              
+        </div>
+    }
+    <br />
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+            @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+
+          @*    @if (Session["Msg"] == "True")
+                    { 
+                       <table><tr><td> @Html.Raw(@Session["DisplayMsg"].ToString())</td></tr></table>
+                    }*@
+    </div>
+    <div id="HideEquipment" style="display:none;">
+          @Html.TextBoxFor(model => model.txtEquipmentId, new { id = "txtEquipment_Id"  })
+    </div>
+    <table>
+        <tr>
+            <td>
+                <b>Equipment Type</b>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+             @*  @Html.DropDownListFor(model => model.txtEqType, Model.ddlEqType, new {id="ddlEqType", @style="width:150px;"})*@
+                
+                @Html.DropDownList("txtEqType", Model.ddlEqType,"Select Eq Type", new  { id="ddlEqType", style="width:150px;" }) 
+                  
+
+                 
+            </td>
+              <td></td>
+        </tr>
+         <tr>
+             <td><b>Sub Type</b></td>
+               <td></td>
+         </tr>
+        <tr><td>
+               @*  @Html.DropDownListFor(model => model.txtSubType, Model.ddlSubType, new {id="ddlSubType", @style="width:150px;"})*@
+            @Html.DropDownList("txtSubType", Model.ddlSubType,"Select Sub Type", new  { id="ddlSubType", style="width:150px;" }) 
+            
+            
+            </td>
+              <td></td>
+        </tr>
+         <tr>
+             <td><b>Size</b></td>
+               <td></td>
+         </tr>
+        <tr><td>
+              @*   @Html.DropDownListFor(model => model.txtSize, Model.ddlEqType, new {id="ddlEqType", @style="width:150px;"})*@
+
+             @Html.DropDownList("txtSize", Model.ddlSize,"Select Size", new  { id="ddlSize", style="width:150px;" }) 
+            </td>
+              <td></td>
+        </tr>
+         <tr>
+             <td><b>Aluminum</b></td>
+               <td></td>
+         </tr>
+        <tr>
+            <td>
+                @* @Html.DropDownListFor(model => model.txtAluminum, Model.ddlEqType, new {id="ddlEqType", @style="width:150px;"})*@
+
+                 @Html.DropDownList("txtAluminum", Model.ddlAluminum,"Select Aluminum", new  { id="ddlAluminum", style="width:150px;" }) 
+            </td>
+              <td></td>
+        </tr>
+         <tr><td><b>Mode</b></td>
+             <td>
+              
+             </td>
+         </tr>
+        <tr><td>
+     
+              @Html.DropDownList("txtMode", Model.ddlMode,"Select Mode", new  { id="ddlMode" ,style="width:350px;" }) 
+
+            </td>
+              <td></td>
+        </tr>
+         <tr>
+             <td>
+
+                 @if(Model.IsAdd == false)
+                 {
+                    <span><b>Change User Name</b></span>
+                 }
+
+             </td>
+             <td>
+                   @if(Model.IsAdd == false)
+                   {
+                    <span><b>Changed Time</b></span>
+                   }
+             </td>
+         </tr>
+        
+            <tr>
+
+            <td style="width:150px;"> 
+                @if(Model.IsAdd == false)
+                {
+                  @Html.TextBoxFor(model => model.txtChangeUserName, new { id = "txtChangeUserName", @disabled = "disabled" })
+                }
+
+            </td>
+            <td>
+                 @if(Model.IsAdd == false)
+                {
+                   @Html.TextBoxFor(model => model.txtChangedTime, new { id = "txtChangedTime", @disabled = "disabled" })
+                 }
+            </td>
+           </tr>
+
+        
+     
+
+
+
+
+
+    </table>
+    
+    <table>
+            <tr>
+             <td>
+                  @if(Model.IsAdd == true)
+                  {
+                    <input name="SearchButton" type="submit" value="Submit" id="BtnEQ_Add" onclick="return ClientAddValidation();" formaction ="/ManageMasterData/ManageMasterData/InsertEqTypeEntry"  />
+                  }
+             </td>
+              <td>
+                  @if(Model.IsAdd == false)
+                  {
+                    <input name="SearchButton" type="submit" value="Submit" id="BtnEQ_Edit"   formaction ="/ManageMasterData/ManageMasterData/EditEqTypeEntry"  />
+                  }
+             </td>
+         </tr>
+
+    </table>
+    
+
+}

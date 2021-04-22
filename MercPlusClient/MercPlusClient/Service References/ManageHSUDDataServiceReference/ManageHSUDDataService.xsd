@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ManageHSUDDataService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ManageHSUDDataService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfEstLifeCycle_ApprovalCanceled">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstLifeCycle_ApprovalCanceled" nillable="true" type="tns:EstLifeCycle_ApprovalCanceled" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstLifeCycle_ApprovalCanceled" nillable="true" type="tns:ArrayOfEstLifeCycle_ApprovalCanceled" />
+  <xs:complexType name="EstLifeCycle_ApprovalCanceled">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Approved_By" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Base_Currency_Approved" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Base_Currency_Original" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cancelled_By" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cancelled_Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquimentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estimate_Grand_Total_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Estimate_Grand_Total_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Estimate_Original_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Estimate_Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estimate_Transmission_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Facility_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Facility_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Onwer_Approval_Number_Original" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner_Approval_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Owner_Handling_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Labor_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Material_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Tax_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Total_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_handling_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_labor_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_material_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_tax_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Revision_Number" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Summary_Size_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surveyrequested" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User_Total_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_handling_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_material_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_tax_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_total_labor_original" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstLifeCycle_ApprovalCanceled" nillable="true" type="tns:EstLifeCycle_ApprovalCanceled" />
+  <xs:complexType name="ArrayOfEstLifeCycleAnalysi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstLifeCycleAnalysi" nillable="true" type="tns:EstLifeCycleAnalysi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstLifeCycleAnalysi" nillable="true" type="tns:ArrayOfEstLifeCycleAnalysi" />
+  <xs:complexType name="EstLifeCycleAnalysi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Approved_By" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Base_Currency_Approved" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Base_Currency_Original" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cancelled_By" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cancelled_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EquimentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estimate_Grand_Total_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Estimate_Grand_Total_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Estimate_Original_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Estimate_Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estimate_Transmission_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Facility_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Facility_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Onwer_Approval_Number_Original" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner_Approval_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Owner_Handling_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Labor_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Material_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Tax_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_Total_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_handling_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_labor_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_material_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Owner_total_tax_original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Repair_Complete_Reported" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Repair_Completed_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Revision_Number" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Summary_Size_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surveyrequested" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User_Total_Approved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_handling_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_material_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_Total_tax_Original" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User_total_labor_original" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstLifeCycleAnalysi" nillable="true" type="tns:EstLifeCycleAnalysi" />
+  <xs:complexType name="ArrayOfEstLineItemAnalysi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstLineItemAnalysi" nillable="true" type="tns:EstLineItemAnalysi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstLineItemAnalysi" nillable="true" type="tns:ArrayOfEstLineItemAnalysi" />
+  <xs:complexType name="EstLineItemAnalysi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPROVALDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BASECURRENCYCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPONENTCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATEDBYUSER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAMAGECODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EQUIPMENTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EQUIPMENTTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTIMATEDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FACILITYCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FACILITYNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISSURVEYREQUESTED" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LABORCOSTBASE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LABORHOURS" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LABORRATEBASE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LENGTH" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LINEITEMNUMBER" type="xs:int" />
+      <xs:element minOccurs="0" name="LOCATIONCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIALCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIALCOSTBASE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORGANIZATIONTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QUANTITY" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="REPAIRCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SENDERESTIMATEID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUMMARYSIZETYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOTALBASE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UNITOFMEASURE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WIDTH" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstLineItemAnalysi" nillable="true" type="tns:EstLineItemAnalysi" />
+</xs:schema>

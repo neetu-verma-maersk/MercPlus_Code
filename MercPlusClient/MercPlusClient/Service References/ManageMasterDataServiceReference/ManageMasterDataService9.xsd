@@ -1,0 +1,3632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52642/ManageMasterDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary" />
+  <xs:import schemaLocation="http://localhost:52642/ManageMasterDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetManualMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualModeResult" nillable="true" type="q1:ArrayOfManualMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualModeManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualModeManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualModeManualResult" nillable="true" type="q2:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllManualResult" nillable="true" type="q3:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualModeMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualModeModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualModeModeResult" nillable="true" type="q4:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllModeResult" nillable="true" type="q5:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDamageCodes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDamageCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetDamageCodesResult" nillable="true" type="q6:ArrayOfDamage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDamageCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDamageCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetDamageCodeResult" nillable="true" type="q7:ArrayOfDamage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDamageCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="DamageCodeFromClient" nillable="true" type="q8:Damage" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDamageCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateDamageCodeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDamageCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="DamageToBeUpdated" nillable="true" type="q9:Damage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDamageCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="UpdateDamageCodeResult" nillable="true" type="q10:Damage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDamageCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DamageCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDamageCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDamageCodeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAuditTrailDataResult" nillable="true" type="q11:ArrayOfAuditTrail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModesResult" nillable="true" type="q12:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveInActiveModes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveInActiveModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllActiveInActiveModesResult" nillable="true" type="q13:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModeResult" nillable="true" type="q14:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ModeToBeUpdated" nillable="true" type="q15:Mode" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateModeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ModeFromClient" nillable="true" type="q16:Mode" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateModeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTPIIndicators">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTPIIndicatorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetTPIIndicatorsResult" nillable="true" type="q17:ArrayOfTPIIndicator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTPIIndicator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTPIIndicatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetTPIIndicatorResult" nillable="true" type="q18:ArrayOfTPIIndicator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTPIIndicator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="TPIIndicatorToBeUpdated" nillable="true" type="q19:TPIIndicator" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTPIIndicatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTPIIndicatorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTPIIndicator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TPICedexCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTPIIndicatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTPIIndicatorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTPIIndicator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="TPIIndicatorListToBeUpdated" nillable="true" type="q20:TPIIndicator" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTPIIndicatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateTPIIndicatorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualResult" nillable="true" type="q21:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManualDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ManualDescriptionToBeUpdated" nillable="true" type="q22:Manual" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManualDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateManualDescriptionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManualActiveSwitch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ManualActiveSwitchToBeUpdated" nillable="true" type="q23:Manual" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManualActiveSwitchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateManualActiveSwitchResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ManualFromClient" nillable="true" type="q24:Manual" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateManualResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSingleManualResult" nillable="true" type="q25:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLabourRateDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Eqtype" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLabourRateDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetLabourRateDetailsResult" nillable="true" type="q26:ArrayOfCountryLabor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryLabourList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryLabourListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCountryLabourListResult" nillable="true" type="q27:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetEquipmentListResult" nillable="true" type="q28:ArrayOfEqType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentTypeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentTypeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetEquipmentTypeListResult" nillable="true" type="q29:ArrayOfEqType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCphEquLimitModeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCphEquLimitModeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCphEquLimitModeListResult" nillable="true" type="q30:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllLimits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Eq" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllLimitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllLimitsResult" nillable="true" type="q31:ArrayOfCphEqpLimit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitCPHApprovalDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="cphEqp" nillable="true" type="q32:CphEqpLimit" />
+        <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LimitAmt1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LimitAmt2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LimitAmt3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LimitAmt4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LimitAmt5" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LimitAmt6" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LimitAmt7" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitCPHApprovalDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SubmitCPHApprovalDetailsResult" nillable="true" type="q33:ArrayOfCphEqpLimit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCPHApprovalDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EqSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCPHApprovalDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="UpdateCPHApprovalDetailsResult" nillable="true" type="q34:ArrayOfCphEqpLimit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSubTypeResult" nillable="true" type="q35:ArrayOfEqsType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEqType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEqTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetEqTypeResult" nillable="true" type="q36:ArrayOfEqsType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllEquModes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EqType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Aluminium" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllEquModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllEquModesResult" nillable="true" type="q37:ArrayOfEqMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllModes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllModesResult" nillable="true" type="q38:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEqTypeModeEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CoType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Aluminium" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Chuser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEqTypeModeEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateEqTypeModeEntryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEqTypeModeEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EqModeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Chuser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEqTypeModeEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateEqTypeModeEntryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByEqMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EqModeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByEqModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSByEqModeResult" nillable="true" type="q39:ArrayOfEqMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByAltKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CoType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Aluminium" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByAltKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSByAltKeyResult" nillable="true" type="q40:ArrayOfEqMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EQCheckDuplicate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CoType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Aluminium" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EQCheckDuplicateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EQCheckDuplicateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EQCheckDuplicateByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CoType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EQCheckDuplicateByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EQCheckDuplicateByTypeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EQCheckDuplicateByMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EQCheckDuplicateByModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EQCheckDuplicateByModeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDuplicateEqId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EqId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDuplicateEqIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckDuplicateEqIdResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubTypeDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubTypeDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSubTypeDetailResult" nillable="true" type="q41:ArrayOfEqsType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCSMList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCSMListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCSMListResult" nillable="true" type="q42:ArrayOfCustShopMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPayAgents">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPayAgentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllPayAgentsResult" nillable="true" type="q43:ArrayOfPayAgent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRsByCSM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CSMCD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRsByCSMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRsByCSMResult" nillable="true" type="q44:ArrayOfCustShopMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateProfitCenterByProfit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPayAgent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProfit" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateProfitCenterByProfitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateProfitCenterByProfitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateProfitCenterBySubProfit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCorpPayAgent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strSubProfit" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateProfitCenterBySubProfitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateProfitCenterBySubProfitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCustShopMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCSMCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sCustomerCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sShopCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sMode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sPayagentCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sCorpPayagentCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sRRISFormat" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sProfitCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sSubProfitCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sAccountCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCustShopModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCustShopModeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustShopMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCSMCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sCustomerCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sShopCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sMode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sPayagentCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sCorpPayagentCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sRRISFormat" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sProfitCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sSubProfitCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sAccountCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustShopModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCustShopModeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDuplicate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCustomerCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sShopCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sMode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDuplicateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckDuplicateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCsmCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CSMCD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCsmCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCsmCodeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CustomerCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CustomerCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="Get_CustomerCodeResult" nillable="true" type="q45:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_ShopCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_ShopCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="Get_ShopCodeResult" nillable="true" type="q46:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_ModeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_ModeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="Get_ModeListResult" nillable="true" type="q47:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCheckDuplicate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EqSize" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCheckDuplicateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsCheckDuplicateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAuditTrailCountryResult" nillable="true" type="q48:ArrayOfRefAudit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCodeForSuspend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCodeForSuspendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopCodeForSuspendResult" nillable="true" type="q49:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeForSuspend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Manual" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeForSuspendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModeForSuspendResult" nillable="true" type="q50:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCodeByCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCodeByCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopCodeByCustomerResult" nillable="true" type="q51:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationListByLocationCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LocCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationListByLocationCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetLocationListByLocationCodeResult" nillable="true" type="q52:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+        <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCountryByIDResult" nillable="true" type="q53:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInactiveShopByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInactiveShopByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetInactiveShopByUserIdResult" nillable="true" type="q54:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCodeByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCodeByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopCodeByUserIdResult" nillable="true" type="q55:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllGradeCodeResult" nillable="true" type="q56:ArrayOfGrade" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGradeContainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GradeCont" nillable="true" type="q57:GradeContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGradeContainerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateGradeContainerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeNames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllGradeNamesResult" nillable="true" type="q58:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeRelations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeRelationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllGradeRelationsResult" nillable="true" type="q59:ArrayOfGradeRelation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGradeRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="graderelationid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGradeRelationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGradeRelationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGradeRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="graderelation" nillable="true" type="q60:GradeRelation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGradeRelationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateGradeRelationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGradeRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="graderelation" nillable="true" type="q61:GradeRelation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGradeRelationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddGradeRelationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGradeRelationById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="graderelationid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGradeRelationByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetGradeRelationByIdResult" nillable="true" type="q62:GradeRelation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeSTSByMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="modes" nillable="true" type="q63:ArrayOfstring" />
+        <xs:element minOccurs="0" name="manualcd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGradeSTSByModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllGradeSTSByModeResult" nillable="true" type="q64:ArrayOfGradeSTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGradeSTSMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stscode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="manualcd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGradeSTSMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGradeSTSMappingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGradeSTSMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="gradeSTSList" nillable="true" type="q65:ArrayOfGradeSTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGradeSTSMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateGradeSTSMappingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGradeSTSMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="gradeSTSList" nillable="true" type="q66:ArrayOfGradeSTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGradeSTSMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddGradeSTSMappingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSTSDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stscode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="manualcd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSTSDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSTSDescriptionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShopContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gridData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShopContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteShopContractResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExpDateForShopContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gridData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="expDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="CHUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExpDateForShopContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateExpDateForShopContractResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertShopLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ShopLimit" nillable="true" type="q67:ShopLimits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertShopLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertShopLimitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShopLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ShopLimit" nillable="true" type="q68:ShopLimits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShopLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateShopLimitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAuditTrailShopResult" nillable="true" type="q69:ArrayOfRefAudit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSAllManufacturers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSAllManufacturersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="RSAllManufacturersResult" nillable="true" type="q70:ArrayOfManufactur" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSDiscountResult" nillable="true" type="q71:ArrayOfDiscount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateShopDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DiscountAll" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ManufactCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ManufactDis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateShopDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateShopDiscountResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShopProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ShopList" nillable="true" type="q72:Shop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShopProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateShopProfileResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertShopProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ShopList" nillable="true" type="q73:Shop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertShopProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertShopProfileResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetransmitWorkOrderStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WOIDS" nillable="true" type="q74:ArrayOfstring" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetransmitWorkOrderStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RetransmitWorkOrderStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllManualModes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManaualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllManualModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllManualModesResult" nillable="true" type="q75:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllManualResult" nillable="true" type="q76:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopContCurrencyCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="shopcode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopContCurrencyCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopContCurrencyCodeResult" nillable="true" type="q77:Currency" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopTypeByShopCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopTypeByShopCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShopTypeByShopCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateManufacturerModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="MModelToBeCreated" nillable="true" type="q78:Model" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateManufacturerModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateManufacturerModelResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepTimeDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepTimeDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetPrepTimeDetailsResult" nillable="true" type="q79:ArrayOfPrepTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePrepTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PrepToBeUpdated" nillable="true" type="q80:PrepTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePrepTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePrepTimeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePrepTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PreptimeDigit" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePrepTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePrepTimeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePrepTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="preplToBeCreated" nillable="true" type="q81:PrepTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePrepTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePrepTimeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCustomerListResult" nillable="true" type="q82:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopListResult" nillable="true" type="q83:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserShopList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserShopListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetUserShopListResult" nillable="true" type="q84:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonActiveShopList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonActiveShopListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetNonActiveShopListResult" nillable="true" type="q85:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaborRateDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CustCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eqtypeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaborRateDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetLaborRateDetailResult" nillable="true" type="q86:ArrayOfLaborRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaborRateEditDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaborRateEditDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetLaborRateEditDetailResult" nillable="true" type="q87:ArrayOfLaborRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLaborRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="LRateToBeCreated" nillable="true" type="q88:LaborRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLaborRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateLaborRateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyLaborRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="LRateToBeCreated" nillable="true" type="q89:LaborRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyLaborRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifyLaborRateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailLabourRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailLabourRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAuditTrailLabourRateResult" nillable="true" type="q90:ArrayOfRefAudit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPartsGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPartsGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllPartsGroupsResult" nillable="true" type="q91:ArrayOfPartsGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllManufacturers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllManufacturersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllManufacturersResult" nillable="true" type="q92:ArrayOfManufactur" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMasterPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="masterPartFromClient" nillable="true" type="q93:MasterPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMasterPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="AddMasterPartResult" nillable="true" type="q94:MasterPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterPartsByQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="partGroupCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="manufacturerCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="designation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isActive" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isCore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isDeductCoreValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterPartsByQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetMasterPartsByQueryResult" nillable="true" type="q95:ArrayOfMasterPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterPartByPartCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="partGroupCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterPartByPartCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetMasterPartByPartCodeResult" nillable="true" type="q96:ArrayOfMasterPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMasterPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="masterPartFromClient" nillable="true" type="q97:MasterPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMasterPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="UpdateMasterPartResult" nillable="true" type="q98:MasterPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMasterPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPartCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMasterPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMasterPartResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCountries">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllCountriesResult" nillable="true" type="q99:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryContractByQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="repairCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryContractByQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCountryContractByQueryResult" nillable="true" type="q100:ArrayOfCountryCont" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrail_MasterPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrail_MasterPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAuditTrail_MasterPartResult" nillable="true" type="q101:ArrayOfRefAudit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPartsGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="masterPartFromClient" nillable="true" type="q102:PartsGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPartsGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="AddPartsGroupResult" nillable="true" type="q103:PartsGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePartsGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PartsGroupToBeUpdated" nillable="true" type="q104:PartsGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePartsGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePartsGroupResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartsGroupByQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="partGroupCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartsGroupByQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetPartsGroupByQueryResult" nillable="true" type="q105:PartsGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveModes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllActiveModesResult" nillable="true" type="q106:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveManuals">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveManualsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllActiveManualsResult" nillable="true" type="q107:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCode_PartAssociation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="manual" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="repairCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCode_PartAssociationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCode_PartAssociationResult" nillable="true" type="q108:ArrayOfRepairCodePart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModesByManuals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="manCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModesByManualsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModesByManualsResult" nillable="true" type="q109:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_Edit_RPA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="repairCodePartFromClient" nillable="true" type="q110:RepairCodePart" />
+        <xs:element minOccurs="0" name="OprMode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_Edit_RPAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="Add_Edit_RPAResult" nillable="true" type="q111:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRPA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orgManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgPartNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgRepairCod" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxPartQty" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRPAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="UpdateRPAResult" nillable="true" type="q112:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRPRCODE_PART">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="repairCod" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="manualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRPRCODE_PARTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="DeleteRPRCODE_PARTResult" nillable="true" type="q113:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIPeriods">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serialFrom" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIPeriodsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetPTIPeriodsResult" nillable="true" type="q114:ArrayOfPTIPeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SerialFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SerialTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetPTIPeriodResult" nillable="true" type="q115:PTIPeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePTIPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PTIPeriodFromClient" nillable="true" type="q116:PTIPeriod" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePTIPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePTIPeriodResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePTIPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PTIPeriodFromClient" nillable="true" type="q117:PTIPeriod" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePTIPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePTIPeriodResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPTIPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PTIPeriodFromClient" nillable="true" type="q118:PTIPeriod" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPTIPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifyPTIPeriodResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIDefaultPeriod">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIDefaultPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPTIDefaultPeriodResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPTIDefaultPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NoOfDays" type="xs:int" />
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPTIDefaultPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifyPTIDefaultPeriodResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIDefaultPeriodRecord">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPTIDefaultPeriodRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetPTIDefaultPeriodRecordResult" nillable="true" type="q119:PTIPeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSpecialRemarks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SpecialRemarksFromClient" nillable="true" type="q120:SpecialRemarks" />
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSpecialRemarksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSpecialRemarksResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifySpecialRemarks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SpecialRemarksFromClient" nillable="true" type="q121:SpecialRemarks" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifySpecialRemarksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifySpecialRemarksResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSpecialRemarks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SpecialRemarksFromClient" nillable="true" type="q122:SpecialRemarks" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSpecialRemarksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSpecialRemarksResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecialRemarks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarksID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecialRemarksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSpecialRemarksResult" nillable="true" type="q123:SpecialRemarks" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetIndexesResult" nillable="true" type="q124:ArrayOfIndex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IndexID" type="xs:int" />
+        <xs:element minOccurs="0" name="Manual_CD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetIndexResult" nillable="true" type="q125:ArrayOfIndex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetIndexManualResult" nillable="true" type="q126:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="manual_cd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetIndexModeResult" nillable="true" type="q127:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="updatedIndex" nillable="true" type="q128:Index" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateIndexResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="indexID" type="xs:int" />
+        <xs:element minOccurs="0" name="manualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteIndexResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="insertIndex" nillable="true" type="q129:Index" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateIndexResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexesForDropDown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Manual_CD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexesForDropDownResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetIndexesForDropDownResult" nillable="true" type="q130:ArrayOfIndex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecialRemarksComboValue">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecialRemarksComboValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSpecialRemarksComboValueResult" nillable="true" type="q131:ArrayOfArrayOfSpecialRemarks" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexAllActiveManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexAllActiveManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetIndexAllActiveManualResult" nillable="true" type="q132:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexAllActiveMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="manual_cd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIndexAllActiveModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetIndexAllActiveModeResult" nillable="true" type="q133:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeManualResult" nillable="true" type="q134:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeModeResult" nillable="true" type="q135:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeByMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeByModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeByModeResult" nillable="true" type="q136:ArrayOfRepairCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeByIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IndexId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeByIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeByIndexResult" nillable="true" type="q137:ArrayOfRepairCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeByRepairCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepairCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeByRepairCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeByRepairCodeResult" nillable="true" type="q138:ArrayOfRepairCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRepairCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="RepairCodeFromClient" nillable="true" type="q139:RepairCode" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRepairCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertRepairCodeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyRepairCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="RepairCodeFromClient" nillable="true" type="q140:RepairCode" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyRepairCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifyRepairCodeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRepairCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="RepairCodeFromClient" nillable="true" type="q141:RepairCode" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRepairCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRepairCodeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeActiveIndexManual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeActiveIndexManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeActiveIndexManualResult" nillable="true" type="q142:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeIndexMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeIndexModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeIndexModeResult" nillable="true" type="q143:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertManualMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ManualModeFromClient" nillable="true" type="q144:ManualMode" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertManualModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertManualModeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManualMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ManualModeFromClient" nillable="true" type="q145:ManualMode" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManualModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteManualModeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyManualMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ManualModeFromClient" nillable="true" type="q146:ManualMode" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyManualModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifyManualModeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayAgent">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayAgentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetPayAgentResult" nillable="true" type="q147:ArrayOfPayAgent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopResult" nillable="true" type="q148:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePayAgent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PayAgentToBeUpdated" nillable="true" type="q149:PayAgent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePayAgentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePayAgentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePayAgent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RRISPayAgentCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePayAgentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePayAgentResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePayAgent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PayAgentListToBeUpdated" nillable="true" type="q150:PayAgent" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePayAgentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePayAgentResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEquipmentType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="EquipmentTypeToBeUpdated" nillable="true" type="q151:EqType" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEquipmentTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateEquipmentTypeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEquipmentTypeEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="EquipmentTypeFromClient" nillable="true" type="q152:EqType" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEquipmentTypeEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateEquipmentTypeEntryResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairLocationCodes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairLocationCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairLocationCodesResult" nillable="true" type="q153:ArrayOfRepairLocationCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairLocationCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairLocationCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairLocationCodeResult" nillable="true" type="q154:ArrayOfRepairLocationCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeEntryList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeEntryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModeEntryListResult" nillable="true" type="q155:ArrayOfModeEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddModeEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ModeEntryToBeAdded" nillable="true" type="q156:ModeEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddModeEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddModeEntryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubTypeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubTypeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSubTypeListResult" nillable="true" type="q157:ArrayOfSubType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepModes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetPrepModesResult" nillable="true" type="q158:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllModes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAllModesResult" nillable="true" type="q159:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDetailsList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDetailsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCustomerDetailsListResult" nillable="true" type="q160:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualListResult" nillable="true" type="q161:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualCodeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualCodeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualCodeListResult" nillable="true" type="q162:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="CustomerToBeUpdated" nillable="true" type="q163:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCustomerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="CustomerFromClient" nillable="true" type="q164:Customer" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateCustomerResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetLocationListResult" nillable="true" type="q165:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="LocationToBeUpdated" nillable="true" type="q166:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateLocationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCountryListResult" nillable="true" type="q167:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionByCountryCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionByCountryCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRegionByCountryCodeResult" nillable="true" type="q168:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="CountryToBeUpdated" nillable="true" type="q169:Country" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCountryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustShopModeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SortType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustShopModeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCustShopModeListResult" nillable="true" type="q170:ArrayOfCustShopMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetCustomerCodeResult" nillable="true" type="q171:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopCodeResult" nillable="true" type="q172:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModeListResult" nillable="true" type="q173:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspedModeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspedModeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSuspedModeListResult" nillable="true" type="q174:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRegionListResult" nillable="true" type="q175:ArrayOfRegion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransmitDetails">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransmitDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetTransmitDetailsResult" nillable="true" type="q176:ArrayOfTransmit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeResult" nillable="true" type="q177:ArrayOfRepairCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendCategory">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSuspendCategoryResult" nillable="true" type="q178:ArrayOfSuspendCat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransmit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="TransmitToBeUpdated" nillable="true" type="q179:Transmit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransmitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTransmitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTransmit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="TransmitFromClient" nillable="true" type="q180:Transmit" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTransmitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateTransmitResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeByCustomerCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeByCustomerCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModeByCustomerCodeResult" nillable="true" type="q181:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransmitDetailsFromCustomerMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomrCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransmitDetailsFromCustomerModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetTransmitDetailsFromCustomerModeResult" nillable="true" type="q182:ArrayOfTransmit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVendorList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVendorListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetVendorListResult" nillable="true" type="q183:ArrayOfVendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="VendorToBeUpdated" nillable="true" type="q184:Vendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVendorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateVendorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="VendorFromClient" nillable="true" type="q185:Vendor" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateVendorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateVendorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendCatList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendCatListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSuspendCatListResult" nillable="true" type="q186:ArrayOfSuspendCat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendCategoryID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SuspendCatDBObject" nillable="true" type="q187:SuspendCat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendCategoryIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSuspendCategoryIDResult" nillable="true" type="q188:ArrayOfSuspendCat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSuspendCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SuspendCatToBeUpdated" nillable="true" type="q189:SuspendCat" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSuspendCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateSuspendCatResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSuspendCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuspendCatCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSuspendCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSuspendCatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSuspendCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SuspendCatFromClient" nillable="true" type="q190:SuspendCat" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSuspendCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateSuspendCatResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepairCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuspendListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetSuspendListResult" nillable="true" type="q191:ArrayOfSuspend" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualCodeFromShopCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualCodeFromShopCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualCodeFromShopCodeResult" nillable="true" type="q192:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeFromShopManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeFromShopManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModeFromShopManualResult" nillable="true" type="q193:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeFromShopManualMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeFromShopManualModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeFromShopManualModeResult" nillable="true" type="q194:ArrayOfRepairCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSuspend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SuspendFromClient" nillable="true" type="q195:Suspend" />
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSuspendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateSuspendResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSuspend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="SuspendCode" nillable="true" type="q196:Suspend" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSuspendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSuspendResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualDetails">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManualDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManualDetailsResult" nillable="true" type="q197:ArrayOfManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeFromManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModeFromManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModeFromManualResult" nillable="true" type="q198:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeFromManualMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepairCodeFromManualModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRepairCodeFromManualModeResult" nillable="true" type="q199:ArrayOfRepairCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExRprCodeFromManualModeRepairCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepairCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ExRprCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExRprCodeFromManualModeRepairCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetExRprCodeFromManualModeRepairCodeResult" nillable="true" type="q200:ArrayOfRprcodeExclu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExRepairCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ExRprCodeFromClient" nillable="true" type="q201:RprcodeExclu" />
+        <xs:element minOccurs="0" name="RepairCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExRepairCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddExRepairCodeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteExRprCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManualCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepairCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ExRprCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteExRprCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteExRprCodeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWOListOnCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWOListOnCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetWOListOnCountryResult" nillable="true" type="q202:ArrayOfWO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWOListOnLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWOListOnLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetWOListOnLocationResult" nillable="true" type="q203:ArrayOfWO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWOListOnShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWOListOnShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetWOListOnShopResult" nillable="true" type="q204:ArrayOfWO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturerDiscountList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturerDiscountListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManufacturerDiscountListResult" nillable="true" type="q205:ArrayOfManufactur" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManufacturerDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="MDiscountToBeUpdated" nillable="true" type="q206:Manufactur" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManufacturerDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="UpdateManufacturerDiscountResult" nillable="true" type="q207:Manufactur" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManufacturerDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MDiscountCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManufacturerDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteManufacturerDiscountResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateManufacturerDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="MDiscountToBeCreated" nillable="true" type="q208:Manufactur" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateManufacturerDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateManufacturerDiscountResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailMDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditTrailMDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetAuditTrailMDiscountResult" nillable="true" type="q209:ArrayOfRefAudit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturerModelList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ManufacturerCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManufacturerModelListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetManufacturerModelListResult" nillable="true" type="q210:ArrayOfModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManufacturerModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ModelToBeUpdated" nillable="true" type="q211:Model" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManufacturerModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="UpdateManufacturerModelResult" nillable="true" type="q212:Model" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSByShopResult" nillable="true" type="q213:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManufacturerModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MDiscountCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MmodelNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManufacturerModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteManufacturerModelResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q214="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopByUserIdResult" nillable="true" type="q214:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopProfileByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopProfileByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetShopProfileByUserIdResult" nillable="true" type="q215:ArrayOfShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllCurrencies">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllCurrenciesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllCurrenciesResult" nillable="true" type="q216:ArrayOfCurrency" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSAllCorpPayAgents">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSAllCorpPayAgentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="RSAllCorpPayAgentsResult" nillable="true" type="q217:ArrayOfPayAgentVendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSVendorsByPayAgent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PayAgent_CD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSVendorsByPayAgentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="RSVendorsByPayAgentResult" nillable="true" type="q218:ArrayOfVendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllVendors">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllVendorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q219="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllVendorsResult" nillable="true" type="q219:ArrayOfVendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSByPayAgentVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PayAgent_CD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Vendor_CD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RSByPayAgentVendorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q220="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="RSByPayAgentVendorResult" nillable="true" type="q220:ArrayOfPayAgentVendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePayAgentVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q221="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PayAgentFromClient" nillable="true" type="q221:PayAgentVendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePayAgentVendorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePayAgentVendorResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePayAgentVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PayAgent_CD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Vendor_CD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePayAgentVendorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePayAgentVendorResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePayAgentVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="PayAgentToBeUpdated" nillable="true" type="q222:PayAgentVendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePayAgentVendorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePayAgentVendorResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllContracts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShopCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepairCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModeCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSAllContractsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q223="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSAllContractsResult" nillable="true" type="q223:ArrayOfShopCont" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModesByShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Shop_CD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModesByShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetModesByShopResult" nillable="true" type="q224:ArrayOfMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByShopModes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Shop_CD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRSByShopModesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q225="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="GetRSByShopModesResult" nillable="true" type="q225:ArrayOfShopLimits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertShopContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q226="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ShopContList" nillable="true" type="q226:ShopCont" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertShopContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertShopContractResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShopContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="ShopContList" nillable="true" type="q227:ShopCont" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShopContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateShopContractResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FillShopContractEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FillShopContractEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q228="http://schemas.datacontract.org/2004/07/MercPlusLibrary" minOccurs="0" name="FillShopContractEditResult" nillable="true" type="q228:ShopCont" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

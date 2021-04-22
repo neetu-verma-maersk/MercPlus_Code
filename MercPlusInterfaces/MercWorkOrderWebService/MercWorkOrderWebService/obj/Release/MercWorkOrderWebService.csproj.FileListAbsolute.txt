@@ -1,0 +1,63 @@
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercPlusLibrary.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\amqmdnet.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.xml
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercPlusLibrary.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.pdb
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.csprojResolveAssemblyReference.cache
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.dll
+C:\MercPlus\MercWorkingCode\MercPlusInterfaces\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.pdb
+D:\BRO076\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.dll
+D:\BRO076\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.pdb
+D:\BRO076\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.dll
+D:\BRO076\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.xml
+D:\BRO076\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.csprojResolveAssemblyReference.cache
+D:\BRO076\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.dll
+D:\BRO076\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.pdb
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.pdb
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.xml
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.Interception.pdb
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.pdb
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.csprojResolveAssemblyReference.cache
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.dll
+C:\MercPlus\code check\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\MercWorkOrderWebService.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\EntityFramework.xml
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\bin\Microsoft.Practices.Unity.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercWorkOrderWebService\MercWorkOrderWebService\obj\Release\MercWorkOrderWebService.pdb

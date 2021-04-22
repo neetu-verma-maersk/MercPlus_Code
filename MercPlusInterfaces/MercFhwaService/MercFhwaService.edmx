@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MESC2DSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MESC2DSModelStoreContainer">
+          <EntitySet Name="MESC1TS_EVENT_LOG" EntityType="MESC2DSModel.Store.MESC1TS_EVENT_LOG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MESC1TS_INSPECTION" EntityType="MESC2DSModel.Store.MESC1TS_INSPECTION" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="MESC1TS_EVENT_LOG">
+          <Key>
+            <PropertyRef Name="EVENT_ID" />
+          </Key>
+          <Property Name="EVENT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EVENT_NAME" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="UNIQUE_ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TABLE_NAME" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="EVENT_DESC" Type="varchar" Nullable="false" MaxLength="4000" />
+          <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+          <Property Name="CHTS" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MESC1TS_INSPECTION">
+          <Key>
+            <PropertyRef Name="INSP_DTE" />
+            <PropertyRef Name="CHAS_EQPNO" />
+          </Key>
+          <Property Name="INSP_DTE" Type="datetime" Nullable="false" />
+          <Property Name="CHAS_EQPNO" Type="char" Nullable="false" MaxLength="11" />
+          <Property Name="INSP_BY" Type="char" MaxLength="3" />
+          <Property Name="RKEMLOC" Type="char" MaxLength="8" />
+          <Property Name="XMIT_RC" Type="char" MaxLength="1" />
+          <Property Name="XMIT_DTE" Type="datetime" />
+          <Property Name="CHUSER" Type="varchar" MaxLength="32" />
+          <Property Name="CHTS" Type="datetime" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MESC2DSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MESC2DSEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="MESC1TS_INSPECTION" EntityType="MESC2DSModel.MESC1TS_INSPECTION" />
+          <EntitySet Name="MESC1TS_EVENT_LOG" EntityType="MESC2DSModel.MESC1TS_EVENT_LOG" />
+        </EntityContainer>
+        <EntityType Name="MESC1TS_INSPECTION">
+          <Key>
+            <PropertyRef Name="INSP_DTE" />
+            <PropertyRef Name="CHAS_EQPNO" />
+          </Key>
+          <Property Name="INSP_DTE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CHAS_EQPNO" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="true" />
+          <Property Name="INSP_BY" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="RKEMLOC" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="XMIT_RC" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="XMIT_DTE" Type="DateTime" Precision="3" />
+          <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="CHTS" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MESC1TS_EVENT_LOG">
+          <Key>
+            <PropertyRef Name="EVENT_ID" />
+          </Key>
+          <Property Type="Int32" Name="EVENT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EVENT_NAME" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UNIQUE_ID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TABLE_NAME" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EVENT_DESC" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CHUSER" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CHTS" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MESC2DSModelStoreContainer" CdmEntityContainer="MESC2DSEntities">
+          <EntitySetMapping Name="MESC1TS_INSPECTION">
+            <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_INSPECTION">
+              <MappingFragment StoreEntitySet="MESC1TS_INSPECTION">
+                <ScalarProperty Name="INSP_DTE" ColumnName="INSP_DTE" />
+                <ScalarProperty Name="CHAS_EQPNO" ColumnName="CHAS_EQPNO" />
+                <ScalarProperty Name="INSP_BY" ColumnName="INSP_BY" />
+                <ScalarProperty Name="RKEMLOC" ColumnName="RKEMLOC" />
+                <ScalarProperty Name="XMIT_RC" ColumnName="XMIT_RC" />
+                <ScalarProperty Name="XMIT_DTE" ColumnName="XMIT_DTE" />
+                <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+                <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESC1TS_EVENT_LOG">
+            <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_EVENT_LOG">
+              <MappingFragment StoreEntitySet="MESC1TS_EVENT_LOG">
+                <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+                <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+                <ScalarProperty Name="EVENT_DESC" ColumnName="EVENT_DESC" />
+                <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+                <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+                <ScalarProperty Name="EVENT_NAME" ColumnName="EVENT_NAME" />
+                <ScalarProperty Name="EVENT_ID" ColumnName="EVENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

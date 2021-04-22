@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA844389-A792-47AD-8DC9-50345FFDF41C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ManageMasterDataService</RootNamespace>
+    <AssemblyName>ManageMasterDataService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ManageMasterDataService.edmx.diagram">
+      <DependentUpon>ManageMasterDataService.edmx</DependentUpon>
+    </Content>
+    <Content Include="ManageMasterDataService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dtproperty.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IManageMasterDataService.cs" />
+    <Compile Include="ManageMasterDataService.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageMasterDataService.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMasterDataService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMasterDataService.Designer.cs">
+      <DependentUpon>ManageMasterDataService.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ManageMasterDataService.svc.cs">
+      <DependentUpon>ManageMasterDataService.svc</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MESC1TS_AREA.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY_CONT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_COUNTRY_LABOR.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CPH_EQP_LIMIT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CURRENCY.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CUSTOMER.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_CUST_SHOP_MODE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_DAMAGE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_DISCOUNT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_ERROR.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_LINEITEM.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EDI_TRANSMISSION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQMODE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQSTYPE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EQTYPE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_ERR_MESSAGE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_EVENT_LOG.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_GRADE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_GRADECONTAINER.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_GRADERELATION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_GRADESTS.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_INDEX.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_INSPECTION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_LABOR_RATE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_LOCATION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUAL.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUAL_MODE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MANUFACTUR.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MASTER_PART.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MODE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_MODEL.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_NONSCODE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PARTS_GROUP.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PAYAGENT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PAYAGENT_VENDOR.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PREPTIME.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PROCESS_IDENTIFIER.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_PTI.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REFAUDIT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REGION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REPAIR_CODE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_REPAIR_LOC.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_EXCLU.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_IMPORT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_RPRCODE_PART.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP_CONT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SHOP_LIMITS.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SPECIAL_REMARKS.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_STATUS_CODE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SUSPEND.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_SUSPEND_CAT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_TPI.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_TRANSMIT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_VENDOR.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WO.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOAUDIT.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOPART.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOREMARK.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_WOREPAIR.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1TS_XML_LOG.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1VS_CUST_SHOP.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESC1VS_SHOP_LOCATION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEC_ACTION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_ACTION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_FUNCTION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_USER.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_AUTHGROUP_WEBPAGE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_FUNCTION.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_USER.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_WEBPAGE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEC_WEBSITE.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TESTEQUIPNO.cs">
+      <DependentUpon>ManageMasterDataService.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ManageMasterDataService.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ManageMasterDataService.edmx</DependentUpon>
+      <LastGenOutput>ManageMasterDataService.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ManageMasterDataService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ManageMasterDataService.edmx</DependentUpon>
+      <LastGenOutput>ManageMasterDataService.cs</LastGenOutput>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\MercPlusPublishedServices.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ManageMasterDataService.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ManageMasterDataService.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MercPlusLibrary\MercPlusLibrary.csproj">
+      <Project>{35051bb7-df1e-4763-812a-540c32efe282}</Project>
+      <Name>MercPlusLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52642</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,423 @@
+<html>
+
+<head>
+<meta http-equiv="KEYWORDS" content="rris, accounting, accting, payagent">
+<meta http-equiv="Content-Language" content="da">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>ACCOUNTING</title>
+</head>
+
+<body vlink="#0000FF" leftmargin="3">
+
+<p>&nbsp;</p>
+
+<p><b><font face="Verdana">ACCOUNTING SCREENS</font></b></p>
+
+&nbsp;<p><b>
+  <font size="2" face="Verdana"><a href="../3_HelpScrns_DoNotChangeStructure/tablemod_transmit_help.htm">TRANSMIT SCREEN</a></font></b><br>
+  <font size="2"><br>
+  </font><b>
+  <font size="2" face="Verdana"><a href="../3_HelpScrns_DoNotChangeStructure/tablemod_payagent_help.htm">ADD A PAYAGENT</a></font></b></p>
+<p><font size="2"><br>
+  </font><b><font face="Verdana" size="2">
+  <a href="../3_HelpScrns_DoNotChangeStructure/tablemod_payagent_vendor_help.htm">ADD A 
+  PAYAGENT VENDOR RELATIONSHIP</a></font></b><br>
+&nbsp;</p>
+<ul>
+  <li><b><font face="Verdana" size="1">Related Topics </font></b>
+
+<ul>
+  <li><b><font face="Verdana" size="1">&nbsp;<a href="rris_details.htm">RRIS 
+  details</a></font></b></li>
+  <li><b><font face="Verdana" size="1"><a target="_blank" href="merc-rris.doc">MERC to RRIS work 
+  order flow overview</a></font></b></li>
+</ul>
+
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<b><br>
+&nbsp;</b><hr>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<table cellSpacing="5" borderColorDark="#6699ff" cellPadding="5" width="92%" borderColorLight="#99ccff" border="4">
+  <tr>
+    <td width="40%" bgColor="#0000ff"><b><font color="#ffff00" face="Arial">merc 
+    terminology</font></b></td>
+    <td width="33%" bgColor="#0000ff"><b><font color="#ffff00" face="Arial">
+    definition</font></b></td>
+    <td width="71%" bgColor="#0000ff"><b><font color="#ffff00" face="Arial">
+    table</font></b></td>
+    <td width="56%" bgColor="#0000ff"><b><font color="#ffff00" face="Arial">merc 
+    field name</font></b></td>
+  </tr>
+  <tr>
+    <td width="40%" bgColor="#ffffff"><font size="2" face="Arial">payment 
+    account code</font></td>
+    <td width="33%" bgColor="#ffffff"><font size="2" face="Arial">ck or wire 
+    acct</font></td>
+    <td width="71%" bgColor="#ffffff"><font size="2" face="Arial">payagent 
+    vendor</font></td>
+    <td width="56%" bgColor="#ffffff"><font size="2" face="Arial">local_ac_code</font></td>
+  </tr>
+  <tr>
+    <td width="40%" bgColor="#ffffff"><font size="2" face="Arial">rris expense 
+    acct code</font></td>
+    <td width="33%" bgColor="#ffffff"><font size="2" face="Arial">acct charge to</font></td>
+    <td width="71%" bgColor="#ffffff"><font size="2" face="Arial">transmit table</font></td>
+    <td width="56%" bgColor="#ffffff"><font size="2" face="Arial">account_cd</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><a href="http://10.1.240.19/mercadmin/merc fields.xls"><b>MERC FIELDS 
+WORKSHEET</b></a></p>
+<p><b><font size="4">DUMMY SUPPLIER CODE FOR CA/CB SHOPS IS 7292</font></b></p>
+<p>&nbsp;</p>
+<p><b><a href="#when adding a new payagent">when adding a new payagent</a></b></p>
+<div align="center">
+  <center>
+  <table cellSpacing="0" cellPadding="2" width="75%" bgColor="#c0c0c0" border="0">
+    <tr>
+      <th style="BACKGROUND-COLOR: #000000" align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <b><font face="Arial" color="#ffff00" size="2">CUST</font></b></th>
+      <th style="BACKGROUND-COLOR: #000000" align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <p align="center"><b><font face="Arial" color="#ffff00" size="2">MODE</font></b></th>
+      <th style="BACKGROUND-COLOR: #000000" align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <p align="center"><b><font face="Arial" color="#ffff00" size="2">
+      DESCRIPTION</font></b></th>
+      <th style="BACKGROUND-COLOR: #000000" align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <p align="center"><b><font face="Arial" color="#ffff00" size="2">CODE</font></b></th>
+      <th style="BACKGROUND-COLOR: #000000" align="middle" width="86" bgColor="#c0c0c0" height="16">
+      <b><font face="Arial" color="#ffff00" size="2">PC CODE</font></b></th>
+      <th style="BACKGROUND-COLOR: #000000" align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><b><font face="Arial" color="#ffff00" size="2">PAY AGENT</font></b></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16"><b>
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">11</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">chas repairs</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">713301</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16"><b>
+      <font face="Arial" color="#000000" size="2">maer</font></b></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <p align="center"><b><font face="Arial" color="#000000" size="2">00 / 02</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">reefer box repairs</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">716101</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16"><b>
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">01,3,4,5,6,7</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">ctr repairs</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">716001</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16"><b>
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">21</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">loaded reef</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">716201</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16"><b>
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">23</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">reef PTI &amp; rep</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">716202</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2"><b>24</b></font></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">reef pm's</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">716201</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2"><b>25</b></font></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">&nbsp;ctrl 
+      atmosphere</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">716203</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16"><b>
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">31</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">genset PM</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">713401</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maer</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16"><b>
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">33</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">genset PTI</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">
+      <p align="center">713401</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>cons</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <p align="center"><b><font face="Arial" color="#000000" size="2">11</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">conspicuity</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">713335&nbsp;</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>buyy</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <p align="center"><b><font face="Arial" color="#000000" size="2">11</font></b></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">buy lease 
+      chas</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">128 101</font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">01</font></th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">m99</font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maen</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <p align="center"><font face="Arial" color="#000000" size="2">various</font></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2">various</font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">&nbsp;</th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maen</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>82,83</b></font></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>off hire repair</b></font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>2603002&nbsp;</b></font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>msc</b></font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>maen</b></font></th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>80,81</b></font></th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>off hire repair</b></font></th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>2603102&nbsp;</b></font></th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">
+      <font face="Arial" color="#000000" size="2"><b>msc</b></font></th>
+    </tr>
+    <tr>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="81" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="206" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="49" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="86" bgColor="#c0c0c0" height="16">&nbsp;</th>
+      <th align="middle" width="64" bgColor="#c0c0c0" height="16">&nbsp;</th>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp; </p>
+<div align="center">
+  <center>
+  <table cellSpacing="5" borderColorDark="#6699ff" cellPadding="5" width="81%" borderColorLight="#99ccff" border="4">
+    <tr>
+      <td width="55%" bgColor="#0000ff"><b><font color="#ffff00">merc 
+      terminology</font></b></td>
+      <td width="45%" bgColor="#0000ff"><b><font color="#ffff00">definition</font></b></td>
+      <td width="45%" bgColor="#0000ff"><b><font color="#ffff00">table</font></b></td>
+      <td width="45%" bgColor="#0000ff"><b><font color="#ffff00">merc field name</font></b></td>
+    </tr>
+    <tr>
+      <td width="55%" bgColor="#ffffff"><font size="2">payment account code</font></td>
+      <td width="45%" bgColor="#ffffff"><font size="2">ck or wire acct</font></td>
+      <td width="45%" bgColor="#ffffff"><font size="2">payagent vendor</font></td>
+      <td width="45%" bgColor="#ffffff"><font size="2">local_ac_code</font></td>
+    </tr>
+    <tr>
+      <td width="55%" bgColor="#ffffff"><font size="2">rris expense acct code</font></td>
+      <td width="45%" bgColor="#ffffff"><font size="2">acct charge to</font></td>
+      <td width="45%" bgColor="#ffffff"><font size="2">transmit table</font></td>
+      <td width="45%" bgColor="#ffffff"><font size="2">account_cd</font></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<p><b><a name="when adding a new payagent"><font size="4" face="Arial">when 
+adding a new payagent</font></a></b></p>
+<p><font face="Arial"><b>send a telex similar to the one below</b></font></p>
+<p><font size="2" face="Arial">NAMFIN TO ,ACC/DML 01.11.26 12:57 OK&nbsp;<br>
+<br>
+Re defining the MERC user id to payagent codes&nbsp;<br>
+<br>
+Pls update the RRIT49 and RRI57 screens for payagents that are used by MERC user 
+BNYCWMES.&nbsp;<br>
+<br>
+payagents presently defined&nbsp;<br>
+M99 MCS&nbsp;<br>
+<br>
+payagents to be added&nbsp;<br>
+P01 PS1 P02 PS2 P03 MS0 MC2 MC4 MC3 MS8 MS5 MS9 MS7</font></p>
+<p><font size="2" face="Arial">Pls advise if you need further info.&nbsp;<br>
+&nbsp;</font></p>
+<p><b><font size="4" face="Arial">PAYAGENT CHOICE Corp vs. Local</font></b></p>
+<table cellSpacing="0" cellPadding="5" border="0" width="511">
+  <tr>
+    <td width="145"><font size="2" face="Arial"><i><b>SCREEN</b></i></font></td>
+    <td width="44"><font size="2" face="Arial"><i><b>ENTER</b></i></font></td>
+    <td width="292"><font size="2" face="Arial"><i><b>REMARKS</b></i></font></td>
+  </tr>
+  <tr>
+    <td width="145"><b><font size="2" face="Arial">PAYAGENT</font></b></td>
+    <td width="44"><font size="2" face="Arial">BOTH</font></td>
+    <td width="292"><font size="2" face="Arial">USED TO CREATE LOCAL &amp; CORP PAYAGENTS (each 
+    of which has a corp payagent)</font></td>
+  </tr>
+  <tr>
+    <td width="145"><b><font size="2" face="Arial">PAYAGENT VENDOR</font></b></td>
+    <td width="44"><font size="2" face="Arial">CORP</font></td>
+    <td width="292"><font size="2" face="Arial">DICTATES WHAT PAYAGENT &amp; ACCOUNT WILL PAY</font></td>
+  </tr>
+  <tr>
+    <td width="145"><b><font size="2" face="Arial">CUSTOMER SHOP MODE</font></b></td>
+    <td width="44"><font size="2" face="Arial">LOCAL</font></td>
+    <td width="292"><font size="2" face="Arial">DICTATES WHAT (local or corp) PAYAGENT WILL 
+    BE CHARGED&nbsp; WITH THE EXPENSE.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<hr>
+    <p align="right"><font face="Verdana" size="1"><span class="updated">Last updated
+    <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%m/%d/%Y" startspan -->12/02/2004<!--webbot bot="Timestamp" i-checksum="12521" endspan --></span></font><p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

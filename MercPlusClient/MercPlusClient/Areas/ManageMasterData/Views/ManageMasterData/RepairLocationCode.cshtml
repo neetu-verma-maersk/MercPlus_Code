@@ -1,0 +1,61 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataModel
+
+@{
+    ViewBag.Title = "ViewRepairLocationCode";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+
+<script type="text/javascript" src="~/Areas/ManageMasterData/Script/masterData.js">
+
+    </script>
+@using (Html.BeginForm())
+{
+    <div style="float:right;"><a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_repair_loc_code_help.htm" target="_blank">Tables and Dependencies Help File</a></div>
+    
+    <h2>View Repair Location Code</h2>
+    
+    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+          @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+    </div>
+    <table style="width: 900px; vertical-align: text-top;" border="0" cellpadding="5"
+        cellspacing="0">
+        <tr>
+            <td>
+                @Html.Label("Select Repair Location Code")
+            </td>
+             <td>   
+                 @Html.DropDownList("ManageMasterDataModel", ViewBag.Description as SelectList, "", new { id = "drpRepairLocationCode" })
+                 <input type="button" value="Query" id="btnQueryRepairLocCode" />
+            </td>
+            
+
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <br />
+    <div id="divRepairLocationCode"  style="display:none; width:800px">
+        <table style="width: 800px; vertical-align: text-top;" border="0" cellpadding="3" >
+            <tr>
+
+                <td  style="text-align: left; vertical-align: top; width:20%">
+                    @Html.Label("Repair Location Code") &nbsp;&nbsp
+                </td>
+                <td>
+                     @Html.TextBoxFor(model => model.RepairCode, new { id = "txtRepairLocationCode", size="4" })
+                </td>
+            </tr>
+            <tr>
+
+                <td  style="text-align: left;Width:auto;vertical-align: top; width:20%">
+                    @Html.Label("Description") &nbsp;&nbsp
+                
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.RepairDescription, new { id = "txtDescription", size="100" } )
+                </td>
+
+            </tr>
+        </table>
+    </div>
+}

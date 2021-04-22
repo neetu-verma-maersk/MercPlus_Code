@@ -1,0 +1,525 @@
+﻿
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<link REL="STYLESHEET" HREF="../main.css" TYPE="text/css">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="tablemod_Country_Contract_help_files/filelist.xml">
+
+<title>MERC+ - Country Contract </title>
+<style>
+<!--
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body topmargin="20" leftmargin="33">
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td height="35">
+    <p style="margin-left:36.0pt;" align="left">
+    <span style="font-family: Verdana; background-color: #FFFFFF; background-position: 0% 0%">
+    <font size="4"><br>
+    </font><b><font size="5">Manage Country Contract Screen<br>
+&nbsp;</font></b></span></p>
+    </td>
+  </tr>
+  </table>
+
+<p class="MsoNormal"><b><font size="3"><span lang="EN-US">OVERVIEW&nbsp;&nbsp;&nbsp;&nbsp; </span></font></b></p>
+
+<p class="MsoNormal"><span lang="EN-US"><font size="2" color="RED">
+Note :- Country contracts can neither be updated nor added effective from 22nd November 2009
+</font></span></p>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">This screen 
+is used to manage contracts for material cost pr repair code between  a country and CPH, 
+i.e. the agreement for decentralized countries. It 
+provides users with an interface where users can Query, Update, Delete and Add 
+new Contracts.</font></span></p>
+
+<p class="MsoNormal">The country contract is to be used <i>only for 
+decentralized countries</i> where CPH has the contract with the agency (as 
+opposed to centralized countries where CPH has the contract directly with a 
+shop).</p>
+
+<p class="MsoNormal"><i>Country contract is NOT to be used for numbered 
+spare parts (reefer/genset parts)</i></p>
+
+<p class="MsoNormal"><font size="2"><span lang="EN-US">While the shop contract 
+ensures that the shop cannot charge higher material cost for a code than agreed, 
+the country contract ensures that CPH cannot be charged higher material code for 
+a repair code than agreed with the agency/country.<br>
+So; the shop contract for each shop stipulates what the agency max pays their 
+shop for a code while the country contract stipulates what CPH max pays </span>
+<span lang="en-gb">pays</span><span lang="EN-US"> the agency. From above it is 
+obvious that there will by as many shop contracts as there are shops in a 
+country but only 1 country contract.<br>
+When the shop is creating an estimate the material cost entered for each code 
+will be checked against the shop contract, and if exceeding the agreement, a 
+warning will be issued telling the shop they have exceeded the agreed material 
+amount for the code.</span></font></p>
+
+<p class="MsoNormal">When the estimate is submitted for approval at local MSL, 
+MERC+ will convert the amount for each code to agency/CPH agreement.</p>
+
+<p class="MsoNormal"><u>Who can see what?</u></p>
+
+<ul>
+  <li>
+
+<p class="MsoNormal"><u>SHOP;<br>
+</u>Estimate will reflect the agreement between shop and agency, i.e. the 
+material cost pr code will be shown on &quot;shop level&quot;.</p>
+
+  </li>
+  <li>
+
+<p class="MsoNormal"><u>AGENCY;<br>
+</u>Estimate will reflect the agreement between shop and agency AND the 
+agreement between agency and CPH, i.e. the material cost pr code will be shown 
+on &quot;shop level&quot; AND on &quot;CPH level&quot;.</p>
+
+  </li>
+  <li>
+
+<p class="MsoNormal"><u>CPH;<br>
+</u>Estimate will reflect the agreement between agency and CPH, i.e. the 
+material cost pr code will be shown on &quot;CPH level&quot;.</p>
+
+  </li>
+</ul>
+
+<p class="MsoNormal">It is under no circumstances possible for a shop to see the 
+agreement between agency and CPH nor is it possible to pull reports showing 
+this.</p>
+
+<p class="MsoNormal">It is under no circumstances possible for CPH to see the 
+agreement between agency and shop nor is it possible to pull reports showing 
+this.</p>
+
+<p class="MsoNormal"><u>A few guidelines and rules</u></p>
+
+<ul>
+  <li>
+
+<p class="MsoNormal">Cost for &quot;numbered&quot; spare parts, i.e. spare parts for 
+reefers and gensets are controlled by entering the part number directly on the 
+estimate, MERC+ will then calculate the correct price based on the discount/mark 
+up agreement with shop for reefer/genset parts. Under no circumstances shall the 
+contract contain part costs. However any additional &quot;material&quot; cost (ancillaries 
+like solder, gas etc) which would be necessary to replace e.g. a condenser coil 
+shall be included in the contract in order to ensure such costs not are abused.</p>
+
+  </li>
+  <li>
+
+<p class="MsoNormal">Each shop must have a shop contract updated in MERC+, the 
+country contract will not be in force if there are no shop contract(s).</p>
+
+  </li>
+  <li>
+
+<p class="MsoNormal">If a material cost agreement for a code cannot be found on 
+the country contract, MERC+ will reuse the material cost for the code entered by 
+the shop. </p>
+
+  </li>
+</ul>
+
+
+<!--COUNTRY CONTRACTS ARE NO LONGER UPDATED-->
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><b><font size="3">AUTHORITY&nbsp;&nbsp;</font></b></p>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">Only 
+System Administrator, CPH, AREA and Country will have access  the 
+Country Contract Screens.</font></span></p>
+<p class="MsoNormal"><b><font size="3">QUERY&nbsp;</font></b></p>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">For querying 
+Country contract Screen 'Country’ is Mandatory - Also search can be further filtered by Repair Code and/or 
+mode.</font></span></p>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">The result set 
+will be sorted in the following Order:</font></span></p>
+<blockquote>
+  <ul>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">1  Country</font></span></p>
+    </li>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">2  Repair Code
+</font></span></p>
+    </li>
+	<li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">3  Manual Code
+</font></span></p>
+    </li>
+	<li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">4  Mode
+</font></span></p>
+    </li>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">5  Eff Date </font>
+</span></p>
+    </li>
+  </ul>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">The result set 
+will display the following:</font></span></p>
+  <ul>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Country</font></span></p>
+    </li>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Repair Code</font></span></p>
+    </li>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Amount + 
+(Country Currency)</font></span></p>
+    </li>
+	<li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Manual
+</font></span></p>
+    </li>
+	<li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Mode
+</font></span></p>
+    </li>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Effective 
+Date</font></span></p>
+    </li>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;Exp Date</font></span></p>
+    </li>    
+  </ul>
+</blockquote>
+<p class="MsoNormal"><b><span lang="EN-US" style="color:red">
+<font size="2">Note:</font></span></b><span lang="EN-US"><font size="2"> The Countries in 
+the Drop Down will be all existing Countries and Modes in the Mode Drop Down will 
+be all existing Modes (Active &amp; Inactive)</font></span></p>
+<p class="MsoNormal"><span lang="EN-US">
+<img border=0 
+src="tablemod_Country_Contract_help_files/image002.jpg" </span></p>
+
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="width: 858; border-collapse: collapse; border: medium none">
+  <tr>
+    <td style="width: 125; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Field Name</font></span></td>
+    <td style="width: 46; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Type</font></span></td>
+    <td style="width: 430; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Description</font></span></td>
+    <td style="width: 91; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Required</font></span></td>
+    <td style="width: 90; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Editable</font></span></td>
+  </tr>
+  <tr>
+    <td style="width: 125; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Country</font></span></td>
+    <td style="width: 46; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Drop Down</font></span></td>
+    <td valign="top" style="width: 430; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Select a Country for which contracts have to be queried.
+	</font></span></td>
+    <td style="width: 91; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td style="width: 90; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  
+  <tr>
+    <td style="width: 125; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Mode</font></span></td>
+    <td style="width: 46; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Drop Down</font></span></td>
+    <td valign="top" style="width: 430; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2"> 
+    To search contracts ith a particular Mode</font></span></td>
+    <td style="width: 91; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td style="width: 90; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  <tr>
+    <td style="width: 125; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Repair Code</font></span></td>
+    <td style="width: 46; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Text</font></span></td>
+    <td valign="top" style="width: 430; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2"> 
+    Repair Code to query</font></span></td>
+    <td style="width: 91; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Y</font></span></td>
+    <td style="width: 90; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">N</font></span></td>
+  </tr>
+  
+</table>
+<blockquote>
+  <ul>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><font size="2">&nbsp;</font><b><font size="3">Buttons</font></b></span></p>
+    </li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="639" style="width: 479.4pt; border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="128" valign="top" style="width: 95.75pt; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Caption</font></span></td>
+    <td width="88" valign="top" style="width: 65.65pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Type</font></span></td>
+    <td width="424" valign="top" style="width: 318.0pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Description</font></span></td>
+  </tr>
+  <tr>
+    <td width="128" style="width: 95.75pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Query </font>
+    </span></td>
+    <td width="88" style="width: 65.65pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Button</font></span></td>
+    <td width="424" valign="top" style="width: 318.0pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">Returns the  
+    Country contracts based on the search criteria.
+    </font></span></td>
+  </tr>
+</table>
+
+<blockquote>
+  <ul>
+    <li>
+<p class="MsoNormal"><span lang="EN-US"><b><font size="3">Messages</font></b><font size="2">&nbsp;</font></span></p>
+    </li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none">
+  <tr>
+    <td width="328" valign="top" style="width: 246.3pt; border: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Message</font></span></td>
+    <td width="310" valign="top" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: 1.0pt solid maroon; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #C5DEEF">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Reason</font></span></td>
+  </tr>
+  <tr>
+    <td width="328" style="width: 246.3pt; border-left: 1.0pt solid maroon; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><b><i>
+    <span lang="EN-US" style="font-family:Verdana;
+  color:green">There were no results meeting your query parameters</span></i></b></td>
+    <td width="310" style="width: 232.5pt; border-left: medium none; border-right: 1.0pt solid maroon; border-top: medium none; border-bottom: 1.0pt solid maroon; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><span lang="EN-US"><font size="2">No Country 
+    Contract matches the Query Criteria.</font></span></td>
+  </tr>  
+</table>
+<blockquote>
+  <ul>
+    <li>
+<p class="MsoNormal"><b><span lang="EN-US"><font size="3">&nbsp;Correlation with 
+Estimate Creation</font></span></b></p>
+    </li>
+  </ul>
+</blockquote>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none" width="761">
+  <tr>
+    <td style="width: 79; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E0E0E0">
+    <p class="MsoNormal" align="center" style="text-align:center"><b>
+    <span lang="EN-US">Scenario</span></b></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E0E0E0">
+    <p class="MsoNormal" align="center" style="text-align:center"><b>
+    <span lang="EN-US">S</span></b><span lang="EN-US">hop <b>M</b>aterial <b>C</b>eiling</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E0E0E0">
+    <p class="MsoNormal" align="center" style="text-align:center"><b>
+    <span lang="EN-US">S</span></b><span lang="EN-US">hop <b>C</b>ontract</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E0E0E0">
+    <p class="MsoNormal" align="center" style="text-align:center"><b>
+    <span lang="EN-US">C</span></b><span lang="EN-US">country <b>C</b>ontract</span></td>
+    <td style="width: 390; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #E0E0E0">
+    <p class="MsoNormal" align="center" style="text-align:left">
+    <b>
+    <span lang="EN-US">SMC =&nbsp;S</span></b><span lang="EN-US">hop <b>M</b>aterial <b>C</b>eiling 
+    (Global ceiling)<br>
+    <b>SC&nbsp;&nbsp;&nbsp; = </b></span><b>
+    <span lang="EN-US">S</span></b><span lang="EN-US">hop <b>C</b>ontract<br>
+    <b>CC</b>&nbsp;&nbsp; = </span><b>
+    <span lang="EN-US">C</span></b><span lang="EN-US">country <b>C</b>ontract</span></td>
+  </tr>
+  <tr>
+    <td style="width: 79; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Scenario 1</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Y</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    N</td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center">N</td>
+    <td style="width: 390; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 36.0pt">
+    <span lang="EN-US" style="font-family: Wingdings">Ø<span style="font-style:normal; font-variant:normal; font-weight:normal; font-family:Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;
+    </font>
+    </span></span><span lang="EN-US">If x &lt;=&nbsp; SMC – ok<br>
+    If x &gt; SMC – STOP </span></p>
+    <p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></td>
+  </tr>
+  <tr>
+    <td style="width: 79; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Scenario 2</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Y</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    &nbsp;</p>
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Y<font size="2"><br>
+    Overrides SMC</font></span></p>
+    </td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    N</td>
+    <td style="width: 390; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><i><span lang="EN-US">Look for SC first. If exists 
+    ignore SMC</span></i></p>
+    <p class="MsoNormal"><span lang="EN-US">&nbsp;</span><span lang="EN-US" style="font-family: Wingdings"> Ø<span style="font-style:normal; font-variant:normal; font-weight:normal; font-family:Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    </font>
+    </span></span><span lang="EN-US">If &lt;= SC – ok<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If &gt; SC –&nbsp; STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 79; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Scenario 3</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Y</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    &nbsp;</p>
+    <p class="MsoNormal" align="center" style="text-align:center">
+    Y</p>
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">Overrides SMC</font></span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">&nbsp;</span></p>
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Y</span></p>
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US"><font size="2">&nbsp;</font></span></td>
+    <td style="width: 390; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal"><i><span lang="EN-US">Look for SC first if exists 
+    ignore SMC</span></i></p>
+    <p class="MsoNormal">
+    <span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-family: Wingdings">Ø<span style="font-style:normal; font-variant:normal; font-weight:normal; font-family:Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;
+    </font>
+    </span></span><span lang="EN-US">If &lt;= SC <b>&amp;</b> &lt;= CC– ok<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If &lt;= SC
+    <b>BUT</b> &gt; CC – ok<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If &gt; SC –&nbsp; STOP</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 79; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Scenario 6</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Y</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">-</span></td>
+    <td style="width: 72; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" align="center" style="text-align:center">
+    <span lang="EN-US">Y&nbsp;</span></td>
+    <td style="width: 390; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+    <p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 36.0pt">
+    <span lang="EN-US" style="font-family: Wingdings">Ø<span style="font-style:normal; font-variant:normal; font-weight:normal; font-family:Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;
+    </font>
+    </span></span><span lang="EN-US">If&nbsp; x &lt;= SMC <b>&amp;</b> &lt;= CC – ok<br>
+    If&nbsp; x &lt;= SMC <b>BUT</b> &gt; CC - ok<br>
+    If&nbsp; x &gt;&nbsp;&nbsp; SMC – STOP </span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span lang="EN-US">x = Repair Shop Material Amounts for 
+Repair Codes&nbsp;</span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><u>System warnings</u></p>
+<p class="MsoNormal"><b>
+<span lang="EN-US" style="font-size:10.0pt;">CPH cost 
+for materials for a repair line  SHOP_MATERIAL_AMT / QTY_REPAIRS</span></b><span lang="EN-US"><br>
+If &gt; </span><span lang="EN-US" style="font-size:10.0pt;">mode 
+/code material ceiling – STOP - INFORMATIVE message states SHOP MATERIALS TOO HIGH</span></p>
+<p class="MsoNormal"><b>
+<span lang="EN-US" style="font-size:10.0pt;">Shop material cost for 
+a repair line (local cost) *** SHOP_MATERIAL_AMT / QTY_REPAIRS</span></b><span lang="EN-US" style="font-size:10.0pt;"><br>
+If shop matls for 
+a code in excess of&nbsp; local contract (excl. taxes) – STOP - INFORMATIVE msg 
+states SHOP MATERIALS FOR CODE xxxx ARE LIMITED TO cccc.cc - PLEASE CORRECT AND 
+RESUBMIT</span></p>
+<p class="MsoNormal"><b>
+<span lang="EN-US" style="font-size:10.0pt;">SHOP_MATERIAL_AMT 
+/ QTY_REPAIRS</span></b><span lang="EN-US" style="font-size:10.0pt;"><br>
+If shop materials for 
+a code in excess of&nbsp; country/CPH contract - excl. taxes (if local contract is in 
+place) - PENDING</span></p>
+<hr>
+
+<p class="MsoNormal" align="left">&nbsp;</p>
+
+<p class="MsoNormal" align="center"><a href="javascript:void(parent.close())">Close this window</a></p>
+
+<p class="MsoNormal" align="center">&nbsp;</p>
+<p class="MsoNormal" align="center">&nbsp;</p>
+<p class="MsoNormal" align="center">&nbsp;</p>
+<p class="MsoNormal" align="center">&nbsp;</p>
+<p class="MsoNormal" align="center">&nbsp;</p>
+<p class="MsoNormal" align="center">&nbsp;</p>
+
+</body>
+
+</html>

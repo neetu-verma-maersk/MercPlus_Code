@@ -1,0 +1,208 @@
+﻿@model MercPlusClient.Areas.ManageMasterData.Models.ManageMasterDataModel
+
+@{
+    
+    ViewBag.Title = "Pay Agent Vendor";
+
+
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+@*<script src="~/Areas/ManageMasterData/Script/masterData.js"></script>*@
+<script src="~/Areas/ManageMasterData/Script/PayAgent_Vendor.js"></script>
+
+<div style="float:right;">
+            <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/tablemod_payagent_vendor_help.htm" target="_blank">
+                                   Tables and Dependencies Help File</a>
+        </div>
+
+@using (Html.BeginForm())
+{
+   
+    <div style="width:100%">
+        
+        <table border="0" cellpadding="5" cellspacing="0" 
+            style="width: 100%; vertical-align:text-top;">
+        
+        <tr>
+        <td style="vertical-align:top; text-align:left; margin-top:50px; margin-left:30px;">
+        <h3>Add, Update or Delete PayAgent Vendor</h3>
+        </td>
+
+        @*<td style="vertical-align:top; text-align:right; margin-right:0px; font-size:xx-small; font-size=8px;">
+                @Html.ActionLink("Tables and Dependencies Help File", "SecNewUser", "ManageUser")
+        </td>*@
+        </tr>
+
+             <tr>
+            <td style="text-align:left; margin-left:-500px;">
+                <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;"> 
+                       @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                </div>
+            </td>
+        
+           </tr>
+        </table>
+        
+   
+    
+      <table border="0"  id="tblPayAgentCode"
+        style="width: 700px; vertical-align:text-top; ">
+        <tr>
+           
+            <td class="style3" style="text-align:left; vertical-align: top; width:30%; ">
+                @Html.LabelFor(model => model.VPayAgent_CD)
+            </td>
+            <td class="style2" style="text-align:left; vertical-align: top; width:70%;">
+              
+              @Html.DropDownListFor(model => model.VPayAgent_CD, Model.ddlPayAgent_CD, "", new { id = "ddlPayAgent_CD",style="width:150px;" })
+              
+            </td>
+            <td></td>
+           
+            
+        </tr>
+   
+        
+    </table>
+      
+   
+      <table border="0"  id="tblPayAgentVendor"
+        style="width: 700px; text-align:left; vertical-align: text-top; display:none;">
+        
+          <tr>
+                <td class="style3" style="text-align:left; vertical-align: top; width:20%; " nowrap="nowrap">
+                 @Html.LabelFor(model => model.SMerc_Vendor_CD)
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;width:70% ">
+              
+                @Html.DropDownListFor(model => model.SMerc_Vendor_CD, Model.ddlSMerc_Vendor_CD, " ", new { id = "ddlSMerc_Vendor_CD",style="width:150px;" })
+               
+            </td>
+              <td></td>
+            </tr>
+       
+       
+        </table>
+
+        <table border="0" id="tblModifyPayAgentVendor"  
+        style="width: 700px; vertical-align:text-top; text-align:left; display:none;">
+        
+
+          <tr>
+            <td style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.MPayAgent_CD)</td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.MPayAgent_CD, new { @disabled = true, id="txtPayAgentCode" })</td>
+            <td></td>
+        </tr> 
+        <tr>
+            <td style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.MMerc_Vendor_CD)</td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.MMerc_Vendor_CD, new { @disabled = true, id="txtPayAgentVendor" })</td>
+            <td></td>
+        </tr>
+   
+          <tr>
+            <td style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.MRRIS_Acctount_CD)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.MRRIS_Acctount_CD, new { id = "txtAccountCode", MaxLength="6" })</td>
+            <td></td>
+        </tr> 
+        <tr>
+            <td style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.MRRIS_Supplier_CD)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.MRRIS_Supplier_CD, new { id="txtSupplierCode", MaxLength="6"})</td>
+            <td></td>
+        </tr> 
+
+          <tr>
+            <td style="text-align: left;  vertical-align: top; " class="style3">@Html.LabelFor(model => model.MCHUser)</td>
+            <td style="text-align: left; vertical-align: top; " class="style2">@Html.TextBoxFor(model => model.MCHUser, new {id="txtFirstName", @disabled=true, style="width:170px;" })</td>
+            <td style="text-align: left; vertical-align: top; " class="style2"> @Html.TextBoxFor(model => model.MCHUser, new {id="txtLastName", @disabled=true, style="width:170px;" })</td>
+        </tr> 
+        <tr>
+            <td style="text-align: left; vertical-align: top; " class="style3">@Html.LabelFor(model => model.MCHTS)</td>
+            <td style="text-align: left; vertical-align: top; " class="style2">
+                 @if (Model.MCHTS.ToShortDateString() != "1/1/0001")
+                 {
+                     @Html.TextBoxFor(model => model.MCHTS, Model.MCHTS.ToString("yyyy-MM-dd hh:mm:ss tt"), new { @class="CLSDTFROM", id="txtChangeTime", @disabled=true })
+                 }
+                else
+                {
+                     @Html.TextBoxFor(model => model.MCHTS,"", new {@class="CLSDTFROM", id="txtChangeTime", @disabled=true })                     
+                 }
+
+            </td>
+            <td></td>
+        </tr>
+        
+       </table>
+
+        <table border="0" id="tblAddNew" 
+        style="width: 700px; vertical-align:text-top; text-align:left; display:none;">
+        <tr>
+           
+            <td class="style3" style="text-align:left; vertical-align: top; width:250px; " nowrap="nowrap">
+                @Html.LabelFor(model => model.NPayAgent_CD)<span style="color:Red;">*</span>
+                
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top;" nowrap="nowrap">
+              
+              @Html.DropDownListFor(model => model.NPayAgent_CD, Model.ddlNPayAgent_CD,"", new { id = "ddlNPayAgent_CD",style="width:150px;" })
+            </td>
+            <td style="text-align: left; vertical-align: top;  width: 300px;">
+                &nbsp;
+            </td>
+            
+        </tr>
+
+         <tr>
+           
+            <td class="style3" style="text-align:left; vertical-align: top; width:250px;" nowrap="nowrap">
+                @Html.LabelFor(model => model.NMerc_Vendor_CD)<span style="color:Red;">*</span>
+            </td>
+            <td class="style2" style="text-align: left; vertical-align: top; " nowrap="nowrap">
+              
+             @Html.DropDownListFor(model => model.NMerc_Vendor_CD, Model.ddlNMerc_Vendor_CD, "", new { id = "ddlNMerc_Vendor_CD",style="width:310px;" })
+             
+            </td>
+            
+            
+        </tr>
+   
+          <tr>
+            <td style="text-align:left; vertical-align: top; width:250px; " class="style3" nowrap="nowrap">@Html.LabelFor(model => model.NRRIS_Acctount_CD)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2" nowrap="nowrap">@Html.TextBoxFor(model => model.NRRIS_Acctount_CD, new {id="txtNAcctCode", style="width:150px;", MaxLength="6" })</td>
+            
+        </tr> 
+        <tr>
+            <td style="text-align:left; vertical-align: top; width:250px; " class="style3" nowrap="nowrap">@Html.LabelFor(model => model.NRRIS_Supplier_CD)<span style="color:Red;">*</span></td>
+            <td style="text-align: left; vertical-align: top; " class="style2" nowrap="nowrap">@Html.TextBoxFor(model => model.NRRIS_Supplier_CD, new {id="txtNSupplierCode", style="width:150px;", MaxLength="6"  })</td>
+           
+        </tr> 
+       </table>
+        <table>
+            <tr>
+           <td nowrap="nowrap" style="text-align:left;">
+               <input type = "button" value = "Update - Select Vendor Code" name="btnPayAgentCode" id="btnVendorAgentCode" />
+               <input type = "button" value = "Update" name="btnUpdate" id="btnUpdate" style="display:none;"/>
+               <input type = "button" value = "Add Record" name="btnAddRecord" id="btnAddRecord" style="display:none;"/>
+               
+              
+           </td>
+                
+              <td nowrap="nowrap" style="text-align:right;"> 
+                  <input type="button" id="btnAddNew" value="Add New" name="AddNew"/>
+                  
+              </td>
+               <td nowrap="nowrap" style="text-align:left;">
+                               
+                   <input type = "button" value = "Delete" name="btnDelete" id="btnDelete" style="display:none;"/>
+                   <input type = "button" value = "Return To Add - Update - Delete" name="btnReturn" id="btnReturn" style="display:none;"/>
+                   <input type="button" id="btnUpdateDelete" value="Update - Delete" name="btnUpdateDelete" style="display:none;"   />      
+               
+              </td>
+           </tr>
+        </table>
+    
+    <input id="hdAgentCode" type="hidden"  />
+        </div>
+   
+}
+
+

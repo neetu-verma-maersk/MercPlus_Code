@@ -1,0 +1,201 @@
+﻿
+body {font-size: 12px;line-height: 12px;font-family: Verdana,arial,sans-serif;background-color: #000033; margin-top:0px; margin-left:0px;}
+#MainContent  table{margin:2px;border-collapse: collapse;}
+#MainContent  th{	padding: 4px 4px 4px 4px;} 
+#MainContent  thead{}
+#MainContent  a { font-size: 14px;color: #080050; text-decoration: underline; cursor: pointer;  }
+#MainContent  a:hover { text-decoration: underline; color: #FF0123; }
+#MainContent  a.dot:hover { text-decoration: underline;color: #FF0123; }
+#MainContent  a img { border: 0; }
+#MainContent  strong {
+color: #2C2B2B;
+}
+
+#MainContent  td{	padding: 4px 4px 4px 4px;} 
+
+
+
+ textarea, INPUT[type="text"],INPUT[type="password"],txtunfocus
+  {
+    font-family    :  Verdana,tahoma,Calibri, arial, snas-serif ;
+    font-size      :  12px;
+    color          :  #000000;
+    padding        :  3px;
+    background     :  #EEEfff;
+    border-left    :  solid 3px #c1c1c1;
+    border-top     :  solid 1px #cfcfcf;
+    border-right   :  solid 1px #cfcfcf;
+    border-bottom  :  solid 1px #6f6f6f;
+  }
+  INPUT[type="text"]:focus, INPUT[type="text"]:active ,INPUT[type="password"]:focus,INPUT[type="password"]:active,txtfocus
+  {
+      border-color:#646464;
+      background-color:#b8d7df;      
+  } 
+  textarea:focus ,txtareafocus
+  {
+      border-color:#646464;
+      background-color:#b8d7df;
+  } 
+  
+  
+  SELECT 
+  {
+  	
+  	font-family    :  Verdana,tahoma, arial, snas-serif;
+    font-size      :  10px;
+    color          :  #000000;
+    background     :  #EEEfff;
+    padding        :  3px;   
+    border-left    :  solid 3px #c1c1c1;
+    border-top     :  solid 1px #cfcfcf;
+    border-right   :  solid 1px #cfcfcf;
+    border-bottom  :  solid 1px #6f6f6f;
+	
+}
+OPTION 
+{
+	font-family    :  Verdana,tahoma, arial, snas-serif;
+    font-size      :  10px;
+    color          :  #000000;
+    padding        :  3px;   
+    border-left    :  solid 3px #c1c1c1;
+    border-top     :  solid 1px #cfcfcf;
+    border-right   :  solid 1px #cfcfcf;
+    border-bottom  :  solid 1px #6f6f6f;
+	/*FONT-SIZE: 11px; BACKGROUND: #ffffff; COLOR: #000000; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none*/
+}
+
+input[type="checkbox"]  {	
+    border-left    :  solid 3px #c1c1c1;
+    border-top     :  solid 1px #cfcfcf;
+    border-right   :  solid 1px #cfcfcf;
+    border-bottom  :  solid 1px #6f6f6f;
+	margin:-1px 4px 0 0;	
+}
+INPUT[type="checkbox"]:focus, INPUT[type="checkbox"]:active 
+{   
+    border-color:#bf3030;
+    background-color:#bf3030;
+}
+INPUT[type="checkbox"]:checked 
+{
+    border-color:#bf3030;
+    background-color:#bf3030;
+} 
+
+.btn{
+	width:77px;
+	height:35px;
+	border:none;
+	font-family:Tahoma;
+	color:#361616;
+	font-weight:bold;
+	font-size:11px;
+	background:url(images/btnSmall.png) no-repeat;
+	text-align:center;
+	cursor:pointer;
+	margin-bottom:5px;
+	
+}
+
+.btn:hover,.btn:focus{
+	width:77px;
+	height:35px;
+	border:none;
+	font-family:Tahoma;
+	color:#f1f1f1;
+	font-weight:bold;
+	font-size:11px;
+	background:url(images/btnSmallHov.png) no-repeat;
+	text-align:center;
+	cursor:pointer;
+	margin-bottom:5px;
+	/*padding : 2px 11px 4px 9px;*/
+}
+.btnMidum{
+	width:120px;
+	height:35px;
+	border:none;
+	font-family:Tahoma;
+	color:#fff;
+	font-weight:bold;
+	font-size:11px;
+	background:url(images/btnMidum.png) no-repeat;
+	text-align:center;
+	cursor:pointer;
+	margin-bottom:5px;
+	
+}
+
+.btnMidum:hover,.btnMidum:focus{
+	width:120px;
+	height:35px;
+	border:none;
+	font-family:Tahoma;
+	color:#f1f1f1;
+	font-weight:bold;
+	font-size:11px;
+	background:url(images/btnMidum.png) no-repeat;
+	text-align:center;
+	cursor:pointer;
+	margin-bottom:0px;
+	/*padding : 2px 11px 4px 9px;*/
+}
+
+.btnLarge{
+	width:120px;
+	height:35px;
+	border:none;
+	font-family:Tahoma;
+	color:#fff;
+	font-weight:bold;
+	font-size:11px;
+	background:url(images/btnLarge.png) no-repeat;
+	text-align:center;
+	cursor:pointer;
+	margin-bottom:5px;
+	
+}
+
+.btnLarge:hover,.btnLarge:focus{
+	width:120px;
+	height:35px;
+	border:none;
+	font-family:Tahoma;
+	color:#f1f1f1;
+	font-weight:bold;
+	font-size:11px;
+	background:url(images/btnLargeHov.png) no-repeat;
+	text-align:center;
+	cursor:pointer;
+	margin-bottom:0px;
+	/*padding : 2px 11px 4px 9px;*/
+}
+
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}

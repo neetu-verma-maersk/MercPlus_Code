@@ -1,0 +1,238 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MERC+ Comments &amp; Requests</title>
+</head>
+
+<body leftmargin="8">
+
+<p><font size="4" face="Verdana"><b>Request for new Mode/Code/Part association<br>
+</b></font><font size="2" face="Verdana"><b><br>
+Repair codes are specifying the work, allowed spare parts and time allowance for 
+a specific job. Attempting to enter a 
+part that is not associated with a specific repair code will therefore be 
+rejected by system.<br>
+If you have a part that you judge should be allowed to be used with a repair code and MERC+ does not allow - fill out the form below. <br>
+(* indicates required field)</b></font></p>
+<!--webbot BOT="GeneratedScript" PREVIEW=" " startspan --><script Language="JavaScript" Type="text/javascript"><!--
+function FrontPage_Form1_Validator(theForm)
+{
+
+  if (theForm.Equipment Number.value == "")
+  {
+    alert("Please enter a value for the \"Equipment Number\" field.");
+    theForm.Equipment Number.focus();
+    return (false);
+  }
+
+  if (theForm.Reefer machinery make.value == "")
+  {
+    alert("Please enter a value for the \"Reefer machinery make\" field.");
+    theForm.Reefer machinery make.focus();
+    return (false);
+  }
+
+  if (theForm.Reefer machinery make.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Reefer machinery make\" field.");
+    theForm.Reefer machinery make.focus();
+    return (false);
+  }
+
+  if (theForm.Model.value == "")
+  {
+    alert("Please enter a value for the \"Model\" field.");
+    theForm.Model.focus();
+    return (false);
+  }
+
+  if (theForm.Model.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Model\" field.");
+    theForm.Model.focus();
+    return (false);
+  }
+
+  if (theForm.Mode.selectedIndex < 0)
+  {
+    alert("Please select one of the \"Mode\" options.");
+    theForm.Mode.focus();
+    return (false);
+  }
+
+  var numSelected = 0;
+  var i;
+  for (i = 0;  i < theForm.Mode.length;  i++)
+  {
+    if (theForm.Mode.options[i].selected)
+        numSelected++;
+  }
+  if (numSelected < 1)
+  {
+    alert("Please select at least 1 of the \"Mode\" options.");
+    theForm.Mode.focus();
+    return (false);
+  }
+
+  if (numSelected > 2)
+  {
+    alert("Please select at most 2 of the \"Mode\" options.");
+    theForm.Mode.focus();
+    return (false);
+  }
+
+  if (theForm.STS Code.value == "")
+  {
+    alert("Please enter a value for the \"STS Code\" field.");
+    theForm.STS Code.focus();
+    return (false);
+  }
+
+  if (theForm.STS Code.value.length < 4)
+  {
+    alert("Please enter at least 4 characters in the \"STS Code\" field.");
+    theForm.STS Code.focus();
+    return (false);
+  }
+
+  if (theForm.STS Code.value.length > 4)
+  {
+    alert("Please enter at most 4 characters in the \"STS Code\" field.");
+    theForm.STS Code.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-";
+  var checkStr = theForm.STS Code.value;
+  var allValid = true;
+  var validGroups = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"STS Code\" field.");
+    theForm.STS Code.focus();
+    return (false);
+  }
+
+  if (theForm.Repair code description.value == "")
+  {
+    alert("Please enter a value for the \"Repair code description\" field.");
+    theForm.Repair code description.focus();
+    return (false);
+  }
+
+  if (theForm.Part number.value == "")
+  {
+    alert("Please enter a value for the \"Part number\" field.");
+    theForm.Part number.focus();
+    return (false);
+  }
+
+  if (theForm.Part number.value.length > 20)
+  {
+    alert("Please enter at most 20 characters in the \"Part number\" field.");
+    theForm.Part number.focus();
+    return (false);
+  }
+
+  if (theForm.Part description.value == "")
+  {
+    alert("Please enter a value for the \"Part description\" field.");
+    theForm.Part description.focus();
+    return (false);
+  }
+
+  if (theForm.Spare part manual.value == "")
+  {
+    alert("Please enter a value for the \"Spare part manual\" field.");
+    theForm.Spare part manual.focus();
+    return (false);
+  }
+  return (true);
+}
+//--></script><!--webbot BOT="GeneratedScript" endspan --><form method="POST" name="FrontPage_Form1" action="../_derived/nortbots.htm" onsubmit="location.href='../_derived/nortbots.htm';return false;" webbot-action="--WEBBOT-SELF--" language="JavaScript" webbot-onSubmit="return FrontPage_Form1_Validator(this)">
+	<!--webbot bot="SaveResults" U-File="../_private/form_results.txt" S-Format="TEXT/PRE" S-Label-Fields="FALSE" B-Reverse-Chronology="FALSE" S-Email-Format="TEXT/PRE" B-Email-Label-Fields="TRUE" B-Email-Subject-From-Field="FALSE" S-Email-Subject="Repair code/Part association request" S-Builtin-Fields S-Email-Address="wocglbemrref@maersk.com" startspan --><input TYPE="hidden" NAME="VTI-GROUP" VALUE="0"><!--webbot bot="SaveResults" endspan i-checksum="43374" -->
+	<p><font face="Verdana"><font size="2">Business E-mail Address*&nbsp;&nbsp; &nbsp;</font><input type="text" name="From" size="30" tabindex="1"></font></p>
+	<p><font face="Verdana"><font size="2">Equipment number*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</font>&nbsp;<!--webbot bot="Validation" b-value-required="TRUE" --><input type="text" name="Equipment Number" size="30" tabindex="3"></font></p>
+	<p><font face="Verdana" size="2">Reefer machinery</font><font face="Verdana"><font size="2"> 
+	make*</font>&nbsp;&nbsp;&nbsp;
+	<!--webbot bot="Validation" b-value-required="TRUE" i-minimum-length="2" -->
+	<input type="text" name="Reefer machinery make" size="30" tabindex="4"></font></p>
+	<p><font face="Verdana"><font size="2">Model*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;
+	<!--webbot bot="Validation" b-value-required="TRUE" i-minimum-length="2" -->
+	<input type="text" name="Model" size="30" tabindex="5"></font></p>
+	<p><font face="Verdana" size="2">Mode(s)*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+	<font face="Verdana">
+	&nbsp;<!--webbot bot="Validation" s-display-name="Mode" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="2" --><select size="1" name="Mode" multiple tabindex="6">
+	<option>00</option>
+	<option>01</option>
+	<option>02</option>
+	<option>03</option>
+	<option>04</option>
+	<option>05</option>
+	<option>07</option>
+	<option>10</option>
+	<option>11</option>
+	<option>20</option>
+	<option>31</option>
+	<option>33</option>
+	<option>41</option>
+	<option>43</option>
+	<option>44</option>
+	<option>45</option>
+	<option>46</option>
+	<option>47</option>
+	<option>48</option>
+	<option>71</option>
+	<option>80</option>
+	<option>81</option>
+	<option>82</option>
+	<option>83</option>
+	<option>84</option>
+	<option>85</option>
+	<option>86</option>
+	<option>87</option>
+	<option>88</option>
+	<option>89</option>
+	</select><font size="2"> </font><font size="1">Hold down CTRL key for 
+	multiple selections (example 41 &amp; 43)</font></font></p>
+	<p><font size="2" face="Verdana">STS Code*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+	<font face="Verdana">
+	&nbsp;<!--webbot bot="Validation" s-data-type="String" b-allow-digits="TRUE" b-value-required="TRUE" i-minimum-length="4" i-maximum-length="4" --><input type="text" name="STS Code" size="4" tabindex="7" maxlength="4"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	STS Code Description*&nbsp;&nbsp;&nbsp; </font>
+	&nbsp;<!--webbot bot="Validation" b-value-required="TRUE" --><input type="text" name="Repair code description" size="30" tabindex="8"></font></p>
+	<p><font face="Verdana" size="2">Part Number*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+	<font face="Verdana">
+	&nbsp;<!--webbot bot="Validation" b-value-required="TRUE" i-maximum-length="20" --><input type="text" name="Part number" size="30" tabindex="9" maxlength="20"><font size="2">
+	</font><font size="1">Must be exact and must be in the Master Parts List</font></font></p>
+	<p><font face="Verdana" size="2">Part number Description*&nbsp;&nbsp;&nbsp;
+	<!--webbot bot="Validation" b-value-required="TRUE" -->
+	<input type="text" name="Part description" size="30" tabindex="10"></font></p>
+	<p><font face="Verdana" size="2">Spare Part Manual number*
+	<!--webbot bot="Validation" b-value-required="TRUE" --><input type="text" name="Spare part manual" size="30" tabindex="11"><br>
+	</font><font face="Verdana" size="1">(Pls. find the correct spare part 
+	manual 
+	<a href="QRLlist.htm">
+	here</a>)</font></p>
+	<p><font face="Verdana" size="2">Explanation/Comments<br>
+	</font><textarea rows="4" name="Comments" cols="56" tabindex="12"></textarea></p>
+	<p><input type="submit" value="Submit" name="_____"><input type="reset" value="Reset" name="B2"></p>
+</form>
+
+</body>
+
+</html>

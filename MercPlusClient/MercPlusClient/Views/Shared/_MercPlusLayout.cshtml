@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/datepicker.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/mainjs.js"></script>
+   
+</head>
+<body>
+    <div style="width: 100%; overflow: auto;">
+        <table cellpadding="0" cellspacing="0" align="center" style="border: 2px solid #fff;">
+            <tr>
+                <td width="70%" bgcolor="#000033" colspan="3" height="33">
+                    <a href="http://www.maerskline.com" target="maersk">
+                        <img border="0" src="~/Content/Images/Logo.gif" width="247" height="30" /></a>
+                </td>
+                <td width="206" bgcolor="#000033" height="27">
+                    <p align="center">
+                        <img border="0" src="~/Content/Images/MERC.gif" width="82" height="27" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="20" bgcolor="#0099CC" height="27">&nbsp;</td>
+                <td width="9" bgcolor="#0099CC" height="27">&nbsp;</td>
+                  @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isShop == true )
+                  {  <td width="60%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: SHOP </span></font> </td>}
+                  @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: ADMIN </span></font> </td>} 
+                    @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: CPH </span></font> </td>} 
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: EMRApproverCountry </span></font> </td>} 
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop == true )
+                  {  <td width="60%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: EMRApproverShop</span></font> </td>} 
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: EMRSpecialistCountry</span></font> </td>} 
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: EMRSpecialistShop</span></font> </td>} 
+                  @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROCluster == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: MPROCluster</span></font> </td>} 
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROShop == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: MPROShop</span></font> </td>} 
+                 @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isReadOnly == true )
+                  {  <td width="80%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Login as: ReadOnly </span></font> </td>}                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+          
+                <td width="206" bgcolor="#0099CC" height="27" align="center">
+
+                    @Html.ActionLink("Log Out", "LogOut", "ManageSecurity", new { area = "ManageSecurity" }, null)
+                </td>
+
+            </tr>
+
+
+            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).DuplicateEmail == true ) 
+            { 
+                
+             <tr>
+                 
+                <td width="20" bgcolor="#0099CC" height="27">&nbsp;</td>
+                <td width="9" bgcolor="#0099CC" height="27">&nbsp;</td>
+                 
+                   <td width="60%" bgcolor="#0099CC" height="27"align="center" >  <font size="2"><span lang="en-us">Multiple Logins exist with the same email id. Send your new email address with the login id and shop code(s) to MERCplusRCMAccessSupport@maersk.com or advise login(s) to deactivate.Access will be revoked soon with no response </span></font> </td>
+                <td width="9" bgcolor="#0099CC" height="27">&nbsp;</td>
+             </tr>
+            }
+
+            <tr>
+                <td width="20" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+                <td width="9" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+                <td width="80%" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+                <td width="206" bordercolor="#000033" bgcolor="#000033" height="27">&nbsp;</td>
+            </tr>
+            <tr>
+                <td width="20" bordercolor="#111111" bgcolor="#000033" height="360">&nbsp;</td>
+                <td width="9" height="460" bgcolor="#D9E4F6">&nbsp;</td>
+                <td width="80%" height="460" bgcolor="#D9E4F6" valign="top">
+                    <div id="MainContent" style="width:99%;">
+                        <div class="ContentPlaceHolderCss">
+                            @*<div id="ErrorMsgContainer" style="margin: 10px;"></div>*@
+                            <div id="ModelContainer"></div>
+                            <div id="ModelContainerAlert"></div>
+                            @RenderBody()
+                        </div>
+                    </div>
+                </td>
+                <td bordercolor="#000033" bgcolor="#000033" align="center" valign="top" width="20%">
+                    <div id="sideMenu">
+                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+                            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isShop == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+                            {                            
+                                <tr>
+                                    <td width="50" height="19" bgcolor="#000033"></td>
+                                    <td bgcolor="#0099CC" class="nobr" width="8" height="19">&nbsp;</td>
+                                    <td bgcolor="#0099CC" height="19" align="left"><b><font size="2"><span lang="en-us">Estimate Entry</span></font></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="58" height="23" colspan="2" align="right">
+                                        <img src="/Content/Images/woentry.jpg" height="48" width="48" border="0" /></td>
+                                    <td valign="top" align="left" bgcolor="#0099CC" width="117" height="29">
+                                        <span lang="en-us">
+                                            <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                           @* @Html.ActionLink("Single Equipment", "ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false }, null)*@
+                                            <a accesskey = "s" href="#" onclick="location.href='@Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = false }, null)'"><u>S</u>ingle Equipment</a><br />
+                                            <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                          @*  @Html.ActionLink("Multiple Equipment", "ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = true }, null)*@
+                                            <a accesskey = "m" href="#" onclick="location.href='@Url.Action("ManageWorkOrder", "ManageWorkOrder", new { area = "ManageWorkOrder", IsMulti = true }, null)'"><u>M</u>ultiple Equipment</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="10">
+                                        <img border="0" src="/Content/Images/mp_bi.gif" width="39" height="10" /></td>
+                                    <td class="nobr" height="10" valign="top">
+                                        <img border="0" src="/Content/Images/mp_b1a.gif" width="8" height="10" /></td>
+                                    <td valign="top" height="10">
+                                        <img border="0" src="/Content/Images/mp_b1b.gif" width="126" height="10" /></td>
+                                </tr>
+                                <tr>
+                                    <td width="50" bgcolor="#000033" height="17"></td>
+                                </tr>
+                            }
+   @*                         @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isReadOnly == false)*@
+                           @* {*@
+                                <tr>
+                                    <td width="50" bgcolor="#000033" height="19"></td>
+                                    <td bgcolor="#0099CC" class="nobr" width="8" height="19">&nbsp;</td>
+                                    @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isShop == true)
+                                    {
+                                        <td bgcolor="#0099CC" width="117" height="19" align="left"><b><font size="2"><span lang="en-us">View/Edit</span></font></b></td>
+                                    }
+                                    else
+                                    {
+                                        <td bgcolor="#0099CC" width="117" height="19" align="left"><b><font size="2"><span lang="en-us">Review</span></font></b></td>
+                                    }
+                                </tr>
+                                <tr>
+                                    <td width="58" height="23" colspan="2" align="right">
+                                        <img src="/Content/Images/genleda.jpg" height="48" width="48" border="0"></td>
+                                    <td valign="top" bgcolor="#0099CC" width="117" height="31" nowrap align="left">
+                                        <span lang="en-us">
+                                            <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                           @* @Html.ActionLink("Review Estimates", "ReviewEstimates", "ReviewEstimates", new { area = "ManageWorkOrder" }, null)
+                                            <a accesskey = "e" href="#" onclick="location.href='@Url.Action("ReviewEstimates", "ReviewEstimates", new { area = "ManageWorkOrder" }, null)'">Review <u>E</u>stimates</a>*@
+                                            <a accesskey = "e" href="/ManageWorkOrder/ReviewEstimates/ReviewEstimates">Review <u>E</u>stimates</a><br />
+                                            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop == true
+                                                //|| ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isRegion == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isReadOnly == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROCluster == true
+                                                || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROShop == true
+                                                )
+                                            {
+                                            <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                            <a accesskey = "e" href="/HSUDData/HSUDData/HSUDData">HSUD <u>R</u>EZ1 Data</a> @*Kasturee_HSUD*@
+                                            }
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="10">
+                                        <img border="0" src="/Content/Images/mp_bi.gif" width="39" height="10" /></td>
+                                    <td class="nobr" height="10" valign="top">
+                                        <img border="0" src="/Content/Images/mp_b1a.gif" width="8" height="10" /></td>
+                                    <td valign="top" height="10">
+                                        <img border="0" src="/Content/Images/mp_b1b.gif" width="126" height="10" /></td>
+                                </tr>
+                                <tr>
+                                    <td width="50" height="17" bgcolor="#000033"></td>
+                                </tr>
+                            @*}*@
+                            <tr>
+                                <td width="50" height="19" bgcolor="#000033"></td>
+                                <td bgcolor="#0099CC" class="nobr" width="8" height="19">&nbsp;</td>
+                                <td bgcolor="#0099CC" width="117" height="19" align="left"><b><font size="2"><span lang="en-us" accesskey="r">Reports</span></font></b></td>
+                            </tr>
+                            <tr>
+                                <td width="58" height="23" colspan="2" align="right">
+                                    <img src="/Content/Images/rpts.jpg" height="48" width="48" border="0" />
+                                </td>
+                                <td valign="top" bgcolor="#0099CC" width="117" height="25" nowrap align="left">
+                                    <span lang="en-us"> 
+                                        <img src="/Content/Images/i.gif" height="1" width="5" border="0" />    
+                                              @*  @Html.ActionLink("Reports", "ManageReports", "ManageReports", new { area = "ManageReports", accesskey = "r" }, null)*@
+                                        <a accesskey = "r" href="#" onclick="location.href='@Url.Action("ManageReports", "ManageReports", new { area = "ManageReports" }, null)'"><u>R</u>eports</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="10">
+                                    <img border="0" src="/Content/Images/mp_bi.gif" width="39" height="10" /></td>
+                                <td class="nobr" height="10" valign="top">
+                                    <img border="0" src="/Content/Images/mp_b1a.gif" width="8" height="10" /></td>
+                                <td valign="top" height="10">
+                                    <img border="0" src="/Content/Images/mp_b1b.gif" width="126" height="10" /></td>
+                            </tr>
+                            <tr>
+                                <td width="50" height="17" bgcolor="#000033"></td>
+                            </tr>
+
+                          @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true )                          {
+                                <tr>
+                                    <td width="50" height="19" bgcolor="#000033"></td>
+                                    <td bgcolor="#0099CC" class="nobr" width="8" height="19">&nbsp;</td>
+                                    <td bgcolor="#0099CC" width="117" height="19" align="left"><b><font size="2"><span lang="en-us">System Data</span></font></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="58" height="23" colspan="2" align="right">
+                                        <img src="/Content/Images/keybrd.jpg" height="48" width="48" border="0" /></td>
+                                    <td valign="top" bgcolor="#0099CC" width="117" height="4" nowrap align="left"><span lang="en-us">
+                                        <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                        @*@Html.ActionLink("Modify System Data", "TablemodLaunch", "ManageSecurity", new { area = "ManageSecurity" }, null)*@
+                                        <a accesskey = "d" href="#" onclick="location.href='@Url.Action("TablemodLaunch", "ManageSecurity", new { area = "ManageSecurity" }, null)'">Modify System <u>D</u>ata</a>
+                                    </span>
+                                    </td>
+                                </tr>       
+                                <tr>
+                                    <td height="10">
+                                        <img border="0" src="/Content/Images/mp_bi.gif" width="39" height="10" /></td>
+                                    <td class="nobr" height="10" valign="top">
+                                        <img border="0" src="/Content/Images/mp_b1a.gif" width="8" height="10" /></td>
+                                    <td valign="top" height="10">
+                                        <img border="0" src="/Content/Images/mp_b1b.gif" width="126" height="10" /></td>
+                                </tr>
+                                <tr>
+                                    <td width="50" height="17" bgcolor="#000033"></td>
+                                </tr>
+                            }
+                            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverShop == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRApproverCountry == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROCluster == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isMPROShop == true)
+                            {
+                                <tr>
+                                    <td width="50" height="19" bgcolor="#000033"></td>
+                                    <td bgcolor="#0099CC" class="nobr" width="8" height="19">&nbsp;</td>
+                                    <td bgcolor="#0099CC" width="117" height="19" align="left"><b><font size="2"><span lang="en-us">System Data</span></font></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="58" height="23" colspan="2" align="right">
+                                        <img src="/Content/Images/keybrd.jpg" height="48" width="48" border="0" /></td>
+                                    <td valign="top" bgcolor="#0099CC" width="117" height="4" nowrap align="left"><span lang="en-us">
+                                        <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                        @*@Html.ActionLink("Modify System Data", "TablemodLaunch", "ManageSecurity", new { area = "ManageSecurity" }, null)*@
+                                        <a accesskey = "d" href="#" onclick="location.href='@Url.Action("TablemodLaunch", "ManageSecurity", new { area = "ManageSecurity" }, null)'">Review System <u>D</u>ata</a>
+                                    </span>
+                                    </td>
+                                </tr>       
+                                <tr>
+                                    <td height="10">
+                                        <img border="0" src="/Content/Images/mp_bi.gif" width="39" height="10" /></td>
+                                    <td class="nobr" height="10" valign="top">
+                                        <img border="0" src="/Content/Images/mp_b1a.gif" width="8" height="10" /></td>
+                                    <td valign="top" height="10">
+                                        <img border="0" src="/Content/Images/mp_b1b.gif" width="126" height="10" /></td>
+                                </tr>
+                                <tr>
+                                    <td width="50" height="17" bgcolor="#000033"></td>
+                                </tr>
+                            }
+                            @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true )
+                            {
+                                <tr>
+                                    <td width="50" height="19" bgcolor="#000033"></td>
+                                    <td bgcolor="#0099CC" class="nobr" width="8" height="19">&nbsp;
+                                    </td>
+                                    <td bgcolor="#0099CC" width="117" height="19" align="left">
+                                        <b><font size="2"><span lang="en-us">Security</span></font></b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="58" height="23" colspan="2" align="right">
+                                        <img src="/Content/Images/secur.jpg" height="48" width="48" border="0" />
+                                    </td>
+                           @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isAdmin == true)
+                           {   <td valign="top" bgcolor="#0099CC" width="117" height="23" nowrap align="left">
+                                        <span lang="en-us">
+                                            <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                            @Html.ActionLink("User Management", "ManageUser", "ManageUser", new { area = "ManageUser" }, null)
+
+                                        </span>
+                                    </td>}
+                                     @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isCPH == true)
+                           {   <td valign="top" bgcolor="#0099CC" width="117" height="23" nowrap align="left">
+                                        <span lang="en-us">
+                                            <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                            @Html.ActionLink("User Review", "ManageUser", "ManageUser", new { area = "ManageUser" }, null)
+
+                                        </span>
+                                    </td>}
+                                </tr>
+                                <tr>
+                                    <td height="10">
+                                        <img border="0" src="/Content/Images/mp_bi.gif" width="39" height="10" />
+                                    </td>
+                                    <td class="nobr" height="10" valign="top">
+                                        <img border="0" src="/Content/Images/mp_b1a.gif" width="8" height="10" />
+                                    </td>
+                                    <td valign="top" height="10">
+                                        <img border="0" src="/Content/Images/mp_b1b.gif" width="126" height="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50" height="17" bgcolor="#000033"></td>
+                                </tr>
+                            }
+
+                             @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistCountry == true || ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).isEMRSpecialistShop == true)
+                            {
+                                <tr>
+                                    <td width="50" height="19" bgcolor="#000033"></td>
+                                    <td bgcolor="#0099CC" class="nobr" width="8" height="19">&nbsp;
+                                    </td>
+                                    <td bgcolor="#0099CC" width="117" height="19" align="left">
+                                        <b><font size="2"><span lang="en-us">Security</span></font></b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="58" height="23" colspan="2" align="right">
+                                        <img src="/Content/Images/secur.jpg" height="48" width="48" border="0" />
+                                    </td>
+                                    <td valign="top" bgcolor="#0099CC" width="117" height="23" nowrap align="left">
+                                        <span lang="en-us">
+                                            <img src="/Content/Images/i.gif" height="1" width="5" border="0" />
+                                            @Html.ActionLink("User Review", "ManageUser", "ManageUser", new { area = "ManageUser" }, null)
+
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="10">
+                                        <img border="0" src="/Content/Images/mp_bi.gif" width="39" height="10" />
+                                    </td>
+                                    <td class="nobr" height="10" valign="top">
+                                        <img border="0" src="/Content/Images/mp_b1a.gif" width="8" height="10" />
+                                    </td>
+                                    <td valign="top" height="10">
+                                        <img border="0" src="/Content/Images/mp_b1b.gif" width="126" height="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50" height="17" bgcolor="#000033"></td>
+                                </tr>
+                            }
+                        </table>
+
+                    </div>
+                </td>       
+            </tr>
+            <tr>
+                <td width="20" bordercolor="#000033" bgcolor="#000033" height="19">&nbsp;</td>
+                <td width="9" bordercolor="#000033" bgcolor="#000033" height="19">&nbsp; </td>
+                <td width="80%" bordercolor="#000033" bgcolor="#000033" height="19" align="center" valign="middle">
+                    <a href="http://www.ibm.com" class="amsysLabel" target="amsys">©2004 Maersk Line, All Rights Reserved<br />
+                        IBM Global Services - Transport & Logistics</a>
+                </td>
+                <td width="206" bordercolor="#000033" bgcolor="#000033" height="19">&nbsp; </td>
+            </tr>
+        </table>
+    </div>
+</body>
+     @if (((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).DuplicateEmail == true ) 
+               { <script>alert("Multiple Logins exist with the same email id. Send your new email address with the login id and shop code(s) to MERCplusRCMAccessSupport@maersk.com or advise login(s) to deactivate.Access will be revoked soon with no response");</script>}
+
+</html>

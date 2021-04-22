@@ -1,0 +1,42 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #003366; FONT-SIZE: 8pt; BACKGROUND: #ffffff; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #ffffff; COLOR: #003366; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #ffffff; FONT-FAMILY: Verdana,Arial; SCROLLBAR-DARKSHADOW-COLOR: orange; SCROLLBAR-BASE-COLOR: #ffffff
+}
+TD {
+	FONT-SIZE: 8pt; FONT-FAMILY: Verdana,Arial
+}
+SPAN.heading {
+	FONT-SIZE: 24pt; FONT-FAMILY: Verdana,Arial
+}
+SPAN.sub_heading {
+	FONT-SIZE: 18pt; FONT-FAMILY: Verdana,Arial
+}
+SPAN.table_heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-FAMILY: Verdana,Arial
+}
+SPAN.updated {
+	FONT-SIZE: 7.5pt; COLOR: #000000; FONT-FAMILY: Verdana,Arial
+}
+SPAN.boldtext {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: Verdana,Arial
+}
+.text {
+	FONT-SIZE: 8pt; FONT-FAMILY: Verdana,Arial
+}
+A:link {
+	FONT-SIZE: 8pt; COLOR: #003366; FONT-FAMILY: Verdana,Arial
+}
+A:visited {
+	FONT-SIZE: 8pt; COLOR: #003366; FONT-FAMILY: Verdana,Arial
+}
+A:active {
+	FONT-SIZE: 8pt; COLOR: #ff8c00; FONT-FAMILY: Verdana,Arial
+}
+OPTION {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #003366; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: #ffffff
+}
+INPUT {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #003366; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: #ffffff
+}
+TEXTAREA {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #003366; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: #ffffff
+}

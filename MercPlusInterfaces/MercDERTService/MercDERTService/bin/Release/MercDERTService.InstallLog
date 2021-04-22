@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.InstallLog
+   assemblypath = C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe
+Installing service MercDERTService...
+Service MercDERTService has been successfully installed.
+Creating EventLog source MercDERTService in log Application...
+Committing assembly 'C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.InstallLog
+   assemblypath = C:\MercPlus\Interfaces\Interfaces\MercDERTService\MercDERTService\bin\Release\MercDERTService.exe

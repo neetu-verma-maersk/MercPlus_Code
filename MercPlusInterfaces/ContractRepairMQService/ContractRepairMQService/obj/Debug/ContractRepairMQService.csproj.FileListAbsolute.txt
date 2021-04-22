@@ -1,0 +1,17 @@
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\ContractRepairMQService.exe.config
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\ContractRepairMQService.exe
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\ContractRepairMQService.pdb
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\amqmdnet.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\EntityFramework.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\MercPlusLibrary.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\Microsoft.Practices.Unity.dll
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\EntityFramework.xml
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\bin\Debug\MercPlusLibrary.pdb
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\obj\Debug\ContractRepairMQService.ProjectInstaller.resources
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\obj\Debug\ContractRepairMQService.csproj.GenerateResource.Cache
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\obj\Debug\ContractRepairMQService.exe
+C:\MercPlus\code check\MercPlusInterfaces\ContractRepairMQService\ContractRepairMQService\obj\Debug\ContractRepairMQService.pdb

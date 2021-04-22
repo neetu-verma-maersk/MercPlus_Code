@@ -1,0 +1,93 @@
+﻿@model MercPlusClient.Areas.HSUDData.Models.HSUDDataModel
+
+@{
+    ViewBag.Title = "HSUDData";
+    Layout = "~/Views/Shared/_MercPlusLayout.cshtml";
+}
+<link href="~/Areas/HSUDData/Style/WorkOrder.css" rel="stylesheet" />
+<script src="~/Areas/HSUDData/Script/js_HSUDData.js"></script>
+ <script type="text/javascript">     ////Kasturee_HSUD_Before_PROD_02-07-19 
+    $(document).ready(function () {
+        ReloadSearchData();
+    });
+</script>
+@using (Html.BeginForm())
+{
+    <div style="width: 100%;padding-left:25px;padding-right:25px;" id="divMain">
+        
+        <table width="100%">
+            <tr>
+                <td colspan="8">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; vertical-align: text-top;">
+
+                        <tr>
+                            <td style="vertical-align: top; text-align: right; margin-right: 0px; font-size: xx-small; font-size: 8px;">
+                               
+                                <a href="~/HelpFiles/help/merc/3_HelpScrns_DoNotChangeStructure/mgrapproval1_help.htm" target="_blank"></a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <div id="ErrorMsgContainer" style="width: 750px; vertical-align: text-top;">
+                        @Html.Raw(TempData["Msg"] != null ? TempData["Msg"].ToString() : "")
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8" style="padding-left:10px;">
+                    @*@Html.Label("lblMessage", Model.ErrorMsg, kastureenew { style = "color: red; text-size:8px;" })*@
+                     <h2>HSUD REZ1 </h2>
+                </td>
+            </tr>
+
+           
+
+
+            <tr>
+                <td nowrap="nowrap" style="padding-left:10px;">Equipment No:
+               
+                    @Html.TextBox("txtEqpNo", Model.EquipmentNo, new { style = "width:120px;" })
+                </td>
+               
+                <td style="text-align: left; vertical-align: bottom; padding-right:700px;">
+                    <button id="search" style="background-color: white;">Query</button>
+                    @*<input type="button" id="btnSearch" value="Query" style="display:block;"Kasturee name="btnSearch"  /> *@
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="8" style="width: 100%;padding-left:10px;padding-right:10px">
+                                       @Html.Hidden("hdnSearchRes", "")  @*//Kasturee_HSUD_Before_PROD_02-07-19 *@
+                          <div id="gridContent">  
+                                                    
+                    </div>
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+
+                    @Html.Label("lbl", new { id = "lblErrorMesage", style = "color: red; text-size:12px; display: none;" })
+                    <br />
+                    <p style="text-align: center;">
+                        <h3>@Html.Label("lbl", new { id = "lblMesage", style = "display: none;" }) </h3>
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+
+
+    </div>
+    <div>@Html.Hidden("hdSession", ((MercPlusClient.UserSec)System.Web.HttpContext.Current.Session["UserSec"]).UserType)</div>
+}
+
+

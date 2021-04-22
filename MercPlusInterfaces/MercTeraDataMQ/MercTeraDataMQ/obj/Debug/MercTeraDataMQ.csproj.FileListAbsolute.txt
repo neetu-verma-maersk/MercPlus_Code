@@ -1,0 +1,99 @@
+c:\users\ibm_admin\documents\visual studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+c:\users\ibm_admin\documents\visual studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.csprojResolveAssemblyReference.cache
+c:\users\ibm_admin\documents\visual studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe
+c:\users\ibm_admin\documents\visual studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.pdb
+c:\users\ibm_admin\documents\visual studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+c:\users\ibm_admin\documents\visual studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\amqmdnet.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercPlusLibrary.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2012\Projects\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.pdb
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\amqmdnet.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercPlusLibrary.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+C:\Backup\Soumik\Merc+\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb
+D:\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+D:\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe
+D:\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.pdb
+D:\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercPlusLibrary.dll
+D:\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+D:\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb
+D:\Anindita\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.csprojResolveAssemblyReference.cache
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.csprojResolveAssemblyReference.cache
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\amqmdnet.dll
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercPlusLibrary.dll
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.pdb
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercPlusLibrary.dll
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.csprojResolveAssemblyReference.cache
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+D:\Anindita\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\Latest\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\15-01-2015\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\15-01-2015\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+C:\Anindita\Mearsk\CTI_Migration\Deliverables\BI_Code_Updated\15-01-2015\MercTeraDataMQ\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe.config
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.exe
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercTeraDataMQ.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\amqmdnet.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\MercPlusLibrary.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.exe
+C:\Users\IBM_ADMIN\Desktop\Interfaces\MercTeraDataMQ\MercTeraDataMQ\obj\Debug\MercTeraDataMQ.pdb

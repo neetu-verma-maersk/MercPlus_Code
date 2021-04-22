@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManageUser" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52647/ManageUserService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52647/ManageUserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52647/ManageUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IManageUser_isUserExistInDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:isUserExistInDb" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_isUserExistInDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isUserExistInDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetCountryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryList" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetCountryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_UpdateUserActiveStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserActiveStatus" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_UpdateUserActiveStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserActiveStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_DeleteUserDataAccessByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserDataAccessByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_DeleteUserDataAccessByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserDataAccessByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserListOfACountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserListOfACountry" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserListOfACountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserListOfACountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserByEmailId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmailId" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserByEmailId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmailIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserByLoginId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByLoginId" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetUserByLoginId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByLoginIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_IsLocationCodeExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsLocationCodeExist" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_IsLocationCodeExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsLocationCodeExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AvailablePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AvailablePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AvailablePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AvailablePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AvailablePermissionsByFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:AvailablePermissionsByFilter" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AvailablePermissionsByFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AvailablePermissionsByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupList" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupByAuthgroupId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupByAuthgroupId" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupByAuthgroupId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupByAuthgroupIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_InsertUserDataAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserDataAccess" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_InsertUserDataAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserDataAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetWebPageList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebPageList" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetWebPageList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebPageListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetWebpageListByWebsiteId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebpageListByWebsiteId" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetWebpageListByWebsiteId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebpageListByWebsiteIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupWebpageAccessById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupWebpageAccessById" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_GetAuthGroupWebpageAccessById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthGroupWebpageAccessByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_UpdateWebPagePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebPagePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_UpdateWebPagePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebPagePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AddAllCluster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAllCluster" />
+  </wsdl:message>
+  <wsdl:message name="IManageUser_AddAllCluster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAllClusterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IManageUser">
+    <wsdl:operation name="isUserExistInDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/isUserExistInDb" message="tns:IManageUser_isUserExistInDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/isUserExistInDbResponse" message="tns:IManageUser_isUserExistInDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/AddUser" message="tns:IManageUser_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/AddUserResponse" message="tns:IManageUser_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetCountryList" message="tns:IManageUser_GetCountryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetCountryListResponse" message="tns:IManageUser_GetCountryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/UpdateUser" message="tns:IManageUser_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/UpdateUserResponse" message="tns:IManageUser_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserActiveStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/UpdateUserActiveStatus" message="tns:IManageUser_UpdateUserActiveStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/UpdateUserActiveStatusResponse" message="tns:IManageUser_UpdateUserActiveStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/DeleteUser" message="tns:IManageUser_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/DeleteUserResponse" message="tns:IManageUser_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserDataAccessByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/DeleteUserDataAccessByUserId" message="tns:IManageUser_DeleteUserDataAccessByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/DeleteUserDataAccessByUserIdResponse" message="tns:IManageUser_DeleteUserDataAccessByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserListOfACountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetUserListOfACountry" message="tns:IManageUser_GetUserListOfACountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetUserListOfACountryResponse" message="tns:IManageUser_GetUserListOfACountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetUserByUserId" message="tns:IManageUser_GetUserByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetUserByUserIdResponse" message="tns:IManageUser_GetUserByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmailId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetUserByEmailId" message="tns:IManageUser_GetUserByEmailId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetUserByEmailIdResponse" message="tns:IManageUser_GetUserByEmailId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByLoginId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetUserByLoginId" message="tns:IManageUser_GetUserByLoginId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetUserByLoginIdResponse" message="tns:IManageUser_GetUserByLoginId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsLocationCodeExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/IsLocationCodeExist" message="tns:IManageUser_IsLocationCodeExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/IsLocationCodeExistResponse" message="tns:IManageUser_IsLocationCodeExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AvailablePermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/AvailablePermissions" message="tns:IManageUser_AvailablePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/AvailablePermissionsResponse" message="tns:IManageUser_AvailablePermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AvailablePermissionsByFilter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/AvailablePermissionsByFilter" message="tns:IManageUser_AvailablePermissionsByFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/AvailablePermissionsByFilterResponse" message="tns:IManageUser_AvailablePermissionsByFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupList" message="tns:IManageUser_GetAuthGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupListResponse" message="tns:IManageUser_GetAuthGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupByAuthgroupId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupByAuthgroupId" message="tns:IManageUser_GetAuthGroupByAuthgroupId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupByAuthgroupIdResponse" message="tns:IManageUser_GetAuthGroupByAuthgroupId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupByUserID" message="tns:IManageUser_GetAuthGroupByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupByUserIDResponse" message="tns:IManageUser_GetAuthGroupByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserDataAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/InsertUserDataAccess" message="tns:IManageUser_InsertUserDataAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/InsertUserDataAccessResponse" message="tns:IManageUser_InsertUserDataAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebPageList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetWebPageList" message="tns:IManageUser_GetWebPageList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetWebPageListResponse" message="tns:IManageUser_GetWebPageList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebpageListByWebsiteId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetWebpageListByWebsiteId" message="tns:IManageUser_GetWebpageListByWebsiteId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetWebpageListByWebsiteIdResponse" message="tns:IManageUser_GetWebpageListByWebsiteId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupWebpageAccessById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupWebpageAccessById" message="tns:IManageUser_GetAuthGroupWebpageAccessById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/GetAuthGroupWebpageAccessByIdResponse" message="tns:IManageUser_GetAuthGroupWebpageAccessById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebPagePermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/UpdateWebPagePermissions" message="tns:IManageUser_UpdateWebPagePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/UpdateWebPagePermissionsResponse" message="tns:IManageUser_UpdateWebPagePermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAllCluster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageUser/AddAllCluster" message="tns:IManageUser_AddAllCluster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageUser/AddAllClusterResponse" message="tns:IManageUser_AddAllCluster_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IManageUser" type="tns:IManageUser">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="isUserExistInDb">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/isUserExistInDb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryList">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetCountryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserActiveStatus">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/UpdateUserActiveStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserDataAccessByUserId">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/DeleteUserDataAccessByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserListOfACountry">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetUserListOfACountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserId">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetUserByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmailId">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetUserByEmailId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByLoginId">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetUserByLoginId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsLocationCodeExist">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/IsLocationCodeExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AvailablePermissions">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/AvailablePermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AvailablePermissionsByFilter">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/AvailablePermissionsByFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupList">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetAuthGroupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupByAuthgroupId">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetAuthGroupByAuthgroupId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupByUserID">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetAuthGroupByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserDataAccess">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/InsertUserDataAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebPageList">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetWebPageList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebpageListByWebsiteId">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetWebpageListByWebsiteId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthGroupWebpageAccessById">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/GetAuthGroupWebpageAccessById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebPagePermissions">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/UpdateWebPagePermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAllCluster">
+      <soap:operation soapAction="http://tempuri.org/IManageUser/AddAllCluster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageUser">
+    <wsdl:port name="BasicHttpBinding_IManageUser" binding="tns:BasicHttpBinding_IManageUser">
+      <soap:address location="http://localhost:52647/ManageUserService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
