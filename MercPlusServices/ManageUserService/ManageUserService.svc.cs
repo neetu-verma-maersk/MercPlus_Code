@@ -364,13 +364,13 @@ namespace ManageUserService
         public bool UpdateUserActiveStatus(int day, out string Msg)
         {
             bool isSuccess = false;
-            string updateMessage = string.Empty;           
+            StringBuilder updateMessage = new StringBuilder();
             DateTime referenceDate = DateTime.Now.AddDays(day * -1);
             try
-            {               
+            {
                 List<SEC_USER> objUserInfo = (from user in objUserServiceEntites.SEC_USER
-                                              where 
-                                              user.LastLoginDateTime != null && 
+                                              where
+                                              user.LastLoginDateTime != null &&
                                               user.LastLoginDateTime.Value < referenceDate &&
                                               user.IsUserActive != null &&
                                               user.IsUserActive == true
@@ -378,12 +378,13 @@ namespace ManageUserService
 
                 if (objUserInfo != null)
                 {
+                    List<UserInfo> newData = new List<UserInfo>();
+                    List<UserInfo> oldData = new List<UserInfo>();
                     foreach (SEC_USER user in objUserInfo)
                     {
-                        List<UserInfo> oldData = GetUserByUserId(user.USER_ID);
+                        oldData.AddRange(GetUserByUserId(user.USER_ID));
 
                         user.IsUserActive = false;
-
                         UserInfo objUser = new UserInfo();
                         objUser.UserId = user.USER_ID;
                         objUser.Login = user.LOGIN;
@@ -397,23 +398,29 @@ namespace ManageUserService
                         objUser.LastLogInDateTime = user.LastLoginDateTime;
                         objUser.IsUserActive = user.IsUserActive;
                         objUser.EmailId = user.EmailId;
-                        
+                        objUser.ChangeTime = DateTime.Now;
+                        objUser.ChangeUser = "UserActiveCheckerService";
                         objUserServiceEntites.SaveChanges();
-                        updateMessage += "\\n User " + user.LOGIN + " Updated successfully.";
 
-                        try
+                        updateMessage.AppendLine(" User " + user.LOGIN + " Updated successfully.");
+                        newData.Add(objUser);
+
+                    }
+                    try
+                    {
+                        foreach (var data in newData)
                         {
-                            InsertUserSecAuditTrail(objUser, oldData);
+                            InsertUserSecAuditTrail(data, oldData.Where(s => s.UserId == data.UserId).Select(p => p).ToList());
                         }
-                        catch (Exception ex) { }
-                    }                    
+                    }
+                    catch (Exception ex) { }
                 }
 
-                Msg = updateMessage;
-                isSuccess = true;               
+                Msg = updateMessage.ToString();
+                isSuccess = true;
             }
             catch (Exception ex)
-            {               
+            {
                 Msg = "Some Error has occurred while performing your activity. Please contact System Administrator ";
                 logEntry.Message = ex.ToString();
                 Logger.Write(logEntry);
