@@ -2789,7 +2789,10 @@ namespace ManageWorkOrderService
                         //"'"; rhsRecord.m_sPREV_STATUS += _bstr_t(cStatus); rhsRecord.m_sPREV_STATUS += "'";
                         if (WorkOrderId != 0)                                                                                              //Total Loss-Udita
                         {
-                            if (WOFromDB.MODE == "49")
+                            string TTL_Mode = string.Empty;
+                            TTL_Mode = ConfigurationManager.AppSettings["TTLModeEXC"];
+
+                            if (TTL_Mode.Contains(WOFromDB.MODE))// == "49"                    
                             {
                                 WOFromDB.STATUS_CODE = 390;
                                 WOFromDB.CHUSER = chUser;
@@ -2945,7 +2948,10 @@ namespace ManageWorkOrderService
                         //"'"; rhsRecord.m_sPREV_STATUS += _bstr_t(cStatus); rhsRecord.m_sPREV_STATUS += "'";
                         if (WorkOrderId != 0)                                                                                                       //Total Loss-Udita
                         {
-                            if (WOFromDB.MODE == "49")
+                            string TTL_Mode = string.Empty;
+                            TTL_Mode = ConfigurationManager.AppSettings["TTLModeEXC"];
+                            //  if (WOFromDB.MODE.Contains(TTL_Mode))// == "49")
+                            if (TTL_Mode.Contains(WOFromDB.MODE))// == "49"
                             {
 
                                 WOFromDB.STATUS_CODE = 390;
@@ -3393,7 +3399,7 @@ namespace ManageWorkOrderService
 
                     if (Block_location == "Y")
                     {
-                        if((RKEMEquipment.CurrentLoc!= null && RKEMEquipment.CurrentLoc.Length>=5) && ((RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLSA" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLGB" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USOAK" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USP1H" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USWIY" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USSPQ"))
+                        if ((RKEMEquipment.CurrentLoc != null && RKEMEquipment.CurrentLoc.Length >= 5) && ((RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLSA" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLGB" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USOAK" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USP1H" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USWIY" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USSPQ"))
                         {
 
                             Check_Block_location = false;
@@ -4083,7 +4089,7 @@ namespace ManageWorkOrderService
                                 from M in objContext.MESC1TS_CUST_SHOP_MODE
                                .Where(M => M.SHOP_CD == W.SHOP_CD && M.MODE == W.MODE && M.CUSTOMER_CD == W.CUSTOMER_CD)
                                .DefaultIfEmpty()
-                                //where ShopFinal.Contains(W.SHOP_CD)                             
+                                    //where ShopFinal.Contains(W.SHOP_CD)                             
 
                                 select new
                                 {
@@ -6318,107 +6324,112 @@ namespace ManageWorkOrderService
                 //EqpMove = ((RKEMEquipment.CurrentMove).Trim()).ToUpper();
                 //EqpNo = RKEMEquipment.EquipmentNo;
                 //ContEmpty = RKEMEquipment.StEmptyFullInd;
-                 //EqpLocation = RKEMEquipment.PresentLoc; //pinaki
-                 //if (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ")
-                 //{
-                 //    success = true;
-                 //}
-                 //else
-                 
-                     if (string.IsNullOrWhiteSpace(RKEMEquipment.GradeCode))
-                     {
-                         gradecode_rkem = "";
-                     }
-                     else
-                     {
-                         gradecode_rkem = RKEMEquipment.GradeCode;
-                     }
+                //EqpLocation = RKEMEquipment.PresentLoc; //pinaki
+                //if (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ")
+                //{
+                //    success = true;
+                //}
+                //else
 
-                     woGradeInsert.EQPNO = WorkOrder.EquipmentList[0].EquipmentNo;
-                     woGradeInsert.WO_ID = WorkOrder.WorkOrderID;
-                     woGradeInsert.CURRENTLOC = RKEMEquipment.CurrentLoc;
-                     woGradeInsert.GRADECODE = gradecode_rkem.ToUpper().Trim();
-                     woGradeInsert.GRADECODE_NEW = WorkOrder.EquipmentList[0].NewGradeCode.ToUpper().Trim();
-                     woGradeInsert.MODIFIEDBY = WorkOrder.ChangeUser;
-                     woGradeInsert.MODIFIEDON = DateTime.Now;
-                     objContext.MESC1TS_GRADECONTAINER.Add(woGradeInsert);
-                     try
-                     {
-                         objContext.SaveChanges();
-                         success = true;
-                     }
-                     catch (Exception ex)
-                     {
-                         success = false;
-                         Message = new ErrMessage();
-                         Message.Message = "System error in validating grade code";
-                         Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                         errorMessageList.Add(Message);
-                         logEntry.Message = ex.ToString();
-                         Logger.Write(logEntry);
+                if (string.IsNullOrWhiteSpace(RKEMEquipment.GradeCode))
+                {
+                    gradecode_rkem = "";
+                }
+                else
+                {
+                    gradecode_rkem = RKEMEquipment.GradeCode;
+                }
 
-                     }
-                 
+                if (WorkOrder.EquipmentList[0].NewGradeCode == null)
+                {
+                    WorkOrder.EquipmentList[0].NewGradeCode = "";
+                }
+
+                woGradeInsert.EQPNO = WorkOrder.EquipmentList[0].EquipmentNo;
+                woGradeInsert.WO_ID = WorkOrder.WorkOrderID;
+                woGradeInsert.CURRENTLOC = RKEMEquipment.CurrentLoc;
+                woGradeInsert.GRADECODE = gradecode_rkem.ToUpper().Trim();
+                woGradeInsert.GRADECODE_NEW = WorkOrder.EquipmentList[0].NewGradeCode.ToUpper().Trim();
+                woGradeInsert.MODIFIEDBY = WorkOrder.ChangeUser;
+                woGradeInsert.MODIFIEDON = DateTime.Now;
+                objContext.MESC1TS_GRADECONTAINER.Add(woGradeInsert);
+                try
+                {
+                    objContext.SaveChanges();
+                    success = true;
+                }
+                catch (Exception ex)
+                {
+                    success = false;
+                    Message = new ErrMessage();
+                    Message.Message = "System error in validating grade code";
+                    Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                    errorMessageList.Add(Message);
+                    logEntry.Message = ex.ToString();
+                    Logger.Write(logEntry);
+
+                }
+
 
             }
             else
             {
 
-                 //EqpLocation= WorkOrder.EquipmentList[0].CurrentLoc;
+                //EqpLocation= WorkOrder.EquipmentList[0].CurrentLoc;
 
-                 //if (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ")
-                 //{
-                 //    success = true;
-                 //}
-                 //else
+                //if (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ")
+                //{
+                //    success = true;
+                //}
+                //else
 
-                if (WorkOrder.EquipmentList[0].CurrentLoc == null || WorkOrder.EquipmentList[0].CurrentLoc.Trim()=="")
+                if (WorkOrder.EquipmentList[0].CurrentLoc == null || WorkOrder.EquipmentList[0].CurrentLoc.Trim() == "")
                 {
                     LoadEquipmentRefNo(WorkOrder.EquipmentList[0].EquipmentNo, WorkOrder.Shop.ShopCode, "", ref RKEMEquipment);
                     EqpLocation = RKEMEquipment.CurrentLoc;
-                    
+
                     WorkOrder.EquipmentList[0].CurrentLoc = RKEMEquipment.CurrentLoc;
-                    
+
 
                     if (WorkOrder.EquipmentList[0].GradeCode == null)
                     {
                         WorkOrder.EquipmentList[0].GradeCode = RKEMEquipment.GradeCode;
                     }
-                    
+
                 }
                 else
                 {
                     EqpLocation = WorkOrder.EquipmentList[0].CurrentLoc;
                 }
-                 
 
 
-                     woGradeInsert.EQPNO = WorkOrder.EquipmentList[0].EquipmentNo;
-                     woGradeInsert.WO_ID = WorkOrder.WorkOrderID;
-                     woGradeInsert.CURRENTLOC = WorkOrder.EquipmentList[0].CurrentLoc;
-                     woGradeInsert.GRADECODE = WorkOrder.EquipmentList[0].GradeCode;
-                     woGradeInsert.GRADECODE_NEW = WorkOrder.EquipmentList[0].NewGradeCode.ToUpper().Trim();
-                     woGradeInsert.MODIFIEDBY = WorkOrder.ChangeUser;
-                     woGradeInsert.MODIFIEDON = DateTime.Now;
 
-                     objContext.MESC1TS_GRADECONTAINER.Add(woGradeInsert);
-                     try
-                     {
-                         objContext.SaveChanges();
-                         success = true;
-                     }
-                     catch (Exception ex)
-                     {
-                         success = false;
-                         Message = new ErrMessage();
-                         Message.Message = "System error in validating grade code";
-                         Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                         errorMessageList.Add(Message);
-                         logEntry.Message = ex.ToString();
-                         Logger.Write(logEntry);
+                woGradeInsert.EQPNO = WorkOrder.EquipmentList[0].EquipmentNo;
+                woGradeInsert.WO_ID = WorkOrder.WorkOrderID;
+                woGradeInsert.CURRENTLOC = WorkOrder.EquipmentList[0].CurrentLoc;
+                woGradeInsert.GRADECODE = WorkOrder.EquipmentList[0].GradeCode;
+                woGradeInsert.GRADECODE_NEW = WorkOrder.EquipmentList[0].NewGradeCode.ToUpper().Trim();
+                woGradeInsert.MODIFIEDBY = WorkOrder.ChangeUser;
+                woGradeInsert.MODIFIEDON = DateTime.Now;
 
-                     }
-                 
+                objContext.MESC1TS_GRADECONTAINER.Add(woGradeInsert);
+                try
+                {
+                    objContext.SaveChanges();
+                    success = true;
+                }
+                catch (Exception ex)
+                {
+                    success = false;
+                    Message = new ErrMessage();
+                    Message.Message = "System error in validating grade code";
+                    Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                    errorMessageList.Add(Message);
+                    logEntry.Message = ex.ToString();
+                    Logger.Write(logEntry);
+
+                }
+
             }
 
             return success;
@@ -7743,7 +7754,7 @@ namespace ManageWorkOrderService
             bool isChanged = false;
             try
             {
-                CheckHeaderChanges(NewWorkOrder, OriginalWorkOrder, true, ref  Remarks);
+                CheckHeaderChanges(NewWorkOrder, OriginalWorkOrder, true, ref Remarks);
                 foreach (var rItem in NewWorkOrder.RepairsViewList)
                 {
                     RepairsView RepairsView = rItem;
@@ -7783,7 +7794,7 @@ namespace ManageWorkOrderService
 
         //Change the code by Dilip due to Audit Trial issue.
         //Change the code by Dilip due to Audit Trial issue.
-        private void CheckHeaderChanges(WorkOrderDetail NewWorkOrder, WorkOrderDetail OriginalWorkOrder, bool RemarksReqd, ref  List<string> Remarks)
+        private void CheckHeaderChanges(WorkOrderDetail NewWorkOrder, WorkOrderDetail OriginalWorkOrder, bool RemarksReqd, ref List<string> Remarks)
         {
             // Remarks = new List<string>();
             string msg = string.Empty;
@@ -9855,7 +9866,9 @@ namespace ManageWorkOrderService
                         //"'"; rhsRecord.m_sPREV_STATUS += _bstr_t(cStatus); rhsRecord.m_sPREV_STATUS += "'";
                         if (WorkOrderId != 0)                                                                                                        //Total Loss-Udita
                         {
-                            if (WOFromDB.MODE == "49")
+                            string TTL_Mode = string.Empty;
+                            TTL_Mode = ConfigurationManager.AppSettings["TTLModeEXC"];
+                            if (TTL_Mode.Contains(WOFromDB.MODE))// == "49"
                             {
                                 WOFromDB.STATUS_CODE = 390;
                                 WOFromDB.CHUSER = chUser;
@@ -10305,7 +10318,10 @@ namespace ManageWorkOrderService
                         //"'"; rhsRecord.m_sPREV_STATUS += _bstr_t(cStatus); rhsRecord.m_sPREV_STATUS += "'";
                         if (WorkOrderId != 0)
                         {
-                            if (workOrderDB.MODE == "49")
+                            string TTL_Mode = string.Empty;
+                            TTL_Mode = ConfigurationManager.AppSettings["TTLModeEXC"];
+
+                            if (TTL_Mode.Contains(workOrderDB.MODE))// == "49"
                             {
                                 workOrderDB.STATUS_CODE = 390;
                                 workOrderDB.CHUSER = chUser;//ChangeUser;
@@ -10557,6 +10573,11 @@ namespace ManageWorkOrderService
                             {
                                 logEntry.Message = ErrorDamageMessageList.ToString();
                                 Logger.Write(logEntry);
+                            }
+                            if (WorkOrder.ChangeUser == "MercWOLoad")
+                            {
+                                bool _success = false;
+                                _success = CheckGradeCode(ref WorkOrder, out ErrorMessageList);
                             }
                             SaveGradeCode(ref WorkOrder, out ErrorMessageList);   //Pinaki Shreya
                             if (ErrorDamageMessageList.Count > 0)
@@ -11187,6 +11208,37 @@ namespace ManageWorkOrderService
                     Message = new ErrMessage();
                     Message.Message = "Status Changed successfully";
                     Message.ErrorType = Validation.MESSAGETYPE.SUCCESS.ToString();
+                    //Pinaki1 for DamageCode1:
+                    string DFlag = "N";
+                    DFlag = ConfigurationManager.AppSettings["DAMAGE1"];
+                    if (WOStatus == 150 && DFlag == "Y")
+                    //if (WOStatus == 150)
+                    {
+                        Equipment RKEMEquipment = null;
+                        MESC1TS_WODAMAGE woDmg = new MESC1TS_WODAMAGE();
+                        MESC1TS_WO woVendor = new MESC1TS_WO();
+                        bool sendsuccess = false;
+
+                        woVendor = (from wo in objContext.MESC1TS_WO
+                                    where wo.WO_ID == WOID
+                                    select wo).FirstOrDefault();
+                        // first Check  Cuur location 
+
+                        //pinaki Damagecode-1 code
+                        LoadEquipmentRefNo(woVendor.EQPNO, woVendor.SHOP_CD, woVendor.VENDOR_REF_NO, ref RKEMEquipment);
+                        string Currloc = RKEMEquipment.CurrentLoc;
+
+
+                        sendsuccess = SendDamageCode1ToRKEM(woVendor.EQPNO, Currloc, "1", true);
+                        if (sendsuccess)
+                        {
+                            InsertRKEMStatusForDamage1(WOID, 3);
+                            Message.Message = "Status Changed successfully and Damage Code 1 send to RKEM";
+                        }
+
+                    }
+
+
                     ErrorMessageList.Add(Message);
                 }
             }
@@ -11200,7 +11252,47 @@ namespace ManageWorkOrderService
         }
 
         #endregion Exposed Methods
+        private void InsertRKEMStatusForDamage1(int WOID, int flag)
+        {
+            List<MESC1TS_WODAMAGE> woDmg = new List<MESC1TS_WODAMAGE>();
 
+            woDmg = (from woD in objContext.MESC1TS_WODAMAGE
+                     where woD.WO_ID == WOID
+                     select woD).ToList();
+
+            if (woDmg != null)
+            {
+                if (flag == 1)                                          //Flag will be True during WO creation and False during WO completion
+                {
+                    woDmg[0].RKEM_STATUS = 1;                    //RKEM Status will be 1 when damage information is send during WO Creation
+                }
+                else if (flag == 2)
+                {
+                    woDmg[0].RKEM_STATUS = 2;                         //RKEM Status will be 2 when damage information is send during WO Completion
+                }
+                else if (flag == 3)
+                {
+                    woDmg[0].RKEM_STATUS = 3;
+                    woDmg[0].RKEM_DAMAGE = "1";
+                }
+                else
+                {
+                    woDmg[0].RKEM_STATUS = 0;
+                }
+
+                try
+                {
+                    objContext.SaveChanges();
+
+                }
+                catch (Exception ex)
+                {
+                    logEntry.Message = "Error in saving Damage information in database : " + ex.ToString();
+                    Logger.Write(logEntry);
+
+                }
+            }
+        }
         public bool CallChangeStatusMethod(int WOID, short? WOStatus, string ChangeUser, out List<ErrMessage> ErrorMessageList)
         {
             bool success = true;
@@ -11580,7 +11672,7 @@ namespace ManageWorkOrderService
                         Logger.Write(logEntry);
                         success = false;
                     }
-                     
+
 
                     // Parts validation.
                     // read thru WOPart by part number 
@@ -13106,7 +13198,7 @@ namespace ManageWorkOrderService
                                 em.EQSTYPE == eqpSType &&
                                 em.ALUMINIUM_SW == sAluminumSw &&
                                 (!string.IsNullOrEmpty(sEQSIZE) ? em.EQSIZE == sEQSIZE : em.EQSIZE == null) &&
-                                    //em.EQSIZE == WorkOrder.EquipmentList[count].Size && 
+                                //em.EQSIZE == WorkOrder.EquipmentList[count].Size && 
                                 m.MODE == em.MODE &&
                                 m.MODE == ModeCode
                                 select new
@@ -13996,7 +14088,7 @@ namespace ManageWorkOrderService
                 var LoadByManualAndMode = (from RC in objContext.MESC1TS_REPAIR_CODE
 
                                            where
-                                               //RC.REPAIR_ACTIVE_SW == "Y" &&
+                                           //RC.REPAIR_ACTIVE_SW == "Y" &&
                                            RC.MANUAL_CD == ManualCode &&
                                            RC.MODE == Mode &&
                                            RC.ALLOW_PARTS_SW == "M"
@@ -14106,7 +14198,7 @@ namespace ManageWorkOrderService
         }
 
         // end mandatory part code
-          
+
         /// <summary>
         /// 
         /// </summary>
@@ -14527,7 +14619,7 @@ namespace ManageWorkOrderService
             try
             {
                 RSPrepTime = (from PR in objContext.MESC1TS_PREPTIME
-                              //orderby PR.MODE, PR.PREP_CD, PR.PREP_TIME_MAX
+                                  //orderby PR.MODE, PR.PREP_CD, PR.PREP_TIME_MAX
                               select PR).OrderBy(pr => pr.MODE).ThenBy(pr => pr.PREP_CD).ThenBy(pr => pr.PREP_TIME_MAX)
                                   .ToList();
 
@@ -15469,7 +15561,7 @@ namespace ManageWorkOrderService
 
                 fTotCost = (WorkOrderDetail.TotalLabourCost + //* (double)WorkOrderDetail.ExchangeRate +
                             WorkOrderDetail.TotalShopAmount + //* (double)WorkOrderDetail.ExchangeRate +
-                    //WorkOrderDetail.TotalManPartsCPH + //* (double)WorkOrderDetail.ExchangeRate +
+                                                              //WorkOrderDetail.TotalManPartsCPH + //* (double)WorkOrderDetail.ExchangeRate +
                             WorkOrderDetail.ImportTax + //* (double)WorkOrderDetail.ExchangeRate +
                             WorkOrderDetail.SalesTaxParts + //* (double)WorkOrderDetail.ExchangeRate +
                             WorkOrderDetail.SalesTaxLabour); //* (double)WorkOrderDetail.ExchangeRate);
@@ -15582,9 +15674,9 @@ namespace ManageWorkOrderService
                     WorkOrderDetail.TotalEDIAmount = 0;
                 else
                     if (string.IsNullOrEmpty(Convert.ToString(WorkOrderDetail.TotalEDIAmount))) //IsNumericString
-                    {
-                        WorkOrderDetail.TotalEDIAmount = 0;
-                    }
+                {
+                    WorkOrderDetail.TotalEDIAmount = 0;
+                }
 
                 decimal? fEDIAmount = 0;
 
@@ -16358,7 +16450,7 @@ namespace ManageWorkOrderService
 
                         if (Block_location == "Y")
                         {
-                            if ((RKEMEquipment.CurrentLoc != null && RKEMEquipment.CurrentLoc.Length>=5) && ((RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLSA" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLGB" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USOAK" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USP1H" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USWIY" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USSPQ"))
+                            if ((RKEMEquipment.CurrentLoc != null && RKEMEquipment.CurrentLoc.Length >= 5) && ((RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLSA" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLGB" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USOAK" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USP1H" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USWIY" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USSPQ"))
                             {
 
                                 Check_Block_location = false;
@@ -16577,14 +16669,16 @@ namespace ManageWorkOrderService
             errorMessageList = new List<ErrMessage>();
             string ModeCode = WorkOrder.Mode;
             string Grade = WorkOrder.EquipmentList[0].GradeCode;
+            string Grade1 = WorkOrder.EquipmentList[0].GradeCode;
             string DownGrade = string.Empty;
             int RelationFound = 0;
             int gFound = 0;
             WorkOrder.EquipmentList[0].NewGradeCode = "";
             WorkOrder.EquipmentList[0].TempGradeCode = "";
             string GList = "";
+            string GList1 = "";
             Equipment RKEMEquipment = null;
-            string EqpLocation = ""; 
+            string EqpLocation = "";
             string ShopCode = "";
             if (WorkOrder.Shop.ShopCode != null)
             {
@@ -16593,7 +16687,7 @@ namespace ManageWorkOrderService
             string ShopLocation = "";
 
 
-            if (WorkOrder.ChangeUser == "MercWOLoad" || WorkOrder.EquipmentList[0].CurrentLoc == null || WorkOrder.EquipmentList[0].CurrentLoc.Trim()=="")
+            if (WorkOrder.ChangeUser == "MercWOLoad" || WorkOrder.EquipmentList[0].CurrentLoc == null || WorkOrder.EquipmentList[0].CurrentLoc.Trim() == "")
             {
                 //RKEM call for EDI WorkOrders
                 LoadEquipmentRefNo(WorkOrder.EquipmentList[0].EquipmentNo, WorkOrder.Shop.ShopCode, "", ref RKEMEquipment);
@@ -16610,10 +16704,11 @@ namespace ManageWorkOrderService
                     Grade = RKEMEquipment.GradeCode;
                 }
                 WorkOrder.EquipmentList[0].GradeCode = Grade;
+                Grade1 = Grade;
                 WorkOrder.EquipmentList[0].CurrentLoc = EqpLocation;
 
             }
-            if (WorkOrder.EquipmentList[0].CurrentLoc == null || WorkOrder.EquipmentList[0].CurrentLoc.Trim() =="")
+            if (WorkOrder.EquipmentList[0].CurrentLoc == null || WorkOrder.EquipmentList[0].CurrentLoc.Trim() == "")
             {
                 var ShopLocationfromDB = (from shop in objContext.MESC1TS_SHOP
                                           where shop.SHOP_CD == ShopCode
@@ -16637,7 +16732,7 @@ namespace ManageWorkOrderService
                 EqpLocation = WorkOrder.EquipmentList[0].CurrentLoc;
             }
             //pinaki
-            if ((EqpLocation != null && EqpLocation.Length>=5) && (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ"))
+            if ((EqpLocation != null && EqpLocation.Length >= 5) && (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ"))
             {
 
                 success = true;
@@ -16680,6 +16775,12 @@ namespace ManageWorkOrderService
 
                                 //if (Grade == "M" || Grade == "S" || Grade == "K" || Grade == "E" || Grade == "Q")
                                 {
+
+
+                                    if (WorkOrder.EquipmentList[0].TempGradeCode != "")
+                                    {
+                                        Grade = WorkOrder.EquipmentList[0].TempGradeCode;
+                                    }
                                     var Repair = (from sts in objContext.MESC1TS_GRADESTS
                                                   join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
                                                        equals G.GRADE_ID
@@ -16696,6 +16797,37 @@ namespace ManageWorkOrderService
                                             // WorkOrder.EquipmentList[0].TempGradeCode = Grade;
                                             WorkOrder.EquipmentList[0].NewGradeCode = Grade;
                                             WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                                            //  added
+
+                                            GList1 = "";
+                                            var Repair1 = (from sts in objContext.MESC1TS_GRADESTS
+                                                           join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
+                                                                equals G.GRADE_ID
+                                                           where sts.STS_CODE == repV.RepairCode.RepairCod
+                                                            && sts.MODE == ModeCode
+                                                            && sts.IsApplicable == true
+                                                           orderby sts.GRADE_ID
+                                                           select new
+                                                           {
+                                                               sts.GRADE_ID,
+                                                               G.GRADECODE,
+                                                               // sts.GRADECODE,
+                                                               sts.STS_CODE,
+                                                               sts.MODE,
+                                                               sts.MANUAL_CD,
+                                                               sts.IsApplicable
+
+
+                                                           }).Distinct().ToList();
+                                            if (Repair1.Count() > 1)
+                                            {
+
+                                                for (int i = 0; i < Repair1.Count(); i++)
+                                                {
+                                                    GList1 = GList1 + "," + Repair1[i].GRADECODE;
+                                                }
+
+                                            }
                                         }
                                         else
                                         {
@@ -16732,7 +16864,7 @@ namespace ManageWorkOrderService
                                             var Down = (from D in objContext.MESC1TS_GRADERELATION
                                                         join G in objContext.MESC1TS_GRADE on D.GRADE_ID
                                                         equals G.GRADE_ID
-                                                        where G.GRADECODE == Grade
+                                                        where G.GRADECODE == Grade1
                                                         select D).ToList();
                                             if (Down.Count > 0)
                                             {
@@ -16791,7 +16923,7 @@ namespace ManageWorkOrderService
                                                 {
 
 
-                                                    if (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode))
+                                                    if (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode) || (GList1.Contains(WorkOrder.EquipmentList[0].NewGradeCode) == true))
                                                     {
                                                         //Pinaki Added
 
@@ -17044,7 +17176,7 @@ namespace ManageWorkOrderService
 
                 }
 
-            // Other Than 03/04/05 mode
+                // Other Than 03/04/05 mode
                 else
                 {
                     if (Grade != "N")
@@ -17063,392 +17195,392 @@ namespace ManageWorkOrderService
         }
 
         // Other Than 03/04/05 mode
-       /* private bool CheckGradeCode(ref WorkOrderDetail WorkOrder, out List<ErrMessage> errorMessageList)
-        {
-            bool success = false;
-            errorMessageList = new List<ErrMessage>();
-            string ModeCode = WorkOrder.Mode;
-            string Grade = WorkOrder.EquipmentList[0].GradeCode;
-            string DownGrade = string.Empty;
-            int RelationFound = 0;
-            int gFound = 0;
-            WorkOrder.EquipmentList[0].NewGradeCode = "";
-            WorkOrder.EquipmentList[0].TempGradeCode = "";
-            string GList = "";
-            Equipment RKEMEquipment = null;
-            string EqpLocation = string.Empty;
+        /* private bool CheckGradeCode(ref WorkOrderDetail WorkOrder, out List<ErrMessage> errorMessageList)
+         {
+             bool success = false;
+             errorMessageList = new List<ErrMessage>();
+             string ModeCode = WorkOrder.Mode;
+             string Grade = WorkOrder.EquipmentList[0].GradeCode;
+             string DownGrade = string.Empty;
+             int RelationFound = 0;
+             int gFound = 0;
+             WorkOrder.EquipmentList[0].NewGradeCode = "";
+             WorkOrder.EquipmentList[0].TempGradeCode = "";
+             string GList = "";
+             Equipment RKEMEquipment = null;
+             string EqpLocation = string.Empty;
 
 
-            if (WorkOrder.ChangeUser == "MercWOLoad")
-            {
-                //RKEM call for EDI WorkOrders
-                LoadEquipmentRefNo(WorkOrder.EquipmentList[0].EquipmentNo, WorkOrder.Shop.ShopCode, "", ref RKEMEquipment);
-                EqpLocation = RKEMEquipment.CurrentLoc;
-                if (string.IsNullOrWhiteSpace(RKEMEquipment.GradeCode))
-                {
-                    Grade = "";
-                }
-                else
-                {
-                    Grade = RKEMEquipment.GradeCode;
-                }
-                WorkOrder.EquipmentList[0].GradeCode = Grade;
-                WorkOrder.EquipmentList[0].CurrentLoc = EqpLocation;
+             if (WorkOrder.ChangeUser == "MercWOLoad")
+             {
+                 //RKEM call for EDI WorkOrders
+                 LoadEquipmentRefNo(WorkOrder.EquipmentList[0].EquipmentNo, WorkOrder.Shop.ShopCode, "", ref RKEMEquipment);
+                 EqpLocation = RKEMEquipment.CurrentLoc;
+                 if (string.IsNullOrWhiteSpace(RKEMEquipment.GradeCode))
+                 {
+                     Grade = "";
+                 }
+                 else
+                 {
+                     Grade = RKEMEquipment.GradeCode;
+                 }
+                 WorkOrder.EquipmentList[0].GradeCode = Grade;
+                 WorkOrder.EquipmentList[0].CurrentLoc = EqpLocation;
 
-            }
-            if (ModeCode == "03" || ModeCode == "04" || ModeCode == "05")
-            {
+             }
+             if (ModeCode == "03" || ModeCode == "04" || ModeCode == "05")
+             {
 
-                foreach (var repV in WorkOrder.RepairsViewList)
-                {
-                    var STS = (from sts in objContext.MESC1TS_GRADESTS
-                               where sts.STS_CODE == repV.RepairCode.RepairCod
-                               select sts);
-                    if (STS == null || STS.Count() == 0)  // If STS code not exist STSGrade table
-                    {
-                        success = true;
+                 foreach (var repV in WorkOrder.RepairsViewList)
+                 {
+                     var STS = (from sts in objContext.MESC1TS_GRADESTS
+                                where sts.STS_CODE == repV.RepairCode.RepairCod
+                                select sts);
+                     if (STS == null || STS.Count() == 0)  // If STS code not exist STSGrade table
+                     {
+                         success = true;
 
-                    }
-                    else  // If STS code Exisst in STS grade Table
-                    {
-                        List<Grade> GradeLists = new List<Grade>();
-                        try
-                        {
-                            var gradeCodeDet = (from G in objContext.MESC1TS_GRADE
-                                                where G.GRADECODE.ToUpper() == Grade.ToUpper()
-                                                && G.GRADECODE != "N"
-                                                select new
-                                                {
-                                                    G.GRADE_ID,
-                                                    G.GRADECODE,
-                                                    G.GRADE_DESC
-                                                }).Distinct().ToList();
-
-
-                            // Valid RKEM Grade code (M, S, K, E, Q) for 03/04/05
-                            if (gradeCodeDet != null && gradeCodeDet.Count > 0)
-
-                            //if (Grade == "M" || Grade == "S" || Grade == "K" || Grade == "E" || Grade == "Q")
-                            {
-                                var Repair = (from sts in objContext.MESC1TS_GRADESTS
-                                              join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
-                                                   equals G.GRADE_ID
-                                              where G.GRADECODE == Grade
-                                                    && sts.STS_CODE == repV.RepairCode.RepairCod
-                                                    && sts.MODE == ModeCode && sts.IsApplicable == true
-                                              select sts).ToList();
-                                if (Repair.Count() > 0) // if STS code is applicable on same GR & MODE 
-                                {
-
-                                    if (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode))
-                                    {
-                                        success = true;
-                                        // WorkOrder.EquipmentList[0].TempGradeCode = Grade;
-                                        WorkOrder.EquipmentList[0].NewGradeCode = Grade;
-                                        WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
-                                    }
-                                    else
-                                    {
-                                        success = false;
-                                        Message = new ErrMessage();
-                                        Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
-                                        Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                                        errorMessageList.Add(Message);
-                                        break;
-                                    }
-                                }
-
-                                else
-                                {
-                                    //Need to check for downgrade and upgraded grade code
-                                    var Down = (from D in objContext.MESC1TS_GRADERELATION
-                                                join G in objContext.MESC1TS_GRADE on D.GRADE_ID
-                                                equals G.GRADE_ID
-                                                where G.GRADECODE == Grade
-                                                select D).ToList();
-                                    if (Down.Count > 0)
-                                    {
-                                        DownGrade = Down[0].DOWNGRADED_GRADE;
-                                        string[] DGrade = DownGrade.Split(',');
-                                        string[] Upgrade = Down[0].UPGRADED_GRADE.Split(',');
-
-                                        foreach (var DG in DGrade)
-                                        {
-                                            var DRepair = (from sts in objContext.MESC1TS_GRADESTS
-                                                           join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
-                                                           equals G.GRADE_ID
-                                                           where G.GRADECODE == DG
-                                                           && sts.STS_CODE == repV.RepairCode.RepairCod
-                                                           && sts.MODE == ModeCode
-                                                           && sts.IsApplicable == true
-                                                           select sts);
-                                            if (DRepair.Count() > 0)
-                                            {
-                                                RelationFound++;
-                                                WorkOrder.EquipmentList[0].NewGradeCode = DG;
-                                            }
-
-                                        }
-
-                                        foreach (var UG in Upgrade)
-                                        {
-                                            var URepair = (from sts in objContext.MESC1TS_GRADESTS
-                                                           join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
-                                                           equals G.GRADE_ID
-                                                           where G.GRADECODE == UG
-                                                           && sts.STS_CODE == repV.RepairCode.RepairCod
-                                                           && sts.MODE == ModeCode
-                                                           && sts.IsApplicable == true
-                                                           select sts);
-                                            if (URepair.Count() > 0)
-                                            {
-                                                RelationFound++;
-                                                WorkOrder.EquipmentList[0].NewGradeCode = UG;
-                                            }
-
-                                        }
-
-                                        if (RelationFound == 0)
-                                        {
-                                            success = false;
-                                            Message = new ErrMessage();
-                                            Message.Message = "Repair record not valid for this grade code: Repair code: " + repV.RepairCode.RepairCod;
-                                            Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                                            errorMessageList.Add(Message);
-                                            break;
-                                        }
-                                        else if (RelationFound > 0)
-                                        {
-                                            if (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode))
-                                            {
-                                                success = true;
-                                                WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
-                                            }
-                                            else
-                                            {
-                                                success = false;
-                                                Message = new ErrMessage();
-                                                Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
-                                                Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                                                errorMessageList.Add(Message);
-                                                break;
-                                            }
-                                        }
-
-                                    }
-
-                                }
-                            }
-                            // Null RKEM Grade code (N or NULL) for 03/04/05
-                            else if (Grade == null || Grade.ToUpper() == "N" || Grade == "")  //RKEM GRADE =N case
-                            {
-                                var Repair = (from sts in objContext.MESC1TS_GRADESTS
-                                              join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
-                                                   equals G.GRADE_ID
-                                              where sts.STS_CODE == repV.RepairCode.RepairCod
-                                               && sts.MODE == ModeCode
-                                               && sts.IsApplicable == true
-                                              orderby sts.GRADE_ID
-                                              select new
-                                              {
-                                                  sts.GRADE_ID,
-                                                  G.GRADECODE,
-                                                  // sts.GRADECODE,
-                                                  sts.STS_CODE,
-                                                  sts.MODE,
-                                                  sts.MANUAL_CD,
-                                                  sts.IsApplicable,
-                                                  sts.CREATEDBY,
-                                                  sts.CREATEDON,
-                                                  sts.MODIFIEDBY,
-                                                  sts.MODIFIEDON
-
-                                              }).Distinct().ToList();
-                                if (Repair.Count() > 0)
-                                {
-
-                                    gFound++;
-                                    if (WorkOrder.EquipmentList[0].TempGradeCode == "")
-                                    {
-                                        WorkOrder.EquipmentList[0].NewGradeCode = Repair[0].GRADECODE;
-                                        if (Repair.Count() > 1)
-                                        {
-                                            for (int i = 0; i < Repair.Count(); i++)
-                                            {
-                                                GList = GList + "," + Repair[i].GRADECODE;
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        foreach (var Gt in Repair)
-                                        {
-                                            if (Gt.GRADECODE == WorkOrder.EquipmentList[0].TempGradeCode)
-                                            {
-                                                WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
-                                                break;
-                                            }
-                                            else if (GList.Contains(Gt.GRADECODE))
-                                            {
-                                                WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
-                                            }
-
-                                        }
-
-                                    }//
-                                }
-
-                                if (gFound > 0 && (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode) || (GList.Contains(WorkOrder.EquipmentList[0].NewGradeCode))))
-                                {
-                                    success = true;
-                                    WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
-                                }
-                                else
-                                {
-                                    success = false;
-                                    Message = new ErrMessage();
-                                    Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
-                                    Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                                    errorMessageList.Add(Message);
-                                    break;
-                                }
-
-                                if (Repair.Count() == 0)
-                                {
-                                    success = true;
-                                    WorkOrder.EquipmentList[0].NewGradeCode = "N";
-                                    WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
-                                }
-                            }
-                            // INValid RKEM Grade code (ither Than M, S, K, E, Q) for 03/04/05
-                            else if ((gradeCodeDet == null || gradeCodeDet.Count == 0) && (Grade.ToUpper() != "N" || Grade != null))
-                            {
-
-                                var Repair = (from sts in objContext.MESC1TS_GRADESTS
-                                              join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
-                                                   equals G.GRADE_ID
-                                              where sts.STS_CODE == repV.RepairCode.RepairCod
-                                               && sts.MODE == ModeCode
-                                               && sts.IsApplicable == true
-                                              orderby sts.GRADE_ID
-                                              select new
-                                              {
-                                                  sts.GRADE_ID,
-                                                  G.GRADECODE,
-                                                  // sts.GRADECODE,
-                                                  sts.STS_CODE,
-                                                  sts.MODE,
-                                                  sts.MANUAL_CD,
-                                                  sts.IsApplicable,
-                                                  sts.CREATEDBY,
-                                                  sts.CREATEDON,
-                                                  sts.MODIFIEDBY,
-                                                  sts.MODIFIEDON
-
-                                              }).Distinct().ToList();
-                                if (Repair.Count() > 0)
-                                {
-
-                                    gFound++;
-                                    if (WorkOrder.EquipmentList[0].TempGradeCode == "")
-                                    {
-                                        WorkOrder.EquipmentList[0].NewGradeCode = Repair[0].GRADECODE;
-                                        if (Repair.Count() > 1)
-                                        {
-                                            for (int i = 0; i < Repair.Count(); i++)
-                                            {
-                                                GList = GList + "," + Repair[i].GRADECODE;
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        foreach (var Gt in Repair)
-                                        {
-                                            if (Gt.GRADECODE == WorkOrder.EquipmentList[0].TempGradeCode)
-                                            {
-                                                WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
-                                                break;
-                                            }
-                                            else if (GList.Contains(Gt.GRADECODE))
-                                            {
-                                                WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
-                                            }
-
-                                        }
-
-                                    }//
-                                }
-
-                                if (gFound > 0 && (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode) || GList.Contains(WorkOrder.EquipmentList[0].NewGradeCode)))
-                                {
-                                    success = true;
-                                    WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
-                                }
-                                else
-                                {
-                                    success = false;
-                                    Message = new ErrMessage();
-                                    Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
-                                    Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                                    errorMessageList.Add(Message);
-                                    break;
-                                }
-
-                                if (Repair.Count() == 0)
-                                {
-                                    success = true;
-                                    WorkOrder.EquipmentList[0].NewGradeCode = "N";
-                                    WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
-                                }
-                            }
+                     }
+                     else  // If STS code Exisst in STS grade Table
+                     {
+                         List<Grade> GradeLists = new List<Grade>();
+                         try
+                         {
+                             var gradeCodeDet = (from G in objContext.MESC1TS_GRADE
+                                                 where G.GRADECODE.ToUpper() == Grade.ToUpper()
+                                                 && G.GRADECODE != "N"
+                                                 select new
+                                                 {
+                                                     G.GRADE_ID,
+                                                     G.GRADECODE,
+                                                     G.GRADE_DESC
+                                                 }).Distinct().ToList();
 
 
-                        }
-                        catch (Exception ex)
-                        {
-                            success = false;
-                            Message = new ErrMessage();
-                            Message.Message = "System error in validating grade code";
-                            Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                            errorMessageList.Add(Message);
-                            logEntry.Message = ex.ToString();
-                            Logger.Write(logEntry);
-                            break;
-                        }
+                             // Valid RKEM Grade code (M, S, K, E, Q) for 03/04/05
+                             if (gradeCodeDet != null && gradeCodeDet.Count > 0)
 
-                    }
-                }
+                             //if (Grade == "M" || Grade == "S" || Grade == "K" || Grade == "E" || Grade == "Q")
+                             {
+                                 var Repair = (from sts in objContext.MESC1TS_GRADESTS
+                                               join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
+                                                    equals G.GRADE_ID
+                                               where G.GRADECODE == Grade
+                                                     && sts.STS_CODE == repV.RepairCode.RepairCod
+                                                     && sts.MODE == ModeCode && sts.IsApplicable == true
+                                               select sts).ToList();
+                                 if (Repair.Count() > 0) // if STS code is applicable on same GR & MODE 
+                                 {
 
-            }
+                                     if (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode))
+                                     {
+                                         success = true;
+                                         // WorkOrder.EquipmentList[0].TempGradeCode = Grade;
+                                         WorkOrder.EquipmentList[0].NewGradeCode = Grade;
+                                         WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                                     }
+                                     else
+                                     {
+                                         success = false;
+                                         Message = new ErrMessage();
+                                         Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
+                                         Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                                         errorMessageList.Add(Message);
+                                         break;
+                                     }
+                                 }
 
-        // Other Than 03/04/05 mode
-            else
-            {
-                if (Grade != "N")
-                {
-                    success = true;
-                    WorkOrder.EquipmentList[0].NewGradeCode = "N";
-                    WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
-                }
-                if (Grade == "N")
-                {
-                    success = true;
-                }
-            }
-            return success;
-        }
-        */
+                                 else
+                                 {
+                                     //Need to check for downgrade and upgraded grade code
+                                     var Down = (from D in objContext.MESC1TS_GRADERELATION
+                                                 join G in objContext.MESC1TS_GRADE on D.GRADE_ID
+                                                 equals G.GRADE_ID
+                                                 where G.GRADECODE == Grade
+                                                 select D).ToList();
+                                     if (Down.Count > 0)
+                                     {
+                                         DownGrade = Down[0].DOWNGRADED_GRADE;
+                                         string[] DGrade = DownGrade.Split(',');
+                                         string[] Upgrade = Down[0].UPGRADED_GRADE.Split(',');
+
+                                         foreach (var DG in DGrade)
+                                         {
+                                             var DRepair = (from sts in objContext.MESC1TS_GRADESTS
+                                                            join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
+                                                            equals G.GRADE_ID
+                                                            where G.GRADECODE == DG
+                                                            && sts.STS_CODE == repV.RepairCode.RepairCod
+                                                            && sts.MODE == ModeCode
+                                                            && sts.IsApplicable == true
+                                                            select sts);
+                                             if (DRepair.Count() > 0)
+                                             {
+                                                 RelationFound++;
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = DG;
+                                             }
+
+                                         }
+
+                                         foreach (var UG in Upgrade)
+                                         {
+                                             var URepair = (from sts in objContext.MESC1TS_GRADESTS
+                                                            join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
+                                                            equals G.GRADE_ID
+                                                            where G.GRADECODE == UG
+                                                            && sts.STS_CODE == repV.RepairCode.RepairCod
+                                                            && sts.MODE == ModeCode
+                                                            && sts.IsApplicable == true
+                                                            select sts);
+                                             if (URepair.Count() > 0)
+                                             {
+                                                 RelationFound++;
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = UG;
+                                             }
+
+                                         }
+
+                                         if (RelationFound == 0)
+                                         {
+                                             success = false;
+                                             Message = new ErrMessage();
+                                             Message.Message = "Repair record not valid for this grade code: Repair code: " + repV.RepairCode.RepairCod;
+                                             Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                                             errorMessageList.Add(Message);
+                                             break;
+                                         }
+                                         else if (RelationFound > 0)
+                                         {
+                                             if (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode))
+                                             {
+                                                 success = true;
+                                                 WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                                             }
+                                             else
+                                             {
+                                                 success = false;
+                                                 Message = new ErrMessage();
+                                                 Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
+                                                 Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                                                 errorMessageList.Add(Message);
+                                                 break;
+                                             }
+                                         }
+
+                                     }
+
+                                 }
+                             }
+                             // Null RKEM Grade code (N or NULL) for 03/04/05
+                             else if (Grade == null || Grade.ToUpper() == "N" || Grade == "")  //RKEM GRADE =N case
+                             {
+                                 var Repair = (from sts in objContext.MESC1TS_GRADESTS
+                                               join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
+                                                    equals G.GRADE_ID
+                                               where sts.STS_CODE == repV.RepairCode.RepairCod
+                                                && sts.MODE == ModeCode
+                                                && sts.IsApplicable == true
+                                               orderby sts.GRADE_ID
+                                               select new
+                                               {
+                                                   sts.GRADE_ID,
+                                                   G.GRADECODE,
+                                                   // sts.GRADECODE,
+                                                   sts.STS_CODE,
+                                                   sts.MODE,
+                                                   sts.MANUAL_CD,
+                                                   sts.IsApplicable,
+                                                   sts.CREATEDBY,
+                                                   sts.CREATEDON,
+                                                   sts.MODIFIEDBY,
+                                                   sts.MODIFIEDON
+
+                                               }).Distinct().ToList();
+                                 if (Repair.Count() > 0)
+                                 {
+
+                                     gFound++;
+                                     if (WorkOrder.EquipmentList[0].TempGradeCode == "")
+                                     {
+                                         WorkOrder.EquipmentList[0].NewGradeCode = Repair[0].GRADECODE;
+                                         if (Repair.Count() > 1)
+                                         {
+                                             for (int i = 0; i < Repair.Count(); i++)
+                                             {
+                                                 GList = GList + "," + Repair[i].GRADECODE;
+                                             }
+                                         }
+                                     }
+                                     else
+                                     {
+                                         foreach (var Gt in Repair)
+                                         {
+                                             if (Gt.GRADECODE == WorkOrder.EquipmentList[0].TempGradeCode)
+                                             {
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
+                                                 break;
+                                             }
+                                             else if (GList.Contains(Gt.GRADECODE))
+                                             {
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
+                                                 break;
+                                             }
+                                             else
+                                             {
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
+                                             }
+
+                                         }
+
+                                     }//
+                                 }
+
+                                 if (gFound > 0 && (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode) || (GList.Contains(WorkOrder.EquipmentList[0].NewGradeCode))))
+                                 {
+                                     success = true;
+                                     WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                                 }
+                                 else
+                                 {
+                                     success = false;
+                                     Message = new ErrMessage();
+                                     Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
+                                     Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                                     errorMessageList.Add(Message);
+                                     break;
+                                 }
+
+                                 if (Repair.Count() == 0)
+                                 {
+                                     success = true;
+                                     WorkOrder.EquipmentList[0].NewGradeCode = "N";
+                                     WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                                 }
+                             }
+                             // INValid RKEM Grade code (ither Than M, S, K, E, Q) for 03/04/05
+                             else if ((gradeCodeDet == null || gradeCodeDet.Count == 0) && (Grade.ToUpper() != "N" || Grade != null))
+                             {
+
+                                 var Repair = (from sts in objContext.MESC1TS_GRADESTS
+                                               join G in objContext.MESC1TS_GRADE on sts.GRADE_ID
+                                                    equals G.GRADE_ID
+                                               where sts.STS_CODE == repV.RepairCode.RepairCod
+                                                && sts.MODE == ModeCode
+                                                && sts.IsApplicable == true
+                                               orderby sts.GRADE_ID
+                                               select new
+                                               {
+                                                   sts.GRADE_ID,
+                                                   G.GRADECODE,
+                                                   // sts.GRADECODE,
+                                                   sts.STS_CODE,
+                                                   sts.MODE,
+                                                   sts.MANUAL_CD,
+                                                   sts.IsApplicable,
+                                                   sts.CREATEDBY,
+                                                   sts.CREATEDON,
+                                                   sts.MODIFIEDBY,
+                                                   sts.MODIFIEDON
+
+                                               }).Distinct().ToList();
+                                 if (Repair.Count() > 0)
+                                 {
+
+                                     gFound++;
+                                     if (WorkOrder.EquipmentList[0].TempGradeCode == "")
+                                     {
+                                         WorkOrder.EquipmentList[0].NewGradeCode = Repair[0].GRADECODE;
+                                         if (Repair.Count() > 1)
+                                         {
+                                             for (int i = 0; i < Repair.Count(); i++)
+                                             {
+                                                 GList = GList + "," + Repair[i].GRADECODE;
+                                             }
+                                         }
+                                     }
+                                     else
+                                     {
+                                         foreach (var Gt in Repair)
+                                         {
+                                             if (Gt.GRADECODE == WorkOrder.EquipmentList[0].TempGradeCode)
+                                             {
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
+                                                 break;
+                                             }
+                                             else if (GList.Contains(Gt.GRADECODE))
+                                             {
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
+                                                 break;
+                                             }
+                                             else
+                                             {
+                                                 WorkOrder.EquipmentList[0].NewGradeCode = Gt.GRADECODE;
+                                             }
+
+                                         }
+
+                                     }//
+                                 }
+
+                                 if (gFound > 0 && (WorkOrder.EquipmentList[0].TempGradeCode == "" || (WorkOrder.EquipmentList[0].TempGradeCode == WorkOrder.EquipmentList[0].NewGradeCode) || GList.Contains(WorkOrder.EquipmentList[0].NewGradeCode)))
+                                 {
+                                     success = true;
+                                     WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                                 }
+                                 else
+                                 {
+                                     success = false;
+                                     Message = new ErrMessage();
+                                     Message.Message = "Repair " + repV.RepairCode.RepairCod + " belongs from different Grade code. Please add all repair of same Grade";
+                                     Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                                     errorMessageList.Add(Message);
+                                     break;
+                                 }
+
+                                 if (Repair.Count() == 0)
+                                 {
+                                     success = true;
+                                     WorkOrder.EquipmentList[0].NewGradeCode = "N";
+                                     WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                                 }
+                             }
+
+
+                         }
+                         catch (Exception ex)
+                         {
+                             success = false;
+                             Message = new ErrMessage();
+                             Message.Message = "System error in validating grade code";
+                             Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                             errorMessageList.Add(Message);
+                             logEntry.Message = ex.ToString();
+                             Logger.Write(logEntry);
+                             break;
+                         }
+
+                     }
+                 }
+
+             }
+
+         // Other Than 03/04/05 mode
+             else
+             {
+                 if (Grade != "N")
+                 {
+                     success = true;
+                     WorkOrder.EquipmentList[0].NewGradeCode = "N";
+                     WorkOrder.EquipmentList[0].TempGradeCode = WorkOrder.EquipmentList[0].NewGradeCode;
+                 }
+                 if (Grade == "N")
+                 {
+                     success = true;
+                 }
+             }
+             return success;
+         }
+         */
         private bool ValidateBasics(WorkOrderDetail WorkOrder, out List<ErrMessage> ErrorMessageList)
         {
             ErrorMessageList = new List<ErrMessage>();
@@ -18080,7 +18212,11 @@ namespace ManageWorkOrderService
                 // Any errors, return false. No point in going any further.
 
                 //Total Loss-Udita
-                if (WorkOrder.Mode != "49")
+                string TTL_Mode = string.Empty;
+                TTL_Mode = ConfigurationManager.AppSettings["TTLModeEXC"];
+                // if (WorkOrder.Mode != "49")
+                if (TTL_Mode.Contains(WorkOrder.Mode) == false)// != "49")
+
                 {
                     int WorkOrderId = CheckTLWordOrdersForCreation(Eqp.EquipmentNo);
                     if (WorkOrderId != 0)
@@ -19393,7 +19529,7 @@ namespace ManageWorkOrderService
 
                             if (Block_location == "Y")
                             {
-                                if((RKEMEquipment.CurrentLoc != null && RKEMEquipment.CurrentLoc.Length>=5) && ((RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLSA" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLGB" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USOAK" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USP1H" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USWIY" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USSPQ"))
+                                if ((RKEMEquipment.CurrentLoc != null && RKEMEquipment.CurrentLoc.Length >= 5) && ((RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLSA" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USLGB" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USOAK" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USP1H" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USWIY" || (RKEMEquipment.CurrentLoc.Substring(0, 5)).ToUpper() == "USSPQ"))
                                 {
 
                                     Check_Block_location = false;
@@ -20853,7 +20989,7 @@ namespace ManageWorkOrderService
                 if (Block_location == "Y")
                 {
 
-                    if ((EqpLocation !=null && EqpLocation.Length >= 5) && (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ"))
+                    if ((EqpLocation != null && EqpLocation.Length >= 5) && (((EqpLocation).Substring(0, 5)).ToUpper() == "USLSA" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USLGB" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USOAK" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USP1H" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USWIY" || ((EqpLocation).Substring(0, 5)).ToUpper() == "USSPQ"))
                     {
 
                         Check_Block_location = false;
@@ -21121,6 +21257,85 @@ namespace ManageWorkOrderService
             return success;
 
         }
+        //DamageCode1
+        private bool SendDamageCode1ToRKEM(string EqpNo, string CurrLoc, string DamageCode, bool flag)
+        {
+
+            bool success = false;
+
+            MQMessage mqMsg = new MQMessage();
+            try
+            {
+                flag = true;
+                MQManager mMQ = new MQManager();
+                MQQueueManager QMgr = null;
+                MQQueue RequestQueue = null;
+                MQQueue ResponseQueue = null;
+                //string messageID = "";
+                //string corrID = "";
+                byte[] messageID = null;
+                string OperatorCode = "TTL";
+                //STARTER 10DAMAG       MERCPLUSMERCPLUSRKEM    12U22YYA MERCPLUSLONGTXT                                                     0099RKEMT1  ITEXU5610710UPDATE     ROCNDPT YYMMDDHHMM                                                                                                                                                                                                                                                                                                       3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+                string Request = "STARTER 10DAMAG       MERCPLUSMERCPLUSRKEM    12U22YYA MERCPLUSLONGTXT                                                     0099RKEMT1  I";
+                Request += EqpNo.PadRight(11);
+                Request += ("UPDATE").PadRight(11);
+                Request += (CurrLoc.Trim()).PadRight(8);
+
+                if (flag)                                                               //flag =true during WO creation
+                {
+                    //Request += (DateTime.UtcNow.ToString("yyMMddHHmm")).PadRight(306);
+                    //Request += DamageCode.PadRight(1183);
+                    Request += (DateTime.UtcNow.ToString("yyMMddHHmm"));//.PadRight(306);                                                                        //pinaki
+                    Request += OperatorCode.PadRight(296);
+                    Request += DamageCode.PadRight(1183);
+                }
+                else                                                                  //flag=false during WO  completion
+                {
+
+                    Request += (DateTime.UtcNow.ToString("yyMMddHHmm")).PadRight(276);
+                    Request += ("Y").PadRight(1213);
+
+                }
+
+                try
+                {
+
+                    QMgr = mMQ.OpenQueueManager(ConfigurationManager.AppSettings["MQManagerRequestQueueName"]);
+                    RequestQueue = mMQ.OpenQ(MQ_WRITE_MODE, QMgr, ConfigurationManager.AppSettings["MQManagerDamageQName"]);
+                    //mMQ.PutMessage(Q, "MERCRKEM010000012015-11-30-13.44.25.000000TAG001LCRU4914727002                                                                             ",
+                    //    "MERCDEV", "RKEM.RKEMDMG.OUT", ref messageID);
+                    mMQ.PutMessage(RequestQueue, Request, ConfigurationManager.AppSettings["MQManagerRequestQueueName"], ConfigurationManager.AppSettings["MQManagerDamageQName"], ref messageID);
+
+                    mMQ.CloseQ(RequestQueue);
+                    mMQ.DisconnectQueueManager(QMgr);
+
+
+
+                }
+                catch (IBM.WMQ.MQException ex)
+                {
+                    logEntry.Message = "Error in sending Damage information : " + ex.ToString();
+                    Logger.Write(logEntry);
+                    //iRtn = (int)SYSTEMERROR;
+                    return false;
+                }
+
+            }
+
+
+
+
+            catch (Exception ex)
+            {
+                logEntry.Message = ex.ToString();
+                Logger.Write(logEntry);
+                //iRtn = (int)SYSTEMERROR;
+                return false;
+            }
+
+            return true;
+        }
 
         private bool SendDamageCodeToRKEM(string EqpNo, string CurrLoc, string DamageCode, bool flag)
         {
@@ -21375,34 +21590,37 @@ namespace ManageWorkOrderService
             //    sendsuccess = true;
             //}
             //else
-            
-                MESC1TS_GRADECONTAINER GC = new MESC1TS_GRADECONTAINER();
-                GC = (from O_gc in objContext.MESC1TS_GRADECONTAINER
-                      where (O_gc.WO_ID == WO_ID) && (O_gc.EQPNO == EQPNO)
-                      orderby O_gc.GC_ID descending
-                      select O_gc).FirstOrDefault();
 
-                if (GC != null)
+            MESC1TS_GRADECONTAINER GC = new MESC1TS_GRADECONTAINER();
+            GC = (from O_gc in objContext.MESC1TS_GRADECONTAINER
+                  where (O_gc.WO_ID == WO_ID) && (O_gc.EQPNO == EQPNO)
+                  orderby O_gc.GC_ID descending
+                  select O_gc).FirstOrDefault();
+
+            if (GC != null)
+            {
+                //if (GC.GRADECODE_NEW == null || GC.GRADECODE_NEW == "")
+                if (GC.GRADECODE_NEW == null)
                 {
-                    if (GC.GRADECODE_NEW == null || GC.GRADECODE_NEW == "")
-                    {
-                        GC.GRADECODE_NEW = "N";
-                    }
-                    if (GC.GRADECODE == null || GC.GRADECODE == "")
-                    {
-                        GC.GRADECODE = "N";
-                    }
+                    GC.GRADECODE_NEW = "N";
+                }
+                if (GC.GRADECODE == null || GC.GRADECODE == "")
+                {
+                    GC.GRADECODE = "N";
+                }
+                if (GC.GRADECODE_NEW != "")  // Changes
+                {
                     if ((GC.GRADECODE_NEW != GC.GRADECODE) && CurrentLoc != null)
                     {
                         sendsuccess = SendGradeCodeToRKEM(GC.EQPNO, CurrentLoc, GC.GRADECODE_NEW);
                     }//Grade code bug fix
+                }
+            }
+            if (sendsuccess)
+            {
+                UpdateRKEMStatusForGrade(GC.GC_ID, WO_ID, CurrentLoc);
+            }
 
-                }
-                if (sendsuccess)
-                {
-                    UpdateRKEMStatusForGrade(GC.GC_ID, WO_ID, CurrentLoc);
-                }
-            
             return sendsuccess;
         }
         private void UpdateRKEMStatusForGrade(int GC_ID, int WO_ID, string CurrentLoc)
