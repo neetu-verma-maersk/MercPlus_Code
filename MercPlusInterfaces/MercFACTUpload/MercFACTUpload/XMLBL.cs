@@ -48,7 +48,7 @@ namespace MercFACTUpload
 
         double fCountryTaxVariation = 0;
         double fLocalTaxVariation = 0;
-
+        
 
         // Declare MQ Variables
         MQManager MQmgr = new MQManager();
@@ -59,27 +59,22 @@ namespace MercFACTUpload
 
         MercFactUploadDAL objDal = new MercFactUploadDAL();
         #endregion
-        public virtual void StartProcessWorkOrder()
+        public virtual void StartProcessWorkOrder(int recordCount)
         {
-
             try
             {
-
-                List<MercFactUploadEntity> Wolist = objDal.GetEligibleWorkOrder();
+                List<MercFactUploadEntity> Wolist = objDal.GetEligibleWorkOrder(recordCount);
 
                 if (Wolist.Count() > 0)
                 {
-
                     ProcessWorkOrder(Wolist);
-
                 }
-
             }
 
             catch (Exception ex)
             {
                 message = "Failed read of elligible work orders for FACT upload:";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " " + ex.InnerException + " " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
 

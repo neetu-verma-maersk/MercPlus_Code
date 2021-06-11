@@ -21,7 +21,7 @@ namespace MercFactUpload
         public static LogEntry logEntry = new LogEntry();
         MercfactUploadEntities objContext = new MercfactUploadEntities();
         //SqlConnection sqlcon = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString);
-        public List<MercFactUploadEntity> GetEligibleWorkOrder()
+        public List<MercFactUploadEntity> GetEligibleWorkOrder(int recordCount)
         {
 
 
@@ -109,10 +109,11 @@ namespace MercFactUpload
                                         SH_IMPORT_TAX_PCT = SH.IMPORT_TAX,
                                         PV.SUPPLIER_CD,
                                         PV.LOCAL_ACCOUNT_CD
-                                    }).ToList();
+                                    }).AsQueryable().Take(recordCount);
 
+                var finalEligibleData = eligibleData.ToList();
 
-                foreach (var obj in eligibleData)
+                foreach (var obj in finalEligibleData)
                 {
                     MercFactUploadEntity objEntity = new MercFactUploadEntity();
                     objEntity.WO_ID = obj.WO_ID.ToString();

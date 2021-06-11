@@ -22,6 +22,9 @@ namespace MercFACTUpload
         AutoResetEvent StopRequest = new AutoResetEvent(false);
        
         public static LogEntry logEntry = new LogEntry();
+        readonly int recordCount = Convert.ToInt32(ConfigurationManager.AppSettings["RecordCount"]);
+        readonly int recursionCount = Convert.ToInt32(ConfigurationManager.AppSettings["RecursionCount"]);
+
         public MercFactUploadService()
         {
             InitializeComponent();
@@ -88,8 +91,14 @@ namespace MercFACTUpload
             {
                 logEntry.Message = "MercFactUploadService started";
                 Logger.Write(logEntry);
-                XMLBL objMQ = new XMLBL();
-                objMQ.StartProcessWorkOrder();
+                int count = 0;
+                while (count < recursionCount)
+                {
+                    XMLBL objMQ = new XMLBL();
+                    objMQ.StartProcessWorkOrder(recordCount);
+                    count++;
+                }
+                logEntry.Message = "Files are processed successfully. Counter : " + count + " , Recursion count: " + recursionCount;
                 logEntry.Message = "MercFactUploadService End";
                 Logger.Write(logEntry);
             }
