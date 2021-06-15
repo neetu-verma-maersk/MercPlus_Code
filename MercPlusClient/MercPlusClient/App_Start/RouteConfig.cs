@@ -12,8 +12,6 @@ namespace MercPlusClient
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
-            routes.IgnoreRoute("{*resource}", new { resource = @"(.*/)?*.map(/.*)?" });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
