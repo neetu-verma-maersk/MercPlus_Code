@@ -7101,7 +7101,7 @@ namespace ManageWorkOrderService
         public bool CreateWorkOrder(WorkOrderDetail workorderDetail, out List<ErrMessage> errorMessageList)
         {
             WOIDmutex.WaitOne(); //Allows one thread at a time for getting the WO ID
-            Thread.Sleep(100);
+            //Thread.Sleep(100);
             ManageWorkOrderServiceEntities context = new ManageWorkOrderServiceEntities();
             bool success = false;
             string chUser = "";
@@ -7344,7 +7344,7 @@ namespace ManageWorkOrderService
                                 Logger.Write(logEntry);
                             }
 
-                        }
+                       }
                         catch (Exception ex)
                         {
 
@@ -7356,15 +7356,14 @@ namespace ManageWorkOrderService
                             logEntry.Message = ex.ToString();
                             Logger.Write(logEntry);
                             success = false;
+                            tx.Dispose();
                         }
-
-
 
                         #endregion
                         #region Insert Repair List
                         try
                         {
-                            if (workorderDetail.RepairsViewList != null && workorderDetail.RepairsViewList.Count > 0)
+                            if ((System.Transactions.Transaction.Current != null) && workorderDetail.RepairsViewList != null && workorderDetail.RepairsViewList.Count > 0)
                             {
                                 foreach (var rItem in workorderDetail.RepairsViewList)
                                 {
@@ -7421,13 +7420,17 @@ namespace ManageWorkOrderService
                             logEntry.Message = ex.ToString();
                             Logger.Write(logEntry);
                             success = false;
+                           // context.Dispose();
+                            tx.Dispose();
+                         //   WOIDmutex.ReleaseMutex();
                         }
+                        
 
                         #endregion
                         #region Insert parts list
                         try
                         {
-                            if (workorderDetail.SparePartsViewList != null && workorderDetail.SparePartsViewList.Count > 0)
+                            if (System.Transactions.Transaction.Current != null && workorderDetail.SparePartsViewList != null && workorderDetail.SparePartsViewList.Count > 0)
                             {
                                 foreach (var spareparts in workorderDetail.SparePartsViewList)
                                 {
@@ -7469,13 +7472,14 @@ namespace ManageWorkOrderService
                             logEntry.Message = ex.ToString();
                             Logger.Write(logEntry);
                             success = false;
+                            tx.Dispose();
                         }
-
+                        
                         #endregion
                         #region insert Remarks list
                         try
                         {
-                            if (workorderDetail.RemarksList != null && workorderDetail.RemarksList.Count > 0)
+                            if (System.Transactions.Transaction.Current != null && workorderDetail.RemarksList != null && workorderDetail.RemarksList.Count > 0)
                             {
                                 foreach (var Remarks in workorderDetail.RemarksList)
                                 {
@@ -7511,14 +7515,13 @@ namespace ManageWorkOrderService
                             logEntry.Message = ex.ToString();
                             Logger.Write(logEntry);
                             success = false;
+                            tx.Dispose();
                         }
-
                         #endregion
 
-
                     }
-
-                    tx.Complete();
+                    if(System.Transactions.Transaction.Current != null)
+                        tx.Complete();
                     // WOIDmutex.ReleaseMutex();
 
                     //retval = 1;
@@ -7538,7 +7541,8 @@ namespace ManageWorkOrderService
                 finally
                 {
                     context.Dispose();
-                    tx.Dispose();
+                    if(System.Transactions.Transaction.Current != null)
+                        tx.Dispose();
                     WOIDmutex.ReleaseMutex();
                 }
             }
