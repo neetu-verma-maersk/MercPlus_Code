@@ -7101,7 +7101,7 @@ namespace ManageWorkOrderService
         public bool CreateWorkOrder(WorkOrderDetail workorderDetail, out List<ErrMessage> errorMessageList)
         {
             WOIDmutex.WaitOne(); //Allows one thread at a time for getting the WO ID
-            //Thread.Sleep(100);
+            Thread.Sleep(100);
             ManageWorkOrderServiceEntities context = new ManageWorkOrderServiceEntities();
             bool success = false;
             string chUser = "";
@@ -7352,7 +7352,7 @@ namespace ManageWorkOrderService
                             Exception e = ex.InnerException;
                             Message.Message = "System tran error while saving WorkOrder in Database";
                             Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
-                            errorMessageList.Add(Message);//@sb
+                            errorMessageList.Add(Message);//@sb 
                             logEntry.Message = ex.ToString();
                             Logger.Write(logEntry);
                             success = false;
@@ -7420,12 +7420,9 @@ namespace ManageWorkOrderService
                             logEntry.Message = ex.ToString();
                             Logger.Write(logEntry);
                             success = false;
-                           // context.Dispose();
                             tx.Dispose();
-                         //   WOIDmutex.ReleaseMutex();
                         }
                         
-
                         #endregion
                         #region Insert parts list
                         try
@@ -7541,7 +7538,6 @@ namespace ManageWorkOrderService
                 finally
                 {
                     context.Dispose();
-                    if(System.Transactions.Transaction.Current != null)
                         tx.Dispose();
                     WOIDmutex.ReleaseMutex();
                 }
