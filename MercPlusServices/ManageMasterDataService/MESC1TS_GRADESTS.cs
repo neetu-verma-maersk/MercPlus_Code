@@ -25,6 +25,7 @@ namespace ManageMasterDataService
         public Nullable<System.DateTime> CREATEDON { get; set; }
         public string MODIFIEDBY { get; set; }
         public Nullable<System.DateTime> MODIFIEDON { get; set; }
+        public Nullable<bool> FLAG { get; set; }
     
         public virtual MESC1TS_GRADE MESC1TS_GRADE { get; set; }
     }

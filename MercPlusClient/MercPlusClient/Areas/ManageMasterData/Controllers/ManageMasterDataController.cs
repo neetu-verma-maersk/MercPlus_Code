@@ -12585,6 +12585,7 @@ namespace MercPlusClient.Areas.ManageMasterData.Controllers
                                 gradeSTSModel.STSDescription = GradeSTSListTemp.First().STSDescription;
                                 gradeSTSModel.Mode = mode;
                                 gradeSTSModel.ManualCD = GradeSTSListTemp.First().ManualCD;
+                                gradeSTSModel.Flag = GradeSTSListTemp.First().FLAG;
 
                                 List<GradeSTSRelationModel> GradeSTSRelationModelListForGrade = new List<GradeSTSRelationModel>();
 
@@ -12650,7 +12651,7 @@ namespace MercPlusClient.Areas.ManageMasterData.Controllers
             }
         }
 
-        public JsonResult JsonUpdateGradeSTSMapping(string stscode, string mode, string gradeapplicablevalues)
+        public JsonResult JsonUpdateGradeSTSMapping(string stscode, string mode, string FLAG, string gradeapplicablevalues)
         {
             bool isUpdated = false;
             string manualcd = "MAER";
@@ -12669,6 +12670,10 @@ namespace MercPlusClient.Areas.ManageMasterData.Controllers
 
                         gradeSTS.STSCode = stscode.Trim();
                         gradeSTS.Mode = mode.Trim();
+                        gradeSTS.FLAG = string.IsNullOrWhiteSpace(FLAG) ? false :
+                                                (
+                                                    FLAG.Trim().ToUpper() == "YES" ? true : false
+                                                );
                         gradeSTS.ManualCD = manualcd;
                         gradeSTS.GradeCode = grade;
                         gradeSTS.IsApplicable = string.IsNullOrWhiteSpace(applicableValues[i]) ? false :
@@ -12685,7 +12690,7 @@ namespace MercPlusClient.Areas.ManageMasterData.Controllers
                     isUpdated = mmdc.UpdateGradeSTSMapping(gradeSTSList.ToArray());
                 }
 
-                return Json(isUpdated);
+                 return Json(isUpdated);
             }
             catch (Exception ex)
             {
@@ -12693,7 +12698,7 @@ namespace MercPlusClient.Areas.ManageMasterData.Controllers
             }
         }
 
-        public JsonResult JsonAddGradeSTSMapping(string stscode, string mode, string gradeapplicablevalues)
+        public JsonResult JsonAddGradeSTSMapping(string stscode, string mode, string FLAG, string gradeapplicablevalues)
         {
             bool isAdded = false;
             string manualcd = "MAER";
@@ -12713,6 +12718,10 @@ namespace MercPlusClient.Areas.ManageMasterData.Controllers
                         gradeSTS.STSCode = stscode.Trim();
                         gradeSTS.Mode = mode.Trim();
                         gradeSTS.ManualCD = manualcd;
+                        gradeSTS.FLAG = string.IsNullOrWhiteSpace(FLAG) ? false :
+                                                  (
+                                                      FLAG.Trim().ToUpper() == "YES" ? true : false
+                                                  );
                         gradeSTS.GradeCode = grade;
                         gradeSTS.IsApplicable = string.IsNullOrWhiteSpace(applicableValues[i]) ? false :
                                                 (

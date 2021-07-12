@@ -12038,6 +12038,7 @@ namespace ManageMasterDataService
                                           GS.STS_CODE,
                                           RC.REPAIR_DESC,
                                           GS.MODE,
+                                          GS.FLAG,
                                           GS.MANUAL_CD,
                                           GS.IsApplicable,
                                           GS.CREATEDBY,
@@ -12058,6 +12059,7 @@ namespace ManageMasterDataService
                         gradeSTS.STSCode = item.STS_CODE;
                         gradeSTS.STSDescription = item.REPAIR_DESC;
                         gradeSTS.Mode = item.MODE;
+                        gradeSTS.FLAG = item.FLAG == null ? false : item.FLAG.Value;
                         gradeSTS.ManualCD = item.MANUAL_CD;
                         gradeSTS.IsApplicable = item.IsApplicable == null ? false : item.IsApplicable.Value;
                         gradeSTS.CreatedBy = item.CREATEDBY;
@@ -12158,6 +12160,7 @@ namespace ManageMasterDataService
                         if (gradeSTSData != null)
                         {
                             gradeSTSData.IsApplicable = gradeSTS.IsApplicable;
+                            gradeSTSData.FLAG = gradeSTS.FLAG;
                             gradeSTSData.MODIFIEDBY = gradeSTS.ModifiedBy;
                             gradeSTSData.MODIFIEDON = DateTime.Now;
                         }
@@ -12178,6 +12181,7 @@ namespace ManageMasterDataService
                             newGradeSTS.MODE = mode;
                             newGradeSTS.MANUAL_CD = manualCD;
                             newGradeSTS.IsApplicable = gradeSTS.IsApplicable;
+                            newGradeSTS.FLAG = gradeSTS.FLAG;
                             newGradeSTS.CREATEDBY = gradeSTS.ModifiedBy;
                             newGradeSTS.CREATEDON = DateTime.Now;
 
@@ -12247,6 +12251,7 @@ namespace ManageMasterDataService
                                 gradeSTSData.MODE = gradeSTS.Mode;
                                 gradeSTSData.MANUAL_CD = gradeSTS.ManualCD;
                                 gradeSTSData.IsApplicable = gradeSTS.IsApplicable;
+                                gradeSTSData.FLAG = gradeSTS.FLAG;
                                 gradeSTSData.CREATEDBY = gradeSTS.CreatedBy;
                                 gradeSTSData.CREATEDON = DateTime.Now;
 

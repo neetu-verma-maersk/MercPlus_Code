@@ -147,7 +147,7 @@ $(function () {
                 error: function () {
                 },
                 success: function (data) {
-                    OnSuccess(data);
+                    OnSuccessTTL(data);
                 }
             });
         }
@@ -673,7 +673,45 @@ function toggleFont(obj) {
         $('body').css('font-size', '12px');
     }
 }
+function OnSuccessTTL(data, frmUpdate) {
+  
+    if (data.Status == "SUCCESS") {
+        if (data.isRedirect) {
+            //alert(data.UIMsg);
+            appendMsg(data.UIMsg, MESSAGETYPE.INFO);
+            window.location.href = data.redirectUrl;
+        }
+        else {
+            $("#tdRemarksSpace").html(data.RemarksData);
+            if (data.UIMsg == "")
+                appendMsg(MAMSG.REQUEST_SUCCESS, data.Status);
+            else {
+                appendMsg(data.UIMsg, data.Status);
+               // alert("Info: " + data.UIMsg);
+            }
 
+            if (frmUpdate == undefined || !frmUpdate) {
+                $('[name^="btn"]').attr("disabled", "disabled");
+                $('[name=btnFont],[name=btnPrint],[name=btnNewQuery],[name=btnUpdateMA],input[name=btnAuditTrail]').removeAttr("disabled");
+            }
+        }
+    }
+     
+    else {
+        $("#tdRemarksSpace").html(data.RemarksData);
+        appendMsg(data.UIMsg, data.Status);
+        var str = data.UIMsg;
+      
+       {
+               alert(str);
+            if (data.isRedirect) {
+                // alert(data.UIMsg);
+                appendMsg(data.UIMsg, MESSAGETYPE.WARNING);
+                window.location.href = data.redirectUrl;
+            }
+        }
+    }
+}
 function OnSuccess(data, frmUpdate) {
     if (data.Status == "SUCCESS") {
         if (data.isRedirect) {

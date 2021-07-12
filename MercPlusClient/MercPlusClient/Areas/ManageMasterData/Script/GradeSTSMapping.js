@@ -5,6 +5,29 @@ $("body").on("click", "#WebGrid TBODY .Edit", function () {
     var relationId = $(this).closest('td').attr('id');    
 
     ShowEditMode(relationId);
+    //
+    var dropDownGradeChangeID = "dropDownGradeChange_" + relationId;
+    var dropDownGradeChange = $("[id^='" + dropDownGradeChangeID + "']");
+
+    var spanSTSGradeChangeId = "spanSTSGradeChange_" + relationId;
+    var spanSTSGradeChange = $("[id^='" + spanSTSGradeChangeId + "']"); 
+    for (i = 0; i < spanSTSGradeChange.length; i++) {
+        var spanSTSGradeChangeSelectedValue = spanSTSGradeChange[i].innerText;
+        if (spanSTSGradeChangeSelectedValue != null && spanSTSGradeChangeSelectedValue != '') {
+            spanSTSGradeChangeSelectedValue = spanSTSGradeChangeSelectedValue.trim();
+            var element1 = dropDownGradeChange[i];
+            for (var j = 0; j < element1.options.length; j++) {
+                element1.options[j].selected = spanSTSGradeChangeSelectedValue.indexOf(element1.options[j].value) >= 0;
+            }
+        }
+    }
+
+
+
+
+    //
+
+
 
     var spanGradeCodeId = "spanGradeCode_" + relationId;
     var spanGradeCodes = $("[id^='" + spanGradeCodeId + "']");
@@ -143,6 +166,16 @@ function HideEditMode(id) {
     var spanGradeCodeId = "spanGradeCode_" + id;
     var spanGradeCodes = $("[id^='" + spanGradeCodeId + "']");
 
+
+   var dropDownGradeChangeID = "dropDownGradeChange_" + id;
+   var dropDownGradeChange = $("[id^='" + dropDownGradeChangeID + "']");
+   
+   var spanSTSGradeChangeId = "spanSTSGradeChange_" + id;
+   var spanSTSGradeChange = $("[id^='" + spanSTSGradeChangeId + "']"); 
+    
+    //var dropDownGradeChange = "dropDownGradeChange_" + id;
+    //var spanSTSGradeChange = "spanSTSGradeChange_" + id;
+
     var btnEdit = $("#btnEdit_" + id);
     var btnDelete = $("#btnDelete_" + id);
     var btnUpdate = $("#btnUpdate_" + id);
@@ -151,12 +184,17 @@ function HideEditMode(id) {
     dropDownGradeCodes.hide();    
     spanGradeCodes.show();    
 
+    dropDownGradeChange.hide();
+    spanSTSGradeChange.show();
+
     btnEdit.show();
     btnDelete.show();
     btnUpdate.hide();
     btnCancel.hide();
 
-    dropDownGradeCodes.val('');    
+    dropDownGradeCodes.val('');   
+    dropDownGradeCodes.val('');
+    dropDownGradeChange.val('');
 }
 
 function ShowEditMode(id) {
@@ -164,10 +202,17 @@ function ShowEditMode(id) {
     var dropDownGradeCodes = $("[id^='" + dropDownGradeCodeId + "']");
     var spanGradeCodeId = "spanGradeCode_" + id;
     var spanGradeCodes = $("[id^='" + spanGradeCodeId + "']");   
+    var dropDownGradeChangeID = "dropDownGradeChange_" + id;
+    var dropDownGradeChange = $("[id^='" + dropDownGradeChangeID + "']");
     
+    var spanSTSGradeChangeId = "spanSTSGradeChange_" + id;
+    var spanSTSGradeChange = $("[id^='" + spanSTSGradeChangeId + "']"); 
+    
+    //var dropDownGradeChange = "dropDownGradeChange_" + id;
+    //var spanSTSGradeChange = "spanSTSGradeChange_" + id;
 
     dropDownGradeCodes.val('');    
-
+    dropDownGradeChange.val('');
     var btnEdit = $("#btnEdit_" + id);
     var btnDelete = $("#btnDelete_" + id);
     var btnUpdate = $("#btnUpdate_" + id);
@@ -175,7 +220,8 @@ function ShowEditMode(id) {
 
     dropDownGradeCodes.show();    
     spanGradeCodes.hide();    
-
+    dropDownGradeChange.show();
+    spanSTSGradeChange.hide();
     btnEdit.hide();
     btnDelete.hide();
     btnUpdate.show();
@@ -185,6 +231,18 @@ function ShowEditMode(id) {
 function UpdateGradeSTSMapping(relationId) {
     var stscodevalue = $('#spanSTSCode_' + relationId).text();
     var modevalue = $('#spanSTSMode_' + relationId).text();
+    var spanSTSGradeChangeId = "spanSTSGradeChange_" + relationId;
+    var spanSTSGradeChange = $("[id^='" + spanSTSGradeChangeId + "']"); 
+
+    var dropDownGradeChangeID = "dropDownGradeChange_" + relationId;
+    var dropDownGradeChange = $("[id^='" + dropDownGradeChangeID + "']");
+
+    for (i = 0; i < dropDownGradeChange.length; i++) {
+        var element1 = dropDownGradeChange[i];
+        var FLAGVALUE = element1.options[element1.selectedIndex].text;
+        
+    }  
+
     var gradeapplicablelist = new Array();
 
     var spanGradeCodeId = "spanGradeCode_" + relationId;
@@ -207,7 +265,7 @@ function UpdateGradeSTSMapping(relationId) {
     $.ajax({
         url: "/ManageMasterData/ManageMasterData/JsonUpdateGradeSTSMapping",
         type: 'POST',
-        data: { stscode: stscodevalue, mode: modevalue, gradeapplicablevalues: gradeApplicableValues },
+        data: { stscode: stscodevalue, mode: modevalue, FLAG: FLAGVALUE , gradeapplicablevalues: gradeApplicableValues },
         cache: false,
         success: function (data) {
             if (data == true) {
@@ -224,6 +282,20 @@ function UpdateGradeSTSMapping(relationId) {
                         spanGradeCodes[i].style.color = "orange";
                     }
                 }
+                for (i = 0; i < dropDownGradeChange.length; i++) {
+                    var element1 = dropDownGradeChange[i];
+                    var FLAGVALUE = element1.options[element1.selectedIndex].text;
+                    spanSTSGradeChange[i].innerText = FLAGVALUE;
+                    if (spanSTSGradeChange[i].innerText == "Yes") {
+                        spanSTSGradeChange[i].style.color = "green";
+                    }
+                    else if (spanSTSGradeChange[i].innerText == "No") {
+                        spanSTSGradeChange[i].style.color = "orange";
+                    }
+
+                }  
+
+               
             } else {
                 $('#lblMessage').text('Grade STS mapping has not been updated.');
                 $('#lblMessage').css("color", "red");
@@ -278,6 +350,7 @@ function AddGradeSTSMapping() {
     var stscodevalue = $('#newSTSCode').val();
     var stsdescriptionvalue = $('#newSTSDescription').text();
     var modevalue = $('#dropDownSTSMode').val();
+    var FLAGVALUE = $('#dropDownGradeChange').val();
 
     var gradeapplicablelist = new Array();
    
@@ -305,7 +378,7 @@ function AddGradeSTSMapping() {
     $.ajax({
         url: "/ManageMasterData/ManageMasterData/JsonAddGradeSTSMapping",
         type: 'POST',
-        data: { stscode: stscodevalue, mode: modevalue, gradeapplicablevalues: gradeApplicableValues },
+        data: { stscode: stscodevalue, mode: modevalue, FLAG: FLAGVALUE , gradeapplicablevalues: gradeApplicableValues },
         cache: false,
         success: function (data) {
             if (data != '' && data != null) {

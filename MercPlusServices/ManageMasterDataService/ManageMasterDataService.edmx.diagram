@@ -57,7 +57,6 @@
         <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_TPI" Width="1.5" PointX="17.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_TRANSMIT" Width="1.5" PointX="6" PointY="26.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_VENDOR" Width="1.5" PointX="1.5" PointY="69.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_WO" Width="1.5" PointX="12" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_WOAUDIT" Width="1.5" PointX="7.75" PointY="19.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_WOPART" Width="1.5" PointX="13.25" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_WOREMARK" Width="1.5" PointX="9" PointY="62.125" IsExpanded="true" />
@@ -85,7 +84,6 @@
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__EQTYP__03BB8E22" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_CP__MODE__04AFB25B" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__CUCDN__214BF109" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__CUCDN__2DB1C7EE" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__CUSTO__05A3D694" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__PAYAG__078C1F06" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__SHOP___0697FACD" ManuallyRouted="false" />
@@ -93,17 +91,14 @@
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_C__MANUA__09746778" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_L__CUSTO__0E391C95" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_T__CUSTO__2AD55B43" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__CUSTO__318258D2" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_EQ__MODE__0A688BB1" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_L__EQTYP__10216507" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__EQTYP__2F9A1060" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_L__SHOP___0F2D40CE" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_L__REGIO__1209AD79" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__LOC_C__22401542" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__SEC_USER__LOC_CD__23F3538A" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_M__MANUA__12FDD1B2" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_R__MANUA__1C873BEC" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__MANUA__2CBDA3B5" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_MA__MODE__13F1F5EB" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_M__MANUF__15DA3E5D" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_M__MANUF__16CE6296" ManuallyRouted="false" />
@@ -114,19 +109,14 @@
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_PR__MODE__1A9EF37A" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_RE__MODE__1D7B6025" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_TR__MODE__29E1370A" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_WO__MODE__32767D0B" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_P__PAYAG__19AACF41" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_P__VENDO__18B6AB08" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__SHOP___251C81ED" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__SHOP___2610A626" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__SHOP___28ED12D1" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__VENDO__2334397B" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__SHOP___308E3499" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__STATU__2EA5EC27" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_S__SUSPC__27F8EE98" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__SUSPC__36470DEF" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__VENDO__2BC97F7C" ManuallyRouted="false" />
-        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__SEC_AUTHG__AUTHG__1881A0DE" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__SEC_AUTHG__AUTHG__1975C517" ManuallyRouted="false" />
         <AssociationConnector Association="MESC2DSModel.FK__SEC_AUTHG__AUTHG__1B5E0D89" ManuallyRouted="false" />
@@ -142,6 +132,16 @@
         <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_GRADESTS" Width="1.5" PointX="21.625" PointY="23.625" />
         <AssociationConnector Association="MESC2DSModel.FK_MESC1TS_GRADERELATION_MESC1TS_GRADERELATION" />
         <AssociationConnector Association="MESC2DSModel.FK_MESC1TS_GRADESTS_MESC1TS_GRADE" />
+        <EntityTypeShape EntityType="MESC2DSModel.MESC1TS_WO" Width="1.5" PointX="12" PointY="35.125" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__CUCDN__2DB1C7EE" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__CUSTO__318258D2" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__EQTYP__2F9A1060" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__MANUA__2CBDA3B5" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_WO__MODE__32767D0B" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__SHOP___308E3499" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__STATU__2EA5EC27" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__VENDO__2BC97F7C" />
+        <AssociationConnector Association="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

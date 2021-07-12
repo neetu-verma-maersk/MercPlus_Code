@@ -368,7 +368,7 @@ namespace MercPlusClient.Areas.ManageWorkOrder.Controllers
 
                 #endregion SortType
             }
-            catch (Exception ex)
+             catch (Exception ex)
             {                
                 throw;
             }
