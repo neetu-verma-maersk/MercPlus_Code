@@ -71,11 +71,17 @@ namespace MercFACTUpload
             while (StateTimer != null)
             {
                 if (StopRequest.WaitOne(7200000))
+                {
+                    logEntry.Message = "Blocking the current thread until next signal";
+                    Logger.Write(logEntry);
                     return;
+                }
                 //Wait until the job is done
                 AutoEventInstance.WaitOne();
                 //Wait for 5 minutes before starting the job again.
                 StateTimer.Change(TimerInterval, Timeout.Infinite);
+                logEntry.Message = "Changing the start time";
+                Logger.Write(logEntry);
             }
 
         }
@@ -83,7 +89,8 @@ namespace MercFACTUpload
         public void StartOperation(Object stateInfo)//this is function (delegate) where the actuall operation starts and executed after each time interval
         {
             AutoResetEvent autoEvent = (AutoResetEvent)stateInfo;
-
+            logEntry.Message = "StartOperation started";
+            Logger.Write(logEntry);
             try
             {
                 logEntry.Message = "MercFactUploadService started";
@@ -98,6 +105,8 @@ namespace MercFACTUpload
                 logEntry.Message = ex.ToString();
                 Logger.Write(logEntry);
             }
+            logEntry.Message = "Performing AutoEvent set";
+            Logger.Write(logEntry);
             autoEvent.Set();
         }
     }
