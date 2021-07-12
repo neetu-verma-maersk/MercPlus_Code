@@ -41,5 +41,8 @@ namespace MercPlusLibrary
 
         [DataMember]
         public DateTime? ModifiedOn { get; set; }
+
+        [DataMember]
+        public bool FLAG { get; set; }
     }
 }

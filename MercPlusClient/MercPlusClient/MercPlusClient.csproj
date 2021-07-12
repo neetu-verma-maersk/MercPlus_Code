@@ -1764,7 +1764,7 @@
     <None Include="Service References\ManageMasterDataServiceReference\configuration91.svcinfo" />
     <None Include="Service References\ManageMasterDataServiceReference\configuration.svcinfo" />
     <None Include="Service References\ManageMasterDataServiceReference\ManageMasterData1.wsdl" />
-    <Content Include="Service References\ManageMasterDataServiceReference\ManageMasterData2.wsdl" />
+    <None Include="Service References\ManageMasterDataServiceReference\ManageMasterData2.wsdl" />
     <None Include="Service References\ManageMasterDataServiceReference\ManageMasterDataService10.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1792,7 +1792,7 @@
     <None Include="Service References\ManageMasterDataServiceReference\ManageMasterDataService5.xsd" />
     <None Include="Service References\ManageMasterDataServiceReference\ManageMasterDataService6.xsd" />
     <None Include="Service References\ManageMasterDataServiceReference\ManageMasterDataService7.xsd" />
-    <Content Include="Service References\ManageMasterDataServiceReference\ManageMasterDataService2.disco" />
+    <None Include="Service References\ManageMasterDataServiceReference\ManageMasterDataService2.disco" />
     <Content Include="Service References\ManageMasterDataServiceReference\MercPlusClient.ManageMasterDataServiceReference.AuditTrail.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

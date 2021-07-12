@@ -286,6 +286,7 @@ warning 6002: The table/view 'MESC2DS.dbo.MESC1TS_EDI_TRANSMISSION' does not hav
     <Property Name="CREATEDON" Type="datetime" />
     <Property Name="MODIFIEDBY" Type="varchar" MaxLength="50" />
     <Property Name="MODIFIEDON" Type="datetime" />
+    <Property Name="FLAG" Type="bit" />
   </EntityType>
   <EntityType Name="MESC1TS_INDEX">
     <Key>

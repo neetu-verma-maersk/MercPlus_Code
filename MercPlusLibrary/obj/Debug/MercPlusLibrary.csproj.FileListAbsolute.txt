@@ -127,3 +127,16 @@ C:\MERCPLUS_GITNew\MercPlusLibrary\obj\Debug\MercPlusLibrary.csproj.CoreCompileI
 C:\MERCPLUS_GITNew\MercPlusLibrary\obj\Debug\MercPlusLibrary.csproj.CopyComplete
 C:\MERCPLUS_GITNew\MercPlusLibrary\obj\Debug\MercPlusLibrary.dll
 C:\MERCPLUS_GITNew\MercPlusLibrary\obj\Debug\MercPlusLibrary.pdb
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\MercPlusLibrary.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\MercPlusLibrary.pdb
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\amqmdnet.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\bin\Debug\Microsoft.Practices.Unity.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\obj\Debug\MercPlusLibrary.csproj.CoreCompileInputs.cache
+C:\MERCPLUS_TCS\MercPlusLibrary\obj\Debug\MercPlusLibrary.csproj.CopyComplete
+C:\MERCPLUS_TCS\MercPlusLibrary\obj\Debug\MercPlusLibrary.dll
+C:\MERCPLUS_TCS\MercPlusLibrary\obj\Debug\MercPlusLibrary.pdb
+C:\MERCPLUS_TCS\MercPlusLibrary\obj\Debug\MercPlusLibrary.csprojAssemblyReference.cache

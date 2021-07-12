@@ -8,138 +8,6 @@
       <xsd:import schemaLocation="http://localhost:52642/ManageMasterDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IManageMasterData_GetManualMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetManualMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManualMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetManualModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManualModeManual_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetManualModeManual" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManualModeManual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetManualModeManualResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllManual_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllManual" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllManual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllManualResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManualModeMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetManualModeMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManualModeMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetManualModeModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetDamageCodes_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDamageCodes" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetDamageCodes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDamageCodesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetDamageCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDamageCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetDamageCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDamageCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateDamageCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateDamageCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateDamageCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateDamageCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateDamageCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateDamageCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateDamageCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateDamageCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteDamageCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteDamageCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteDamageCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteDamageCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAuditTrailData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAuditTrailData" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAuditTrailData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAuditTrailDataResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetModes_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetModes" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetModes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetModesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllActiveInActiveModes_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllActiveInActiveModes" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllActiveInActiveModes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllActiveInActiveModesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetTPIIndicators_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTPIIndicators" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetTPIIndicators_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTPIIndicatorsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetTPIIndicator_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTPIIndicator" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetTPIIndicator_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTPIIndicatorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateTPIIndicator_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateTPIIndicator" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateTPIIndicator_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateTPIIndicatorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteTPIIndicator_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteTPIIndicator" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteTPIIndicator_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteTPIIndicatorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateTPIIndicator_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateTPIIndicator" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateTPIIndicator_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateTPIIndicatorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManual_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetManual" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetManualResponse" />
-  </wsdl:message>
   <wsdl:message name="IManageMasterData_UpdateManualDescription_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateManualDescription" />
   </wsdl:message>
@@ -500,6 +368,516 @@
   <wsdl:message name="IManageMasterData_GetSTSDescription_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSTSDescriptionResponse" />
   </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllActiveManuals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActiveManuals" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllActiveManuals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActiveManualsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCode_PartAssociation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCode_PartAssociation" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCode_PartAssociation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCode_PartAssociationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetModesByManuals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModesByManuals" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetModesByManuals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModesByManualsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_Add_Edit_RPA_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Edit_RPA" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_Add_Edit_RPA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Edit_RPAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateRPA_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRPA" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateRPA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRPAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteRPRCODE_PART_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRPRCODE_PART" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteRPRCODE_PART_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRPRCODE_PARTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIPeriods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIPeriods" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIPeriods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIPeriodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreatePTIPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePTIPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreatePTIPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePTIPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeletePTIPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePTIPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeletePTIPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePTIPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyPTIPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPTIPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyPTIPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPTIPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyPTIDefaultPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPTIDefaultPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyPTIDefaultPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPTIDefaultPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriodRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriodRecord" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriodRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriodRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertSpecialRemarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSpecialRemarks" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertSpecialRemarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSpecialRemarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifySpecialRemarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySpecialRemarks" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifySpecialRemarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySpecialRemarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteSpecialRemarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSpecialRemarks" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteSpecialRemarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSpecialRemarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetSpecialRemarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialRemarks" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetSpecialRemarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialRemarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexes" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndex" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexManual" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIndex" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndex" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateIndex" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexesForDropDown_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexesForDropDown" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexesForDropDown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexesForDropDownResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetSpecialRemarksComboValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialRemarksComboValue" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetSpecialRemarksComboValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialRemarksComboValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexAllActiveManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexAllActiveManual" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexAllActiveManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexAllActiveManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexAllActiveMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexAllActiveMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetIndexAllActiveMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexAllActiveModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeManual" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeByMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeByMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeByMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeByModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeByIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeByIndex" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeByIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeByIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeByRepairCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeByRepairCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeByRepairCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeByRepairCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertRepairCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRepairCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertRepairCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRepairCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyRepairCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRepairCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyRepairCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRepairCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteRepairCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRepairCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteRepairCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRepairCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeActiveIndexManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeActiveIndexManual" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeActiveIndexManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeActiveIndexManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeIndexMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeIndexMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRepairCodeIndexMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepairCodeIndexModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertManualMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertManualMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertManualMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertManualModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteManualMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManualMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteManualMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManualModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyManualMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyManualMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_ModifyManualMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyManualModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManualMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManualMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManualMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManualModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManualModeManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManualModeManual" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManualModeManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManualModeManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllManual" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManualModeMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManualModeMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManualModeMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManualModeModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetDamageCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCodes" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetDamageCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetDamageCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetDamageCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateDamageCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDamageCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateDamageCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDamageCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateDamageCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDamageCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateDamageCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDamageCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteDamageCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDamageCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteDamageCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDamageCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAuditTrailData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditTrailData" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAuditTrailData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditTrailDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModes" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllActiveInActiveModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActiveInActiveModes" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAllActiveInActiveModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActiveInActiveModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMode" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetTPIIndicators_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTPIIndicators" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetTPIIndicators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTPIIndicatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetTPIIndicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTPIIndicator" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetTPIIndicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTPIIndicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateTPIIndicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTPIIndicator" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateTPIIndicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTPIIndicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteTPIIndicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTPIIndicator" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteTPIIndicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTPIIndicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateTPIIndicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTPIIndicator" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreateTPIIndicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTPIIndicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManual" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAuditTrailMDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditTrailMDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetAuditTrailMDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditTrailMDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManufacturerModelList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerModelList" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetManufacturerModelList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerModelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateManufacturerModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateManufacturerModel" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateManufacturerModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateManufacturerModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSByShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSByShop" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSByShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSByShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteManufacturerModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManufacturerModel" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeleteManufacturerModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManufacturerModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetShopByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetShopByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetShopProfileByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopProfileByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetShopProfileByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopProfileByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSAllCurrencies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSAllCurrencies" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSAllCurrencies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSAllCurrenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_RSAllCorpPayAgents_InputMessage">
+    <wsdl:part name="parameters" element="tns:RSAllCorpPayAgents" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_RSAllCorpPayAgents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RSAllCorpPayAgentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_RSVendorsByPayAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RSVendorsByPayAgent" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_RSVendorsByPayAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RSVendorsByPayAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSAllVendors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSAllVendors" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSAllVendors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSAllVendorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_RSByPayAgentVendor_InputMessage">
+    <wsdl:part name="parameters" element="tns:RSByPayAgentVendor" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_RSByPayAgentVendor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RSByPayAgentVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreatePayAgentVendor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePayAgentVendor" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_CreatePayAgentVendor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePayAgentVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeletePayAgentVendor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePayAgentVendor" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_DeletePayAgentVendor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePayAgentVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdatePayAgentVendor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePayAgentVendor" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdatePayAgentVendor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePayAgentVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSAllContracts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSAllContracts" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSAllContracts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSAllContractsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetModesByShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModesByShop" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetModesByShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModesByShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSByShopModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSByShopModes" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_GetRSByShopModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRSByShopModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertShopContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertShopContract" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_InsertShopContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertShopContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateShopContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShopContract" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_UpdateShopContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShopContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_FillShopContractEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:FillShopContractEdit" />
+  </wsdl:message>
+  <wsdl:message name="IManageMasterData_FillShopContractEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FillShopContractEditResponse" />
+  </wsdl:message>
   <wsdl:message name="IManageMasterData_DeleteShopContract_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteShopContract" />
   </wsdl:message>
@@ -757,258 +1135,6 @@
   </wsdl:message>
   <wsdl:message name="IManageMasterData_GetAllActiveModes_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllActiveModesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllActiveManuals_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllActiveManuals" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAllActiveManuals_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllActiveManualsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCode_PartAssociation_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCode_PartAssociation" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCode_PartAssociation_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCode_PartAssociationResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetModesByManuals_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetModesByManuals" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetModesByManuals_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetModesByManualsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_Add_Edit_RPA_InputMessage">
-    <wsdl:part name="parameters" element="tns:Add_Edit_RPA" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_Add_Edit_RPA_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Add_Edit_RPAResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateRPA_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateRPA" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateRPA_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateRPAResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteRPRCODE_PART_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRPRCODE_PART" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteRPRCODE_PART_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRPRCODE_PARTResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIPeriods_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIPeriods" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIPeriods_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIPeriodsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIPeriod_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIPeriod" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIPeriod_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIPeriodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreatePTIPeriod_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePTIPeriod" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreatePTIPeriod_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePTIPeriodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeletePTIPeriod_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeletePTIPeriod" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeletePTIPeriod_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeletePTIPeriodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyPTIPeriod_InputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyPTIPeriod" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyPTIPeriod_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyPTIPeriodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriod_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriod" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriod_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyPTIDefaultPeriod_InputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyPTIDefaultPeriod" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyPTIDefaultPeriod_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyPTIDefaultPeriodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriodRecord_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriodRecord" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetPTIDefaultPeriodRecord_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPTIDefaultPeriodRecordResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertSpecialRemarks_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertSpecialRemarks" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertSpecialRemarks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertSpecialRemarksResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifySpecialRemarks_InputMessage">
-    <wsdl:part name="parameters" element="tns:ModifySpecialRemarks" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifySpecialRemarks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ModifySpecialRemarksResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteSpecialRemarks_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteSpecialRemarks" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteSpecialRemarks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteSpecialRemarksResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetSpecialRemarks_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSpecialRemarks" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetSpecialRemarks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSpecialRemarksResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexes_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexes" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndex_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndex" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexManual_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexManual" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexManual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexManualResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateIndex_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateIndex" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateIndex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateIndexResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteIndex_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteIndex" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteIndex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteIndexResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateIndex_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateIndex" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreateIndex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateIndexResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexesForDropDown_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexesForDropDown" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexesForDropDown_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexesForDropDownResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetSpecialRemarksComboValue_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSpecialRemarksComboValue" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetSpecialRemarksComboValue_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSpecialRemarksComboValueResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexAllActiveManual_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexAllActiveManual" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexAllActiveManual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexAllActiveManualResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexAllActiveMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexAllActiveMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetIndexAllActiveMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetIndexAllActiveModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeManual_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeManual" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeManual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeManualResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeByMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeByMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeByMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeByModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeByIndex_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeByIndex" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeByIndex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeByIndexResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeByRepairCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeByRepairCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeByRepairCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeByRepairCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertRepairCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertRepairCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertRepairCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertRepairCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyRepairCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyRepairCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyRepairCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyRepairCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteRepairCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRepairCode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteRepairCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRepairCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeActiveIndexManual_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeActiveIndexManual" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeActiveIndexManual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeActiveIndexManualResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeIndexMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeIndexMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRepairCodeIndexMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRepairCodeIndexModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertManualMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertManualMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertManualMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertManualModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteManualMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteManualMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteManualMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteManualModeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyManualMode_InputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyManualMode" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_ModifyManualMode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyManualModeResponse" />
   </wsdl:message>
   <wsdl:message name="IManageMasterData_GetPayAgent_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPayAgent" />
@@ -1394,221 +1520,7 @@
   <wsdl:message name="IManageMasterData_CreateManufacturerDiscount_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateManufacturerDiscountResponse" />
   </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAuditTrailMDiscount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAuditTrailMDiscount" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetAuditTrailMDiscount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAuditTrailMDiscountResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManufacturerModelList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetManufacturerModelList" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetManufacturerModelList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetManufacturerModelListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateManufacturerModel_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateManufacturerModel" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateManufacturerModel_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateManufacturerModelResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSByShop_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSByShop" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSByShop_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSByShopResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteManufacturerModel_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteManufacturerModel" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeleteManufacturerModel_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteManufacturerModelResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetShopByUserId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetShopByUserId" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetShopByUserId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetShopByUserIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetShopProfileByUserId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetShopProfileByUserId" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetShopProfileByUserId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetShopProfileByUserIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSAllCurrencies_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSAllCurrencies" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSAllCurrencies_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSAllCurrenciesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_RSAllCorpPayAgents_InputMessage">
-    <wsdl:part name="parameters" element="tns:RSAllCorpPayAgents" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_RSAllCorpPayAgents_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RSAllCorpPayAgentsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_RSVendorsByPayAgent_InputMessage">
-    <wsdl:part name="parameters" element="tns:RSVendorsByPayAgent" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_RSVendorsByPayAgent_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RSVendorsByPayAgentResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSAllVendors_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSAllVendors" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSAllVendors_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSAllVendorsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_RSByPayAgentVendor_InputMessage">
-    <wsdl:part name="parameters" element="tns:RSByPayAgentVendor" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_RSByPayAgentVendor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RSByPayAgentVendorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreatePayAgentVendor_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePayAgentVendor" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_CreatePayAgentVendor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePayAgentVendorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeletePayAgentVendor_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeletePayAgentVendor" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_DeletePayAgentVendor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeletePayAgentVendorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdatePayAgentVendor_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdatePayAgentVendor" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdatePayAgentVendor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdatePayAgentVendorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSAllContracts_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSAllContracts" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSAllContracts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSAllContractsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetModesByShop_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetModesByShop" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetModesByShop_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetModesByShopResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSByShopModes_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSByShopModes" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_GetRSByShopModes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRSByShopModesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertShopContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertShopContract" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_InsertShopContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertShopContractResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateShopContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateShopContract" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_UpdateShopContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateShopContractResponse" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_FillShopContractEdit_InputMessage">
-    <wsdl:part name="parameters" element="tns:FillShopContractEdit" />
-  </wsdl:message>
-  <wsdl:message name="IManageMasterData_FillShopContractEdit_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FillShopContractEditResponse" />
-  </wsdl:message>
   <wsdl:portType name="IManageMasterData">
-    <wsdl:operation name="GetManualMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManualMode" message="tns:IManageMasterData_GetManualMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeResponse" message="tns:IManageMasterData_GetManualMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetManualModeManual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeManual" message="tns:IManageMasterData_GetManualModeManual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeManualResponse" message="tns:IManageMasterData_GetManualModeManual_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllManual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllManual" message="tns:IManageMasterData_GetAllManual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllManualResponse" message="tns:IManageMasterData_GetAllManual_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetManualModeMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeMode" message="tns:IManageMasterData_GetManualModeMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeModeResponse" message="tns:IManageMasterData_GetManualModeMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllMode" message="tns:IManageMasterData_GetAllMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllModeResponse" message="tns:IManageMasterData_GetAllMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDamageCodes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCodes" message="tns:IManageMasterData_GetDamageCodes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCodesResponse" message="tns:IManageMasterData_GetDamageCodes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDamageCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCode" message="tns:IManageMasterData_GetDamageCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCodeResponse" message="tns:IManageMasterData_GetDamageCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateDamageCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateDamageCode" message="tns:IManageMasterData_CreateDamageCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateDamageCodeResponse" message="tns:IManageMasterData_CreateDamageCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateDamageCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateDamageCode" message="tns:IManageMasterData_UpdateDamageCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateDamageCodeResponse" message="tns:IManageMasterData_UpdateDamageCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteDamageCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteDamageCode" message="tns:IManageMasterData_DeleteDamageCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteDamageCodeResponse" message="tns:IManageMasterData_DeleteDamageCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAuditTrailData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailData" message="tns:IManageMasterData_GetAuditTrailData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailDataResponse" message="tns:IManageMasterData_GetAuditTrailData_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetModes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetModes" message="tns:IManageMasterData_GetModes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModesResponse" message="tns:IManageMasterData_GetModes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllActiveInActiveModes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModes" message="tns:IManageMasterData_GetAllActiveInActiveModes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModesResponse" message="tns:IManageMasterData_GetAllActiveInActiveModes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetMode" message="tns:IManageMasterData_GetMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModeResponse" message="tns:IManageMasterData_GetMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateMode" message="tns:IManageMasterData_UpdateMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateModeResponse" message="tns:IManageMasterData_UpdateMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateMode" message="tns:IManageMasterData_CreateMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateModeResponse" message="tns:IManageMasterData_CreateMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTPIIndicators">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicators" message="tns:IManageMasterData_GetTPIIndicators_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicatorsResponse" message="tns:IManageMasterData_GetTPIIndicators_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTPIIndicator">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicator" message="tns:IManageMasterData_GetTPIIndicator_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicatorResponse" message="tns:IManageMasterData_GetTPIIndicator_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateTPIIndicator">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateTPIIndicator" message="tns:IManageMasterData_UpdateTPIIndicator_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateTPIIndicatorResponse" message="tns:IManageMasterData_UpdateTPIIndicator_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteTPIIndicator">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteTPIIndicator" message="tns:IManageMasterData_DeleteTPIIndicator_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteTPIIndicatorResponse" message="tns:IManageMasterData_DeleteTPIIndicator_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateTPIIndicator">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateTPIIndicator" message="tns:IManageMasterData_CreateTPIIndicator_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateTPIIndicatorResponse" message="tns:IManageMasterData_CreateTPIIndicator_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetManual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManual" message="tns:IManageMasterData_GetManual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualResponse" message="tns:IManageMasterData_GetManual_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="UpdateManualDescription">
       <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateManualDescription" message="tns:IManageMasterData_UpdateManualDescription_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateManualDescriptionResponse" message="tns:IManageMasterData_UpdateManualDescription_OutputMessage" />
@@ -1849,6 +1761,346 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetSTSDescription" message="tns:IManageMasterData_GetSTSDescription_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetSTSDescriptionResponse" message="tns:IManageMasterData_GetSTSDescription_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllActiveManuals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveManuals" message="tns:IManageMasterData_GetAllActiveManuals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveManualsResponse" message="tns:IManageMasterData_GetAllActiveManuals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCode_PartAssociation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociation" message="tns:IManageMasterData_GetRepairCode_PartAssociation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociationResponse" message="tns:IManageMasterData_GetRepairCode_PartAssociation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModesByManuals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByManuals" message="tns:IManageMasterData_GetModesByManuals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByManualsResponse" message="tns:IManageMasterData_GetModesByManuals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Edit_RPA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/Add_Edit_RPA" message="tns:IManageMasterData_Add_Edit_RPA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/Add_Edit_RPAResponse" message="tns:IManageMasterData_Add_Edit_RPA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRPA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateRPA" message="tns:IManageMasterData_UpdateRPA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateRPAResponse" message="tns:IManageMasterData_UpdateRPA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRPRCODE_PART">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PART" message="tns:IManageMasterData_DeleteRPRCODE_PART_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PARTResponse" message="tns:IManageMasterData_DeleteRPRCODE_PART_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIPeriods">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriods" message="tns:IManageMasterData_GetPTIPeriods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriodsResponse" message="tns:IManageMasterData_GetPTIPeriods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriod" message="tns:IManageMasterData_GetPTIPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriodResponse" message="tns:IManageMasterData_GetPTIPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePTIPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreatePTIPeriod" message="tns:IManageMasterData_CreatePTIPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreatePTIPeriodResponse" message="tns:IManageMasterData_CreatePTIPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePTIPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeletePTIPeriod" message="tns:IManageMasterData_DeletePTIPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeletePTIPeriodResponse" message="tns:IManageMasterData_DeletePTIPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPTIPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIPeriod" message="tns:IManageMasterData_ModifyPTIPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIPeriodResponse" message="tns:IManageMasterData_ModifyPTIPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIDefaultPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriod" message="tns:IManageMasterData_GetPTIDefaultPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodResponse" message="tns:IManageMasterData_GetPTIDefaultPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPTIDefaultPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriod" message="tns:IManageMasterData_ModifyPTIDefaultPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriodResponse" message="tns:IManageMasterData_ModifyPTIDefaultPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIDefaultPeriodRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecord" message="tns:IManageMasterData_GetPTIDefaultPeriodRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecordResponse" message="tns:IManageMasterData_GetPTIDefaultPeriodRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSpecialRemarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertSpecialRemarks" message="tns:IManageMasterData_InsertSpecialRemarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertSpecialRemarksResponse" message="tns:IManageMasterData_InsertSpecialRemarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifySpecialRemarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifySpecialRemarks" message="tns:IManageMasterData_ModifySpecialRemarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifySpecialRemarksResponse" message="tns:IManageMasterData_ModifySpecialRemarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpecialRemarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteSpecialRemarks" message="tns:IManageMasterData_DeleteSpecialRemarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteSpecialRemarksResponse" message="tns:IManageMasterData_DeleteSpecialRemarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialRemarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarks" message="tns:IManageMasterData_GetSpecialRemarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksResponse" message="tns:IManageMasterData_GetSpecialRemarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexes" message="tns:IManageMasterData_GetIndexes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexesResponse" message="tns:IManageMasterData_GetIndexes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndex" message="tns:IManageMasterData_GetIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexResponse" message="tns:IManageMasterData_GetIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexManual" message="tns:IManageMasterData_GetIndexManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexManualResponse" message="tns:IManageMasterData_GetIndexManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexMode" message="tns:IManageMasterData_GetIndexMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexModeResponse" message="tns:IManageMasterData_GetIndexMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateIndex" message="tns:IManageMasterData_UpdateIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateIndexResponse" message="tns:IManageMasterData_UpdateIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteIndex" message="tns:IManageMasterData_DeleteIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteIndexResponse" message="tns:IManageMasterData_DeleteIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateIndex" message="tns:IManageMasterData_CreateIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateIndexResponse" message="tns:IManageMasterData_CreateIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexesForDropDown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexesForDropDown" message="tns:IManageMasterData_GetIndexesForDropDown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexesForDropDownResponse" message="tns:IManageMasterData_GetIndexesForDropDown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialRemarksComboValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValue" message="tns:IManageMasterData_GetSpecialRemarksComboValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValueResponse" message="tns:IManageMasterData_GetSpecialRemarksComboValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexAllActiveManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveManual" message="tns:IManageMasterData_GetIndexAllActiveManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveManualResponse" message="tns:IManageMasterData_GetIndexAllActiveManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexAllActiveMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveMode" message="tns:IManageMasterData_GetIndexAllActiveMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveModeResponse" message="tns:IManageMasterData_GetIndexAllActiveMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeManual" message="tns:IManageMasterData_GetRepairCodeManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeManualResponse" message="tns:IManageMasterData_GetRepairCodeManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeMode" message="tns:IManageMasterData_GetRepairCodeMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeModeResponse" message="tns:IManageMasterData_GetRepairCodeMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeByMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByMode" message="tns:IManageMasterData_GetRepairCodeByMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByModeResponse" message="tns:IManageMasterData_GetRepairCodeByMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeByIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByIndex" message="tns:IManageMasterData_GetRepairCodeByIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByIndexResponse" message="tns:IManageMasterData_GetRepairCodeByIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeByRepairCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCode" message="tns:IManageMasterData_GetRepairCodeByRepairCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCodeResponse" message="tns:IManageMasterData_GetRepairCodeByRepairCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRepairCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertRepairCode" message="tns:IManageMasterData_InsertRepairCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertRepairCodeResponse" message="tns:IManageMasterData_InsertRepairCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRepairCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyRepairCode" message="tns:IManageMasterData_ModifyRepairCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyRepairCodeResponse" message="tns:IManageMasterData_ModifyRepairCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRepairCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRepairCode" message="tns:IManageMasterData_DeleteRepairCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRepairCodeResponse" message="tns:IManageMasterData_DeleteRepairCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeActiveIndexManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManual" message="tns:IManageMasterData_GetRepairCodeActiveIndexManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManualResponse" message="tns:IManageMasterData_GetRepairCodeActiveIndexManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeIndexMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeIndexMode" message="tns:IManageMasterData_GetRepairCodeIndexMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeIndexModeResponse" message="tns:IManageMasterData_GetRepairCodeIndexMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertManualMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertManualMode" message="tns:IManageMasterData_InsertManualMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertManualModeResponse" message="tns:IManageMasterData_InsertManualMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManualMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManualMode" message="tns:IManageMasterData_DeleteManualMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManualModeResponse" message="tns:IManageMasterData_DeleteManualMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyManualMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyManualMode" message="tns:IManageMasterData_ModifyManualMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyManualModeResponse" message="tns:IManageMasterData_ModifyManualMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManualMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManualMode" message="tns:IManageMasterData_GetManualMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeResponse" message="tns:IManageMasterData_GetManualMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManualModeManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeManual" message="tns:IManageMasterData_GetManualModeManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeManualResponse" message="tns:IManageMasterData_GetManualModeManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllManual" message="tns:IManageMasterData_GetAllManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllManualResponse" message="tns:IManageMasterData_GetAllManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManualModeMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeMode" message="tns:IManageMasterData_GetManualModeMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualModeModeResponse" message="tns:IManageMasterData_GetManualModeMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllMode" message="tns:IManageMasterData_GetAllMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllModeResponse" message="tns:IManageMasterData_GetAllMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDamageCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCodes" message="tns:IManageMasterData_GetDamageCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCodesResponse" message="tns:IManageMasterData_GetDamageCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDamageCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCode" message="tns:IManageMasterData_GetDamageCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetDamageCodeResponse" message="tns:IManageMasterData_GetDamageCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDamageCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateDamageCode" message="tns:IManageMasterData_CreateDamageCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateDamageCodeResponse" message="tns:IManageMasterData_CreateDamageCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDamageCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateDamageCode" message="tns:IManageMasterData_UpdateDamageCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateDamageCodeResponse" message="tns:IManageMasterData_UpdateDamageCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDamageCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteDamageCode" message="tns:IManageMasterData_DeleteDamageCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteDamageCodeResponse" message="tns:IManageMasterData_DeleteDamageCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditTrailData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailData" message="tns:IManageMasterData_GetAuditTrailData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailDataResponse" message="tns:IManageMasterData_GetAuditTrailData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetModes" message="tns:IManageMasterData_GetModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModesResponse" message="tns:IManageMasterData_GetModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveInActiveModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModes" message="tns:IManageMasterData_GetAllActiveInActiveModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModesResponse" message="tns:IManageMasterData_GetAllActiveInActiveModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetMode" message="tns:IManageMasterData_GetMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModeResponse" message="tns:IManageMasterData_GetMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateMode" message="tns:IManageMasterData_UpdateMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateModeResponse" message="tns:IManageMasterData_UpdateMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateMode" message="tns:IManageMasterData_CreateMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateModeResponse" message="tns:IManageMasterData_CreateMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTPIIndicators">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicators" message="tns:IManageMasterData_GetTPIIndicators_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicatorsResponse" message="tns:IManageMasterData_GetTPIIndicators_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTPIIndicator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicator" message="tns:IManageMasterData_GetTPIIndicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetTPIIndicatorResponse" message="tns:IManageMasterData_GetTPIIndicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTPIIndicator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateTPIIndicator" message="tns:IManageMasterData_UpdateTPIIndicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateTPIIndicatorResponse" message="tns:IManageMasterData_UpdateTPIIndicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTPIIndicator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteTPIIndicator" message="tns:IManageMasterData_DeleteTPIIndicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteTPIIndicatorResponse" message="tns:IManageMasterData_DeleteTPIIndicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTPIIndicator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateTPIIndicator" message="tns:IManageMasterData_CreateTPIIndicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateTPIIndicatorResponse" message="tns:IManageMasterData_CreateTPIIndicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManual" message="tns:IManageMasterData_GetManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManualResponse" message="tns:IManageMasterData_GetManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditTrailMDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscount" message="tns:IManageMasterData_GetAuditTrailMDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscountResponse" message="tns:IManageMasterData_GetAuditTrailMDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturerModelList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManufacturerModelList" message="tns:IManageMasterData_GetManufacturerModelList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManufacturerModelListResponse" message="tns:IManageMasterData_GetManufacturerModelList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManufacturerModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateManufacturerModel" message="tns:IManageMasterData_UpdateManufacturerModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateManufacturerModelResponse" message="tns:IManageMasterData_UpdateManufacturerModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRSByShop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShop" message="tns:IManageMasterData_GetRSByShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShopResponse" message="tns:IManageMasterData_GetRSByShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManufacturerModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManufacturerModel" message="tns:IManageMasterData_DeleteManufacturerModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManufacturerModelResponse" message="tns:IManageMasterData_DeleteManufacturerModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShopByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetShopByUserId" message="tns:IManageMasterData_GetShopByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetShopByUserIdResponse" message="tns:IManageMasterData_GetShopByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShopProfileByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetShopProfileByUserId" message="tns:IManageMasterData_GetShopProfileByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetShopProfileByUserIdResponse" message="tns:IManageMasterData_GetShopProfileByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRSAllCurrencies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllCurrencies" message="tns:IManageMasterData_GetRSAllCurrencies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllCurrenciesResponse" message="tns:IManageMasterData_GetRSAllCurrencies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RSAllCorpPayAgents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/RSAllCorpPayAgents" message="tns:IManageMasterData_RSAllCorpPayAgents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/RSAllCorpPayAgentsResponse" message="tns:IManageMasterData_RSAllCorpPayAgents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RSVendorsByPayAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/RSVendorsByPayAgent" message="tns:IManageMasterData_RSVendorsByPayAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/RSVendorsByPayAgentResponse" message="tns:IManageMasterData_RSVendorsByPayAgent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRSAllVendors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllVendors" message="tns:IManageMasterData_GetRSAllVendors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllVendorsResponse" message="tns:IManageMasterData_GetRSAllVendors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RSByPayAgentVendor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/RSByPayAgentVendor" message="tns:IManageMasterData_RSByPayAgentVendor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/RSByPayAgentVendorResponse" message="tns:IManageMasterData_RSByPayAgentVendor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePayAgentVendor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreatePayAgentVendor" message="tns:IManageMasterData_CreatePayAgentVendor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreatePayAgentVendorResponse" message="tns:IManageMasterData_CreatePayAgentVendor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePayAgentVendor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeletePayAgentVendor" message="tns:IManageMasterData_DeletePayAgentVendor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeletePayAgentVendorResponse" message="tns:IManageMasterData_DeletePayAgentVendor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayAgentVendor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdatePayAgentVendor" message="tns:IManageMasterData_UpdatePayAgentVendor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdatePayAgentVendorResponse" message="tns:IManageMasterData_UpdatePayAgentVendor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRSAllContracts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllContracts" message="tns:IManageMasterData_GetRSAllContracts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllContractsResponse" message="tns:IManageMasterData_GetRSAllContracts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModesByShop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByShop" message="tns:IManageMasterData_GetModesByShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByShopResponse" message="tns:IManageMasterData_GetModesByShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRSByShopModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShopModes" message="tns:IManageMasterData_GetRSByShopModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShopModesResponse" message="tns:IManageMasterData_GetRSByShopModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertShopContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertShopContract" message="tns:IManageMasterData_InsertShopContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertShopContractResponse" message="tns:IManageMasterData_InsertShopContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShopContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateShopContract" message="tns:IManageMasterData_UpdateShopContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateShopContractResponse" message="tns:IManageMasterData_UpdateShopContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FillShopContractEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/FillShopContractEdit" message="tns:IManageMasterData_FillShopContractEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/FillShopContractEditResponse" message="tns:IManageMasterData_FillShopContractEdit_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteShopContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteShopContract" message="tns:IManageMasterData_DeleteShopContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteShopContractResponse" message="tns:IManageMasterData_DeleteShopContract_OutputMessage" />
@@ -2020,174 +2272,6 @@
     <wsdl:operation name="GetAllActiveModes">
       <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveModes" message="tns:IManageMasterData_GetAllActiveModes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveModesResponse" message="tns:IManageMasterData_GetAllActiveModes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllActiveManuals">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveManuals" message="tns:IManageMasterData_GetAllActiveManuals_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAllActiveManualsResponse" message="tns:IManageMasterData_GetAllActiveManuals_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCode_PartAssociation">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociation" message="tns:IManageMasterData_GetRepairCode_PartAssociation_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociationResponse" message="tns:IManageMasterData_GetRepairCode_PartAssociation_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetModesByManuals">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByManuals" message="tns:IManageMasterData_GetModesByManuals_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByManualsResponse" message="tns:IManageMasterData_GetModesByManuals_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Add_Edit_RPA">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/Add_Edit_RPA" message="tns:IManageMasterData_Add_Edit_RPA_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/Add_Edit_RPAResponse" message="tns:IManageMasterData_Add_Edit_RPA_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateRPA">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateRPA" message="tns:IManageMasterData_UpdateRPA_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateRPAResponse" message="tns:IManageMasterData_UpdateRPA_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteRPRCODE_PART">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PART" message="tns:IManageMasterData_DeleteRPRCODE_PART_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PARTResponse" message="tns:IManageMasterData_DeleteRPRCODE_PART_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIPeriods">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriods" message="tns:IManageMasterData_GetPTIPeriods_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriodsResponse" message="tns:IManageMasterData_GetPTIPeriods_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIPeriod">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriod" message="tns:IManageMasterData_GetPTIPeriod_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIPeriodResponse" message="tns:IManageMasterData_GetPTIPeriod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreatePTIPeriod">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreatePTIPeriod" message="tns:IManageMasterData_CreatePTIPeriod_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreatePTIPeriodResponse" message="tns:IManageMasterData_CreatePTIPeriod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeletePTIPeriod">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeletePTIPeriod" message="tns:IManageMasterData_DeletePTIPeriod_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeletePTIPeriodResponse" message="tns:IManageMasterData_DeletePTIPeriod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ModifyPTIPeriod">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIPeriod" message="tns:IManageMasterData_ModifyPTIPeriod_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIPeriodResponse" message="tns:IManageMasterData_ModifyPTIPeriod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIDefaultPeriod">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriod" message="tns:IManageMasterData_GetPTIDefaultPeriod_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodResponse" message="tns:IManageMasterData_GetPTIDefaultPeriod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ModifyPTIDefaultPeriod">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriod" message="tns:IManageMasterData_ModifyPTIDefaultPeriod_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriodResponse" message="tns:IManageMasterData_ModifyPTIDefaultPeriod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIDefaultPeriodRecord">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecord" message="tns:IManageMasterData_GetPTIDefaultPeriodRecord_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecordResponse" message="tns:IManageMasterData_GetPTIDefaultPeriodRecord_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertSpecialRemarks">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertSpecialRemarks" message="tns:IManageMasterData_InsertSpecialRemarks_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertSpecialRemarksResponse" message="tns:IManageMasterData_InsertSpecialRemarks_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ModifySpecialRemarks">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifySpecialRemarks" message="tns:IManageMasterData_ModifySpecialRemarks_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifySpecialRemarksResponse" message="tns:IManageMasterData_ModifySpecialRemarks_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteSpecialRemarks">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteSpecialRemarks" message="tns:IManageMasterData_DeleteSpecialRemarks_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteSpecialRemarksResponse" message="tns:IManageMasterData_DeleteSpecialRemarks_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSpecialRemarks">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarks" message="tns:IManageMasterData_GetSpecialRemarks_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksResponse" message="tns:IManageMasterData_GetSpecialRemarks_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexes" message="tns:IManageMasterData_GetIndexes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexesResponse" message="tns:IManageMasterData_GetIndexes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetIndex">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndex" message="tns:IManageMasterData_GetIndex_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexResponse" message="tns:IManageMasterData_GetIndex_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexManual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexManual" message="tns:IManageMasterData_GetIndexManual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexManualResponse" message="tns:IManageMasterData_GetIndexManual_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexMode" message="tns:IManageMasterData_GetIndexMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexModeResponse" message="tns:IManageMasterData_GetIndexMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateIndex">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateIndex" message="tns:IManageMasterData_UpdateIndex_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateIndexResponse" message="tns:IManageMasterData_UpdateIndex_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteIndex">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteIndex" message="tns:IManageMasterData_DeleteIndex_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteIndexResponse" message="tns:IManageMasterData_DeleteIndex_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateIndex">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateIndex" message="tns:IManageMasterData_CreateIndex_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateIndexResponse" message="tns:IManageMasterData_CreateIndex_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexesForDropDown">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexesForDropDown" message="tns:IManageMasterData_GetIndexesForDropDown_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexesForDropDownResponse" message="tns:IManageMasterData_GetIndexesForDropDown_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSpecialRemarksComboValue">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValue" message="tns:IManageMasterData_GetSpecialRemarksComboValue_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValueResponse" message="tns:IManageMasterData_GetSpecialRemarksComboValue_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexAllActiveManual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveManual" message="tns:IManageMasterData_GetIndexAllActiveManual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveManualResponse" message="tns:IManageMasterData_GetIndexAllActiveManual_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexAllActiveMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveMode" message="tns:IManageMasterData_GetIndexAllActiveMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveModeResponse" message="tns:IManageMasterData_GetIndexAllActiveMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeManual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeManual" message="tns:IManageMasterData_GetRepairCodeManual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeManualResponse" message="tns:IManageMasterData_GetRepairCodeManual_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeMode" message="tns:IManageMasterData_GetRepairCodeMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeModeResponse" message="tns:IManageMasterData_GetRepairCodeMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeByMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByMode" message="tns:IManageMasterData_GetRepairCodeByMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByModeResponse" message="tns:IManageMasterData_GetRepairCodeByMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeByIndex">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByIndex" message="tns:IManageMasterData_GetRepairCodeByIndex_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByIndexResponse" message="tns:IManageMasterData_GetRepairCodeByIndex_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeByRepairCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCode" message="tns:IManageMasterData_GetRepairCodeByRepairCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCodeResponse" message="tns:IManageMasterData_GetRepairCodeByRepairCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertRepairCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertRepairCode" message="tns:IManageMasterData_InsertRepairCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertRepairCodeResponse" message="tns:IManageMasterData_InsertRepairCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ModifyRepairCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyRepairCode" message="tns:IManageMasterData_ModifyRepairCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyRepairCodeResponse" message="tns:IManageMasterData_ModifyRepairCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteRepairCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRepairCode" message="tns:IManageMasterData_DeleteRepairCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteRepairCodeResponse" message="tns:IManageMasterData_DeleteRepairCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeActiveIndexManual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManual" message="tns:IManageMasterData_GetRepairCodeActiveIndexManual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManualResponse" message="tns:IManageMasterData_GetRepairCodeActiveIndexManual_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeIndexMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeIndexMode" message="tns:IManageMasterData_GetRepairCodeIndexMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRepairCodeIndexModeResponse" message="tns:IManageMasterData_GetRepairCodeIndexMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertManualMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertManualMode" message="tns:IManageMasterData_InsertManualMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertManualModeResponse" message="tns:IManageMasterData_InsertManualMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteManualMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManualMode" message="tns:IManageMasterData_DeleteManualMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManualModeResponse" message="tns:IManageMasterData_DeleteManualMode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ModifyManualMode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/ModifyManualMode" message="tns:IManageMasterData_ModifyManualMode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/ModifyManualModeResponse" message="tns:IManageMasterData_ModifyManualMode_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPayAgent">
       <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetPayAgent" message="tns:IManageMasterData_GetPayAgent_InputMessage" />
@@ -2445,291 +2529,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreateManufacturerDiscount" message="tns:IManageMasterData_CreateManufacturerDiscount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreateManufacturerDiscountResponse" message="tns:IManageMasterData_CreateManufacturerDiscount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAuditTrailMDiscount">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscount" message="tns:IManageMasterData_GetAuditTrailMDiscount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscountResponse" message="tns:IManageMasterData_GetAuditTrailMDiscount_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetManufacturerModelList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetManufacturerModelList" message="tns:IManageMasterData_GetManufacturerModelList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetManufacturerModelListResponse" message="tns:IManageMasterData_GetManufacturerModelList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateManufacturerModel">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateManufacturerModel" message="tns:IManageMasterData_UpdateManufacturerModel_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateManufacturerModelResponse" message="tns:IManageMasterData_UpdateManufacturerModel_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRSByShop">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShop" message="tns:IManageMasterData_GetRSByShop_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShopResponse" message="tns:IManageMasterData_GetRSByShop_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteManufacturerModel">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManufacturerModel" message="tns:IManageMasterData_DeleteManufacturerModel_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeleteManufacturerModelResponse" message="tns:IManageMasterData_DeleteManufacturerModel_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetShopByUserId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetShopByUserId" message="tns:IManageMasterData_GetShopByUserId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetShopByUserIdResponse" message="tns:IManageMasterData_GetShopByUserId_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetShopProfileByUserId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetShopProfileByUserId" message="tns:IManageMasterData_GetShopProfileByUserId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetShopProfileByUserIdResponse" message="tns:IManageMasterData_GetShopProfileByUserId_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRSAllCurrencies">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllCurrencies" message="tns:IManageMasterData_GetRSAllCurrencies_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllCurrenciesResponse" message="tns:IManageMasterData_GetRSAllCurrencies_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="RSAllCorpPayAgents">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/RSAllCorpPayAgents" message="tns:IManageMasterData_RSAllCorpPayAgents_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/RSAllCorpPayAgentsResponse" message="tns:IManageMasterData_RSAllCorpPayAgents_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="RSVendorsByPayAgent">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/RSVendorsByPayAgent" message="tns:IManageMasterData_RSVendorsByPayAgent_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/RSVendorsByPayAgentResponse" message="tns:IManageMasterData_RSVendorsByPayAgent_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRSAllVendors">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllVendors" message="tns:IManageMasterData_GetRSAllVendors_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllVendorsResponse" message="tns:IManageMasterData_GetRSAllVendors_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="RSByPayAgentVendor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/RSByPayAgentVendor" message="tns:IManageMasterData_RSByPayAgentVendor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/RSByPayAgentVendorResponse" message="tns:IManageMasterData_RSByPayAgentVendor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreatePayAgentVendor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/CreatePayAgentVendor" message="tns:IManageMasterData_CreatePayAgentVendor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/CreatePayAgentVendorResponse" message="tns:IManageMasterData_CreatePayAgentVendor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeletePayAgentVendor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/DeletePayAgentVendor" message="tns:IManageMasterData_DeletePayAgentVendor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/DeletePayAgentVendorResponse" message="tns:IManageMasterData_DeletePayAgentVendor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePayAgentVendor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdatePayAgentVendor" message="tns:IManageMasterData_UpdatePayAgentVendor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdatePayAgentVendorResponse" message="tns:IManageMasterData_UpdatePayAgentVendor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRSAllContracts">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllContracts" message="tns:IManageMasterData_GetRSAllContracts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSAllContractsResponse" message="tns:IManageMasterData_GetRSAllContracts_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetModesByShop">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByShop" message="tns:IManageMasterData_GetModesByShop_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetModesByShopResponse" message="tns:IManageMasterData_GetModesByShop_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRSByShopModes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShopModes" message="tns:IManageMasterData_GetRSByShopModes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/GetRSByShopModesResponse" message="tns:IManageMasterData_GetRSByShopModes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertShopContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/InsertShopContract" message="tns:IManageMasterData_InsertShopContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/InsertShopContractResponse" message="tns:IManageMasterData_InsertShopContract_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateShopContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/UpdateShopContract" message="tns:IManageMasterData_UpdateShopContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/UpdateShopContractResponse" message="tns:IManageMasterData_UpdateShopContract_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="FillShopContractEdit">
-      <wsdl:input wsaw:Action="http://tempuri.org/IManageMasterData/FillShopContractEdit" message="tns:IManageMasterData_FillShopContractEdit_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IManageMasterData/FillShopContractEditResponse" message="tns:IManageMasterData_FillShopContractEdit_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IManageMasterData" type="tns:IManageMasterData">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetManualMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManualMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetManualModeManual">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManualModeManual" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllManual">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllManual" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetManualModeMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManualModeMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDamageCodes">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetDamageCodes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDamageCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetDamageCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateDamageCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateDamageCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateDamageCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateDamageCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteDamageCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteDamageCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAuditTrailData">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAuditTrailData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetModes">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetModes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllActiveInActiveModes">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTPIIndicators">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetTPIIndicators" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTPIIndicator">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetTPIIndicator" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateTPIIndicator">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateTPIIndicator" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteTPIIndicator">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteTPIIndicator" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateTPIIndicator">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateTPIIndicator" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetManual">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManual" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="UpdateManualDescription">
       <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateManualDescription" style="document" />
       <wsdl:input>
@@ -3270,6 +3072,771 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllActiveManuals">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllActiveManuals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCode_PartAssociation">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModesByManuals">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetModesByManuals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Edit_RPA">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/Add_Edit_RPA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRPA">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateRPA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRPRCODE_PART">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PART" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIPeriods">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIPeriods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIPeriod">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePTIPeriod">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreatePTIPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePTIPeriod">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeletePTIPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPTIPeriod">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyPTIPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIDefaultPeriod">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPTIDefaultPeriod">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPTIDefaultPeriodRecord">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSpecialRemarks">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertSpecialRemarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySpecialRemarks">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifySpecialRemarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpecialRemarks">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteSpecialRemarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialRemarks">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetSpecialRemarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexes">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndex">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexManual">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndex">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndex">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateIndex">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexesForDropDown">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexesForDropDown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialRemarksComboValue">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexAllActiveManual">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexAllActiveMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeManual">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeByMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeByMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeByIndex">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeByIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeByRepairCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRepairCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertRepairCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRepairCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyRepairCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRepairCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteRepairCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeActiveIndexManual">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepairCodeIndexMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeIndexMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertManualMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertManualMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManualMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteManualMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyManualMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyManualMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManualMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManualMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManualModeManual">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManualModeManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManual">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManualModeMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManualModeMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDamageCodes">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetDamageCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDamageCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetDamageCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDamageCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateDamageCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDamageCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateDamageCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDamageCode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteDamageCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditTrailData">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAuditTrailData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModes">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveInActiveModes">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMode">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPIIndicators">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetTPIIndicators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPIIndicator">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetTPIIndicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTPIIndicator">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateTPIIndicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTPIIndicator">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteTPIIndicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTPIIndicator">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateTPIIndicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManual">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditTrailMDiscount">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturerModelList">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManufacturerModelList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManufacturerModel">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateManufacturerModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRSByShop">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSByShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManufacturerModel">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteManufacturerModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopByUserId">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetShopByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopProfileByUserId">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetShopProfileByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRSAllCurrencies">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSAllCurrencies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RSAllCorpPayAgents">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/RSAllCorpPayAgents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RSVendorsByPayAgent">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/RSVendorsByPayAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRSAllVendors">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSAllVendors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RSByPayAgentVendor">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/RSByPayAgentVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePayAgentVendor">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreatePayAgentVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePayAgentVendor">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeletePayAgentVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayAgentVendor">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdatePayAgentVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRSAllContracts">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSAllContracts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModesByShop">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetModesByShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRSByShopModes">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSByShopModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertShopContract">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertShopContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShopContract">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateShopContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillShopContractEdit">
+      <soap:operation soapAction="http://tempuri.org/IManageMasterData/FillShopContractEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteShopContract">
       <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteShopContract" style="document" />
       <wsdl:input>
@@ -3650,384 +4217,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllActiveModes">
       <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllActiveModes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllActiveManuals">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAllActiveManuals" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCode_PartAssociation">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociation" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetModesByManuals">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetModesByManuals" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Add_Edit_RPA">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/Add_Edit_RPA" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateRPA">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateRPA" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteRPRCODE_PART">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PART" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIPeriods">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIPeriods" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIPeriod">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIPeriod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreatePTIPeriod">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreatePTIPeriod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeletePTIPeriod">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeletePTIPeriod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ModifyPTIPeriod">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyPTIPeriod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIDefaultPeriod">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ModifyPTIDefaultPeriod">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPTIDefaultPeriodRecord">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecord" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertSpecialRemarks">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertSpecialRemarks" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ModifySpecialRemarks">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifySpecialRemarks" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteSpecialRemarks">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteSpecialRemarks" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSpecialRemarks">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetSpecialRemarks" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexes">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetIndex">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndex" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexManual">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexManual" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateIndex">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateIndex" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteIndex">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteIndex" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateIndex">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateIndex" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexesForDropDown">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexesForDropDown" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSpecialRemarksComboValue">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValue" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexAllActiveManual">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveManual" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetIndexAllActiveMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeManual">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeManual" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeByMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeByMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeByIndex">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeByIndex" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeByRepairCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertRepairCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertRepairCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ModifyRepairCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyRepairCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteRepairCode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteRepairCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeActiveIndexManual">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManual" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRepairCodeIndexMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRepairCodeIndexMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertManualMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertManualMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteManualMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteManualMode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ModifyManualMode">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/ModifyManualMode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4604,195 +4793,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateManufacturerDiscount">
       <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreateManufacturerDiscount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAuditTrailMDiscount">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetManufacturerModelList">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetManufacturerModelList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateManufacturerModel">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateManufacturerModel" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRSByShop">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSByShop" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteManufacturerModel">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeleteManufacturerModel" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetShopByUserId">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetShopByUserId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetShopProfileByUserId">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetShopProfileByUserId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRSAllCurrencies">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSAllCurrencies" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RSAllCorpPayAgents">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/RSAllCorpPayAgents" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RSVendorsByPayAgent">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/RSVendorsByPayAgent" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRSAllVendors">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSAllVendors" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RSByPayAgentVendor">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/RSByPayAgentVendor" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreatePayAgentVendor">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/CreatePayAgentVendor" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeletePayAgentVendor">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/DeletePayAgentVendor" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePayAgentVendor">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdatePayAgentVendor" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRSAllContracts">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSAllContracts" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetModesByShop">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetModesByShop" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRSByShopModes">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/GetRSByShopModes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertShopContract">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/InsertShopContract" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateShopContract">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/UpdateShopContract" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FillShopContractEdit">
-      <soap:operation soapAction="http://tempuri.org/IManageMasterData/FillShopContractEdit" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

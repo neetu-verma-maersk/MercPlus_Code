@@ -241,6 +241,7 @@
     <Property Name="CREATEDON" Type="datetime" />
     <Property Name="MODIFIEDBY" Type="varchar" MaxLength="50" />
     <Property Name="MODIFIEDON" Type="datetime" />
+    <Property Name="FLAG" Type="bit" />
   </EntityType>
   <EntityType Name="MESC1TS_INSPECTION">
     <Key>

@@ -695,125 +695,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MESC1TS_WO">
-      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WO">
-        <MappingFragment StoreEntitySet="MESC1TS_WO">
-          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
-          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
-          <ScalarProperty Name="EQSIZE" ColumnName="EQSIZE" />
-          <ScalarProperty Name="MODE" ColumnName="MODE" />
-          <ScalarProperty Name="WOTYPE" ColumnName="WOTYPE" />
-          <ScalarProperty Name="EQOUTHGU" ColumnName="EQOUTHGU" />
-          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
-          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
-          <ScalarProperty Name="REPAIR_DTE" ColumnName="REPAIR_DTE" />
-          <ScalarProperty Name="EQOWNTP" ColumnName="EQOWNTP" />
-          <ScalarProperty Name="EQSTYPE" ColumnName="EQSTYPE" />
-          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
-          <ScalarProperty Name="STATUS_CODE" ColumnName="STATUS_CODE" />
-          <ScalarProperty Name="EQMATR" ColumnName="EQMATR" />
-          <ScalarProperty Name="EQTYPE" ColumnName="EQTYPE" />
-          <ScalarProperty Name="CAUSE" ColumnName="CAUSE" />
-          <ScalarProperty Name="DELDATSH" ColumnName="DELDATSH" />
-          <ScalarProperty Name="THIRD_PARTY" ColumnName="THIRD_PARTY" />
-          <ScalarProperty Name="STEMPTY" ColumnName="STEMPTY" />
-          <ScalarProperty Name="STREFURB" ColumnName="STREFURB" />
-          <ScalarProperty Name="MANH_RATE" ColumnName="MANH_RATE" />
-          <ScalarProperty Name="MANH_RATE_CPH" ColumnName="MANH_RATE_CPH" />
-          <ScalarProperty Name="REFRBDAT" ColumnName="REFRBDAT" />
-          <ScalarProperty Name="EXCHANGE_RATE" ColumnName="EXCHANGE_RATE" />
-          <ScalarProperty Name="STREDEL" ColumnName="STREDEL" />
-          <ScalarProperty Name="TOT_REPAIR_MANH" ColumnName="TOT_REPAIR_MANH" />
-          <ScalarProperty Name="FIXCOVER" ColumnName="FIXCOVER" />
-          <ScalarProperty Name="TOT_MANH_REG" ColumnName="TOT_MANH_REG" />
-          <ScalarProperty Name="DPP" ColumnName="DPP" />
-          <ScalarProperty Name="TOT_MANH_OT" ColumnName="TOT_MANH_OT" />
-          <ScalarProperty Name="OFFHIR_LOCATION_SW" ColumnName="OFFHIR_LOCATION_SW" />
-          <ScalarProperty Name="OT_RATE" ColumnName="OT_RATE" />
-          <ScalarProperty Name="STSELSCR" ColumnName="STSELSCR" />
-          <ScalarProperty Name="TOT_MANH_DT" ColumnName="TOT_MANH_DT" />
-          <ScalarProperty Name="EQPROFIL" ColumnName="EQPROFIL" />
-          <ScalarProperty Name="TOT_MANH_MISC" ColumnName="TOT_MANH_MISC" />
-          <ScalarProperty Name="EQINDAT" ColumnName="EQINDAT" />
-          <ScalarProperty Name="TOT_PREP_HRS" ColumnName="TOT_PREP_HRS" />
-          <ScalarProperty Name="EQRUTYP" ColumnName="EQRUTYP" />
-          <ScalarProperty Name="TOT_LABOR_HRS" ColumnName="TOT_LABOR_HRS" />
-          <ScalarProperty Name="TOT_LABOR_COST" ColumnName="TOT_LABOR_COST" />
-          <ScalarProperty Name="EQRUMAN" ColumnName="EQRUMAN" />
-          <ScalarProperty Name="TOT_SHOP_AMT" ColumnName="TOT_SHOP_AMT" />
-          <ScalarProperty Name="TOT_LABOR_COST_CPH" ColumnName="TOT_LABOR_COST_CPH" />
-          <ScalarProperty Name="TOT_COST_LOCAL" ColumnName="TOT_COST_LOCAL" />
-          <ScalarProperty Name="EQMANCD" ColumnName="EQMANCD" />
-          <ScalarProperty Name="VENDOR_REF_NO" ColumnName="VENDOR_REF_NO" />
-          <ScalarProperty Name="TOT_SHOP_AMT_CPH" ColumnName="TOT_SHOP_AMT_CPH" />
-          <ScalarProperty Name="EQIOFLT" ColumnName="EQIOFLT" />
-          <ScalarProperty Name="TOT_MAERSK_PARTS_CPH" ColumnName="TOT_MAERSK_PARTS_CPH" />
-          <ScalarProperty Name="VOUCHER_NO" ColumnName="VOUCHER_NO" />
-          <ScalarProperty Name="INVOICE_DTE" ColumnName="INVOICE_DTE" />
-          <ScalarProperty Name="TOT_MAN_PARTS_CPH" ColumnName="TOT_MAN_PARTS_CPH" />
-          <ScalarProperty Name="TOT_COST_CPH" ColumnName="TOT_COST_CPH" />
-          <ScalarProperty Name="CHECK_NO" ColumnName="CHECK_NO" />
-          <ScalarProperty Name="PAID_DTE" ColumnName="PAID_DTE" />
-          <ScalarProperty Name="AMOUNT_PAID" ColumnName="AMOUNT_PAID" />
-          <ScalarProperty Name="RKRP_REPAIR_DTE" ColumnName="RKRP_REPAIR_DTE" />
-          <ScalarProperty Name="RKRP_XMIT_DTE" ColumnName="RKRP_XMIT_DTE" />
-          <ScalarProperty Name="RKRP_XMIT_SW" ColumnName="RKRP_XMIT_SW" />
-          <ScalarProperty Name="WO_RECV_DTE" ColumnName="WO_RECV_DTE" />
-          <ScalarProperty Name="APPROVED_BY" ColumnName="APPROVED_BY" />
-          <ScalarProperty Name="SHOP_WORKING_SW" ColumnName="SHOP_WORKING_SW" />
-          <ScalarProperty Name="APPROVAL_DTE" ColumnName="APPROVAL_DTE" />
-          <ScalarProperty Name="IMPORT_TAX" ColumnName="IMPORT_TAX" />
-          <ScalarProperty Name="IMPORT_TAX_CPH" ColumnName="IMPORT_TAX_CPH" />
-          <ScalarProperty Name="SALES_TAX_LABOR" ColumnName="SALES_TAX_LABOR" />
-          <ScalarProperty Name="SALES_TAX_LABOR_CPH" ColumnName="SALES_TAX_LABOR_CPH" />
-          <ScalarProperty Name="SALES_TAX_PARTS" ColumnName="SALES_TAX_PARTS" />
-          <ScalarProperty Name="SALES_TAX_PARTS_CPH" ColumnName="SALES_TAX_PARTS_CPH" />
-          <ScalarProperty Name="TOT_MAERSK_PARTS" ColumnName="TOT_MAERSK_PARTS" />
-          <ScalarProperty Name="TOT_MAN_PARTS" ColumnName="TOT_MAN_PARTS" />
-          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
-          <ScalarProperty Name="EQPNO" ColumnName="EQPNO" />
-          <ScalarProperty Name="COTYPE" ColumnName="COTYPE" />
-          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
-          <ScalarProperty Name="REQ_REMARK_SW" ColumnName="REQ_REMARK_SW" />
-          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
-          <ScalarProperty Name="OT_RATE_CPH" ColumnName="OT_RATE_CPH" />
-          <ScalarProperty Name="DT_RATE" ColumnName="DT_RATE" />
-          <ScalarProperty Name="DT_RATE_CPH" ColumnName="DT_RATE_CPH" />
-          <ScalarProperty Name="MISC_RATE" ColumnName="MISC_RATE" />
-          <ScalarProperty Name="MISC_RATE_CPH" ColumnName="MISC_RATE_CPH" />
-          <ScalarProperty Name="TOTAL_COST_LOCAL_USD" ColumnName="TOTAL_COST_LOCAL_USD" />
-          <ScalarProperty Name="TOT_COST_REPAIR" ColumnName="TOT_COST_REPAIR" />
-          <ScalarProperty Name="TOT_COST_REPAIR_CPH" ColumnName="TOT_COST_REPAIR_CPH" />
-          <ScalarProperty Name="SALES_TAX_LABOR_PCT" ColumnName="SALES_TAX_LABOR_PCT" />
-          <ScalarProperty Name="SALES_TAX_PARTS_PCT" ColumnName="SALES_TAX_PARTS_PCT" />
-          <ScalarProperty Name="IMPORT_TAX_PCT" ColumnName="IMPORT_TAX_PCT" />
-          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
-          <ScalarProperty Name="AGENT_PARTS_TAX" ColumnName="AGENT_PARTS_TAX" />
-          <ScalarProperty Name="AGENT_PARTS_TAX_CPH" ColumnName="AGENT_PARTS_TAX_CPH" />
-          <ScalarProperty Name="COUNTRY_CUCDN" ColumnName="COUNTRY_CUCDN" />
-          <ScalarProperty Name="COUNTRY_EXCHANGE_RATE" ColumnName="COUNTRY_EXCHANGE_RATE" />
-          <ScalarProperty Name="COUNTRY_EXCHANGE_DTE" ColumnName="COUNTRY_EXCHANGE_DTE" />
-          <ScalarProperty Name="DAMAGE" ColumnName="DAMAGE" />
-          <ScalarProperty Name="LSCOMP" ColumnName="LSCOMP" />
-          <ScalarProperty Name="LSCONTR" ColumnName="LSCONTR" />
-          <ScalarProperty Name="REVISION_NO" ColumnName="REVISION_NO" />
-          <ScalarProperty Name="PREV_STATUS" ColumnName="PREV_STATUS" />
-          <ScalarProperty Name="PREV_DATE" ColumnName="PREV_DATE" />
-          <ScalarProperty Name="PREV_LOC_CD" ColumnName="PREV_LOC_CD" />
-          <ScalarProperty Name="TOT_W_MATERIAL_AMT" ColumnName="TOT_W_MATERIAL_AMT" />
-          <ScalarProperty Name="TOT_T_MATERIAL_AMT" ColumnName="TOT_T_MATERIAL_AMT" />
-          <ScalarProperty Name="TOT_W_MATERIAL_AMT_CPH" ColumnName="TOT_W_MATERIAL_AMT_CPH" />
-          <ScalarProperty Name="TOT_T_MATERIAL_AMT_CPH" ColumnName="TOT_T_MATERIAL_AMT_CPH" />
-          <ScalarProperty Name="TOT_W_MATERIAL_AMT_USD" ColumnName="TOT_W_MATERIAL_AMT_USD" />
-          <ScalarProperty Name="TOT_T_MATERIAL_AMT_USD" ColumnName="TOT_T_MATERIAL_AMT_USD" />
-          <ScalarProperty Name="TOT_T_MATERIAL_AMT_CPH_USD" ColumnName="TOT_T_MATERIAL_AMT_CPH_USD" />
-          <ScalarProperty Name="TOT_W_MATERIAL_AMT_CPH_USD" ColumnName="TOT_W_MATERIAL_AMT_CPH_USD" />
-          <ScalarProperty Name="PRESENTLOC" ColumnName="PRESENTLOC" />
-          <ScalarProperty Name="GATEINDTE" ColumnName="GATEINDTE" />
-          <ScalarProperty Name="prev_wo_id" ColumnName="prev_wo_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="MESC1TS_WOAUDIT">
       <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WOAUDIT">
         <MappingFragment StoreEntitySet="MESC1TS_WOAUDIT">
@@ -1087,6 +968,7 @@
     <EntitySetMapping Name="MESC1TS_GRADESTS">
       <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_GRADESTS">
         <MappingFragment StoreEntitySet="MESC1TS_GRADESTS">
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
           <ScalarProperty Name="MODIFIEDON" ColumnName="MODIFIEDON" />
           <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
           <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
@@ -1098,6 +980,125 @@
           <ScalarProperty Name="GRADECODE" ColumnName="GRADECODE" />
           <ScalarProperty Name="GRADE_ID" ColumnName="GRADE_ID" />
           <ScalarProperty Name="GSTS_ID" ColumnName="GSTS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESC1TS_WO">
+      <EntityTypeMapping TypeName="MESC2DSModel.MESC1TS_WO">
+        <MappingFragment StoreEntitySet="MESC1TS_WO">
+          <ScalarProperty Name="prev_wo_id" ColumnName="prev_wo_id" />
+          <ScalarProperty Name="GATEINDTE" ColumnName="GATEINDTE" />
+          <ScalarProperty Name="PRESENTLOC" ColumnName="PRESENTLOC" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT_CPH_USD" ColumnName="TOT_W_MATERIAL_AMT_CPH_USD" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT_CPH_USD" ColumnName="TOT_T_MATERIAL_AMT_CPH_USD" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT_USD" ColumnName="TOT_T_MATERIAL_AMT_USD" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT_USD" ColumnName="TOT_W_MATERIAL_AMT_USD" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT_CPH" ColumnName="TOT_T_MATERIAL_AMT_CPH" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT_CPH" ColumnName="TOT_W_MATERIAL_AMT_CPH" />
+          <ScalarProperty Name="TOT_T_MATERIAL_AMT" ColumnName="TOT_T_MATERIAL_AMT" />
+          <ScalarProperty Name="TOT_W_MATERIAL_AMT" ColumnName="TOT_W_MATERIAL_AMT" />
+          <ScalarProperty Name="PREV_LOC_CD" ColumnName="PREV_LOC_CD" />
+          <ScalarProperty Name="PREV_DATE" ColumnName="PREV_DATE" />
+          <ScalarProperty Name="PREV_STATUS" ColumnName="PREV_STATUS" />
+          <ScalarProperty Name="REVISION_NO" ColumnName="REVISION_NO" />
+          <ScalarProperty Name="LSCONTR" ColumnName="LSCONTR" />
+          <ScalarProperty Name="LSCOMP" ColumnName="LSCOMP" />
+          <ScalarProperty Name="DAMAGE" ColumnName="DAMAGE" />
+          <ScalarProperty Name="COUNTRY_EXCHANGE_DTE" ColumnName="COUNTRY_EXCHANGE_DTE" />
+          <ScalarProperty Name="COUNTRY_EXCHANGE_RATE" ColumnName="COUNTRY_EXCHANGE_RATE" />
+          <ScalarProperty Name="COUNTRY_CUCDN" ColumnName="COUNTRY_CUCDN" />
+          <ScalarProperty Name="AGENT_PARTS_TAX_CPH" ColumnName="AGENT_PARTS_TAX_CPH" />
+          <ScalarProperty Name="AGENT_PARTS_TAX" ColumnName="AGENT_PARTS_TAX" />
+          <ScalarProperty Name="CRTS" ColumnName="CRTS" />
+          <ScalarProperty Name="IMPORT_TAX_PCT" ColumnName="IMPORT_TAX_PCT" />
+          <ScalarProperty Name="SALES_TAX_PARTS_PCT" ColumnName="SALES_TAX_PARTS_PCT" />
+          <ScalarProperty Name="SALES_TAX_LABOR_PCT" ColumnName="SALES_TAX_LABOR_PCT" />
+          <ScalarProperty Name="TOT_COST_REPAIR_CPH" ColumnName="TOT_COST_REPAIR_CPH" />
+          <ScalarProperty Name="TOT_COST_REPAIR" ColumnName="TOT_COST_REPAIR" />
+          <ScalarProperty Name="TOTAL_COST_LOCAL_USD" ColumnName="TOTAL_COST_LOCAL_USD" />
+          <ScalarProperty Name="MISC_RATE_CPH" ColumnName="MISC_RATE_CPH" />
+          <ScalarProperty Name="MISC_RATE" ColumnName="MISC_RATE" />
+          <ScalarProperty Name="DT_RATE_CPH" ColumnName="DT_RATE_CPH" />
+          <ScalarProperty Name="DT_RATE" ColumnName="DT_RATE" />
+          <ScalarProperty Name="OT_RATE_CPH" ColumnName="OT_RATE_CPH" />
+          <ScalarProperty Name="CUCDN" ColumnName="CUCDN" />
+          <ScalarProperty Name="REQ_REMARK_SW" ColumnName="REQ_REMARK_SW" />
+          <ScalarProperty Name="VENDOR_CD" ColumnName="VENDOR_CD" />
+          <ScalarProperty Name="COTYPE" ColumnName="COTYPE" />
+          <ScalarProperty Name="EQPNO" ColumnName="EQPNO" />
+          <ScalarProperty Name="MANUAL_CD" ColumnName="MANUAL_CD" />
+          <ScalarProperty Name="TOT_MAN_PARTS" ColumnName="TOT_MAN_PARTS" />
+          <ScalarProperty Name="TOT_MAERSK_PARTS" ColumnName="TOT_MAERSK_PARTS" />
+          <ScalarProperty Name="SALES_TAX_PARTS_CPH" ColumnName="SALES_TAX_PARTS_CPH" />
+          <ScalarProperty Name="SALES_TAX_PARTS" ColumnName="SALES_TAX_PARTS" />
+          <ScalarProperty Name="SALES_TAX_LABOR_CPH" ColumnName="SALES_TAX_LABOR_CPH" />
+          <ScalarProperty Name="SALES_TAX_LABOR" ColumnName="SALES_TAX_LABOR" />
+          <ScalarProperty Name="IMPORT_TAX_CPH" ColumnName="IMPORT_TAX_CPH" />
+          <ScalarProperty Name="IMPORT_TAX" ColumnName="IMPORT_TAX" />
+          <ScalarProperty Name="APPROVAL_DTE" ColumnName="APPROVAL_DTE" />
+          <ScalarProperty Name="SHOP_WORKING_SW" ColumnName="SHOP_WORKING_SW" />
+          <ScalarProperty Name="APPROVED_BY" ColumnName="APPROVED_BY" />
+          <ScalarProperty Name="WO_RECV_DTE" ColumnName="WO_RECV_DTE" />
+          <ScalarProperty Name="RKRP_XMIT_SW" ColumnName="RKRP_XMIT_SW" />
+          <ScalarProperty Name="RKRP_XMIT_DTE" ColumnName="RKRP_XMIT_DTE" />
+          <ScalarProperty Name="RKRP_REPAIR_DTE" ColumnName="RKRP_REPAIR_DTE" />
+          <ScalarProperty Name="AMOUNT_PAID" ColumnName="AMOUNT_PAID" />
+          <ScalarProperty Name="PAID_DTE" ColumnName="PAID_DTE" />
+          <ScalarProperty Name="CHECK_NO" ColumnName="CHECK_NO" />
+          <ScalarProperty Name="TOT_COST_CPH" ColumnName="TOT_COST_CPH" />
+          <ScalarProperty Name="TOT_MAN_PARTS_CPH" ColumnName="TOT_MAN_PARTS_CPH" />
+          <ScalarProperty Name="INVOICE_DTE" ColumnName="INVOICE_DTE" />
+          <ScalarProperty Name="VOUCHER_NO" ColumnName="VOUCHER_NO" />
+          <ScalarProperty Name="TOT_MAERSK_PARTS_CPH" ColumnName="TOT_MAERSK_PARTS_CPH" />
+          <ScalarProperty Name="EQIOFLT" ColumnName="EQIOFLT" />
+          <ScalarProperty Name="TOT_SHOP_AMT_CPH" ColumnName="TOT_SHOP_AMT_CPH" />
+          <ScalarProperty Name="VENDOR_REF_NO" ColumnName="VENDOR_REF_NO" />
+          <ScalarProperty Name="EQMANCD" ColumnName="EQMANCD" />
+          <ScalarProperty Name="TOT_COST_LOCAL" ColumnName="TOT_COST_LOCAL" />
+          <ScalarProperty Name="TOT_LABOR_COST_CPH" ColumnName="TOT_LABOR_COST_CPH" />
+          <ScalarProperty Name="TOT_SHOP_AMT" ColumnName="TOT_SHOP_AMT" />
+          <ScalarProperty Name="EQRUMAN" ColumnName="EQRUMAN" />
+          <ScalarProperty Name="TOT_LABOR_COST" ColumnName="TOT_LABOR_COST" />
+          <ScalarProperty Name="TOT_LABOR_HRS" ColumnName="TOT_LABOR_HRS" />
+          <ScalarProperty Name="EQRUTYP" ColumnName="EQRUTYP" />
+          <ScalarProperty Name="TOT_PREP_HRS" ColumnName="TOT_PREP_HRS" />
+          <ScalarProperty Name="EQINDAT" ColumnName="EQINDAT" />
+          <ScalarProperty Name="TOT_MANH_MISC" ColumnName="TOT_MANH_MISC" />
+          <ScalarProperty Name="EQPROFIL" ColumnName="EQPROFIL" />
+          <ScalarProperty Name="TOT_MANH_DT" ColumnName="TOT_MANH_DT" />
+          <ScalarProperty Name="STSELSCR" ColumnName="STSELSCR" />
+          <ScalarProperty Name="OT_RATE" ColumnName="OT_RATE" />
+          <ScalarProperty Name="OFFHIR_LOCATION_SW" ColumnName="OFFHIR_LOCATION_SW" />
+          <ScalarProperty Name="TOT_MANH_OT" ColumnName="TOT_MANH_OT" />
+          <ScalarProperty Name="DPP" ColumnName="DPP" />
+          <ScalarProperty Name="TOT_MANH_REG" ColumnName="TOT_MANH_REG" />
+          <ScalarProperty Name="FIXCOVER" ColumnName="FIXCOVER" />
+          <ScalarProperty Name="TOT_REPAIR_MANH" ColumnName="TOT_REPAIR_MANH" />
+          <ScalarProperty Name="STREDEL" ColumnName="STREDEL" />
+          <ScalarProperty Name="EXCHANGE_RATE" ColumnName="EXCHANGE_RATE" />
+          <ScalarProperty Name="REFRBDAT" ColumnName="REFRBDAT" />
+          <ScalarProperty Name="MANH_RATE_CPH" ColumnName="MANH_RATE_CPH" />
+          <ScalarProperty Name="MANH_RATE" ColumnName="MANH_RATE" />
+          <ScalarProperty Name="STREFURB" ColumnName="STREFURB" />
+          <ScalarProperty Name="STEMPTY" ColumnName="STEMPTY" />
+          <ScalarProperty Name="THIRD_PARTY" ColumnName="THIRD_PARTY" />
+          <ScalarProperty Name="DELDATSH" ColumnName="DELDATSH" />
+          <ScalarProperty Name="CAUSE" ColumnName="CAUSE" />
+          <ScalarProperty Name="EQTYPE" ColumnName="EQTYPE" />
+          <ScalarProperty Name="EQMATR" ColumnName="EQMATR" />
+          <ScalarProperty Name="STATUS_CODE" ColumnName="STATUS_CODE" />
+          <ScalarProperty Name="CHTS" ColumnName="CHTS" />
+          <ScalarProperty Name="EQSTYPE" ColumnName="EQSTYPE" />
+          <ScalarProperty Name="EQOWNTP" ColumnName="EQOWNTP" />
+          <ScalarProperty Name="REPAIR_DTE" ColumnName="REPAIR_DTE" />
+          <ScalarProperty Name="SHOP_CD" ColumnName="SHOP_CD" />
+          <ScalarProperty Name="CHUSER" ColumnName="CHUSER" />
+          <ScalarProperty Name="EQOUTHGU" ColumnName="EQOUTHGU" />
+          <ScalarProperty Name="WOTYPE" ColumnName="WOTYPE" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="EQSIZE" ColumnName="EQSIZE" />
+          <ScalarProperty Name="CUSTOMER_CD" ColumnName="CUSTOMER_CD" />
+          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
