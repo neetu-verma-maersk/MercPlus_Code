@@ -64,26 +64,28 @@ namespace MercFACTUpload
 
             try
             {
-
+                logEntry.Message = "Getting eligible work orders";
+                Logger.Write(logEntry);
                 List<MercFactUploadEntity> Wolist = objDal.GetEligibleWorkOrder();
-
+                logEntry.Message = "Total no. of eligible WO fetched: "+ Wolist.Count();
+                Logger.Write(logEntry);
+                
                 if (Wolist.Count() > 0)
                 {
-
+                    logEntry.Message = "Starting the processing";
+                    Logger.Write(logEntry);
                     ProcessWorkOrder(Wolist);
-
+                    logEntry.Message = "Finished processing";
+                    Logger.Write(logEntry);
                 }
-
             }
 
             catch (Exception ex)
             {
                 message = "Failed read of elligible work orders for FACT upload:";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: "+ ex.StackTrace;
                 Logger.Write(logEntry);
             }
-
-
         }
 
         public void ProcessWorkOrder(List<MercFactUploadEntity> Wolist)
@@ -186,7 +188,7 @@ namespace MercFACTUpload
                         catch (MQException mqException)
                         {
 
-                            message = "Write log - A problem occured while retrieving the MQ message: " + mqException.Message.ToString();
+                            message = "Write log - A problem occured while retrieving the MQ message: " + mqException.Message.ToString() + " innerException: "+mqException.InnerException.ToString();
                             logEntry.Message = message;
                             Logger.Write(logEntry);
 
@@ -203,7 +205,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error to fail process WorkOrder";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
 
@@ -236,7 +238,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in adding Build Broker Header";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
         }
@@ -273,7 +275,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in adding Build Header";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
         }
@@ -469,7 +471,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error to set the part price";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
         }
@@ -545,7 +547,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in writing the tag with BuildRepairParts";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
         }
@@ -961,7 +963,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in writing the tag for BuildParts";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
         }
@@ -997,7 +999,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in writing the tag ofBuildShopMaterials";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
         }
@@ -1129,7 +1131,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in writingg the tag of BuilOverTimes";
-                logEntry.Message = logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
         }
@@ -1430,7 +1432,7 @@ namespace MercFACTUpload
             {
                 objDal.SendEventTableAudit(Convert.ToInt32(pWO.WO_ID), "Fail on build of RRIS01 message");
                 message = "Fail on build of RRIS01 message";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
                 return (sNullStr);
                 //return(sRRISMsg);
@@ -1472,7 +1474,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in getting the next voucher number";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
 
@@ -1558,7 +1560,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in formatting the string";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
             }
             return (sFormatString);
@@ -1722,7 +1724,7 @@ namespace MercFACTUpload
             catch (Exception ex)
             {
                 message = "Error in finding the eligible WorkOrder";
-                logEntry.Message = (message) + "  " + ex.Message;
+                logEntry.Message = (message) + "  " + ex.Message + " inner exception: " + ex.InnerException + " stack trace: " + ex.StackTrace;
                 Logger.Write(logEntry);
                 return false;
             }
