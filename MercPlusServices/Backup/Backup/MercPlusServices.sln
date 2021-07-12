@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageReportsService", "ManageReportsService\ManageReportsService.csproj", "{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageMasterDataService", "ManageMasterDataService\ManageMasterDataService.csproj", "{DA844389-A792-47AD-8DC9-50345FFDF41C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageUserService", "ManageUserService\ManageUserService.csproj", "{2EFA814E-644D-461A-993F-E7F5606ADD3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateWorkOrderService", "CreateWorkOrderService\CreateWorkOrderService.csproj", "{AA79E79E-5529-421F-9138-6FA87397B1E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA844389-A792-47AD-8DC9-50345FFDF41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFA814E-644D-461A-993F-E7F5606ADD3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA79E79E-5529-421F-9138-6FA87397B1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

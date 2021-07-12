@@ -196,3 +196,21 @@ C:\MERCPLUS_TCS\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterD
 C:\MERCPLUS_TCS\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.csproj.CopyComplete
 C:\MERCPLUS_TCS\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.dll
 C:\MERCPLUS_TCS\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll.config
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\ManageMasterDataService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\EntityFramework.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\amqmdnet.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\Microsoft.Practices.Unity.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\MercPlusLibrary.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\bin\EntityFramework.xml
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.csprojAssemblyReference.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.csproj.CoreCompileInputs.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.csproj.CopyComplete
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageMasterDataService\obj\Debug\ManageMasterDataService.pdb

@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1231
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageReportsService", "ManageReportsService\ManageReportsService.csproj", "{A0F90D05-12C3-4F8F-A1D7-FC3B2A193457}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageMasterDataService", "ManageMasterDataService\ManageMasterDataService.csproj", "{DA844389-A792-47AD-8DC9-50345FFDF41C}"
@@ -34,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12758EB0-EBB9-4429-91EC-9B1FF5032DD3}
 	EndGlobalSection
 EndGlobal

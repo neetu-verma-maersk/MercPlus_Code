@@ -224,3 +224,21 @@ C:\MERCPLUS_TCS\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrde
 C:\MERCPLUS_TCS\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.csproj.CopyComplete
 C:\MERCPLUS_TCS\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.dll
 C:\MERCPLUS_TCS\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\ManageWorkOrderService.dll.config
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\ManageWorkOrderService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\ManageWorkOrderService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\amqmdnet.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\EntityFramework.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\MercPlusLibrary.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\Microsoft.Practices.Unity.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\MercPlusLibrary.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\bin\EntityFramework.xml
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.csprojAssemblyReference.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.csproj.CoreCompileInputs.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.csproj.CopyComplete
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageWorkOrderService\obj\Debug\ManageWorkOrderService.pdb

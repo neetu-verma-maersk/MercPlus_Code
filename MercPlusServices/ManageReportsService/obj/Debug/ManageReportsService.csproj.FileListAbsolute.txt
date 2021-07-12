@@ -185,3 +185,21 @@ C:\MERCPLUS_TCS\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsSer
 C:\MERCPLUS_TCS\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.dll
 C:\MERCPLUS_TCS\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.pdb
 C:\MERCPLUS_TCS\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.csprojAssemblyReference.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\ManageReportsService.dll.config
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\ManageReportsService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\ManageReportsService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\EntityFramework.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\MercPlusLibrary.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\amqmdnet.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\Microsoft.Practices.Unity.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\EntityFramework.xml
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\bin\MercPlusLibrary.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.csprojAssemblyReference.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.csproj.CoreCompileInputs.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.csproj.CopyComplete
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageReportsService\obj\Debug\ManageReportsService.pdb

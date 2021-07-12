@@ -197,3 +197,21 @@ C:\MERCPLUS_TCS\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.c
 C:\MERCPLUS_TCS\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.csproj.CopyComplete
 C:\MERCPLUS_TCS\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.dll
 C:\MERCPLUS_TCS\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\ManageUserService.dll.config
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\ManageUserService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\ManageUserService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\EntityFramework.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\MercPlusLibrary.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\amqmdnet.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\Microsoft.Practices.Unity.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\EntityFramework.xml
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\bin\MercPlusLibrary.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.csprojAssemblyReference.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.csproj.CoreCompileInputs.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.csproj.CopyComplete
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageUserService\obj\Debug\ManageUserService.pdb

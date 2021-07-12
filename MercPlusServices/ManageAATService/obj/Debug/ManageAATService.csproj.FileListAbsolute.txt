@@ -189,3 +189,21 @@ C:\MERCPLUS_TCS\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.csp
 C:\MERCPLUS_TCS\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.csproj.CopyComplete
 C:\MERCPLUS_TCS\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.dll
 C:\MERCPLUS_TCS\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\ManageAATService.dll.config
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\ManageAATService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\ManageAATService.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\EntityFramework.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\MercPlusLibrary.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\amqmdnet.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\Microsoft.Practices.Unity.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\MercPlusLibrary.pdb
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\bin\EntityFramework.xml
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.csprojAssemblyReference.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.csproj.CoreCompileInputs.cache
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.csproj.CopyComplete
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.dll
+C:\Users\pre047\Documents\AMS\MERC+\MERCPLUS_GITNew (2)\GITHUB\MercPlus_Code_v1.2\MercPlusServices\ManageAATService\obj\Debug\ManageAATService.pdb
