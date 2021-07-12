@@ -98,6 +98,9 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         private System.Nullable<System.DateTime> GateInDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GradeCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> ImportTaxField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -138,6 +141,9 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ModeDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NewGradeCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> OverTimeRateField;
@@ -700,6 +706,19 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GradeCode {
+            get {
+                return this.GradeCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GradeCodeField, value) != true)) {
+                    this.GradeCodeField = value;
+                    this.RaisePropertyChanged("GradeCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ImportTax {
             get {
                 return this.ImportTaxField;
@@ -877,6 +896,19 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
                 if ((object.ReferenceEquals(this.ModeDescriptionField, value) != true)) {
                     this.ModeDescriptionField = value;
                     this.RaisePropertyChanged("ModeDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NewGradeCode {
+            get {
+                return this.NewGradeCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NewGradeCodeField, value) != true)) {
+                    this.NewGradeCodeField = value;
+                    this.RaisePropertyChanged("NewGradeCode");
                 }
             }
         }
@@ -2542,6 +2574,9 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         private System.Collections.Generic.List<MercPlusClient.ManageWorkOrderServiceReference.Mode> ModeListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NewGradeCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OffhirLocationSWField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2579,6 +2614,9 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StrefurbField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TempGradeCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
@@ -3003,6 +3041,19 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NewGradeCode {
+            get {
+                return this.NewGradeCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NewGradeCodeField, value) != true)) {
+                    this.NewGradeCodeField = value;
+                    this.RaisePropertyChanged("NewGradeCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string OffhirLocationSW {
             get {
                 return this.OffhirLocationSWField;
@@ -3167,6 +3218,19 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
                 if ((object.ReferenceEquals(this.StrefurbField, value) != true)) {
                     this.StrefurbField = value;
                     this.RaisePropertyChanged("Strefurb");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TempGradeCode {
+            get {
+                return this.TempGradeCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TempGradeCodeField, value) != true)) {
+                    this.TempGradeCodeField = value;
+                    this.RaisePropertyChanged("TempGradeCode");
                 }
             }
         }
@@ -11287,6 +11351,9 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageWorkOrder/GetMercDamageCode", ReplyAction="http://tempuri.org/IManageWorkOrder/GetMercDamageCodeResponse")]
         System.Collections.Generic.List<string> GetMercDamageCode(int WOID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageWorkOrder/GetMercGradeCode", ReplyAction="http://tempuri.org/IManageWorkOrder/GetMercGradeCodeResponse")]
+        System.Collections.Generic.List<string> GetMercGradeCode(int WOID, string EQP);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageWorkOrder/GetServiceStatus", ReplyAction="http://tempuri.org/IManageWorkOrder/GetServiceStatusResponse")]
         bool GetServiceStatus();
     }
@@ -11556,6 +11623,10 @@ namespace MercPlusClient.ManageWorkOrderServiceReference {
         
         public System.Collections.Generic.List<string> GetMercDamageCode(int WOID) {
             return base.Channel.GetMercDamageCode(WOID);
+        }
+        
+        public System.Collections.Generic.List<string> GetMercGradeCode(int WOID, string EQP) {
+            return base.Channel.GetMercGradeCode(WOID, EQP);
         }
         
         public bool GetServiceStatus() {

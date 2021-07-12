@@ -85,6 +85,12 @@ namespace MercPlusClient.Areas.ManageWorkOrder.Models
         [Display(Name = "Curr Move")]                                                                             //MERC-RKEM Damage Code
         public string CurrMove { get; set; }
 
+        [Display(Name = "RKEM Grade")]                                                                             //MERC-RKEM Damage Code
+        public string RGrade { get; set; }
+
+        [Display(Name = "Merc Grade")]                                                                             //MERC-RKEM Damage Code
+        public string MercGrade { get; set; }
+
         [Display(Name = "Damage Code")]
         public string DamageCode { get; set; }
 

@@ -12,6 +12,7 @@ namespace MercPlusClient.Areas.ManageMasterData.Models
         public string STSDescription { get; set; }
         public string Mode { get; set; }
         public string ManualCD { get; set; }
+        public bool Flag { get; set; }  //Saatvik
         public List<GradeSTSRelationModel> GradeSTSRelationModel { get; set; }        
     }
 }

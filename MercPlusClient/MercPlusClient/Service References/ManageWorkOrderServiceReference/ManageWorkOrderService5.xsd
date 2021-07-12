@@ -29,6 +29,7 @@
       <xs:element minOccurs="0" name="ExchangeRate" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="GateInDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ImportTax" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="ImportTaxCPH" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="ImportTaxCost" type="xs:dateTime" />
@@ -43,6 +44,7 @@
       <xs:element minOccurs="0" name="MiscRateCPH" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ModeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewGradeCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OverTimeRate" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="OverTimeRateCPH" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="PaidDate" nillable="true" type="xs:dateTime" />
@@ -160,6 +162,7 @@
       <xs:element minOccurs="0" name="LeasingContract" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MaerskSwitch" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ModeList" nillable="true" type="tns:ArrayOfMode" />
+      <xs:element minOccurs="0" name="NewGradeCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OffhirLocationSW" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PLAWHO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PresentLoc" nillable="true" type="xs:string" />
@@ -173,6 +176,7 @@
       <xs:element minOccurs="0" name="StEmptyFullInd" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Stredel" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Strefurb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempGradeCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UnitIdentifierDigit" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VendorRefNo" nillable="true" type="xs:string" />

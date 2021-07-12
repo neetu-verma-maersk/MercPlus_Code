@@ -320,6 +320,12 @@
   <wsdl:message name="IManageWorkOrder_GetMercDamageCode_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMercDamageCodeResponse" />
   </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetMercGradeCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMercGradeCode" />
+  </wsdl:message>
+  <wsdl:message name="IManageWorkOrder_GetMercGradeCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMercGradeCodeResponse" />
+  </wsdl:message>
   <wsdl:message name="IManageWorkOrder_GetServiceStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:GetServiceStatus" />
   </wsdl:message>
@@ -534,6 +540,10 @@
     <wsdl:operation name="GetMercDamageCode">
       <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetMercDamageCode" message="tns:IManageWorkOrder_GetMercDamageCode_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetMercDamageCodeResponse" message="tns:IManageWorkOrder_GetMercDamageCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMercGradeCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetMercGradeCode" message="tns:IManageWorkOrder_GetMercGradeCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageWorkOrder/GetMercGradeCodeResponse" message="tns:IManageWorkOrder_GetMercGradeCode_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetServiceStatus">
       <wsdl:input wsaw:Action="http://tempuri.org/IManageWorkOrder/GetServiceStatus" message="tns:IManageWorkOrder_GetServiceStatus_InputMessage" />
@@ -1003,6 +1013,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMercDamageCode">
       <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetMercDamageCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMercGradeCode">
+      <soap:operation soapAction="http://tempuri.org/IManageWorkOrder/GetMercGradeCode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

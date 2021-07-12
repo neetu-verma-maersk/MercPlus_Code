@@ -7097,7 +7097,7 @@ namespace ManageWorkOrderService
 
 
 
-
+        /*
         public bool CreateWorkOrder(WorkOrderDetail workorderDetail, out List<ErrMessage> errorMessageList)
         {
             WOIDmutex.WaitOne(); //Allows one thread at a time for getting the WO ID
@@ -7268,7 +7268,7 @@ namespace ManageWorkOrderService
 
                             //workOrder.GATEINDTE = DateTime.Now; // workorderDetail.GateInDate;
 
-                            /*Rohit Mallick added as these were missing : starts*/
+                            
 
                             workOrder.TOT_W_MATERIAL_AMT = workorderDetail.TotalWMaterialAmount;
                             workOrder.TOT_T_MATERIAL_AMT = workorderDetail.TotalTMaterialAmount;
@@ -7279,7 +7279,7 @@ namespace ManageWorkOrderService
                             workOrder.TOT_W_MATERIAL_AMT_CPH_USD = workorderDetail.TotalWMaterialAmountCPHUSD;
                             workOrder.TOT_T_MATERIAL_AMT_CPH_USD = workorderDetail.TotalTMaterialAmountCPHUSD;
                             workOrder.COUNTRY_EXCHANGE_RATE = workorderDetail.CountryExchangeRate;
-                            /*Rohit Mallick added as these were missing : ends*/
+                            
 
                             context.MESC1TS_WO.Add(workOrder);
                             context.SaveChanges();
@@ -7546,7 +7546,456 @@ namespace ManageWorkOrderService
             return true;
 
         }
+        */
 
+        public bool CreateWorkOrder(WorkOrderDetail workorderDetail, out List<ErrMessage> errorMessageList)
+        {
+            WOIDmutex.WaitOne(); //Allows one thread at a time for getting the WO ID
+            Thread.Sleep(100);
+            ManageWorkOrderServiceEntities context = new ManageWorkOrderServiceEntities();
+            bool success = false;
+            string chUser = "";
+            int NextID = 0;
+            MESC1TS_WO workOrder = null;
+            errorMessageList = new List<ErrMessage>();
+            ErrMessage Message = new ErrMessage();
+            //objContext = new CreateWorkOrderServiceEntities();
+            chUser = GetFormattedCHUSER(workorderDetail.ChangeUser);
+            Equipment Eqp = workorderDetail.EquipmentList[0];
+            Customer customer = workorderDetail.Shop.Customer[0];
+            LaborRate Labor = workorderDetail.Shop.LaborRate[0];
+
+            string RKEM_PL_Log_2 = string.Empty;//Kasturee_RKEM_Log_for _Presentloc_18_03_2019
+            RKEM_PL_Log_2 = ConfigurationManager.AppSettings["RKEM_PL_Log_2"].ToString();//Kasturee_RKEM_Log_for _Presentloc_18_03_2019
+
+            string Labour_mismatch_Log = string.Empty;//<!--Kasturee_Labor_mismatch_log_25_03_2019-->
+            Labour_mismatch_Log = ConfigurationManager.AppSettings["Labour_mismatch_Log"].ToString();//<!--Kasturee_Labor_mismatch_log_25_03_2019-->
+
+            using (TransactionScope tx = new TransactionScope(TransactionScopeOption.RequiresNew, new TimeSpan(0)))
+            {
+                try
+                {
+                    if (workorderDetail != null)
+                    {
+                        #region Insert Work Order
+
+                        try
+                        {
+                            workOrder = new MESC1TS_WO();
+                            int m_NextBID = 0;
+
+                            int tempNextID = context.MESC1TS_WO.Max(a => a.WO_ID);
+
+                            if (tempNextID != null)
+                            {
+                                m_NextBID = tempNextID;
+                            }
+                            //InsertWorkOrder(workOrder, workorderDetail,context,chUser, m_NextBID);
+                            workOrder.WO_ID = m_NextBID + 1;
+                            workOrder.COUNTRY_EXCHANGE_DTE = GetDateTimeNullable(workorderDetail.CountryExchangeDate);
+                            workOrder.CHTS = DateTime.Now;
+                            workOrder.DELDATSH = GetDateTimeNullable(Eqp.Deldatsh);
+                            workOrder.REFRBDAT = GetDateTimeNullable(Eqp.RefurbishmnentDate);
+                            workOrder.EQINDAT = GetDateTimeNullable(Eqp.EQInDate);
+                            workOrder.PREV_DATE = GetDateTimeNullable(workorderDetail.PrevDate);
+                            workOrder.GATEINDTE = GetDateTimeNullable(Eqp.GateInDate);
+                            workOrder.WO_RECV_DTE = DateTime.Now;
+
+
+                            workOrder.CUSTOMER_CD = (customer.CustomerCode);
+                            workOrder.MANUAL_CD = (customer.ManualCode);
+                            workOrder.MODE = (workorderDetail.Mode);
+                            workOrder.WOTYPE = (workorderDetail.WorkOrderType);
+                            workOrder.VENDOR_CD = (workorderDetail.Shop.VendorCode);
+                            workOrder.SHOP_CD = (workorderDetail.Shop.ShopCode);
+                            workOrder.REPAIR_DTE = DateTime.UtcNow;  //((workorderDetail.RepairDate));
+                            workOrder.STATUS_CODE = workorderDetail.WorkOrderStatus;
+                            workOrder.CAUSE = (workorderDetail.Cause);
+                            workOrder.THIRD_PARTY = ((workorderDetail.ThirdPartyPort));
+                            workOrder.MANH_RATE = (((workorderDetail.ManHourRate)));
+                            workOrder.MANH_RATE_CPH = (((workorderDetail.ManHourRateCPH)));
+                            workOrder.EXCHANGE_RATE = (workorderDetail.ExchangeRate * 100);
+                            workOrder.CUCDN = ((workorderDetail.Shop.CUCDN));
+                            workOrder.TOT_REPAIR_MANH = (((workorderDetail.TotalRepairManHour)));
+                            workOrder.TOT_MANH_REG = (((workorderDetail.TotalManHourReg)));
+                            workOrder.TOT_MANH_OT = (((workorderDetail.TotalManHourOverTime)));
+                            workOrder.TOT_MANH_DT = (((workorderDetail.TotalManHourDoubleTime)));
+                            workOrder.TOT_MANH_MISC = (((workorderDetail.TotalManHourMisc)));
+
+                            workOrder.TOT_PREP_HRS = (((workorderDetail.TotalPrepHours)));
+                            workOrder.TOT_LABOR_HRS = (((workorderDetail.TotalLaborHours)));
+                            workOrder.TOT_LABOR_COST = (((workorderDetail.TotalLabourCost)));
+                            workOrder.TOT_LABOR_COST_CPH = (((workorderDetail.TotalLabourCostCPH)));
+                            workOrder.TOT_SHOP_AMT = (((workorderDetail.TotalShopAmount)));
+                            workOrder.TOT_SHOP_AMT_CPH = (((workorderDetail.TotalShopAmountCPH)));
+                            workOrder.TOT_COST_LOCAL = (((workorderDetail.TotalCostLocal)));
+                            workOrder.TOT_COST_CPH = (((workorderDetail.TotalCostCPH)));
+                            workOrder.OT_RATE = (((workorderDetail.OverTimeRate)));
+                            workOrder.OT_RATE_CPH = (((workorderDetail.OverTimeRateCPH)));
+                            workOrder.DT_RATE = (((workorderDetail.DoubleTimeRate)));
+                            workOrder.DT_RATE_CPH = (((workorderDetail.DoubleTimeRateCPH)));
+                            workOrder.MISC_RATE = (((Labor.MiscRT)));
+                            workOrder.MISC_RATE_CPH = (((workorderDetail.MiscRateCPH)));
+                            workOrder.TOTAL_COST_LOCAL_USD = (((workorderDetail.TotalCostLocalUSD)));
+                            workOrder.TOT_COST_REPAIR = (((workorderDetail.TotalCostOfRepair)));
+                            workOrder.TOT_COST_REPAIR_CPH = (((workorderDetail.TotalCostOfRepairCPH)));
+                            workOrder.SALES_TAX_LABOR = (((workorderDetail.SalesTaxLabour)));
+                            workOrder.SALES_TAX_LABOR_CPH = (((workorderDetail.SalesTaxLabourCPH)));
+                            workOrder.SALES_TAX_PARTS = (((workorderDetail.SalesTaxParts)));
+                            workOrder.SALES_TAX_PARTS_CPH = (((workorderDetail.SalesTaxPartsCPH)));
+
+                            workOrder.TOT_MAERSK_PARTS = (((workorderDetail.TotalMaerksParts)));
+                            workOrder.TOT_MAERSK_PARTS_CPH = (((workorderDetail.TotalMaerksPartsCPH)));
+                            workOrder.TOT_MAN_PARTS = (((workorderDetail.TotalManParts)));
+                            workOrder.TOT_MAN_PARTS_CPH = (((workorderDetail.TotalManPartsCPH)));
+                            if (string.IsNullOrEmpty(Eqp.VendorRefNo))
+                            {
+                                workOrder.VENDOR_REF_NO = (m_NextBID.ToString().PadLeft(10, '0'));
+                            }
+                            else
+                            {
+                                workOrder.VENDOR_REF_NO = (((Eqp.VendorRefNo)));
+                            }
+                            workOrder.IMPORT_TAX = (((workorderDetail.ImportTax)));
+                            workOrder.IMPORT_TAX_CPH = (((workorderDetail.ImportTaxCPH)));
+                            workOrder.CHUSER = chUser;
+                            //workOrder.CHUSER = ((workorderDetail.ChangeUser));
+                            workOrder.CRTS = DateTime.Now;
+                            workOrder.EQPNO = (((Eqp.EquipmentNo)));
+                            workOrder.EQSIZE = ((Eqp.Size));
+                            workOrder.EQTYPE = ((Eqp.Type));
+                            workOrder.EQOUTHGU = ((Eqp.Eqouthgu));
+                            workOrder.COTYPE = ((Eqp.COType));
+                            workOrder.EQSTYPE = ((Eqp.Eqstype));
+                            workOrder.EQOWNTP = ((Eqp.Eqowntp));
+                            workOrder.EQMATR = ((Eqp.Eqmatr));
+                            //workOrder.DELDATSH = DateTime.UtcNow;  //(((workorderDetail.Deldatsh)));
+                            workOrder.STEMPTY = ((Eqp.StEmptyFullInd));
+                            workOrder.STREFURB = ((Eqp.Strefurb));
+                            //workOrder.REFRBDAT = DateTime.UtcNow;  //(((workorderDetail.RefurbishmnentDate)));
+                            workOrder.STREDEL = ((Eqp.Stredel));
+                            workOrder.FIXCOVER = (((Eqp.Fixcover)));
+                            workOrder.DPP = (((Eqp.Dpp)));
+                            workOrder.OFFHIR_LOCATION_SW = ((Eqp.OffhirLocationSW));
+                            workOrder.STSELSCR = ((Eqp.STSELSCR));
+                            workOrder.EQMANCD = ((Eqp.EqMancd));
+                            workOrder.EQPROFIL = ((Eqp.EQProfile));
+                            //workOrder.EQINDAT = DateTime.UtcNow; //(((Eqp.EQINDAT)));
+                            workOrder.EQRUMAN = ((Eqp.EQRuman));
+                            workOrder.EQRUTYP = ((Eqp.EQRutyp));
+                            workOrder.EQIOFLT = ((Eqp.EQIoflt));
+                            workOrder.LSCOMP = (Eqp.LeasingCompany);
+                            workOrder.LSCONTR = (Eqp.LeasingContract);
+                            workOrder.PRESENTLOC = Eqp.PresentLoc;
+
+                            workOrder.SALES_TAX_LABOR_PCT = (((workorderDetail.SalesTaxLaborPCT)));
+                            workOrder.SALES_TAX_PARTS_PCT = (((workorderDetail.SalesTaxPartsPCT)));
+                            workOrder.IMPORT_TAX_PCT = (((workorderDetail.ImportTaxPCT)));
+                            workOrder.AGENT_PARTS_TAX = (((workorderDetail.AgentPartsTax)));
+                            workOrder.AGENT_PARTS_TAX_CPH = (((workorderDetail.AgentPartsTaxCPH)));
+                            workOrder.RKRP_XMIT_SW = "0";
+                            workOrder.REQ_REMARK_SW = "Y"; // Convert.ToString(workorderDetail.ReqdRemarkSW);
+                            workOrder.COUNTRY_CUCDN = ((workorderDetail.CountryCUCDN));
+                            workOrder.COUNTRY_EXCHANGE_DTE = DateTime.UtcNow;  //(((workorderDetail.CountryExchangeDate)));
+
+
+                            //if (string.IsNullOrEmpty(Eqp.Damage))
+                            //{
+                            //    workOrder.DAMAGE = "N";
+                            //}                                                                                                                         Merc-RKEM Damage
+                            //if (!string.IsNullOrEmpty(Eqp.Damage) && Eqp.Damage.Length == 0)
+                            //{
+                            //    workOrder.DAMAGE = "9";
+                            //}
+
+                            workOrder.DAMAGE = (Eqp.Damage);
+
+                            workOrder.PREV_STATUS = workorderDetail.PrevStatus;
+                            workOrder.PREV_LOC_CD = workorderDetail.PrevLocCode;
+                            //workOrder.PREV_DATE = DateTime.UtcNow; // workorderDetail.PrevDate;
+                            workOrder.prev_wo_id = workorderDetail.PrevWorkOrderID;
+                            workOrder.REVISION_NO = 00;
+
+                            //workOrder.GATEINDTE = DateTime.Now; // workorderDetail.GateInDate;
+
+                            /*Rohit Mallick added as these were missing : starts*/
+
+                            workOrder.TOT_W_MATERIAL_AMT = workorderDetail.TotalWMaterialAmount;
+                            workOrder.TOT_T_MATERIAL_AMT = workorderDetail.TotalTMaterialAmount;
+                            workOrder.TOT_W_MATERIAL_AMT_CPH = workorderDetail.TotalWMaterialAmountCPH;
+                            workOrder.TOT_T_MATERIAL_AMT_CPH = workorderDetail.TotalWMaterialAmountCPH;
+                            workOrder.TOT_W_MATERIAL_AMT_USD = workorderDetail.TotalWMaterialAmountUSD;
+                            workOrder.TOT_T_MATERIAL_AMT_USD = workorderDetail.TotalTMaterialAmountUSD;
+                            workOrder.TOT_W_MATERIAL_AMT_CPH_USD = workorderDetail.TotalWMaterialAmountCPHUSD;
+                            workOrder.TOT_T_MATERIAL_AMT_CPH_USD = workorderDetail.TotalTMaterialAmountCPHUSD;
+                            workOrder.COUNTRY_EXCHANGE_RATE = workorderDetail.CountryExchangeRate;
+                            /*Rohit Mallick added as these were missing : ends*/
+
+                            context.MESC1TS_WO.Add(workOrder);
+                            context.SaveChanges();
+
+
+
+
+                            //----------------------------------
+                            NextID = context.MESC1TS_WO.Max(a => a.WO_ID);
+                            workorderDetail.WorkOrderID = NextID;
+                            if (string.IsNullOrEmpty(Eqp.VendorRefNo))
+                            {
+                                // VendorRefNo is Not passed fron client UI. So we update that WO with VendorRefNo
+                                string vendorRefNo = (NextID.ToString().PadLeft(10, '0'));
+
+                                workOrder = (from wo in objContext.MESC1TS_WO
+                                             where wo.WO_ID == NextID
+                                             select wo).FirstOrDefault();
+
+                                workOrder.VENDOR_REF_NO = vendorRefNo;
+
+                                context.SaveChanges();
+
+                            }
+                            else
+                            {
+                                // VendorRefNo is already there in the WO. So no update required.
+
+                            }
+                            //---------------------------
+                            LogDetailInfo("Saving Workorder", Convert.ToString(workOrder.WO_ID), "", "", workOrder.VENDOR_REF_NO, workOrder.SHOP_CD, chUser);
+
+                            if (RKEM_PL_Log_2 == "Y")////Kasturee_RKEM_Log_for_Presentloc_18_03_2019
+                            {
+
+                                if (workOrder.PRESENTLOC == null)
+                                    workOrder.PRESENTLOC = "NUL";
+
+                                logEntry.Message = "Create Workorder Equipmentnumber= " + workOrder.EQPNO + " Present Location= " + workOrder.PRESENTLOC;
+                                Logger.Write(logEntry);
+                            }
+
+                            if (Labour_mismatch_Log == "Y")////<!--Kasturee_Labor_mismatch_log_25_03_2019-->
+                            {
+                                //string S_TOT_REPAIR_MANH="NU";
+                                //string S_TOT_MANH_REG="NU";
+                                //string S_TOT_LABOR_HRS="NU";
+
+                                if (workOrder.TOT_REPAIR_MANH == null)
+                                    workOrder.TOT_REPAIR_MANH = 0;
+                                if (workOrder.TOT_MANH_REG == null)
+                                    workOrder.TOT_MANH_REG = 0;
+                                if (workOrder.TOT_LABOR_HRS == null)
+                                    workOrder.TOT_LABOR_HRS = 0;
+
+                                logEntry.Message = "Create Workorder Equipmentnumber= " + workOrder.EQPNO
+                                                    + " TOT_REPAIR_MANH= " + workOrder.TOT_REPAIR_MANH
+                                                    + " TOT_MANH_REG=" + workOrder.TOT_MANH_REG
+                                                    + " TOT_LABOR_HRS" + workOrder.TOT_LABOR_HRS
+                                                    + "Workorder_id=" + workorderDetail.WorkOrderID;
+
+                                Logger.Write(logEntry);
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            Message = new ErrMessage();
+                            Exception e = ex.InnerException;
+                            Message.Message = "System tran error while saving WorkOrder in Database";
+                            Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                            errorMessageList.Add(Message);//@sb 
+                            logEntry.Message = ex.ToString();
+                            Logger.Write(logEntry);
+                            success = false;
+                            tx.Dispose();
+                        }
+
+                        #endregion
+                        #region Insert Repair List
+                        try
+                        {
+                            if ((System.Transactions.Transaction.Current != null) && workorderDetail.RepairsViewList != null && workorderDetail.RepairsViewList.Count > 0)
+                            {
+                                foreach (var rItem in workorderDetail.RepairsViewList)
+                                {
+                                    if (!IsRepairTaxCode(rItem.RepairCode))
+                                    {
+                                        if (rItem.rState != (int)Validation.STATE.EXISTING)
+                                        {
+
+                                            //chUser = GetFormattedCHUSER(rItem.RepairCode.ChangeUser);
+                                            if (rItem.rState == (int)Validation.STATE.NEW)
+                                            {
+                                                MESC1TS_WOREPAIR WORepair = new MESC1TS_WOREPAIR();
+
+                                                WORepair.WO_ID = NextID;
+                                                WORepair.REPAIR_CD = rItem.RepairCode.RepairCod.Trim();
+                                                WORepair.MANUAL_CD = customer.ManualCode;
+                                                WORepair.MODE = Eqp.SelectedMode;
+                                                WORepair.QTY_REPAIRS = (short)rItem.Pieces;
+                                                WORepair.SHOP_MATERIAL_AMT = rItem.MaterialCost;
+                                                WORepair.CPH_MATERIAL_AMT = rItem.MaterialCostCPH;
+                                                WORepair.ACTUAL_MANH = rItem.ManHoursPerPiece;
+                                                if (rItem.NonsCode == null)
+                                                {
+                                                    WORepair.NONS_CD = null;
+                                                }
+                                                else
+                                                {
+                                                    WORepair.NONS_CD = rItem.NonsCode.NonsCd;
+                                                }
+                                                WORepair.CHUSER = chUser;//RepairsView.RepairCode.ChangeUser;
+                                                WORepair.CHTS = DateTime.Now;
+                                                WORepair.DAMAGE_CD = rItem.Damage.DamageCedexCode;
+                                                WORepair.REPAIR_LOC_CD = rItem.RepairLocationCode.CedexCode;
+                                                WORepair.TPI_CD = rItem.Tpi.CedexCode;
+                                                context.MESC1TS_WOREPAIR.Add(WORepair);
+                                                context.SaveChanges();
+
+                                                LogDetailInfo("Saving Repairs", Convert.ToString(workOrder.WO_ID), rItem.RepairCode.RepairCod, "", workOrder.VENDOR_REF_NO, workOrder.SHOP_CD, chUser);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            Message = new ErrMessage();
+                            Exception e = ex.InnerException;
+                            Message.Message = "System getting error while saving repairs in Database";
+                            Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                            errorMessageList.Add(Message);//@sb
+                            logEntry.Message = ex.ToString();
+                            Logger.Write(logEntry);
+                            success = false;
+                            tx.Dispose();
+                        }
+
+                        #endregion
+                        #region Insert parts list
+                        try
+                        {
+                            if (System.Transactions.Transaction.Current != null && workorderDetail.SparePartsViewList != null && workorderDetail.SparePartsViewList.Count > 0)
+                            {
+                                foreach (var spareparts in workorderDetail.SparePartsViewList)
+                                {
+                                    //chUser = GetFormattedCHUSER(spareparts.RepairCode.ChangeUser);
+
+                                    if (spareparts.pState == (int)Validation.STATE.NEW)
+                                    {
+
+                                        MESC1TS_WOPART WOPart = new MESC1TS_WOPART();
+                                        WOPart.WO_ID = NextID;
+                                        WOPart.REPAIR_CD = spareparts.RepairCode.RepairCod.Trim();
+                                        //WOPart.PART_CD = SparePartsView.PartCode.ToString();
+                                        WOPart.PART_CD = spareparts.OwnerSuppliedPartsNumber;
+                                        WOPart.COST_LOCAL = (decimal)spareparts.CostLocal;
+                                        WOPart.COST_CPH = (decimal)spareparts.CostLocalCPH;
+                                        if (!string.IsNullOrEmpty(spareparts.SerialNumber) && spareparts.SerialNumber.Equals("<enter serial number>", StringComparison.CurrentCultureIgnoreCase))
+                                        {
+                                            spareparts.SerialNumber = string.Empty;
+                                        }
+                                        WOPart.SERIAL_NUMBER = spareparts.SerialNumber;
+                                        WOPart.QTY_PARTS = spareparts.Pieces;
+                                        WOPart.CHUSER = chUser;//SparePartsView.RepairCode.ChangeUser;
+                                        WOPart.CHTS = DateTime.Now;
+                                        context.MESC1TS_WOPART.Add(WOPart);
+                                        context.SaveChanges();
+                                        LogDetailInfo("Saving Parts", Convert.ToString(workOrder.WO_ID), spareparts.RepairCode.RepairCod, spareparts.OwnerSuppliedPartsNumber, workOrder.VENDOR_REF_NO, workOrder.SHOP_CD, chUser);
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+
+                            Message = new ErrMessage();
+                            Exception e = ex.InnerException;
+                            Message.Message = "System getting error while saving parts in Database";
+                            Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                            errorMessageList.Add(Message);//@sb
+                            logEntry.Message = ex.ToString();
+                            Logger.Write(logEntry);
+                            success = false;
+                            tx.Dispose();
+                        }
+
+                        #endregion
+                        #region insert Remarks list
+                        try
+                        {
+                            if (System.Transactions.Transaction.Current != null && workorderDetail.RemarksList != null && workorderDetail.RemarksList.Count > 0)
+                            {
+                                foreach (var Remarks in workorderDetail.RemarksList)
+                                {
+                                    if (Remarks.rState == (int)Validation.STATE.NEW)
+                                    {
+
+                                        MESC1TS_WOREMARK woRemark = new MESC1TS_WOREMARK();
+                                        woRemark.WO_ID = NextID;
+                                        woRemark.REMARK_TYPE = Remarks.RemarkType;
+                                        if (Remarks.SuspendCatID == 0)
+                                        {
+                                            woRemark.SUSPCAT_ID = null;
+                                        }
+                                        woRemark.REMARK = Remarks.Remark;
+                                        woRemark.CHUSER = chUser;
+                                        woRemark.CRTS = DateTime.Now;
+                                        context.MESC1TS_WOREMARK.Add(woRemark);
+                                        context.SaveChanges();
+                                        LogDetailInfo("Saving Remarks ", Convert.ToString(workOrder.WO_ID) + "Remarks :" + Remarks.Remark, "", "", workOrder.VENDOR_REF_NO, workOrder.SHOP_CD, chUser);
+                                    }
+                                }
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            Message = new ErrMessage();
+                            Exception e = ex.InnerException;
+                            Message.Message = "System getting error while saving remarks in Database : ";
+                            Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                            errorMessageList.Add(Message);//@sb
+                            logEntry.Message = ex.ToString();
+                            Logger.Write(logEntry);
+                            success = false;
+                            tx.Dispose();
+                        }
+                        #endregion
+
+                    }
+                    if (System.Transactions.Transaction.Current != null)
+                        tx.Complete();
+                    // WOIDmutex.ReleaseMutex();
+
+                    //retval = 1;
+                }
+                catch (Exception ex)
+                {
+                    Message = new ErrMessage();
+                    Exception e = ex.InnerException;
+                    Message.Message = "System tran error while saving WorkOrder ot Database";
+                    Message.ErrorType = Validation.MESSAGETYPE.ERROR.ToString();
+                    errorMessageList.Add(Message);//@sb
+                    logEntry.Message = ex.ToString();
+                    Logger.Write(logEntry);
+                    success = false;
+                }
+
+                finally
+                {
+                    context.Dispose();
+                    tx.Dispose();
+                    WOIDmutex.ReleaseMutex();
+                }
+            }
+
+            return true;
+
+        }
         private void LogDetailInfo(string txt, string woID, string repID, string partID, string venRefID, string ShopCode, string CHUser)
         {
             if (ConfigurationManager.AppSettings["ExtraLog"].ToUpper() == "TRUE")
@@ -11227,13 +11676,55 @@ namespace ManageWorkOrderService
                         //pinaki Damagecode-1 code
                         LoadEquipmentRefNo(woVendor.EQPNO, woVendor.SHOP_CD, woVendor.VENDOR_REF_NO, ref RKEMEquipment);
                         string Currloc = RKEMEquipment.CurrentLoc;
+                        string ShopLocation = string.Empty;
+
+                       
+                        string EqpMove =  RKEMEquipment.CurrentMove ;
+                        if (EqpMove == null)
+                            EqpMove = "";
+                        else
+                            EqpMove = EqpMove.Trim().ToUpper();
+                        string ContEmpty = RKEMEquipment.StEmptyFullInd;
+                        if (ContEmpty == null)
+                              ContEmpty = "";
+                        // 
+                        var ShopLocationfromDB = (from shop in objContext.MESC1TS_SHOP
+                                                  where shop.SHOP_CD == woVendor.SHOP_CD
+                                                  select new
+                                                  {
+                                                      shop.LOC_CD
+                                                  }).FirstOrDefault();
 
 
-                        sendsuccess = SendDamageCode1ToRKEM(woVendor.EQPNO, Currloc, "1", true);
+
+
+                        if (ShopLocationfromDB != null)
+                        {
+                            ShopLocation = ShopLocationfromDB.LOC_CD;
+                            
+                        }
+
+
+                        if ((ShopLocation != null && ShopLocation.Length >= 5) && (Currloc != null && Currloc.Length >= 5) && (((ShopLocation.Substring(0, 5)).ToUpper()) == (((Currloc).Substring(0, 5)).ToUpper())))           //take only first 5 characters to compare
+                        {
+                            if (EqpMove == "GATEIN" || EqpMove == "GATE-IN" || EqpMove == "DISCHARG" || EqpMove == "STRIPPIN")
+                            {
+                                if (ContEmpty == "Y" || ContEmpty == "y")
+                                {
+                                    sendsuccess = SendDamageCode1ToRKEM(woVendor.EQPNO, Currloc, "1", true);
+                                }
+                            }
+                        }
                         if (sendsuccess)
                         {
                             InsertRKEMStatusForDamage1(WOID, 3);
-                            Message.Message = "Status Changed successfully and Damage Code 1 send to RKEM";
+                            Message.ErrorType = Validation.MESSAGETYPE.SUCCESS.ToString();
+                            Message.Message = "WO status successfully changed as TTL for equipment: " + woVendor.EQPNO + " and Damage Code 1 send to RKEM";
+                        }
+                        else
+                        {
+                            Message.ErrorType = Validation.MESSAGETYPE.WARNING.ToString();
+                            Message.Message = "WO status successfully changed as TTL for equipment: " + woVendor.EQPNO + " but Damage Code 1 not send to RKEM due to Location or Move Mismatch";
                         }
 
                     }
@@ -16743,7 +17234,7 @@ namespace ManageWorkOrderService
                 {
                     string STScode_clean = string.Empty;
                     STScode_clean = ConfigurationManager.AppSettings["STSEXC"];  //stscleancode
-
+                    
                     foreach (var repV in WorkOrder.RepairsViewList)
                     {
                         var STS = (from sts in objContext.MESC1TS_GRADESTS
@@ -16815,7 +17306,8 @@ namespace ManageWorkOrderService
                                                                sts.STS_CODE,
                                                                sts.MODE,
                                                                sts.MANUAL_CD,
-                                                               sts.IsApplicable
+                                                               sts.IsApplicable,
+                                                               sts.FLAG
 
 
                                                            }).Distinct().ToList();
@@ -16843,11 +17335,20 @@ namespace ManageWorkOrderService
                                     else
                                     {
                                         //basu Cleaning STS CODE exclusion 
-                                        //string STScode_clean = string.Empty;
-                                        //STScode_clean = ConfigurationManager.AppSettings["STSEXC"];
-                                        //string[] _CSTScode = STScode_clean.Split(',');
-                                        if (STScode_clean.Contains(repV.RepairCode.RepairCod) == true)
+
+                                        var CSTS = (from sts in objContext.MESC1TS_GRADESTS
+                                                   where sts.STS_CODE == repV.RepairCode.RepairCod
+                                                   && sts.MODE== ModeCode && sts.FLAG== false
+                                                    select new
+                                                    {
+                                                        sts.STS_CODE,
+                                                        sts.MODE
+                                                    }).Distinct().ToList();
+
+                                        if (CSTS.Count() > 0)
                                         {
+                                            //if (STScode_clean.Contains(repV.RepairCode.RepairCod) == true)
+                                        //{
                                             success = false;
                                             Message = new ErrMessage();
                                             Message.Message = "Cleaning STS Code " + repV.RepairCode.RepairCod + " belongs from different Grade code.";
@@ -21676,6 +22177,33 @@ namespace ManageWorkOrderService
 
                 }
             }
+        }
+        public List<string> GetMercGradeCode(int WOID,string EQPNO)
+        {
+
+            MESC1TS_GRADECONTAINER GC = new MESC1TS_GRADECONTAINER();
+            List<string> GradeList = new List<string>();
+            try
+            {
+                GC = (from O_gc in objContext.MESC1TS_GRADECONTAINER
+                      where (O_gc.WO_ID == WOID) && (O_gc.EQPNO == EQPNO)
+                      orderby O_gc.GC_ID descending
+                      select O_gc).FirstOrDefault();
+
+
+                if (GC != null)
+                {
+                    GradeList.Add(GC.GRADECODE);
+                    GradeList.Add(GC.GRADECODE_NEW);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                logEntry.Message = ex.ToString();
+                Logger.Write(logEntry);
+            }
+            return GradeList;
         }
 
         public List<string> GetMercDamageCode(int WOID)

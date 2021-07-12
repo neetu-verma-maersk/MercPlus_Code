@@ -157,34 +157,38 @@
                            
                            
                             }
-                            <td></td>
-                            <td></td>
+                            
                         </tr>
                         <tr>
-                            
+
                             @{
                                 if (Model.IsApprover)
-                                { 
-                                <td>@Html.LabelFor(model => model.CurrLoc)</td>
-                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrLoc)</td>
-                                <td>@Html.LabelFor(model => model.CurrMove)</td>
-                                <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrMove)</td> 
-                                                                 
+                                {
+                                    <td>@Html.LabelFor(model => model.CurrLoc)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrLoc)</td>
+                                    <td>@Html.LabelFor(model => model.CurrMove)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrMove)</td>
+                                    <td>@Html.LabelFor(model => model.RGrade)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.RGrade)</td>
+                                    <td>@Html.LabelFor(model => model.MercGrade)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.MercGrade)</td>
                                 }
                                 else
                                 {
-                                <td>@Html.LabelFor(model => model.CurrLoc)</td>
-                                <td style="min-width: 150px;">@Html.DisplayTextFor(model=>Model.CurrLoc)</td>
-                                <td>@Html.LabelFor(model => model.CurrMove)</td>
-                                <td style="min-width: 150px;">@Html.DisplayTextFor(model=>Model.CurrMove)</td> 
+                                    <td>@Html.LabelFor(model => model.CurrLoc)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrLoc)</td>
+                                    <td>@Html.LabelFor(model => model.CurrMove)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.CurrMove)</td>
+                                    <td>@Html.LabelFor(model => model.RGrade)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.RGrade)</td>
+                                    <td>@Html.LabelFor(model => model.MercGrade)</td>
+                                    <td style="min-width: 150px;">@Html.DisplayTextFor(model => Model.MercGrade)</td>
                                 }
-                           
-                           
+
+
                             }
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                           
+                           
                         </tr>
                     </table>
                 </div>

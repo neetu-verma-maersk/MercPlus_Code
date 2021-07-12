@@ -36,7 +36,6 @@
     <EntitySet Name="MESC1TS_SUSPEND" EntityType="MESC2DSModel.MESC1TS_SUSPEND" />
     <EntitySet Name="MESC1TS_SUSPEND_CAT" EntityType="MESC2DSModel.MESC1TS_SUSPEND_CAT" />
     <EntitySet Name="MESC1TS_TPI" EntityType="MESC2DSModel.MESC1TS_TPI" />
-    <EntitySet Name="MESC1TS_WO" EntityType="MESC2DSModel.MESC1TS_WO" />
     <EntitySet Name="MESC1TS_WOAUDIT" EntityType="MESC2DSModel.MESC1TS_WOAUDIT" />
     <EntitySet Name="MESC1TS_WOPART" EntityType="MESC2DSModel.MESC1TS_WOPART" />
     <EntitySet Name="MESC1TS_WOREMARK" EntityType="MESC2DSModel.MESC1TS_WOREMARK" />
@@ -79,10 +78,6 @@
       <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
       <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
     </AssociationSet>
-    <AssociationSet Name="FK__MESC1TS_W__CUCDN__2DB1C7EE" Association="MESC2DSModel.FK__MESC1TS_W__CUCDN__2DB1C7EE">
-      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
-      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
-    </AssociationSet>
     <AssociationSet Name="FK__MESC1TS_C__CUSTO__05A3D694" Association="MESC2DSModel.FK__MESC1TS_C__CUSTO__05A3D694">
       <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
       <End Role="MESC1TS_CUST_SHOP_MODE" EntitySet="MESC1TS_CUST_SHOP_MODE" />
@@ -99,10 +94,6 @@
       <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
       <End Role="MESC1TS_LABOR_RATE" EntitySet="MESC1TS_LABOR_RATE" />
     </AssociationSet>
-    <AssociationSet Name="FK__MESC1TS_W__CUSTO__318258D2" Association="MESC2DSModel.FK__MESC1TS_W__CUSTO__318258D2">
-      <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
-      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
-    </AssociationSet>
     <AssociationSet Name="FK__MESC1TS_EQ__MODE__0A688BB1" Association="MESC2DSModel.FK__MESC1TS_EQ__MODE__0A688BB1">
       <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
       <End Role="MESC1TS_EQMODE" EntitySet="MESC1TS_EQMODE" />
@@ -110,10 +101,6 @@
     <AssociationSet Name="FK__MESC1TS_L__EQTYP__10216507" Association="MESC2DSModel.FK__MESC1TS_L__EQTYP__10216507">
       <End Role="MESC1TS_EQTYPE" EntitySet="MESC1TS_EQTYPE" />
       <End Role="MESC1TS_LABOR_RATE" EntitySet="MESC1TS_LABOR_RATE" />
-    </AssociationSet>
-    <AssociationSet Name="FK__MESC1TS_W__EQTYP__2F9A1060" Association="MESC2DSModel.FK__MESC1TS_W__EQTYP__2F9A1060">
-      <End Role="MESC1TS_EQTYPE" EntitySet="MESC1TS_EQTYPE" />
-      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
     </AssociationSet>
     <AssociationSet Name="FK__MESC1TS_L__SHOP___0F2D40CE" Association="MESC2DSModel.FK__MESC1TS_L__SHOP___0F2D40CE">
       <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
@@ -155,10 +142,6 @@
       <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
       <End Role="MESC1TS_REPAIR_CODE" EntitySet="MESC1TS_REPAIR_CODE" />
     </AssociationSet>
-    <AssociationSet Name="FK__MESC1TS_WO__MODE__32767D0B" Association="MESC2DSModel.FK__MESC1TS_WO__MODE__32767D0B">
-      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
-      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
-    </AssociationSet>
     <AssociationSet Name="FK__MESC1TS_S__SHOP___251C81ED" Association="MESC2DSModel.FK__MESC1TS_S__SHOP___251C81ED">
       <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
       <End Role="MESC1TS_SHOP_CONT" EntitySet="MESC1TS_SHOP_CONT" />
@@ -171,14 +154,6 @@
       <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
       <End Role="MESC1TS_SUSPEND" EntitySet="MESC1TS_SUSPEND" />
     </AssociationSet>
-    <AssociationSet Name="FK__MESC1TS_W__SHOP___308E3499" Association="MESC2DSModel.FK__MESC1TS_W__SHOP___308E3499">
-      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
-      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
-    </AssociationSet>
-    <AssociationSet Name="FK__MESC1TS_W__STATU__2EA5EC27" Association="MESC2DSModel.FK__MESC1TS_W__STATU__2EA5EC27">
-      <End Role="MESC1TS_STATUS_CODE" EntitySet="MESC1TS_STATUS_CODE" />
-      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
-    </AssociationSet>
     <AssociationSet Name="FK__MESC1TS_S__SUSPC__27F8EE98" Association="MESC2DSModel.FK__MESC1TS_S__SUSPC__27F8EE98">
       <End Role="MESC1TS_SUSPEND_CAT" EntitySet="MESC1TS_SUSPEND_CAT" />
       <End Role="MESC1TS_SUSPEND" EntitySet="MESC1TS_SUSPEND" />
@@ -186,10 +161,6 @@
     <AssociationSet Name="FK__MESC1TS_W__SUSPC__36470DEF" Association="MESC2DSModel.FK__MESC1TS_W__SUSPC__36470DEF">
       <End Role="MESC1TS_SUSPEND_CAT" EntitySet="MESC1TS_SUSPEND_CAT" />
       <End Role="MESC1TS_WOREMARK" EntitySet="MESC1TS_WOREMARK" />
-    </AssociationSet>
-    <AssociationSet Name="FK__MESC1TS_W__WO_ID__20ACD28B" Association="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B">
-      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
-      <End Role="MESC1TS_WOREPAIR" EntitySet="MESC1TS_WOREPAIR" />
     </AssociationSet>
     <AssociationSet Name="FK__SEC_AUTHG__AUTHG__1881A0DE" Association="MESC2DSModel.FK__SEC_AUTHG__AUTHG__1881A0DE">
       <End Role="SEC_AUTHGROUP" EntitySet="SEC_AUTHGROUP" />
@@ -217,6 +188,35 @@
     <AssociationSet Name="FK_MESC1TS_GRADESTS_MESC1TS_GRADE" Association="MESC2DSModel.FK_MESC1TS_GRADESTS_MESC1TS_GRADE">
       <End Role="MESC1TS_GRADE" EntitySet="MESC1TS_GRADE" />
       <End Role="MESC1TS_GRADESTS" EntitySet="MESC1TS_GRADESTS" />
+    </AssociationSet>
+    <EntitySet Name="MESC1TS_WO" EntityType="MESC2DSModel.MESC1TS_WO" />
+    <AssociationSet Name="FK__MESC1TS_W__CUCDN__2DB1C7EE" Association="MESC2DSModel.FK__MESC1TS_W__CUCDN__2DB1C7EE">
+      <End Role="MESC1TS_CURRENCY" EntitySet="MESC1TS_CURRENCY" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__CUSTO__318258D2" Association="MESC2DSModel.FK__MESC1TS_W__CUSTO__318258D2">
+      <End Role="MESC1TS_CUSTOMER" EntitySet="MESC1TS_CUSTOMER" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__EQTYP__2F9A1060" Association="MESC2DSModel.FK__MESC1TS_W__EQTYP__2F9A1060">
+      <End Role="MESC1TS_EQTYPE" EntitySet="MESC1TS_EQTYPE" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_WO__MODE__32767D0B" Association="MESC2DSModel.FK__MESC1TS_WO__MODE__32767D0B">
+      <End Role="MESC1TS_MODE" EntitySet="MESC1TS_MODE" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__SHOP___308E3499" Association="MESC2DSModel.FK__MESC1TS_W__SHOP___308E3499">
+      <End Role="MESC1TS_SHOP" EntitySet="MESC1TS_SHOP" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__STATU__2EA5EC27" Association="MESC2DSModel.FK__MESC1TS_W__STATU__2EA5EC27">
+      <End Role="MESC1TS_STATUS_CODE" EntitySet="MESC1TS_STATUS_CODE" />
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MESC1TS_W__WO_ID__20ACD28B" Association="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B">
+      <End Role="MESC1TS_WO" EntitySet="MESC1TS_WO" />
+      <End Role="MESC1TS_WOREPAIR" EntitySet="MESC1TS_WOREPAIR" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="MESC1TS_COUNTRY">
@@ -760,131 +760,6 @@
     <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="category" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
   </EntityType>
-  <EntityType Name="MESC1TS_WO">
-    <Key>
-      <PropertyRef Name="WO_ID" />
-    </Key>
-    <Property Name="WO_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="CUSTOMER_CD" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
-    <Property Name="EQSIZE" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
-    <Property Name="MODE" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
-    <Property Name="WOTYPE" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="EQOUTHGU" Type="String" MaxLength="7" Unicode="false" FixedLength="true" />
-    <Property Name="CHUSER" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
-    <Property Name="SHOP_CD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
-    <Property Name="REPAIR_DTE" Type="DateTime" Precision="3" />
-    <Property Name="EQOWNTP" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
-    <Property Name="EQSTYPE" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
-    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="STATUS_CODE" Type="Int16" />
-    <Property Name="EQMATR" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
-    <Property Name="EQTYPE" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
-    <Property Name="CAUSE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="DELDATSH" Type="DateTime" Precision="3" />
-    <Property Name="THIRD_PARTY" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
-    <Property Name="STEMPTY" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="STREFURB" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="MANH_RATE" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="MANH_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="REFRBDAT" Type="DateTime" Precision="3" />
-    <Property Name="EXCHANGE_RATE" Type="Decimal" Precision="14" Scale="6" />
-    <Property Name="STREDEL" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="TOT_REPAIR_MANH" Type="Double" />
-    <Property Name="FIXCOVER" Type="Double" />
-    <Property Name="TOT_MANH_REG" Type="Double" />
-    <Property Name="DPP" Type="Double" />
-    <Property Name="TOT_MANH_OT" Type="Double" />
-    <Property Name="OFFHIR_LOCATION_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="OT_RATE" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="STSELSCR" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="TOT_MANH_DT" Type="Double" />
-    <Property Name="EQPROFIL" Type="String" MaxLength="11" Unicode="false" FixedLength="true" />
-    <Property Name="TOT_MANH_MISC" Type="Double" />
-    <Property Name="EQINDAT" Type="DateTime" Precision="3" />
-    <Property Name="TOT_PREP_HRS" Type="Double" />
-    <Property Name="EQRUTYP" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
-    <Property Name="TOT_LABOR_HRS" Type="Double" />
-    <Property Name="TOT_LABOR_COST" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="EQRUMAN" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
-    <Property Name="TOT_SHOP_AMT" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_LABOR_COST_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_COST_LOCAL" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="EQMANCD" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
-    <Property Name="VENDOR_REF_NO" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-    <Property Name="TOT_SHOP_AMT_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="EQIOFLT" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="TOT_MAERSK_PARTS_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="VOUCHER_NO" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
-    <Property Name="INVOICE_DTE" Type="DateTime" Precision="3" />
-    <Property Name="TOT_MAN_PARTS_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_COST_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="CHECK_NO" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
-    <Property Name="PAID_DTE" Type="DateTime" Precision="3" />
-    <Property Name="AMOUNT_PAID" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="RKRP_REPAIR_DTE" Type="DateTime" Precision="3" />
-    <Property Name="RKRP_XMIT_DTE" Type="DateTime" Precision="3" />
-    <Property Name="RKRP_XMIT_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="WO_RECV_DTE" Type="DateTime" Precision="3" />
-    <Property Name="APPROVED_BY" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
-    <Property Name="SHOP_WORKING_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="APPROVAL_DTE" Type="DateTime" Precision="3" />
-    <Property Name="IMPORT_TAX" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="IMPORT_TAX_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="SALES_TAX_LABOR" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="SALES_TAX_LABOR_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="SALES_TAX_PARTS" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="SALES_TAX_PARTS_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_MAERSK_PARTS" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_MAN_PARTS" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="MANUAL_CD" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
-    <Property Name="EQPNO" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
-    <Property Name="COTYPE" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
-    <Property Name="VENDOR_CD" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
-    <Property Name="REQ_REMARK_SW" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="CUCDN" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
-    <Property Name="OT_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="DT_RATE" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="DT_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="MISC_RATE" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="MISC_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOTAL_COST_LOCAL_USD" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_COST_REPAIR" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_COST_REPAIR_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="SALES_TAX_LABOR_PCT" Type="Double" />
-    <Property Name="SALES_TAX_PARTS_PCT" Type="Double" />
-    <Property Name="IMPORT_TAX_PCT" Type="Double" />
-    <Property Name="CRTS" Type="DateTime" Precision="3" />
-    <Property Name="AGENT_PARTS_TAX" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="AGENT_PARTS_TAX_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="COUNTRY_CUCDN" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
-    <Property Name="COUNTRY_EXCHANGE_RATE" Type="Decimal" Precision="14" Scale="6" />
-    <Property Name="COUNTRY_EXCHANGE_DTE" Type="DateTime" Precision="3" />
-    <Property Name="DAMAGE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="LSCOMP" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
-    <Property Name="LSCONTR" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
-    <Property Name="REVISION_NO" Type="Int16" />
-    <Property Name="PREV_STATUS" Type="Int16" />
-    <Property Name="PREV_DATE" Type="DateTime" Precision="3" />
-    <Property Name="PREV_LOC_CD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
-    <Property Name="TOT_W_MATERIAL_AMT" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_T_MATERIAL_AMT" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_W_MATERIAL_AMT_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_T_MATERIAL_AMT_CPH" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_W_MATERIAL_AMT_USD" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_T_MATERIAL_AMT_USD" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_T_MATERIAL_AMT_CPH_USD" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="TOT_W_MATERIAL_AMT_CPH_USD" Type="Decimal" Precision="16" Scale="4" />
-    <Property Name="PRESENTLOC" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
-    <Property Name="GATEINDTE" Type="DateTime" Precision="3" />
-    <Property Name="prev_wo_id" Type="Int32" />
-    <NavigationProperty Name="MESC1TS_CURRENCY" Relationship="MESC2DSModel.FK__MESC1TS_W__CUCDN__2DB1C7EE" FromRole="MESC1TS_WO" ToRole="MESC1TS_CURRENCY" />
-    <NavigationProperty Name="MESC1TS_CUSTOMER" Relationship="MESC2DSModel.FK__MESC1TS_W__CUSTO__318258D2" FromRole="MESC1TS_WO" ToRole="MESC1TS_CUSTOMER" />
-    <NavigationProperty Name="MESC1TS_EQTYPE" Relationship="MESC2DSModel.FK__MESC1TS_W__EQTYP__2F9A1060" FromRole="MESC1TS_WO" ToRole="MESC1TS_EQTYPE" />
-    <NavigationProperty Name="MESC1TS_MODE" Relationship="MESC2DSModel.FK__MESC1TS_WO__MODE__32767D0B" FromRole="MESC1TS_WO" ToRole="MESC1TS_MODE" />
-    <NavigationProperty Name="MESC1TS_SHOP" Relationship="MESC2DSModel.FK__MESC1TS_W__SHOP___308E3499" FromRole="MESC1TS_WO" ToRole="MESC1TS_SHOP" />
-    <NavigationProperty Name="MESC1TS_STATUS_CODE" Relationship="MESC2DSModel.FK__MESC1TS_W__STATU__2EA5EC27" FromRole="MESC1TS_WO" ToRole="MESC1TS_STATUS_CODE" />
-    <NavigationProperty Name="MESC1TS_WOREPAIR" Relationship="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B" FromRole="MESC1TS_WO" ToRole="MESC1TS_WOREPAIR" />
-  </EntityType>
   <EntityType Name="MESC1TS_WOAUDIT">
     <Key>
       <PropertyRef Name="WO_ID" />
@@ -946,8 +821,8 @@
     <Property Name="DAMAGE_CD" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
     <Property Name="REPAIR_LOC_CD" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
     <Property Name="TPI_CD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <NavigationProperty Name="MESC1TS_WO" Relationship="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B" FromRole="MESC1TS_WOREPAIR" ToRole="MESC1TS_WO" />
     <Property Type="String" Name="NEW_TPI" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="MESC1TS_WO" Relationship="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B" FromRole="MESC1TS_WOREPAIR" ToRole="MESC1TS_WO" />
   </EntityType>
   <EntityType Name="SEC_AUTHGROUP">
     <Key>
@@ -1133,18 +1008,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MESC1TS_W__CUCDN__2DB1C7EE">
-    <End Role="MESC1TS_CURRENCY" Type="MESC2DSModel.MESC1TS_CURRENCY" Multiplicity="0..1" />
-    <End Role="MESC1TS_WO" Type="MESC2DSModel.MESC1TS_WO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MESC1TS_CURRENCY">
-        <PropertyRef Name="CUCDN" />
-      </Principal>
-      <Dependent Role="MESC1TS_WO">
-        <PropertyRef Name="CUCDN" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__MESC1TS_C__CUSTO__05A3D694">
     <End Role="MESC1TS_CUSTOMER" Type="MESC2DSModel.MESC1TS_CUSTOMER" Multiplicity="1" />
     <End Role="MESC1TS_CUST_SHOP_MODE" Type="MESC2DSModel.MESC1TS_CUST_SHOP_MODE" Multiplicity="*" />
@@ -1193,18 +1056,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MESC1TS_W__CUSTO__318258D2">
-    <End Role="MESC1TS_CUSTOMER" Type="MESC2DSModel.MESC1TS_CUSTOMER" Multiplicity="0..1" />
-    <End Role="MESC1TS_WO" Type="MESC2DSModel.MESC1TS_WO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MESC1TS_CUSTOMER">
-        <PropertyRef Name="CUSTOMER_CD" />
-      </Principal>
-      <Dependent Role="MESC1TS_WO">
-        <PropertyRef Name="CUSTOMER_CD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__MESC1TS_EQ__MODE__0A688BB1">
     <End Role="MESC1TS_MODE" Type="MESC2DSModel.MESC1TS_MODE" Multiplicity="1" />
     <End Role="MESC1TS_EQMODE" Type="MESC2DSModel.MESC1TS_EQMODE" Multiplicity="*" />
@@ -1225,18 +1076,6 @@
         <PropertyRef Name="EQTYPE" />
       </Principal>
       <Dependent Role="MESC1TS_LABOR_RATE">
-        <PropertyRef Name="EQTYPE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__MESC1TS_W__EQTYP__2F9A1060">
-    <End Role="MESC1TS_EQTYPE" Type="MESC2DSModel.MESC1TS_EQTYPE" Multiplicity="0..1" />
-    <End Role="MESC1TS_WO" Type="MESC2DSModel.MESC1TS_WO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MESC1TS_EQTYPE">
-        <PropertyRef Name="EQTYPE" />
-      </Principal>
-      <Dependent Role="MESC1TS_WO">
         <PropertyRef Name="EQTYPE" />
       </Dependent>
     </ReferentialConstraint>
@@ -1363,18 +1202,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MESC1TS_WO__MODE__32767D0B">
-    <End Role="MESC1TS_MODE" Type="MESC2DSModel.MESC1TS_MODE" Multiplicity="0..1" />
-    <End Role="MESC1TS_WO" Type="MESC2DSModel.MESC1TS_WO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MESC1TS_MODE">
-        <PropertyRef Name="MODE" />
-      </Principal>
-      <Dependent Role="MESC1TS_WO">
-        <PropertyRef Name="MODE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__MESC1TS_S__SHOP___251C81ED">
     <End Role="MESC1TS_SHOP" Type="MESC2DSModel.MESC1TS_SHOP" Multiplicity="1" />
     <End Role="MESC1TS_SHOP_CONT" Type="MESC2DSModel.MESC1TS_SHOP_CONT" Multiplicity="*" />
@@ -1413,30 +1240,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MESC1TS_W__SHOP___308E3499">
-    <End Role="MESC1TS_SHOP" Type="MESC2DSModel.MESC1TS_SHOP" Multiplicity="1" />
-    <End Role="MESC1TS_WO" Type="MESC2DSModel.MESC1TS_WO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MESC1TS_SHOP">
-        <PropertyRef Name="SHOP_CD" />
-      </Principal>
-      <Dependent Role="MESC1TS_WO">
-        <PropertyRef Name="SHOP_CD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__MESC1TS_W__STATU__2EA5EC27">
-    <End Role="MESC1TS_STATUS_CODE" Type="MESC2DSModel.MESC1TS_STATUS_CODE" Multiplicity="0..1" />
-    <End Role="MESC1TS_WO" Type="MESC2DSModel.MESC1TS_WO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MESC1TS_STATUS_CODE">
-        <PropertyRef Name="STATUS_CODE" />
-      </Principal>
-      <Dependent Role="MESC1TS_WO">
-        <PropertyRef Name="STATUS_CODE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__MESC1TS_S__SUSPC__27F8EE98">
     <End Role="MESC1TS_SUSPEND_CAT" Type="MESC2DSModel.MESC1TS_SUSPEND_CAT" Multiplicity="1" />
     <End Role="MESC1TS_SUSPEND" Type="MESC2DSModel.MESC1TS_SUSPEND" Multiplicity="*" />
@@ -1458,20 +1261,6 @@
       </Principal>
       <Dependent Role="MESC1TS_WOREMARK">
         <PropertyRef Name="SUSPCAT_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__MESC1TS_W__WO_ID__20ACD28B">
-    <End Role="MESC1TS_WO" Type="MESC2DSModel.MESC1TS_WO" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="MESC1TS_WOREPAIR" Type="MESC2DSModel.MESC1TS_WOREPAIR" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MESC1TS_WO">
-        <PropertyRef Name="WO_ID" />
-      </Principal>
-      <Dependent Role="MESC1TS_WOREPAIR">
-        <PropertyRef Name="WO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1606,6 +1395,7 @@
     <Property Name="MODIFIEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MODIFIEDON" Type="DateTime" Precision="3" />
     <NavigationProperty Name="MESC1TS_GRADE" Relationship="MESC2DSModel.FK_MESC1TS_GRADESTS_MESC1TS_GRADE" FromRole="MESC1TS_GRADESTS" ToRole="MESC1TS_GRADE" />
+    <Property Name="FLAG" Type="Boolean" />
   </EntityType>
   <Association Name="FK_MESC1TS_GRADERELATION_MESC1TS_GRADERELATION">
     <End Type="MESC2DSModel.MESC1TS_GRADE" Role="MESC1TS_GRADE" Multiplicity="1" />
@@ -1628,6 +1418,217 @@
       </Principal>
       <Dependent Role="MESC1TS_GRADESTS">
         <PropertyRef Name="GRADE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MESC1TS_WO">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="WO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_CD" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="EQSIZE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="MODE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="WOTYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EQOUTHGU" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="CHUSER" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="SHOP_CD" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="REPAIR_DTE" Type="DateTime" Precision="3" />
+    <Property Name="EQOWNTP" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="EQSTYPE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="CHTS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="STATUS_CODE" Type="Int16" />
+    <Property Name="EQMATR" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="EQTYPE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="CAUSE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DELDATSH" Type="DateTime" Precision="3" />
+    <Property Name="THIRD_PARTY" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="STEMPTY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="STREFURB" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MANH_RATE" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="MANH_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="REFRBDAT" Type="DateTime" Precision="3" />
+    <Property Name="EXCHANGE_RATE" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="STREDEL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TOT_REPAIR_MANH" Type="Double" />
+    <Property Name="FIXCOVER" Type="Double" />
+    <Property Name="TOT_MANH_REG" Type="Double" />
+    <Property Name="DPP" Type="Double" />
+    <Property Name="TOT_MANH_OT" Type="Double" />
+    <Property Name="OFFHIR_LOCATION_SW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OT_RATE" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="STSELSCR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TOT_MANH_DT" Type="Double" />
+    <Property Name="EQPROFIL" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="TOT_MANH_MISC" Type="Double" />
+    <Property Name="EQINDAT" Type="DateTime" Precision="3" />
+    <Property Name="TOT_PREP_HRS" Type="Double" />
+    <Property Name="EQRUTYP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TOT_LABOR_HRS" Type="Double" />
+    <Property Name="TOT_LABOR_COST" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="EQRUMAN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TOT_SHOP_AMT" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_LABOR_COST_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_LOCAL" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="EQMANCD" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="VENDOR_REF_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TOT_SHOP_AMT_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="EQIOFLT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TOT_MAERSK_PARTS_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="VOUCHER_NO" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="INVOICE_DTE" Type="DateTime" Precision="3" />
+    <Property Name="TOT_MAN_PARTS_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="CHECK_NO" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Name="PAID_DTE" Type="DateTime" Precision="3" />
+    <Property Name="AMOUNT_PAID" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="RKRP_REPAIR_DTE" Type="DateTime" Precision="3" />
+    <Property Name="RKRP_XMIT_DTE" Type="DateTime" Precision="3" />
+    <Property Name="RKRP_XMIT_SW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WO_RECV_DTE" Type="DateTime" Precision="3" />
+    <Property Name="APPROVED_BY" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="SHOP_WORKING_SW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="APPROVAL_DTE" Type="DateTime" Precision="3" />
+    <Property Name="IMPORT_TAX" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="IMPORT_TAX_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_PARTS" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_PARTS_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_MAERSK_PARTS" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_MAN_PARTS" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="MANUAL_CD" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="EQPNO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="COTYPE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="VENDOR_CD" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="REQ_REMARK_SW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CUCDN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="OT_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="DT_RATE" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="DT_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="MISC_RATE" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="MISC_RATE_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOTAL_COST_LOCAL_USD" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_REPAIR" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_COST_REPAIR_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="SALES_TAX_LABOR_PCT" Type="Double" />
+    <Property Name="SALES_TAX_PARTS_PCT" Type="Double" />
+    <Property Name="IMPORT_TAX_PCT" Type="Double" />
+    <Property Name="CRTS" Type="DateTime" Precision="3" />
+    <Property Name="AGENT_PARTS_TAX" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="AGENT_PARTS_TAX_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="COUNTRY_CUCDN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="COUNTRY_EXCHANGE_RATE" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="COUNTRY_EXCHANGE_DTE" Type="DateTime" Precision="3" />
+    <Property Name="DAMAGE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LSCOMP" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="LSCONTR" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="REVISION_NO" Type="Int16" />
+    <Property Name="PREV_STATUS" Type="Int16" />
+    <Property Name="PREV_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PREV_LOC_CD" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="TOT_W_MATERIAL_AMT" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_CPH" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_USD" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_USD" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_T_MATERIAL_AMT_CPH_USD" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="TOT_W_MATERIAL_AMT_CPH_USD" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="PRESENTLOC" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="GATEINDTE" Type="DateTime" Precision="3" />
+    <Property Name="prev_wo_id" Type="Int32" />
+    <NavigationProperty Name="MESC1TS_CURRENCY" Relationship="MESC2DSModel.FK__MESC1TS_W__CUCDN__2DB1C7EE" FromRole="MESC1TS_WO" ToRole="MESC1TS_CURRENCY" />
+    <NavigationProperty Name="MESC1TS_CUSTOMER" Relationship="MESC2DSModel.FK__MESC1TS_W__CUSTO__318258D2" FromRole="MESC1TS_WO" ToRole="MESC1TS_CUSTOMER" />
+    <NavigationProperty Name="MESC1TS_EQTYPE" Relationship="MESC2DSModel.FK__MESC1TS_W__EQTYP__2F9A1060" FromRole="MESC1TS_WO" ToRole="MESC1TS_EQTYPE" />
+    <NavigationProperty Name="MESC1TS_MODE" Relationship="MESC2DSModel.FK__MESC1TS_WO__MODE__32767D0B" FromRole="MESC1TS_WO" ToRole="MESC1TS_MODE" />
+    <NavigationProperty Name="MESC1TS_SHOP" Relationship="MESC2DSModel.FK__MESC1TS_W__SHOP___308E3499" FromRole="MESC1TS_WO" ToRole="MESC1TS_SHOP" />
+    <NavigationProperty Name="MESC1TS_STATUS_CODE" Relationship="MESC2DSModel.FK__MESC1TS_W__STATU__2EA5EC27" FromRole="MESC1TS_WO" ToRole="MESC1TS_STATUS_CODE" />
+    <NavigationProperty Name="MESC1TS_WOREPAIR" Relationship="MESC2DSModel.FK__MESC1TS_W__WO_ID__20ACD28B" FromRole="MESC1TS_WO" ToRole="MESC1TS_WOREPAIR" />
+  </EntityType>
+  <Association Name="FK__MESC1TS_W__CUCDN__2DB1C7EE">
+    <End Type="MESC2DSModel.MESC1TS_CURRENCY" Role="MESC1TS_CURRENCY" Multiplicity="0..1" />
+    <End Type="MESC2DSModel.MESC1TS_WO" Role="MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CURRENCY">
+        <PropertyRef Name="CUCDN" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="CUCDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__CUSTO__318258D2">
+    <End Type="MESC2DSModel.MESC1TS_CUSTOMER" Role="MESC1TS_CUSTOMER" Multiplicity="0..1" />
+    <End Type="MESC2DSModel.MESC1TS_WO" Role="MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="CUSTOMER_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__EQTYP__2F9A1060">
+    <End Type="MESC2DSModel.MESC1TS_EQTYPE" Role="MESC1TS_EQTYPE" Multiplicity="0..1" />
+    <End Type="MESC2DSModel.MESC1TS_WO" Role="MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_EQTYPE">
+        <PropertyRef Name="EQTYPE" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="EQTYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_WO__MODE__32767D0B">
+    <End Type="MESC2DSModel.MESC1TS_MODE" Role="MESC1TS_MODE" Multiplicity="0..1" />
+    <End Type="MESC2DSModel.MESC1TS_WO" Role="MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_MODE">
+        <PropertyRef Name="MODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="MODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__SHOP___308E3499">
+    <End Type="MESC2DSModel.MESC1TS_SHOP" Role="MESC1TS_SHOP" Multiplicity="1" />
+    <End Type="MESC2DSModel.MESC1TS_WO" Role="MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_SHOP">
+        <PropertyRef Name="SHOP_CD" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="SHOP_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__STATU__2EA5EC27">
+    <End Type="MESC2DSModel.MESC1TS_STATUS_CODE" Role="MESC1TS_STATUS_CODE" Multiplicity="0..1" />
+    <End Type="MESC2DSModel.MESC1TS_WO" Role="MESC1TS_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_STATUS_CODE">
+        <PropertyRef Name="STATUS_CODE" />
+      </Principal>
+      <Dependent Role="MESC1TS_WO">
+        <PropertyRef Name="STATUS_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MESC1TS_W__WO_ID__20ACD28B">
+    <End Type="MESC2DSModel.MESC1TS_WO" Role="MESC1TS_WO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MESC2DSModel.MESC1TS_WOREPAIR" Role="MESC1TS_WOREPAIR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESC1TS_WO">
+        <PropertyRef Name="WO_ID" />
+      </Principal>
+      <Dependent Role="MESC1TS_WOREPAIR">
+        <PropertyRef Name="WO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

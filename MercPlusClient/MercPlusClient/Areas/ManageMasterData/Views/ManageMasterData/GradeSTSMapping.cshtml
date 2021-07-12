@@ -76,6 +76,9 @@
                         STS Description
                     </th>
                     <th scope="col">
+                        Generate grade Change   
+                    </th>
+                    <th scope="col">
                         Mode
                     </th>
                     @foreach (var grade in ViewBag.GradeNames)
@@ -92,58 +95,81 @@
             <tbody>
                 @foreach (var gradeSTS in Model)
                 {
-                    <tr id="@("row_" + gradeSTS.GradeSTSRowId)">
-                        <td>
-                            <span id="@("spanSTSCode_" + gradeSTS.GradeSTSRowId)" class="label">
-                                @gradeSTS.STSCode
-                            </span>
-                        </td>
-                        <td>
-                            <span id="@("spanSTSDescription_" + gradeSTS.GradeSTSRowId)" style="word-break:break-all;" class="label">
-                                @gradeSTS.STSDescription
-                            </span>
-                        </td>
-                        <td>
-                            <span id="@("spanSTSMode_" + gradeSTS.GradeSTSRowId)" class="label">
-                                @gradeSTS.Mode
-                            </span>
-                        </td>
-                        @foreach (var grade in ViewBag.GradeNames)
+                <tr id="@("row_" + gradeSTS.GradeSTSRowId)">
+                    <td>
+                        <span id="@("spanSTSCode_" + gradeSTS.GradeSTSRowId)" class="label">
+                            @gradeSTS.STSCode
+                        </span>
+                    </td>
+                    <td>
+                        <span id="@("spanSTSDescription_" + gradeSTS.GradeSTSRowId)" style="word-break:break-all;" class="label">
+                            @gradeSTS.STSDescription
+                        </span>
+                    </td>
+                    <td>
+                        @if (gradeSTS.Flag == true)
                         {
-                            <td>
-                                <span>
-                                    @if (@gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null)
-                                    {
-                                        <span id="@("spanGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="label" style="color:darkgreen">
-                                          
-                                                @(gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null ? "Applicable" : "Not Applicable")
-                                             
-                                        </span>
-                                    }
-                                    @if (@gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) == null)
-                                    {
-                                        <span id="@("spanGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="label"  style="color:orangered">
-                                            
-                                                @(gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null ? "Applicable" : "Not Applicable")
-                                            
-                                        </span>
-                                    }
-                                    <select id="@("dropDownGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="dropdown" style="width:90px;display:none">
-                                        <option value="Applicable">Applicable</option>
-                                        <option value="Not Applicable">Not Applicable</option>
-                                    </select>
-                                </span>
-                            </td>
+                            <span id="@("spanSTSGradeChange_" + gradeSTS.GradeSTSRowId)" style="word-break:break-all; color:darkgreen" class="label">
+
+                                @((gradeSTS.Flag == true) ? "Yes" : "No")
+
+                            </span>
                         }
-                        <td id="@gradeSTS.GradeSTSRowId" style="min-width:100px;" class="actioncolumn">
-                            <span class="link">
-                                <a id="@("btnEdit_" + gradeSTS.GradeSTSRowId)" class="Edit" style="margin:auto" href="javascript:;">Edit</a>
-                                <a id="@("btnDelete_" + gradeSTS.GradeSTSRowId)" class="Delete" href="javascript:;">Delete</a>
-                                <a id="@("btnUpdate_" + gradeSTS.GradeSTSRowId)" class="Update" href="javascript:;" style="display:none">Update</a>
-                                <a id="@("btnCancel_" + gradeSTS.GradeSTSRowId)" class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                        else
+                        {
+                            <span id="@("spanSTSGradeChange_" + gradeSTS.GradeSTSRowId)" style="word-break:break-all;color:orangered" class="label">
+
+                                @((gradeSTS.Flag == true) ? "Yes" : "No")
+
+                            </span>
+                        }
+                        <select id="@("dropDownGradeChange_" + gradeSTS.GradeSTSRowId )" class="dropdown" style="width:70px;display:none">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+
+                    </td>
+                    <td>
+                        <span id="@("spanSTSMode_" + gradeSTS.GradeSTSRowId)" class="label">
+                            @gradeSTS.Mode
+                        </span>
+                    </td>
+                    @foreach (var grade in ViewBag.GradeNames)
+                    {
+                        <td>
+                            <span>
+                                @if (@gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null)
+                                {
+                                    <span id="@("spanGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="label" style="color:darkgreen">
+
+                                        @(gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null ? "Applicable" : "Not Applicable")
+
+                                    </span>
+                                }
+                                @if (@gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) == null)
+                                {
+                                    <span id="@("spanGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="label" style="color:orangered">
+
+                                        @(gradeSTS.GradeSTSRelationModel.FirstOrDefault(x => x.GradeCode == grade && x.IsApplicale == true) != null ? "Applicable" : "Not Applicable")
+
+                                    </span>
+                                }
+                                <select id="@("dropDownGradeCode_" + gradeSTS.GradeSTSRowId + "_" + grade)" class="dropdown" style="width:90px;display:none">
+                                    <option value="Applicable">Applicable</option>
+                                    <option value="Not Applicable">Not Applicable</option>
+                                </select>
                             </span>
                         </td>
-                    </tr>
+                    }
+                    <td id="@gradeSTS.GradeSTSRowId" style="min-width:100px;" class="actioncolumn">
+                        <span class="link">
+                            <a id="@("btnEdit_" + gradeSTS.GradeSTSRowId)" class="Edit" style="margin:auto" href="javascript:;">Edit</a>
+                            <a id="@("btnDelete_" + gradeSTS.GradeSTSRowId)" class="Delete" href="javascript:;">Delete</a>
+                            <a id="@("btnUpdate_" + gradeSTS.GradeSTSRowId)" class="Update" href="javascript:;" style="display:none">Update</a>
+                            <a id="@("btnCancel_" + gradeSTS.GradeSTSRowId)" class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                        </span>
+                    </td>
+                </tr>
                 }
                 <tr id="rowAdd" style="display:none">
                     <td>
@@ -153,12 +179,18 @@
                     </td>
                     <td>
                         @*<span class="label">
-                          
-                            <input id="newSTSDescription" style="width:180px;" name="newSTSDescription" type="text" value=""  />
-                        </span>*@
+
+                <input id="newSTSDescription" style="width:180px;" name="newSTSDescription" type="text" value=""  />
+            </span>*@
                         <span id="newSTSDescription" style="width:180px; word-break:break-all;" class="label">
-                           
+
                         </span>
+                    </td>
+                    <td>
+                        <select id="dropDownGradeChange" style="width:70px;" class="dropdown">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
                     </td>
                     <td>
                         <select id="dropDownSTSMode" style="width:50px;" class="dropdown">

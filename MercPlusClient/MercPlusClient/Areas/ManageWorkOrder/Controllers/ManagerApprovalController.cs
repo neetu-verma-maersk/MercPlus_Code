@@ -228,6 +228,32 @@ namespace MercPlusClient.Areas.ManageWorkOrder.Controllers
                 MAML.CurrMove = WODamage[2];
             }
             //Merc-RKEM Damage Code
+            List<string> WOGrade = new List<string>();
+            WOGrade = WorkOrderClient.GetMercGradeCode(Convert.ToInt32(MAML.dbWOD.WorkOrderID), MAML.EquipmentNo);
+            if (WOGrade.Count() > 0)
+            {
+                if (WOGrade[0] == "" || WOGrade[0] == " " || WOGrade[0] == "NA" )//|| WOGrade[0] == "N")
+                {
+                    MAML.RGrade = "";
+                }
+                else
+                {
+                    MAML.RGrade = WOGrade[0];
+                }
+                if (WOGrade[1] == "" || WOGrade[1] == " " || WOGrade[1] == "NA")// || WOGrade[1] == "N")
+                {
+                    MAML.MercGrade = "";
+                }
+                else
+                {
+                    MAML.MercGrade = WOGrade[1];
+                }
+                if( (WOGrade[0] == "N") && (WOGrade[1] == "N"))
+                {
+                    MAML.RGrade = "";
+                    MAML.MercGrade = "";
+                }
+            }
         }
 
         private void ValidateForApprovalBtn(WorkOrderDetail workOrderDetail)
@@ -516,6 +542,7 @@ namespace MercPlusClient.Areas.ManageWorkOrder.Controllers
                 ErrList = ErrList.Union(WorkOrderClient.ChangeStatus(Convert.ToInt32(((string[])(UIContent["WOID"]))[0]), 150, GetUserDtl())).ToList();
                 if (ErrList.Count != 0)             // Total Loss-Udita
                 {
+                   // ErrList = ErrList.Union(WorkOrderClient.AddRemarkByTypeAndWOID(Convert.ToInt32(((string[])(UIContent["WOID"]))[0]), ErrList[0].Message, "I", GetUserDtl())).ToList();  pinaki
                     ErrList = ErrList.Union(WorkOrderClient.AddRemarkByTypeAndWOID(Convert.ToInt32(((string[])(UIContent["WOID"]))[0]), "Declared Total Loss by " + GetUserDtl(), "S", GetUserDtl())).ToList();
                 }
                 if (ErrList != null)
@@ -523,6 +550,7 @@ namespace MercPlusClient.Areas.ManageWorkOrder.Controllers
                     int index = ErrList.FindIndex(item => item.ErrorType == Validation.MESSAGETYPE.WARNING.ToString() || item.ErrorType == Validation.MESSAGETYPE.ERROR.ToString());
                     outStatus = (index != -1 ? Validation.MESSAGETYPE.ERROR.ToString() : Validation.MESSAGETYPE.SUCCESS.ToString());
                     outMsg = UtilMethods.CreateMessageString(ErrList);
+                    
                 }
                 //Total Loss- Udita
                 ErrListForRejectedWO = UpdateGeneralValues(UIContent);

@@ -15,147 +15,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ManualMode", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class ManualMode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ActiveSwField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.Manual ManualField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManualCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.Mode ModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ActiveSw {
-            get {
-                return this.ActiveSwField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ActiveSwField, value) != true)) {
-                    this.ActiveSwField = value;
-                    this.RaisePropertyChanged("ActiveSw");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.Manual Manual {
-            get {
-                return this.ManualField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManualField, value) != true)) {
-                    this.ManualField = value;
-                    this.RaisePropertyChanged("Manual");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ManualCode {
-            get {
-                return this.ManualCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManualCodeField, value) != true)) {
-                    this.ManualCodeField = value;
-                    this.RaisePropertyChanged("ManualCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.Mode Mode {
-            get {
-                return this.ModeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeField, value) != true)) {
-                    this.ModeField = value;
-                    this.RaisePropertyChanged("Mode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeCode {
-            get {
-                return this.ModeCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeCodeField, value) != true)) {
-                    this.ModeCodeField = value;
-                    this.RaisePropertyChanged("ModeCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Manual", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
     [System.SerializableAttribute()]
     public partial class Manual : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -313,323 +172,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
                 if ((object.ReferenceEquals(this.RepairCodeField, value) != true)) {
                     this.RepairCodeField = value;
                     this.RaisePropertyChanged("RepairCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Mode", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class Mode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.CphEqpLimit[] CphEqpLimitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.CustShopMode[] CustShopModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.EqMode[] EqModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.ManualMode[] ManualModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeActiveSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeFullDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeIndField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeNotFoundField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.NonsCode[] NonsCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.PrepTime[] PrepTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.RepairCode[] RepairCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StandardTimeSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ValidationSWField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChTime {
-            get {
-                return this.ChTimeField;
-            }
-            set {
-                if ((this.ChTimeField.Equals(value) != true)) {
-                    this.ChTimeField = value;
-                    this.RaisePropertyChanged("ChTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.CphEqpLimit[] CphEqpLimit {
-            get {
-                return this.CphEqpLimitField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CphEqpLimitField, value) != true)) {
-                    this.CphEqpLimitField = value;
-                    this.RaisePropertyChanged("CphEqpLimit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.CustShopMode[] CustShopMode {
-            get {
-                return this.CustShopModeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustShopModeField, value) != true)) {
-                    this.CustShopModeField = value;
-                    this.RaisePropertyChanged("CustShopMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.EqMode[] EqMode {
-            get {
-                return this.EqModeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EqModeField, value) != true)) {
-                    this.EqModeField = value;
-                    this.RaisePropertyChanged("EqMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.ManualMode[] ManualMode {
-            get {
-                return this.ManualModeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManualModeField, value) != true)) {
-                    this.ManualModeField = value;
-                    this.RaisePropertyChanged("ManualMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeActiveSW {
-            get {
-                return this.ModeActiveSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeActiveSWField, value) != true)) {
-                    this.ModeActiveSWField = value;
-                    this.RaisePropertyChanged("ModeActiveSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeCode {
-            get {
-                return this.ModeCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeCodeField, value) != true)) {
-                    this.ModeCodeField = value;
-                    this.RaisePropertyChanged("ModeCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeDescription {
-            get {
-                return this.ModeDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeDescriptionField, value) != true)) {
-                    this.ModeDescriptionField = value;
-                    this.RaisePropertyChanged("ModeDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeFullDescription {
-            get {
-                return this.ModeFullDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeFullDescriptionField, value) != true)) {
-                    this.ModeFullDescriptionField = value;
-                    this.RaisePropertyChanged("ModeFullDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeInd {
-            get {
-                return this.ModeIndField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeIndField, value) != true)) {
-                    this.ModeIndField = value;
-                    this.RaisePropertyChanged("ModeInd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeNotFound {
-            get {
-                return this.ModeNotFoundField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeNotFoundField, value) != true)) {
-                    this.ModeNotFoundField = value;
-                    this.RaisePropertyChanged("ModeNotFound");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.NonsCode[] NonsCode {
-            get {
-                return this.NonsCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NonsCodeField, value) != true)) {
-                    this.NonsCodeField = value;
-                    this.RaisePropertyChanged("NonsCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.PrepTime[] PrepTime {
-            get {
-                return this.PrepTimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrepTimeField, value) != true)) {
-                    this.PrepTimeField = value;
-                    this.RaisePropertyChanged("PrepTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] RepairCode {
-            get {
-                return this.RepairCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RepairCodeField, value) != true)) {
-                    this.RepairCodeField = value;
-                    this.RaisePropertyChanged("RepairCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StandardTimeSW {
-            get {
-                return this.StandardTimeSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StandardTimeSWField, value) != true)) {
-                    this.StandardTimeSWField = value;
-                    this.RaisePropertyChanged("StandardTimeSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ValidationSW {
-            get {
-                return this.ValidationSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ValidationSWField, value) != true)) {
-                    this.ValidationSWField = value;
-                    this.RaisePropertyChanged("ValidationSW");
                 }
             }
         }
@@ -835,6 +377,147 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
                 if ((object.ReferenceEquals(this.ManualCodeField, value) != true)) {
                     this.ManualCodeField = value;
                     this.RaisePropertyChanged("ManualCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ManualMode", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class ManualMode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ActiveSwField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.Manual ManualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManualCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.Mode ModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ActiveSw {
+            get {
+                return this.ActiveSwField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ActiveSwField, value) != true)) {
+                    this.ActiveSwField = value;
+                    this.RaisePropertyChanged("ActiveSw");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.Manual Manual {
+            get {
+                return this.ManualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManualField, value) != true)) {
+                    this.ManualField = value;
+                    this.RaisePropertyChanged("Manual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ManualCode {
+            get {
+                return this.ManualCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManualCodeField, value) != true)) {
+                    this.ManualCodeField = value;
+                    this.RaisePropertyChanged("ManualCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.Mode Mode {
+            get {
+                return this.ModeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeField, value) != true)) {
+                    this.ModeField = value;
+                    this.RaisePropertyChanged("Mode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeCode {
+            get {
+                return this.ModeCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeCodeField, value) != true)) {
+                    this.ModeCodeField = value;
+                    this.RaisePropertyChanged("ModeCode");
                 }
             }
         }
@@ -1834,6 +1517,323 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
                 if ((object.ReferenceEquals(this.ShopCodeField, value) != true)) {
                     this.ShopCodeField = value;
                     this.RaisePropertyChanged("ShopCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Mode", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Mode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.CphEqpLimit[] CphEqpLimitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.CustShopMode[] CustShopModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.EqMode[] EqModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.ManualMode[] ManualModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeActiveSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeFullDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeIndField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeNotFoundField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.NonsCode[] NonsCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.PrepTime[] PrepTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.RepairCode[] RepairCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StandardTimeSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValidationSWField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChTime {
+            get {
+                return this.ChTimeField;
+            }
+            set {
+                if ((this.ChTimeField.Equals(value) != true)) {
+                    this.ChTimeField = value;
+                    this.RaisePropertyChanged("ChTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.CphEqpLimit[] CphEqpLimit {
+            get {
+                return this.CphEqpLimitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CphEqpLimitField, value) != true)) {
+                    this.CphEqpLimitField = value;
+                    this.RaisePropertyChanged("CphEqpLimit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.CustShopMode[] CustShopMode {
+            get {
+                return this.CustShopModeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustShopModeField, value) != true)) {
+                    this.CustShopModeField = value;
+                    this.RaisePropertyChanged("CustShopMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.EqMode[] EqMode {
+            get {
+                return this.EqModeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EqModeField, value) != true)) {
+                    this.EqModeField = value;
+                    this.RaisePropertyChanged("EqMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.ManualMode[] ManualMode {
+            get {
+                return this.ManualModeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManualModeField, value) != true)) {
+                    this.ManualModeField = value;
+                    this.RaisePropertyChanged("ManualMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeActiveSW {
+            get {
+                return this.ModeActiveSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeActiveSWField, value) != true)) {
+                    this.ModeActiveSWField = value;
+                    this.RaisePropertyChanged("ModeActiveSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeCode {
+            get {
+                return this.ModeCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeCodeField, value) != true)) {
+                    this.ModeCodeField = value;
+                    this.RaisePropertyChanged("ModeCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeDescription {
+            get {
+                return this.ModeDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeDescriptionField, value) != true)) {
+                    this.ModeDescriptionField = value;
+                    this.RaisePropertyChanged("ModeDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeFullDescription {
+            get {
+                return this.ModeFullDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeFullDescriptionField, value) != true)) {
+                    this.ModeFullDescriptionField = value;
+                    this.RaisePropertyChanged("ModeFullDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeInd {
+            get {
+                return this.ModeIndField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeIndField, value) != true)) {
+                    this.ModeIndField = value;
+                    this.RaisePropertyChanged("ModeInd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeNotFound {
+            get {
+                return this.ModeNotFoundField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeNotFoundField, value) != true)) {
+                    this.ModeNotFoundField = value;
+                    this.RaisePropertyChanged("ModeNotFound");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.NonsCode[] NonsCode {
+            get {
+                return this.NonsCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NonsCodeField, value) != true)) {
+                    this.NonsCodeField = value;
+                    this.RaisePropertyChanged("NonsCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.PrepTime[] PrepTime {
+            get {
+                return this.PrepTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrepTimeField, value) != true)) {
+                    this.PrepTimeField = value;
+                    this.RaisePropertyChanged("PrepTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] RepairCode {
+            get {
+                return this.RepairCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RepairCodeField, value) != true)) {
+                    this.RepairCodeField = value;
+                    this.RaisePropertyChanged("RepairCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StandardTimeSW {
+            get {
+                return this.StandardTimeSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StandardTimeSWField, value) != true)) {
+                    this.StandardTimeSWField = value;
+                    this.RaisePropertyChanged("StandardTimeSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ValidationSW {
+            get {
+                return this.ValidationSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValidationSWField, value) != true)) {
+                    this.ValidationSWField = value;
+                    this.RaisePropertyChanged("ValidationSW");
                 }
             }
         }
@@ -7204,461 +7204,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Damage", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class Damage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DamageCedexCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DamageCodeNotFoundField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DamageDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DamageFullDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DamageNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DamageNumericalCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DamageCedexCode {
-            get {
-                return this.DamageCedexCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DamageCedexCodeField, value) != true)) {
-                    this.DamageCedexCodeField = value;
-                    this.RaisePropertyChanged("DamageCedexCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DamageCodeNotFound {
-            get {
-                return this.DamageCodeNotFoundField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DamageCodeNotFoundField, value) != true)) {
-                    this.DamageCodeNotFoundField = value;
-                    this.RaisePropertyChanged("DamageCodeNotFound");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DamageDescription {
-            get {
-                return this.DamageDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DamageDescriptionField, value) != true)) {
-                    this.DamageDescriptionField = value;
-                    this.RaisePropertyChanged("DamageDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DamageFullDescription {
-            get {
-                return this.DamageFullDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DamageFullDescriptionField, value) != true)) {
-                    this.DamageFullDescriptionField = value;
-                    this.RaisePropertyChanged("DamageFullDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DamageName {
-            get {
-                return this.DamageNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DamageNameField, value) != true)) {
-                    this.DamageNameField = value;
-                    this.RaisePropertyChanged("DamageName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DamageNumericalCode {
-            get {
-                return this.DamageNumericalCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DamageNumericalCodeField, value) != true)) {
-                    this.DamageNumericalCodeField = value;
-                    this.RaisePropertyChanged("DamageNumericalCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuditTrail", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class AuditTrail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ColNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OldValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeTimeField, value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ColName {
-            get {
-                return this.ColNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ColNameField, value) != true)) {
-                    this.ColNameField = value;
-                    this.RaisePropertyChanged("ColName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NewValue {
-            get {
-                return this.NewValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewValueField, value) != true)) {
-                    this.NewValueField = value;
-                    this.RaisePropertyChanged("NewValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OldValue {
-            get {
-                return this.OldValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OldValueField, value) != true)) {
-                    this.OldValueField = value;
-                    this.RaisePropertyChanged("OldValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TPIIndicator", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class TPIIndicator : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CategoryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TPICHTSField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TPICHUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TPICedexCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TPIDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TPIFullDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TPINameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TPINumericalCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Category {
-            get {
-                return this.CategoryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
-                    this.CategoryField = value;
-                    this.RaisePropertyChanged("Category");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TPICHTS {
-            get {
-                return this.TPICHTSField;
-            }
-            set {
-                if ((this.TPICHTSField.Equals(value) != true)) {
-                    this.TPICHTSField = value;
-                    this.RaisePropertyChanged("TPICHTS");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TPICHUser {
-            get {
-                return this.TPICHUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TPICHUserField, value) != true)) {
-                    this.TPICHUserField = value;
-                    this.RaisePropertyChanged("TPICHUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TPICedexCode {
-            get {
-                return this.TPICedexCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TPICedexCodeField, value) != true)) {
-                    this.TPICedexCodeField = value;
-                    this.RaisePropertyChanged("TPICedexCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TPIDescription {
-            get {
-                return this.TPIDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TPIDescriptionField, value) != true)) {
-                    this.TPIDescriptionField = value;
-                    this.RaisePropertyChanged("TPIDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TPIFullDescription {
-            get {
-                return this.TPIFullDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TPIFullDescriptionField, value) != true)) {
-                    this.TPIFullDescriptionField = value;
-                    this.RaisePropertyChanged("TPIFullDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TPIName {
-            get {
-                return this.TPINameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TPINameField, value) != true)) {
-                    this.TPINameField = value;
-                    this.RaisePropertyChanged("TPIName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TPINumericalCode {
-            get {
-                return this.TPINumericalCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TPINumericalCodeField, value) != true)) {
-                    this.TPINumericalCodeField = value;
-                    this.RaisePropertyChanged("TPINumericalCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EqsType", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
     [System.SerializableAttribute()]
     public partial class EqsType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -8554,6 +8099,9 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         private System.Nullable<System.DateTime> CreatedOnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool FLAGField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GradeCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8615,6 +8163,19 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
                 if ((this.CreatedOnField.Equals(value) != true)) {
                     this.CreatedOnField = value;
                     this.RaisePropertyChanged("CreatedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool FLAG {
+            get {
+                return this.FLAGField;
+            }
+            set {
+                if ((this.FLAGField.Equals(value) != true)) {
+                    this.FLAGField = value;
+                    this.RaisePropertyChanged("FLAG");
                 }
             }
         }
@@ -8745,1204 +8306,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
                 if ((object.ReferenceEquals(this.STSDescriptionField, value) != true)) {
                     this.STSDescriptionField = value;
                     this.RaisePropertyChanged("STSDescription");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ShopLimits", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class ShopLimits : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> AutoApproveLimitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> RepairAmtLimitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.Shop ShopField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShopCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> ShopMaterialLimitField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> AutoApproveLimit {
-            get {
-                return this.AutoApproveLimitField;
-            }
-            set {
-                if ((this.AutoApproveLimitField.Equals(value) != true)) {
-                    this.AutoApproveLimitField = value;
-                    this.RaisePropertyChanged("AutoApproveLimit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FName {
-            get {
-                return this.FNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FNameField, value) != true)) {
-                    this.FNameField = value;
-                    this.RaisePropertyChanged("FName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LName {
-            get {
-                return this.LNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LNameField, value) != true)) {
-                    this.LNameField = value;
-                    this.RaisePropertyChanged("LName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mode {
-            get {
-                return this.ModeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeField, value) != true)) {
-                    this.ModeField = value;
-                    this.RaisePropertyChanged("Mode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModeDesc {
-            get {
-                return this.ModeDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeDescField, value) != true)) {
-                    this.ModeDescField = value;
-                    this.RaisePropertyChanged("ModeDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> RepairAmtLimit {
-            get {
-                return this.RepairAmtLimitField;
-            }
-            set {
-                if ((this.RepairAmtLimitField.Equals(value) != true)) {
-                    this.RepairAmtLimitField = value;
-                    this.RaisePropertyChanged("RepairAmtLimit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.Shop Shop {
-            get {
-                return this.ShopField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShopField, value) != true)) {
-                    this.ShopField = value;
-                    this.RaisePropertyChanged("Shop");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShopCode {
-            get {
-                return this.ShopCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShopCodeField, value) != true)) {
-                    this.ShopCodeField = value;
-                    this.RaisePropertyChanged("ShopCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> ShopMaterialLimit {
-            get {
-                return this.ShopMaterialLimitField;
-            }
-            set {
-                if ((this.ShopMaterialLimitField.Equals(value) != true)) {
-                    this.ShopMaterialLimitField = value;
-                    this.RaisePropertyChanged("ShopMaterialLimit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Manufactur", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class Manufactur : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> DiscountPercentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManufacturCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManufacturNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPartField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.Model[] ModelField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> DiscountPercent {
-            get {
-                return this.DiscountPercentField;
-            }
-            set {
-                if ((this.DiscountPercentField.Equals(value) != true)) {
-                    this.DiscountPercentField = value;
-                    this.RaisePropertyChanged("DiscountPercent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ManufacturCd {
-            get {
-                return this.ManufacturCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManufacturCdField, value) != true)) {
-                    this.ManufacturCdField = value;
-                    this.RaisePropertyChanged("ManufacturCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ManufacturName {
-            get {
-                return this.ManufacturNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManufacturNameField, value) != true)) {
-                    this.ManufacturNameField = value;
-                    this.RaisePropertyChanged("ManufacturName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPart {
-            get {
-                return this.MasterPartField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MasterPartField, value) != true)) {
-                    this.MasterPartField = value;
-                    this.RaisePropertyChanged("MasterPart");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.Model[] Model {
-            get {
-                return this.ModelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModelField, value) != true)) {
-                    this.ModelField = value;
-                    this.RaisePropertyChanged("Model");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MasterPart", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class MasterPart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CorePartSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> CoreValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CoreValueSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeductCoreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeductCoreSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsMasterPartAddSuccessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsMasterPartDeleteSuccessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsMasterPartEditSuccessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsMasterPartExistField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManufacturField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MslPartSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartActiveSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartDesignation1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartDesignation2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartDesignation3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> PartPriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.PartsGroup PartsGroupField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartsGroupCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> QuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RemarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SerialTagSWField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CorePartSW {
-            get {
-                return this.CorePartSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CorePartSWField, value) != true)) {
-                    this.CorePartSWField = value;
-                    this.RaisePropertyChanged("CorePartSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> CoreValue {
-            get {
-                return this.CoreValueField;
-            }
-            set {
-                if ((this.CoreValueField.Equals(value) != true)) {
-                    this.CoreValueField = value;
-                    this.RaisePropertyChanged("CoreValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CoreValueSW {
-            get {
-                return this.CoreValueSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CoreValueSWField, value) != true)) {
-                    this.CoreValueSWField = value;
-                    this.RaisePropertyChanged("CoreValueSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DeductCore {
-            get {
-                return this.DeductCoreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeductCoreField, value) != true)) {
-                    this.DeductCoreField = value;
-                    this.RaisePropertyChanged("DeductCore");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DeductCoreSW {
-            get {
-                return this.DeductCoreSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeductCoreSWField, value) != true)) {
-                    this.DeductCoreSWField = value;
-                    this.RaisePropertyChanged("DeductCoreSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsMasterPartAddSuccess {
-            get {
-                return this.IsMasterPartAddSuccessField;
-            }
-            set {
-                if ((this.IsMasterPartAddSuccessField.Equals(value) != true)) {
-                    this.IsMasterPartAddSuccessField = value;
-                    this.RaisePropertyChanged("IsMasterPartAddSuccess");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsMasterPartDeleteSuccess {
-            get {
-                return this.IsMasterPartDeleteSuccessField;
-            }
-            set {
-                if ((this.IsMasterPartDeleteSuccessField.Equals(value) != true)) {
-                    this.IsMasterPartDeleteSuccessField = value;
-                    this.RaisePropertyChanged("IsMasterPartDeleteSuccess");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsMasterPartEditSuccess {
-            get {
-                return this.IsMasterPartEditSuccessField;
-            }
-            set {
-                if ((this.IsMasterPartEditSuccessField.Equals(value) != true)) {
-                    this.IsMasterPartEditSuccessField = value;
-                    this.RaisePropertyChanged("IsMasterPartEditSuccess");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsMasterPartExist {
-            get {
-                return this.IsMasterPartExistField;
-            }
-            set {
-                if ((this.IsMasterPartExistField.Equals(value) != true)) {
-                    this.IsMasterPartExistField = value;
-                    this.RaisePropertyChanged("IsMasterPartExist");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Manufactur {
-            get {
-                return this.ManufacturField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManufacturField, value) != true)) {
-                    this.ManufacturField = value;
-                    this.RaisePropertyChanged("Manufactur");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MslPartSW {
-            get {
-                return this.MslPartSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MslPartSWField, value) != true)) {
-                    this.MslPartSWField = value;
-                    this.RaisePropertyChanged("MslPartSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartActiveSW {
-            get {
-                return this.PartActiveSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartActiveSWField, value) != true)) {
-                    this.PartActiveSWField = value;
-                    this.RaisePropertyChanged("PartActiveSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartCd {
-            get {
-                return this.PartCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartCdField, value) != true)) {
-                    this.PartCdField = value;
-                    this.RaisePropertyChanged("PartCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartDesc {
-            get {
-                return this.PartDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartDescField, value) != true)) {
-                    this.PartDescField = value;
-                    this.RaisePropertyChanged("PartDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartDesignation1 {
-            get {
-                return this.PartDesignation1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartDesignation1Field, value) != true)) {
-                    this.PartDesignation1Field = value;
-                    this.RaisePropertyChanged("PartDesignation1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartDesignation2 {
-            get {
-                return this.PartDesignation2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartDesignation2Field, value) != true)) {
-                    this.PartDesignation2Field = value;
-                    this.RaisePropertyChanged("PartDesignation2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartDesignation3 {
-            get {
-                return this.PartDesignation3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartDesignation3Field, value) != true)) {
-                    this.PartDesignation3Field = value;
-                    this.RaisePropertyChanged("PartDesignation3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> PartPrice {
-            get {
-                return this.PartPriceField;
-            }
-            set {
-                if ((this.PartPriceField.Equals(value) != true)) {
-                    this.PartPriceField = value;
-                    this.RaisePropertyChanged("PartPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.PartsGroup PartsGroup {
-            get {
-                return this.PartsGroupField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartsGroupField, value) != true)) {
-                    this.PartsGroupField = value;
-                    this.RaisePropertyChanged("PartsGroup");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartsGroupCd {
-            get {
-                return this.PartsGroupCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartsGroupCdField, value) != true)) {
-                    this.PartsGroupCdField = value;
-                    this.RaisePropertyChanged("PartsGroupCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Quantity {
-            get {
-                return this.QuantityField;
-            }
-            set {
-                if ((this.QuantityField.Equals(value) != true)) {
-                    this.QuantityField = value;
-                    this.RaisePropertyChanged("Quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Remarks {
-            get {
-                return this.RemarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemarksField, value) != true)) {
-                    this.RemarksField = value;
-                    this.RaisePropertyChanged("Remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SerialTagSW {
-            get {
-                return this.SerialTagSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SerialTagSWField, value) != true)) {
-                    this.SerialTagSWField = value;
-                    this.RaisePropertyChanged("SerialTagSW");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Model", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class Model : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IndicatorCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.Manufactur ManufacturField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManufacturCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModelNoField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IndicatorCd {
-            get {
-                return this.IndicatorCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IndicatorCdField, value) != true)) {
-                    this.IndicatorCdField = value;
-                    this.RaisePropertyChanged("IndicatorCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.Manufactur Manufactur {
-            get {
-                return this.ManufacturField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManufacturField, value) != true)) {
-                    this.ManufacturField = value;
-                    this.RaisePropertyChanged("Manufactur");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ManufacturCd {
-            get {
-                return this.ManufacturCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManufacturCdField, value) != true)) {
-                    this.ManufacturCdField = value;
-                    this.RaisePropertyChanged("ManufacturCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModelNo {
-            get {
-                return this.ModelNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModelNoField, value) != true)) {
-                    this.ModelNoField = value;
-                    this.RaisePropertyChanged("ModelNo");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PartsGroup", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class PartsGroup : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsPartsGroupAddUpdateSuccessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsPartsGroupCodeExistsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPartField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartsGroupActiveSWField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartsGroupCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartsGroupDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RemarksField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeTimeField, value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsPartsGroupAddUpdateSuccess {
-            get {
-                return this.IsPartsGroupAddUpdateSuccessField;
-            }
-            set {
-                if ((this.IsPartsGroupAddUpdateSuccessField.Equals(value) != true)) {
-                    this.IsPartsGroupAddUpdateSuccessField = value;
-                    this.RaisePropertyChanged("IsPartsGroupAddUpdateSuccess");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsPartsGroupCodeExists {
-            get {
-                return this.IsPartsGroupCodeExistsField;
-            }
-            set {
-                if ((this.IsPartsGroupCodeExistsField.Equals(value) != true)) {
-                    this.IsPartsGroupCodeExistsField = value;
-                    this.RaisePropertyChanged("IsPartsGroupCodeExists");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPart {
-            get {
-                return this.MasterPartField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MasterPartField, value) != true)) {
-                    this.MasterPartField = value;
-                    this.RaisePropertyChanged("MasterPart");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartsGroupActiveSW {
-            get {
-                return this.PartsGroupActiveSWField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartsGroupActiveSWField, value) != true)) {
-                    this.PartsGroupActiveSWField = value;
-                    this.RaisePropertyChanged("PartsGroupActiveSW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartsGroupCd {
-            get {
-                return this.PartsGroupCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartsGroupCdField, value) != true)) {
-                    this.PartsGroupCdField = value;
-                    this.RaisePropertyChanged("PartsGroupCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartsGroupDesc {
-            get {
-                return this.PartsGroupDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartsGroupDescField, value) != true)) {
-                    this.PartsGroupDescField = value;
-                    this.RaisePropertyChanged("PartsGroupDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Remarks {
-            get {
-                return this.RemarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemarksField, value) != true)) {
-                    this.RemarksField = value;
-                    this.RaisePropertyChanged("Remarks");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Discount", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class Discount : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManufctrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> MarkDiscountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShopCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Manufctr {
-            get {
-                return this.ManufctrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManufctrField, value) != true)) {
-                    this.ManufctrField = value;
-                    this.RaisePropertyChanged("Manufctr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> MarkDiscount {
-            get {
-                return this.MarkDiscountField;
-            }
-            set {
-                if ((this.MarkDiscountField.Equals(value) != true)) {
-                    this.MarkDiscountField = value;
-                    this.RaisePropertyChanged("MarkDiscount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShopCode {
-            get {
-                return this.ShopCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShopCodeField, value) != true)) {
-                    this.ShopCodeField = value;
-                    this.RaisePropertyChanged("ShopCode");
                 }
             }
         }
@@ -10696,6 +9059,1864 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
                 if ((object.ReferenceEquals(this.ModeField, value) != true)) {
                     this.ModeField = value;
                     this.RaisePropertyChanged("Mode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Damage", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Damage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DamageCedexCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DamageCodeNotFoundField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DamageDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DamageFullDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DamageNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DamageNumericalCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DamageCedexCode {
+            get {
+                return this.DamageCedexCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DamageCedexCodeField, value) != true)) {
+                    this.DamageCedexCodeField = value;
+                    this.RaisePropertyChanged("DamageCedexCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DamageCodeNotFound {
+            get {
+                return this.DamageCodeNotFoundField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DamageCodeNotFoundField, value) != true)) {
+                    this.DamageCodeNotFoundField = value;
+                    this.RaisePropertyChanged("DamageCodeNotFound");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DamageDescription {
+            get {
+                return this.DamageDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DamageDescriptionField, value) != true)) {
+                    this.DamageDescriptionField = value;
+                    this.RaisePropertyChanged("DamageDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DamageFullDescription {
+            get {
+                return this.DamageFullDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DamageFullDescriptionField, value) != true)) {
+                    this.DamageFullDescriptionField = value;
+                    this.RaisePropertyChanged("DamageFullDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DamageName {
+            get {
+                return this.DamageNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DamageNameField, value) != true)) {
+                    this.DamageNameField = value;
+                    this.RaisePropertyChanged("DamageName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DamageNumericalCode {
+            get {
+                return this.DamageNumericalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DamageNumericalCodeField, value) != true)) {
+                    this.DamageNumericalCodeField = value;
+                    this.RaisePropertyChanged("DamageNumericalCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuditTrail", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class AuditTrail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ColNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NewValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OldValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeTimeField, value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ColName {
+            get {
+                return this.ColNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColNameField, value) != true)) {
+                    this.ColNameField = value;
+                    this.RaisePropertyChanged("ColName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NewValue {
+            get {
+                return this.NewValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NewValueField, value) != true)) {
+                    this.NewValueField = value;
+                    this.RaisePropertyChanged("NewValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OldValue {
+            get {
+                return this.OldValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OldValueField, value) != true)) {
+                    this.OldValueField = value;
+                    this.RaisePropertyChanged("OldValue");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TPIIndicator", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class TPIIndicator : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TPICHTSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TPICHUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TPICedexCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TPIDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TPIFullDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TPINameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TPINumericalCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime TPICHTS {
+            get {
+                return this.TPICHTSField;
+            }
+            set {
+                if ((this.TPICHTSField.Equals(value) != true)) {
+                    this.TPICHTSField = value;
+                    this.RaisePropertyChanged("TPICHTS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TPICHUser {
+            get {
+                return this.TPICHUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TPICHUserField, value) != true)) {
+                    this.TPICHUserField = value;
+                    this.RaisePropertyChanged("TPICHUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TPICedexCode {
+            get {
+                return this.TPICedexCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TPICedexCodeField, value) != true)) {
+                    this.TPICedexCodeField = value;
+                    this.RaisePropertyChanged("TPICedexCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TPIDescription {
+            get {
+                return this.TPIDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TPIDescriptionField, value) != true)) {
+                    this.TPIDescriptionField = value;
+                    this.RaisePropertyChanged("TPIDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TPIFullDescription {
+            get {
+                return this.TPIFullDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TPIFullDescriptionField, value) != true)) {
+                    this.TPIFullDescriptionField = value;
+                    this.RaisePropertyChanged("TPIFullDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TPIName {
+            get {
+                return this.TPINameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TPINameField, value) != true)) {
+                    this.TPINameField = value;
+                    this.RaisePropertyChanged("TPIName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TPINumericalCode {
+            get {
+                return this.TPINumericalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TPINumericalCodeField, value) != true)) {
+                    this.TPINumericalCodeField = value;
+                    this.RaisePropertyChanged("TPINumericalCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Model", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Model : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IndicatorCdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.Manufactur ManufacturField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManufacturCdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelNoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IndicatorCd {
+            get {
+                return this.IndicatorCdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IndicatorCdField, value) != true)) {
+                    this.IndicatorCdField = value;
+                    this.RaisePropertyChanged("IndicatorCd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.Manufactur Manufactur {
+            get {
+                return this.ManufacturField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManufacturField, value) != true)) {
+                    this.ManufacturField = value;
+                    this.RaisePropertyChanged("Manufactur");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ManufacturCd {
+            get {
+                return this.ManufacturCdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManufacturCdField, value) != true)) {
+                    this.ManufacturCdField = value;
+                    this.RaisePropertyChanged("ManufacturCd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModelNo {
+            get {
+                return this.ModelNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelNoField, value) != true)) {
+                    this.ModelNoField = value;
+                    this.RaisePropertyChanged("ModelNo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Manufactur", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Manufactur : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> DiscountPercentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManufacturCdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManufacturNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.Model[] ModelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> DiscountPercent {
+            get {
+                return this.DiscountPercentField;
+            }
+            set {
+                if ((this.DiscountPercentField.Equals(value) != true)) {
+                    this.DiscountPercentField = value;
+                    this.RaisePropertyChanged("DiscountPercent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ManufacturCd {
+            get {
+                return this.ManufacturCdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManufacturCdField, value) != true)) {
+                    this.ManufacturCdField = value;
+                    this.RaisePropertyChanged("ManufacturCd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ManufacturName {
+            get {
+                return this.ManufacturNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManufacturNameField, value) != true)) {
+                    this.ManufacturNameField = value;
+                    this.RaisePropertyChanged("ManufacturName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPart {
+            get {
+                return this.MasterPartField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MasterPartField, value) != true)) {
+                    this.MasterPartField = value;
+                    this.RaisePropertyChanged("MasterPart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.Model[] Model {
+            get {
+                return this.ModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelField, value) != true)) {
+                    this.ModelField = value;
+                    this.RaisePropertyChanged("Model");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MasterPart", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class MasterPart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CorePartSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> CoreValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CoreValueSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeductCoreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeductCoreSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsMasterPartAddSuccessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsMasterPartDeleteSuccessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsMasterPartEditSuccessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsMasterPartExistField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManufacturField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MslPartSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartActiveSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartCdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartDesignation1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartDesignation2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartDesignation3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PartPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.PartsGroup PartsGroupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartsGroupCdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarksField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SerialTagSWField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CorePartSW {
+            get {
+                return this.CorePartSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CorePartSWField, value) != true)) {
+                    this.CorePartSWField = value;
+                    this.RaisePropertyChanged("CorePartSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> CoreValue {
+            get {
+                return this.CoreValueField;
+            }
+            set {
+                if ((this.CoreValueField.Equals(value) != true)) {
+                    this.CoreValueField = value;
+                    this.RaisePropertyChanged("CoreValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CoreValueSW {
+            get {
+                return this.CoreValueSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CoreValueSWField, value) != true)) {
+                    this.CoreValueSWField = value;
+                    this.RaisePropertyChanged("CoreValueSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeductCore {
+            get {
+                return this.DeductCoreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeductCoreField, value) != true)) {
+                    this.DeductCoreField = value;
+                    this.RaisePropertyChanged("DeductCore");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeductCoreSW {
+            get {
+                return this.DeductCoreSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeductCoreSWField, value) != true)) {
+                    this.DeductCoreSWField = value;
+                    this.RaisePropertyChanged("DeductCoreSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsMasterPartAddSuccess {
+            get {
+                return this.IsMasterPartAddSuccessField;
+            }
+            set {
+                if ((this.IsMasterPartAddSuccessField.Equals(value) != true)) {
+                    this.IsMasterPartAddSuccessField = value;
+                    this.RaisePropertyChanged("IsMasterPartAddSuccess");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsMasterPartDeleteSuccess {
+            get {
+                return this.IsMasterPartDeleteSuccessField;
+            }
+            set {
+                if ((this.IsMasterPartDeleteSuccessField.Equals(value) != true)) {
+                    this.IsMasterPartDeleteSuccessField = value;
+                    this.RaisePropertyChanged("IsMasterPartDeleteSuccess");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsMasterPartEditSuccess {
+            get {
+                return this.IsMasterPartEditSuccessField;
+            }
+            set {
+                if ((this.IsMasterPartEditSuccessField.Equals(value) != true)) {
+                    this.IsMasterPartEditSuccessField = value;
+                    this.RaisePropertyChanged("IsMasterPartEditSuccess");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsMasterPartExist {
+            get {
+                return this.IsMasterPartExistField;
+            }
+            set {
+                if ((this.IsMasterPartExistField.Equals(value) != true)) {
+                    this.IsMasterPartExistField = value;
+                    this.RaisePropertyChanged("IsMasterPartExist");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Manufactur {
+            get {
+                return this.ManufacturField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManufacturField, value) != true)) {
+                    this.ManufacturField = value;
+                    this.RaisePropertyChanged("Manufactur");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MslPartSW {
+            get {
+                return this.MslPartSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MslPartSWField, value) != true)) {
+                    this.MslPartSWField = value;
+                    this.RaisePropertyChanged("MslPartSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartActiveSW {
+            get {
+                return this.PartActiveSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartActiveSWField, value) != true)) {
+                    this.PartActiveSWField = value;
+                    this.RaisePropertyChanged("PartActiveSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartCd {
+            get {
+                return this.PartCdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartCdField, value) != true)) {
+                    this.PartCdField = value;
+                    this.RaisePropertyChanged("PartCd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartDesc {
+            get {
+                return this.PartDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartDescField, value) != true)) {
+                    this.PartDescField = value;
+                    this.RaisePropertyChanged("PartDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartDesignation1 {
+            get {
+                return this.PartDesignation1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartDesignation1Field, value) != true)) {
+                    this.PartDesignation1Field = value;
+                    this.RaisePropertyChanged("PartDesignation1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartDesignation2 {
+            get {
+                return this.PartDesignation2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartDesignation2Field, value) != true)) {
+                    this.PartDesignation2Field = value;
+                    this.RaisePropertyChanged("PartDesignation2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartDesignation3 {
+            get {
+                return this.PartDesignation3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartDesignation3Field, value) != true)) {
+                    this.PartDesignation3Field = value;
+                    this.RaisePropertyChanged("PartDesignation3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> PartPrice {
+            get {
+                return this.PartPriceField;
+            }
+            set {
+                if ((this.PartPriceField.Equals(value) != true)) {
+                    this.PartPriceField = value;
+                    this.RaisePropertyChanged("PartPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.PartsGroup PartsGroup {
+            get {
+                return this.PartsGroupField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartsGroupField, value) != true)) {
+                    this.PartsGroupField = value;
+                    this.RaisePropertyChanged("PartsGroup");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartsGroupCd {
+            get {
+                return this.PartsGroupCdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartsGroupCdField, value) != true)) {
+                    this.PartsGroupCdField = value;
+                    this.RaisePropertyChanged("PartsGroupCd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remarks {
+            get {
+                return this.RemarksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarksField, value) != true)) {
+                    this.RemarksField = value;
+                    this.RaisePropertyChanged("Remarks");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SerialTagSW {
+            get {
+                return this.SerialTagSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SerialTagSWField, value) != true)) {
+                    this.SerialTagSWField = value;
+                    this.RaisePropertyChanged("SerialTagSW");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PartsGroup", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class PartsGroup : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsPartsGroupAddUpdateSuccessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsPartsGroupCodeExistsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartsGroupActiveSWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartsGroupCdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartsGroupDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarksField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeTimeField, value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsPartsGroupAddUpdateSuccess {
+            get {
+                return this.IsPartsGroupAddUpdateSuccessField;
+            }
+            set {
+                if ((this.IsPartsGroupAddUpdateSuccessField.Equals(value) != true)) {
+                    this.IsPartsGroupAddUpdateSuccessField = value;
+                    this.RaisePropertyChanged("IsPartsGroupAddUpdateSuccess");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsPartsGroupCodeExists {
+            get {
+                return this.IsPartsGroupCodeExistsField;
+            }
+            set {
+                if ((this.IsPartsGroupCodeExistsField.Equals(value) != true)) {
+                    this.IsPartsGroupCodeExistsField = value;
+                    this.RaisePropertyChanged("IsPartsGroupCodeExists");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.MasterPart[] MasterPart {
+            get {
+                return this.MasterPartField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MasterPartField, value) != true)) {
+                    this.MasterPartField = value;
+                    this.RaisePropertyChanged("MasterPart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartsGroupActiveSW {
+            get {
+                return this.PartsGroupActiveSWField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartsGroupActiveSWField, value) != true)) {
+                    this.PartsGroupActiveSWField = value;
+                    this.RaisePropertyChanged("PartsGroupActiveSW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartsGroupCd {
+            get {
+                return this.PartsGroupCdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartsGroupCdField, value) != true)) {
+                    this.PartsGroupCdField = value;
+                    this.RaisePropertyChanged("PartsGroupCd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartsGroupDesc {
+            get {
+                return this.PartsGroupDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartsGroupDescField, value) != true)) {
+                    this.PartsGroupDescField = value;
+                    this.RaisePropertyChanged("PartsGroupDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remarks {
+            get {
+                return this.RemarksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarksField, value) != true)) {
+                    this.RemarksField = value;
+                    this.RaisePropertyChanged("Remarks");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ShopCont", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class ShopCont : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ContractAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime EffDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ExpDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManualCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RepairCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.Shop ShopField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShopCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ShopContIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ContractAmount {
+            get {
+                return this.ContractAmountField;
+            }
+            set {
+                if ((this.ContractAmountField.Equals(value) != true)) {
+                    this.ContractAmountField = value;
+                    this.RaisePropertyChanged("ContractAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime EffDate {
+            get {
+                return this.EffDateField;
+            }
+            set {
+                if ((this.EffDateField.Equals(value) != true)) {
+                    this.EffDateField = value;
+                    this.RaisePropertyChanged("EffDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ExpDate {
+            get {
+                return this.ExpDateField;
+            }
+            set {
+                if ((this.ExpDateField.Equals(value) != true)) {
+                    this.ExpDateField = value;
+                    this.RaisePropertyChanged("ExpDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ManualCode {
+            get {
+                return this.ManualCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManualCodeField, value) != true)) {
+                    this.ManualCodeField = value;
+                    this.RaisePropertyChanged("ManualCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mode {
+            get {
+                return this.ModeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeField, value) != true)) {
+                    this.ModeField = value;
+                    this.RaisePropertyChanged("Mode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RepairCode {
+            get {
+                return this.RepairCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RepairCodeField, value) != true)) {
+                    this.RepairCodeField = value;
+                    this.RaisePropertyChanged("RepairCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.Shop Shop {
+            get {
+                return this.ShopField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShopField, value) != true)) {
+                    this.ShopField = value;
+                    this.RaisePropertyChanged("Shop");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShopCode {
+            get {
+                return this.ShopCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShopCodeField, value) != true)) {
+                    this.ShopCodeField = value;
+                    this.RaisePropertyChanged("ShopCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ShopContID {
+            get {
+                return this.ShopContIDField;
+            }
+            set {
+                if ((this.ShopContIDField.Equals(value) != true)) {
+                    this.ShopContIDField = value;
+                    this.RaisePropertyChanged("ShopContID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ShopLimits", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class ShopLimits : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> AutoApproveLimitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RepairAmtLimitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MercPlusClient.ManageMasterDataServiceReference.Shop ShopField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShopCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ShopMaterialLimitField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> AutoApproveLimit {
+            get {
+                return this.AutoApproveLimitField;
+            }
+            set {
+                if ((this.AutoApproveLimitField.Equals(value) != true)) {
+                    this.AutoApproveLimitField = value;
+                    this.RaisePropertyChanged("AutoApproveLimit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FName {
+            get {
+                return this.FNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FNameField, value) != true)) {
+                    this.FNameField = value;
+                    this.RaisePropertyChanged("FName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LName {
+            get {
+                return this.LNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LNameField, value) != true)) {
+                    this.LNameField = value;
+                    this.RaisePropertyChanged("LName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mode {
+            get {
+                return this.ModeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeField, value) != true)) {
+                    this.ModeField = value;
+                    this.RaisePropertyChanged("Mode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModeDesc {
+            get {
+                return this.ModeDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeDescField, value) != true)) {
+                    this.ModeDescField = value;
+                    this.RaisePropertyChanged("ModeDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> RepairAmtLimit {
+            get {
+                return this.RepairAmtLimitField;
+            }
+            set {
+                if ((this.RepairAmtLimitField.Equals(value) != true)) {
+                    this.RepairAmtLimitField = value;
+                    this.RaisePropertyChanged("RepairAmtLimit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MercPlusClient.ManageMasterDataServiceReference.Shop Shop {
+            get {
+                return this.ShopField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShopField, value) != true)) {
+                    this.ShopField = value;
+                    this.RaisePropertyChanged("Shop");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShopCode {
+            get {
+                return this.ShopCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShopCodeField, value) != true)) {
+                    this.ShopCodeField = value;
+                    this.RaisePropertyChanged("ShopCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ShopMaterialLimit {
+            get {
+                return this.ShopMaterialLimitField;
+            }
+            set {
+                if ((this.ShopMaterialLimitField.Equals(value) != true)) {
+                    this.ShopMaterialLimitField = value;
+                    this.RaisePropertyChanged("ShopMaterialLimit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Discount", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Discount : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ChangeTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChangeUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ManufctrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> MarkDiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShopCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ChangeTime {
+            get {
+                return this.ChangeTimeField;
+            }
+            set {
+                if ((this.ChangeTimeField.Equals(value) != true)) {
+                    this.ChangeTimeField = value;
+                    this.RaisePropertyChanged("ChangeTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChangeUser {
+            get {
+                return this.ChangeUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
+                    this.ChangeUserField = value;
+                    this.RaisePropertyChanged("ChangeUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Manufctr {
+            get {
+                return this.ManufctrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManufctrField, value) != true)) {
+                    this.ManufctrField = value;
+                    this.RaisePropertyChanged("Manufctr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> MarkDiscount {
+            get {
+                return this.MarkDiscountField;
+            }
+            set {
+                if ((this.MarkDiscountField.Equals(value) != true)) {
+                    this.MarkDiscountField = value;
+                    this.RaisePropertyChanged("MarkDiscount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShopCode {
+            get {
+                return this.ShopCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShopCodeField, value) != true)) {
+                    this.ShopCodeField = value;
+                    this.RaisePropertyChanged("ShopCode");
                 }
             }
         }
@@ -11585,280 +11806,9 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ShopCont", Namespace="http://schemas.datacontract.org/2004/07/MercPlusLibrary")]
-    [System.SerializableAttribute()]
-    public partial class ShopCont : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ChangeTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChangeUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> ContractAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EffDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ExpDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManualCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RepairCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MercPlusClient.ManageMasterDataServiceReference.Shop ShopField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShopCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ShopContIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ChangeTime {
-            get {
-                return this.ChangeTimeField;
-            }
-            set {
-                if ((this.ChangeTimeField.Equals(value) != true)) {
-                    this.ChangeTimeField = value;
-                    this.RaisePropertyChanged("ChangeTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ChangeUser {
-            get {
-                return this.ChangeUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChangeUserField, value) != true)) {
-                    this.ChangeUserField = value;
-                    this.RaisePropertyChanged("ChangeUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> ContractAmount {
-            get {
-                return this.ContractAmountField;
-            }
-            set {
-                if ((this.ContractAmountField.Equals(value) != true)) {
-                    this.ContractAmountField = value;
-                    this.RaisePropertyChanged("ContractAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime EffDate {
-            get {
-                return this.EffDateField;
-            }
-            set {
-                if ((this.EffDateField.Equals(value) != true)) {
-                    this.EffDateField = value;
-                    this.RaisePropertyChanged("EffDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ExpDate {
-            get {
-                return this.ExpDateField;
-            }
-            set {
-                if ((this.ExpDateField.Equals(value) != true)) {
-                    this.ExpDateField = value;
-                    this.RaisePropertyChanged("ExpDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ManualCode {
-            get {
-                return this.ManualCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManualCodeField, value) != true)) {
-                    this.ManualCodeField = value;
-                    this.RaisePropertyChanged("ManualCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mode {
-            get {
-                return this.ModeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModeField, value) != true)) {
-                    this.ModeField = value;
-                    this.RaisePropertyChanged("Mode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RepairCode {
-            get {
-                return this.RepairCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RepairCodeField, value) != true)) {
-                    this.RepairCodeField = value;
-                    this.RaisePropertyChanged("RepairCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MercPlusClient.ManageMasterDataServiceReference.Shop Shop {
-            get {
-                return this.ShopField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShopField, value) != true)) {
-                    this.ShopField = value;
-                    this.RaisePropertyChanged("Shop");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShopCode {
-            get {
-                return this.ShopCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShopCodeField, value) != true)) {
-                    this.ShopCodeField = value;
-                    this.RaisePropertyChanged("ShopCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ShopContID {
-            get {
-                return this.ShopContIDField;
-            }
-            set {
-                if ((this.ShopContIDField.Equals(value) != true)) {
-                    this.ShopContIDField = value;
-                    this.RaisePropertyChanged("ShopContID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ManageMasterDataServiceReference.IManageMasterData")]
     public interface IManageMasterData {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManualMode", ReplyAction="http://tempuri.org/IManageMasterData/GetManualModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.ManualMode[] GetManualMode(string ManualCode, string ModeCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManualModeManual", ReplyAction="http://tempuri.org/IManageMasterData/GetManualModeManualResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManualModeManual();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllManual", ReplyAction="http://tempuri.org/IManageMasterData/GetAllManualResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllManual();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManualModeMode", ReplyAction="http://tempuri.org/IManageMasterData/GetManualModeModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetManualModeMode(string ManualCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllMode", ReplyAction="http://tempuri.org/IManageMasterData/GetAllModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllMode();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetDamageCodes", ReplyAction="http://tempuri.org/IManageMasterData/GetDamageCodesResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCodes();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/GetDamageCodeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCode(string code);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/CreateDamageCodeResponse")]
-        bool CreateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageCodeFromClient, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/UpdateDamageCodeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Damage UpdateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageToBeUpdated);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/DeleteDamageCodeResponse")]
-        bool DeleteDamageCode(string DamageCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAuditTrailData", ReplyAction="http://tempuri.org/IManageMasterData/GetAuditTrailDataResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.AuditTrail[] GetAuditTrailData(string TableName, string UniqueID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetModes", ReplyAction="http://tempuri.org/IManageMasterData/GetModesResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModes();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModes", ReplyAction="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModesResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllActiveInActiveModes();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetMode", ReplyAction="http://tempuri.org/IManageMasterData/GetModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetMode(string ModeCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateMode", ReplyAction="http://tempuri.org/IManageMasterData/UpdateModeResponse")]
-        bool UpdateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeToBeUpdated, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateMode", ReplyAction="http://tempuri.org/IManageMasterData/CreateModeResponse")]
-        bool CreateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeFromClient, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetTPIIndicators", ReplyAction="http://tempuri.org/IManageMasterData/GetTPIIndicatorsResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicators();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/GetTPIIndicatorResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicator(string Code);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/UpdateTPIIndicatorResponse")]
-        bool UpdateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorToBeUpdated, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/DeleteTPIIndicatorResponse")]
-        bool DeleteTPIIndicator(string TPICedexCode, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/CreateTPIIndicatorResponse")]
-        bool CreateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorListToBeUpdated, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManual", ReplyAction="http://tempuri.org/IManageMasterData/GetManualResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManual();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateManualDescription", ReplyAction="http://tempuri.org/IManageMasterData/UpdateManualDescriptionResponse")]
         bool UpdateManualDescription(MercPlusClient.ManageMasterDataServiceReference.Manual ManualDescriptionToBeUpdated, ref string Msg);
@@ -12040,6 +11990,261 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetSTSDescription", ReplyAction="http://tempuri.org/IManageMasterData/GetSTSDescriptionResponse")]
         string GetSTSDescription(string stscode, string mode, string manualcd);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllActiveManuals", ReplyAction="http://tempuri.org/IManageMasterData/GetAllActiveManualsResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllActiveManuals();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociation", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociationResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.RepairCodePart[] GetRepairCode_PartAssociation(string mode, string manual, string repairCode, string partNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetModesByManuals", ReplyAction="http://tempuri.org/IManageMasterData/GetModesByManualsResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByManuals(string manCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/Add_Edit_RPA", ReplyAction="http://tempuri.org/IManageMasterData/Add_Edit_RPAResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.ServiceResult Add_Edit_RPA(MercPlusClient.ManageMasterDataServiceReference.RepairCodePart repairCodePartFromClient, string OprMode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateRPA", ReplyAction="http://tempuri.org/IManageMasterData/UpdateRPAResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.ServiceResult UpdateRPA(string orgManualCode, string orgModeCode, string orgPartNumber, string orgRepairCod, string maxPartQty, string UserName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PART", ReplyAction="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PARTResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.ServiceResult DeleteRPRCODE_PART(string repairCod, string partNumber, string modeCode, string manualCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIPeriods", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIPeriodsResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.PTIPeriod[] GetPTIPeriods(string serialFrom);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIPeriodResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIPeriod(string SerialFrom, string SerialTo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreatePTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/CreatePTIPeriodResponse")]
+        bool CreatePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeletePTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/DeletePTIPeriodResponse")]
+        bool DeletePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyPTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/ModifyPTIPeriodResponse")]
+        bool ModifyPTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriod", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodResponse")]
+        int GetPTIDefaultPeriod();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriod", ReplyAction="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriodResponse")]
+        bool ModifyPTIDefaultPeriod(int NoOfDays, string UserID, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecord", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecordResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIDefaultPeriodRecord();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertSpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/InsertSpecialRemarksResponse")]
+        bool InsertSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref int ID, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifySpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/ModifySpecialRemarksResponse")]
+        bool ModifySpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteSpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/DeleteSpecialRemarksResponse")]
+        bool DeleteSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetSpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/GetSpecialRemarksResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks GetSpecialRemarks(int RemarksID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexes", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexesResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndex", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndex(int IndexID, string Manual_CD, string Mode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexManual", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexManualResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexManual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexMode", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexMode(string manual_cd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateIndex", ReplyAction="http://tempuri.org/IManageMasterData/UpdateIndexResponse")]
+        bool UpdateIndex(MercPlusClient.ManageMasterDataServiceReference.Index updatedIndex, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteIndex", ReplyAction="http://tempuri.org/IManageMasterData/DeleteIndexResponse")]
+        bool DeleteIndex(int indexID, string manualCode, string mode, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateIndex", ReplyAction="http://tempuri.org/IManageMasterData/CreateIndexResponse")]
+        bool CreateIndex(MercPlusClient.ManageMasterDataServiceReference.Index insertIndex, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexesForDropDown", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexesForDropDownResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexesForDropDown(string Manual_CD, string Mode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValue", ReplyAction="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValueResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks[][] GetSpecialRemarksComboValue();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveManual", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveManualResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexAllActiveManual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveMode", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexAllActiveMode(string manual_cd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeManual", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeManualResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeManual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeMode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeMode(string ManualCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeByMode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeByModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByMode(string ManualCode, string ModeCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeByIndex", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeByIndexResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByIndex(string ManualCode, string ModeCode, int IndexId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCodeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByRepairCode(string ManualCode, string ModeCode, string RepairCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/InsertRepairCodeResponse")]
+        bool InsertRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/ModifyRepairCodeResponse")]
+        bool ModifyRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/DeleteRepairCodeResponse")]
+        bool DeleteRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManual", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManualResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeActiveIndexManual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeIndexMode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeIndexModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeIndexMode(string ManualCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertManualMode", ReplyAction="http://tempuri.org/IManageMasterData/InsertManualModeResponse")]
+        bool InsertManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteManualMode", ReplyAction="http://tempuri.org/IManageMasterData/DeleteManualModeResponse")]
+        bool DeleteManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyManualMode", ReplyAction="http://tempuri.org/IManageMasterData/ModifyManualModeResponse")]
+        bool ModifyManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManualMode", ReplyAction="http://tempuri.org/IManageMasterData/GetManualModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.ManualMode[] GetManualMode(string ManualCode, string ModeCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManualModeManual", ReplyAction="http://tempuri.org/IManageMasterData/GetManualModeManualResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManualModeManual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllManual", ReplyAction="http://tempuri.org/IManageMasterData/GetAllManualResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllManual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManualModeMode", ReplyAction="http://tempuri.org/IManageMasterData/GetManualModeModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetManualModeMode(string ManualCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllMode", ReplyAction="http://tempuri.org/IManageMasterData/GetAllModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllMode();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetDamageCodes", ReplyAction="http://tempuri.org/IManageMasterData/GetDamageCodesResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCodes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/GetDamageCodeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCode(string code);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/CreateDamageCodeResponse")]
+        bool CreateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageCodeFromClient, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/UpdateDamageCodeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Damage UpdateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageToBeUpdated);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteDamageCode", ReplyAction="http://tempuri.org/IManageMasterData/DeleteDamageCodeResponse")]
+        bool DeleteDamageCode(string DamageCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAuditTrailData", ReplyAction="http://tempuri.org/IManageMasterData/GetAuditTrailDataResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.AuditTrail[] GetAuditTrailData(string TableName, string UniqueID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetModes", ReplyAction="http://tempuri.org/IManageMasterData/GetModesResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModes", ReplyAction="http://tempuri.org/IManageMasterData/GetAllActiveInActiveModesResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllActiveInActiveModes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetMode", ReplyAction="http://tempuri.org/IManageMasterData/GetModeResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetMode(string ModeCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateMode", ReplyAction="http://tempuri.org/IManageMasterData/UpdateModeResponse")]
+        bool UpdateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeToBeUpdated, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateMode", ReplyAction="http://tempuri.org/IManageMasterData/CreateModeResponse")]
+        bool CreateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeFromClient, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetTPIIndicators", ReplyAction="http://tempuri.org/IManageMasterData/GetTPIIndicatorsResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicators();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/GetTPIIndicatorResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicator(string Code);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/UpdateTPIIndicatorResponse")]
+        bool UpdateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorToBeUpdated, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/DeleteTPIIndicatorResponse")]
+        bool DeleteTPIIndicator(string TPICedexCode, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateTPIIndicator", ReplyAction="http://tempuri.org/IManageMasterData/CreateTPIIndicatorResponse")]
+        bool CreateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorListToBeUpdated, ref string Msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManual", ReplyAction="http://tempuri.org/IManageMasterData/GetManualResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscount", ReplyAction="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscountResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.RefAudit[] GetAuditTrailMDiscount(string RecordId, string TableName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManufacturerModelList", ReplyAction="http://tempuri.org/IManageMasterData/GetManufacturerModelListResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Model[] GetManufacturerModelList(string ManufacturerCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateManufacturerModel", ReplyAction="http://tempuri.org/IManageMasterData/UpdateManufacturerModelResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Model UpdateManufacturerModel(MercPlusClient.ManageMasterDataServiceReference.Model ModelToBeUpdated);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSByShop", ReplyAction="http://tempuri.org/IManageMasterData/GetRSByShopResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Shop[] GetRSByShop(string ShopCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteManufacturerModel", ReplyAction="http://tempuri.org/IManageMasterData/DeleteManufacturerModelResponse")]
+        bool DeleteManufacturerModel(string MDiscountCode, string MmodelNo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetShopByUserId", ReplyAction="http://tempuri.org/IManageMasterData/GetShopByUserIdResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopByUserId(int UserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetShopProfileByUserId", ReplyAction="http://tempuri.org/IManageMasterData/GetShopProfileByUserIdResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopProfileByUserId(int UserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSAllCurrencies", ReplyAction="http://tempuri.org/IManageMasterData/GetRSAllCurrenciesResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Currency[] GetRSAllCurrencies();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/RSAllCorpPayAgents", ReplyAction="http://tempuri.org/IManageMasterData/RSAllCorpPayAgentsResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSAllCorpPayAgents();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/RSVendorsByPayAgent", ReplyAction="http://tempuri.org/IManageMasterData/RSVendorsByPayAgentResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Vendor[] RSVendorsByPayAgent(string PayAgent_CD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSAllVendors", ReplyAction="http://tempuri.org/IManageMasterData/GetRSAllVendorsResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Vendor[] GetRSAllVendors();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/RSByPayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/RSByPayAgentVendorResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSByPayAgentVendor(string PayAgent_CD, string Vendor_CD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreatePayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/CreatePayAgentVendorResponse")]
+        string CreatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentFromClient);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeletePayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/DeletePayAgentVendorResponse")]
+        string DeletePayAgentVendor(string PayAgent_CD, string Vendor_CD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdatePayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/UpdatePayAgentVendorResponse")]
+        string UpdatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentToBeUpdated);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSAllContracts", ReplyAction="http://tempuri.org/IManageMasterData/GetRSAllContractsResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.ShopCont[] GetRSAllContracts(string ShopCode, string RepairCode, string ModeCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetModesByShop", ReplyAction="http://tempuri.org/IManageMasterData/GetModesByShopResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByShop(string Shop_CD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSByShopModes", ReplyAction="http://tempuri.org/IManageMasterData/GetRSByShopModesResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.ShopLimits[] GetRSByShopModes(string Shop_CD, string Mode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertShopContract", ReplyAction="http://tempuri.org/IManageMasterData/InsertShopContractResponse")]
+        string InsertShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateShopContract", ReplyAction="http://tempuri.org/IManageMasterData/UpdateShopContractResponse")]
+        string UpdateShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/FillShopContractEdit", ReplyAction="http://tempuri.org/IManageMasterData/FillShopContractEditResponse")]
+        MercPlusClient.ManageMasterDataServiceReference.ShopCont FillShopContractEdit(int ContID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteShopContract", ReplyAction="http://tempuri.org/IManageMasterData/DeleteShopContractResponse")]
         string DeleteShopContract(string gridData);
         
@@ -12168,132 +12373,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllActiveModes", ReplyAction="http://tempuri.org/IManageMasterData/GetAllActiveModesResponse")]
         MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllActiveModes();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAllActiveManuals", ReplyAction="http://tempuri.org/IManageMasterData/GetAllActiveManualsResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllActiveManuals();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociation", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCode_PartAssociationResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.RepairCodePart[] GetRepairCode_PartAssociation(string mode, string manual, string repairCode, string partNumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetModesByManuals", ReplyAction="http://tempuri.org/IManageMasterData/GetModesByManualsResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByManuals(string manCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/Add_Edit_RPA", ReplyAction="http://tempuri.org/IManageMasterData/Add_Edit_RPAResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.ServiceResult Add_Edit_RPA(MercPlusClient.ManageMasterDataServiceReference.RepairCodePart repairCodePartFromClient, string OprMode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateRPA", ReplyAction="http://tempuri.org/IManageMasterData/UpdateRPAResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.ServiceResult UpdateRPA(string orgManualCode, string orgModeCode, string orgPartNumber, string orgRepairCod, string maxPartQty, string UserName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PART", ReplyAction="http://tempuri.org/IManageMasterData/DeleteRPRCODE_PARTResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.ServiceResult DeleteRPRCODE_PART(string repairCod, string partNumber, string modeCode, string manualCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIPeriods", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIPeriodsResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.PTIPeriod[] GetPTIPeriods(string serialFrom);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIPeriodResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIPeriod(string SerialFrom, string SerialTo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreatePTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/CreatePTIPeriodResponse")]
-        bool CreatePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeletePTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/DeletePTIPeriodResponse")]
-        bool DeletePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyPTIPeriod", ReplyAction="http://tempuri.org/IManageMasterData/ModifyPTIPeriodResponse")]
-        bool ModifyPTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriod", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodResponse")]
-        int GetPTIDefaultPeriod();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriod", ReplyAction="http://tempuri.org/IManageMasterData/ModifyPTIDefaultPeriodResponse")]
-        bool ModifyPTIDefaultPeriod(int NoOfDays, string UserID, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecord", ReplyAction="http://tempuri.org/IManageMasterData/GetPTIDefaultPeriodRecordResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIDefaultPeriodRecord();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertSpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/InsertSpecialRemarksResponse")]
-        bool InsertSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref int ID, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifySpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/ModifySpecialRemarksResponse")]
-        bool ModifySpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteSpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/DeleteSpecialRemarksResponse")]
-        bool DeleteSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetSpecialRemarks", ReplyAction="http://tempuri.org/IManageMasterData/GetSpecialRemarksResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks GetSpecialRemarks(int RemarksID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexes", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexesResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexes();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndex", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndex(int IndexID, string Manual_CD, string Mode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexManual", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexManualResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexManual();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexMode", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexMode(string manual_cd);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateIndex", ReplyAction="http://tempuri.org/IManageMasterData/UpdateIndexResponse")]
-        bool UpdateIndex(MercPlusClient.ManageMasterDataServiceReference.Index updatedIndex, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteIndex", ReplyAction="http://tempuri.org/IManageMasterData/DeleteIndexResponse")]
-        bool DeleteIndex(int indexID, string manualCode, string mode, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateIndex", ReplyAction="http://tempuri.org/IManageMasterData/CreateIndexResponse")]
-        bool CreateIndex(MercPlusClient.ManageMasterDataServiceReference.Index insertIndex, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexesForDropDown", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexesForDropDownResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexesForDropDown(string Manual_CD, string Mode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValue", ReplyAction="http://tempuri.org/IManageMasterData/GetSpecialRemarksComboValueResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks[][] GetSpecialRemarksComboValue();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveManual", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveManualResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexAllActiveManual();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetIndexAllActiveMode", ReplyAction="http://tempuri.org/IManageMasterData/GetIndexAllActiveModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexAllActiveMode(string manual_cd);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeManual", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeManualResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeManual();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeMode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeMode(string ManualCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeByMode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeByModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByMode(string ManualCode, string ModeCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeByIndex", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeByIndexResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByIndex(string ManualCode, string ModeCode, int IndexId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeByRepairCodeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByRepairCode(string ManualCode, string ModeCode, string RepairCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/InsertRepairCodeResponse")]
-        bool InsertRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/ModifyRepairCodeResponse")]
-        bool ModifyRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteRepairCode", ReplyAction="http://tempuri.org/IManageMasterData/DeleteRepairCodeResponse")]
-        bool DeleteRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManual", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeActiveIndexManualResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeActiveIndexManual();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRepairCodeIndexMode", ReplyAction="http://tempuri.org/IManageMasterData/GetRepairCodeIndexModeResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeIndexMode(string ManualCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertManualMode", ReplyAction="http://tempuri.org/IManageMasterData/InsertManualModeResponse")]
-        bool InsertManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteManualMode", ReplyAction="http://tempuri.org/IManageMasterData/DeleteManualModeResponse")]
-        bool DeleteManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string msg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/ModifyManualMode", ReplyAction="http://tempuri.org/IManageMasterData/ModifyManualModeResponse")]
-        bool ModifyManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetPayAgent", ReplyAction="http://tempuri.org/IManageMasterData/GetPayAgentResponse")]
         MercPlusClient.ManageMasterDataServiceReference.PayAgent[] GetPayAgent();
@@ -12487,69 +12566,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreateManufacturerDiscount", ReplyAction="http://tempuri.org/IManageMasterData/CreateManufacturerDiscountResponse")]
         string CreateManufacturerDiscount(MercPlusClient.ManageMasterDataServiceReference.Manufactur MDiscountToBeCreated);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscount", ReplyAction="http://tempuri.org/IManageMasterData/GetAuditTrailMDiscountResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.RefAudit[] GetAuditTrailMDiscount(string RecordId, string TableName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetManufacturerModelList", ReplyAction="http://tempuri.org/IManageMasterData/GetManufacturerModelListResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Model[] GetManufacturerModelList(string ManufacturerCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateManufacturerModel", ReplyAction="http://tempuri.org/IManageMasterData/UpdateManufacturerModelResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Model UpdateManufacturerModel(MercPlusClient.ManageMasterDataServiceReference.Model ModelToBeUpdated);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSByShop", ReplyAction="http://tempuri.org/IManageMasterData/GetRSByShopResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Shop[] GetRSByShop(string ShopCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeleteManufacturerModel", ReplyAction="http://tempuri.org/IManageMasterData/DeleteManufacturerModelResponse")]
-        bool DeleteManufacturerModel(string MDiscountCode, string MmodelNo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetShopByUserId", ReplyAction="http://tempuri.org/IManageMasterData/GetShopByUserIdResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopByUserId(int UserId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetShopProfileByUserId", ReplyAction="http://tempuri.org/IManageMasterData/GetShopProfileByUserIdResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopProfileByUserId(int UserId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSAllCurrencies", ReplyAction="http://tempuri.org/IManageMasterData/GetRSAllCurrenciesResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Currency[] GetRSAllCurrencies();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/RSAllCorpPayAgents", ReplyAction="http://tempuri.org/IManageMasterData/RSAllCorpPayAgentsResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSAllCorpPayAgents();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/RSVendorsByPayAgent", ReplyAction="http://tempuri.org/IManageMasterData/RSVendorsByPayAgentResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Vendor[] RSVendorsByPayAgent(string PayAgent_CD);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSAllVendors", ReplyAction="http://tempuri.org/IManageMasterData/GetRSAllVendorsResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Vendor[] GetRSAllVendors();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/RSByPayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/RSByPayAgentVendorResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSByPayAgentVendor(string PayAgent_CD, string Vendor_CD);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/CreatePayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/CreatePayAgentVendorResponse")]
-        string CreatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentFromClient);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/DeletePayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/DeletePayAgentVendorResponse")]
-        string DeletePayAgentVendor(string PayAgent_CD, string Vendor_CD);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdatePayAgentVendor", ReplyAction="http://tempuri.org/IManageMasterData/UpdatePayAgentVendorResponse")]
-        string UpdatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentToBeUpdated);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSAllContracts", ReplyAction="http://tempuri.org/IManageMasterData/GetRSAllContractsResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.ShopCont[] GetRSAllContracts(string ShopCode, string RepairCode, string ModeCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetModesByShop", ReplyAction="http://tempuri.org/IManageMasterData/GetModesByShopResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByShop(string Shop_CD);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/GetRSByShopModes", ReplyAction="http://tempuri.org/IManageMasterData/GetRSByShopModesResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.ShopLimits[] GetRSByShopModes(string Shop_CD, string Mode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/InsertShopContract", ReplyAction="http://tempuri.org/IManageMasterData/InsertShopContractResponse")]
-        string InsertShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/UpdateShopContract", ReplyAction="http://tempuri.org/IManageMasterData/UpdateShopContractResponse")]
-        string UpdateShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManageMasterData/FillShopContractEdit", ReplyAction="http://tempuri.org/IManageMasterData/FillShopContractEditResponse")]
-        MercPlusClient.ManageMasterDataServiceReference.ShopCont FillShopContractEdit(int ContID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12577,94 +12593,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         
         public ManageMasterDataClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.ManualMode[] GetManualMode(string ManualCode, string ModeCode) {
-            return base.Channel.GetManualMode(ManualCode, ModeCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManualModeManual() {
-            return base.Channel.GetManualModeManual();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllManual() {
-            return base.Channel.GetAllManual();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetManualModeMode(string ManualCode) {
-            return base.Channel.GetManualModeMode(ManualCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllMode() {
-            return base.Channel.GetAllMode();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCodes() {
-            return base.Channel.GetDamageCodes();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCode(string code) {
-            return base.Channel.GetDamageCode(code);
-        }
-        
-        public bool CreateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageCodeFromClient, ref string Msg) {
-            return base.Channel.CreateDamageCode(DamageCodeFromClient, ref Msg);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Damage UpdateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageToBeUpdated) {
-            return base.Channel.UpdateDamageCode(DamageToBeUpdated);
-        }
-        
-        public bool DeleteDamageCode(string DamageCode) {
-            return base.Channel.DeleteDamageCode(DamageCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.AuditTrail[] GetAuditTrailData(string TableName, string UniqueID) {
-            return base.Channel.GetAuditTrailData(TableName, UniqueID);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModes() {
-            return base.Channel.GetModes();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllActiveInActiveModes() {
-            return base.Channel.GetAllActiveInActiveModes();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetMode(string ModeCode) {
-            return base.Channel.GetMode(ModeCode);
-        }
-        
-        public bool UpdateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeToBeUpdated, ref string Msg) {
-            return base.Channel.UpdateMode(ModeToBeUpdated, ref Msg);
-        }
-        
-        public bool CreateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeFromClient, ref string Msg) {
-            return base.Channel.CreateMode(ModeFromClient, ref Msg);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicators() {
-            return base.Channel.GetTPIIndicators();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicator(string Code) {
-            return base.Channel.GetTPIIndicator(Code);
-        }
-        
-        public bool UpdateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorToBeUpdated, ref string Msg) {
-            return base.Channel.UpdateTPIIndicator(TPIIndicatorToBeUpdated, ref Msg);
-        }
-        
-        public bool DeleteTPIIndicator(string TPICedexCode, ref string Msg) {
-            return base.Channel.DeleteTPIIndicator(TPICedexCode, ref Msg);
-        }
-        
-        public bool CreateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorListToBeUpdated, ref string Msg) {
-            return base.Channel.CreateTPIIndicator(TPIIndicatorListToBeUpdated, ref Msg);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManual() {
-            return base.Channel.GetManual();
         }
         
         public bool UpdateManualDescription(MercPlusClient.ManageMasterDataServiceReference.Manual ManualDescriptionToBeUpdated, ref string Msg) {
@@ -12907,6 +12835,346 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
             return base.Channel.GetSTSDescription(stscode, mode, manualcd);
         }
         
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllActiveManuals() {
+            return base.Channel.GetAllActiveManuals();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.RepairCodePart[] GetRepairCode_PartAssociation(string mode, string manual, string repairCode, string partNumber) {
+            return base.Channel.GetRepairCode_PartAssociation(mode, manual, repairCode, partNumber);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByManuals(string manCode) {
+            return base.Channel.GetModesByManuals(manCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.ServiceResult Add_Edit_RPA(MercPlusClient.ManageMasterDataServiceReference.RepairCodePart repairCodePartFromClient, string OprMode) {
+            return base.Channel.Add_Edit_RPA(repairCodePartFromClient, OprMode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.ServiceResult UpdateRPA(string orgManualCode, string orgModeCode, string orgPartNumber, string orgRepairCod, string maxPartQty, string UserName) {
+            return base.Channel.UpdateRPA(orgManualCode, orgModeCode, orgPartNumber, orgRepairCod, maxPartQty, UserName);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.ServiceResult DeleteRPRCODE_PART(string repairCod, string partNumber, string modeCode, string manualCode) {
+            return base.Channel.DeleteRPRCODE_PART(repairCod, partNumber, modeCode, manualCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.PTIPeriod[] GetPTIPeriods(string serialFrom) {
+            return base.Channel.GetPTIPeriods(serialFrom);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIPeriod(string SerialFrom, string SerialTo) {
+            return base.Channel.GetPTIPeriod(SerialFrom, SerialTo);
+        }
+        
+        public bool CreatePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg) {
+            return base.Channel.CreatePTIPeriod(PTIPeriodFromClient, ref msg);
+        }
+        
+        public bool DeletePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg) {
+            return base.Channel.DeletePTIPeriod(PTIPeriodFromClient, ref msg);
+        }
+        
+        public bool ModifyPTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg) {
+            return base.Channel.ModifyPTIPeriod(PTIPeriodFromClient, ref msg);
+        }
+        
+        public int GetPTIDefaultPeriod() {
+            return base.Channel.GetPTIDefaultPeriod();
+        }
+        
+        public bool ModifyPTIDefaultPeriod(int NoOfDays, string UserID, ref string msg) {
+            return base.Channel.ModifyPTIDefaultPeriod(NoOfDays, UserID, ref msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIDefaultPeriodRecord() {
+            return base.Channel.GetPTIDefaultPeriodRecord();
+        }
+        
+        public bool InsertSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref int ID, ref string msg) {
+            return base.Channel.InsertSpecialRemarks(SpecialRemarksFromClient, ref ID, ref msg);
+        }
+        
+        public bool ModifySpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg) {
+            return base.Channel.ModifySpecialRemarks(SpecialRemarksFromClient, ref msg);
+        }
+        
+        public bool DeleteSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg) {
+            return base.Channel.DeleteSpecialRemarks(SpecialRemarksFromClient, ref msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks GetSpecialRemarks(int RemarksID) {
+            return base.Channel.GetSpecialRemarks(RemarksID);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexes() {
+            return base.Channel.GetIndexes();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndex(int IndexID, string Manual_CD, string Mode) {
+            return base.Channel.GetIndex(IndexID, Manual_CD, Mode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexManual() {
+            return base.Channel.GetIndexManual();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexMode(string manual_cd) {
+            return base.Channel.GetIndexMode(manual_cd);
+        }
+        
+        public bool UpdateIndex(MercPlusClient.ManageMasterDataServiceReference.Index updatedIndex, ref string Msg) {
+            return base.Channel.UpdateIndex(updatedIndex, ref Msg);
+        }
+        
+        public bool DeleteIndex(int indexID, string manualCode, string mode, ref string Msg) {
+            return base.Channel.DeleteIndex(indexID, manualCode, mode, ref Msg);
+        }
+        
+        public bool CreateIndex(MercPlusClient.ManageMasterDataServiceReference.Index insertIndex, ref string Msg) {
+            return base.Channel.CreateIndex(insertIndex, ref Msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexesForDropDown(string Manual_CD, string Mode) {
+            return base.Channel.GetIndexesForDropDown(Manual_CD, Mode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks[][] GetSpecialRemarksComboValue() {
+            return base.Channel.GetSpecialRemarksComboValue();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexAllActiveManual() {
+            return base.Channel.GetIndexAllActiveManual();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexAllActiveMode(string manual_cd) {
+            return base.Channel.GetIndexAllActiveMode(manual_cd);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeManual() {
+            return base.Channel.GetRepairCodeManual();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeMode(string ManualCode) {
+            return base.Channel.GetRepairCodeMode(ManualCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByMode(string ManualCode, string ModeCode) {
+            return base.Channel.GetRepairCodeByMode(ManualCode, ModeCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByIndex(string ManualCode, string ModeCode, int IndexId) {
+            return base.Channel.GetRepairCodeByIndex(ManualCode, ModeCode, IndexId);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByRepairCode(string ManualCode, string ModeCode, string RepairCode) {
+            return base.Channel.GetRepairCodeByRepairCode(ManualCode, ModeCode, RepairCode);
+        }
+        
+        public bool InsertRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg) {
+            return base.Channel.InsertRepairCode(RepairCodeFromClient, ref Msg);
+        }
+        
+        public bool ModifyRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg) {
+            return base.Channel.ModifyRepairCode(RepairCodeFromClient, ref Msg);
+        }
+        
+        public bool DeleteRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string msg) {
+            return base.Channel.DeleteRepairCode(RepairCodeFromClient, ref msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeActiveIndexManual() {
+            return base.Channel.GetRepairCodeActiveIndexManual();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeIndexMode(string ManualCode) {
+            return base.Channel.GetRepairCodeIndexMode(ManualCode);
+        }
+        
+        public bool InsertManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg) {
+            return base.Channel.InsertManualMode(ManualModeFromClient, ref Msg);
+        }
+        
+        public bool DeleteManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string msg) {
+            return base.Channel.DeleteManualMode(ManualModeFromClient, ref msg);
+        }
+        
+        public bool ModifyManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg) {
+            return base.Channel.ModifyManualMode(ManualModeFromClient, ref Msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.ManualMode[] GetManualMode(string ManualCode, string ModeCode) {
+            return base.Channel.GetManualMode(ManualCode, ModeCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManualModeManual() {
+            return base.Channel.GetManualModeManual();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllManual() {
+            return base.Channel.GetAllManual();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetManualModeMode(string ManualCode) {
+            return base.Channel.GetManualModeMode(ManualCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllMode() {
+            return base.Channel.GetAllMode();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCodes() {
+            return base.Channel.GetDamageCodes();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Damage[] GetDamageCode(string code) {
+            return base.Channel.GetDamageCode(code);
+        }
+        
+        public bool CreateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageCodeFromClient, ref string Msg) {
+            return base.Channel.CreateDamageCode(DamageCodeFromClient, ref Msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Damage UpdateDamageCode(MercPlusClient.ManageMasterDataServiceReference.Damage DamageToBeUpdated) {
+            return base.Channel.UpdateDamageCode(DamageToBeUpdated);
+        }
+        
+        public bool DeleteDamageCode(string DamageCode) {
+            return base.Channel.DeleteDamageCode(DamageCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.AuditTrail[] GetAuditTrailData(string TableName, string UniqueID) {
+            return base.Channel.GetAuditTrailData(TableName, UniqueID);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModes() {
+            return base.Channel.GetModes();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllActiveInActiveModes() {
+            return base.Channel.GetAllActiveInActiveModes();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetMode(string ModeCode) {
+            return base.Channel.GetMode(ModeCode);
+        }
+        
+        public bool UpdateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeToBeUpdated, ref string Msg) {
+            return base.Channel.UpdateMode(ModeToBeUpdated, ref Msg);
+        }
+        
+        public bool CreateMode(MercPlusClient.ManageMasterDataServiceReference.Mode ModeFromClient, ref string Msg) {
+            return base.Channel.CreateMode(ModeFromClient, ref Msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicators() {
+            return base.Channel.GetTPIIndicators();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.TPIIndicator[] GetTPIIndicator(string Code) {
+            return base.Channel.GetTPIIndicator(Code);
+        }
+        
+        public bool UpdateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorToBeUpdated, ref string Msg) {
+            return base.Channel.UpdateTPIIndicator(TPIIndicatorToBeUpdated, ref Msg);
+        }
+        
+        public bool DeleteTPIIndicator(string TPICedexCode, ref string Msg) {
+            return base.Channel.DeleteTPIIndicator(TPICedexCode, ref Msg);
+        }
+        
+        public bool CreateTPIIndicator(MercPlusClient.ManageMasterDataServiceReference.TPIIndicator TPIIndicatorListToBeUpdated, ref string Msg) {
+            return base.Channel.CreateTPIIndicator(TPIIndicatorListToBeUpdated, ref Msg);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetManual() {
+            return base.Channel.GetManual();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.RefAudit[] GetAuditTrailMDiscount(string RecordId, string TableName) {
+            return base.Channel.GetAuditTrailMDiscount(RecordId, TableName);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Model[] GetManufacturerModelList(string ManufacturerCode) {
+            return base.Channel.GetManufacturerModelList(ManufacturerCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Model UpdateManufacturerModel(MercPlusClient.ManageMasterDataServiceReference.Model ModelToBeUpdated) {
+            return base.Channel.UpdateManufacturerModel(ModelToBeUpdated);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Shop[] GetRSByShop(string ShopCode) {
+            return base.Channel.GetRSByShop(ShopCode);
+        }
+        
+        public bool DeleteManufacturerModel(string MDiscountCode, string MmodelNo) {
+            return base.Channel.DeleteManufacturerModel(MDiscountCode, MmodelNo);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopByUserId(int UserId) {
+            return base.Channel.GetShopByUserId(UserId);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopProfileByUserId(int UserId) {
+            return base.Channel.GetShopProfileByUserId(UserId);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Currency[] GetRSAllCurrencies() {
+            return base.Channel.GetRSAllCurrencies();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSAllCorpPayAgents() {
+            return base.Channel.RSAllCorpPayAgents();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Vendor[] RSVendorsByPayAgent(string PayAgent_CD) {
+            return base.Channel.RSVendorsByPayAgent(PayAgent_CD);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Vendor[] GetRSAllVendors() {
+            return base.Channel.GetRSAllVendors();
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSByPayAgentVendor(string PayAgent_CD, string Vendor_CD) {
+            return base.Channel.RSByPayAgentVendor(PayAgent_CD, Vendor_CD);
+        }
+        
+        public string CreatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentFromClient) {
+            return base.Channel.CreatePayAgentVendor(PayAgentFromClient);
+        }
+        
+        public string DeletePayAgentVendor(string PayAgent_CD, string Vendor_CD) {
+            return base.Channel.DeletePayAgentVendor(PayAgent_CD, Vendor_CD);
+        }
+        
+        public string UpdatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentToBeUpdated) {
+            return base.Channel.UpdatePayAgentVendor(PayAgentToBeUpdated);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.ShopCont[] GetRSAllContracts(string ShopCode, string RepairCode, string ModeCode) {
+            return base.Channel.GetRSAllContracts(ShopCode, RepairCode, ModeCode);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByShop(string Shop_CD) {
+            return base.Channel.GetModesByShop(Shop_CD);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.ShopLimits[] GetRSByShopModes(string Shop_CD, string Mode) {
+            return base.Channel.GetRSByShopModes(Shop_CD, Mode);
+        }
+        
+        public string InsertShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList) {
+            return base.Channel.InsertShopContract(ShopContList);
+        }
+        
+        public string UpdateShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList) {
+            return base.Channel.UpdateShopContract(ShopContList);
+        }
+        
+        public MercPlusClient.ManageMasterDataServiceReference.ShopCont FillShopContractEdit(int ContID) {
+            return base.Channel.FillShopContractEdit(ContID);
+        }
+        
         public string DeleteShopContract(string gridData) {
             return base.Channel.DeleteShopContract(gridData);
         }
@@ -13077,174 +13345,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         
         public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetAllActiveModes() {
             return base.Channel.GetAllActiveModes();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetAllActiveManuals() {
-            return base.Channel.GetAllActiveManuals();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.RepairCodePart[] GetRepairCode_PartAssociation(string mode, string manual, string repairCode, string partNumber) {
-            return base.Channel.GetRepairCode_PartAssociation(mode, manual, repairCode, partNumber);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByManuals(string manCode) {
-            return base.Channel.GetModesByManuals(manCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.ServiceResult Add_Edit_RPA(MercPlusClient.ManageMasterDataServiceReference.RepairCodePart repairCodePartFromClient, string OprMode) {
-            return base.Channel.Add_Edit_RPA(repairCodePartFromClient, OprMode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.ServiceResult UpdateRPA(string orgManualCode, string orgModeCode, string orgPartNumber, string orgRepairCod, string maxPartQty, string UserName) {
-            return base.Channel.UpdateRPA(orgManualCode, orgModeCode, orgPartNumber, orgRepairCod, maxPartQty, UserName);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.ServiceResult DeleteRPRCODE_PART(string repairCod, string partNumber, string modeCode, string manualCode) {
-            return base.Channel.DeleteRPRCODE_PART(repairCod, partNumber, modeCode, manualCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.PTIPeriod[] GetPTIPeriods(string serialFrom) {
-            return base.Channel.GetPTIPeriods(serialFrom);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIPeriod(string SerialFrom, string SerialTo) {
-            return base.Channel.GetPTIPeriod(SerialFrom, SerialTo);
-        }
-        
-        public bool CreatePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg) {
-            return base.Channel.CreatePTIPeriod(PTIPeriodFromClient, ref msg);
-        }
-        
-        public bool DeletePTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg) {
-            return base.Channel.DeletePTIPeriod(PTIPeriodFromClient, ref msg);
-        }
-        
-        public bool ModifyPTIPeriod(MercPlusClient.ManageMasterDataServiceReference.PTIPeriod PTIPeriodFromClient, ref string msg) {
-            return base.Channel.ModifyPTIPeriod(PTIPeriodFromClient, ref msg);
-        }
-        
-        public int GetPTIDefaultPeriod() {
-            return base.Channel.GetPTIDefaultPeriod();
-        }
-        
-        public bool ModifyPTIDefaultPeriod(int NoOfDays, string UserID, ref string msg) {
-            return base.Channel.ModifyPTIDefaultPeriod(NoOfDays, UserID, ref msg);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.PTIPeriod GetPTIDefaultPeriodRecord() {
-            return base.Channel.GetPTIDefaultPeriodRecord();
-        }
-        
-        public bool InsertSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref int ID, ref string msg) {
-            return base.Channel.InsertSpecialRemarks(SpecialRemarksFromClient, ref ID, ref msg);
-        }
-        
-        public bool ModifySpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg) {
-            return base.Channel.ModifySpecialRemarks(SpecialRemarksFromClient, ref msg);
-        }
-        
-        public bool DeleteSpecialRemarks(MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks SpecialRemarksFromClient, ref string msg) {
-            return base.Channel.DeleteSpecialRemarks(SpecialRemarksFromClient, ref msg);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks GetSpecialRemarks(int RemarksID) {
-            return base.Channel.GetSpecialRemarks(RemarksID);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexes() {
-            return base.Channel.GetIndexes();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndex(int IndexID, string Manual_CD, string Mode) {
-            return base.Channel.GetIndex(IndexID, Manual_CD, Mode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexManual() {
-            return base.Channel.GetIndexManual();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexMode(string manual_cd) {
-            return base.Channel.GetIndexMode(manual_cd);
-        }
-        
-        public bool UpdateIndex(MercPlusClient.ManageMasterDataServiceReference.Index updatedIndex, ref string Msg) {
-            return base.Channel.UpdateIndex(updatedIndex, ref Msg);
-        }
-        
-        public bool DeleteIndex(int indexID, string manualCode, string mode, ref string Msg) {
-            return base.Channel.DeleteIndex(indexID, manualCode, mode, ref Msg);
-        }
-        
-        public bool CreateIndex(MercPlusClient.ManageMasterDataServiceReference.Index insertIndex, ref string Msg) {
-            return base.Channel.CreateIndex(insertIndex, ref Msg);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Index[] GetIndexesForDropDown(string Manual_CD, string Mode) {
-            return base.Channel.GetIndexesForDropDown(Manual_CD, Mode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.SpecialRemarks[][] GetSpecialRemarksComboValue() {
-            return base.Channel.GetSpecialRemarksComboValue();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetIndexAllActiveManual() {
-            return base.Channel.GetIndexAllActiveManual();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetIndexAllActiveMode(string manual_cd) {
-            return base.Channel.GetIndexAllActiveMode(manual_cd);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeManual() {
-            return base.Channel.GetRepairCodeManual();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeMode(string ManualCode) {
-            return base.Channel.GetRepairCodeMode(ManualCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByMode(string ManualCode, string ModeCode) {
-            return base.Channel.GetRepairCodeByMode(ManualCode, ModeCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByIndex(string ManualCode, string ModeCode, int IndexId) {
-            return base.Channel.GetRepairCodeByIndex(ManualCode, ModeCode, IndexId);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.RepairCode[] GetRepairCodeByRepairCode(string ManualCode, string ModeCode, string RepairCode) {
-            return base.Channel.GetRepairCodeByRepairCode(ManualCode, ModeCode, RepairCode);
-        }
-        
-        public bool InsertRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg) {
-            return base.Channel.InsertRepairCode(RepairCodeFromClient, ref Msg);
-        }
-        
-        public bool ModifyRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string Msg) {
-            return base.Channel.ModifyRepairCode(RepairCodeFromClient, ref Msg);
-        }
-        
-        public bool DeleteRepairCode(MercPlusClient.ManageMasterDataServiceReference.RepairCode RepairCodeFromClient, ref string msg) {
-            return base.Channel.DeleteRepairCode(RepairCodeFromClient, ref msg);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Manual[] GetRepairCodeActiveIndexManual() {
-            return base.Channel.GetRepairCodeActiveIndexManual();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetRepairCodeIndexMode(string ManualCode) {
-            return base.Channel.GetRepairCodeIndexMode(ManualCode);
-        }
-        
-        public bool InsertManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg) {
-            return base.Channel.InsertManualMode(ManualModeFromClient, ref Msg);
-        }
-        
-        public bool DeleteManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string msg) {
-            return base.Channel.DeleteManualMode(ManualModeFromClient, ref msg);
-        }
-        
-        public bool ModifyManualMode(MercPlusClient.ManageMasterDataServiceReference.ManualMode ManualModeFromClient, ref string Msg) {
-            return base.Channel.ModifyManualMode(ManualModeFromClient, ref Msg);
         }
         
         public MercPlusClient.ManageMasterDataServiceReference.PayAgent[] GetPayAgent() {
@@ -13501,90 +13601,6 @@ namespace MercPlusClient.ManageMasterDataServiceReference {
         
         public string CreateManufacturerDiscount(MercPlusClient.ManageMasterDataServiceReference.Manufactur MDiscountToBeCreated) {
             return base.Channel.CreateManufacturerDiscount(MDiscountToBeCreated);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.RefAudit[] GetAuditTrailMDiscount(string RecordId, string TableName) {
-            return base.Channel.GetAuditTrailMDiscount(RecordId, TableName);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Model[] GetManufacturerModelList(string ManufacturerCode) {
-            return base.Channel.GetManufacturerModelList(ManufacturerCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Model UpdateManufacturerModel(MercPlusClient.ManageMasterDataServiceReference.Model ModelToBeUpdated) {
-            return base.Channel.UpdateManufacturerModel(ModelToBeUpdated);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Shop[] GetRSByShop(string ShopCode) {
-            return base.Channel.GetRSByShop(ShopCode);
-        }
-        
-        public bool DeleteManufacturerModel(string MDiscountCode, string MmodelNo) {
-            return base.Channel.DeleteManufacturerModel(MDiscountCode, MmodelNo);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopByUserId(int UserId) {
-            return base.Channel.GetShopByUserId(UserId);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Shop[] GetShopProfileByUserId(int UserId) {
-            return base.Channel.GetShopProfileByUserId(UserId);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Currency[] GetRSAllCurrencies() {
-            return base.Channel.GetRSAllCurrencies();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSAllCorpPayAgents() {
-            return base.Channel.RSAllCorpPayAgents();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Vendor[] RSVendorsByPayAgent(string PayAgent_CD) {
-            return base.Channel.RSVendorsByPayAgent(PayAgent_CD);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Vendor[] GetRSAllVendors() {
-            return base.Channel.GetRSAllVendors();
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor[] RSByPayAgentVendor(string PayAgent_CD, string Vendor_CD) {
-            return base.Channel.RSByPayAgentVendor(PayAgent_CD, Vendor_CD);
-        }
-        
-        public string CreatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentFromClient) {
-            return base.Channel.CreatePayAgentVendor(PayAgentFromClient);
-        }
-        
-        public string DeletePayAgentVendor(string PayAgent_CD, string Vendor_CD) {
-            return base.Channel.DeletePayAgentVendor(PayAgent_CD, Vendor_CD);
-        }
-        
-        public string UpdatePayAgentVendor(MercPlusClient.ManageMasterDataServiceReference.PayAgentVendor PayAgentToBeUpdated) {
-            return base.Channel.UpdatePayAgentVendor(PayAgentToBeUpdated);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.ShopCont[] GetRSAllContracts(string ShopCode, string RepairCode, string ModeCode) {
-            return base.Channel.GetRSAllContracts(ShopCode, RepairCode, ModeCode);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.Mode[] GetModesByShop(string Shop_CD) {
-            return base.Channel.GetModesByShop(Shop_CD);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.ShopLimits[] GetRSByShopModes(string Shop_CD, string Mode) {
-            return base.Channel.GetRSByShopModes(Shop_CD, Mode);
-        }
-        
-        public string InsertShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList) {
-            return base.Channel.InsertShopContract(ShopContList);
-        }
-        
-        public string UpdateShopContract(MercPlusClient.ManageMasterDataServiceReference.ShopCont ShopContList) {
-            return base.Channel.UpdateShopContract(ShopContList);
-        }
-        
-        public MercPlusClient.ManageMasterDataServiceReference.ShopCont FillShopContractEdit(int ContID) {
-            return base.Channel.FillShopContractEdit(ContID);
         }
     }
 }

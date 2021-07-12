@@ -187,6 +187,9 @@ namespace ManageWorkOrderService
         List<string> GetMercDamageCode(int WOID);
 
         [OperationContract]
+        List<string> GetMercGradeCode(int WOID, string EQP);
+
+        [OperationContract]
         bool GetServiceStatus();
 
 

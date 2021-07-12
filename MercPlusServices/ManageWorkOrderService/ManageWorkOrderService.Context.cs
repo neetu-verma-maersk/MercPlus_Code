@@ -60,7 +60,6 @@ namespace ManageWorkOrderService
         public DbSet<MESC1TS_SUSPEND> MESC1TS_SUSPEND { get; set; }
         public DbSet<MESC1TS_SUSPEND_CAT> MESC1TS_SUSPEND_CAT { get; set; }
         public DbSet<MESC1TS_TPI> MESC1TS_TPI { get; set; }
-        public DbSet<MESC1TS_WO> MESC1TS_WO { get; set; }
         public DbSet<MESC1TS_WOAUDIT> MESC1TS_WOAUDIT { get; set; }
         public DbSet<MESC1TS_WOPART> MESC1TS_WOPART { get; set; }
         public DbSet<MESC1TS_WOREMARK> MESC1TS_WOREMARK { get; set; }
@@ -78,5 +77,6 @@ namespace ManageWorkOrderService
         public DbSet<MESC1TS_GRADECONTAINER> MESC1TS_GRADECONTAINER { get; set; }
         public DbSet<MESC1TS_GRADERELATION> MESC1TS_GRADERELATION { get; set; }
         public DbSet<MESC1TS_GRADESTS> MESC1TS_GRADESTS { get; set; }
+        public DbSet<MESC1TS_WO> MESC1TS_WO { get; set; }
     }
 }
