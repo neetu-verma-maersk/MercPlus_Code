@@ -1146,7 +1146,7 @@ namespace WokOrderLoadService
                             tempEDIAmount = AddDecimal(tempEDIAmount, 2);
                             WOD.TotalEDIAmount = Convert.ToDecimal(tempEDIAmount);
                             break;
-                        //			case 14: m_sRemarks= token; m_sRemarks.TrimRight(); break;
+                            //			case 14: m_sRemarks= token; m_sRemarks.TrimRight(); break;
 
                     }
 
@@ -1218,7 +1218,7 @@ namespace WokOrderLoadService
                             CurrentRepCode += "~";
                             break;
                         //Mangal Release 3 RQ6343 getting RepairLocation code from EDI, manual or WS mode 
-                        case 2: Rv.RepairLocationCode.CedexCode = szRecord.Trim(); break;
+                        case 2: Rv.RepairLocationCode.CedexCode = szRecord.ToUpper().Trim(); break;
                         case 3: tempPieces = szRecord.Trim();
                             Rv.Pieces = Convert.ToInt32(tempPieces);
                             break;
