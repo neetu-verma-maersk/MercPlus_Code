@@ -1218,7 +1218,7 @@ namespace WokOrderLoadService
                             CurrentRepCode += "~";
                             break;
                         //Mangal Release 3 RQ6343 getting RepairLocation code from EDI, manual or WS mode 
-                        case 2: Rv.RepairLocationCode.CedexCode = szRecord.Trim(); break;
+                        case 2: Rv.RepairLocationCode.CedexCode = szRecord.ToUpper().Trim(); break;
                         case 3: tempPieces = szRecord.Trim();
                             Rv.Pieces = Convert.ToInt32(tempPieces);
                             break;
